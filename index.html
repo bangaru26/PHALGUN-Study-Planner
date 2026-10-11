@@ -257,6 +257,41 @@ header .header-copy{min-width:0}
  #panel-history .stats{grid-template-columns:1fr}
  #panel-history #sessionSearch{max-width:100%;width:100%;float:none}
 }
+
+/* Founder reference layout polish: no overlap; secondary tabs stay compact */
+@media(min-width:900px){
+ header{width:35%!important;height:205px!important}
+ .study-dashboard{top:12px!important;left:37%!important;right:1.5%!important;z-index:4!important}
+ .wrap{padding-top:265px!important}
+ .tabs{position:relative;z-index:5;display:flex;gap:7px;margin:0 0 12px!important}
+ .tabs .tab{padding:8px 11px;font-size:13px}
+ .notes-quiz-shortcuts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:12px;margin:10px 0 12px!important}
+ .notes-band textarea{min-height:84px}
+ #panel-learn .grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)!important;gap:12px!important;align-items:start}
+ #panel-learn .grid>div:first-child{order:1!important;min-width:0}
+ #panel-learn .grid>div:last-child{order:2!important;min-width:0}
+ #panel-learn .lesson-list{gap:6px}
+ #panel-learn .lesson{padding:9px 11px;cursor:pointer;position:relative;z-index:2}
+ #panel-learn .lesson strong{font-size:13px}
+ #panel-learn .lesson small{font-size:11px}
+ #panel-plan,#panel-history,#panel-backup{max-width:1080px!important;margin:0 auto!important}
+ #panel-plan .grid,#panel-backup .grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)!important;gap:12px!important}
+ #panel-plan .card,#panel-backup .card,#panel-history>.card{padding:16px!important;margin-bottom:10px!important}
+ #panel-plan .stats,#panel-history .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ #panel-history .stat{padding:10px!important}
+ #panel-history .footer-actions{margin:10px 0;gap:8px}
+ #panel-history .notice{font-size:11px;line-height:1.45}
+ #panel-backup .card ul{padding-left:20px}
+ #panel-backup .card li{margin:5px 0}
+}
+@media(max-width:899px){
+ .wrap{padding-top:14px!important}
+ .study-dashboard{position:static!important}
+ .tabs{position:relative;z-index:3}
+ #panel-learn .grid{grid-template-columns:minmax(0,1fr)!important}
+ #panel-learn .grid>div:first-child,#panel-learn .grid>div:last-child{order:initial!important}
+ #panel-plan .grid,#panel-backup .grid{grid-template-columns:minmax(0,1fr)!important}
+}
 </style>
 </head>
 <body>
@@ -362,7 +397,8 @@ globalSearch.addEventListener('input',renderGlobalSearch);
 globalSearch.addEventListener('keydown',e=>{if(e.key==='Escape')globalResults.classList.add('hidden');if(e.key==='Enter'){const b=globalResults.querySelector('[data-global-result]');if(b)b.click();else location.href='./dictionary.html?q='+encodeURIComponent(globalSearch.value)}});document.addEventListener('click',e=>{if(!e.target.closest('.global-search'))globalResults.classList.add('hidden')});
 
 function passed(id){return !!(data.results[id]&&data.results[id].passed)}
-function renderLessons(){$('lessonList').innerHTML=lessons.map((l,i)=>'<button class="lesson '+(l.id===currentId?'active':'')+'" data-lesson="'+l.id+'"><strong>'+(passed(l.id)?'<span class="done">✓ </span>':'')+'Lesson '+(i+1)+': '+escapeHtml(l.title)+'</strong><small>'+escapeHtml(l.subtitle)+' · '+(data.results[l.id]?'Best: '+data.results[l.id].score+'/4':'Not yet assessed')+'</small></button>').join('');document.querySelectorAll('[data-lesson]').forEach(b=>b.onclick=()=>selectLesson(b.dataset.lesson));let n=lessons.filter(l=>passed(l.id)).length;$('courseBar').style.width=(n/lessons.length*100)+'%';$('courseProgress').textContent=n+' of '+lessons.length+' lessons passed'}
+function renderLessons(){$('lessonList').innerHTML=lessons.map((l,i)=>'<button class="lesson '+(l.id===currentId?'active':'')+'" data-lesson="'+l.id+'"><strong>'+(passed(l.id)?'<span class="done">✓ </span>':'')+'Lesson '+(i+1)+': '+escapeHtml(l.title)+'</strong><small>'+escapeHtml(l.subtitle)+' · '+(data.results[l.id]?'Best: '+data.results[l.id].score+'/4':'Not yet assessed')+'</small></button>').join('');let n=lessons.filter(l=>passed(l.id)).length;$('courseBar').style.width=(n/lessons.length*100)+'%';$('courseProgress').textContent=n+' of '+lessons.length+' lessons passed'}
+$('lessonList').addEventListener('click',e=>{const b=e.target.closest('button[data-lesson]');if(!b||!$('lessonList').contains(b))return;e.preventDefault();selectLesson(b.dataset.lesson)});
 function renderLesson(){const l=selected(),idx=lessons.findIndex(x=>x.id===l.id);$('dayLabel').textContent='LESSON '+(idx+1)+' OF '+lessons.length;$('lessonTitle').textContent=l.title;$('lessonSubtitle').textContent=l.subtitle;$('lessonBody').innerHTML=l.body;$('lessonNotes').value=data.notes[l.id]||'';$('quiz').innerHTML=l.quiz.map((q,i)=>'<div class="question"><p>'+(i+1)+'. '+escapeHtml(q[0])+'</p>'+q[1].map((a,j)=>'<label class="option"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+escapeHtml(a)+'</span></label>').join('')+'</div>').join('');$('quizFeedback').classList.add('hidden');$('quizFeedback').textContent='';renderLessons()}
 function selectLesson(id){if(!lessons.some(l=>l.id===id))return;if(startMs!==null){if(!confirm('A timer is running. Switch lessons and save the current session first?'))return;finishTimer()}currentId=id;data.currentLesson=id;save();renderLesson()}
 function renderStats(){let total=data.sessions.reduce((a,s)=>a+(Number(s.minutes)||0),0);$('sessionCount').textContent=data.sessions.length;$('minuteCount').textContent=total;$('passedCount').textContent=lessons.filter(l=>passed(l.id)).length;$('historySessions').textContent=data.sessions.length;$('historyMinutes').textContent=total;$('historyPassed').textContent=lessons.filter(l=>passed(l.id)).length;let today=new Date().toLocaleDateString('en-IN'),todayM=data.sessions.filter(s=>s.date===today).reduce((a,s)=>a+s.minutes,0);let weekStart=new Date();weekStart.setHours(0,0,0,0);weekStart.setDate(weekStart.getDate()-((weekStart.getDay()+6)%7));let weekM=data.sessions.filter(s=>{let d=parseDate(s.date);return d&&d>=weekStart}).reduce((a,s)=>a+s.minutes,0);let target=Number(data.plan.dailyTarget)||300;$('todayMinutes').textContent=todayM;$('weekMinutes').textContent=weekM;$('targetDisplay').textContent=target;$('todayBar').style.width=Math.min(100,todayM/target*100)+'%';$('todaySummary').textContent=todayM+' / '+target+' minutes completed';}
