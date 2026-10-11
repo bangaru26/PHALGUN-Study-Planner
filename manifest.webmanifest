@@ -9,9 +9,9 @@
   "theme_color": "#07111e",
   "icons": [
     {
-      "src": "./study-desk-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "./study-planner-icon.webp",
+      "sizes": "256x256",
+      "type": "image/webp",
       "purpose": "any"
     }
   ]
