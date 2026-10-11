@@ -322,13 +322,47 @@ header .header-copy{min-width:0}
 .empty-notes{text-align:center;padding:28px}
 @media(max-width:850px){#panel-plan>.grid,#panel-backup>.grid{grid-template-columns:minmax(0,1fr)}#panel-plan .progress-history .history-heading{align-items:stretch;flex-direction:column}#panel-plan #historySearch{max-width:100%}}
 @media(max-width:600px){.notes-heading{align-items:flex-start;flex-direction:column}.my-note-head{align-items:stretch;flex-direction:column}.note-title{max-width:100%}.note-date{margin-left:0}#panel-plan .progress-history .stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* Fixed Study Desk command header: visible while navigating or scrolling */
+header{position:fixed!important;left:0!important;top:0!important;width:35%!important;height:198px!important;padding:14px 20px!important;background:#fff!important;z-index:120!important;border:0!important}
+.brand-head{display:grid!important;grid-template-columns:1fr!important;grid-template-rows:auto auto auto!important;gap:6px!important;align-items:start!important}
+.brand-icons{display:flex;align-items:center;gap:8px}
+.brand-icons a{display:inline-flex;width:48px;height:48px;align-items:center;justify-content:center;border:1px solid #dce5ef;border-radius:9px;overflow:hidden;background:#07111e}
+.brand-icons img{width:48px;height:48px;object-fit:contain;display:block}
+.brand-copy{grid-column:1!important;grid-row:2!important;min-width:0}
+.brand-copy h1{font-size:25px!important;margin:0!important;line-height:1.15}
+.brand-copy .brand-tagline,.brand-copy .brand-philosophy{font-size:11px!important;margin:3px 0 0!important;line-height:1.2}
+.brand-head .global-search{grid-column:1!important;grid-row:3!important;width:100%!important;max-width:390px!important;margin-top:2px}
+body>.study-dashboard{position:fixed!important;top:10px!important;left:36.5%!important;right:16px!important;width:auto!important;z-index:119!important;margin:0!important;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr)!important;gap:9px!important;align-items:start!important}
+.timer-column{min-width:0}
+.stopwatch-card{min-width:0!important;padding:10px!important}
+.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}
+.dash-stat{min-height:0!important;padding:10px!important}
+.dash-label{font-size:10px!important}.dash-value{font-size:19px!important;margin:4px 0 2px!important}.dash-note{font-size:10px!important;line-height:1.25}
+.lesson-mini-stats{gap:5px!important;margin-top:5px!important}.mini-stat{padding:6px 8px!important}.mini-stat span{font-size:10px!important}.mini-stat strong{font-size:17px!important}
+body>nav.tabs{position:fixed!important;top:198px!important;left:0!important;right:0!important;width:100%!important;z-index:121!important;margin:0!important;padding:7px 20px!important;background:#fff!important;border-bottom:1px solid #e2e8f0!important;box-shadow:0 4px 10px #17243a0a;overflow-x:auto;flex-wrap:nowrap!important}
+body>nav.tabs .tab{flex:0 0 auto!important;padding:8px 11px!important;font-size:12px!important}
+.wrap{max-width:1200px!important;width:100%!important;margin:0 auto!important;padding:252px 20px 38px!important}
+.wrap>.study-dashboard,.wrap>nav.tabs{display:none!important}
+.wrap>div[style*="justify-content:flex-end"]{display:none!important}.wrap>.notes-quiz-shortcuts{display:none!important}
+#panel-notes{max-width:1000px!important;margin:0 auto!important}#panel-notes .notes-heading{margin-top:0!important}
+.global-results{z-index:200!important}
+@media(max-width:899px){
+ header{position:relative!important;width:100%!important;height:auto!important;padding:12px 14px!important}
+ .brand-head{grid-template-columns:1fr!important;grid-template-rows:auto auto auto!important}
+ .brand-icons{grid-row:1!important}.brand-copy{grid-row:2!important}
+ .brand-head .global-search{grid-row:3!important;max-width:none!important}
+ body>.study-dashboard{position:relative!important;top:auto!important;left:auto!important;right:auto!important;width:auto!important;margin:8px 12px 0!important;grid-template-columns:minmax(0,1fr)!important}
+ body>nav.tabs{position:sticky!important;top:0!important;left:auto!important;right:auto!important;padding:7px 10px!important}
+ .wrap{padding:12px 12px 30px!important}
+ .wrap>.study-dashboard,.wrap>nav.tabs{display:none!important}
+ .dashboard-stats{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+}
+@media(max-width:560px){.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}body>nav.tabs .tab{font-size:11px!important;padding:8px 9px!important}.stopwatch-card{grid-template-columns:minmax(0,1fr) minmax(112px,.75fr)!important}.stopwatch-card>.buttons button{font-size:10px!important}}
 </style>
 </head>
 <body>
-<header><div class="brand-head"><img src="./aaroh-symbol.jpg" alt="AAROH — Project Phoenix symbol" width="58" height="58"><div class="brand-copy"><h1>Study Desk</h1><p class="brand-tagline">Learn Forever</p><p class="brand-philosophy">Learn • Apply • Solve</p></div><div class="global-search"><input id="globalSearch" type="search" placeholder="Search lessons, terms, Excel formulas…" aria-label="Search all study content"><span class="search-mark">⌕</span><div id="globalResults" class="global-results hidden" role="listbox"></div></div></div></header>
-<main class="wrap">
-
-
+<header><div class="brand-head"><div class="brand-icons"><a href="./index.html" title="AAROH home" aria-label="AAROH home"><img src="./aaroh-symbol.jpg" alt="AAROH icon" width="52" height="52"></a><a href="./index.html" title="Study Desk home" aria-label="Study Desk home"><img src="./study-desk-icon.svg" alt="Study Desk icon" width="52" height="52"></a></div><div class="brand-copy"><h1>Study Desk</h1><p class="brand-tagline">Learn Forever</p><p class="brand-philosophy">Learn • Apply • Solve</p></div><div class="global-search"><input id="globalSearch" type="search" placeholder="Search lessons, terms, Excel formulas…" aria-label="Search all study content"><span class="search-mark">⌕</span><div id="globalResults" class="global-results hidden" role="listbox"></div></div></div></header>
 <section class="study-dashboard" aria-label="Study Desk timer and progress">
   <div class="timer-column">
     <div class="stopwatch-card">
@@ -349,14 +383,15 @@ header .header-copy{min-width:0}
     <div class="dash-stat"><div class="dash-label">▦ Days Studied</div><div class="dash-value"><span id="dashDays">0</span> <small>days</small></div><div class="dash-note">Total unique study days</div></div>
   </div>
 </section>
-<div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin:0 0 8px"><a href="./dictionary.html" style="display:inline-block;padding:8px 12px;border:1px solid #ccebe7;border-radius:10px;background:#eaf7f6;color:#087e75;text-decoration:none;font-weight:750;font-size:13px">📚 Subject Dictionary</a><a href="./excel-practice.html" style="display:inline-block;padding:8px 12px;border:1px solid #ccebe7;border-radius:10px;background:#eaf7f6;color:#087e75;text-decoration:none;font-weight:750;font-size:13px">ƒx Excel Formula Practice ↗</a></div>
-<div class="notes-quiz-shortcuts">
-  <section class="card notes-band"><div class="eyebrow">LESSON NOTES</div><h2 style="margin:8px 0">My notes & questions</h2><p class="muted">Notes are attached to the selected lesson and saved automatically on this device.</p><textarea id="lessonNotes" placeholder="Write a summary, doubt, example or question..."></textarea><p class="notice" id="notesStatus">Auto-saves while you type.</p></section>
-  <aside class="card quiz-shortcut"><div class="eyebrow">READY TO TEST YOURSELF?</div><h2 style="margin:8px 0">Lesson quiz</h2><p class="muted">Jump straight to the quiz whenever you're ready. Your lesson content stays below.</p><a class="primary quiz-jump" href="#lessonQuizCard">Go to Lesson Quiz ↓</a></aside>
-</div>
 <nav class="tabs" role="tablist" aria-label="Study Desk sections">
 <button class="tab" role="tab" data-tab="learn" aria-selected="true">Learn & Practise</button><button class="tab" role="tab" data-tab="plan" aria-selected="false">Study Plan & Progress</button><button class="tab" role="tab" data-tab="backup" aria-selected="false">Backup & Settings</button><button class="tab" role="tab" data-tab="notes" aria-selected="false">＋ My Notes</button>
 </nav>
+
+<main class="wrap">
+
+
+
+
 <section id="panel-learn" class="panel">
 <div class="grid">
 <div>
@@ -409,7 +444,7 @@ quiz:[['A business owns cash, inventory and equipment. These are:', ['Assets','L
 {id:'ledger-trial-balance',title:'Ledger & Trial Balance',subtitle:'From journal entries to account balances',body:`<h3>1. Ledger</h3><p>A ledger groups journal transactions account by account—for example, all Bank transactions in the Bank account, all rent in Rent Expense. Posting transfers each journal entry to the relevant ledger accounts.</p><h3>2. Balancing accounts</h3><p>At a chosen date, total each side of an account and calculate the balance. Asset and expense accounts often have debit balances; liability, equity and income accounts often have credit balances.</p><h3>3. Trial balance</h3><p>A trial balance lists ledger balances and checks whether total debit balances equal total credit balances. It can reveal arithmetic or posting errors, but agreement does not prove that every entry is correct.</p><div class="example">A transaction omitted completely from the books may not make the trial balance disagree. So always review supporting documents and account logic too.</div>`,quiz:[['The ledger groups transactions:', ['Only by date','By account','By supplier name only','By tax rate'],1],['A trial balance checks whether:', ['Profit is always positive','Every fraud is found','Total debits equal total credits','Cash equals capital'],2],['If a transaction is completely omitted, the trial balance may:', ['Still agree','Always show a debit error','Always show a credit error','Be impossible to prepare'],0],['Posting means transferring entries from journal to:', ['Invoice','Bank statement','Budget','Ledger'],3]]},
 {id:'financial-statements',title:'Financial Statements Overview',subtitle:'Profit, position and cash flow',body:`<h3>1. Three statements to recognise</h3><ul><li><strong>Income statement / Profit and Loss:</strong> income minus expenses over a period shows profit or loss.</li><li><strong>Balance sheet:</strong> assets, liabilities and equity at a point in time.</li><li><strong>Cash flow statement:</strong> cash movements classified into operating, investing and financing activities.</li></ul><h3>2. Small example</h3><p>Sales ₹80,000 less expenses ₹55,000 gives profit ₹25,000 (ignoring taxes and other items). Profit is not necessarily equal to cash generated, because sales may be on credit and expenses may be unpaid.</p><h3>3. Remember</h3><p>The accounting equation underpins the balance sheet. The income statement explains part of the change in equity through profit or loss. Cash flow explains why the cash balance changed.</p>`,quiz:[['Profit is generally:', ['Assets minus liabilities','Income minus expenses','Cash received only','Capital plus loan'],1],['The balance sheet shows position:', ['At a point in time','Only for one transaction','Only cash receipts','Only next year'],0],['Profit and cash generated can differ because of:', ['Credit sales and unpaid expenses','The accounting equation','The date format only','No reason'],0],['Cash flow statements classify cash movements into operating, investing and:', ['Inventory','Equity only','Financing','Depreciation only'],2]]}
 ];
-let data=loadData(), currentId=data.currentLesson||lessons[0].id, startMs=null, elapsedBefore=0, ticker=null, notesDebounce=null;
+let data=loadData(), currentId=data.currentLesson||lessons[0].id, startMs=null, elapsedBefore=0, ticker=null, notesDebounce=null; if(data.plan && Number(data.plan.dailyTarget)===240){data.plan.dailyTarget=300;try{localStorage.setItem('aaroh-study-desk-v2',JSON.stringify(data))}catch(e){}}
 function fresh(){return {version:2,currentLesson:lessons[0].id,notes:{},myNotes:[],results:{},sessions:[],plan:{dailyTarget:300,weeklyTarget:15,planStart:'',planEnd:'',schedule:''}}}
 function loadData(){try{const v=JSON.parse(localStorage.getItem(STORE)||'null');if(v&&v.version===2)return {...fresh(),...v,notes:v.notes||{},myNotes:Array.isArray(v.myNotes)?v.myNotes:[],results:v.results||{},sessions:v.sessions||[],plan:{...fresh().plan,...(v.plan||{})}}}catch(e){}let d=fresh();try{const old=JSON.parse(localStorage.getItem(OLD)||'[]');if(Array.isArray(old))d.sessions=old.map((r,i)=>({id:'old-'+i,date:r.date||'',topic:r.topic||'Previous session',lessonId:lessons[0].id,start:r.start||'',end:r.end||'',minutes:Number(r.minutes)||0,status:r.status||'Practised',notes:r.notes||''}))}catch(e){}try{const n=localStorage.getItem(NOTES);if(n)d.notes[lessons[0].id]=n}catch(e){}return d}
 function save(){try{localStorage.setItem(STORE,JSON.stringify(data));$('saveState').textContent='Saved on this device';}catch(e){$('saveState').textContent='Save failed — export a backup';}}
@@ -418,30 +453,36 @@ function fmt(ms){let s=Math.floor(ms/1000);return [Math.floor(s/3600),Math.floor
 function selected(){return lessons.find(l=>l.id===currentId)||lessons[0]}
 const globalSearch=$('globalSearch'),globalResults=$('globalResults');
 const searchTerms=[
-['Excel Formula Practice','Practice Excel formulas with guided exercises','excel','./excel-practice.html'],
-['Subject Dictionary','Definitions, concepts and Excel formulas','dictionary','./dictionary.html'],
-['XLOOKUP','Find a matching value from another range','formula','./dictionary.html?q=XLOOKUP'],
-['VLOOKUP','Look up a value vertically in the first column of a table','formula','./dictionary.html?q=VLOOKUP'],
-['VLOOKUP example','=VLOOKUP(A2,$F$2:$H$100,3,FALSE)','formula','./dictionary.html?q=VLOOKUP'],
+['VLOOKUP','Search down the first column and return a matching row value. Example: =VLOOKUP(A2,$F$2:$H$100,3,FALSE)','formula','./dictionary.html?q=VLOOKUP'],
+['HLOOKUP','Search across the first row and return a value from a matching column. Example: =HLOOKUP(B1,$B$1:$G$5,3,FALSE)','formula','./dictionary.html?q=HLOOKUP'],
+['XLOOKUP','Modern flexible lookup formula with exact-match behaviour by default','formula','./dictionary.html?q=XLOOKUP'],
+['INDEX + MATCH','Flexible lookup using a row position and a matching position','formula','./dictionary.html?q=INDEX%20%2B%20MATCH'],
 ['SUM','Add numbers in selected cells or ranges','formula','./dictionary.html?q=SUM'],
-['IFERROR','Return a chosen result when a formula produces an error','formula','./dictionary.html?q=IFERROR'],
+['SUMIF','Add values that meet one condition','formula','./dictionary.html?q=SUMIF'],
 ['SUMIFS','Add values that meet multiple conditions','formula','./dictionary.html?q=SUMIFS'],
+['COUNTIF','Count cells that meet one condition','formula','./dictionary.html?q=COUNTIF'],
 ['COUNTIFS','Count rows meeting multiple conditions','formula','./dictionary.html?q=COUNTIFS'],
-['IF','Return one result when a condition is true and another when false','formula','./dictionary.html?q=IF']
+['IF','Return one result when a condition is true and another when false','formula','./dictionary.html?q=IF'],
+['IFERROR','Return a chosen result when a formula produces an error','formula','./dictionary.html?q=IFERROR'],
+['Excel Formula Practice','Practice formulas with guided exercises and worked examples','excel','./excel-practice.html'],
+['Subject Dictionary','Search definitions, examples and formulas across PHALGUN','dictionary','./dictionary.html']
 ];
 function renderGlobalSearch(){
- const q=(globalSearch.value||'').trim().toLowerCase();
+ const raw=(globalSearch.value||'').trim(),q=raw.toLocaleLowerCase('en-IN');
  if(!q){globalResults.classList.add('hidden');globalResults.innerHTML='';return}
- const matches=[];
- lessons.forEach(l=>{if((l.title+' '+l.subtitle+' '+l.body.replace(/<[^>]*>/g,' ')).toLowerCase().includes(q))matches.push({title:l.title,desc:'Lesson · '+l.subtitle,action:()=>{globalResults.classList.add('hidden');document.querySelector('[data-tab="learn"]').click();selectLesson(l.id);$('lessonTitle').scrollIntoView({behavior:'smooth',block:'start'})}})});
- searchTerms.forEach(t=>{if(t.join(' ').toLowerCase().includes(q))matches.push({title:t[0],desc:t[1],url:t[3]})});
- matches.push({title:'Search Subject Dictionary for “'+globalSearch.value.trim()+'”',desc:'Search all dictionary entries and Excel formulas',url:'./dictionary.html?q='+encodeURIComponent(globalSearch.value.trim())});
- globalResults.innerHTML=matches.length?matches.slice(0,8).map((m,i)=>'<button type="button" data-global-result="'+i+'">'+escapeHtml(m.title)+'<small>'+escapeHtml(m.desc)+'</small></button>').join(''):'<button type="button" disabled>No matching study content</button>';
+ const matches=[],seen=new Set();
+ const add=m=>{const key=(m.title+'|'+(m.url||m.desc)).toLowerCase();if(!seen.has(key)){seen.add(key);matches.push(m)}};
+ lessons.forEach(l=>{const plain=l.body.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ');if((l.title+' '+l.subtitle+' '+plain).toLocaleLowerCase('en-IN').includes(q)){const at=plain.toLocaleLowerCase('en-IN').indexOf(q);add({title:l.title,desc:'Lesson '+(lessons.indexOf(l)+1)+' · '+(at>=0?plain.slice(Math.max(0,at-65),at+145):l.subtitle),action:()=>{globalResults.classList.add('hidden');document.querySelector('[data-tab="learn"]')?.click();selectLesson(l.id);$('lessonTitle').scrollIntoView({behavior:'smooth',block:'start'})}})}});
+ searchTerms.forEach(t=>{if(t.join(' ').toLocaleLowerCase('en-IN').includes(q))add({title:t[0],desc:t[1],url:t[3]})});
+ add({title:'Search all dictionary entries for “'+raw+'”',desc:'Definitions, examples, formulas and related terms',url:'./dictionary.html?q='+encodeURIComponent(raw)});
+ add({title:'Search Excel Formula Practice for “'+raw+'”',desc:'Find matching formula exercises and worked examples',url:'./excel-practice.html?q='+encodeURIComponent(raw)});
+ globalResults.innerHTML=matches.length?matches.slice(0,12).map((m,i)=>'<button type="button" data-global-result="'+i+'">'+escapeHtml(m.title)+'<small>'+escapeHtml(m.desc)+'</small></button>').join(''):'<button type="button" disabled>No matching study content yet. Open the dictionary search below.</button>';
  globalResults.classList.remove('hidden');
  globalResults.querySelectorAll('[data-global-result]').forEach((b,i)=>b.onclick=()=>{const m=matches[i];if(m.action)m.action();else if(m.url)location.href=m.url});
 }
 globalSearch.addEventListener('input',renderGlobalSearch);
-globalSearch.addEventListener('keydown',e=>{if(e.key==='Escape')globalResults.classList.add('hidden');if(e.key==='Enter'){const b=globalResults.querySelector('[data-global-result]');if(b)b.click();else location.href='./dictionary.html?q='+encodeURIComponent(globalSearch.value)}});document.addEventListener('click',e=>{if(!e.target.closest('.global-search'))globalResults.classList.add('hidden')});
+globalSearch.addEventListener('keydown',e=>{if(e.key==='Escape')globalResults.classList.add('hidden');if(e.key==='Enter'){e.preventDefault();location.href='./dictionary.html?q='+encodeURIComponent(globalSearch.value.trim())}});
+document.addEventListener('click',e=>{if(!e.target.closest('.global-search'))globalResults.classList.add('hidden')});
 
 function passed(id){return !!(data.results[id]&&data.results[id].passed)}
 function renderLessons(){$('lessonList').innerHTML=lessons.map((l,i)=>'<button class="lesson '+(l.id===currentId?'active':'')+'" data-lesson="'+l.id+'"><strong>'+(passed(l.id)?'<span class="done">✓ </span>':'')+'Lesson '+(i+1)+': '+escapeHtml(l.title)+'</strong><small>'+escapeHtml(l.subtitle)+' · '+(data.results[l.id]?'Best: '+data.results[l.id].score+'/4':'Not yet assessed')+'</small></button>').join('');let n=lessons.filter(l=>passed(l.id)).length;$('courseBar').style.width=(n/lessons.length*100)+'%';$('courseProgress').textContent=n+' of '+lessons.length+' lessons passed'}
