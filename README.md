@@ -1,4 +1,4 @@
-# PHALGUN Study Planner
+# Study Desk
 
 A free, mobile-friendly study desk for GFPA / PHALGUN learning.
 
@@ -23,7 +23,7 @@ The `.github/workflows/pages.yml` workflow deploys this repository to GitHub Pag
 
 
 ## Subject Dictionary
-Open the standalone [PHALGUN Subject Dictionary](./dictionary.html) from the Study Planner. It includes searchable, subject-filtered definitions and practical examples across Accounting, Finance, IFRS, Advanced Excel, Data Analytics, Power BI, SQL, Python, SAP FICO, AI for Finance and Job Readiness. It is bundled as a web page: no dictionary document needs to be downloaded or uploaded.
+Open the standalone [Study Desk Subject Dictionary](./dictionary.html) from the Study Planner. It includes searchable, subject-filtered definitions and practical examples across Accounting, Finance, IFRS, Advanced Excel, Data Analytics, Power BI, SQL, Python, SAP FICO, AI for Finance and Job Readiness. It is bundled as a web page: no dictionary document needs to be downloaded or uploaded.
 
 ## Cross-platform feature benchmark (October 2026)
 This project is designed as an installable Progressive Web App, so the same web code can run in current browsers on Android, Windows, macOS and Linux. Native capabilities and offline support vary by browser/device; verify install and offline behavior on each target device.
