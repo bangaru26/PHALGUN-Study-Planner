@@ -1,0 +1,58 @@
+name: Deploy PHALGUN Study Planner to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate app assets
+        run: |
+          test -f index.html
+          test -f manifest.webmanifest
+          test -f icon.svg
+          test -f sw.js
+          node -e "const fs=require('fs'); const h=fs.readFileSync('index.html','utf8'); const scripts=[...h.matchAll(/<script\\b[^>]*>([\\s\\S]*?)<\\/script>/gi)].map(m=>m[1]).filter(s=>s.trim()); if(!scripts.length) throw Error('No inline app script found'); scripts.forEach(s=>new Function(s)); JSON.parse(fs.readFileSync('manifest.webmanifest','utf8')); console.log('App JavaScript and manifest syntax passed')"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Verify live app
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${PAGE_URL}" -o /tmp/index.html
+          curl --fail --silent --show-error --location "${PAGE_URL}manifest.webmanifest" -o /tmp/manifest.json
+          curl --fail --silent --show-error --location "${PAGE_URL}sw.js" -o /tmp/sw.js
+          grep -q 'PHALGUN Study Planner' /tmp/index.html
+          node -e "JSON.parse(require('fs').readFileSync('/tmp/manifest.json','utf8')); console.log('Live route, manifest and service worker verified')"
