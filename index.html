@@ -110,16 +110,50 @@ header .header-copy{min-width:0}
 #panel-learn .topic{font-size:clamp(21px,2.4vw,28px);margin:5px 0}
 @media(max-width:900px){.brand-head{align-items:flex-start;flex-wrap:wrap}.brand-copy{flex:1}.brand-head .global-search{width:100%;max-width:none}.study-dashboard{grid-template-columns:1fr}.stopwatch-card{grid-template-columns:auto 1fr auto;gap:5px 10px}.stopwatch-card>.eyebrow{grid-column:1;grid-row:1}.stopwatch-card>.live-date{grid-column:2;grid-row:1}.stopwatch-card>.live-time{grid-column:3;grid-row:1}.stopwatch-card>.elapsed-box{grid-column:1 / 3;grid-row:2}.stopwatch-card>.buttons{grid-column:3;grid-row:2;justify-content:flex-end}.stopwatch-card>.top-timer-status{grid-column:1/-1;grid-row:3}.dashboard-stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:650px){#panel-learn .grid{grid-template-columns:1fr}#panel-learn .grid>div:first-child,#panel-learn .grid>div:last-child{order:initial}.stopwatch-card{display:flex;flex-wrap:wrap;gap:6px 10px}.stopwatch-card>.eyebrow,.stopwatch-card>.live-date,.stopwatch-card>.live-time{margin:0}.stopwatch-card>.elapsed-box{flex:1 1 100%;margin:4px 0}.stopwatch-card>.buttons{width:100%;display:flex;flex-wrap:nowrap}.stopwatch-card .buttons button{flex:1 1 0;padding:8px 5px;font-size:11px}.stopwatch-card>.top-timer-status{width:100%}.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Final layout fix: remove redundant transfer banner and keep the stopwatch inside its card */
+.account-strip{display:none!important}
+.study-dashboard{display:grid!important;grid-template-columns:minmax(300px, .92fr) minmax(0, 2.08fr)!important;gap:9px!important;align-items:stretch!important;margin:8px 0 12px!important}
+.stopwatch-card{min-width:0;min-height:104px;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-rows:auto auto auto 1fr!important;gap:3px 10px!important;align-content:center!important;align-items:center!important;padding:11px 13px!important;overflow:hidden}
+.stopwatch-card>.eyebrow{grid-column:1!important;grid-row:1!important;margin:0!important}
+.stopwatch-card>.live-date{grid-column:1!important;grid-row:2!important;margin:0!important;font-size:12px!important;line-height:1.3}
+.stopwatch-card>.live-time{grid-column:1!important;grid-row:3!important;margin:0!important;font-size:18px!important;line-height:1.2}
+.stopwatch-card>.elapsed-box{grid-column:2!important;grid-row:1 / 4!important;min-width:120px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:1px!important;margin:0!important;padding:5px 8px!important;text-align:center!important}
+.stopwatch-card>.elapsed-box .muted{font-size:9px!important;letter-spacing:.8px!important}
+.stopwatch-card>.elapsed-box .clock{font-size:clamp(23px,2.3vw,30px)!important;line-height:1.1!important;margin:2px 0!important;white-space:nowrap}
+.stopwatch-card>.elapsed-box .top-timer-status{font-size:9px!important;line-height:1.2!important;margin:0!important;text-align:center!important}
+.stopwatch-card>.buttons{grid-column:1 / -1!important;grid-row:4!important;display:flex!important;flex-wrap:nowrap!important;gap:4px!important;align-self:end!important;margin-top:4px}
+.stopwatch-card>.buttons button{flex:1 1 0!important;min-width:0!important;white-space:nowrap!important;padding:6px 4px!important;font-size:10px!important;line-height:1.2!important}
+.dashboard-stats{min-width:0;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:7px!important}
+.dash-stat{min-width:0;padding:10px!important;overflow-wrap:anywhere}
+.dash-label{font-size:10px!important;line-height:1.3}
+.dash-value{font-size:19px!important;line-height:1.2}
+.dash-note{font-size:10px!important;line-height:1.3}
+@media(max-width:900px){
+ .study-dashboard{grid-template-columns:1fr!important}
+ .stopwatch-card{grid-template-columns:minmax(0,1fr) auto!important}
+ .dashboard-stats{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+}
+@media(max-width:600px){
+ .stopwatch-card{grid-template-columns:minmax(0,1fr) auto!important;padding:10px!important}
+ .stopwatch-card>.elapsed-box{min-width:112px!important}
+ .stopwatch-card>.elapsed-box .clock{font-size:25px!important}
+ .stopwatch-card>.buttons button{font-size:10px!important}
+ .dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:370px){
+ .stopwatch-card{grid-template-columns:1fr!important}
+ .stopwatch-card>.elapsed-box{grid-column:1!important;grid-row:4!important}
+ .stopwatch-card>.buttons{grid-row:5!important}
+ .stopwatch-card>.elapsed-box .clock{font-size:28px!important}
+}
 </style>
 </head>
 <body>
 <header><div class="brand-head"><img src="./study-planner-icon.webp" alt="Study Planner icon: infinity, graduation cap and lightbulb" width="58" height="58"><div class="brand-copy"><h1>PHALGUN Study Planner</h1><p class="brand-tagline">Learn Forever</p><p class="brand-philosophy">Learn - Apply - Solve</p></div><div class="global-search"><input id="globalSearch" type="search" placeholder="Search lessons, terms, Excel formulas…" aria-label="Search all study content"><span class="search-mark">⌕</span><div id="globalResults" class="global-results hidden" role="listbox"></div></div></div></header>
 <main class="wrap">
 <div class="subhead"><p><strong>Your learning space.</strong> Pick a lesson, study it, attempt the quiz and return whenever you want.</p><span class="pill" id="saveState">Saved on this device</span><span class="pill" id="connectivity">Checking connection…</span></div>
-<section class="account-strip" aria-label="Optional device transfer">
-  <div class="account-copy"><strong>↔ Move progress between devices (optional)</strong><span>No automatic sync is enabled yet. Export on one device, then restore on the other.</span><div class="sync-status good" id="accountStatus" role="status">Saved locally · no account required</div></div>
-  <div class="account-actions"><button id="backupJump" class="primary">Export / transfer progress</button><button id="restoreJump">Restore progress</button></div>
-</section>
+
 <section class="study-dashboard" aria-label="Study stopwatch and daily summary">
   <div class="stopwatch-card">
     <div class="eyebrow">◷ STUDY STOPWATCH</div>
@@ -237,8 +271,7 @@ $('importBackup').onclick=()=>{let f=$('importFile').files[0];if(!f){$('backupFe
 $('clearAll').onclick=()=>{if(!confirm('Permanently clear all Study Desk notes, results, sessions and plan from this browser? Export a backup first if you may need them.'))return;data=fresh();currentId=lessons[0].id;save();renderAll();renderLesson();$('backupFeedback').textContent='Local Study Desk data cleared.'};
 currentId=lessons.some(l=>l.id===data.currentLesson)?data.currentLesson:lessons[0].id;renderAll();renderLesson();$('clock').textContent='00:00:00';updateDashboardClock();setInterval(updateDashboardClock,1000);
 
-$('backupJump').onclick=()=>{document.querySelector('[data-tab="backup"]').click();$('exportJson').focus()};
-$('restoreJump').onclick=()=>{document.querySelector('[data-tab="backup"]').click();$('importFile').focus()};
+
 function updateConnectivity(){$('connectivity').textContent=navigator.onLine?'Online · local-first':'Offline · saved on this device';$('accountStatus').textContent=navigator.onLine?'Local-first · saved on this device':'Offline · changes remain saved on this device';$('accountStatus').className='sync-status good';}
 window.addEventListener('online',updateConnectivity);window.addEventListener('offline',updateConnectivity);updateConnectivity();
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{$('connectivity').textContent=navigator.onLine?'Online · local-first':'Offline · local-first';}));}
