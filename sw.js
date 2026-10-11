@@ -1,6 +1,6 @@
 'use strict';
-const CACHE = 'phalgun-study-planner-v1';
-const CORE = ['./', './index.html', './manifest.webmanifest', './icon.svg'];
+const CACHE = 'phalgun-study-planner-v2';
+const CORE = ['./', './index.html', './manifest.webmanifest', './icon.svg', './study-planner-icon.webp'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting()));
 });
