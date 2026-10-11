@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PHALGUN Subject Dictionary</title><style>
+:root{--ink:#17243a;--muted:#61738c;--line:#dce5ef;--teal:#0d9488}*{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:var(--ink);font:16px/1.55 system-ui,Segoe UI,Arial}header{background:#14263c;color:#fff;padding:25px max(18px,calc((100% - 1050px)/2))}header p{color:#d2deec}.wrap{max-width:1050px;margin:auto;padding:22px 16px 50px}.back{display:inline-block;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--teal);font-weight:700;text-decoration:none}.search{display:grid;grid-template-columns:1fr 240px;gap:10px;margin:16px 0}input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink);font:inherit}.summary{color:var(--muted);font-size:13px}.list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.term{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}.term h2{font-size:18px;margin:0 0 6px}.term p{margin:0;color:#42536b}.tag{display:inline-block;font-size:11px;text-transform:uppercase;color:#087e75;background:#e4f6f3;border-radius:30px;padding:3px 8px;margin-bottom:8px}@media(max-width:650px){.search,.list{grid-template-columns:1fr}header{padding:22px 18px}}</style></head><body><header><div style="max-width:1050px;margin:auto"><div style="font-size:12px;letter-spacing:1.4px;color:#79d9ce;font-weight:800">PHALGUN · LEARNING REFERENCE</div><h1 style="margin:6px 0">Subject Dictionary</h1><p>Plain-language definitions and practical examples for GFPA and PHALGUN.</p></div></header><main class="wrap"><a class="back" href="./index.html">← Back to Study Planner</a><div class="search"><input id="q" type="search" placeholder="Search term or definition" aria-label="Search dictionary"><select id="subject" aria-label="Filter subject"><option value="">All subjects</option></select></div><p class="summary" id="count" aria-live="polite"></p><div class="list" id="terms"></div><p class="summary">Dictionary entries are bundled with the app. No uploads or separate document files are needed. Verify standards-related topics against official materials.</p></main><script>
+(function(){
+const E=[
+["Accounting","Accounting equation","Assets = liabilities + equity. Business resources are financed by creditors or the owner.","₹1,00,000 assets − ₹30,000 liabilities = ₹70,000 equity."],
+["Accounting","Asset","A resource controlled by a business that can provide future economic benefit.","Cash, inventory, equipment or customer receivables."],
+["Accounting","Liability","A present obligation the business must settle.","A bank loan or supplier payable."],
+["Accounting","Equity","The residual interest in assets after deducting liabilities.","₹5 lakh assets − ₹2 lakh liabilities = ₹3 lakh equity."],
+["Accounting","Revenue","Income earned from ordinary business activities before expenses.","A shop sells goods for ₹12,000."],
+["Accounting","Expense","A cost incurred to operate or earn revenue.","Rent, salaries or electricity."],
+["Accounting","Accrual basis","Record income when earned and expenses when incurred, not only when cash moves.","Record December electricity expense even if paid in January."],
+["Accounting","Accounts receivable","Money customers owe the business.","A customer buys ₹8,000 of goods on credit."],
+["Accounting","Accounts payable","Money the business owes its suppliers.","Inventory purchased on credit for ₹15,000."],
+["Accounting","Depreciation","Allocation of an asset's depreciable cost over its useful life.","Spread equipment cost over the periods it is used."],
+["Accounting","Trial balance","List of ledger balances used to check total debits equal total credits.","It can reveal some posting errors, but not all errors."],
+["Accounting","Journal entry","Dated record of a transaction showing debit and credit accounts.","Record a cash purchase in the appropriate accounts."],
+["Accounting","Working capital","Current assets minus current liabilities.","₹2 lakh current assets − ₹1.2 lakh current liabilities = ₹80,000."],
+["Finance","Cash flow","Cash and cash-equivalent movements into and out of a business.","Customer receipts are inflows; supplier payments are outflows."],
+["Finance","Gross profit","Revenue less cost of goods sold.","₹1 lakh sales − ₹65,000 cost = ₹35,000."],
+["Finance","EBITDA","Earnings before interest, taxes, depreciation and amortisation; not the same as cash flow.","A measure used to compare operating performance with limitations."],
+["Finance","Budget variance","Difference between actual results and budget.","₹12,000 expense against ₹10,000 budget is ₹2,000 adverse."],
+["IFRS","IFRS","International Financial Reporting Standards issued by the IASB.","Standards guide financial reporting in many jurisdictions."],
+["IFRS","Materiality","Whether information could reasonably influence users' decisions.","An error's importance depends on amount and context."],
+["IFRS","Impairment","Reduction in an asset's carrying amount when required by the applicable standard.","Assess whether carrying amount exceeds recoverable amount under IAS 36."],
+["Advanced Excel","PivotTable","Tool to summarise and analyse data by categories and measures.","Summarise monthly sales by region."],
+["Advanced Excel","XLOOKUP","Function that searches a range and returns a corresponding value.","Find an employee's department using employee ID."],
+["Advanced Excel","Power Query","Tool for importing, cleaning and transforming data.","Combine monthly CSV files and standardise dates."],
+["Data Analytics","ETL","Extract, transform and load data into a target system.","Clean billing data before loading it into a report."],
+["Data Analytics","KPI","Key performance indicator used to track progress toward a goal.","Monthly close time or overdue invoice rate."],
+["Power BI","DAX","Data Analysis Expressions, used for calculations in Power BI models.","A measure calculates total sales in the current filter context."],
+["Power BI","Measure","Calculation evaluated according to report filter context.","Total Sales = SUM(Sales[Amount])."],
+["SQL","SELECT","SQL statement used to retrieve data.","SELECT customer_name, balance FROM customers;"],
+["SQL","JOIN","Combines rows from tables using a related condition.","Join invoices to customers using customer_id."],
+["SQL","Primary key","Column or set of columns that uniquely identifies each row.","invoice_id identifies an invoice."],
+["Python","Variable","Named reference to a value used by a program.","total = 1250.50"],
+["Python","DataFrame","Two-dimensional labelled data structure commonly provided by pandas.","A table of invoices with date, supplier and amount."],
+["SAP FICO","General Ledger","Central accounting record in SAP Financial Accounting.","Post eligible transactions to relevant G/L accounts."],
+["SAP FICO","Cost centre","Organisational unit used to collect and analyse costs.","Track monthly electricity cost for an office."],
+["AI for Finance","Hallucination","AI-generated claim that is incorrect or unsupported.","Verify an invented accounting reference against the actual standard."],
+["AI for Finance","Human-in-the-loop","A workflow where a person checks or approves important output.","Review AI-extracted invoice amounts before posting."],
+["Job Readiness","STAR method","Situation, Task, Action, Result: a structure for interview examples.","Explain a reconciliation problem and your measurable result."],
+["Job Readiness","Capstone project","Practical project showing skills through a realistic problem and deliverable.","Reconcile transactions, query them with SQL and report in Power BI."]
+];
+const q=document.getElementById('q'),s=document.getElementById('subject'),list=document.getElementById('terms'),count=document.getElementById('count');
+Array.from(new Set(E.map(x=>x[0]))).sort().forEach(x=>{let o=document.createElement('option');o.value=x;o.textContent=x;s.appendChild(o)});
+function esc(x){return String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){let term=q.value.trim().toLowerCase(),sub=s.value,rows=E.filter(x=>(!sub||x[0]===sub)&&(!term||x.join(' ').toLowerCase().includes(term)));count.textContent=rows.length+' of '+E.length+' terms';list.innerHTML=rows.length?rows.map(x=>'<article class="term"><span class="tag">'+esc(x[0])+'</span><h2>'+esc(x[1])+'</h2><p>'+esc(x[2])+'</p><p style="margin-top:9px"><strong>Example:</strong> '+esc(x[3])+'</p></article>').join(''):'<p>No matching terms. Try another search or select All subjects.</p>'}
+q.addEventListener('input',render);s.addEventListener('change',render);render();
+})();
+</script></body></html>
