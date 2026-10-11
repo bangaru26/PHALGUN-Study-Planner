@@ -176,10 +176,43 @@ header .header-copy{min-width:0}
 @media(max-width:780px){.study-dashboard{grid-template-columns:1fr!important}.stopwatch-card{grid-template-columns:minmax(0,1fr) minmax(125px,.7fr)!important}.dashboard-stats{grid-template-columns:repeat(4,minmax(0,1fr))!important}.dash-stat{padding:9px!important}}
 @media(max-width:570px){.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}.stopwatch-card{gap:7px!important;padding:10px!important}.stopwatch-card>.buttons button{font-size:10px!important;padding:8px 2px!important}.mini-stat{padding:7px!important}.mini-stat strong{font-size:18px}}
 @media(max-width:360px){.stopwatch-card{grid-template-columns:1fr!important}.timer-head{grid-column:1;grid-row:1}.stopwatch-card>.elapsed-box{grid-column:1;grid-row:2}.stopwatch-card>.buttons{grid-column:1;grid-row:3}}
+
+/* Match Founder reference: brand at upper-left; dashboard at upper-right; lesson first, curriculum second */
+@media(min-width:900px){
+ body{position:relative}
+ header{position:absolute;left:0;top:0;width:35%;height:190px;padding:20px 28px;background:#fff;border-bottom:0;z-index:2}
+ .brand-head{display:grid;grid-template-columns:58px 1fr;gap:8px 12px;align-items:center}
+ .brand-head>img{grid-column:1;grid-row:1;width:58px;height:58px}
+ .brand-copy{grid-column:1 / -1;grid-row:2}
+ .brand-copy h1{font-size:28px;line-height:1.2}
+ .brand-copy .brand-tagline,.brand-copy .brand-philosophy{font-size:12px;margin-top:4px}
+ .brand-head .global-search{grid-column:1 / -1;grid-row:3;width:100%;max-width:360px}
+ .wrap{max-width:none;width:100%;margin:0;padding:202px 28px 40px}
+ .study-dashboard{position:absolute;top:12px;left:37%;right:2.5%;width:auto;margin:0!important;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)!important;gap:10px!important}
+ .timer-column{grid-column:2;grid-row:1}
+ .dashboard-stats{grid-column:1;grid-row:1;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .stopwatch-card{grid-template-columns:minmax(0,1fr) minmax(115px,.8fr)!important;padding:12px!important}
+ .stopwatch-card>.buttons button{font-size:10px!important}
+ .lesson-mini-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .wrap>.study-dashboard + div{margin-top:0}
+ .tabs{margin-top:0}
+ #panel-learn .grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)!important}
+ #panel-learn .grid>div:first-child{order:2}
+ #panel-learn .grid>div:last-child{order:1}
+ #panel-learn .grid>div:first-child .card:first-child{display:none}
+ #panel-learn .grid>div:last-child .card:first-child{order:0}
+}
+@media(max-width:899px){
+ header{position:relative;width:100%;height:auto;padding:14px 18px}
+ .brand-head{display:flex;flex-wrap:wrap}
+ .brand-head .global-search{width:100%;max-width:none}
+ .wrap{padding-top:12px}
+ .study-dashboard{position:static;width:100%;margin:6px 0 12px!important}
+}
 </style>
 </head>
 <body>
-<header><div class="brand-head"><img src="./study-planner-icon.webp" alt="Study Planner icon: infinity, graduation cap and lightbulb" width="58" height="58"><div class="brand-copy"><h1>Study Desk</h1><p class="brand-tagline">Learn Forever</p><p class="brand-philosophy">Learn • Apply • Solve</p></div><div class="global-search"><input id="globalSearch" type="search" placeholder="Search lessons, terms, Excel formulas…" aria-label="Search all study content"><span class="search-mark">⌕</span><div id="globalResults" class="global-results hidden" role="listbox"></div></div></div></header>
+<header><div class="brand-head"><img src="./aaroh-symbol.png" alt="AAROH — Project Phoenix symbol" width="58" height="58"><div class="brand-copy"><h1>Study Desk</h1><p class="brand-tagline">Learn Forever</p><p class="brand-philosophy">Learn • Apply • Solve</p></div><div class="global-search"><input id="globalSearch" type="search" placeholder="Search lessons, terms, Excel formulas…" aria-label="Search all study content"><span class="search-mark">⌕</span><div id="globalResults" class="global-results hidden" role="listbox"></div></div></div></header>
 <main class="wrap">
 
 
