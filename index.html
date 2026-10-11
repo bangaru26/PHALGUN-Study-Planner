@@ -344,8 +344,8 @@ body>nav.tabs{position:fixed!important;top:198px!important;left:0!important;righ
 body>nav.tabs .tab{flex:0 0 auto!important;padding:8px 11px!important;font-size:12px!important}
 .wrap{max-width:1200px!important;width:100%!important;margin:0 auto!important;padding:252px 20px 38px!important}
 .wrap>.study-dashboard,.wrap>nav.tabs{display:none!important}
-.wrap>div[style*="justify-content:flex-end"]{display:none!important}.wrap>.notes-quiz-shortcuts{display:none!important}
-#panel-notes{max-width:1000px!important;margin:0 auto!important}#panel-notes .notes-heading{margin-top:0!important}
+.wrap>div[style*="justify-content:flex-end"]{display:none!important}.wrap>.notes-quiz-shortcuts{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:12px!important;margin:0 0 14px!important}
+.notes-band textarea{height:42px;min-height:42px!important;overflow:hidden;resize:none;line-height:1.55}#panel-learn .grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)!important;align-items:start!important}#panel-learn .grid>div:first-child{order:1!important}#panel-learn .grid>div:last-child{order:2!important}#panel-learn .lesson-list{display:grid!important;gap:7px!important}#panel-learn .lesson{display:block!important;width:100%!important;min-height:50px!important;position:relative;z-index:2;pointer-events:auto!important}#panel-notes{max-width:1000px!important;margin:0 auto!important}#panel-notes .notes-heading{margin-top:0!important}
 .global-results{z-index:200!important}
 @media(max-width:899px){
  header{position:relative!important;width:100%!important;height:auto!important;padding:12px 14px!important}
@@ -447,7 +447,7 @@ quiz:[['A business owns cash, inventory and equipment. These are:', ['Assets','L
 let data=loadData(), currentId=data.currentLesson||lessons[0].id, startMs=null, elapsedBefore=0, ticker=null, notesDebounce=null; if(data.plan && Number(data.plan.dailyTarget)===240){data.plan.dailyTarget=300;try{localStorage.setItem('aaroh-study-desk-v2',JSON.stringify(data))}catch(e){}}
 function fresh(){return {version:2,currentLesson:lessons[0].id,notes:{},myNotes:[],results:{},sessions:[],plan:{dailyTarget:300,weeklyTarget:15,planStart:'',planEnd:'',schedule:''}}}
 function loadData(){try{const v=JSON.parse(localStorage.getItem(STORE)||'null');if(v&&v.version===2)return {...fresh(),...v,notes:v.notes||{},myNotes:Array.isArray(v.myNotes)?v.myNotes:[],results:v.results||{},sessions:v.sessions||[],plan:{...fresh().plan,...(v.plan||{})}}}catch(e){}let d=fresh();try{const old=JSON.parse(localStorage.getItem(OLD)||'[]');if(Array.isArray(old))d.sessions=old.map((r,i)=>({id:'old-'+i,date:r.date||'',topic:r.topic||'Previous session',lessonId:lessons[0].id,start:r.start||'',end:r.end||'',minutes:Number(r.minutes)||0,status:r.status||'Practised',notes:r.notes||''}))}catch(e){}try{const n=localStorage.getItem(NOTES);if(n)d.notes[lessons[0].id]=n}catch(e){}return d}
-function save(){try{localStorage.setItem(STORE,JSON.stringify(data));$('saveState').textContent='Saved on this device';}catch(e){$('saveState').textContent='Save failed — export a backup';}}
+function save(){try{localStorage.setItem(STORE,JSON.stringify(data));const s=$('saveState');if(s)s.textContent='Saved on this device';}catch(e){const s=$('saveState');if(s)s.textContent='Save failed — export a backup';}}
 function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function fmt(ms){let s=Math.floor(ms/1000);return [Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(n=>String(n).padStart(2,'0')).join(':')}
 function selected(){return lessons.find(l=>l.id===currentId)||lessons[0]}
@@ -561,7 +561,7 @@ $('clearAll').onclick=()=>{if(!confirm('Permanently clear all Study Desk notes, 
 currentId=lessons.some(l=>l.id===data.currentLesson)?data.currentLesson:lessons[0].id;renderAll();renderLesson();$('clock').textContent='00:00:00';updateDashboardClock();setInterval(updateDashboardClock,1000);
 
 
-function updateConnectivity(){$('connectivity').textContent=navigator.onLine?'Online · local-first':'Offline · saved on this device';$('accountStatus').textContent=navigator.onLine?'Local-first · saved on this device':'Offline · changes remain saved on this device';$('accountStatus').className='sync-status good';}
+function updateConnectivity(){const c=$('connectivity'),a=$('accountStatus');if(c)c.textContent=navigator.onLine?'Online · local-first':'Offline · saved on this device';if(a){a.textContent=navigator.onLine?'Local-first · saved on this device':'Offline · changes remain saved on this device';a.className='sync-status good';}}
 window.addEventListener('online',updateConnectivity);window.addEventListener('offline',updateConnectivity);updateConnectivity();
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{$('connectivity').textContent=navigator.onLine?'Online · local-first':'Offline · local-first';}));}
 })();
