@@ -72,10 +72,48 @@ header p{margin-top:3px;font-size:13px}
 #resultsList .entry{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 #resultsList .entry strong{min-width:180px}
 @media(max-width:520px){.history-heading{align-items:stretch}.history-heading input{max-width:none}.history-heading h3{margin-bottom:4px}}
+
+/* October usability pass: compact timer, priority lesson, shared search */
+header .header-inner{max-width:1120px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+header .header-copy{min-width:0}
+.global-search{position:relative;width:min(340px,42vw);flex:0 0 auto}
+.global-search input{width:100%;padding:10px 38px 10px 13px;border-radius:11px;background:#f8fafc;color:#17243a;border:1px solid #d7e0eb;font-size:14px}
+.global-search .search-mark{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#0d9488;pointer-events:none}
+.global-results{position:absolute;top:calc(100% + 6px);right:0;width:min(420px,88vw);max-height:55vh;overflow:auto;background:#fff;border:1px solid #dce5ef;border-radius:12px;box-shadow:0 12px 30px #17243a24;z-index:30}
+.global-results button{display:block;width:100%;text-align:left;background:white;color:#17243a;border:0;border-bottom:1px solid #edf1f6;border-radius:0;padding:10px 12px;font-weight:500}
+.global-results button:hover{background:#eaf7f6}
+.global-results small{display:block;color:#71829b;font-weight:400}
+.study-dashboard{grid-template-columns:minmax(0,1.05fr) minmax(0,2fr);gap:9px;margin:8px 0 10px}
+.stopwatch-card{padding:10px 13px;display:grid;grid-template-columns:auto minmax(115px,.8fr) minmax(110px,.65fr) auto;gap:4px 12px;align-items:center}
+.stopwatch-card>.eyebrow{grid-column:1;grid-row:1}
+.stopwatch-card>.live-date{grid-column:2;grid-row:1;margin:0;font-size:12px}
+.stopwatch-card>.live-time{grid-column:3;grid-row:1;font-size:16px}
+.stopwatch-card>.elapsed-box{grid-column:1 / 4;grid-row:2;display:flex;align-items:center;justify-content:flex-start;gap:12px;margin:3px 0;padding:4px 10px;text-align:left}
+.stopwatch-card .elapsed-box .muted{white-space:nowrap;letter-spacing:.8px}
+.stopwatch-card .elapsed-box .clock{font-size:24px;margin:0}
+.stopwatch-card .top-timer-status{margin:0;font-size:10px;text-align:left}
+.stopwatch-card>.buttons{grid-column:4;grid-row:1 / 3;display:flex;flex-wrap:nowrap;gap:4px;align-items:center}
+.stopwatch-card .buttons button{white-space:nowrap;min-width:0;flex:0 0 auto;padding:7px 9px;font-size:11px}
+.dashboard-stats{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.dash-stat{padding:10px;min-height:0}
+.dash-label{font-size:11px}.dash-value{font-size:20px;margin:5px 0 2px}.dash-note{font-size:10px}
+#panel-learn .grid{grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);align-items:start}
+#panel-learn .grid>div:first-child{order:2}
+#panel-learn .grid>div:last-child{order:1}
+#panel-learn .grid>div:first-child .card{padding:13px}
+#panel-learn .grid>div:last-child .card{padding:15px}
+#panel-learn .lesson-content{line-height:1.55}
+#panel-learn .lesson-content h3{margin-top:12px}
+#panel-learn .lesson-content p{margin:7px 0}
+#panel-learn .lesson-content ul,#panel-learn .lesson-content ol{margin:7px 0}
+#panel-learn .lesson-content .example{padding:8px 11px;margin:8px 0}
+#panel-learn .topic{font-size:clamp(21px,2.4vw,28px);margin:5px 0}
+@media(max-width:900px){header .header-inner{align-items:flex-start;flex-direction:column;gap:9px}.global-search{width:100%;max-width:none}.study-dashboard{grid-template-columns:1fr}.stopwatch-card{grid-template-columns:auto 1fr auto;gap:5px 10px}.stopwatch-card>.eyebrow{grid-column:1;grid-row:1}.stopwatch-card>.live-date{grid-column:2;grid-row:1}.stopwatch-card>.live-time{grid-column:3;grid-row:1}.stopwatch-card>.elapsed-box{grid-column:1 / 3;grid-row:2}.stopwatch-card>.buttons{grid-column:3;grid-row:2;justify-content:flex-end}.stopwatch-card>.top-timer-status{grid-column:1/-1;grid-row:3}.dashboard-stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:650px){#panel-learn .grid{grid-template-columns:1fr}#panel-learn .grid>div:first-child,#panel-learn .grid>div:last-child{order:initial}.stopwatch-card{display:flex;flex-wrap:wrap;gap:6px 10px}.stopwatch-card>.eyebrow,.stopwatch-card>.live-date,.stopwatch-card>.live-time{margin:0}.stopwatch-card>.elapsed-box{flex:1 1 100%;margin:4px 0}.stopwatch-card>.buttons{width:100%;display:flex;flex-wrap:nowrap}.stopwatch-card .buttons button{flex:1 1 0;padding:8px 5px;font-size:11px}.stopwatch-card>.top-timer-status{width:100%}.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
-<header><h1>🔥 AAROH — STUDY DESK</h1><p>GFPA / PHALGUN · Learn independently · Practise · Track · Revise</p></header>
+<header><div class="header-inner"><div class="header-copy"><h1>🔥 AAROH — STUDY DESK</h1><p>GFPA / PHALGUN · Learn independently · Practise · Track · Revise</p></div><div class="global-search"><input id="globalSearch" type="search" placeholder="Search lessons, terms, Excel formulas…" aria-label="Search all study content"><span class="search-mark">⌕</span><div id="globalResults" class="global-results hidden" role="listbox"></div></div></div></header>
 <main class="wrap">
 <div class="subhead"><p><strong>Your learning space.</strong> Pick a lesson, study it, attempt the quiz and return whenever you want.</p><span class="pill" id="saveState">Saved on this device</span><span class="pill" id="connectivity">Checking connection…</span></div>
 <section class="account-strip" aria-label="Portable study progress">
@@ -91,13 +129,13 @@ header p{margin-top:3px;font-size:13px}
     <div class="buttons"><button class="primary" id="startTimer">▶ Start</button><button id="pauseTimer" disabled>Ⅱ Pause</button><button class="stop" id="finishTimer" disabled>■ Stop & Save</button><button id="resetTimer">↺ Reset</button></div>
   </div>
   <div class="dashboard-stats">
-    <div class="dash-stat"><div class="dash-label">◎ Daily Goal</div><div class="dash-value"><span id="dashGoal">4</span> <small>hrs/day</small></div><div class="dash-note">Your 5-hour daily mission</div></div>
+    <div class="dash-stat"><div class="dash-label">◎ Daily Goal</div><div class="dash-value"><span id="dashGoal">5</span> <small>hrs/day</small></div><div class="dash-note">Your 5-hour daily mission</div></div>
     <div class="dash-stat"><div class="dash-label">↗ Studied Today</div><div class="dash-value" id="dashStudied">0h</div><div class="dash-progress"><span id="dashProgress"></span></div><div class="dash-note" id="dashPercent">0% of daily goal</div></div>
     <div class="dash-stat"><div class="dash-label">◴ Time Remaining</div><div class="dash-value" id="dashRemaining">04:00:00</div><div class="dash-note">Until today's target is reached</div></div>
     <div class="dash-stat"><div class="dash-label">▦ Days Studied</div><div class="dash-value"><span id="dashDays">0</span> <small>days</small></div><div class="dash-note">Total unique study days</div></div>
   </div>
 </section>
-<div style="display:flex;justify-content:flex-end;margin:0 0 12px"><a href="./dictionary.html" style="display:inline-block;padding:10px 14px;border:1px solid #ccebe7;border-radius:10px;background:#eaf7f6;color:#087e75;text-decoration:none;font-weight:750">📚 Open Subject Dictionary ↗</a></div>
+<div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin:0 0 8px"><a href="./dictionary.html" style="display:inline-block;padding:8px 12px;border:1px solid #ccebe7;border-radius:10px;background:#eaf7f6;color:#087e75;text-decoration:none;font-weight:750;font-size:13px">📚 Subject Dictionary</a><a href="./excel-practice.html" style="display:inline-block;padding:8px 12px;border:1px solid #ccebe7;border-radius:10px;background:#eaf7f6;color:#087e75;text-decoration:none;font-weight:750;font-size:13px">ƒx Excel Formula Practice ↗</a></div>
 <nav class="tabs" role="tablist" aria-label="Study Desk sections">
 <button class="tab" role="tab" data-tab="learn" aria-selected="true">Learn & Practise</button><button class="tab" role="tab" data-tab="plan" aria-selected="false">Study Plan</button><button class="tab" role="tab" data-tab="history" aria-selected="false">Progress & History</button><button class="tab" role="tab" data-tab="backup" aria-selected="false">Backup & Settings</button>
 </nav>
@@ -146,6 +184,29 @@ function save(){try{localStorage.setItem(STORE,JSON.stringify(data));$('saveStat
 function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function fmt(ms){let s=Math.floor(ms/1000);return [Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(n=>String(n).padStart(2,'0')).join(':')}
 function selected(){return lessons.find(l=>l.id===currentId)||lessons[0]}
+const globalSearch=$('globalSearch'),globalResults=$('globalResults');
+const searchTerms=[
+['Excel Formula Practice','Practice Excel formulas with guided exercises','excel','./excel-practice.html'],
+['Subject Dictionary','Definitions, concepts and Excel formulas','dictionary','./dictionary.html'],
+['XLOOKUP','Find a matching value from another range','formula','./dictionary.html?q=XLOOKUP'],
+['VLOOKUP','Look up a value vertically in the first column of a table','formula','./dictionary.html?q=VLOOKUP'],
+['SUMIFS','Add values that meet multiple conditions','formula','./dictionary.html?q=SUMIFS'],
+['COUNTIFS','Count rows meeting multiple conditions','formula','./dictionary.html?q=COUNTIFS'],
+['IF','Return one result when a condition is true and another when false','formula','./dictionary.html?q=IF']
+];
+function renderGlobalSearch(){
+ const q=(globalSearch.value||'').trim().toLowerCase();
+ if(!q){globalResults.classList.add('hidden');globalResults.innerHTML='';return}
+ const matches=[];
+ lessons.forEach(l=>{if((l.title+' '+l.subtitle+' '+l.body.replace(/<[^>]*>/g,' ')).toLowerCase().includes(q))matches.push({title:l.title,desc:'Lesson · '+l.subtitle,action:()=>{globalResults.classList.add('hidden');document.querySelector('[data-tab="learn"]').click();selectLesson(l.id);$('lessonTitle').scrollIntoView({behavior:'smooth',block:'start'})}})});
+ searchTerms.forEach(t=>{if(t.join(' ').toLowerCase().includes(q))matches.push({title:t[0],desc:t[1],url:t[3]})});
+ globalResults.innerHTML=matches.length?matches.slice(0,8).map((m,i)=>'<button type="button" data-global-result="'+i+'">'+escapeHtml(m.title)+'<small>'+escapeHtml(m.desc)+'</small></button>').join(''):'<button type="button" disabled>No matching study content</button>';
+ globalResults.classList.remove('hidden');
+ globalResults.querySelectorAll('[data-global-result]').forEach((b,i)=>b.onclick=()=>{const m=matches[i];if(m.action)m.action();else if(m.url)location.href=m.url});
+}
+globalSearch.addEventListener('input',renderGlobalSearch);
+globalSearch.addEventListener('keydown',e=>{if(e.key==='Escape')globalResults.classList.add('hidden');if(e.key==='Enter'){const b=globalResults.querySelector('[data-global-result]');if(b)b.click();else location.href='./dictionary.html?q='+encodeURIComponent(globalSearch.value)}});document.addEventListener('click',e=>{if(!e.target.closest('.global-search'))globalResults.classList.add('hidden')});
+
 function passed(id){return !!(data.results[id]&&data.results[id].passed)}
 function renderLessons(){$('lessonList').innerHTML=lessons.map((l,i)=>'<button class="lesson '+(l.id===currentId?'active':'')+'" data-lesson="'+l.id+'"><strong>'+(passed(l.id)?'<span class="done">✓ </span>':'')+'Lesson '+(i+1)+': '+escapeHtml(l.title)+'</strong><small>'+escapeHtml(l.subtitle)+' · '+(data.results[l.id]?'Best: '+data.results[l.id].score+'/4':'Not yet assessed')+'</small></button>').join('');document.querySelectorAll('[data-lesson]').forEach(b=>b.onclick=()=>selectLesson(b.dataset.lesson));let n=lessons.filter(l=>passed(l.id)).length;$('courseBar').style.width=(n/lessons.length*100)+'%';$('courseProgress').textContent=n+' of '+lessons.length+' lessons passed'}
 function renderLesson(){const l=selected(),idx=lessons.findIndex(x=>x.id===l.id);$('dayLabel').textContent='LESSON '+(idx+1)+' OF '+lessons.length;$('lessonTitle').textContent=l.title;$('lessonSubtitle').textContent=l.subtitle;$('lessonBody').innerHTML=l.body;$('lessonNotes').value=data.notes[l.id]||'';$('quiz').innerHTML=l.quiz.map((q,i)=>'<div class="question"><p>'+(i+1)+'. '+escapeHtml(q[0])+'</p>'+q[1].map((a,j)=>'<label class="option"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+escapeHtml(a)+'</span></label>').join('')+'</div>').join('');$('quizFeedback').classList.add('hidden');$('quizFeedback').textContent='';renderLessons()}
