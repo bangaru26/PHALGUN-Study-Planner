@@ -209,6 +209,17 @@ header .header-copy{min-width:0}
  .wrap{padding-top:12px}
  .study-dashboard{position:static;width:100%;margin:6px 0 12px!important}
 }
+
+@media(min-width:900px){
+ .wrap{padding-top:252px!important}
+ .study-dashboard{z-index:3}
+ .notes-band{display:block;width:100%;box-sizing:border-box;margin:12px 0 14px}
+ #panel-learn .grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)!important;align-items:start}
+ #panel-learn .grid>div:first-child{display:flex;flex-direction:column;order:2}
+ #panel-learn .grid>div:last-child{display:flex;flex-direction:column;order:1}
+ .tabs{position:relative;z-index:1}
+}
+@media(max-width:899px){.notes-band{margin:12px 0}}
 </style>
 </head>
 <body>
@@ -237,6 +248,7 @@ header .header-copy{min-width:0}
   </div>
 </section>
 <div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin:0 0 8px"><a href="./dictionary.html" style="display:inline-block;padding:8px 12px;border:1px solid #ccebe7;border-radius:10px;background:#eaf7f6;color:#087e75;text-decoration:none;font-weight:750;font-size:13px">📚 Subject Dictionary</a><a href="./excel-practice.html" style="display:inline-block;padding:8px 12px;border:1px solid #ccebe7;border-radius:10px;background:#eaf7f6;color:#087e75;text-decoration:none;font-weight:750;font-size:13px">ƒx Excel Formula Practice ↗</a></div>
+<section class="card notes-band"><div class="eyebrow">LESSON NOTES</div><h2 style="margin:8px 0">My notes & questions</h2><p class="muted">Notes are attached to the selected lesson and saved automatically on this device.</p><textarea id="lessonNotes" placeholder="Write a summary, doubt, example or question..."></textarea><p class="notice" id="notesStatus">Auto-saves while you type.</p></section>
 <nav class="tabs" role="tablist" aria-label="Study Desk sections">
 <button class="tab" role="tab" data-tab="learn" aria-selected="true">Learn & Practise</button><button class="tab" role="tab" data-tab="plan" aria-selected="false">Study Plan</button><button class="tab" role="tab" data-tab="history" aria-selected="false">Progress & History</button><button class="tab" role="tab" data-tab="backup" aria-selected="false">Backup & Settings</button>
 </nav>
@@ -244,7 +256,7 @@ header .header-copy{min-width:0}
 <div class="grid">
 <div>
 <section class="card"><div class="eyebrow">YOUR CURRICULUM</div><h2 style="margin:8px 0">Accounting Fundamentals</h2><p class="muted">A starter track for GFPA / PHALGUN. Lessons unlock for study immediately; completion is recorded only after you pass the quiz or mark a lesson reviewed.</p><div class="progressbar"><span id="courseBar"></span></div><small class="muted" id="courseProgress">0 of 6 lessons passed</small><div class="lesson-list" id="lessonList" style="margin-top:14px"></div></section>
-<section class="card"><div class="eyebrow">LESSON NOTES</div><h2 style="margin:8px 0">My notes & questions</h2><p class="muted">Notes are attached to the selected lesson and saved automatically on this device.</p><textarea id="lessonNotes" placeholder="Write a summary, doubt, example or question..."></textarea><p class="notice" id="notesStatus">Auto-saves while you type.</p></section>
+
 </div>
 <div>
 <section class="card"><div class="eyebrow" id="dayLabel">LESSON 1</div><h2 class="topic" id="lessonTitle">Accounting Equation</h2><p class="muted" id="lessonSubtitle">The foundation of double-entry accounting</p><div class="lesson-content" id="lessonBody"></div><hr style="border-color:var(--line);margin:18px 0"></section>
