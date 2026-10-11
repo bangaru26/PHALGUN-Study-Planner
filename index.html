@@ -200,6 +200,7 @@ function renderGlobalSearch(){
  const matches=[];
  lessons.forEach(l=>{if((l.title+' '+l.subtitle+' '+l.body.replace(/<[^>]*>/g,' ')).toLowerCase().includes(q))matches.push({title:l.title,desc:'Lesson · '+l.subtitle,action:()=>{globalResults.classList.add('hidden');document.querySelector('[data-tab="learn"]').click();selectLesson(l.id);$('lessonTitle').scrollIntoView({behavior:'smooth',block:'start'})}})});
  searchTerms.forEach(t=>{if(t.join(' ').toLowerCase().includes(q))matches.push({title:t[0],desc:t[1],url:t[3]})});
+ matches.push({title:'Search Subject Dictionary for “'+globalSearch.value.trim()+'”',desc:'Search all dictionary entries and Excel formulas',url:'./dictionary.html?q='+encodeURIComponent(globalSearch.value.trim())});
  globalResults.innerHTML=matches.length?matches.slice(0,8).map((m,i)=>'<button type="button" data-global-result="'+i+'">'+escapeHtml(m.title)+'<small>'+escapeHtml(m.desc)+'</small></button>').join(''):'<button type="button" disabled>No matching study content</button>';
  globalResults.classList.remove('hidden');
  globalResults.querySelectorAll('[data-global-result]').forEach((b,i)=>b.onclick=()=>{const m=matches[i];if(m.action)m.action();else if(m.url)location.href=m.url});
