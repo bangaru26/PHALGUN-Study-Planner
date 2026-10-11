@@ -16,7 +16,7 @@ https://bangaru26.github.io/PHALGUN-Study-Planner/
 - Installable web-app metadata and offline app-shell cache
 
 ## Privacy and limits
-This standalone mini-module stores notes, quiz results and session history in this browser's local storage. It has no account login or cloud synchronization. Different browsers/devices do not automatically share progress. Use JSON backup/restore to transfer it. Do not enter passwords, government ID numbers, banking details or other sensitive information.
+This standalone Study Planner stores notes, quiz results, settings and session history in this browser's local storage. It has no third-party authentication or cloud synchronization. Different browsers/devices do not automatically share progress; use the built-in JSON backup/restore to transfer it. Do not enter passwords, government ID numbers, banking details or other sensitive information.
 
 ## Deploy
 The `.github/workflows/pages.yml` workflow deploys this repository to GitHub Pages on pushes to `main`. Repository Pages source is configured for **GitHub Actions**.
@@ -43,4 +43,4 @@ References for this benchmark: [Anki](https://apps.ankiweb.net/), [RemNote](http
 - Keep local/offline learning usable, show clearly whether data is local-only or synced, and provide portable exports so browser resets do not silently destroy records.
 - Never store passwords or authentication secrets in localStorage. Login must use a trusted authentication flow; cloud sync must verify the signed-in identity server-side and protect each learner's data.
 - AI features should be optional, disclose when content leaves the device, cite the material used, and avoid sending private notes to an AI service without explicit consent.
-- Cross-device login/sync is **not complete until the authenticated backend is deployed and end-to-end tested**. The GitHub Pages site currently provides the local-first study experience; do not treat the drafted sync bridge as a live secure account system yet.
+- Automatic cross-device cloud sync is intentionally disabled. The GitHub Pages app runs locally and offline, and portable JSON backup/restore is the supported transfer path until a separately approved, sovereign sync service is implemented and tested.
