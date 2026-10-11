@@ -1,7 +1,7 @@
 {
-  "name": "PHALGUN Study Planner",
-  "short_name": "PHALGUN",
-  "description": "Learn Forever · Learn - Apply - Solve",
+  "name": "Study Desk",
+  "short_name": "Study Desk",
+  "description": "Learn Forever · Learn • Apply • Solve",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
