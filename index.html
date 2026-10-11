@@ -147,20 +147,54 @@ header .header-copy{min-width:0}
  .stopwatch-card>.buttons{grid-row:5!important}
  .stopwatch-card>.elapsed-box .clock{font-size:28px!important}
 }
+
+/* Study Desk layout refresh: compact timer, lesson stats under timer, no extra learning-space strip */
+.subhead{display:none!important}
+.study-dashboard{display:grid!important;grid-template-columns:minmax(290px,.92fr) minmax(0,1.08fr)!important;gap:12px!important;align-items:start!important;margin:6px 0 14px!important}
+.timer-column{min-width:0}
+.stopwatch-card{min-width:0;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(116px,.82fr)!important;grid-template-rows:auto auto auto!important;align-items:center!important;gap:8px 12px!important;padding:13px!important;overflow:hidden}
+.timer-head{grid-column:1;grid-row:1 / 3;min-width:0}
+.timer-head .eyebrow{margin-bottom:8px}
+.timer-head .live-date{font-size:12px;line-height:1.35;margin:5px 0}
+.timer-head .live-time{font-size:clamp(17px,1.8vw,23px);line-height:1.2;overflow-wrap:anywhere}
+.stopwatch-card>.elapsed-box{grid-column:2;grid-row:1 / 3;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0;padding:8px 5px;text-align:center}
+.stopwatch-card>.elapsed-box .clock{font-size:clamp(25px,3vw,36px);line-height:1.05;margin:5px 0;white-space:nowrap}
+.stopwatch-card>.elapsed-box .muted{font-size:9px;letter-spacing:1px}
+.stopwatch-card>.elapsed-box .top-timer-status{font-size:9px;line-height:1.3;text-align:center;overflow-wrap:anywhere}
+.stopwatch-card>.buttons{grid-column:1 / -1;grid-row:3;display:flex;flex-wrap:nowrap;gap:5px;min-width:0;margin:0}
+.stopwatch-card>.buttons button{flex:1 1 0;min-width:0;padding:8px 4px;font-size:clamp(10px,.9vw,12px);white-space:nowrap}
+.lesson-mini-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:7px}
+.mini-stat{background:#fff;border:1px solid #e1e8f0;border-radius:10px;padding:8px 10px;min-width:0}
+.mini-stat span{display:block;font-size:11px;color:#61738c}
+.mini-stat strong{display:block;font-size:20px;color:#0d9488;line-height:1.25}
+.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}
+.dash-stat{min-height:0!important;padding:11px!important;border-radius:12px!important}
+.dash-label{font-size:11px!important;line-height:1.3}
+.dash-value{font-size:21px!important;margin:5px 0 2px!important}
+.dash-note{font-size:10px!important;line-height:1.3}
+#panel-learn .grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+@media(max-width:780px){.study-dashboard{grid-template-columns:1fr!important}.stopwatch-card{grid-template-columns:minmax(0,1fr) minmax(125px,.7fr)!important}.dashboard-stats{grid-template-columns:repeat(4,minmax(0,1fr))!important}.dash-stat{padding:9px!important}}
+@media(max-width:570px){.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}.stopwatch-card{gap:7px!important;padding:10px!important}.stopwatch-card>.buttons button{font-size:10px!important;padding:8px 2px!important}.mini-stat{padding:7px!important}.mini-stat strong{font-size:18px}}
+@media(max-width:360px){.stopwatch-card{grid-template-columns:1fr!important}.timer-head{grid-column:1;grid-row:1}.stopwatch-card>.elapsed-box{grid-column:1;grid-row:2}.stopwatch-card>.buttons{grid-column:1;grid-row:3}}
 </style>
 </head>
 <body>
 <header><div class="brand-head"><img src="./study-planner-icon.webp" alt="Study Planner icon: infinity, graduation cap and lightbulb" width="58" height="58"><div class="brand-copy"><h1>Study Desk</h1><p class="brand-tagline">Learn Forever</p><p class="brand-philosophy">Learn • Apply • Solve</p></div><div class="global-search"><input id="globalSearch" type="search" placeholder="Search lessons, terms, Excel formulas…" aria-label="Search all study content"><span class="search-mark">⌕</span><div id="globalResults" class="global-results hidden" role="listbox"></div></div></div></header>
 <main class="wrap">
-<div class="subhead"><p><strong>Your learning space.</strong> Pick a lesson, study it, attempt the quiz and return whenever you want.</p><span class="pill" id="saveState">Saved on this device</span><span class="pill" id="connectivity">Checking connection…</span></div>
 
-<section class="study-dashboard" aria-label="Study stopwatch and daily summary">
-  <div class="stopwatch-card">
-    <div class="eyebrow">◷ STUDY STOPWATCH</div>
-    <div class="live-date" id="liveDate">Sunday, October 11, 2026</div>
-    <div class="live-time" id="liveTime">07:17:57 AM</div>
-    <div class="elapsed-box"><div class="muted">ELAPSED TIME</div><div class="clock" id="clock" aria-live="off">00:00:00</div><div class="top-timer-status" id="timerStatus">● Idle · Ready to study</div></div>
-    <div class="buttons"><button class="primary" id="startTimer">▶ Start</button><button id="pauseTimer" disabled>Ⅱ Pause</button><button class="stop" id="finishTimer" disabled>■ Stop & Save</button><button id="resetTimer">↺ Reset</button></div>
+
+<section class="study-dashboard" aria-label="Study Desk timer and progress">
+  <div class="timer-column">
+    <div class="stopwatch-card">
+      <div class="timer-head"><div class="eyebrow">◷ STUDY STOPWATCH</div><div class="live-date" id="liveDate">Sunday, October 11, 2026</div><div class="live-time" id="liveTime">07:17:57 AM</div></div>
+      <div class="elapsed-box"><div class="muted">ELAPSED TIME</div><div class="clock" id="clock" aria-live="off">00:00:00</div><div class="top-timer-status" id="timerStatus">● Idle · Ready to study</div></div>
+      <div class="buttons"><button class="primary" id="startTimer">▶ Start</button><button id="pauseTimer" disabled>Ⅱ Pause</button><button class="stop" id="finishTimer" disabled>■ Stop & Save</button><button id="resetTimer">↺ Reset</button></div>
+    </div>
+    <div class="lesson-mini-stats" aria-label="Current lesson progress">
+      <div class="mini-stat"><span>Sessions</span><strong id="sessionCount">0</strong></div>
+      <div class="mini-stat"><span>Study minutes</span><strong id="minuteCount">0</strong></div>
+      <div class="mini-stat"><span>Passed</span><strong id="passedCount">0</strong></div>
+    </div>
   </div>
   <div class="dashboard-stats">
     <div class="dash-stat"><div class="dash-label">◎ Daily Goal</div><div class="dash-value"><span id="dashGoal">5</span> <small>hrs/day</small></div><div class="dash-note">Your 5-hour daily mission</div></div>
@@ -180,7 +214,7 @@ header .header-copy{min-width:0}
 <section class="card"><div class="eyebrow">LESSON NOTES</div><h2 style="margin:8px 0">My notes & questions</h2><p class="muted">Notes are attached to the selected lesson and saved automatically on this device.</p><textarea id="lessonNotes" placeholder="Write a summary, doubt, example or question..."></textarea><p class="notice" id="notesStatus">Auto-saves while you type.</p></section>
 </div>
 <div>
-<section class="card"><div class="eyebrow" id="dayLabel">LESSON 1</div><h2 class="topic" id="lessonTitle">Accounting Equation</h2><p class="muted" id="lessonSubtitle">The foundation of double-entry accounting</p><div class="lesson-content" id="lessonBody"></div><hr style="border-color:var(--line);margin:18px 0"><div class="stats"><div class="stat"><span class="muted">Sessions</span><strong id="sessionCount">0</strong></div><div class="stat"><span class="muted">Study minutes</span><strong id="minuteCount">0</strong></div><div class="stat"><span class="muted">Passed</span><strong id="passedCount">0</strong></div></div></section>
+<section class="card"><div class="eyebrow" id="dayLabel">LESSON 1</div><h2 class="topic" id="lessonTitle">Accounting Equation</h2><p class="muted" id="lessonSubtitle">The foundation of double-entry accounting</p><div class="lesson-content" id="lessonBody"></div><hr style="border-color:var(--line);margin:18px 0"></section>
 <section class="card"><div class="eyebrow">CHECK YOUR UNDERSTANDING</div><h2 style="margin:8px 0">Lesson quiz</h2><p class="muted">Choose one answer per question. Your score is saved. Pass mark: 3 out of 4.</p><div id="quiz"></div><div class="buttons"><button class="primary" id="submitQuiz">Check answers & save result</button><button id="markReviewed">Mark reviewed</button></div><div id="quizFeedback" class="feedback hidden" aria-live="polite"></div></section>
 </div>
 </div>
