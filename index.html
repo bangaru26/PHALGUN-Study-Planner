@@ -220,6 +220,15 @@ header .header-copy{min-width:0}
  .tabs{position:relative;z-index:1}
 }
 @media(max-width:899px){.notes-band{margin:12px 0}}
+
+/* Notes + quick quiz navigation: notes on left, quiz jump on right */
+.notes-quiz-shortcuts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:stretch;margin:12px 0 14px}
+.notes-band,.quiz-shortcut{min-width:0;margin:0!important}
+.notes-band textarea{min-height:90px;resize:vertical}
+.quiz-shortcut{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:18px}
+.quiz-jump{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:9px;padding:10px 14px;background:#0da6a4;color:white;font-weight:750;margin-top:8px}
+#lessonQuizCard{scroll-margin-top:18px}
+@media(max-width:640px){.notes-quiz-shortcuts{grid-template-columns:1fr;gap:8px}.notes-band textarea{min-height:80px}.quiz-shortcut{padding:14px}}
 </style>
 </head>
 <body>
@@ -248,7 +257,10 @@ header .header-copy{min-width:0}
   </div>
 </section>
 <div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin:0 0 8px"><a href="./dictionary.html" style="display:inline-block;padding:8px 12px;border:1px solid #ccebe7;border-radius:10px;background:#eaf7f6;color:#087e75;text-decoration:none;font-weight:750;font-size:13px">📚 Subject Dictionary</a><a href="./excel-practice.html" style="display:inline-block;padding:8px 12px;border:1px solid #ccebe7;border-radius:10px;background:#eaf7f6;color:#087e75;text-decoration:none;font-weight:750;font-size:13px">ƒx Excel Formula Practice ↗</a></div>
-<section class="card notes-band"><div class="eyebrow">LESSON NOTES</div><h2 style="margin:8px 0">My notes & questions</h2><p class="muted">Notes are attached to the selected lesson and saved automatically on this device.</p><textarea id="lessonNotes" placeholder="Write a summary, doubt, example or question..."></textarea><p class="notice" id="notesStatus">Auto-saves while you type.</p></section>
+<div class="notes-quiz-shortcuts">
+  <section class="card notes-band"><div class="eyebrow">LESSON NOTES</div><h2 style="margin:8px 0">My notes & questions</h2><p class="muted">Notes are attached to the selected lesson and saved automatically on this device.</p><textarea id="lessonNotes" placeholder="Write a summary, doubt, example or question..."></textarea><p class="notice" id="notesStatus">Auto-saves while you type.</p></section>
+  <aside class="card quiz-shortcut"><div class="eyebrow">READY TO TEST YOURSELF?</div><h2 style="margin:8px 0">Lesson quiz</h2><p class="muted">Jump straight to the quiz whenever you're ready. Your lesson content stays below.</p><a class="primary quiz-jump" href="#lessonQuizCard">Go to Lesson Quiz ↓</a></aside>
+</div>
 <nav class="tabs" role="tablist" aria-label="Study Desk sections">
 <button class="tab" role="tab" data-tab="learn" aria-selected="true">Learn & Practise</button><button class="tab" role="tab" data-tab="plan" aria-selected="false">Study Plan</button><button class="tab" role="tab" data-tab="history" aria-selected="false">Progress & History</button><button class="tab" role="tab" data-tab="backup" aria-selected="false">Backup & Settings</button>
 </nav>
@@ -260,7 +272,7 @@ header .header-copy{min-width:0}
 </div>
 <div>
 <section class="card"><div class="eyebrow" id="dayLabel">LESSON 1</div><h2 class="topic" id="lessonTitle">Accounting Equation</h2><p class="muted" id="lessonSubtitle">The foundation of double-entry accounting</p><div class="lesson-content" id="lessonBody"></div><hr style="border-color:var(--line);margin:18px 0"></section>
-<section class="card"><div class="eyebrow">CHECK YOUR UNDERSTANDING</div><h2 style="margin:8px 0">Lesson quiz</h2><p class="muted">Choose one answer per question. Your score is saved. Pass mark: 3 out of 4.</p><div id="quiz"></div><div class="buttons"><button class="primary" id="submitQuiz">Check answers & save result</button><button id="markReviewed">Mark reviewed</button></div><div id="quizFeedback" class="feedback hidden" aria-live="polite"></div></section>
+<section class="card" id="lessonQuizCard"><div class="eyebrow">CHECK YOUR UNDERSTANDING</div><h2 style="margin:8px 0">Lesson quiz</h2><p class="muted">Choose one answer per question. Your score is saved. Pass mark: 3 out of 4.</p><div id="quiz"></div><div class="buttons"><button class="primary" id="submitQuiz">Check answers & save result</button><button id="markReviewed">Mark reviewed</button></div><div id="quizFeedback" class="feedback hidden" aria-live="polite"></div></section>
 </div>
 </div>
 </section>
