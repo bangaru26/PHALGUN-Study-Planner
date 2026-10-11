@@ -229,6 +229,34 @@ header .header-copy{min-width:0}
 .quiz-jump{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:9px;padding:10px 14px;background:#0da6a4;color:white;font-weight:750;margin-top:8px}
 #lessonQuizCard{scroll-margin-top:18px}
 @media(max-width:640px){.notes-quiz-shortcuts{grid-template-columns:1fr;gap:8px}.notes-band textarea{min-height:80px}.quiz-shortcut{padding:14px}}
+
+/* Compact content width for secondary Study Desk tabs */
+:root{--desk-content-width:1120px}
+@media(min-width:900px){
+ #panel-plan,#panel-history,#panel-backup{max-width:var(--desk-content-width);margin-left:auto;margin-right:auto}
+ #panel-plan .grid,#panel-backup .grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)!important;gap:14px!important;align-items:start}
+ #panel-plan .card,#panel-backup .card,#panel-history>.card{padding:20px!important;min-width:0}
+ #panel-plan .two{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ #panel-plan input,#panel-plan textarea,#panel-backup input{max-width:100%;box-sizing:border-box}
+ #panel-history .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+ #panel-history .stat{min-width:0}
+ #panel-history .footer-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+ #panel-history #sessionSearch{max-width:360px;float:right}
+ #panel-history .notice{max-width:900px}
+ #panel-backup .card ul{padding-left:22px}
+}
+@media(min-width:1400px){
+ :root{--desk-content-width:1180px}
+}
+@media(max-width:899px){
+ #panel-plan .grid,#panel-backup .grid{grid-template-columns:minmax(0,1fr)!important;gap:10px}
+ #panel-history .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+ #panel-history .stat{padding:10px;min-width:0}
+}
+@media(max-width:520px){
+ #panel-history .stats{grid-template-columns:1fr}
+ #panel-history #sessionSearch{max-width:100%;width:100%;float:none}
+}
 </style>
 </head>
 <body>
