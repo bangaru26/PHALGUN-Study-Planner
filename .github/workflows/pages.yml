@@ -56,7 +56,7 @@ jobs:
           curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}manifest.webmanifest?verify=${GITHUB_SHA}" -o /tmp/manifest.json
           curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}sw.js?verify=${GITHUB_SHA}" -o /tmp/sw.js
           grep -q 'Study Desk' /tmp/index.html
-          grep -q 'Study Plan &amp; Progress' /tmp/index.html
+          grep -q 'Study Plan & Progress' /tmp/index.html
           curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}study-desk-icon.svg?verify=${GITHUB_SHA}" -o /tmp/study-desk-icon.svg
           grep -q '<svg' /tmp/study-desk-icon.svg
           node -e "JSON.parse(require('fs').readFileSync('/tmp/manifest.json','utf8')); console.log('Live Study Desk, pinned navigation, icon, manifest and service worker verified')"
