@@ -414,28 +414,33 @@ const dt=()=>{if($('sharedDate'))$('sharedDate').textContent=new Date().toLocale
  .shared-commandbar .shared-nav{height:auto!important;flex-wrap:wrap!important}
 }
 </style>
-<style id="stopwatch-root-cause-fix">
+
+<style id="study-desk-toolbar-layout-final">
 @media(min-width:1000px){
- html body .shared-commandbar{position:fixed!important;top:0!important;left:0!important;right:0!important;height:245px!important;min-height:245px!important;overflow:visible!important}
- html body .shared-commandbar .shared-topline{display:grid!important;position:relative!important;height:184px!important;min-height:184px!important;grid-template-columns:210px minmax(0,1fr)!important;grid-template-rows:92px 84px!important;gap:5px!important;padding:7px!important;overflow:visible!important}
- html body .shared-commandbar .shared-brand-area{position:relative!important;grid-column:1!important;grid-row:1/3!important}
- html body .shared-commandbar .shared-progressline{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;grid-column:2!important;grid-row:1!important;width:100%!important;height:100%!important;display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;grid-template-rows:1fr!important;gap:4px!important;align-self:stretch!important}
- html body .shared-commandbar .shared-stopwatch{position:relative!important;inset:auto!important;grid-column:2!important;grid-row:2!important;align-self:stretch!important;height:auto!important;min-height:0!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(150px,.8fr)!important;grid-template-rows:auto auto auto!important;gap:5px 10px!important;padding:9px 12px!important;overflow:visible!important}
- html body .shared-commandbar .shared-stopwatch .timer-head{grid-column:1!important;grid-row:1/3!important}
- html body .shared-commandbar .shared-stopwatch>.elapsed-box{grid-column:2!important;grid-row:1/3!important}
- html body .shared-commandbar .shared-stopwatch>.buttons{grid-column:1/-1!important;grid-row:3!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px!important;margin:0!important}
- html body .shared-commandbar .shared-stopwatch>.buttons button{min-width:0!important;width:100%!important;white-space:nowrap!important}
- html body .shared-commandbar .shared-nav{height:45px!important}
- html body main.wrap{padding-top:260px!important}
+ html body .shared-commandbar{position:fixed!important;z-index:1300!important;inset:0 0 auto 0!important;height:265px!important;min-height:265px!important;overflow:visible!important;display:block!important}
+ html body .shared-commandbar>.shared-topline{position:relative!important;inset:auto!important;display:grid!important;grid-template-columns:220px minmax(0,1fr)!important;grid-template-rows:58px 130px!important;gap:6px!important;width:100%!important;height:216px!important;min-height:216px!important;padding:7px 10px!important;overflow:visible!important}
+ html body .shared-commandbar .shared-brand-area{position:relative!important;inset:auto!important;grid-column:1!important;grid-row:1/3!important;height:auto!important;min-height:0!important;width:auto!important;overflow:visible!important}
+ html body .shared-commandbar .shared-search{position:absolute!important;left:auto!important;right:8px!important;top:auto!important;bottom:8px!important;width:260px!important;z-index:5!important}
+ html body .shared-commandbar .shared-progressline{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;grid-column:2!important;grid-row:1!important;width:100%!important;height:58px!important;min-height:58px!important;display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;grid-template-rows:1fr!important;gap:5px!important;overflow:hidden!important}
+ html body .shared-commandbar .shared-metric{position:relative!important;inset:auto!important;height:53px!important;min-height:53px!important;width:auto!important;min-width:0!important;padding:5px 4px!important;overflow:hidden!important}
+ html body .shared-commandbar .shared-stopwatch{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;grid-column:2!important;grid-row:2!important;align-self:stretch!important;width:100%!important;height:130px!important;min-height:130px!important;max-width:none!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(180px,.72fr)!important;grid-template-rows:78px 34px!important;gap:5px 10px!important;padding:8px 12px!important;overflow:visible!important;box-sizing:border-box!important}
+ html body .shared-commandbar .shared-stopwatch .timer-head{position:relative!important;inset:auto!important;grid-column:1!important;grid-row:1!important;min-width:0!important}
+ html body .shared-commandbar .shared-stopwatch>.elapsed-box{position:relative!important;inset:auto!important;grid-column:2!important;grid-row:1!important;width:100%!important;height:78px!important;min-width:0!important;margin:0!important;padding:5px!important}
+ html body .shared-commandbar .shared-stopwatch>.elapsed-box .clock{font-size:clamp(24px,2.2vw,32px)!important;white-space:nowrap!important}
+ html body .shared-commandbar .shared-stopwatch>.buttons{position:relative!important;inset:auto!important;grid-column:1/-1!important;grid-row:2!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-auto-flow:column!important;gap:6px!important;width:100%!important;height:34px!important;margin:0!important}
+ html body .shared-commandbar .shared-stopwatch>.buttons button{position:relative!important;inset:auto!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;width:100%!important;height:34px!important;min-height:34px!important;min-width:0!important;margin:0!important;padding:5px 3px!important;font-size:11px!important;line-height:1.1!important;white-space:nowrap!important}
+ html body .shared-commandbar>.shared-nav{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;display:flex!important;flex-wrap:nowrap!important;width:100%!important;height:45px!important;min-height:45px!important;margin:0!important;padding:4px 10px!important;overflow-x:auto!important;overflow-y:hidden!important;z-index:1!important}
+ html body main.wrap{padding-top:280px!important}
 }
 @media(max-width:999px){
- html body .shared-commandbar{position:relative!important;height:auto!important;min-height:0!important;overflow:visible!important}
- html body .shared-commandbar .shared-topline{display:grid!important;position:relative!important;inset:auto!important;height:auto!important;min-height:0!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto!important;gap:8px!important;overflow:visible!important}
- html body .shared-commandbar .shared-brand-area,html body .shared-commandbar .shared-progressline,html body .shared-commandbar .shared-stopwatch{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;grid-column:1!important;grid-row:auto!important;width:100%!important;height:auto!important}
+ html body .shared-commandbar{position:relative!important;inset:auto!important;height:auto!important;min-height:0!important;overflow:visible!important}
+ html body .shared-commandbar>.shared-topline{position:relative!important;inset:auto!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto!important;gap:8px!important;width:100%!important;height:auto!important;min-height:0!important;padding:8px!important;overflow:visible!important}
+ html body .shared-commandbar .shared-brand-area,html body .shared-commandbar .shared-progressline,html body .shared-commandbar .shared-stopwatch{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;grid-column:1!important;grid-row:auto!important;width:100%!important;height:auto!important;min-height:0!important}
  html body .shared-commandbar .shared-progressline{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:auto!important}
- html body .shared-commandbar .shared-stopwatch{grid-template-columns:minmax(0,1fr) minmax(110px,.8fr)!important}
- html body .shared-commandbar .shared-stopwatch>.buttons{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
- html body .shared-commandbar .shared-nav{height:auto!important;flex-wrap:wrap!important}
+ html body .shared-commandbar .shared-stopwatch{grid-template-columns:minmax(0,1fr) minmax(110px,.8fr)!important;grid-template-rows:auto auto!important}
+ html body .shared-commandbar .shared-stopwatch>.buttons{grid-column:1/-1!important;grid-row:2!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ html body .shared-commandbar>.shared-nav{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;display:flex!important;flex-wrap:wrap!important;width:100%!important;height:auto!important;min-height:0!important}
+ html body main.wrap{padding-top:16px!important}
 }
 </style>
 </body></html>
