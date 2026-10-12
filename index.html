@@ -665,6 +665,24 @@ body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0
  body>.study-dashboard>.lesson-mini-stats .mini-stat span{font-size:8px!important;line-height:1.1!important}
  body>.study-dashboard>.lesson-mini-stats .mini-stat strong{font-size:12px!important;line-height:1.2!important}
 }
+
+/* Unified header geometry: seven progress cards, stopwatch controls and search aligned */
+@media(min-width:1000px){
+ body>header{left:0!important;width:20.7%!important;height:108px!important;top:0!important}
+ body>header .global-search{left:72.4%!important;right:2.4%!important;top:5px!important;width:auto!important}
+ body>.study-dashboard{left:20.7%!important;right:0!important;top:0!important;height:68px!important;position:fixed!important;display:block!important;overflow:visible!important;z-index:1300!important;background:#f4f7fb!important}
+ body>.study-dashboard>.dashboard-stats{position:absolute!important;left:calc(100% * 3 / 7)!important;right:0!important;width:auto!important;top:8px!important;height:53px!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:1fr!important;gap:4px!important}
+ body>.study-dashboard>.timer-column{position:static!important;display:contents!important}
+ body>.study-dashboard>.timer-column>.stopwatch-card{position:fixed!important;left:0!important;top:108px!important;width:294px!important;height:121px!important;min-height:121px!important;z-index:1500!important}
+ body>.study-dashboard>.timer-column>.lesson-mini-stats{position:absolute!important;left:0!important;top:8px!important;width:calc(100% * 3 / 7 - 4px)!important;height:53px!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important;margin:0!important;z-index:2!important}
+ body>.study-dashboard>.dashboard-stats .dash-stat,body>.study-dashboard>.lesson-mini-stats .mini-stat{height:53px!important;min-height:53px!important;min-width:0!important;padding:5px 4px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;gap:2px!important;background:#fff!important;border:1px solid #dce5ef!important;border-radius:9px!important;box-shadow:none!important;overflow:hidden!important}
+ body>.study-dashboard .dash-label,body>.study-dashboard .mini-stat span{font-size:8px!important;line-height:1.1!important}
+ body>.study-dashboard .dash-value,body>.study-dashboard .mini-stat strong{font-size:12px!important;line-height:1.2!important;margin:0!important;white-space:nowrap!important}
+ body>.study-dashboard .dash-value small{font-size:9px!important}
+ body>.study-dashboard .dash-note,body>.study-dashboard .dash-progress{display:none!important}
+ body>nav.tabs{left:20.7%!important;right:0!important;top:68px!important;height:42px!important}
+ body>.wrap{padding-top:230px!important}
+}
 </style>
 </head>
 <body>
