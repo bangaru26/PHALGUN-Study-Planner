@@ -923,6 +923,29 @@ body>main.wrap{max-width:none!important;width:100%!important;padding:8px 10px 28
  #studyTopRow .brand-icons{display:flex!important;flex-direction:row!important;gap:5px!important}
 }
 
+
+/* Stopwatch repair: keep all four controls inside the card and evenly aligned. */
+@media(min-width:1000px){
+ #studyTopRow>.stopwatch-card{grid-template-columns:minmax(0,1fr) minmax(118px,.78fr)!important;grid-template-rows:minmax(0,1fr) auto!important;align-content:stretch!important;align-items:center!important;gap:6px 9px!important;padding:8px 10px!important;overflow:hidden!important}
+ #studyTopRow .stopwatch-card>.timer-head{grid-column:1!important;grid-row:1!important}
+ #studyTopRow .stopwatch-card>.elapsed-box{grid-column:2!important;grid-row:1!important;min-width:0!important;width:100%!important}
+ #studyTopRow .stopwatch-card>.buttons{grid-column:1/-1!important;grid-row:2!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:5px!important;width:100%!important;min-width:0!important;margin:0!important}
+ #studyTopRow .stopwatch-card>.buttons button{display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;width:100%!important;max-width:100%!important;margin:0!important;padding:7px 3px!important;font-size:clamp(9px,.7vw,11px)!important;line-height:1.15!important;white-space:nowrap!important;overflow:hidden!important}
+ #studyTopRow .stopwatch-card>.elapsed-box .clock{font-size:clamp(20px,1.8vw,25px)!important;white-space:nowrap!important}
+}
+@media(max-width:999px){
+ #studyTopRow .stopwatch-card{grid-template-columns:minmax(0,1fr) minmax(112px,.7fr)!important;grid-template-rows:auto auto!important;align-items:center!important;gap:7px!important}
+ #studyTopRow .stopwatch-card>.timer-head{grid-column:1!important;grid-row:1!important}
+ #studyTopRow .stopwatch-card>.elapsed-box{grid-column:2!important;grid-row:1!important;min-width:0!important;margin:0!important}
+ #studyTopRow .stopwatch-card>.buttons{grid-column:1/-1!important;grid-row:2!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:5px!important;margin:0!important}
+ #studyTopRow .stopwatch-card>.buttons button{min-width:0!important;width:100%!important;padding:8px 3px!important;font-size:10px!important;line-height:1.15!important;white-space:nowrap!important}
+}
+@media(max-width:480px){
+ #studyTopRow .stopwatch-card{grid-template-columns:minmax(0,1fr)!important}
+ #studyTopRow .stopwatch-card>.timer-head,#studyTopRow .stopwatch-card>.elapsed-box,#studyTopRow .stopwatch-card>.buttons{grid-column:1!important;grid-row:auto!important}
+ #studyTopRow .stopwatch-card>.elapsed-box{width:100%!important}
+ #studyTopRow .stopwatch-card>.buttons button{font-size:9px!important}
+}
 </style>
 </head>
 <body>
