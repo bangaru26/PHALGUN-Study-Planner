@@ -583,6 +583,38 @@ body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0
  body>nav.tabs{top:152px!important;height:45px!important}
  body>.wrap{padding-top:208px!important}
 }
+
+/* Home page step: clean top bar; quiz has its own tab */
+@media(min-width:1000px){
+ body>header{left:0!important;top:0!important;width:20%!important;height:145px!important;padding:8px 12px!important;z-index:1200!important;background:#fff!important;overflow:hidden!important}
+ body>header .brand-head{gap:5px!important}
+ body>header .brand-icons img{width:28px!important;height:28px!important}
+ body>header .brand-copy h1{font-size:17px!important;margin:0!important}
+ body>header .brand-copy p{font-size:10px!important;margin:0!important}
+ body>header .global-search{width:100%!important;margin-top:4px!important}
+ body>.study-dashboard{position:fixed!important;left:20%!important;right:0!important;top:0!important;height:145px!important;grid-template-columns:repeat(7,minmax(0,1fr)) 205px!important;grid-template-rows:1fr!important;gap:4px!important;padding:8px!important;margin:0!important;background:#f4f7fb!important;z-index:1199!important;overflow:hidden!important}
+ body>.study-dashboard>.dashboard-stats,body>.study-dashboard>.timer-column{display:contents!important}
+ body>.study-dashboard .dash-stat,body>.study-dashboard .mini-stat{grid-row:1!important;min-width:0!important;height:54px!important;min-height:54px!important;padding:5px 4px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;gap:2px!important;background:#fff!important;border:1px solid #dce5ef!important;border-radius:9px!important;box-shadow:none!important;overflow:hidden!important}
+ body>.study-dashboard .dash-label,body>.study-dashboard .mini-stat span{font-size:8px!important;line-height:1.1!important}
+ body>.study-dashboard .dash-value,body>.study-dashboard .mini-stat strong{font-size:12px!important;line-height:1.2!important;margin:0!important;white-space:nowrap!important}
+ body>.study-dashboard .dash-value small{font-size:9px!important}
+ body>.study-dashboard .dash-note,body>.study-dashboard .dash-progress{display:none!important}
+ body>.study-dashboard .timer-column>.stopwatch-card{grid-column:8!important;grid-row:1!important;width:100%!important;height:54px!important;min-height:54px!important;padding:5px 7px!important;display:grid!important;grid-template-columns:1fr!important;grid-template-rows:auto auto!important;align-content:center!important;gap:2px!important;border-radius:9px!important;overflow:hidden!important}
+ body>.study-dashboard .timer-head{display:flex!important;align-items:center!important;gap:5px!important;margin:0!important}
+ body>.study-dashboard .timer-head .eyebrow{font-size:8px!important;white-space:nowrap!important}
+ body>.study-dashboard .timer-head .live-date{display:none!important}
+ body>.study-dashboard .timer-head .live-time{font-size:10px!important;margin:0!important;white-space:nowrap!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box{margin:0!important;padding:2px 4px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:4px!important;border-radius:7px!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .muted{font-size:7px!important;letter-spacing:.4px!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .clock{font-size:15px!important;margin:0!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .top-timer-status,body>.study-dashboard .stopwatch-card>.buttons{display:none!important}
+ body>nav.tabs{position:fixed!important;left:0!important;right:0!important;top:145px!important;height:45px!important;margin:0!important;background:#fff!important;z-index:1300!important;opacity:1!important;isolation:isolate!important}
+ body>.wrap{padding-top:205px!important}
+}
+#panel-quiz>.grid{align-items:start!important}
+#panel-quiz #lessonQuizCard{margin:0!important;min-height:0!important}
+#panel-quiz .card{min-height:0!important}
+@media(max-width:999px){body>.wrap{padding-top:18px!important}}
 </style>
 </head>
 <body>
@@ -608,7 +640,7 @@ body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0
   </div>
 </section>
 <nav class="tabs" role="tablist" aria-label="Study Desk sections">
-<button class="tab" role="tab" data-tab="learn" aria-selected="true">Learn & Practise</button><button class="tab" role="tab" data-tab="plan" aria-selected="false">Study Plan & Progress</button><button class="tab" role="tab" data-tab="backup" aria-selected="false">Backup & Settings</button><button class="tab" role="tab" data-tab="notes" aria-selected="false">＋ My Notes</button>
+<button class="tab" role="tab" data-tab="learn" aria-selected="true">Learn & Practise</button><button class="tab" role="tab" data-tab="plan" aria-selected="false">Study Plan & Progress</button><button class="tab" role="tab" data-tab="backup" aria-selected="false">Backup & Settings</button><button class="tab" role="tab" data-tab="notes" aria-selected="false">＋ My Notes</button><button class="tab" role="tab" data-tab="quiz" aria-selected="false">Lesson Quiz</button>
 <a class="tab" href="./dictionary.html">📚 Subject Dictionary</a><a class="tab" href="./excel-practice.html">ƒx Excel Formula Practice</a></nav>
 
 <main class="wrap">
@@ -616,7 +648,7 @@ body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0
 
 
 
-<span id="saveState" hidden></span><span id="connectivity" hidden></span><span id="accountStatus" hidden></span><section id="panel-learn" class="panel"><div class="notes-quiz-shortcuts"><section class="card notes-band"><div class="eyebrow">QUICK NOTES</div><h2>My notes & questions</h2><p class="muted">Capture a doubt or idea while studying. Notes save automatically.</p><textarea id="lessonNotes" rows="1" placeholder="Write a note, question or example…"></textarea><p class="notice" id="notesStatus">Auto-saves on this device.</p></section><aside class="card quiz-shortcut"><h2>Lesson quiz</h2><p class="muted">Jump to the selected lesson quiz.</p><a class="quiz-jump" href="#lessonQuizCard">Go to Lesson Quiz ↓</a></aside></div>
+<span id="saveState" hidden></span><span id="connectivity" hidden></span><span id="accountStatus" hidden></span><section id="panel-learn" class="panel">
 <div class="grid">
 <div>
 <section class="card"><div class="eyebrow">YOUR CURRICULUM</div><h2 style="margin:8px 0">Accounting Fundamentals</h2><p class="muted">A starter track for GFPA / PHALGUN. Lessons unlock for study immediately; completion is recorded only after you pass the quiz or mark a lesson reviewed.</p><div class="progressbar"><span id="courseBar"></span></div><small class="muted" id="courseProgress">0 of 6 lessons passed</small><div class="lesson-list" id="lessonList" style="margin-top:14px"></div></section>
@@ -624,10 +656,11 @@ body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0
 </div>
 <div>
 <section class="card"><div class="eyebrow" id="dayLabel">LESSON 1</div><h2 class="topic" id="lessonTitle">Accounting Equation</h2><p class="muted" id="lessonSubtitle">The foundation of double-entry accounting</p><div class="lesson-content" id="lessonBody"></div><hr style="border-color:var(--line);margin:18px 0"></section>
-<section class="card" id="lessonQuizCard"><div class="eyebrow">CHECK YOUR UNDERSTANDING</div><h2 style="margin:8px 0">Lesson quiz</h2><p class="muted">Choose one answer per question. Your score is saved. Pass mark: 3 out of 4.</p><div id="quiz"></div><div class="buttons"><button class="primary" id="submitQuiz">Check answers & save result</button><button id="markReviewed">Mark reviewed</button></div><div id="quizFeedback" class="feedback hidden" aria-live="polite"></div></section>
+
 </div>
 </div>
 </section>
+<section id="panel-quiz" class="panel hidden"><div class="grid"><div><section class="card" id="lessonQuizCard"><div class="eyebrow">CHECK YOUR UNDERSTANDING</div><h2 style="margin:8px 0">Lesson quiz</h2><p class="muted">Choose one answer per question. Your score is saved. Pass mark: 3 out of 4.</p><div id="quiz"></div><div class="buttons"><button class="primary" id="submitQuiz">Check answers & save result</button><button id="markReviewed">Mark reviewed</button></div><div id="quizFeedback" class="feedback hidden" aria-live="polite"></div></section></div><div class="card"><div class="eyebrow">QUIZ GUIDE</div><h2 style="margin:8px 0">Test your understanding</h2><p class="muted">Choose a lesson in Learn &amp; Practise, then open this tab to answer its quiz. Your result is saved when you submit.</p></div></div></section>
 <section id="panel-plan" class="panel hidden">
 <div class="grid">
 <section class="card"><div class="eyebrow">YOUR ROUTINE</div><h2 style="margin:8px 0">Study plan & targets</h2><p class="muted">Set a realistic daily target and weekly schedule. These settings stay on this device.</p><div class="two"><div><label for="dailyTarget">Daily target (minutes)</label><input id="dailyTarget" type="number" min="10" max="720" step="5" value="300"></div><div><label for="weeklyTarget">Weekly target (hours)</label><input id="weeklyTarget" type="number" min="1" max="60" step="1" value="15"></div></div><label for="planStart">Plan start date</label><input id="planStart" type="date"><label for="planEnd">Target finish date (optional)</label><input id="planEnd" type="date"><label for="schedule">Weekly timetable</label><textarea id="schedule" placeholder="Example: Mon–Fri 6:00–7:00 AM; 8:30–9:00 PM revision."></textarea><button class="primary" id="savePlan">Save study plan</button><p id="planFeedback" class="notice">Your plan is private to this browser profile.</p></section>
