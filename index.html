@@ -946,6 +946,30 @@ body>main.wrap{max-width:none!important;width:100%!important;padding:8px 10px 28
  #studyTopRow .stopwatch-card>.elapsed-box{width:100%!important}
  #studyTopRow .stopwatch-card>.buttons button{font-size:9px!important}
 }
+/* Responsive header repair: prevent stopwatch from covering search or being clipped. */
+#studyTopRow{position:relative!important;box-sizing:border-box!important;width:100%!important;min-width:0!important;overflow:visible!important;gap:7px!important}
+#studyTopRow .stopwatch-card{position:relative!important;inset:auto!important;transform:none!important;box-sizing:border-box!important;min-width:0!important;max-width:100%!important;overflow:hidden!important}
+#studyTopRow .global-search{position:relative!important;inset:auto!important;transform:none!important;min-width:0!important;max-width:100%!important}
+#studyTopRow .dashboard-stats{min-width:0!important}
+@media(min-width:700px) and (max-width:999px){
+ #studyTopRow{display:grid!important;grid-template-columns:minmax(110px,145px) minmax(0,1fr) minmax(220px,260px)!important;grid-template-rows:auto auto!important;align-items:stretch!important}
+ #studyTopRow .brand-block{grid-column:1!important;grid-row:1!important}
+ #studyTopRow .global-search{grid-column:2!important;grid-row:1!important;width:100%!important}
+ #studyTopRow>.stopwatch-card{grid-column:3!important;grid-row:1!important;width:100%!important;height:auto!important}
+ #studyTopRow>.dashboard-stats{grid-column:1/-1!important;grid-row:2!important;grid-template-columns:repeat(7,minmax(0,1fr))!important}
+ #studyTopRow .stopwatch-card>.buttons{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important;margin:5px 0 0!important}
+ #studyTopRow .stopwatch-card>.buttons button{min-width:0!important;width:100%!important;padding:7px 2px!important;font-size:9px!important}
+}
+@media(max-width:699px){
+ #studyTopRow{display:flex!important;flex-direction:column!important;align-items:stretch!important}
+ #studyTopRow .brand-block,#studyTopRow .global-search,#studyTopRow>.stopwatch-card,#studyTopRow>.dashboard-stats{width:100%!important;max-width:100%!important}
+ #studyTopRow>.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+#assessmentSection,#lessonQuizCard,#quiz{display:block!important;visibility:visible!important;opacity:1!important;height:auto!important;min-height:0!important;overflow:visible!important}
+#quiz .question{display:block!important;visibility:visible!important;opacity:1!important;color:#17243a!important;margin:12px 0!important;padding:12px!important;border:1px solid #dce5ef!important;border-radius:10px!important;background:#fff!important}
+#quiz .question p,#quiz .option span{color:#17243a!important}
+#quiz .option{display:flex!important;visibility:visible!important;align-items:flex-start!important;gap:8px!important;padding:7px 9px!important;cursor:pointer!important}
+#quiz .option input{display:inline-block!important;visibility:visible!important;opacity:1!important;flex:0 0 auto!important;width:auto!important;margin-top:4px!important}
 </style>
 </head>
 <body>
@@ -1079,7 +1103,7 @@ document.addEventListener('click',e=>{if(!e.target.closest('.global-search'))glo
 function passed(id){return !!(data.results[id]&&data.results[id].passed)}
 function renderLessons(){$('lessonList').innerHTML=lessons.map((l,i)=>'<button class="lesson '+(l.id===currentId?'active':'')+'" data-lesson="'+l.id+'"><strong>'+(passed(l.id)?'<span class="done">✓ </span>':'')+'Lesson '+(i+1)+': '+escapeHtml(l.title)+'</strong><small>'+escapeHtml(l.subtitle)+' · '+(data.results[l.id]?'Best: '+data.results[l.id].score+'/4':'Not yet assessed')+'</small></button>').join('');let n=lessons.filter(l=>passed(l.id)).length;$('courseBar').style.width=(n/lessons.length*100)+'%';$('courseProgress').textContent=n+' of '+lessons.length+' lessons passed'}
 document.addEventListener('click',e=>{const b=e.target.closest('#lessonList button[data-lesson]');if(!b)return;e.preventDefault();selectLesson(b.dataset.lesson)},true);
-function renderLesson(){const l=selected(),idx=lessons.findIndex(x=>x.id===l.id);$('dayLabel').textContent='LESSON '+(idx+1)+' OF '+lessons.length;$('lessonTitle').textContent=l.title;$('lessonSubtitle').textContent=l.subtitle;$('lessonBody').innerHTML=l.body;$('lessonNotes').value=data.notes[l.id]||'';$('quiz').innerHTML=l.quiz.map((q,i)=>'<div class="question"><p>'+(i+1)+'. '+escapeHtml(q[0])+'</p>'+q[1].map((a,j)=>'<label class="option"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+escapeHtml(a)+'</span></label>').join('')+'</div>').join('');$('quizFeedback').classList.add('hidden');$('quizFeedback').textContent='';renderLessons()}
+function renderLesson(){const l=selected(),idx=lessons.findIndex(x=>x.id===l.id);$('dayLabel').textContent='LESSON '+(idx+1)+' OF '+lessons.length;$('lessonTitle').textContent=l.title;$('lessonSubtitle').textContent=l.subtitle;$('lessonBody').innerHTML=l.body;$('lessonNotes').value=data.notes[l.id]||'';const quiz=$('quiz');quiz.innerHTML=l.quiz.map((q,i)=>'<div class="question" style="display:block;visibility:visible;color:#17243a"><p>'+(i+1)+'. '+escapeHtml(q[0])+'</p>'+q[1].map((a,j)=>'<label class="option" style="display:flex;visibility:visible;color:#17243a"><input type="radio" name="q'+i+'" value="'+j+'"> <span>'+escapeHtml(a)+'</span></label>').join('')+'</div>').join('');$('quizFeedback').classList.add('hidden');$('quizFeedback').textContent='';renderLessons()}
 function selectLesson(id){if(!lessons.some(l=>l.id===id))return;if(startMs!==null){if(!confirm('A timer is running. Switch lessons and save the current session first?'))return;finishTimer()}currentId=id;data.currentLesson=id;save();renderLesson()}
 function renderStats(){let total=data.sessions.reduce((a,s)=>a+(Number(s.minutes)||0),0);$('sessionCount').textContent=data.sessions.length;$('minuteCount').textContent=total;$('passedCount').textContent=lessons.filter(l=>passed(l.id)).length;$('historySessions').textContent=data.sessions.length;$('historyMinutes').textContent=total;$('historyPassed').textContent=lessons.filter(l=>passed(l.id)).length;let today=new Date().toLocaleDateString('en-IN'),todayM=data.sessions.filter(s=>s.date===today).reduce((a,s)=>a+s.minutes,0);let weekStart=new Date();weekStart.setHours(0,0,0,0);weekStart.setDate(weekStart.getDate()-((weekStart.getDay()+6)%7));let weekM=data.sessions.filter(s=>{let d=parseDate(s.date);return d&&d>=weekStart}).reduce((a,s)=>a+s.minutes,0);let target=Number(data.plan.dailyTarget)||300;$('todayMinutes').textContent=todayM;$('weekMinutes').textContent=weekM;$('targetDisplay').textContent=target;$('todayBar').style.width=Math.min(100,todayM/target*100)+'%';$('todaySummary').textContent=todayM+' / '+target+' minutes completed';}
 function parseDate(s){let d=new Date(s);if(!isNaN(d))return d;let m=String(s||'').match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);return m?new Date(+m[3],+m[2]-1,+m[1]):null}
