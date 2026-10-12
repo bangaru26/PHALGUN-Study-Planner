@@ -541,6 +541,24 @@ body>.wrap{position:relative!important;z-index:1!important}
 body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0ea5a4!important;color:#fff!important;border-color:#0ea5a4!important}
 @media(max-width:999px){body>header{height:auto!important}body>.study-dashboard{height:auto!important}body>.wrap{padding-top:18px!important}}
 
+
+/* LOCKED TOP STRIP: one slim horizontal line on every desktop page */
+@media(min-width:1000px){
+ body>.study-dashboard{grid-template-columns:minmax(0,1fr) 210px!important}
+ body>.study-dashboard .dashboard-stats{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;grid-template-rows:1fr!important;gap:4px!important;align-content:stretch!important}
+ body>.study-dashboard .dash-stat,body>.study-dashboard .mini-stat{min-width:0!important;padding:5px 4px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;overflow:hidden!important}
+ body>.study-dashboard .dash-label,body>.study-dashboard .mini-stat span{font-size:8px!important;line-height:1.1!important;white-space:normal!important}
+ body>.study-dashboard .dash-value,body>.study-dashboard .mini-stat strong{font-size:12px!important;white-space:nowrap!important}
+ body>.study-dashboard .dash-note,body>.study-dashboard .dash-progress{display:none!important}
+ body>.study-dashboard .lesson-mini-stats{display:contents!important}
+ body>.study-dashboard .timer-column{display:contents!important}
+ body>.study-dashboard .timer-column>.stopwatch-card{grid-column:2!important;grid-row:1!important}
+ .shared-topline{grid-template-columns:32% minmax(0,1fr) 210px!important}
+ .shared-progressline{grid-template-columns:repeat(7,minmax(0,1fr))!important;grid-template-rows:1fr!important;gap:4px!important}
+ .shared-metric{min-width:0!important;padding:5px 3px!important;display:flex!important;flex-direction:column!important;justify-content:center!important}
+ .shared-metric span{font-size:8px!important;line-height:1.1!important}
+ .shared-metric strong{font-size:12px!important;white-space:nowrap!important}
+}
 </style>
 </head>
 <body>
