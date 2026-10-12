@@ -448,6 +448,27 @@ body>nav.tabs .tab{flex:0 0 auto!important;white-space:nowrap!important}
  header{z-index:21!important;background:#fff!important;opacity:1!important}
 }
 
+
+/* Final shell correction: timer stays at the far right; only the slim command bar remains pinned */
+@media(min-width:1000px){
+ body>.study-dashboard{left:35.5%!important;right:8px!important;top:8px!important;grid-template-columns:minmax(0,1fr) 290px!important;grid-template-rows:auto!important;gap:6px!important;padding:4px!important;z-index:800!important;background:#f4f7fc!important;box-shadow:0 0 0 6px #f4f7fc!important;isolation:isolate!important}
+ body>.study-dashboard .timer-column{display:contents!important}
+ body>.study-dashboard .dashboard-stats{grid-column:1!important;grid-row:1!important;grid-template-columns:repeat(7,minmax(0,1fr))!important}
+ body>.study-dashboard .timer-column>.stopwatch-card{grid-column:2!important;grid-row:1!important;grid-template-columns:minmax(0,1fr) minmax(100px,.65fr)!important;grid-template-rows:auto auto!important;align-content:center!important;gap:4px!important;min-height:104px!important;height:auto!important;padding:8px!important}
+ body>.study-dashboard .timer-head{grid-column:1!important;grid-row:1!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box{grid-column:2!important;grid-row:1!important;display:flex!important;flex-direction:column!important;gap:1px!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .clock{font-size:25px!important}
+ body>.study-dashboard .stopwatch-card>.buttons{grid-column:1/-1!important;grid-row:2!important}
+ body>.study-dashboard .lesson-mini-stats{display:none!important}
+ header{z-index:801!important;background:#fff!important}
+ body>nav.tabs{top:216px!important;height:49px!important;z-index:1000!important;position:fixed!important;background:#fff!important;background-image:linear-gradient(#fff,#fff)!important;opacity:1!important;backdrop-filter:none!important;isolation:isolate!important;box-shadow:0 4px 10px #17243a18!important}
+ .wrap{padding-top:276px!important;position:relative;z-index:1!important}
+ .wrap>.panel{position:relative;z-index:1!important}
+}
+body>nav.tabs, body>nav.tabs::before{background:#fff!important;opacity:1!important;backdrop-filter:none!important}
+body>nav.tabs{isolation:isolate!important;z-index:1000!important}
+@media(max-width:999px){body>nav.tabs{z-index:1000!important;background:#fff!important;isolation:isolate!important}.wrap{position:relative;z-index:1!important}}
+
 </style>
 </head>
 <body>
