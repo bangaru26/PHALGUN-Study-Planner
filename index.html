@@ -406,6 +406,48 @@ body>nav.tabs .tab{flex:0 0 auto!important;white-space:nowrap!important}
  body>.study-dashboard .dash-value{font-size:15px!important}
  body>nav.tabs .tab{font-size:11px!important;padding:7px 9px!important}
 }
+
+/* Founder-approved command bar: seven progress indicators in one row; stopwatch at far right */
+@media(min-width:1000px){
+ body>.study-dashboard{
+  left:35.5%!important;right:8px!important;top:8px!important;
+  display:grid!important;grid-template-columns:minmax(0,1fr) minmax(245px,290px)!important;
+  grid-template-rows:auto!important;gap:6px!important;padding:4px!important;
+  background:#f4f7fc!important;opacity:1!important;isolation:isolate!important;
+  z-index:400!important;align-items:stretch!important;box-shadow:0 0 0 6px #f4f7fc!important;
+ }
+ body>.study-dashboard .timer-column{display:contents!important}
+ body>.study-dashboard .dashboard-stats{grid-column:1!important;grid-row:1!important;display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;gap:5px!important;align-items:stretch!important}
+ body>.study-dashboard .dash-stat{padding:7px 5px!important;border-radius:9px!important;overflow:hidden!important;min-width:0!important}
+ body>.study-dashboard .dash-label{font-size:9px!important;white-space:normal!important;line-height:1.15!important;min-height:22px}
+ body>.study-dashboard .dash-value{font-size:15px!important;letter-spacing:-.3px!important;white-space:nowrap!important}
+ body>.study-dashboard .dash-value small{font-size:9px!important}
+ body>.study-dashboard .dash-note{font-size:8px!important;line-height:1.15!important}
+ body>.study-dashboard .timer-column>.stopwatch-card{grid-column:2!important;grid-row:1!important;min-height:0!important;height:100%!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto auto auto 1fr!important;gap:3px!important;padding:7px 9px!important;align-content:center!important;overflow:hidden!important}
+ body>.study-dashboard .timer-head{grid-column:1!important;grid-row:1!important}
+ body>.study-dashboard .timer-head .eyebrow{font-size:9px!important}
+ body>.study-dashboard .timer-head .live-date{font-size:10px!important}
+ body>.study-dashboard .timer-head .live-time{font-size:16px!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box{grid-column:1!important;grid-row:2!important;display:flex!important;flex-direction:row!important;gap:8px!important;justify-content:center!important;padding:3px!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .clock{font-size:23px!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .top-timer-status{display:none!important}
+ body>.study-dashboard .stopwatch-card>.buttons{grid-column:1!important;grid-row:3!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:3px!important;margin:0!important}
+ body>.study-dashboard .stopwatch-card>.buttons button{font-size:9px!important;padding:5px 2px!important;white-space:normal!important}
+ body>.study-dashboard .lesson-mini-stats{display:contents!important}
+ body>.study-dashboard .mini-stat{display:none!important}
+ header{z-index:401!important;background:#fff!important;isolation:isolate!important}
+ body>nav.tabs{z-index:402!important;background:#fff!important;opacity:1!important;isolation:isolate!important}
+ .wrap{padding-top:276px!important}
+}
+@media(min-width:900px) and (max-width:999px){
+ body>.study-dashboard{z-index:400!important;background:#f4f7fc!important;opacity:1!important;isolation:isolate!important}
+}
+@media(max-width:899px){
+ body>.study-dashboard{z-index:10!important;background:#f4f7fc!important;opacity:1!important;isolation:isolate!important}
+ body>nav.tabs{z-index:20!important;background:#fff!important;opacity:1!important;isolation:isolate!important}
+ header{z-index:21!important;background:#fff!important;opacity:1!important}
+}
+
 </style>
 </head>
 <body>
