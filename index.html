@@ -841,6 +841,62 @@ body>main.wrap{max-width:none!important;width:100%!important;padding:8px 10px 28
  #lessonStrip .lesson{flex:0 0 190px!important;width:190px!important;min-width:190px!important}
 }
 
+
+/* Oct 12 corrective layout: one stable shared top row */
+@media(min-width:1000px){
+ #studyTopRow{display:grid!important;grid-template-columns:126px minmax(0,1fr) 268px 190px!important;grid-template-rows:112px!important;gap:8px!important;align-items:stretch!important;min-height:128px!important;padding:8px 12px!important;overflow:hidden!important;background:#fff!important;border:1px solid #e2e8f0!important;box-sizing:border-box!important}
+ #studyTopRow .brand-block{grid-column:1!important;grid-row:1!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:flex-start!important;gap:5px!important;min-width:0!important}
+ #studyTopRow .brand-icons{display:flex!important;flex-direction:row!important;align-items:center!important;gap:6px!important}
+ #studyTopRow .brand-icons a,#studyTopRow .brand-icons img{width:38px!important;height:38px!important;flex:0 0 38px!important}
+ #studyTopRow .brand-copy{min-width:0!important}
+ #studyTopRow .brand-copy h1{font-size:18px!important;line-height:1.15!important}
+ #studyTopRow .brand-copy p{font-size:10px!important;line-height:1.2!important;margin:2px 0!important}
+ #studyTopRow>.dashboard-stats{grid-column:2!important;grid-row:1!important;display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;grid-template-rows:1fr!important;gap:4px!important;min-width:0!important;align-items:stretch!important}
+ #studyTopRow .dash-stat,#studyTopRow .mini-stat{display:flex!important;flex-direction:column!important;justify-content:center!important;min-width:0!important;padding:5px 4px!important;overflow:hidden!important;border-radius:8px!important}
+ #studyTopRow .dash-label,#studyTopRow .mini-stat span{font-size:8px!important;line-height:1.15!important;white-space:normal!important;overflow-wrap:anywhere!important;min-height:0!important}
+ #studyTopRow .dash-value,#studyTopRow .mini-stat strong{font-size:12px!important;line-height:1.2!important;white-space:nowrap!important;margin:4px 0 0!important}
+ #studyTopRow .dash-note,#studyTopRow .dash-progress{display:none!important}
+ #studyTopRow>.stopwatch-card{grid-column:3!important;grid-row:1!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(100px,.85fr)!important;grid-template-rows:auto auto!important;align-content:center!important;gap:5px!important;min-width:0!important;height:100%!important;padding:8px!important;margin:0!important;overflow:hidden!important}
+ #studyTopRow .timer-head{grid-column:1!important;grid-row:1!important;min-width:0!important}
+ #studyTopRow .timer-head .eyebrow{font-size:9px!important;white-space:nowrap!important}
+ #studyTopRow .timer-head .live-date{font-size:10px!important;line-height:1.2!important;margin:4px 0!important}
+ #studyTopRow .timer-head .live-time{font-size:16px!important;line-height:1.2!important}
+ #studyTopRow .elapsed-box{grid-column:2!important;grid-row:1!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;min-width:0!important;padding:4px!important;margin:0!important}
+ #studyTopRow .elapsed-box .clock{font-size:22px!important;line-height:1.1!important;margin:3px 0!important}
+ #studyTopRow .elapsed-box .muted,#studyTopRow .top-timer-status{font-size:8px!important;line-height:1.2!important}
+ #studyTopRow .stopwatch-card>.buttons{grid-column:1/-1!important;grid-row:2!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:3px!important;margin:0!important;min-width:0!important}
+ #studyTopRow .stopwatch-card>.buttons button{min-width:0!important;padding:5px 2px!important;font-size:9px!important;white-space:nowrap!important}
+ #studyTopRow>.global-search{grid-column:4!important;grid-row:1!important;width:100%!important;max-width:none!important;align-self:start!important;margin:3px 0 0!important}
+ #studyTopRow .global-search input{font-size:11px!important;padding:8px 24px 8px 8px!important}
+ body>header{display:none!important}
+ body>nav.tabs{position:relative!important;top:auto!important;left:auto!important;right:auto!important;height:43px!important;padding:4px 12px!important;z-index:5!important;overflow-x:auto!important;flex-wrap:nowrap!important;margin:0!important}
+ body>nav.tabs .tab{font-size:11px!important;padding:7px 9px!important}
+ #lessonStrip{display:flex!important;width:100%!important;overflow-x:auto!important;overflow-y:hidden!important;gap:7px!important;padding:6px 12px 9px!important;box-sizing:border-box!important;background:#fff!important}
+ #lessonStrip .lesson-list{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;gap:7px!important;overflow:visible!important;margin:0!important;padding:0!important}
+ #lessonStrip .lesson{flex:0 0 195px!important;width:195px!important;min-width:195px!important;min-height:55px!important;padding:8px 10px!important}
+ .wrap{padding:10px 16px 34px!important;max-width:none!important}
+ #panel-learn .grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:12px!important;align-items:start!important}
+ #panel-learn .grid>div:first-child,#panel-learn .grid>div:last-child{order:initial!important;min-width:0!important}
+}
+@media(max-width:999px){
+ #studyTopRow{display:flex!important;flex-direction:column!important;gap:8px!important;padding:10px!important;background:#fff!important}
+ #studyTopRow .brand-block{display:flex!important;flex-direction:row!important;align-items:center!important;gap:9px!important;flex-wrap:wrap!important}
+ #studyTopRow .brand-icons{display:flex!important;flex-direction:row!important;gap:5px!important}
+ #studyTopRow .brand-icons a,#studyTopRow .brand-icons img{width:36px!important;height:36px!important}
+ #studyTopRow .timer-column{width:100%!important}
+ #studyTopRow .dashboard-stats{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:5px!important;width:100%!important}
+ #studyTopRow .dash-stat,#studyTopRow .mini-stat{min-width:0!important;padding:6px!important}
+ #studyTopRow .dash-label,#studyTopRow .mini-stat span{font-size:9px!important}
+ #studyTopRow .dash-value,#studyTopRow .mini-stat strong{font-size:13px!important}
+ #studyTopRow>.stopwatch-card{width:100%!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(110px,.7fr)!important;gap:7px!important}
+ #studyTopRow .global-search{width:100%!important;max-width:none!important}
+ body>header{display:none!important}
+ #lessonStrip{display:flex!important;overflow-x:auto!important;padding:7px!important;background:#fff!important}
+ #lessonStrip .lesson-list{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;gap:7px!important}
+ #lessonStrip .lesson{flex:0 0 190px!important;width:190px!important;min-width:190px!important}
+ #panel-learn .grid{grid-template-columns:minmax(0,1fr)!important}
+}
+
 </style>
 </head>
 <body>
@@ -1068,7 +1124,12 @@ if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.se
   const icons=header.querySelector('.brand-icons'),copy=header.querySelector('.brand-copy'),search=header.querySelector('.global-search');
   if(icons)brand.appendChild(icons);if(copy)brand.appendChild(copy);
   const timer=dashboard.querySelector('.timer-column'),stats=dashboard.querySelector('.dashboard-stats');
-  top.appendChild(brand);if(timer)top.appendChild(timer);if(stats)top.appendChild(stats);if(search)top.appendChild(search);
+  const stopwatch=dashboard.querySelector('.stopwatch-card'),mini=dashboard.querySelector('.lesson-mini-stats');
+  top.appendChild(brand);
+  if(stats&&mini){Array.from(mini.children).forEach(function(card){stats.appendChild(card)});}
+  if(stats)top.appendChild(stats);
+  if(stopwatch)top.appendChild(stopwatch);
+  if(search)top.appendChild(search);
   header.parentNode.insertBefore(top,header.nextSibling);
   const strip=document.createElement('div');strip.id='lessonStrip';strip.setAttribute('aria-label','Choose lesson');
   const lessonList=document.getElementById('lessonList');if(lessonList)strip.appendChild(lessonList);
