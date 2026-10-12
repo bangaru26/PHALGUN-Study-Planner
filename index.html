@@ -982,31 +982,37 @@ if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.se
 </script>
 
 <script>
-/* Arrange existing live controls to match the approved screenshot without replacing their logic. */
+/* Build the approved compact header only after the document is ready. */
 (function(){
- const header=document.querySelector('body>header'),dashboard=document.querySelector('body>.study-dashboard'),nav=document.querySelector('nav.tabs'),main=document.querySelector('main.wrap');
- if(!header||!dashboard||!nav||!main||document.getElementById('studyTopRow'))return;
- const top=document.createElement('section');top.id='studyTopRow';top.setAttribute('aria-label','Study Desk overview');
- const brand=document.createElement('div');brand.className='brand-block';
- const icons=header.querySelector('.brand-icons'),copy=header.querySelector('.brand-copy'),search=header.querySelector('.global-search');
- if(icons)brand.append(icons);if(copy)brand.append(copy);top.append(brand);
- const timer=dashboard.querySelector('.timer-column'),stats=dashboard.querySelector('.dashboard-stats');
- if(timer)top.append(timer);if(stats)top.append(stats);if(search)top.append(search);
- header.insertAdjacentElement('afterend',top);
- const strip=document.createElement('div');strip.id='lessonStrip';strip.setAttribute('aria-label','Choose lesson');
- const lessonList=document.getElementById('lessonList');if(lessonList)strip.append(lessonList);
- nav.insertAdjacentElement('afterend',strip);
- const learn=document.getElementById('panel-learn'),plan=document.getElementById('panel-plan'),assessment=document.getElementById('assessmentSection');
- const learnGrid=learn&&learn.querySelector(':scope > .grid');
- if(learnGrid&&assessment){learnGrid.append(assessment);}
- function relocateAssessment(tab){
+ function arrange(){
+  const header=document.querySelector('body>header');
+  const dashboard=document.querySelector('body>.study-dashboard');
+  const nav=document.querySelector('body>nav.tabs');
+  const main=document.querySelector('body>main.wrap');
+  if(!header||!dashboard||!nav||!main||document.getElementById('studyTopRow'))return;
+  const top=document.createElement('section');top.id='studyTopRow';
+  const brand=document.createElement('div');brand.className='brand-block';
+  const icons=header.querySelector('.brand-icons'),copy=header.querySelector('.brand-copy'),search=header.querySelector('.global-search');
+  if(icons)brand.appendChild(icons);if(copy)brand.appendChild(copy);
+  const timer=dashboard.querySelector('.timer-column'),stats=dashboard.querySelector('.dashboard-stats');
+  top.appendChild(brand);if(timer)top.appendChild(timer);if(stats)top.appendChild(stats);if(search)top.appendChild(search);
+  header.parentNode.insertBefore(top,header.nextSibling);
+  const strip=document.createElement('div');strip.id='lessonStrip';strip.setAttribute('aria-label','Choose lesson');
+  const lessonList=document.getElementById('lessonList');if(lessonList)strip.appendChild(lessonList);
+  nav.parentNode.insertBefore(strip,nav.nextSibling);
+  const learn=document.getElementById('panel-learn'),plan=document.getElementById('panel-plan'),assessment=document.getElementById('assessmentSection');
+  const learnGrid=learn&&learn.querySelector('.grid');
+  if(learnGrid&&assessment)learnGrid.appendChild(assessment);
+  function moveAssessment(tab){
    if(!assessment)return;
-   const target=tab==='plan'?(plan&&plan.querySelector(':scope > .grid')):(learnGrid);
-   if(target)target.append(assessment);
+   const target=tab==='plan'?(plan&&plan.querySelector('.grid')):learnGrid;
+   if(target)target.appendChild(assessment);
    strip.style.display=tab==='learn'?'flex':'none';
+  }
+  nav.querySelectorAll('[data-tab]').forEach(function(b){b.addEventListener('click',function(){window.setTimeout(function(){moveAssessment(b.getAttribute('data-tab'));},30);});});
+  moveAssessment('learn');
  }
- document.querySelectorAll('nav.tabs [data-tab]').forEach(b=>b.addEventListener('click',()=>{setTimeout(()=>relocateAssessment(b.dataset.tab),0)}));
- relocateAssessment('learn');
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',arrange);else arrange();
 })();
 </script>
 </body>
