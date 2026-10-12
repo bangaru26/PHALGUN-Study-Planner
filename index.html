@@ -559,6 +559,30 @@ body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0
  .shared-metric span{font-size:8px!important;line-height:1.1!important}
  .shared-metric strong{font-size:12px!important;white-space:nowrap!important}
 }
+
+/* Approved top strip: seven slim cards in one row, timer at far right */
+@media(min-width:1000px){
+ body>.study-dashboard{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr)) 210px!important;grid-template-rows:1fr!important;gap:4px!important;align-items:stretch!important}
+ body>.study-dashboard>.dashboard-stats{display:contents!important}
+ body>.study-dashboard>.timer-column{display:contents!important}
+ body>.study-dashboard .dash-stat,body>.study-dashboard .mini-stat{grid-column:auto!important;grid-row:1!important;min-width:0!important;height:52px!important;min-height:52px!important;margin:0!important;padding:5px 4px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;gap:2px!important;background:#fff!important;border:1px solid #dce5ef!important;border-radius:10px!important;box-shadow:none!important;overflow:hidden!important}
+ body>.study-dashboard .dash-label,body>.study-dashboard .mini-stat span{font-size:8px!important;line-height:1.1!important;gap:2px!important}
+ body>.study-dashboard .dash-value,body>.study-dashboard .mini-stat strong{font-size:12px!important;line-height:1.2!important;margin:0!important;white-space:nowrap!important;letter-spacing:0!important}
+ body>.study-dashboard .dash-value small{font-size:9px!important}
+ body>.study-dashboard .dash-note,body>.study-dashboard .dash-progress{display:none!important}
+ body>.study-dashboard .timer-column>.stopwatch-card{grid-column:8!important;grid-row:1!important;min-width:0!important;width:100%!important;height:52px!important;min-height:52px!important;padding:5px 7px!important;display:grid!important;grid-template-columns:1fr!important;grid-template-rows:auto auto!important;align-content:center!important;gap:2px!important;border-radius:10px!important;overflow:hidden!important}
+ body>.study-dashboard .timer-head{grid-column:1!important;grid-row:1!important;display:flex!important;align-items:center!important;gap:6px!important;flex-wrap:nowrap!important;margin:0!important}
+ body>.study-dashboard .timer-head .eyebrow{font-size:8px!important;white-space:nowrap!important}
+ body>.study-dashboard .timer-head .live-date{display:none!important}
+ body>.study-dashboard .timer-head .live-time{font-size:11px!important;margin:0!important;white-space:nowrap!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box{grid-column:1!important;grid-row:2!important;margin:0!important;padding:2px 4px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:5px!important;border-radius:7px!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .muted{font-size:7px!important;letter-spacing:.5px!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .clock{font-size:15px!important;margin:0!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .top-timer-status{display:none!important}
+ body>.study-dashboard .stopwatch-card>.buttons{display:none!important}
+ body>nav.tabs{top:152px!important;height:45px!important}
+ body>.wrap{padding-top:208px!important}
+}
 </style>
 </head>
 <body>
