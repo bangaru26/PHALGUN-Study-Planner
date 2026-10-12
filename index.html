@@ -711,6 +711,16 @@ body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0
  body>nav.tabs .tab{flex:0 0 auto!important;padding:7px 10px!important;font-size:12px!important;white-space:nowrap!important}
  body>.wrap{padding-top:230px!important}
 }
+
+/* Compact universal navigation and search sizing */
+@media(min-width:1000px){
+ body>header .global-search{left:72.8%!important;right:2.5%!important;top:5px!important;width:auto!important}
+ body>header .global-search input{height:38px!important;font-size:14px!important;padding:7px 11px!important}
+ body>nav.tabs{gap:4px!important;padding:3px 6px!important}
+ body>nav.tabs .tab{font-size:11px!important;padding:6px 8px!important;letter-spacing:0!important}
+}
+#assessmentSection{margin-top:14px!important}
+#assessmentSection #lessonQuizCard{margin-bottom:0!important}
 </style>
 </head>
 <body>
@@ -736,7 +746,7 @@ body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0
   </div>
 </section>
 <nav class="tabs" role="tablist" aria-label="Study Desk sections">
-<button class="tab" role="tab" data-tab="learn" aria-selected="true">Learn & Practise</button><button class="tab" role="tab" data-tab="plan" aria-selected="false">Study Plan & Progress</button><button class="tab" role="tab" data-tab="backup" aria-selected="false">Backup & Settings</button><button class="tab" role="tab" data-tab="notes" aria-selected="false">＋ My Notes</button><button class="tab" role="tab" data-tab="quiz" aria-selected="false">Lesson Quiz</button>
+<button class="tab" role="tab" data-tab="learn" aria-selected="true">Learn & Practise</button><button class="tab" role="tab" data-tab="plan" aria-selected="false">Study · Progress · Assess (SPA)</button><button class="tab" role="tab" data-tab="backup" aria-selected="false">Backup</button><button class="tab" role="tab" data-tab="notes" aria-selected="false">＋ My Notes</button>
 <a class="tab" href="./dictionary.html">📚 Subject Dictionary</a><a class="tab" href="./excel-practice.html">ƒx Excel Formula Practice</a></nav>
 
 <main class="wrap">
@@ -757,7 +767,7 @@ body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0
 </div>
 </div>
 </section>
-<section id="panel-quiz" class="panel hidden"><div class="grid"><div><section class="card" id="lessonQuizCard"><div class="eyebrow">CHECK YOUR UNDERSTANDING</div><h2 style="margin:8px 0">Lesson quiz</h2><p class="muted">Choose one answer per question. Your score is saved. Pass mark: 3 out of 4.</p><div id="quiz"></div><div class="buttons"><button class="primary" id="submitQuiz">Check answers & save result</button><button id="markReviewed">Mark reviewed</button></div><div id="quizFeedback" class="feedback hidden" aria-live="polite"></div></section></div><div class="card"><div class="eyebrow">QUIZ GUIDE</div><h2 style="margin:8px 0">Test your understanding</h2><p class="muted">Choose a lesson in Learn &amp; Practise, then open this tab to answer its quiz. Your result is saved when you submit.</p></div></div></section>
+
 <section id="panel-plan" class="panel hidden">
 <div class="grid">
 <section class="card"><div class="eyebrow">YOUR ROUTINE</div><h2 style="margin:8px 0">Study plan & targets</h2><p class="muted">Set a realistic daily target and weekly schedule. These settings stay on this device.</p><div class="two"><div><label for="dailyTarget">Daily target (minutes)</label><input id="dailyTarget" type="number" min="10" max="720" step="5" value="300"></div><div><label for="weeklyTarget">Weekly target (hours)</label><input id="weeklyTarget" type="number" min="1" max="60" step="1" value="15"></div></div><label for="planStart">Plan start date</label><input id="planStart" type="date"><label for="planEnd">Target finish date (optional)</label><input id="planEnd" type="date"><label for="schedule">Weekly timetable</label><textarea id="schedule" placeholder="Example: Mon–Fri 6:00–7:00 AM; 8:30–9:00 PM revision."></textarea><button class="primary" id="savePlan">Save study plan</button><p id="planFeedback" class="notice">Your plan is private to this browser profile.</p></section>
@@ -778,6 +788,8 @@ body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0
   <div id="notesList" class="notes-list"></div>
   <p class="notice">Voice typing requires browser speech-recognition support and may need internet access. Voice recordings stay in this browser when local storage is available. Use Backup & Settings to export your written progress.</p>
  </div>
+
+<section class="card" id="assessmentSection"><div class="eyebrow">ASSESS</div><h2 style="margin:8px 0">Lesson assessment</h2><p class="muted">Choose a lesson in Learn &amp; Practise, then complete its quiz here. Results are saved when submitted.</p><section class="card" id="lessonQuizCard"><div class="eyebrow">CHECK YOUR UNDERSTANDING</div><h2 style="margin:8px 0">Lesson quiz</h2><p class="muted">Choose one answer per question. Your score is saved. Pass mark: 3 out of 4.</p><div id="quiz"></div><div class="buttons"><button class="primary" id="submitQuiz">Check answers & save result</button><button id="markReviewed">Mark reviewed</button></div><div id="quizFeedback" class="feedback hidden" aria-live="polite"></div></section></section>
 </section>
 <section id="panel-backup" class="panel hidden">
 <div class="grid"><section class="card"><div class="eyebrow">PORTABLE PROGRESS</div><h2 style="margin:8px 0">Back up or restore</h2><p class="muted">Save one portable backup containing your notes, quiz results, study plan and session history. Use it when moving your progress to another browser or device.</p><label for="importFile">Choose a saved Study Desk progress backup</label><input id="importFile" type="file" accept=".json,application/json"><button class="primary" id="importBackup" style="margin-top:10px">Restore selected backup</button><p id="backupFeedback" class="notice">Restoring replaces the progress currently in this browser. Save a backup first if you want to keep both versions.</p></section><section class="card"><div class="eyebrow">DATA & PRIVACY</div><h2 style="margin:8px 0">Where your data lives</h2><ul class="muted"><li>Progress, notes and settings are stored in this browser's local storage.</li><li>No account or server sync is configured in this mini-module.</li><li>Use “Full progress backup” before changing devices or clearing browser data; select that saved file here to restore everything.</li><li>Do not store passwords, Aadhaar, banking details or other sensitive information here.</li></ul><button id="clearAll" style="border-color:#874d57">Clear all local Study Desk data</button><p class="notice">Clearing browser storage or using a different browser/device can make local records unavailable unless you restore a backup.</p></section></div>
