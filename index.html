@@ -469,6 +469,52 @@ body>nav.tabs, body>nav.tabs::before{background:#fff!important;opacity:1!importa
 body>nav.tabs{isolation:isolate!important;z-index:1000!important}
 @media(max-width:999px){body>nav.tabs{z-index:1000!important;background:#fff!important;isolation:isolate!important}.wrap{position:relative;z-index:1!important}}
 
+
+/* Unified fixed Study Desk chrome: opaque, compact, identical on every page */
+@media(min-width:1000px){
+ body>header{position:fixed!important;left:0!important;top:0!important;width:35%!important;height:216px!important;padding:12px 16px!important;background:#fff!important;z-index:1200!important;overflow:hidden!important;box-shadow:2px 0 0 #e2e8f0!important;isolation:isolate!important}
+ body>header .brand-head{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:8px!important}
+ body>header .brand-icons img{width:32px!important;height:32px!important}
+ body>header .brand-copy h1{font-size:18px!important}
+ body>header .brand-copy p{margin:2px 0!important;font-size:10px!important}
+ body>header .global-search{width:100%!important;max-width:100%!important;margin-top:0!important}
+ body>.study-dashboard{position:fixed!important;left:35%!important;right:0!important;top:0!important;height:216px!important;display:grid!important;grid-template-columns:minmax(0,1fr) 245px!important;grid-template-rows:1fr!important;gap:6px!important;padding:8px!important;background:#f4f7fb!important;z-index:1199!important;opacity:1!important;isolation:isolate!important;overflow:hidden!important;box-shadow:none!important}
+ body>.study-dashboard .timer-column{display:contents!important}
+ body>.study-dashboard .dashboard-stats{grid-column:1!important;grid-row:1!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;gap:5px!important;align-content:stretch!important}
+ body>.study-dashboard .dash-stat{min-width:0!important;padding:7px 5px!important;background:#fff!important;overflow:hidden!important}
+ body>.study-dashboard .dash-label{font-size:9px!important;line-height:1.15!important}
+ body>.study-dashboard .dash-value{font-size:14px!important;white-space:nowrap!important}
+ body>.study-dashboard .dash-note{font-size:8px!important;line-height:1.1!important}
+ body>.study-dashboard .timer-column>.stopwatch-card{grid-column:2!important;grid-row:1!important;height:100%!important;min-height:0!important;display:grid!important;grid-template-columns:1fr!important;grid-template-rows:auto auto auto!important;gap:5px!important;padding:10px!important;align-content:center!important;overflow:hidden!important}
+ body>.study-dashboard .timer-head{grid-column:1!important;grid-row:1!important}
+ body>.study-dashboard .timer-head .eyebrow{font-size:9px!important}
+ body>.study-dashboard .timer-head .live-date{font-size:10px!important}
+ body>.study-dashboard .timer-head .live-time{font-size:16px!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box{grid-column:1!important;grid-row:2!important;display:flex!important;flex-direction:row!important;justify-content:center!important;gap:8px!important;padding:2px!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .clock{font-size:22px!important}
+ body>.study-dashboard .stopwatch-card>.buttons{grid-column:1!important;grid-row:3!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:3px!important;margin:0!important}
+ body>.study-dashboard .stopwatch-card>.buttons button{font-size:9px!important;padding:5px 2px!important}
+ body>.study-dashboard .lesson-mini-stats{display:none!important}
+ body>nav.tabs{position:fixed!important;left:0!important;right:0!important;top:216px!important;height:49px!important;display:flex!important;align-items:center!important;z-index:1300!important;background:#fff!important;background-image:linear-gradient(#fff,#fff)!important;opacity:1!important;backdrop-filter:none!important;isolation:isolate!important;box-shadow:0 4px 10px #17243a18!important}
+ body>.wrap{padding-top:280px!important;position:relative!important;z-index:1!important}
+ body>.wrap>.panel{position:relative!important;z-index:1!important}
+}
+body>nav.tabs,body>nav.tabs::before{background:#fff!important;opacity:1!important;backdrop-filter:none!important}
+body>nav.tabs{isolation:isolate!important;z-index:1300!important}
+body>.wrap{position:relative!important;z-index:1!important}
+.notes-quiz-shortcuts{display:none!important}
+#panel-learn .notes-quiz-shortcuts{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:12px!important;margin:0 0 12px!important}
+#panel-learn .notes-quiz-shortcuts>.card{margin:0!important;min-height:0!important;padding:14px!important}
+#panel-learn .notes-quiz-shortcuts h2{margin:4px 0 8px!important;font-size:20px!important}
+#panel-learn .notes-quiz-shortcuts p{margin:6px 0!important}
+@media(max-width:999px){
+ body>header{position:relative!important;width:100%!important;height:auto!important;z-index:10!important;background:#fff!important}
+ body>.study-dashboard{position:relative!important;left:auto!important;right:auto!important;top:auto!important;height:auto!important;z-index:9!important;background:#f4f7fb!important;opacity:1!important}
+ body>nav.tabs{position:sticky!important;top:0!important;height:auto!important;z-index:1300!important;background:#fff!important}
+ body>.wrap{padding-top:18px!important}
+}
+@media(max-width:600px){#panel-learn .notes-quiz-shortcuts{grid-template-columns:1fr!important}}
+
 </style>
 </head>
 <body>
@@ -502,7 +548,7 @@ body>nav.tabs{isolation:isolate!important;z-index:1000!important}
 
 
 
-<div class="notes-quiz-shortcuts"><section class="card notes-band"><div class="eyebrow">QUICK NOTES</div><h2>My notes & questions</h2><p class="muted">Capture a doubt or idea while studying. Notes save automatically.</p><textarea id="lessonNotes" rows="1" placeholder="Write a note, question or example…"></textarea><p class="notice" id="notesStatus">Auto-saves on this device.</p></section><aside class="card quiz-shortcut"><h2>Lesson quiz</h2><p class="muted">Jump to the selected lesson quiz.</p><a class="quiz-jump" href="#lessonQuizCard">Go to Lesson Quiz ↓</a></aside></div><span id="saveState" hidden></span><span id="connectivity" hidden></span><span id="accountStatus" hidden></span><section id="panel-learn" class="panel">
+<span id="saveState" hidden></span><span id="connectivity" hidden></span><span id="accountStatus" hidden></span><section id="panel-learn" class="panel"><div class="notes-quiz-shortcuts"><section class="card notes-band"><div class="eyebrow">QUICK NOTES</div><h2>My notes & questions</h2><p class="muted">Capture a doubt or idea while studying. Notes save automatically.</p><textarea id="lessonNotes" rows="1" placeholder="Write a note, question or example…"></textarea><p class="notice" id="notesStatus">Auto-saves on this device.</p></section><aside class="card quiz-shortcut"><h2>Lesson quiz</h2><p class="muted">Jump to the selected lesson quiz.</p><a class="quiz-jump" href="#lessonQuizCard">Go to Lesson Quiz ↓</a></aside></div>
 <div class="grid">
 <div>
 <section class="card"><div class="eyebrow">YOUR CURRICULUM</div><h2 style="margin:8px 0">Accounting Fundamentals</h2><p class="muted">A starter track for GFPA / PHALGUN. Lessons unlock for study immediately; completion is recorded only after you pass the quiz or mark a lesson reviewed.</p><div class="progressbar"><span id="courseBar"></span></div><small class="muted" id="courseProgress">0 of 6 lessons passed</small><div class="lesson-list" id="lessonList" style="margin-top:14px"></div></section>
