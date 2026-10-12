@@ -781,6 +781,66 @@ body>main.wrap{max-width:none!important;width:100%!important;padding:8px 10px 28
  #lessonStrip .lesson{flex-basis:175px!important;width:175px!important}
 }
 
+
+/* Reference-layout repair: style the runtime-built top row itself, not its old parent */
+@media(min-width:1000px){
+ #studyTopRow{
+  position:relative!important;display:grid!important;
+  grid-template-columns:132px minmax(230px,270px) minmax(0,1fr) 190px!important;
+  grid-template-rows:118px!important;gap:8px!important;align-items:stretch!important;
+  width:100%!important;min-height:126px!important;padding:8px 12px!important;
+  background:#fff!important;border:1px solid #e2e8f0!important;box-sizing:border-box!important;
+  overflow:hidden!important
+ }
+ #studyTopRow .brand-block{grid-column:1!important;grid-row:1!important;display:flex!important;flex-direction:column!important;gap:4px!important;min-width:0!important;justify-content:center!important}
+ #studyTopRow .brand-icons{display:flex!important;gap:5px!important}
+ #studyTopRow .brand-icons a,#studyTopRow .brand-icons img{width:42px!important;height:42px!important}
+ #studyTopRow .brand-copy h1{font-size:19px!important;margin:0!important}
+ #studyTopRow .brand-copy p{font-size:10px!important;margin:2px 0!important}
+ #studyTopRow .timer-column{grid-column:2!important;grid-row:1!important;display:flex!important;min-width:0!important}
+ #studyTopRow .stopwatch-card{width:100%!important;min-width:0!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(95px,.8fr)!important;grid-template-rows:auto auto!important;gap:5px!important;padding:9px!important}
+ #studyTopRow .timer-head{grid-column:1!important;grid-row:1!important;min-width:0!important}
+ #studyTopRow .timer-head .eyebrow{font-size:9px!important}
+ #studyTopRow .timer-head .live-date{font-size:10px!important;line-height:1.2!important}
+ #studyTopRow .timer-head .live-time{font-size:16px!important}
+ #studyTopRow .elapsed-box{grid-column:2!important;grid-row:1!important;min-width:0!important;padding:4px!important;margin:0!important}
+ #studyTopRow .elapsed-box .clock{font-size:23px!important;margin:3px 0!important}
+ #studyTopRow .elapsed-box .top-timer-status{font-size:8px!important}
+ #studyTopRow .stopwatch-card>.buttons{grid-column:1/-1!important;grid-row:2!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:3px!important}
+ #studyTopRow .stopwatch-card>.buttons button{font-size:9px!important;padding:6px 2px!important;min-width:0!important;white-space:nowrap!important}
+ #studyTopRow .lesson-mini-stats{display:none!important}
+ #studyTopRow .dashboard-stats{grid-column:3!important;grid-row:1!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;gap:5px!important;min-width:0!important}
+ #studyTopRow .dash-stat{padding:7px!important;min-width:0!important;overflow:hidden!important}
+ #studyTopRow .dash-label{font-size:9px!important;white-space:normal!important;line-height:1.15!important;min-height:20px}
+ #studyTopRow .dash-value{font-size:15px!important;white-space:nowrap!important;margin:3px 0!important}
+ #studyTopRow .dash-note{font-size:8px!important;line-height:1.15!important}
+ #studyTopRow>.global-search{grid-column:4!important;grid-row:1!important;width:100%!important;max-width:none!important;align-self:start!important;margin-top:4px!important}
+ #studyTopRow .global-search input{font-size:12px!important;padding:9px 28px 9px 10px!important}
+ body>header{display:none!important}
+ body>nav.tabs{position:relative!important;top:auto!important;left:auto!important;right:auto!important;height:48px!important;padding:5px 12px!important;z-index:5!important}
+ body>nav.tabs .tab{font-size:12px!important;padding:8px 10px!important}
+ #lessonStrip{display:flex!important;position:relative!important;width:100%!important;overflow-x:auto!important;overflow-y:hidden!important;gap:7px!important;padding:6px 12px 9px!important;box-sizing:border-box!important;background:#fff!important}
+ #lessonStrip .lesson-list{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;gap:7px!important;overflow:visible!important;margin:0!important;padding:0!important}
+ #lessonStrip .lesson{flex:0 0 205px!important;width:205px!important;min-width:205px!important;min-height:58px!important;padding:8px 10px!important}
+ .wrap{padding:10px 16px 34px!important;max-width:none!important}
+ #panel-learn .grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:14px!important;align-items:start!important}
+ #panel-learn .grid>div:first-child{order:1!important}
+ #panel-learn .grid>div:last-child{order:2!important}
+ #panel-learn .grid>div:first-child .card{padding:14px!important}
+}
+@media(max-width:999px){
+ #studyTopRow{display:flex!important;flex-direction:column!important;gap:8px!important;padding:10px!important;background:#fff!important}
+ #studyTopRow .brand-block{display:flex!important;align-items:center!important;gap:10px!important;flex-wrap:wrap!important}
+ #studyTopRow .timer-column{width:100%!important}
+ #studyTopRow .dashboard-stats{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;width:100%!important}
+ #studyTopRow>.global-search{width:100%!important;max-width:none!important}
+ #studyTopRow .lesson-mini-stats{display:none!important}
+ body>header{display:none!important}
+ #lessonStrip{display:flex!important;overflow-x:auto!important;padding:7px!important;background:#fff!important}
+ #lessonStrip .lesson-list{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;gap:7px!important}
+ #lessonStrip .lesson{flex:0 0 190px!important;width:190px!important;min-width:190px!important}
+}
+
 </style>
 </head>
 <body>
