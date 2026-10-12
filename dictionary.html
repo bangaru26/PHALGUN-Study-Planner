@@ -186,6 +186,27 @@ main.wrap>header{display:none!important}
  .shared-timerline .timer-clock{grid-column:2!important;grid-row:2!important;font-size:22px!important;white-space:nowrap!important}
  .shared-timerline .timer-controls-hint{display:none!important}
 }
+/* Tablet-width header: keep the timer in its own grid cell instead of over the search. */
+@media(min-width:700px) and (max-width:999px){
+ .shared-commandbar{position:relative!important;inset:auto!important;height:auto!important;min-height:0!important;overflow:visible!important}
+ .shared-topline{position:relative!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(220px,260px)!important;grid-template-rows:auto auto!important;gap:8px!important;height:auto!important;min-height:0!important;overflow:visible!important;padding:8px!important}
+ .shared-brand-area{position:relative!important;grid-column:1!important;grid-row:1!important;display:flex!important;flex-direction:column!important;min-width:0!important;width:100%!important;overflow:visible!important}
+ .shared-search{position:relative!important;inset:auto!important;transform:none!important;width:100%!important;max-width:100%!important;margin-top:6px!important}
+ .shared-search input{min-width:0!important;width:100%!important}
+ .shared-progressline{position:relative!important;grid-column:1/-1!important;grid-row:2!important;display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;grid-template-rows:auto!important;width:100%!important;min-width:0!important}
+ .shared-timerline{position:relative!important;inset:auto!important;transform:none!important;grid-column:2!important;grid-row:1!important;width:100%!important;max-width:100%!important;height:auto!important;min-height:90px!important;align-self:stretch!important;box-sizing:border-box!important;overflow:hidden!important}
+ .shared-nav{position:relative!important;inset:auto!important;height:auto!important;min-height:44px!important;display:flex!important;flex-wrap:wrap!important}
+ main.wrap{padding-top:14px!important}
+}
+@media(max-width:699px){
+ .shared-commandbar{position:relative!important;height:auto!important;overflow:visible!important}
+ .shared-topline{display:flex!important;flex-direction:column!important;height:auto!important;overflow:visible!important}
+ .shared-brand-area,.shared-search,.shared-progressline,.shared-timerline{position:relative!important;inset:auto!important;transform:none!important;width:100%!important;max-width:100%!important}
+ .shared-progressline{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .shared-timerline{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;grid-template-rows:auto auto!important;min-height:75px!important}
+ .shared-nav{position:relative!important;flex-wrap:wrap!important;height:auto!important}
+ main.wrap{padding-top:12px!important}
+}
 </style><header><div class="dict-head" style="max-width:1050px;margin:auto"><div><div style="font-size:12px;letter-spacing:1.4px;color:#79d9ce;font-weight:800">PHALGUN · LEARNING REFERENCE</div><h1 style="margin:6px 0">Subject Dictionary</h1><p>Plain-language definitions and practical examples for GFPA and PHALGUN.</p></div></div></header><main class="wrap"><a class="back" href="./excel-practice.html" style="margin-left:8px">ƒx Practise Excel Formulae ↗</a><div class="search"><input id="q" type="search" placeholder="Search term or definition" aria-label="Search term or definition" style="display:none"><select id="subject" aria-label="Filter by subject"><option value="">All subjects</option></select></div><p class="summary" id="count" aria-live="polite"></p><div class="list" id="terms"></div><p class="summary">Dictionary entries are bundled with the app. No uploads or separate document files are needed. Verify standards-related topics against official materials.</p></main><script>
 (function(){
 
