@@ -615,6 +615,43 @@ body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0
 #panel-quiz #lessonQuizCard{margin:0!important;min-height:0!important}
 #panel-quiz .card{min-height:0!important}
 @media(max-width:999px){body>.wrap{padding-top:18px!important}}
+
+/* Target layout from the user's reference screenshot — keep the top shell consistent */
+@media(min-width:1000px){
+ body>header{position:fixed!important;left:0!important;top:0!important;width:20.7%!important;height:108px!important;padding:4px 12px!important;z-index:1400!important;background:#fff!important;overflow:hidden!important}
+ body>header .brand-head{display:block!important;position:relative!important}
+ body>header .brand-icons{display:flex!important;gap:7px!important}
+ body>header .brand-icons img{width:46px!important;height:46px!important}
+ body>header .brand-copy h1{font-size:17px!important;margin:2px 0 0!important}
+ body>header .brand-copy p{font-size:10px!important;margin:0!important;line-height:1.2!important}
+ body>header .global-search{position:fixed!important;left:74.2%!important;top:5px!important;width:25%!important;margin:0!important;z-index:1450!important}
+ body>header .global-search input{height:48px!important;font-size:16px!important}
+ body>.study-dashboard{position:fixed!important;left:20.7%!important;right:26%!important;top:0!important;height:68px!important;display:block!important;padding:8px 3px!important;margin:0!important;background:#f4f7fb!important;z-index:1300!important;overflow:hidden!important}
+ body>.study-dashboard>.dashboard-stats{position:absolute!important;left:0!important;top:8px!important;right:0!important;height:53px!important;display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;grid-template-rows:1fr!important;gap:4px!important}
+ body>.study-dashboard>.timer-column{position:fixed!important;left:0!important;top:108px!important;width:294px!important;height:121px!important;display:block!important;z-index:1500!important}
+ body>.study-dashboard .dash-stat{height:53px!important;min-height:53px!important;padding:5px 4px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;gap:2px!important;background:#fff!important;border:1px solid #dce5ef!important;border-radius:9px!important;box-shadow:none!important;overflow:hidden!important}
+ body>.study-dashboard .dash-label{font-size:8px!important;line-height:1.1!important}
+ body>.study-dashboard .dash-value{font-size:12px!important;line-height:1.2!important;margin:0!important;white-space:nowrap!important}
+ body>.study-dashboard .dash-value small{font-size:9px!important}
+ body>.study-dashboard .dash-note,body>.study-dashboard .dash-progress,body>.study-dashboard .lesson-mini-stats{display:none!important}
+ body>.study-dashboard .stopwatch-card{height:121px!important;min-height:121px!important;width:294px!important;padding:8px!important;display:grid!important;grid-template-columns:1fr 1fr!important;grid-template-rows:auto 1fr auto!important;gap:4px!important;border-radius:8px!important;overflow:hidden!important}
+ body>.study-dashboard .timer-head{grid-column:1!important;grid-row:1/3!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:5px!important;margin:0!important}
+ body>.study-dashboard .timer-head .eyebrow{font-size:8px!important;white-space:nowrap!important}
+ body>.study-dashboard .timer-head .live-date{display:block!important;font-size:9px!important}
+ body>.study-dashboard .timer-head .live-time{font-size:16px!important;margin:0!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box{grid-column:2!important;grid-row:1/3!important;margin:0!important;padding:5px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;border-radius:8px!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .muted{font-size:7px!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .clock{font-size:22px!important;margin:0!important}
+ body>.study-dashboard .stopwatch-card>.elapsed-box .top-timer-status{display:block!important;font-size:7px!important}
+ body>.study-dashboard .stopwatch-card>.buttons{grid-column:1/3!important;grid-row:3!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:3px!important}
+ body>.study-dashboard .stopwatch-card>.buttons button{font-size:8px!important;padding:5px 2px!important}
+ body>nav.tabs{position:fixed!important;left:20.7%!important;right:0!important;top:68px!important;height:42px!important;margin:0!important;padding:3px!important;display:flex!important;flex-wrap:nowrap!important;gap:4px!important;overflow:visible!important;background:#fff!important;z-index:1600!important;opacity:1!important;isolation:isolate!important;box-shadow:0 2px 4px #0f172a16!important}
+ body>nav.tabs .tab{flex:0 0 auto!important;padding:7px 10px!important;font-size:12px!important;white-space:nowrap!important}
+ body>.wrap{padding-top:230px!important}
+ .notes-quiz-shortcuts{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;margin:0 0 12px!important}
+ .notes-quiz-shortcuts>.card{min-height:150px!important}
+}
+@media(max-width:999px){.notes-quiz-shortcuts{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:10px!important}}
 </style>
 </head>
 <body>
@@ -648,7 +685,8 @@ body>nav.tabs .tab[aria-selected="true"],body>nav.tabs .tab.active{background:#0
 
 
 
-<span id="saveState" hidden></span><span id="connectivity" hidden></span><span id="accountStatus" hidden></span><section id="panel-learn" class="panel">
+<span id="saveState" hidden></span><span id="connectivity" hidden></span><span id="accountStatus" hidden></span><section id="panel-learn" class="panel"><div class="notes-quiz-shortcuts"><section class="card notes-band"><div class="eyebrow">QUICK NOTES</div><h2>My notes &amp; questions</h2><p class="muted">Capture a doubt or idea while studying. Notes save automatically.</p><textarea id="lessonNotes" rows="1" placeholder="Write a note, question or example…"></textarea><p class="notice" id="notesStatus">Auto-saves on this device.</p></section><aside class="card quiz-shortcut"><h2>Lesson quiz</h2><p class="muted">Jump to the selected lesson quiz.</p><a class="quiz-jump" href="#lessonQuizCard" id="goLessonQuiz">Go to Lesson Quiz ↓</a></aside></div>
+
 <div class="grid">
 <div>
 <section class="card"><div class="eyebrow">YOUR CURRICULUM</div><h2 style="margin:8px 0">Accounting Fundamentals</h2><p class="muted">A starter track for GFPA / PHALGUN. Lessons unlock for study immediately; completion is recorded only after you pass the quiz or mark a lesson reviewed.</p><div class="progressbar"><span id="courseBar"></span></div><small class="muted" id="courseProgress">0 of 6 lessons passed</small><div class="lesson-list" id="lessonList" style="margin-top:14px"></div></section>
