@@ -79,17 +79,8 @@ function render(){let f=formulas[idx];$('formulaTitle').textContent=f.title;$('f
 $('prevFormula').onclick=()=>{idx=(idx+formulas.length-1)%formulas.length;render()};$('nextFormula').onclick=()=>{idx=(idx+1)%formulas.length;render()};
 $('checkAnswers').onclick=()=>{let f=formulas[idx],correct=0,lines=[];f.questions.forEach((q,i)=>{let got=$('ans'+i).value.trim().toLowerCase(),want=q[1].toLowerCase();if(got===want)correct++;lines.push((i+1)+'. '+(got===want?'Correct ✓':'Expected: '+q[1]))});$('practiceFeedback').classList.remove('hidden');$('practiceFeedback').innerHTML='<strong>'+correct+' / '+f.questions.length+' correct</strong><p>'+lines.map(esc).join('<br>')+'</p>'};
 $('showHints').onclick=()=>formulas[idx].questions.forEach((q,i)=>$('hint'+i).classList.remove('hidden'));$('resetAnswers').onclick=render;
-$('globalSearch').addEventListener('input',()=>{let q=$('globalSearch').value.trim().toLowerCase();if(!q)return;let found=formulas.findIndex(f=>(f.title+' '+f.task+' '+f.formula).toLowerCase().includes(q));if(found>=0){idx=found;render()}});
+
 render();
-})();
-</script><script>
-(function(){
- const input=document.getElementById('globalSearch');
- if(!input)return;
- const form=input.closest('form');
- function findFormula(){const q=input.value.trim().toLowerCase();if(!q)return false;const index=formulas.findIndex(f=>(f.title+' '+f.task+' '+f.formula+' '+f.explain).toLowerCase().includes(q));if(index<0)return false;idx=index;render();return true}
- input.addEventListener('input',findFormula);
- if(form)form.addEventListener('submit',e=>{e.preventDefault();if(!findFormula())location.href='./dictionary.html?q='+encodeURIComponent(input.value.trim())});
 })();
 </script>
 <script>
@@ -101,7 +92,7 @@ const dictQ=$('q');
 function goSearch(){const q=(input?.value||'').trim();if(!q)return;if(path.endsWith('excel-practice.html')){const all=window.formulas||[];const ix=all.findIndex(f=>(f.title+' '+f.task+' '+f.formula+' '+(f.explain||'')).toLowerCase().includes(q.toLowerCase()));if(ix>=0&&typeof window.selectFormula==='function'){window.selectFormula(ix);return;}}location.href='./dictionary.html?q='+encodeURIComponent(q);}
 form?.addEventListener('submit',ev=>{ev.preventDefault();goSearch()});
 if(input&&dictQ){const p=new URLSearchParams(location.search);if(p.get('q'))dictQ.value=p.get('q');input.addEventListener('input',()=>{dictQ.value=input.value;dictQ.dispatchEvent(new Event('input',{bubbles:true}))});dictQ.addEventListener('input',()=>{input.value=dictQ.value});}
-try{const data=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');const sessions=Array.isArray(data.sessions)?data.sessions:[],target=Number(data.plan?.dailyTarget||300),today=new Date(),key=today.toLocaleDateString('en-CA'),mins=sessions.filter(s=>s.date===key).reduce((n,s)=>n+Number(s.minutes||0),0),days=new Set(sessions.map(s=>s.date).filter(Boolean)),passed=Object.values(data.results||{}).filter(x=>x?.passed).length;const set=(id,v)=>{if($(id))$(id).textContent=v};set('sharedGoal',(target/60)+' hrs');set('sharedStudied',(mins/60).toLocaleString(undefined,{maximumFractionDigits:1})+'h');set('sharedRemaining',Math.max(0,target-mins)+'m');set('sharedDays',days.size);set('sharedSessions',sessions.length);set('sharedMinutes',sessions.reduce((n,s)=>n+Number(s.minutes||0),0));set('sharedPassed',passed)}catch(e){}
+try{const data=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');const sessions=Array.isArray(data.sessions)?data.sessions:[],target=Number(data.plan?.dailyTarget||300),today=new Date(),key=today.toLocaleDateString('en-CA'),mins=sessions.filter(s=>s.date===key).reduce((n,s)=>n+Number(s.minutes||0),0),days=new Set(sessions.map(s=>s.date).filter(Boolean)),passed=Object.values(data.results||{}).filter(x=>x?.passed).length;const set=(id,v)=>{if($(id))$(id).textContent=v};set('sharedGoal',(target/60)+' hrs');set('sharedStudied',(mins/60).toLocaleString(undefined,{maximumFractionDigits:1})+'h');set('sharedRemaining',new Date(Math.max(0,target-mins)*60000).toISOString().slice(11,19));set('sharedDays',days.size);set('sharedSessions',sessions.length);set('sharedMinutes',sessions.reduce((n,s)=>n+Number(s.minutes||0),0));set('sharedPassed',passed)}catch(e){}
 const dt=()=>{if($('sharedDate'))$('sharedDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'});if($('sharedClock'))$('sharedClock').textContent=window.studyDeskElapsed||'00:00:00'};dt();setInterval(dt,1000);
 })();
 </script></body></html>
