@@ -5,78 +5,57 @@
   <div class="shared-brand-area">
    <div class="shared-brand"><a href="./index.html" aria-label="AAROH Home"><img src="./aaroh-symbol.jpg" alt="AAROH"></a><img src="./study-planner-icon.webp" alt="Study Desk"><strong>Study Desk</strong></div>
    <div style="font-size:11px;color:#61738c">Learn Forever · Learn • Apply • Solve</div>
-   <form class="shared-search" action="./dictionary.html"><input name="q" id="globalSearch" type="search" placeholder="Search all study topics and formulas…" aria-label="Search all study topics and formulas"><button type="submit">Search</button></form>
+   <form class="shared-search" id="sharedSearchForm" action="./dictionary.html"><button type="submit">Search</button></form>
   </div>
   <div class="shared-progressline" aria-label="Study progress">
-   <div class="shared-metric"><span>Daily Goal</span><strong id="sharedGoal">5 hrs</strong></div>
-   <div class="shared-metric"><span>Studied Today</span><strong id="sharedStudied">0h</strong></div>
-   <div class="shared-metric"><span>Time Remaining</span><strong id="sharedRemaining">05:00</strong></div>
-   <div class="shared-metric"><span>Days Studied</span><strong id="sharedDays">0</strong></div>
-   <div class="shared-metric"><span>Sessions</span><strong id="sharedSessions">0</strong></div>
-   <div class="shared-metric"><span>Study minutes</span><strong id="sharedMinutes">0</strong></div>
-   <div class="shared-metric"><span>Passed</span><strong id="sharedPassed">0</strong></div>
+   <div class="shared-metric"><span>Daily Goal</span><strong id="sharedGoal">5 hrs</strong></div><div class="shared-metric"><span>Studied Today</span><strong id="sharedStudied">0h</strong></div><div class="shared-metric"><span>Time Remaining</span><strong id="sharedRemaining">300m</strong></div><div class="shared-metric"><span>Days Studied</span><strong id="sharedDays">0</strong></div><div class="shared-metric"><span>Sessions</span><strong id="sharedSessions">0</strong></div><div class="shared-metric"><span>Study minutes</span><strong id="sharedMinutes">0</strong></div><div class="shared-metric"><span>Passed</span><strong id="sharedPassed">0</strong></div>
   </div>
  </div>
- <div class="shared-timerline"><span class="timer-label">◷ STUDY STOPWATCH</span><span id="sharedDate" class="timer-hint"></span><span class="timer-clock" id="sharedClock">00:00:00</span><span class="timer-hint">Open Study Desk home to control the session timer</span></div>
- <nav class="shared-nav" aria-label="Study Desk pages"><a href="./index.html">Learn &amp; Practise</a><a href="./index.html#panel-plan">Study Plan &amp; Progress</a><a href="./index.html#panel-backup">Backup &amp; Settings</a><a href="./index.html#panel-notes">＋ My Notes</a><a class="current" href="./dictionary.html">Subject Dictionary</a><a href="./excel-practice.html">ƒx Excel Formula Practice</a></nav>
-</div>
-<style>
-/* Shared Study Desk command shell on every learning page */
-body{padding-top:0}
+ <div class="shared-timerline"><span class="timer-label">◷ STUDY STOPWATCH</span><span id="sharedDate" class="timer-hint"></span><span class="timer-clock" id="sharedClock">00:00:00</span><span class="timer-hint">Timer controls on Study Desk home</span></div>
+ <nav class="shared-nav" aria-label="Study Desk pages"><a href="./index.html">Learn &amp; Practise</a><a href="./index.html#panel-plan">Study Plan &amp; Progress</a><a href="./index.html#panel-backup">Backup &amp; Settings</a><a href="./index.html#panel-notes">＋ My Notes</a><a class="current" href="./dictionary.html">Subject Dictionary</a><a  href="./excel-practice.html">ƒx Excel Formula Practice</a></nav>
+</div><style>
+:root{--ink:#17243a;--muted:#61738c;--line:#dce5ef;--teal:#0d9488;--bg:#f4f7fb}
+*{box-sizing:border-box}
+.shared-commandbar{position:fixed;z-index:10000;inset:0 0 auto;background:#f4f7fb;border-bottom:1px solid #dce5ef;box-shadow:0 5px 14px #17243a18;isolation:isolate}
+.shared-topline{display:grid;grid-template-columns:35% minmax(0,1fr);gap:8px;align-items:stretch;padding:8px 12px;background:#fff}
+.shared-brand-area{display:flex;flex-direction:column;gap:6px;justify-content:center;min-width:0}
 .shared-brand{display:flex;align-items:center;gap:8px;min-width:0}
 .shared-brand img{width:32px;height:32px;object-fit:contain;background:#07111e;border-radius:5px}
 .shared-brand strong{white-space:nowrap;font-size:14px}
-.shared-search{display:flex;flex:1;min-width:180px;gap:6px}
-.shared-search input{min-width:0;flex:1;padding:8px 10px;border:1px solid #dce5ef;border-radius:9px}
-.shared-search button{padding:8px 12px;background:#0d9488;color:#fff;border:0;border-radius:9px;font-weight:700}
-.shared-commandbar{position:fixed;z-index:500;top:0;left:0;right:0;background:#f4f7fc;box-shadow:0 5px 14px #17243a18;border-bottom:1px solid #dce5ef;isolation:isolate}
-.shared-topline{display:grid;grid-template-columns:35% minmax(0,1fr);gap:8px;align-items:stretch;padding:8px 12px;background:#fff}
-.shared-brand-area{display:flex;flex-direction:column;gap:7px;justify-content:center;min-width:0}
-.shared-progressline{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;min-width:0}
+.shared-search{display:flex;flex:1;min-width:0;gap:6px}
+.shared-search input{min-width:0;flex:1;padding:8px 10px;border:1px solid #dce5ef;border-radius:9px;font:inherit;background:#fff;color:#17243a}
+.shared-search button{padding:8px 12px;background:#0d9488;color:#fff;border:0;border-radius:9px;font-weight:700;cursor:pointer}
+.shared-progressline{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;min-width:0;align-content:center}
 .shared-metric{background:#fff;border:1px solid #e2e8f0;border-radius:9px;padding:7px 6px;min-width:0;overflow:hidden}
 .shared-metric span{display:block;font-size:9px;line-height:1.2;color:#526783}
 .shared-metric strong{display:block;font-size:15px;line-height:1.3;white-space:nowrap;color:#142238}
-.shared-timerline{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:4px 12px;background:#142237;color:#fff}
+.shared-timerline{position:absolute;right:10px;top:8px;width:calc(65% - 22px);height:56px;display:flex;align-items:center;justify-content:flex-start;gap:8px;padding:4px 12px;background:#142237;color:#fff;border-radius:10px;overflow:hidden}
 .shared-timerline .timer-label{font-size:9px;letter-spacing:1px;color:#b8c8dc}
-.shared-timerline .timer-clock{font-size:22px;font-weight:850;font-variant-numeric:tabular-nums;white-space:nowrap}
+.shared-timerline .timer-clock{font-size:25px;font-weight:850;font-variant-numeric:tabular-nums;white-space:nowrap}
 .shared-timerline .timer-hint{font-size:10px;color:#b8c8dc}
 .shared-nav{display:flex;align-items:center;gap:7px;overflow-x:auto;white-space:nowrap;padding:6px 12px;background:#fff;border-top:1px solid #e2e8f0}
 .shared-nav a{display:inline-block;text-decoration:none;padding:7px 10px;border:1px solid #dbe4ef;border-radius:9px;background:#f8fafc;color:#25344b;font-size:12px;font-weight:750}
 .shared-nav a.current{background:#0ea5a4;color:#fff;border-color:#0ea5a4}
-body>header:not(.shared-commandbar),body>.study-desk-global-dock{display:none!important}
-main.wrap{padding-top:310px!important}
-@media(min-width:1000px){
- .shared-commandbar{height:265px}
- .shared-topline{height:218px;grid-template-columns:35% minmax(0,1fr);padding:8px 12px}
- .shared-brand-area{padding:0 10px}
- .shared-progressline{grid-template-columns:repeat(7,minmax(0,1fr));align-content:center}
- .shared-timerline{position:absolute;right:10px;top:8px;width:calc(65% - 22px);height:56px;justify-content:flex-start;padding-left:14px}
- .shared-timerline .timer-clock{font-size:25px}
- .shared-nav{height:47px}
- main.wrap{padding-top:280px!important}
-}
+body{margin:0;background:#f4f7fb;color:#17243a}
+body>header:not(.shared-commandbar){display:none!important}
+main.wrap{padding-top:280px!important;position:relative;z-index:1}
 @media(max-width:999px){
  .shared-topline{grid-template-columns:1fr;gap:7px}
  .shared-brand-area{flex-direction:row;align-items:center;flex-wrap:wrap}
  .shared-search{flex-basis:100%}
  .shared-progressline{grid-template-columns:repeat(7,minmax(0,1fr))}
- .shared-metric{padding:6px 4px}
- .shared-metric span{font-size:8px}
- .shared-metric strong{font-size:13px}
- .shared-timerline{justify-content:flex-start;flex-wrap:wrap}
- main.wrap{padding-top:260px!important}
+ .shared-metric{padding:6px 4px}.shared-metric span{font-size:8px}.shared-metric strong{font-size:13px}
+ .shared-timerline{position:static;width:auto;height:auto;min-height:44px;border-radius:0;flex-wrap:wrap}
+ .shared-nav{padding:6px 8px}
+ main.wrap{padding-top:250px!important}
 }
 @media(max-width:600px){
- .shared-topline{padding:7px;gap:6px}
- .shared-brand strong{font-size:13px}
- .shared-brand img{width:28px;height:28px}
+ .shared-topline{padding:7px;gap:6px}.shared-brand strong{font-size:13px}.shared-brand img{width:28px;height:28px}
  .shared-progressline{grid-template-columns:repeat(4,minmax(0,1fr))}
- .shared-timerline .timer-clock{font-size:20px}
- .shared-nav{padding:6px 7px}
- .shared-nav a{font-size:11px;padding:7px 8px}
- main.wrap{padding:345px 10px 30px!important}
+ .shared-timerline .timer-clock{font-size:20px}.shared-nav a{font-size:11px;padding:7px 8px}
+ main.wrap{padding:330px 10px 30px!important}
 }
-</style><header><div class="dict-head" style="max-width:1050px;margin:auto"><div><div style="font-size:12px;letter-spacing:1.4px;color:#79d9ce;font-weight:800">PHALGUN · LEARNING REFERENCE</div><h1 style="margin:6px 0">Subject Dictionary</h1><p>Plain-language definitions and practical examples for GFPA and PHALGUN.</p></div><input class="dict-global-search" id="globalSearch" type="search" placeholder="Search all terms and formulas…" aria-label="Global dictionary search"></div></header><main class="wrap"><a class="back" href="./excel-practice.html" style="margin-left:8px">ƒx Practise Excel Formulae ↗</a><div class="search"><input id="q" type="search" placeholder="Search term or definition" aria-label="Search dictionary"><select id="subject" aria-label="Filter subject"><option value="">All subjects</option></select></div><p class="summary" id="count" aria-live="polite"></p><div class="list" id="terms"></div><p class="summary">Dictionary entries are bundled with the app. No uploads or separate document files are needed. Verify standards-related topics against official materials.</p></main><script>
+</style><header><div class="dict-head" style="max-width:1050px;margin:auto"><div><div style="font-size:12px;letter-spacing:1.4px;color:#79d9ce;font-weight:800">PHALGUN · LEARNING REFERENCE</div><h1 style="margin:6px 0">Subject Dictionary</h1><p>Plain-language definitions and practical examples for GFPA and PHALGUN.</p></div></div></header><main class="wrap"><a class="back" href="./excel-practice.html" style="margin-left:8px">ƒx Practise Excel Formulae ↗</a><div class="search"><input id="q" type="search" placeholder="Search term or definition" aria-label="Search term or definition"><select id="subject" aria-label="Filter by subject"><option value="">All subjects</option></select></div><p class="summary" id="count" aria-live="polite"></p><div class="list" id="terms"></div><p class="summary">Dictionary entries are bundled with the app. No uploads or separate document files are needed. Verify standards-related topics against official materials.</p></main><script>
 (function(){
 
 const sharedGoal=document.getElementById('sharedGoal'),sharedStudied=document.getElementById('sharedStudied'),sharedRemaining=document.getElementById('sharedRemaining'),sharedDays=document.getElementById('sharedDays'),sharedSessions=document.getElementById('sharedSessions'),sharedMinutes=document.getElementById('sharedMinutes'),sharedPassed=document.getElementById('sharedPassed'),sharedDate=document.getElementById('sharedDate');
@@ -177,5 +156,18 @@ Array.from(new Set(E.map(x=>x[0]))).sort().forEach(x=>{let o=document.createElem
 function esc(x){return String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function render(){let term=q.value.trim().toLocaleLowerCase('en-IN'),sub=s.value,rows=E.filter(x=>(!sub||x[0]===sub)&&(!term||x.join(' ').toLocaleLowerCase('en-IN').includes(term)));count.textContent=rows.length+' of '+E.length+' terms';list.innerHTML=rows.length?rows.map(x=>'<article class="term"><span class="tag">'+esc(x[0])+'</span><h2>'+esc(x[1])+'</h2><p>'+esc(x[2])+'</p><p style="margin-top:9px"><strong>Example:</strong> '+esc(x[3])+'</p></article>').join(''):'<p>No matching terms. Try another search or select All subjects.</p>'}
 if(globalSearch)globalSearch.addEventListener('input',()=>{q.value=globalSearch.value;render()});q.addEventListener('input',()=>{globalSearch.value=q.value;render()});s.addEventListener('change',render);render();
+})();
+</script>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const input=$('globalSearch'),form=$('sharedSearchForm');
+const path=location.pathname.toLowerCase();
+const dictQ=$('q');
+function goSearch(){const q=(input?.value||'').trim();if(!q)return;if(path.endsWith('excel-practice.html')){const all=window.formulas||[];const ix=all.findIndex(f=>(f.title+' '+f.task+' '+f.formula+' '+(f.explain||'')).toLowerCase().includes(q.toLowerCase()));if(ix>=0&&typeof window.selectFormula==='function'){window.selectFormula(ix);return;}}location.href='./dictionary.html?q='+encodeURIComponent(q);}
+form?.addEventListener('submit',ev=>{ev.preventDefault();goSearch()});
+if(input&&dictQ){const p=new URLSearchParams(location.search);if(p.get('q'))dictQ.value=p.get('q');input.addEventListener('input',()=>{dictQ.value=input.value;dictQ.dispatchEvent(new Event('input',{bubbles:true}))});dictQ.addEventListener('input',()=>{input.value=dictQ.value});}
+try{const data=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');const sessions=Array.isArray(data.sessions)?data.sessions:[],target=Number(data.plan?.dailyTarget||300),today=new Date(),key=today.toLocaleDateString('en-CA'),mins=sessions.filter(s=>s.date===key).reduce((n,s)=>n+Number(s.minutes||0),0),days=new Set(sessions.map(s=>s.date).filter(Boolean)),passed=Object.values(data.results||{}).filter(x=>x?.passed).length;const set=(id,v)=>{if($(id))$(id).textContent=v};set('sharedGoal',(target/60)+' hrs');set('sharedStudied',(mins/60).toLocaleString(undefined,{maximumFractionDigits:1})+'h');set('sharedRemaining',Math.max(0,target-mins)+'m');set('sharedDays',days.size);set('sharedSessions',sessions.length);set('sharedMinutes',sessions.reduce((n,s)=>n+Number(s.minutes||0),0));set('sharedPassed',passed)}catch(e){}
+const dt=()=>{if($('sharedDate'))$('sharedDate').textContent=new Date().toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'});if($('sharedClock'))$('sharedClock').textContent=window.studyDeskElapsed||'00:00:00'};dt();setInterval(dt,1000);
 })();
 </script></body></html>
