@@ -18,6 +18,24 @@
 .shared-nav a:focus,.shared-nav a:active{background:#0ea5a4!important;color:#fff!important;border-color:#0ea5a4!important}
 @media(max-width:999px){.shared-commandbar{height:auto!important}.shared-topline{height:auto!important}}
 
+
+/* LOCKED TOP STRIP: one slim horizontal line on every desktop page */
+@media(min-width:1000px){
+ body>.study-dashboard{grid-template-columns:minmax(0,1fr) 210px!important}
+ body>.study-dashboard .dashboard-stats{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;grid-template-rows:1fr!important;gap:4px!important;align-content:stretch!important}
+ body>.study-dashboard .dash-stat,body>.study-dashboard .mini-stat{min-width:0!important;padding:5px 4px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;overflow:hidden!important}
+ body>.study-dashboard .dash-label,body>.study-dashboard .mini-stat span{font-size:8px!important;line-height:1.1!important;white-space:normal!important}
+ body>.study-dashboard .dash-value,body>.study-dashboard .mini-stat strong{font-size:12px!important;white-space:nowrap!important}
+ body>.study-dashboard .dash-note,body>.study-dashboard .dash-progress{display:none!important}
+ body>.study-dashboard .lesson-mini-stats{display:contents!important}
+ body>.study-dashboard .timer-column{display:contents!important}
+ body>.study-dashboard .timer-column>.stopwatch-card{grid-column:2!important;grid-row:1!important}
+ .shared-topline{grid-template-columns:32% minmax(0,1fr) 210px!important}
+ .shared-progressline{grid-template-columns:repeat(7,minmax(0,1fr))!important;grid-template-rows:1fr!important;gap:4px!important}
+ .shared-metric{min-width:0!important;padding:5px 3px!important;display:flex!important;flex-direction:column!important;justify-content:center!important}
+ .shared-metric span{font-size:8px!important;line-height:1.1!important}
+ .shared-metric strong{font-size:12px!important;white-space:nowrap!important}
+}
 </style></head><body><div class="shared-commandbar" role="banner"><div class="shared-topline">
 <div class="shared-brand-area"><div class="shared-brand"><a href="./index.html" aria-label="AAROH Home"><img src="./aaroh-symbol.jpg" alt="AAROH"></a><img src="./study-planner-icon.webp" alt="Study Desk"><strong>Study Desk</strong></div><div style="font-size:11px;color:#61738c">Learn Forever · Learn • Apply • Solve</div><form class="shared-search" id="sharedSearchForm" action="./dictionary.html"><input name="q" id="globalSearch" type="search" placeholder="Search all study topics and formulas…" aria-label="Search all study topics and formulas"><button type="submit">Search</button></form></div>
 <div class="shared-progressline" aria-label="Study progress"><div class="shared-metric"><span>Daily Goal</span><strong id="sharedGoal">5 hrs</strong></div><div class="shared-metric"><span>Studied Today</span><strong id="sharedStudied">0h</strong></div><div class="shared-metric"><span>Time Remaining</span><strong id="sharedRemaining">05:00:00</strong></div><div class="shared-metric"><span>Days Studied</span><strong id="sharedDays">0</strong></div><div class="shared-metric"><span>Sessions</span><strong id="sharedSessions">0</strong></div><div class="shared-metric"><span>Study minutes</span><strong id="sharedMinutes">0</strong></div><div class="shared-metric"><span>Passed</span><strong id="sharedPassed">0</strong></div></div>
