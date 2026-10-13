@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#08111e"><title>PHALGUN — Lifelong Learning Library</title>
+<style>
+:root{color-scheme:dark;--bg:#08111e;--panel:#101d2d;--panel2:#14243a;--line:#2a3c54;--ink:#eef4fb;--muted:#a8b8cb;--gold:#e4bd69;--teal:#65d6c6}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,Segoe UI,Arial}header{padding:26px max(18px,calc((100% - 1180px)/2));background:linear-gradient(120deg,#101f33,#172a40);border-bottom:1px solid var(--line)}.brand{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:2px}h1{margin:4px 0;font-size:clamp(28px,4vw,42px)}header p{margin:4px 0;color:var(--muted)}main{max-width:1180px;margin:auto;padding:20px 16px 56px}.principle{padding:15px 17px;border:1px solid #675b3d;background:#1a2330;border-radius:14px;margin-bottom:18px}.principle strong{color:var(--gold)}.controls{display:grid;grid-template-columns:1fr minmax(180px,260px);gap:10px;margin:18px 0}input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font:inherit}.stats{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.chip{padding:5px 9px;border:1px solid var(--line);border-radius:30px;color:var(--muted);font-size:12px}.section{margin:26px 0}.section h2{font-size:22px;margin:0 0 4px}.section>p{color:var(--muted);margin:0 0 12px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}.card h3{font-size:17px;line-height:1.3;margin:0 0 6px;color:var(--gold)}.card .meta{font-size:11px;letter-spacing:.7px;text-transform:uppercase;color:var(--teal);font-weight:800}.card p{margin:8px 0;color:var(--muted);font-size:14px}.card ul{padding-left:19px;margin:9px 0;font-size:14px}.card li{margin:4px 0}.outcome{border-top:1px solid var(--line);margin-top:10px;padding-top:9px;font-size:13px}.path{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.step{background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:12px}.step strong{display:block;color:var(--gold)}.step span{font-size:13px;color:var(--muted)}.hidden{display:none!important}.small{font-size:12px;color:var(--muted)}footer{border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:12px}@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.path{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.controls,.grid{grid-template-columns:1fr}.path{grid-template-columns:1fr 1fr}header{padding:22px 16px}}
+</style></head><body>
+<header><div class="brand">PHALGUN • LEARN FOREVER</div><h1>Lifelong Learning Library</h1><p>Learn • Apply • Solve — one connected learning universe, from foundations to professional mastery.</p></header>
+<main>
+<div class="principle"><strong>Architecture locked:</strong> PHALGUN is the lifelong-learning universe. GFPA remains the dedicated Finance Academy within PHALGUN. One shared learning engine; age-appropriate experiences, connected subjects, portable learning records and progressive mastery.</div>
+<div class="path"><div class="step"><strong>1 · Understand</strong><span>Diagnose starting level and connect prerequisites.</span></div><div class="step"><strong>2 · Learn & Practise</strong><span>Guided lesson, examples, retrieval and spaced revision.</span></div><div class="step"><strong>3 · Build & Test</strong><span>Exercises, simulations, quizzes and cumulative capstones.</span></div><div class="step"><strong>4 · Apply & Reassess</strong><span>Portfolio evidence, reflection, interview/application and mastery check.</span></div></div>
+<div class="controls"><input id="q" type="search" placeholder="Search subjects, skills, courses or outcomes…" aria-label="Search curriculum"><select id="domain" aria-label="Filter by domain"><option value="">All learning domains</option></select></div><div class="stats"><span class="chip" id="count">18 learning domains</span><span class="chip">Beginner → professional</span><span class="chip">Age-adaptive where relevant</span><span class="chip">Offline-first design target</span></div>
+<div id="catalog"></div>
+<footer><strong>Curriculum governance:</strong> this is the consolidated master subject catalogue and learning architecture, not a claim that every individual lesson, official exam resource, credential or native installer is already complete. Exam syllabi, laws, standards and platform instructions must be versioned to their official source and review date. Original lessons and practice questions should be authored for PHALGUN; do not reproduce paid or copyrighted course banks. Cloud sync, Telegram authentication and cross-device acceptance must be separately tested before being marked production-ready.</footer>
+</main>
+<script>
+const domains = [
+{key:"gfpa",name:"GFPA — Finance Academy",group:"Career & Professional",desc:"The dedicated, connected finance pathway for career relaunch and practical finance operations.",courses:[
+["Accounting foundations","Accounting equation, double entry, journals, ledgers, trial balance, accruals, prepayments, depreciation, inventory, error correction and accounting cycle.","Post journals, reconcile a ledger and prepare a trial balance."],
+["Financial statements & analysis","P&L, balance sheet, cash flow, notes, ratios, working capital, variance analysis, management reporting and interpretation.","Prepare a linked statement pack and explain movements."],
+["Accounts Payable (AP) & Procure-to-Pay (P2P)","Supplier onboarding, purchase orders, goods receipt, invoice matching, coding, approvals, payment runs, vendor reconciliation, ageing and controls.","Build a P2P case with duplicate-invoice checks and an audit trail."],
+["Accounts Receivable (AR) & Order-to-Cash (O2C)","Customer master, credit, billing, receipts, cash application, deductions, collections, ageing, disputes and bad-debt concepts.","Create an ageing analysis, collection priorities and reconciliation."],
+["General Ledger & Record-to-Report (GL/R2R)","Chart of accounts, journals, intercompany, accruals, provisions, reconciliations, close calendar, consolidation concepts and reporting.","Run a simulated month-end close with reconciliations and close checklist."],
+["Internal controls, audit & risk","Segregation of duties, authorisation, evidence, access controls, fraud indicators, risk-control matrices, audit trails and remediation.","Map a process, identify control gaps and propose tested controls."],
+["CMA USA","Management accounting, planning, budgeting, forecasting, performance management, cost management, internal controls, analytics and financial decision-making.","Exam-style practice, formula sheets, error log and cumulative mock tests aligned to the current official syllabus."],
+["IFRS & financial reporting standards","Conceptual framework, presentation, revenue, leases, inventory, PPE, impairment, provisions, financial instruments and disclosures.","Prepare a standards-based case with dated source references and assumptions."],
+["Indian finance, tax & compliance literacy","GST concepts, TDS/TCS concepts, invoice controls, financial-year/period awareness, payroll touchpoints and compliance calendars.","Build a compliance checklist; verify current rules with official sources before use."],
+["Treasury, banking & working capital","Cash positioning, bank reconciliation, liquidity, payment controls, FX fundamentals, credit and working-capital metrics.","Build a cash forecast and bank-reconciliation exception log."],
+["Finance transformation & shared services","Process maps, SLAs, KPIs, root-cause analysis, continuous improvement, operating models, standardisation and change adoption.","Write a transformation proposal with baseline, benefits and controls."]
+]},
+{key:"digital",name:"Digital & Data Skills",group:"Career & Professional",desc:"A connected toolchain: spreadsheet analysis → database → code → dashboard → ERP process → responsible AI.",courses:[
+["Excel foundations → Advanced Excel","Tables, references, formulas, XLOOKUP, INDEX/MATCH, SUMIFS, dynamic arrays, PivotTables, charts, validation, Power Query, modelling and error handling.","Automated reconciliation workbook, clean dataset and management dashboard."],
+["Data analytics & statistics","Data quality, descriptive statistics, distributions, sampling, correlation vs causation, KPIs, segmentation and storytelling.","A reproducible analysis with documented assumptions and recommendations."],
+["Power BI","Power Query, data model, relationships, star schema, DAX foundations, measures, visuals, filters, row-level security concepts and refresh governance.","Interactive finance dashboard with KPI definitions and data dictionary."],
+["SQL","SELECT, filtering, joins, aggregation, CASE, CTEs, window functions, subqueries, data quality checks and safe update concepts.","Reusable finance queries for AP ageing, AR ageing, GL exceptions and trends."],
+["Python","Syntax, data structures, functions, files, exceptions, testing, CSV/Excel handling, pandas fundamentals and automation.","Tested script that validates a ledger extract and generates exception reports."],
+["SAP FICO & ERP foundations","Enterprise structure, master data, GL, AP, AR, asset accounting, cost centres, profit centres, postings, period close and integration concepts.","End-to-end simulated procure-to-pay and record-to-report process map; practice system access only through authorised training."],
+["Oracle / ERP literacy","ERP concepts, subledgers, posting flow, master data, controls, reports and comparison of system workflows.","Compare an ERP process and control design without claiming product certification."],
+["RPA & workflow automation","Process suitability, rule-based automation, exception handling, logs, retries, access and human approval.","Automate a safe repetitive workflow with a manual exception path."],
+["AI for Finance","Prompt design, source grounding, reconciliation support, document extraction, variance explanation, privacy, hallucination checks and human approval.","AI-assisted analysis with cited sources, test cases, error disclosure and reviewer sign-off."],
+["Cybersecurity & data privacy","MFA, passkeys, phishing, permissions, encryption concepts, data minimisation, backups, threat modelling and incident response.","Threat model a learning/work workflow and test recovery procedures."]
+]},
+{key:"career",name:"Career, Delivery & Professional Practice",group:"Career & Professional",desc:"Turn skills into demonstrable work and a credible job-search pipeline.",courses:[
+["Placement & job readiness","Role mapping, resume tailoring, ATS-readable structure, interview stories, mock interviews, communication and follow-up.","Role-specific resume, evidence portfolio and interview answer bank."],
+["Naukri & job-search operations","Profile completeness, keyword alignment, job alerts, targeted applications, tracking, recruiter communication and scam checks.","A weekly application tracker with quality criteria and follow-up dates."],
+["Remote & international readiness","Async communication, time zones, documentation, cross-cultural collaboration, data handling and professional boundaries.","Remote-work simulation and written handover."],
+["Agile, Scrum, Jira & Kanban","Backlogs, user stories, acceptance criteria, estimation, sprint planning, flow, blockers, retrospectives and delivery metrics.","Manage a small finance-transformation backlog through a simulated sprint."],
+["Business communication","Email, reports, executive summaries, meeting notes, stakeholder updates, presentation and conflict-aware communication.","A concise management pack and stakeholder update."],
+["Project & change management","Scope, milestones, dependencies, risks, testing, rollout, training, adoption and post-implementation review.","Project charter, risk register, test plan and benefits review."],
+["Portfolio & integrated capstone","Connect AP, AR, GL, Excel, SQL, Python, Power BI, SAP FICO concepts, controls and Agile delivery.","A realistic end-to-end finance operations portfolio with workbook, queries, dashboard, reconciliation evidence, SOP and transformation proposal."]
+]},
+{key:"math",name:"Mathematics & Quantitative Thinking",group:"Foundations & Enrichment",desc:"Multiple entry points and progressive practice for children, teens and adults.",courses:[
+["Mathematics foundations","Number sense, arithmetic, fractions, decimals, percentages, ratios, units and estimation.","Solve everyday and finance problems with written reasoning."],
+["Abacus","Place value, bead representation, mental arithmetic and progressively harder drills.","Timed accuracy practice and level checks."],
+["Vedic mathematics & calculation strategies","Selected mental calculation strategies taught with worked examples and verification against standard methods.","Explain the method, check accuracy and recognise when it is useful."],
+["Maths tips, tricks & problem solving","Patterns, logical reasoning, word problems, algebraic thinking, geometry and multi-step strategy.","A problem journal showing method, answer and verification."],
+["Statistics & probability","Charts, averages, spread, probability, risk and interpretation of data.","Explain a real dataset without overclaiming what it proves."]
+]},
+{key:"science",name:"Science, Nature & Environment",group:"Foundations & Enrichment",desc:"Conceptual understanding connected to observation and safe practical activities.",courses:[
+["Physics","Motion, forces, energy, heat, light, sound, electricity and everyday applications.","Explain a phenomenon and document a safe demonstration."],
+["Chemistry","Matter, mixtures, atoms, reactions, acids/bases, materials and environmental chemistry.","Classify observations and follow age-appropriate lab safety."],
+["Biology & human systems","Cells, organisms, body systems, health literacy, ecology and evolution foundations.","Create a concept map and distinguish evidence from myth."],
+["Earth, space & environment","Weather, climate, geology, astronomy, water, biodiversity and sustainability.","Keep an observation log and evaluate environmental claims."],
+["Scientific method & critical thinking","Questions, hypotheses, variables, measurement, evidence, uncertainty, replication and bias.","Design a simple investigation and state limitations."]
+]},
+{key:"language",name:"Languages, Literacy & Communication",group:"Foundations & Enrichment",desc:"Build comprehension, expression and lifelong access to knowledge.",courses:[
+["English phonics, reading & writing","Sound-letter relationships, decoding, fluency, vocabulary, comprehension, grammar and structured writing.","Age-appropriate reading record and short written explanations."],
+["Professional English","Business vocabulary, clear sentences, email, reports, presentations and listening.","A reviewed work sample and speaking practice."],
+["Indian languages","Reading, writing, vocabulary, grammar, conversation and culturally relevant texts by selected language.","Progressive reading and conversation portfolio."],
+["Sanskrit foundations","Pronunciation, script, vocabulary, grammar foundations and guided reading with context.","Read short passages with vocabulary and grammar notes."],
+["Teeline shorthand","Progressive symbols, joining, speed-building, transcription and accuracy checks.","Timed transcription and accuracy log."]
+]},
+{key:"technology",name:"Computing, AI & Digital Citizenship",group:"Foundations & Enrichment",desc:"From everyday device confidence to building and safely using technology.",courses:[
+["Computer & internet foundations","Files, folders, operating systems, browsers, accounts, updates, accessibility and troubleshooting.","Complete common tasks independently and maintain a safe setup."],
+["Programming & computational thinking","Algorithms, conditions, loops, decomposition, debugging, version control and testing.","Build a small project with tests and documentation."],
+["Web, apps & PWA literacy","HTML/CSS/JavaScript foundations, responsive design, installability, offline cache, accessibility and deployment basics.","Create and test a small offline-capable web experience."],
+["AI literacy & evaluation","What AI can/cannot do, source verification, prompting, bias, privacy and human review.","Compare AI answers with reliable evidence and document errors."],
+["Digital safety & media literacy","Privacy, misinformation, deepfakes, scams, online conduct, consent and account security.","Evaluate a claim and practise safe account recovery."]
+]},
+{key:"creativity",name:"Creativity, Art & Making",group:"Foundations & Enrichment",desc:"Creative practice as a repeatable skill, not only theory.",courses:[
+["Drawing & visual observation","Lines, shapes, proportion, perspective, light, shadow and composition.","A dated sketchbook with revision notes."],
+["Crafting & design","Paper, reusable materials, basic construction, design thinking and safe tool use.","A finished artefact with design iterations."],
+["Music, rhythm & listening","Rhythm, pattern, listening, notation basics and practice habits.","A short performance or annotated practice record."],
+["Creative writing & storytelling","Observation, structure, character, clarity, revision and audience.","A revised story, essay or explanatory piece."],
+["Design thinking","Empathy, problem definition, ideation, prototypes, feedback and iteration.","A small prototype and a record of feedback-driven changes."]
+]},
+{key:"practical",name:"Life Skills, Practical Skills & Wellbeing",group:"Life & Community",desc:"Age-appropriate, safety-first everyday competence.",courses:[
+["Basic cooking & food literacy","Kitchen hygiene, measurements, nutrition basics, meal planning, storage and safe heat handling.","Prepare a simple meal with a checklist and measured ingredients."],
+["Home maintenance & repair literacy","Tools, routine checks, minor non-electrical repairs, when to stop and call a professional.","Complete safe maintenance tasks and recognise hazards."],
+["Stitching & clothing repair","Needle safety, buttons, seams, patching and basic mending.","Repair a simple item and document the steps."],
+["First aid & emergency readiness","Recognising emergencies, contacting local emergency services, basic first-aid awareness and kit readiness.","Build an emergency plan; hands-on medical skills require qualified instruction."],
+["Personal safety & self-defence awareness","Situational awareness, boundaries, de-escalation, escape planning and age-appropriate supervised training.","Create a safe-response plan; physical techniques require qualified instruction."],
+["Movement, mobility & physical literacy","Warm-ups, mobility, balance, basic strength, posture, cycling safety and sustainable habits.","A personal movement log adapted to ability and professional guidance."],
+["Communication, confidence & social skills","Listening, boundaries, teamwork, negotiation, presentation and empathy.","Practise scenarios and reflect on feedback."],
+["Sign language","Introductory communication and vocabulary, taught with respect for the relevant local Deaf community and language.","Practise basic conversation with authentic learning resources."],
+["Morse code","Letters, timing, encoding, decoding and practice protocols.","Send and decode short messages accurately."],
+["Survival & emergency preparedness","Water, shelter, weather awareness, navigation basics, emergency signalling and preparedness planning.","Prepare a household emergency checklist and kit."]
+]},
+{key:"finance_literacy",name:"Personal Finance & Entrepreneurship",group:"Life & Community",desc:"Financial capability for daily life, family decisions and small businesses.",courses:[
+["Personal finance","Budgeting, saving, interest, debt, insurance, risk, fraud prevention and goal planning.","Build a realistic budget and savings scenario."],
+["Banking & payments","Accounts, statements, transfers, digital payment safety, disputes and reconciliation.","Reconcile a statement and identify suspicious activity."],
+["Business & entrepreneurship","Customer problem, value proposition, pricing, costs, cash flow, operations and compliance awareness.","Create a small business model and basic cash-flow forecast."],
+["Financial literacy for children","Needs vs wants, saving, choices, simple trade-offs and responsible digital behaviour.","Age-appropriate money decision journal."]
+]},
+{key:"indic",name:"Indic Scriptures, Philosophy & Cultural Literacy",group:"Culture & Reflection",desc:"Contextual, age-adaptive study that distinguishes text, interpretation, history and belief.",courses:[
+["Ramayana","Narrative, characters, ethical questions, versions and cultural context.","Compare interpretations and support claims with identified passages."],
+["Mahabharata","Narrative structure, dilemmas, dharma discussions, characters and textual traditions.","Analyse a dilemma and compare perspectives respectfully."],
+["Bhagavad Gita","Chapter-guided reading, key concepts, Sanskrit terms, translations and philosophical interpretations.","A passage journal with translation/context notes."],
+["Vedas & selected Sanskrit texts","Introductory context, structure, terminology, historical setting and responsible interpretation.","Guided reading notes with source and translation identified."],
+["Manusmriti as a historical text","Contextual study of authorship, historical reception, social prescriptions and modern scholarly debate; do not present historical prescriptions as universal contemporary guidance.","Source-based analysis that separates description, interpretation and present-day law."],
+["Prahlad, Ayyappa & Shirdi Sai Baba traditions","Narratives, regional traditions, devotional literature and differing accounts where relevant.","Compare accounts and identify source traditions."],
+["Indian history, philosophy & cultural literacy","Historical chronology, schools of thought, literature, art and regional diversity.","Create a referenced timeline or comparative essay."]
+]},
+{key:"research",name:"Research, Reasoning & Knowledge Craft",group:"Meta-learning",desc:"Tools for learning independently for a lifetime.",courses:[
+["Critical thinking & logic","Arguments, premises, evidence, fallacies, uncertainty and steelmanning.","Write a claim-evidence-reasoning analysis."],
+["Research & source evaluation","Primary vs secondary sources, provenance, citations, triangulation and source bias.","Produce a source log and referenced summary."],
+["Study skills & memory","Retrieval practice, spaced repetition, interleaving, notes, self-explanation and reflection.","Create a revision plan from error patterns."],
+["Knowledge management","Concept maps, subject dictionary, linked notes, glossary, tags, revision cards and export.","Maintain a portable knowledge base and review schedule."],
+["Ethics & civic literacy","Rights, responsibilities, public systems, respectful disagreement and evidence-based discussion.","Write a balanced brief separating facts, values and uncertainties."]
+]},
+{key:"nature",name:"Nature, Agriculture & Sustainability",group:"Life & Community",desc:"Practical ecological literacy and observation.",courses:[
+["Gardening & plants","Plant needs, soil, propagation, seasonal planning, composting and safe pest awareness.","Grow and track a plant with observations."],
+["Food systems & agriculture","Crops, water, soil health, supply chains, seasonality and food waste.","Map a food journey and identify improvement opportunities."],
+["Sustainability & resource use","Energy, water, waste reduction, reuse, repair and environmental claims.","Run a household resource audit and action plan."]
+]},
+{key:"civic",name:"Community, Culture & Everyday Knowledge",group:"Life & Community",desc:"Useful civic, social and cultural understanding for all ages.",courses:[
+["Civic and public-service literacy","How public institutions work, accessing official information, forms, consumer rights and grievance pathways.","Complete a mock service request using official information."],
+["Consumer and media literacy","Contracts, warranties, subscriptions, advertising, claims and online shopping risks.","Compare claims against terms and reliable evidence."],
+["Geography & world knowledge","Maps, regions, climate, population, trade and interconnected systems.","Create a referenced map or regional comparison."],
+["History & biographies","Chronology, context, evidence, multiple accounts and lessons without oversimplification.","Create a source-based timeline or biography."]
+]},
+{key:"teaching",name:"Teaching, Mentoring & Knowledge Sharing",group:"Meta-learning",desc:"Learn deeply by explaining and helping others.",courses:[
+["Teach-back method","Explain a concept simply, diagnose misconceptions, ask questions and adapt to the learner.","Record a lesson outline and learner feedback."],
+["Lesson and assessment design","Objectives, examples, practice progression, rubrics, feedback and accessibility.","Create a lesson plus answer key and rubric."],
+["Mentoring & facilitation","Goal-setting, listening, feedback, psychological safety and boundaries.","Run a structured peer-learning session."]
+]},
+{key:"special",name:"Future Learning Modules & Personal Tracks",group:"Extensible Library",desc:"A modular library: new subjects can be added without rebuilding the learning engine.",courses:[
+["Learner-created modules","Define goals, prerequisites, source list, lesson units, exercises, assessment and evidence.","Publish a versioned course with a clear owner and review date."],
+["Family learning tracks","Age/level profiles, shared projects, separate progress, safe content and guardian settings.","Create a family learning plan without exposing one learner's private records to another."],
+["Advanced specialisations","Domain-specific professional or hobby tracks added as validated demand emerges.","A reviewed curriculum proposal with outcomes, sources and acceptance tests."]
+]}
+];
+const $=id=>document.getElementById(id), groups=[...new Set(domains.map(d=>d.group))];
+groups.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;$('domain').appendChild(o)});
+function render(){const q=$('q').value.trim().toLowerCase(),group=$('domain').value;let visible=0;const host=$('catalog');host.innerHTML='';for(const d of domains){if(group&&d.group!==group)continue;const courses=d.courses.filter(c=>(d.name+' '+d.desc+' '+c.join(' ')).toLowerCase().includes(q));if(q&&!courses.length)continue;visible++;const sec=document.createElement('section');sec.className='section';sec.innerHTML='<h2>'+d.name+'</h2><p>'+d.desc+'</p><div class="grid"></div>';const grid=sec.querySelector('.grid');courses.forEach(c=>{const el=document.createElement('article');el.className='card';el.innerHTML='<div class="meta">'+d.group+'</div><h3></h3><p></p><div class="outcome"><strong>Evidence / outcome:</strong> <span></span></div>';el.querySelector('h3').textContent=c[0];el.querySelector('p').textContent=c[1];el.querySelector('span').textContent=c[2];grid.appendChild(el)});host.appendChild(sec)}$('count').textContent=visible+' learning domains shown · '+domains.reduce((n,d)=>n+d.courses.length,0)+' course pathways in master catalogue';if(!visible)host.innerHTML='<p>No matching courses. Try a broader search.</p>'}
+$('q').addEventListener('input',render);$('domain').addEventListener('change',render);render();
+</script></body></html>
