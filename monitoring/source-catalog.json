@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "policy": {
+    "detection": "A source-page fingerprint change is a review signal, not proof that a legal rule changed.",
+    "review_required_for": [
+      "legal_effect",
+      "effective_date",
+      "jurisdiction",
+      "lesson_changes",
+      "assessment_changes"
+    ],
+    "unchanged_means": "The fetched page fingerprint is unchanged since the previous successful check; it does not prove the law or product is unchanged elsewhere."
+  },
+  "sources": [
+    {
+      "id": "gst_portal",
+      "topic": "Indian GST",
+      "authority": "Government of India",
+      "url": "https://www.gst.gov.in/",
+      "cadence": "daily",
+      "review": "Check notifications, circulars, rates and effective dates against official notices."
+    },
+    {
+      "id": "cbic_gst",
+      "topic": "GST law and notifications",
+      "authority": "CBIC",
+      "url": "https://cbic-gst.gov.in/",
+      "cadence": "daily",
+      "review": "Check official notifications/circulars and legal effective dates."
+    },
+    {
+      "id": "mca",
+      "topic": "Indian company law and filings",
+      "authority": "Ministry of Corporate Affairs",
+      "url": "https://www.mca.gov.in/",
+      "cadence": "daily",
+      "review": "Check rules, forms, circulars and commencement dates."
+    },
+    {
+      "id": "incometax",
+      "topic": "Indian income tax",
+      "authority": "Income Tax Department",
+      "url": "https://www.incometax.gov.in/iec/foportal/",
+      "cadence": "daily",
+      "review": "Check Finance Acts, notifications, rules and assessment-year applicability."
+    },
+    {
+      "id": "icai",
+      "topic": "Accounting, audit and Indian professional guidance",
+      "authority": "ICAI",
+      "url": "https://www.icai.org/",
+      "cadence": "daily",
+      "review": "Check standards, announcements, implementation dates and applicability."
+    },
+    {
+      "id": "ifrs",
+      "topic": "IFRS accounting standards",
+      "authority": "IFRS Foundation",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/",
+      "cadence": "daily",
+      "review": "Check issued/amended standards, effective dates and jurisdictional adoption."
+    },
+    {
+      "id": "ima_cma",
+      "topic": "CMA USA",
+      "authority": "Institute of Management Accountants",
+      "url": "https://www.imanet.org/ima-certifications/cma-certification",
+      "cadence": "weekly",
+      "review": "Check exam content, eligibility, fees and policy changes."
+    },
+    {
+      "id": "excel_support",
+      "topic": "Microsoft Excel",
+      "authority": "Microsoft Support",
+      "url": "https://support.microsoft.com/excel",
+      "cadence": "weekly",
+      "review": "Check function behaviour, availability by version/platform and feature changes."
+    },
+    {
+      "id": "powerbi",
+      "topic": "Power BI",
+      "authority": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/power-bi/",
+      "cadence": "weekly",
+      "review": "Check product features, licensing, UI and deprecation notices."
+    },
+    {
+      "id": "python",
+      "topic": "Python",
+      "authority": "Python Software Foundation",
+      "url": "https://docs.python.org/3/whatsnew/",
+      "cadence": "weekly",
+      "review": "Check version-specific language/library changes and end-of-life."
+    },
+    {
+      "id": "sqlserver",
+      "topic": "SQL / database practice",
+      "authority": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/sql/",
+      "cadence": "weekly",
+      "review": "Check dialect-specific syntax and product version notes; do not generalise to all SQL engines."
+    },
+    {
+      "id": "sap_help",
+      "topic": "SAP S/4HANA and SAP FICO",
+      "authority": "SAP Help Portal",
+      "url": "https://help.sap.com/",
+      "cadence": "weekly",
+      "review": "Check release-specific workflows, transaction availability and cloud/on-premise differences."
+    },
+    {
+      "id": "us_sec",
+      "topic": "US financial reporting and filings",
+      "authority": "US SEC",
+      "url": "https://www.sec.gov/edgar/search/",
+      "cadence": "weekly",
+      "review": "Check relevant official rules and filings; distinguish regulation from issuer disclosures."
+    }
+  ]
+}
