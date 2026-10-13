@@ -1333,5 +1333,20 @@ if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.se
 #panel-learn #quiz .option input{display:inline-block!important;visibility:visible!important;opacity:1!important;width:auto!important;min-width:0!important;margin:4px 0 0!important}
 #panel-learn #quizFeedback{display:block!important;visibility:visible!important}
 @media(max-width:850px){#panel-learn>.grid{grid-template-columns:minmax(0,1fr)!important}#panel-learn #assessmentSection{grid-column:1!important;grid-row:auto!important}}
+</style><style id="lesson-tabs-and-metrics-one-row">
+/* Lesson buttons: compact, single horizontal row */
+#lessonStrip{display:block!important;width:100%!important;box-sizing:border-box!important;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;padding:6px 8px!important}
+#lessonStrip .lesson-list{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;gap:7px!important;width:max-content!important;min-width:100%!important;margin:0!important;padding:0!important}
+#lessonStrip .lesson{display:block!important;flex:0 0 190px!important;width:190px!important;min-width:190px!important;max-width:190px!important;height:auto!important;min-height:48px!important;padding:7px 9px!important;white-space:normal!important;overflow:hidden!important}
+#lessonStrip .lesson strong{display:block!important;white-space:normal!important;font-size:12px!important;line-height:1.2!important}
+#lessonStrip .lesson small{display:none!important}
+/* Seven progress cards share one compact line; retain readable text. */
+body>.study-dashboard .dashboard-stats,#studyTopRow .dashboard-stats,.dashboard-stats{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;grid-template-rows:1fr!important;gap:4px!important;width:100%!important;min-width:0!important}
+body>.study-dashboard .dash-stat,#studyTopRow .dash-stat,.dashboard-stats .dash-stat{display:flex!important;flex-direction:column!important;justify-content:center!important;min-width:0!important;height:52px!important;min-height:52px!important;padding:4px 5px!important;overflow:hidden!important}
+.dash-label{font-size:9px!important;line-height:1.1!important;overflow-wrap:anywhere!important}
+.dash-value{font-size:14px!important;line-height:1.15!important;white-space:nowrap!important;margin:3px 0 0!important}
+.dash-note{display:none!important}
+@media(max-width:800px){#lessonStrip .lesson{flex-basis:170px!important;width:170px!important;min-width:170px!important;max-width:170px!important}.dashboard-stats{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-template-rows:auto auto!important}.dashboard-stats .dash-stat{height:48px!important;min-height:48px!important}}
+@media(max-width:480px){.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 </style></body>
 </html>
