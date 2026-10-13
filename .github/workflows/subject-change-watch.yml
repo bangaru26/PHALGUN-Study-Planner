@@ -1,0 +1,41 @@
+name: PHALGUN Subject Change Watch
+
+on:
+  schedule:
+    - cron: "20 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: phalgun-source-watch
+  cancel-in-progress: false
+
+jobs:
+  watch-authoritative-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout PHALGUN
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch and compare source pages
+        run: python scripts/monitor_sources.py
+      - name: Publish dated report and update baseline
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add monitoring/state.json monitoring/latest-report.json monitoring/CHANGE-LOG.md
+          if git diff --cached --quiet; then
+            echo "No monitoring record changes to commit."
+          else
+            git commit -m "Update PHALGUN subject source watch report"
+            git push origin HEAD:main
+          fi
