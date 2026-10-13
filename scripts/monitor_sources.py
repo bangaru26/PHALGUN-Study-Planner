@@ -21,7 +21,7 @@ class TextExtractor(HTMLParser):
         if tag in ("script", "style", "noscript", "svg") and self.skip: self.skip -= 1
     def handle_data(self, data):
         if not self.skip:
-            s = re.sub(r"\\s+", " ", data).strip()
+            s = re.sub(r"\s+", " ", data).strip()
             if s: self.parts.append(s)
 
 def fetch(url):
@@ -31,8 +31,8 @@ def fetch(url):
         charset = response.headers.get_content_charset() or "utf-8"
         raw = body.decode(charset, errors="replace")
         parser = TextExtractor(); parser.feed(raw)
-        text = re.sub(r"\\s+", " ", " ".join(parser.parts)).strip()
-        if not text: text = re.sub(r"\\s+", " ", re.sub(r"<[^>]+>", " ", raw)).strip()
+        text = re.sub(r"\s+", " ", " ".join(parser.parts)).strip()
+        if not text: text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", raw)).strip()
         title_match = re.search(r"<title[^>]*>(.*?)</title>", raw, re.I|re.S)
         title = html.unescape(re.sub(r"<[^>]+>", "", title_match.group(1))).strip() if title_match else ""
         return {"status":"ok","http_status":response.status,"final_url":response.geturl(),
