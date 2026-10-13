@@ -1317,5 +1317,19 @@ if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.se
 .stopwatch-card>.buttons button{display:flex!important;visibility:visible!important;opacity:1!important;position:relative!important;inset:auto!important;align-items:center!important;justify-content:center!important;width:100%!important;min-width:0!important;min-height:34px!important;height:auto!important;margin:0!important;padding:6px 3px!important;font-size:11px!important;white-space:normal!important}
 @media(max-width:850px){.dashboard-stats{grid-template-columns:repeat(4,minmax(0,1fr))!important}#panel-learn .grid{grid-template-columns:1fr!important}#assessmentSection{grid-column:1!important;grid-row:auto!important}}
 @media(max-width:560px){.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}.stopwatch-card{grid-template-columns:1fr!important}.stopwatch-card>.elapsed-box{grid-column:1!important;grid-row:2!important}.stopwatch-card>.buttons{grid-column:1!important;grid-row:3!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+</style><style id="assessment-questions-visible-fix">
+/* Keep the lesson and its assessment together in Learn & Practise. */
+#panel-learn>.grid{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:start!important;gap:12px!important}
+#panel-learn>.grid>div{min-width:0!important;display:block!important;visibility:visible!important}
+#panel-learn #assessmentSection{display:block!important;visibility:visible!important;position:relative!important;grid-column:2!important;grid-row:1!important;width:100%!important;max-width:none!important;max-height:none!important;height:auto!important;min-width:0!important;overflow:visible!important;margin:0 0 12px!important;opacity:1!important}
+#panel-learn #assessmentSection .card{display:block!important;visibility:visible!important;height:auto!important;max-height:none!important;overflow:visible!important}
+#panel-learn #lessonQuizCard{display:block!important;visibility:visible!important}
+#panel-learn #quiz{display:block!important;visibility:visible!important;min-height:80px!important;height:auto!important;max-height:none!important;overflow:visible!important}
+#panel-learn #quiz .question{display:block!important;visibility:visible!important;position:relative!important;height:auto!important;max-height:none!important;overflow:visible!important;color:#17243a!important;border-top:1px solid #dce5ef!important;padding:12px 0!important}
+#panel-learn #quiz .question p{display:block!important;visibility:visible!important;color:#17243a!important;font-weight:750!important;margin:0 0 8px!important}
+#panel-learn #quiz .option{display:flex!important;visibility:visible!important;position:relative!important;color:#17243a!important;align-items:flex-start!important;gap:8px!important}
+#panel-learn #quiz .option input{display:inline-block!important;visibility:visible!important;opacity:1!important;width:auto!important;min-width:0!important;margin:4px 0 0!important}
+#panel-learn #quizFeedback{display:block!important;visibility:visible!important}
+@media(max-width:850px){#panel-learn>.grid{grid-template-columns:minmax(0,1fr)!important}#panel-learn #assessmentSection{grid-column:1!important;grid-row:auto!important}}
 </style></body>
 </html>
