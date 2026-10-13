@@ -93,6 +93,5 @@ def main():
     with open(REPORT_MD,"w",encoding="utf-8") as f: f.write("\n".join(lines)+"\n")
     print(json.dumps(report["summary"],ensure_ascii=False))
     if report["summary"]["unavailable"] == len(results):
-        print("ERROR: all sources unavailable; state retained as unavailable and report generated.",file=sys.stderr)
-        sys.exit(2)
+        print("WARNING: all sources were unavailable; the report will still be published and must not be interpreted as unchanged.",file=sys.stderr)
 if __name__=="__main__": main()
