@@ -31,6 +31,11 @@ jobs:
           test -f icon.svg
           test -f sw.js
           node -e "const fs=require('fs'); const h=fs.readFileSync('index.html','utf8'); const scripts=[...h.matchAll(/<script\\b[^>]*>([\\s\\S]*?)<\\/script>/gi)].map(m=>m[1]).filter(s=>s.trim()); if(!scripts.length) throw Error('No inline app script found'); scripts.forEach(s=>new Function(s)); JSON.parse(fs.readFileSync('manifest.webmanifest','utf8')); console.log('App JavaScript and manifest syntax passed')"
+          python -m py_compile scripts/monitor_sources.py
+          python -m json.tool monitoring/source-catalog.json > /dev/null
+          test -f monitoring.html
+          grep -q "Subject Change Watch" monitoring.html
+          echo "Monitor Python syntax, source registry JSON, and dashboard presence passed"
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -55,6 +60,10 @@ jobs:
           curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}index.html?verify=${GITHUB_SHA}" -o /tmp/index.html
           curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}manifest.webmanifest?verify=${GITHUB_SHA}" -o /tmp/manifest.json
           curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}sw.js?verify=${GITHUB_SHA}" -o /tmp/sw.js
+          curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}monitoring.html?verify=${GITHUB_SHA}" -o /tmp/monitoring.html
+          curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}monitoring/source-catalog.json?verify=${GITHUB_SHA}" -o /tmp/source-catalog.json
+          python -m json.tool /tmp/source-catalog.json > /dev/null
+          grep -q "Subject Change Watch" /tmp/monitoring.html
           grep -q 'Study Desk' /tmp/index.html
           grep -q 'Study · Progress · Assess (SPA)' /tmp/index.html
           grep -q "strip.id='lessonStrip'" /tmp/index.html
