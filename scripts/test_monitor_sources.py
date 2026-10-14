@@ -5,7 +5,7 @@ import sys
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from monitor_sources import TextExtractor, change_preview
+from monitor_sources import TextExtractor, change_preview, normalize_text
 
 
 class SourceMonitorTests(unittest.TestCase):
@@ -25,6 +25,11 @@ class SourceMonitorTests(unittest.TestCase):
         self.assertIn("1 April", preview)
         self.assertIn("1 July", preview)
         self.assertNotIn("\\n", preview)
+
+    def test_visitor_counter_changes_do_not_trigger_source_changes(self):
+        old = "Official page. Visitors Count 482798 QUICK LINKS"
+        new = "Official page. Visitors Count 482799 QUICK LINKS"
+        self.assertEqual(normalize_text(old), normalize_text(new))
 
     def test_missing_snapshot_is_explicit(self):
         self.assertEqual(change_preview("", "A new official notice."), "No prior text snapshot is available for comparison.")

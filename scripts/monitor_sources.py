@@ -24,6 +24,11 @@ class TextExtractor(HTMLParser):
             s = re.sub(r"\s+", " ", data).strip()
             if s: self.parts.append(s)
 
+def normalize_text(text):
+    """Remove a known volatile visitor counter without masking substantive page changes."""
+    return re.sub(r"\bVisitors\s+Count\s*:?\s*\d+\b", "Visitors Count [dynamic]", text, flags=re.I)
+
+
 def fetch(url):
     req = Request(url, headers={"User-Agent":"PHALGUN-SourceWatch/1.0 (+educational change detection)", "Accept":"text/html,application/xhtml+xml"})
     with urlopen(req, timeout=25) as response:
@@ -33,6 +38,7 @@ def fetch(url):
         parser = TextExtractor(); parser.feed(raw)
         text = re.sub(r"\s+", " ", " ".join(parser.parts)).strip()
         if not text: text = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", raw)).strip()
+        text = normalize_text(text)
         title_match = re.search(r"<title[^>]*>(.*?)</title>", raw, re.I|re.S)
         title = html.unescape(re.sub(r"<[^>]+>", "", title_match.group(1))).strip() if title_match else ""
         return {"status":"ok","http_status":response.status,"final_url":response.geturl(),
@@ -73,14 +79,16 @@ def main():
             obs=fetch(source["url"])
             page_text=obs.pop("text","")
             prior=old.get(sid,{})
+            prior_text=normalize_text(prior.get("text",""))
+            prior_fingerprint=hashlib.sha256(prior_text.encode("utf-8")).hexdigest() if prior_text else prior.get("fingerprint")
             if not prior: status="BASELINE"
-            elif prior.get("fingerprint")==obs["fingerprint"]: status="UNCHANGED"
+            elif prior_fingerprint==obs["fingerprint"]: status="UNCHANGED"
             else: status="CHANGED — REVIEW REQUIRED"
-            preview=change_preview(prior.get("text",""),page_text) if status.startswith("CHANGED") else ""
+            preview=change_preview(prior_text,page_text) if status.startswith("CHANGED") else ""
             obs["checked_at"]=now
             current[sid]={**obs,"text":page_text,"topic":source["topic"],"authority":source["authority"],"url":source["url"]}
             results.append({**source,**obs,"status":status,"change_preview":preview,
-                "previous_fingerprint":prior.get("fingerprint"),
+                "previous_fingerprint":prior_fingerprint,
                 "previous_excerpt":prior.get("excerpt","")})
             time.sleep(1)
         except Exception as e:
