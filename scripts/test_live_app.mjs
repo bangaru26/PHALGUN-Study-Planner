@@ -10,6 +10,20 @@ const check = (condition, label, detail = '') => {
 const visible = async (page, selector) => page.locator(selector).first().isVisible().catch(() => false);
 const count = async (page, selector) => page.locator(selector).count().catch(() => 0);
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+const timerLayout = async (page, containerSelector, viewportWidth) => page.locator(containerSelector).evaluate(el => {
+  const css = getComputedStyle(el);
+  const buttons = [...el.querySelectorAll('button')].map(b => {
+    const r = b.getBoundingClientRect();
+    return {x:r.x,y:r.y,width:r.width,height:r.height,visible:r.width>0&&r.height>0};
+  });
+  const cols = css.gridTemplateColumns.split(/\\s+(?![^()]*\\))/).length;
+  const rows = [...new Set(buttons.map(b => Math.round(b.y)))].length;
+  const widths = buttons.map(b => b.width);
+  return {display:css.display,cols,rows,buttons,widthSpread:widths.length?Math.max(...widths)-Math.min(...widths):Infinity};
+}).then(layout => ({...layout,expectedCols:viewportWidth<=650?2:4,
+  ok:layout.display==='grid'&&layout.buttons.length===4&&layout.buttons.every(b=>b.visible)&&
+      layout.cols===(viewportWidth<=650?2:4)&&layout.rows===(viewportWidth<=650?2:1)&&layout.widthSpread<=2
+})).catch(error=>({ok:false,error:String(error)}));
 
 const browser = await chromium.launch({ headless: true });
 try {
@@ -24,6 +38,8 @@ try {
     await page.locator('#lessonList .lesson').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
     check(await visible(page, 'h1') && (await page.locator('h1').innerText()).includes('Study Desk'), viewport.name + ': home page loads');
     check(await count(page, '#lessonList .lesson') >= 6, viewport.name + ': six lesson tiles are rendered', 'found ' + await count(page, '#lessonList .lesson'));
+    const homeTimerLayout = await timerLayout(page, '#studyTopRow .stopwatch-card>.buttons', viewport.width);
+    check(homeTimerLayout.ok, viewport.name + ': timer buttons share aligned equal-width grid', JSON.stringify(homeTimerLayout));
     check(await count(page, '#studyTopRow .brand-icons img') >= 2, viewport.name + ': approved AAROH and Study Desk icon assets are referenced');
     const iconStatus = await page.locator('#studyTopRow .brand-icons img').evaluateAll(imgs => imgs.map(img => ({src:img.getAttribute('src'),loaded:img.complete && img.naturalWidth > 0})));
     check(iconStatus.length >= 2 && iconStatus.every(i => i.loaded) && iconStatus.some(i => /aaroh-symbol\.jpg/.test(i.src)) && iconStatus.some(i => /study-planner-icon\.webp/.test(i.src)), viewport.name + ': approved icon images load', JSON.stringify(iconStatus));
@@ -85,6 +101,8 @@ try {
   check(await visible(page, '#sharedClock') && await visible(page, '#sharedStart'), 'dictionary: shared timer and controls are visible');
   check(await visible(page, '#globalSearch'), 'dictionary: global search is visible');
   check(await count(page, '.term') > 0, 'dictionary: terms render', 'found ' + await count(page, '.term'));
+  const dictionaryTimerLayout = await timerLayout(page, '.shared-commandbar .shared-stopwatch>.buttons', 1365);
+  check(dictionaryTimerLayout.ok, 'dictionary: timer controls use aligned equal-width grid', JSON.stringify(dictionaryTimerLayout));
   const dictStart = (await page.locator('#sharedClock').innerText()).trim();
   await page.locator('#sharedStart').click(); await wait(1200);
   const dictRunning = (await page.locator('#sharedClock').innerText()).trim();
@@ -99,6 +117,8 @@ try {
   check(await visible(page, '#globalSearch'), 'Excel practice: global search is visible');
   check(await visible(page, '#formulaTitle') && (await page.locator('#formulaTitle').innerText()).trim().length > 0, 'Excel practice: formula lesson is loaded');
   check(await count(page, '.exercise') > 0, 'Excel practice: exercises render', 'found ' + await count(page, '.exercise'));
+  const excelTimerLayout = await timerLayout(page, '.shared-commandbar .shared-stopwatch>.buttons', 1365);
+  check(excelTimerLayout.ok, 'Excel practice: timer controls use aligned equal-width grid', JSON.stringify(excelTimerLayout));
   await page.locator('#sharedStart').click(); await wait(1200);
   check((await page.locator('#sharedClock').innerText()).trim() !== '00:00:00', 'Excel practice: timer advances');
   await page.locator('#sharedPause').click();
