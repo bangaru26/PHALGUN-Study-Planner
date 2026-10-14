@@ -168,6 +168,18 @@ try {
   check((await curriculum.locator('#catalog').innerText()).toLowerCase().includes('cma'), 'PHALGUN curriculum: subject search filters catalogue');
   await curriculum.close();
 
+  const capstone = await browser.newPage();
+  await capstone.goto(base + '/gfpa-capstone-lab.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  check((await capstone.locator('h1').innerText()).includes('Finance Operations Capstone'), 'capstone lab: page loads with correct heading');
+  check(await capstone.locator('#apCase').count() === 1 && await capstone.locator('#arCase').count() === 1 && await capstone.locator('#bankCase').count() === 1, 'capstone lab: AP, AR and bank reconciliation cases render');
+  await capstone.locator('#checkAp').click();
+  check((await capstone.locator('#apFeedback').innerText()).toLowerCase().includes('correct'), 'capstone lab: duplicate invoice answer is checked');
+  await capstone.locator('#checkAr').click();
+  check((await capstone.locator('#arFeedback').innerText()).includes('₹69,500'), 'capstone lab: AR ageing total is validated');
+  await capstone.locator('#checkBank').click();
+  check((await capstone.locator('#bankFeedback').innerText()).includes('₹1,89,900'), 'capstone lab: bank reconciliation adjusted balance is validated');
+  await capstone.close();
+
   const monitor = await browser.newPage();
   await monitor.goto(base + '/monitoring.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
   await monitor.waitForFunction(() => document.querySelector('#summary')?.innerText.includes('Changed · review'), { timeout: 15000 }).catch(() => {});
