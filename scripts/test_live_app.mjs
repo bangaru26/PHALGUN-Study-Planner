@@ -37,8 +37,8 @@ try {
     await page.goto(base + '/index.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
     await page.locator('#lessonList .lesson').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
     check(await visible(page, 'h1') && (await page.locator('h1').innerText()).includes('Study Desk'), viewport.name + ': home page loads');
-    check(await count(page, '#lessonList .lesson') >= 12, viewport.name + ': twelve finance lessons are rendered', 'found ' + await count(page, '#lessonList .lesson'));
-    check((await page.locator('#courseProgress').innerText()).includes('of 12 lessons passed'), viewport.name + ': progress counter matches the 12-lesson curriculum', await page.locator('#courseProgress').innerText());
+    check(await count(page, '#lessonList .lesson') >= 13, viewport.name + ': thirteen finance lessons are rendered', 'found ' + await count(page, '#lessonList .lesson'));
+    check((await page.locator('#courseProgress').innerText()).includes('of 13 lessons passed'), viewport.name + ': progress counter matches the 12-lesson curriculum', await page.locator('#courseProgress').innerText());
     const homeTimerLayout = await timerLayout(page, '#studyTopRow .stopwatch-card>.buttons', viewport.width);
     check(homeTimerLayout.ok, viewport.name + ': timer buttons share aligned equal-width grid', JSON.stringify(homeTimerLayout));
     check(await count(page, '#studyTopRow .brand-icons img') >= 2, viewport.name + ': approved AAROH and Study Desk icon assets are referenced');
@@ -77,6 +77,9 @@ try {
       if (await page.locator('#quiz .question').count() < 4) allLessonsHaveQuizzes = false;
     }
     check(allLessonsHaveQuizzes, viewport.name + ': every finance lesson has at least four assessment questions');
+    await lessonTiles.last().click();
+    check((await page.locator('#lessonTitle').innerText()).includes('Indian Tax & Compliance'), viewport.name + ': tax and compliance lesson opens');
+    check((await page.locator('#lessonBody').innerText()).includes('Income-tax Act, 2025'), viewport.name + ': tax lesson includes the current source-checking note');
     await lessonTiles.first().click();
     await wait(60);
     check(await questions.first().isVisible().catch(() => false), viewport.name + ': assessment questions are visible');
