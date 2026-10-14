@@ -40,23 +40,25 @@ def fetch(url):
                 "excerpt":text[:500],"text_length":len(text),"text":text[:250000]}
 
 def change_preview(old_text, new_text, limit=10):
-    """Return a compact sentence-level diff for human review; never infer legal meaning."""
+    """Show compact changed-word context for human review; never infer legal meaning."""
     if not old_text:
         return "No prior text snapshot is available for comparison."
-    old_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", old_text) if s.strip()]
-    new_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", new_text) if s.strip()]
-    matcher = difflib.SequenceMatcher(a=old_sentences, b=new_sentences, autojunk=True)
+    old_tokens = re.findall(r"\S+", old_text)
+    new_tokens = re.findall(r"\S+", new_text)
+    matcher = difflib.SequenceMatcher(a=old_tokens, b=new_tokens, autojunk=True)
     changes = []
     for tag, i1, i2, j1, j2 in matcher.get_opcodes():
         if tag == "equal":
             continue
-        for sentence in old_sentences[i1:i2][:3]:
-            changes.append("- " + sentence[:220])
-        for sentence in new_sentences[j1:j2][:3]:
-            changes.append("+ " + sentence[:220])
+        old_context = old_tokens[max(0, i1 - 8):min(len(old_tokens), i2 + 8)]
+        new_context = new_tokens[max(0, j1 - 8):min(len(new_tokens), j2 + 8)]
+        if old_context:
+            changes.append("- " + " ".join(old_context)[:220])
+        if new_context:
+            changes.append("+ " + " ".join(new_context)[:220])
         if len(changes) >= limit:
             break
-    return "\n".join(changes[:limit]) or "Fingerprint changed, but no sentence-level difference was isolated."
+    return "\n".join(changes[:limit]) or "Fingerprint changed, but no word-level difference was isolated."
 
 def main():
     with open(CATALOG, encoding="utf-8") as f: catalog=json.load(f)
@@ -106,6 +108,7 @@ def main():
         if r["status"].startswith("CHANGED"):
             preview = r.get("change_preview") or "No comparison preview available."
             lines += [f"",f"### Review required — {r['topic']}",f"- Previous page excerpt: {r.get('previous_excerpt') or 'No prior snapshot'}",
+                      f"- Mapped learning areas to review: {', '.join(r.get('lesson_areas', [])) or 'Not mapped'}",
                       f"- Current page excerpt: {r.get('excerpt') or 'No text extracted'}",
                       "- **Detected text differences (for review only):**",
                       "```text",preview,"```",

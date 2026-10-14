@@ -18,6 +18,14 @@ class SourceMonitorTests(unittest.TestCase):
         self.assertIn("\n", preview)
         self.assertNotIn("\\n", preview)
 
+    def test_preview_shows_changed_words_with_nearby_context(self):
+        old = " ".join(["stable navigation"] * 30) + " filing deadline is 1 April " + " ".join(["stable footer"] * 30)
+        new = " ".join(["stable navigation"] * 30) + " filing deadline is 1 July " + " ".join(["stable footer"] * 30)
+        preview = change_preview(old, new)
+        self.assertIn("1 April", preview)
+        self.assertIn("1 July", preview)
+        self.assertNotIn("\\n", preview)
+
     def test_missing_snapshot_is_explicit(self):
         self.assertEqual(change_preview("", "A new official notice."), "No prior text snapshot is available for comparison.")
 
