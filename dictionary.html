@@ -277,7 +277,7 @@ function refreshSharedHeader(){
   const passed=Object.values(data?.results||{}).filter(x=>x&&x.passed).length;
   if(sharedGoal)sharedGoal.textContent=(target/60).toLocaleString(undefined,{maximumFractionDigits:1})+' hrs';
   if(sharedStudied)sharedStudied.textContent=(todays/60).toLocaleString(undefined,{maximumFractionDigits:1})+'h';
-  if(sharedRemaining){const r=Math.max(0,target-todays);sharedRemaining.textContent=String(Math.floor(r/60)).padStart(2,'0')+':'+String(r%60).padStart(2,'0')+':00;}
+  if(sharedRemaining){const r=Math.max(0,target-todays);sharedRemaining.textContent=String(Math.floor(r/60)).padStart(2,'0')+':'+String(r%60).padStart(2,'0')+':00';}
   if(sharedDays)sharedDays.textContent=String(unique.size);
   if(sharedSessions)sharedSessions.textContent=String(sessions.length);
   if(sharedMinutes)sharedMinutes.textContent=String(sessions.reduce((a,s)=>a+Number(s.minutes||0),0));
