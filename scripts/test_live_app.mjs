@@ -133,6 +133,15 @@ try {
   check(await visible(page, '#globalSearch'), 'Excel practice: global search is visible');
   check(await visible(page, '#formulaTitle') && (await page.locator('#formulaTitle').innerText()).trim().length > 0, 'Excel practice: formula lesson is loaded');
   check(await count(page, '.exercise') > 0, 'Excel practice: exercises render', 'found ' + await count(page, '.exercise'));
+  const formulaCount = await page.evaluate(() => Array.isArray(window.formulas) ? window.formulas.length : 0);
+  check(formulaCount >= 14, 'Excel practice: at least fourteen guided formula modules are available', 'found ' + formulaCount);
+  let allFormulaModulesHaveExercises = formulaCount >= 14;
+  for (let formulaIndex=0; formulaIndex<formulaCount; formulaIndex++) {
+    await page.evaluate(i => window.selectFormula(i), formulaIndex);
+    if (await count(page, '.exercise') < 1) allFormulaModulesHaveExercises = false;
+  }
+  check(allFormulaModulesHaveExercises, 'Excel practice: every formula module has exercises');
+  await page.evaluate(() => window.selectFormula(0));
   const excelTimerLayout = await timerLayout(page, '.shared-commandbar .shared-stopwatch>.buttons', 1365);
   check(excelTimerLayout.ok, 'Excel practice: timer controls use aligned equal-width grid', JSON.stringify(excelTimerLayout));
   await page.locator('#sharedStart').click(); await wait(1200);
