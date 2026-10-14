@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-10-14T16:28:54+00:00 (UTC)
+Last check: 2026-10-14T16:30:49+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 1 changed; 14 unchanged; 0 baseline; 2 unavailable.
+Summary: 0 changed; 15 unchanged; 0 baseline; 2 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -24,19 +24,7 @@ Summary: 1 changed; 14 unchanged; 0 baseline; 2 unavailable.
 | UNCHANGED | SAP S/4HANA and SAP FICO | SAP Help Portal | [Open source](https://help.sap.com/) |
 | UNCHANGED | US financial reporting and filings | US SEC | [Open source](https://www.sec.gov/edgar/search/) |
 | UNCHANGED | Income-tax Act, Rules and CBDT notifications | Income Tax Department / CBDT | [Open source](https://www.incometaxindia.gov.in/notifications) |
-| CHANGED — REVIEW REQUIRED | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
-
-### Review required — Indian accounting standards and implementation guidance
-- Previous page excerpt: ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St
-- Mapped learning areas to review: Indian Accounting Standards, IFRS/Ind AS, financial reporting and audit
-- Current page excerpt: ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St
-- **Detected text differences (for review only):**
-```text
-- up by an Act of Parliament) Visitors Count 482798 QUICK LINKS ICAI-ASB Quiz IASB IFAC SAFA XBRL
-+ up by an Act of Parliament) Visitors Count 482799 QUICK LINKS ICAI-ASB Quiz IASB IFAC SAFA XBRL
-```
-- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
-
+| UNCHANGED | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
 | UNCHANGED | Indian Accounting Standards (Ind AS) compendium | ICAI | [Open source](https://www.icai.org/post/compendium-of-indian-accounting-standards) |
 | UNCHANGED | Ministry of Corporate Affairs public announcements | Press Information Bureau, Government of India | [Open source](https://www.pib.gov.in/newsite/pmreleases.aspx?lang=2&mincode=66&reg=48) |
 
