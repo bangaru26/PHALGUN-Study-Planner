@@ -43,7 +43,7 @@ def change_preview(old_text, new_text, limit=10):
     """Return a compact sentence-level diff for human review; never infer legal meaning."""
     if not old_text:
         return "No prior text snapshot is available for comparison."
-    old_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\\s+", old_text) if s.strip()]
+    old_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", old_text) if s.strip()]
     new_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\\s+", new_text) if s.strip()]
     matcher = difflib.SequenceMatcher(a=old_sentences, b=new_sentences, autojunk=True)
     changes = []
