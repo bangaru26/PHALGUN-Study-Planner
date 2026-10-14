@@ -16,7 +16,7 @@ const timerLayout = async (page, containerSelector, viewportWidth) => page.locat
     const r = b.getBoundingClientRect();
     return {x:r.x,y:r.y,width:r.width,height:r.height,visible:r.width>0&&r.height>0};
   });
-  const cols = css.gridTemplateColumns.split(/\\s+(?![^()]*\\))/).length;
+  const cols = css.gridTemplateColumns.trim().split(/\s+/).length;
   const rows = [...new Set(buttons.map(b => Math.round(b.y)))].length;
   const widths = buttons.map(b => b.width);
   return {display:css.display,cols,rows,buttons,widthSpread:widths.length?Math.max(...widths)-Math.min(...widths):Infinity};
