@@ -37,7 +37,7 @@ try {
     await page.goto(base + '/index.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
     await page.locator('#lessonList .lesson').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
     check(await visible(page, 'h1') && (await page.locator('h1').innerText()).includes('Study Desk'), viewport.name + ': home page loads');
-    check(await count(page, '#lessonList .lesson') >= 6, viewport.name + ': six lesson tiles are rendered', 'found ' + await count(page, '#lessonList .lesson'));
+    check(await count(page, '#lessonList .lesson') >= 12, viewport.name + ': twelve finance lessons are rendered', 'found ' + await count(page, '#lessonList .lesson'));
     const homeTimerLayout = await timerLayout(page, '#studyTopRow .stopwatch-card>.buttons', viewport.width);
     check(homeTimerLayout.ok, viewport.name + ': timer buttons share aligned equal-width grid', JSON.stringify(homeTimerLayout));
     check(await count(page, '#studyTopRow .brand-icons img') >= 2, viewport.name + ': approved AAROH and Study Desk icon assets are referenced');
@@ -68,6 +68,16 @@ try {
     await page.locator('#assessmentSection').waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
     const questions = page.locator('#quiz .question');
     check(await questions.count() >= 4, viewport.name + ': lesson assessment contains at least four questions', 'found ' + await questions.count());
+    let allLessonsHaveQuizzes = true;
+    const lessonTiles = page.locator('#lessonList .lesson');
+    for (let lessonIndex=0; lessonIndex<await lessonTiles.count(); lessonIndex++) {
+      await lessonTiles.nth(lessonIndex).click();
+      await wait(60);
+      if (await page.locator('#quiz .question').count() < 4) allLessonsHaveQuizzes = false;
+    }
+    check(allLessonsHaveQuizzes, viewport.name + ': every finance lesson has at least four assessment questions');
+    await lessonTiles.first().click();
+    await wait(60);
     check(await questions.first().isVisible().catch(() => false), viewport.name + ': assessment questions are visible');
     if (await questions.count() >= 4) {
       const firstRadio = questions.first().locator('input[type=radio]').first();
