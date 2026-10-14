@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """PHALGUN source-change watch. A fingerprint change is a review flag, not legal advice."""
-import hashlib, html, json, os, re, sys, time
+import difflib, hashlib, html, json, os, re, sys, time
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from urllib.request import Request, urlopen
@@ -37,7 +37,26 @@ def fetch(url):
         title = html.unescape(re.sub(r"<[^>]+>", "", title_match.group(1))).strip() if title_match else ""
         return {"status":"ok","http_status":response.status,"final_url":response.geturl(),
                 "title":title[:300],"fingerprint":hashlib.sha256(text.encode("utf-8")).hexdigest(),
-                "excerpt":text[:500],"text_length":len(text)}
+                "excerpt":text[:500],"text_length":len(text),"text":text[:250000]}
+
+def change_preview(old_text, new_text, limit=10):
+    """Return a compact sentence-level diff for human review; never infer legal meaning."""
+    if not old_text:
+        return "No prior text snapshot is available for comparison."
+    old_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\\s+", old_text) if s.strip()]
+    new_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\\s+", new_text) if s.strip()]
+    matcher = difflib.SequenceMatcher(a=old_sentences, b=new_sentences, autojunk=True)
+    changes = []
+    for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+        if tag == "equal":
+            continue
+        for sentence in old_sentences[i1:i2][:3]:
+            changes.append("- " + sentence[:220])
+        for sentence in new_sentences[j1:j2][:3]:
+            changes.append("+ " + sentence[:220])
+        if len(changes) >= limit:
+            break
+    return "\\n".join(changes[:limit]) or "Fingerprint changed, but no sentence-level difference was isolated."
 
 def main():
     with open(CATALOG, encoding="utf-8") as f: catalog=json.load(f)
@@ -50,13 +69,15 @@ def main():
         sid=source["id"]
         try:
             obs=fetch(source["url"])
+            page_text=obs.pop("text","")
             prior=old.get(sid,{})
             if not prior: status="BASELINE"
             elif prior.get("fingerprint")==obs["fingerprint"]: status="UNCHANGED"
             else: status="CHANGED — REVIEW REQUIRED"
+            preview=change_preview(prior.get("text",""),page_text) if status.startswith("CHANGED") else ""
             obs["checked_at"]=now
-            current[sid]={**obs,"topic":source["topic"],"authority":source["authority"],"url":source["url"]}
-            results.append({**source,**obs,"status":status,
+            current[sid]={**obs,"text":page_text,"topic":source["topic"],"authority":source["authority"],"url":source["url"]}
+            results.append({**source,**obs,"status":status,"change_preview":preview,
                 "previous_fingerprint":prior.get("fingerprint"),
                 "previous_excerpt":prior.get("excerpt","")})
             time.sleep(1)
@@ -83,8 +104,11 @@ def main():
     for r in results:
         lines.append(f"| {r['status']} | {r['topic']} | {r['authority']} | [Open source]({r['url']}) |")
         if r["status"].startswith("CHANGED"):
+            preview = r.get("change_preview") or "No comparison preview available."
             lines += [f"",f"### Review required — {r['topic']}",f"- Previous page excerpt: {r.get('previous_excerpt') or 'No prior snapshot'}",
                       f"- Current page excerpt: {r.get('excerpt') or 'No text extracted'}",
+                      "- **Detected text differences (for review only):**",
+                      "```text",preview,"```",
                       "- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.",""]
         elif r["status"]=="UNAVAILABLE":
             lines.append(f"  - Fetch issue: {r.get('error','unknown error')}")
