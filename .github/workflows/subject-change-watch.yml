@@ -42,5 +42,17 @@ jobs:
             echo "No monitoring record changes to commit."
           else
             git commit -m "Update PHALGUN subject source watch report"
-            git push origin HEAD:main
+            # Rebase on the latest main because a source-watch report can finish
+            # at the same time as a curriculum or app commit.
+            for attempt in 1 2 3; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+              git rebase --abort || true
+              sleep 2
+            done
+            echo "Could not publish source-watch report after three retries." >&2
+            exit 1
           fi
