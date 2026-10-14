@@ -167,9 +167,11 @@ try {
 
   const monitor = await browser.newPage();
   await monitor.goto(base + '/monitoring.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
-  await monitor.waitForFunction(() => !document.querySelector('#summary')?.innerText.includes('First baseline'), { timeout: 10000 }).catch(() => {});
-  check((await monitor.locator('#summary').innerText()).includes('First baseline'), 'monitoring: latest report loads into dashboard');
+  await monitor.waitForFunction(() => document.querySelector('#summary')?.innerText.includes('Changed · review'), { timeout: 15000 }).catch(() => {});
+  check((await monitor.locator('#summary').innerText()).includes('Changed · review'), 'monitoring: latest report loads into dashboard');
   check((await monitor.locator('#results').innerText()).length > 0, 'monitoring: source results render');
+  const monitoredSourceCount = await monitor.evaluate(async () => {const r=await fetch('./monitoring/source-catalog.json?test='+Date.now(),{cache:'no-store'});if(!r.ok)return 0;const d=await r.json();return Array.isArray(d.sources)?d.sources.length:0;});
+  check(monitoredSourceCount >= 17, 'monitoring: at least seventeen official sources are registered', 'found ' + monitoredSourceCount);
   await monitor.close();
 } catch (error) {
   failures.push('Test runner error: ' + (error?.stack || error));
