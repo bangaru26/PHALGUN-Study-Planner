@@ -3,6 +3,17 @@ name: Deploy PHALGUN Study Planner to GitHub Pages
 on:
   push:
     branches: [main]
+    paths:
+      - "*.html"
+      - "*.js"
+      - "*.css"
+      - "*.svg"
+      - "*.webmanifest"
+      - "*.json"
+      - "assets/**"
+      - "data/**"
+      - "scripts/test_live_app.mjs"
+      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:
