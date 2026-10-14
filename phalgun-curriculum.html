@@ -142,4 +142,34 @@ const $=id=>document.getElementById(id), groups=[...new Set(domains.map(d=>d.gro
 groups.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;$('domain').appendChild(o)});
 function render(){const q=$('q').value.trim().toLowerCase(),group=$('domain').value;let visible=0;const host=$('catalog');host.innerHTML='';for(const d of domains){if(group&&d.group!==group)continue;const courses=d.courses.filter(c=>(d.name+' '+d.desc+' '+c.join(' ')).toLowerCase().includes(q));if(q&&!courses.length)continue;visible++;const sec=document.createElement('section');sec.className='section';sec.innerHTML='<h2>'+d.name+'</h2><p>'+d.desc+'</p><div class="grid"></div>';const grid=sec.querySelector('.grid');courses.forEach(c=>{const el=document.createElement('article');el.className='card';el.innerHTML='<div class="meta">'+d.group+'</div><h3></h3><p></p><div class="outcome"><strong>Evidence / outcome:</strong> <span></span></div>';el.querySelector('h3').textContent=c[0];el.querySelector('p').textContent=c[1];el.querySelector('span').textContent=c[2];grid.appendChild(el)});host.appendChild(sec)}$('count').textContent=visible+' learning domains shown · '+domains.reduce((n,d)=>n+d.courses.length,0)+' course pathways in master catalogue';if(!visible)host.innerHTML='<p>No matching courses. Try a broader search.</p>'}
 $('q').addEventListener('input',render);$('domain').addEventListener('change',render);render();
-</script></body></html>
+</script><style id="oct14-consistent-typography-and-timer-controls">
+/* One consistent typeface stack and stopwatch control geometry across PHALGUN pages. */
+html body{font-family:Roboto,"Segoe UI",Arial,sans-serif!important}
+html body button,html body input,html body textarea,html body select{font-family:inherit}
+html body #studyTopRow .stopwatch-card>.buttons,
+html body .shared-commandbar .shared-stopwatch>.buttons{
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ align-items:stretch!important;justify-content:stretch!important;gap:6px!important;
+ width:100%!important;min-width:0!important;height:auto!important;margin:0!important;
+}
+html body #studyTopRow .stopwatch-card>.buttons button,
+html body .shared-commandbar .shared-stopwatch>.buttons button{
+ position:static!important;inset:auto!important;transform:none!important;float:none!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ flex:initial!important;min-width:0!important;width:100%!important;height:auto!important;
+ min-height:36px!important;margin:0!important;padding:7px 4px!important;
+ box-sizing:border-box!important;line-height:1.15!important;text-align:center!important;
+ white-space:normal!important;overflow-wrap:anywhere!important;
+}
+@media(max-width:650px){
+ html body #studyTopRow .stopwatch-card>.buttons,
+ html body .shared-commandbar .shared-stopwatch>.buttons{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important;
+ }
+ html body #studyTopRow .stopwatch-card>.buttons button,
+ html body .shared-commandbar .shared-stopwatch>.buttons button{
+  min-height:38px!important;padding:8px 6px!important;font-size:12px!important;
+ }
+}
+</style>
+</body></html>
