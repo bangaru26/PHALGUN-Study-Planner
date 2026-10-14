@@ -51,6 +51,16 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+      - name: Install browser test runner
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Exercise deployed app in a real browser
+        env:
+          PHALGUN_BASE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: node scripts/test_live_app.mjs
+
       - name: Verify live app
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
