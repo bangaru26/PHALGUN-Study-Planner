@@ -18,7 +18,12 @@
       "authority": "Government of India",
       "url": "https://www.gst.gov.in/",
       "cadence": "daily",
-      "review": "Check notifications, circulars, rates and effective dates against official notices."
+      "review": "Check notifications, circulars, rates and effective dates against official notices.",
+      "lesson_areas": [
+        "GST basics",
+        "invoice controls",
+        "indirect-tax compliance"
+      ]
     },
     {
       "id": "cbic_gst",
@@ -26,7 +31,12 @@
       "authority": "CBIC",
       "url": "https://cbic-gst.gov.in/",
       "cadence": "daily",
-      "review": "Check official notifications/circulars and legal effective dates."
+      "review": "Check official notifications/circulars and legal effective dates.",
+      "lesson_areas": [
+        "GST law",
+        "notifications and circulars",
+        "indirect-tax compliance"
+      ]
     },
     {
       "id": "mca",
@@ -34,7 +44,12 @@
       "authority": "Ministry of Corporate Affairs",
       "url": "https://www.mca.gov.in/content/mca/global/en/home.html",
       "cadence": "daily",
-      "review": "Check rules, forms, circulars and commencement dates."
+      "review": "Check rules, forms, circulars and commencement dates.",
+      "lesson_areas": [
+        "company law",
+        "corporate filings",
+        "governance and CSR"
+      ]
     },
     {
       "id": "incometax",
@@ -42,7 +57,12 @@
       "authority": "Income Tax Department",
       "url": "https://www.incometax.gov.in/iec/foportal/",
       "cadence": "daily",
-      "review": "Check Finance Acts, notifications, rules and assessment-year applicability."
+      "review": "Check Finance Acts, notifications, rules and assessment-year applicability.",
+      "lesson_areas": [
+        "income tax",
+        "TDS/TCS",
+        "tax compliance"
+      ]
     },
     {
       "id": "icai",
@@ -50,7 +70,12 @@
       "authority": "ICAI",
       "url": "https://www.icai.org/",
       "cadence": "daily",
-      "review": "Check standards, announcements, implementation dates and applicability."
+      "review": "Check standards, announcements, implementation dates and applicability.",
+      "lesson_areas": [
+        "accounting",
+        "audit",
+        "professional guidance"
+      ]
     },
     {
       "id": "ifrs",
@@ -58,7 +83,12 @@
       "authority": "IFRS Foundation",
       "url": "https://www.ifrs.org/issued-standards/list-of-standards/",
       "cadence": "daily",
-      "review": "Check issued/amended standards, effective dates and jurisdictional adoption."
+      "review": "Check issued/amended standards, effective dates and jurisdictional adoption.",
+      "lesson_areas": [
+        "IFRS",
+        "financial reporting",
+        "disclosures"
+      ]
     },
     {
       "id": "ima_cma",
@@ -66,7 +96,12 @@
       "authority": "Institute of Management Accountants",
       "url": "https://www.imanet.org/ima-certifications/cma-certification",
       "cadence": "weekly",
-      "review": "Check exam content, eligibility, fees and policy changes."
+      "review": "Check exam content, eligibility, fees and policy changes.",
+      "lesson_areas": [
+        "CMA USA",
+        "management accounting",
+        "finance analytics"
+      ]
     },
     {
       "id": "excel_support",
@@ -74,7 +109,12 @@
       "authority": "Microsoft Support",
       "url": "https://support.microsoft.com/excel",
       "cadence": "weekly",
-      "review": "Check function behaviour, availability by version/platform and feature changes."
+      "review": "Check function behaviour, availability by version/platform and feature changes.",
+      "lesson_areas": [
+        "Advanced Excel",
+        "formula practice",
+        "Power Query"
+      ]
     },
     {
       "id": "powerbi",
@@ -82,7 +122,12 @@
       "authority": "Microsoft Learn",
       "url": "https://learn.microsoft.com/power-bi/",
       "cadence": "weekly",
-      "review": "Check product features, licensing, UI and deprecation notices."
+      "review": "Check product features, licensing, UI and deprecation notices.",
+      "lesson_areas": [
+        "Power BI",
+        "data analytics",
+        "reporting"
+      ]
     },
     {
       "id": "python",
@@ -90,7 +135,12 @@
       "authority": "Python Software Foundation",
       "url": "https://docs.python.org/3/whatsnew/",
       "cadence": "weekly",
-      "review": "Check version-specific language/library changes and end-of-life."
+      "review": "Check version-specific language/library changes and end-of-life.",
+      "lesson_areas": [
+        "Python",
+        "automation",
+        "data processing"
+      ]
     },
     {
       "id": "sqlserver",
@@ -98,7 +148,12 @@
       "authority": "Microsoft Learn",
       "url": "https://learn.microsoft.com/sql/",
       "cadence": "weekly",
-      "review": "Check dialect-specific syntax and product version notes; do not generalise to all SQL engines."
+      "review": "Check dialect-specific syntax and product version notes; do not generalise to all SQL engines.",
+      "lesson_areas": [
+        "SQL",
+        "database practice",
+        "data quality"
+      ]
     },
     {
       "id": "sap_help",
@@ -106,7 +161,12 @@
       "authority": "SAP Help Portal",
       "url": "https://help.sap.com/",
       "cadence": "weekly",
-      "review": "Check release-specific workflows, transaction availability and cloud/on-premise differences."
+      "review": "Check release-specific workflows, transaction availability and cloud/on-premise differences.",
+      "lesson_areas": [
+        "SAP FICO",
+        "ERP processes",
+        "finance operations"
+      ]
     },
     {
       "id": "us_sec",
@@ -114,7 +174,65 @@
       "authority": "US SEC",
       "url": "https://www.sec.gov/edgar/search/",
       "cadence": "weekly",
-      "review": "Check relevant official rules and filings; distinguish regulation from issuer disclosures."
+      "review": "Check relevant official rules and filings; distinguish regulation from issuer disclosures.",
+      "lesson_areas": [
+        "US financial reporting",
+        "SEC filings",
+        "disclosure literacy"
+      ]
+    },
+    {
+      "id": "income_tax_notifications",
+      "topic": "Income-tax Act, Rules and CBDT notifications",
+      "authority": "Income Tax Department / CBDT",
+      "url": "https://www.incometaxindia.gov.in/notifications",
+      "cadence": "daily",
+      "review": "Verify the Act/version, tax year, notification number, publication/effective date and applicability before changing tax lessons.",
+      "lesson_areas": [
+        "Income-tax Act and Rules",
+        "TDS/TCS",
+        "tax compliance calendar"
+      ]
+    },
+    {
+      "id": "icai_asb",
+      "topic": "Indian accounting standards and implementation guidance",
+      "authority": "ICAI Accounting Standards Board",
+      "url": "https://asb.icai.org/",
+      "cadence": "daily",
+      "review": "Review standard-setting announcements, exposure drafts, clarifications and implementation dates; distinguish proposals from issued requirements.",
+      "lesson_areas": [
+        "Indian Accounting Standards",
+        "IFRS/Ind AS",
+        "financial reporting and audit"
+      ]
+    },
+    {
+      "id": "ind_as_compendium",
+      "topic": "Indian Accounting Standards (Ind AS) compendium",
+      "authority": "ICAI",
+      "url": "https://www.icai.org/post/compendium-of-indian-accounting-standards",
+      "cadence": "weekly",
+      "review": "Compare the edition/year and amendment notes; verify MCA-notified requirements and effective dates before updating lessons.",
+      "lesson_areas": [
+        "Ind AS",
+        "financial statements",
+        "disclosures and accounting policies"
+      ]
+    },
+    {
+      "id": "pib_mca_releases",
+      "topic": "Ministry of Corporate Affairs public announcements",
+      "authority": "Press Information Bureau, Government of India",
+      "url": "https://www.pib.gov.in/newsite/pmreleases.aspx?lang=2&mincode=66&reg=48",
+      "cadence": "daily",
+      "review": "Use as a secondary official announcement channel when the MCA portal blocks automated access; confirm legal changes against the underlying Gazette notification or MCA instrument.",
+      "lesson_areas": [
+        "company law",
+        "MCA advisories",
+        "CSR and corporate governance",
+        "IBC awareness"
+      ]
     }
   ]
 }
