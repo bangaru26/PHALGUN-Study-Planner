@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-14T12:37:48+00:00",
+  "generated_at": "2026-10-14T12:40:05+00:00",
   "scope": "Page-level fingerprint watch; not a legal or semantic determination.",
   "summary": {
     "changed": 0,
     "unchanged": 12,
-    "baseline": 0,
+    "baseline": 4,
     "unavailable": 1
   },
   "results": [
@@ -15,6 +15,11 @@
       "url": "https://www.gst.gov.in/",
       "cadence": "daily",
       "review": "Check notifications, circulars, rates and effective dates against official notices.",
+      "lesson_areas": [
+        "GST basics",
+        "invoice controls",
+        "indirect-tax compliance"
+      ],
       "status": "UNCHANGED",
       "http_status": 200,
       "final_url": "https://www.gst.gov.in/",
@@ -22,7 +27,7 @@
       "fingerprint": "551f68bf7feb068911bcf6b0a0977ce68544ce86170373713dbb4dde88b4559c",
       "excerpt": "Goods & Services Tax (GST) | Home Skip to Main Content A + A - Goods and Services Tax Government of India, States and Union Territories Register Multi-State Registration Login Last Logged In at IST My Profile Change Password Register / Update DSC Logout Logout Toggle navigation × News and Updates View all Popular help topics How do I register with GST? How do I apply for refund? How do I file returns? How can I use Returns Offline Tool? How do I file an appeal? How do I file intimation about vol",
       "text_length": 746,
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "change_preview": "",
       "previous_fingerprint": "551f68bf7feb068911bcf6b0a0977ce68544ce86170373713dbb4dde88b4559c",
       "previous_excerpt": "Goods & Services Tax (GST) | Home Skip to Main Content A + A - Goods and Services Tax Government of India, States and Union Territories Register Multi-State Registration Login Last Logged In at IST My Profile Change Password Register / Update DSC Logout Logout Toggle navigation × News and Updates View all Popular help topics How do I register with GST? How do I apply for refund? How do I file returns? How can I use Returns Offline Tool? How do I file an appeal? How do I file intimation about vol"
@@ -34,6 +39,11 @@
       "url": "https://cbic-gst.gov.in/",
       "cadence": "daily",
       "review": "Check official notifications/circulars and legal effective dates.",
+      "lesson_areas": [
+        "GST law",
+        "notifications and circulars",
+        "indirect-tax compliance"
+      ],
       "status": "UNCHANGED",
       "http_status": 200,
       "final_url": "https://cbic-gst.gov.in/",
@@ -41,7 +51,7 @@
       "fingerprint": "f8344dcf2beff4f3572b7ef3b74abf5a165d1e5376e172c85c0d39eac0eaf931",
       "excerpt": "Goods & Service Tax, CBIC, Government of India :: Home Attention This Tab “ACES Archives” displays web content as was available in the erstwhile www.aces.gov.in and for information only. For all transactions under Central Excise and Service Tax use the Tab “ACES (CE&ST) Login” OK May I help you? From August 1st 2025 onwards, CBIC Mitra Helpdesk number will be 1800 425 0232 For any queries and quick assistance, Click Here हिन्दी Sitemap Help GST Acts Services + GST Rates Know Your Jurisdiction SV",
       "text_length": 9970,
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "change_preview": "",
       "previous_fingerprint": "f8344dcf2beff4f3572b7ef3b74abf5a165d1e5376e172c85c0d39eac0eaf931",
       "previous_excerpt": "Goods & Service Tax, CBIC, Government of India :: Home Attention This Tab “ACES Archives” displays web content as was available in the erstwhile www.aces.gov.in and for information only. For all transactions under Central Excise and Service Tax use the Tab “ACES (CE&ST) Login” OK May I help you? From August 1st 2025 onwards, CBIC Mitra Helpdesk number will be 1800 425 0232 For any queries and quick assistance, Click Here हिन्दी Sitemap Help GST Acts Services + GST Rates Know Your Jurisdiction SV"
@@ -53,8 +63,13 @@
       "url": "https://www.mca.gov.in/content/mca/global/en/home.html",
       "cadence": "daily",
       "review": "Check rules, forms, circulars and commencement dates.",
+      "lesson_areas": [
+        "company law",
+        "corporate filings",
+        "governance and CSR"
+      ],
       "status": "UNAVAILABLE",
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "error": "HTTPError: HTTP Error 403: Forbidden",
       "previous_fingerprint": null,
       "previous_excerpt": ""
@@ -66,6 +81,11 @@
       "url": "https://www.incometax.gov.in/iec/foportal/",
       "cadence": "daily",
       "review": "Check Finance Acts, notifications, rules and assessment-year applicability.",
+      "lesson_areas": [
+        "income tax",
+        "TDS/TCS",
+        "tax compliance"
+      ],
       "status": "UNCHANGED",
       "http_status": 200,
       "final_url": "https://www.incometax.gov.in/iec/foportal/",
@@ -73,7 +93,7 @@
       "fingerprint": "94440fe146c1d67fbe97aca2538acc129c420ef8185d7a110ba58a850057c7d2",
       "excerpt": "Home | Income Tax Department Skip to main content Call Us e-filing and Centralized Processing Center e-Filing of Income Tax Return or Forms and other value added services & Intimation, Rectification, Refund and other Income Tax Processing Related Queries 1800 103 0025 (or) 1800 419 0025 +91-80-46122000 +91-80-61464700 08:00 hrs - 20:00 hrs (Monday to Friday) Tax Information Network - NSDL Queries related to PAN & TAN application for Issuance / Update through NSDL +91-20-27218080 07:00 hrs - 23:0",
       "text_length": 10626,
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "change_preview": "",
       "previous_fingerprint": "94440fe146c1d67fbe97aca2538acc129c420ef8185d7a110ba58a850057c7d2",
       "previous_excerpt": "Home | Income Tax Department Skip to main content Call Us e-filing and Centralized Processing Center e-Filing of Income Tax Return or Forms and other value added services & Intimation, Rectification, Refund and other Income Tax Processing Related Queries 1800 103 0025 (or) 1800 419 0025 +91-80-46122000 +91-80-61464700 08:00 hrs - 20:00 hrs (Monday to Friday) Tax Information Network - NSDL Queries related to PAN & TAN application for Issuance / Update through NSDL +91-20-27218080 07:00 hrs - 23:0"
@@ -85,6 +105,11 @@
       "url": "https://www.icai.org/",
       "cadence": "daily",
       "review": "Check standards, announcements, implementation dates and applicability.",
+      "lesson_areas": [
+        "accounting",
+        "audit",
+        "professional guidance"
+      ],
       "status": "UNCHANGED",
       "http_status": 200,
       "final_url": "https://www.icai.org/",
@@ -92,7 +117,7 @@
       "fingerprint": "fa731d057c03999c1aca8f92499ea5bdcf8fa30108d5539d7e64edeed4199ad3",
       "excerpt": "ICAI - The Institute of Chartered Accountants of India Toggle navigation Home Overview About ICAI The Council ICAI Network Key Statistics Right to Information Act Annual Report Year Books - ICAI Committees Standing Non Standing Directorate Others Secretary to the Committee Members Council Guidelines Courses offered by ICAI Election-2024 Empanelment Examination Funds/ Awards Members - FAQs Placements Regulatory Students Announcements BoS Knowledge Portal Chartered Accountancy Course Examination S",
       "text_length": 1916,
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "change_preview": "",
       "previous_fingerprint": "fa731d057c03999c1aca8f92499ea5bdcf8fa30108d5539d7e64edeed4199ad3",
       "previous_excerpt": "ICAI - The Institute of Chartered Accountants of India Toggle navigation Home Overview About ICAI The Council ICAI Network Key Statistics Right to Information Act Annual Report Year Books - ICAI Committees Standing Non Standing Directorate Others Secretary to the Committee Members Council Guidelines Courses offered by ICAI Election-2024 Empanelment Examination Funds/ Awards Members - FAQs Placements Regulatory Students Announcements BoS Knowledge Portal Chartered Accountancy Course Examination S"
@@ -104,6 +129,11 @@
       "url": "https://www.ifrs.org/issued-standards/list-of-standards/",
       "cadence": "daily",
       "review": "Check issued/amended standards, effective dates and jurisdictional adoption.",
+      "lesson_areas": [
+        "IFRS",
+        "financial reporting",
+        "disclosures"
+      ],
       "status": "UNCHANGED",
       "http_status": 200,
       "final_url": "https://www.ifrs.org/issued-standards/list-of-standards/",
@@ -111,7 +141,7 @@
       "fingerprint": "ae8c5739ad70e5c885a36422be86608915b1c4eea41ffc8c7c864723410ee191",
       "excerpt": "IFRS - IFRS Accounting Standards Navigator Skip to content Sign in or register Update to our sign-in process Phrase search Word search ABOUT US The IFRS Foundation is a not-for-profit, public interest organisation established to develop high-quality, understandable, enforceable and globally accepted accounting and sustainability disclosure standards. Our Standards are developed by our two standard-setting boards, the International Accounting Standards Board (IASB) and International Sustainabilit",
       "text_length": 10326,
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "change_preview": "",
       "previous_fingerprint": "ae8c5739ad70e5c885a36422be86608915b1c4eea41ffc8c7c864723410ee191",
       "previous_excerpt": "IFRS - IFRS Accounting Standards Navigator Skip to content Sign in or register Update to our sign-in process Phrase search Word search ABOUT US The IFRS Foundation is a not-for-profit, public interest organisation established to develop high-quality, understandable, enforceable and globally accepted accounting and sustainability disclosure standards. Our Standards are developed by our two standard-setting boards, the International Accounting Standards Board (IASB) and International Sustainabilit"
@@ -123,6 +153,11 @@
       "url": "https://www.imanet.org/ima-certifications/cma-certification",
       "cadence": "weekly",
       "review": "Check exam content, eligibility, fees and policy changes.",
+      "lesson_areas": [
+        "CMA USA",
+        "management accounting",
+        "finance analytics"
+      ],
       "status": "UNCHANGED",
       "http_status": 200,
       "final_url": "https://www.imaglobal.org/",
@@ -130,7 +165,7 @@
       "fingerprint": "697cdd0a109ea32a665e5aff12f46c74f568b79b06bce426fb283d0576c8e190",
       "excerpt": "The Institute of Management Accountants and Financial Professionals | IMA Welcome to the Institute of Management Accountants Sign In Join IMA Membership Training Career Certifications Community Publications We set the standard for accounting and finance professionals worldwide Trusted content, credentials, and community that drive better business decisions and outcomes. Join IMA Explore courses A century of leadership and professional development The Institute of Management Accountants is a glob",
       "text_length": 3501,
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "change_preview": "",
       "previous_fingerprint": "697cdd0a109ea32a665e5aff12f46c74f568b79b06bce426fb283d0576c8e190",
       "previous_excerpt": "The Institute of Management Accountants and Financial Professionals | IMA Welcome to the Institute of Management Accountants Sign In Join IMA Membership Training Career Certifications Community Publications We set the standard for accounting and finance professionals worldwide Trusted content, credentials, and community that drive better business decisions and outcomes. Join IMA Explore courses A century of leadership and professional development The Institute of Management Accountants is a glob"
@@ -142,6 +177,11 @@
       "url": "https://support.microsoft.com/excel",
       "cadence": "weekly",
       "review": "Check function behaviour, availability by version/platform and feature changes.",
+      "lesson_areas": [
+        "Advanced Excel",
+        "formula practice",
+        "Power Query"
+      ],
       "status": "UNCHANGED",
       "http_status": 200,
       "final_url": "https://support.microsoft.com/en-us/excel/",
@@ -149,7 +189,7 @@
       "fingerprint": "0e3a8a9ecbbda106a4f19c5fe63d8132bc9cd1518019b6ca00d7906e0972c3fb",
       "excerpt": "Excel help & learning | Microsoft Support Skip to main content Microsoft Support Support Support Home Microsoft 365 Office Products Microsoft 365 Outlook Microsoft Teams OneDrive Microsoft Copilot OneNote Windows more ... Devices Surface PC Accessories Xbox PC Gaming HoloLens Surface Hub Hardware warranties Account & billing Resources Community forums Microsoft 365 Admins Developer Education Report a support scam Product safety More Buy Microsoft 365 All Microsoft Global Microsoft 365 Azure Copi",
       "text_length": 4149,
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "change_preview": "",
       "previous_fingerprint": "0e3a8a9ecbbda106a4f19c5fe63d8132bc9cd1518019b6ca00d7906e0972c3fb",
       "previous_excerpt": "Excel help & learning | Microsoft Support Skip to main content Microsoft Support Support Support Home Microsoft 365 Office Products Microsoft 365 Outlook Microsoft Teams OneDrive Microsoft Copilot OneNote Windows more ... Devices Surface PC Accessories Xbox PC Gaming HoloLens Surface Hub Hardware warranties Account & billing Resources Community forums Microsoft 365 Admins Developer Education Report a support scam Product safety More Buy Microsoft 365 All Microsoft Global Microsoft 365 Azure Copi"
@@ -161,6 +201,11 @@
       "url": "https://learn.microsoft.com/power-bi/",
       "cadence": "weekly",
       "review": "Check product features, licensing, UI and deprecation notices.",
+      "lesson_areas": [
+        "Power BI",
+        "data analytics",
+        "reporting"
+      ],
       "status": "UNCHANGED",
       "http_status": 200,
       "final_url": "https://learn.microsoft.com/en-us/power-bi/",
@@ -168,7 +213,7 @@
       "fingerprint": "80eed318b4e9b06ee9f187cc8667326db8fdd0037994b5f2dad207cf224ec135",
       "excerpt": "Power BI documentation - Power BI | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Power BI documentation Power BI documentation covers cloud capabilities in Microsoft Fabric, standalone desktop and on-premises applications, and guidance tailored to your role—whether you create reports,",
       "text_length": 3544,
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "change_preview": "",
       "previous_fingerprint": "80eed318b4e9b06ee9f187cc8667326db8fdd0037994b5f2dad207cf224ec135",
       "previous_excerpt": "Power BI documentation - Power BI | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Power BI documentation Power BI documentation covers cloud capabilities in Microsoft Fabric, standalone desktop and on-premises applications, and guidance tailored to your role—whether you create reports,"
@@ -180,6 +225,11 @@
       "url": "https://docs.python.org/3/whatsnew/",
       "cadence": "weekly",
       "review": "Check version-specific language/library changes and end-of-life.",
+      "lesson_areas": [
+        "Python",
+        "automation",
+        "data processing"
+      ],
       "status": "UNCHANGED",
       "http_status": 200,
       "final_url": "https://docs.python.org/3/whatsnew/",
@@ -187,7 +237,7 @@
       "fingerprint": "ebdbcdb5cb7ef922337b0c7208993117c6ac35e7cbe5756efab7cacab567aab7",
       "excerpt": "What’s New in Python — Python 3.15.0 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.0 Documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” ",
       "text_length": 14722,
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "change_preview": "",
       "previous_fingerprint": "ebdbcdb5cb7ef922337b0c7208993117c6ac35e7cbe5756efab7cacab567aab7",
       "previous_excerpt": "What’s New in Python — Python 3.15.0 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.0 Documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” "
@@ -199,6 +249,11 @@
       "url": "https://learn.microsoft.com/sql/",
       "cadence": "weekly",
       "review": "Check dialect-specific syntax and product version notes; do not generalise to all SQL engines.",
+      "lesson_areas": [
+        "SQL",
+        "database practice",
+        "data quality"
+      ],
       "status": "UNCHANGED",
       "http_status": 200,
       "final_url": "https://learn.microsoft.com/en-us/sql/?view=sql-server-ver17",
@@ -206,7 +261,7 @@
       "fingerprint": "a9cdca94de582d016c2bbdc5823ebeb7fa4db6efd348356012a060a7dcf7010c",
       "excerpt": "Microsoft SQL Documentation - SQL Server | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Microsoft SQL documentation Links and more for Microsoft SQL, the SQL Database Engine, and all Microsoft SQL platforms. Deploy Try Azure SQL Database for free Deploy Try Azure SQL Managed Instance ",
       "text_length": 2299,
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "change_preview": "",
       "previous_fingerprint": "a9cdca94de582d016c2bbdc5823ebeb7fa4db6efd348356012a060a7dcf7010c",
       "previous_excerpt": "Microsoft SQL Documentation - SQL Server | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Microsoft SQL documentation Links and more for Microsoft SQL, the SQL Database Engine, and all Microsoft SQL platforms. Deploy Try Azure SQL Database for free Deploy Try Azure SQL Managed Instance "
@@ -218,6 +273,11 @@
       "url": "https://help.sap.com/",
       "cadence": "weekly",
       "review": "Check release-specific workflows, transaction availability and cloud/on-premise differences.",
+      "lesson_areas": [
+        "SAP FICO",
+        "ERP processes",
+        "finance operations"
+      ],
       "status": "UNCHANGED",
       "http_status": 200,
       "final_url": "https://help.sap.com/docs",
@@ -225,7 +285,7 @@
       "fingerprint": "cb911e375e3af276a49604d07c12a625e61221358f8313096b53360674cd39f9",
       "excerpt": "SAP Help Portal | SAP Online Help",
       "text_length": 33,
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "change_preview": "",
       "previous_fingerprint": "cb911e375e3af276a49604d07c12a625e61221358f8313096b53360674cd39f9",
       "previous_excerpt": "SAP Help Portal | SAP Online Help"
@@ -237,6 +297,11 @@
       "url": "https://www.sec.gov/edgar/search/",
       "cadence": "weekly",
       "review": "Check relevant official rules and filings; distinguish regulation from issuer disclosures.",
+      "lesson_areas": [
+        "US financial reporting",
+        "SEC filings",
+        "disclosure literacy"
+      ],
       "status": "UNCHANGED",
       "http_status": 200,
       "final_url": "https://www.sec.gov/edgar/search/",
@@ -244,10 +309,107 @@
       "fingerprint": "99a39fa07e2225112360e285e744b5e6b087271c4f941367c036a398c50a3293",
       "excerpt": "SEC.gov | EDGAR Full Text Search SEC.gov EDGAR FAQ Other search tools The new EDGAR advanced search gives you access to the full text of electronic filings since 2001. Document word or phrase ? Company name, ticker, CIK number or individual's name + more search options Filing category Browse filing types View all Filing types Browse filing types cancel Filed date range All (since 2001) Last 10 years Last 5 years Last year Last 30 days Custom Invalid Date Filed from Filed to Principal executive o",
       "text_length": 1512,
-      "checked_at": "2026-10-14T12:37:48+00:00",
+      "checked_at": "2026-10-14T12:40:05+00:00",
       "change_preview": "",
       "previous_fingerprint": "99a39fa07e2225112360e285e744b5e6b087271c4f941367c036a398c50a3293",
       "previous_excerpt": "SEC.gov | EDGAR Full Text Search SEC.gov EDGAR FAQ Other search tools The new EDGAR advanced search gives you access to the full text of electronic filings since 2001. Document word or phrase ? Company name, ticker, CIK number or individual's name + more search options Filing category Browse filing types View all Filing types Browse filing types cancel Filed date range All (since 2001) Last 10 years Last 5 years Last year Last 30 days Custom Invalid Date Filed from Filed to Principal executive o"
+    },
+    {
+      "id": "income_tax_notifications",
+      "topic": "Income-tax Act, Rules and CBDT notifications",
+      "authority": "Income Tax Department / CBDT",
+      "url": "https://www.incometaxindia.gov.in/notifications",
+      "cadence": "daily",
+      "review": "Verify the Act/version, tax year, notification number, publication/effective date and applicability before changing tax lessons.",
+      "lesson_areas": [
+        "Income-tax Act and Rules",
+        "TDS/TCS",
+        "tax compliance calendar"
+      ],
+      "status": "BASELINE",
+      "http_status": 200,
+      "final_url": "https://www.incometaxindia.gov.in/notifications",
+      "title": "Income Tax Notifications & CBDT Updates Latest",
+      "fingerprint": "7199c7e9aedd197b77923607dbd4f5b6e646cd26f401bd505409ab7214a822bd",
+      "excerpt": "Income Tax Notifications & CBDT Updates Latest Skip to Main Content Please wait... Income Tax Department Ministry of Finance, Government of India Guided Tour Skip to main content Accessibility Accessibility Options Font Size A- 80% 91% 100% 110% 125% 140% A+ Saturation Screen Reader High Contrast Theme Basic HTML View Invert Colors Language Options English English हिन्दी Help Department Officials IRS Officers Online Official Email Systems Employees Corner Take Online Oath Home About Us History o",
+      "text_length": 3935,
+      "checked_at": "2026-10-14T12:40:05+00:00",
+      "change_preview": "",
+      "previous_fingerprint": null,
+      "previous_excerpt": ""
+    },
+    {
+      "id": "icai_asb",
+      "topic": "Indian accounting standards and implementation guidance",
+      "authority": "ICAI Accounting Standards Board",
+      "url": "https://asb.icai.org/",
+      "cadence": "daily",
+      "review": "Review standard-setting announcements, exposure drafts, clarifications and implementation dates; distinguish proposals from issued requirements.",
+      "lesson_areas": [
+        "Indian Accounting Standards",
+        "IFRS/Ind AS",
+        "financial reporting and audit"
+      ],
+      "status": "BASELINE",
+      "http_status": 200,
+      "final_url": "https://asb.icai.org/",
+      "title": "ICAI - The Institute of Chartered Accountants of India",
+      "fingerprint": "eefb9f0032d07fbeb6eba0899345eed1ce913669e1efc4b7edad5de05bbc7863",
+      "excerpt": "ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St",
+      "text_length": 6454,
+      "checked_at": "2026-10-14T12:40:05+00:00",
+      "change_preview": "",
+      "previous_fingerprint": null,
+      "previous_excerpt": ""
+    },
+    {
+      "id": "ind_as_compendium",
+      "topic": "Indian Accounting Standards (Ind AS) compendium",
+      "authority": "ICAI",
+      "url": "https://www.icai.org/post/compendium-of-indian-accounting-standards",
+      "cadence": "weekly",
+      "review": "Compare the edition/year and amendment notes; verify MCA-notified requirements and effective dates before updating lessons.",
+      "lesson_areas": [
+        "Ind AS",
+        "financial statements",
+        "disclosures and accounting policies"
+      ],
+      "status": "BASELINE",
+      "http_status": 200,
+      "final_url": "https://www.icai.org/post/compendium-of-indian-accounting-standards",
+      "title": "ICAI - The Institute of Chartered Accountants of India",
+      "fingerprint": "0bb05c893ee3b12edb7e92d192be3f47cb1002def536fcf50652348991773a71",
+      "excerpt": "ICAI - The Institute of Chartered Accountants of India Toggle navigation Home Overview About ICAI The Council ICAI Network Key Statistics Right to Information Act Annual Report Year Books - ICAI Committees Standing Non Standing Directorate Others Secretary to the Committee Members Council Guidelines Courses offered by ICAI Election-2024 Empanelment Examination Funds/ Awards Members - FAQs Placements Regulatory Students Announcements BoS Knowledge Portal Chartered Accountancy Course Examination S",
+      "text_length": 2778,
+      "checked_at": "2026-10-14T12:40:05+00:00",
+      "change_preview": "",
+      "previous_fingerprint": null,
+      "previous_excerpt": ""
+    },
+    {
+      "id": "pib_mca_releases",
+      "topic": "Ministry of Corporate Affairs public announcements",
+      "authority": "Press Information Bureau, Government of India",
+      "url": "https://www.pib.gov.in/newsite/pmreleases.aspx?lang=2&mincode=66&reg=48",
+      "cadence": "daily",
+      "review": "Use as a secondary official announcement channel when the MCA portal blocks automated access; confirm legal changes against the underlying Gazette notification or MCA instrument.",
+      "lesson_areas": [
+        "company law",
+        "MCA advisories",
+        "CSR and corporate governance",
+        "IBC awareness"
+      ],
+      "status": "BASELINE",
+      "http_status": 200,
+      "final_url": "https://www.pib.gov.in/newsite/pmreleases.aspx?lang=2&mincode=66&reg=48",
+      "title": "PIB",
+      "fingerprint": "80d9e55ccfe6a48a7b5f5b9ae59986dc1a3afec9b3003b0cbc8a9565804d45d1",
+      "excerpt": "PIB Press Information Bureau Government of India English Releases January February March April May June July August September October November December 2026 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 2007 2006 2005 2004 2003 IICA observed 3rd IICA CSR Day on Gandhi Jayanti with a Special Address by the DG & CEO to Participants of the IICA Certified CSR Professional Programme ahead of NCCSR 2026 (05-October 2026) Insolvency and Bankruptcy Code has st",
+      "text_length": 3107,
+      "checked_at": "2026-10-14T12:40:05+00:00",
+      "change_preview": "",
+      "previous_fingerprint": null,
+      "previous_excerpt": ""
     }
   ],
   "review_policy": {

@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-10-14T12:37:48+00:00 (UTC)
+Last check: 2026-10-14T12:40:05+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 0 changed; 12 unchanged; 0 baseline; 1 unavailable.
+Summary: 0 changed; 12 unchanged; 4 baseline; 1 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -22,6 +22,10 @@ Summary: 0 changed; 12 unchanged; 0 baseline; 1 unavailable.
 | UNCHANGED | SQL / database practice | Microsoft Learn | [Open source](https://learn.microsoft.com/sql/) |
 | UNCHANGED | SAP S/4HANA and SAP FICO | SAP Help Portal | [Open source](https://help.sap.com/) |
 | UNCHANGED | US financial reporting and filings | US SEC | [Open source](https://www.sec.gov/edgar/search/) |
+| BASELINE | Income-tax Act, Rules and CBDT notifications | Income Tax Department / CBDT | [Open source](https://www.incometaxindia.gov.in/notifications) |
+| BASELINE | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
+| BASELINE | Indian Accounting Standards (Ind AS) compendium | ICAI | [Open source](https://www.icai.org/post/compendium-of-indian-accounting-standards) |
+| BASELINE | Ministry of Corporate Affairs public announcements | Press Information Bureau, Government of India | [Open source](https://www.pib.gov.in/newsite/pmreleases.aspx?lang=2&mincode=66&reg=48) |
 
 ## What remains unchanged?
 For each source marked **UNCHANGED**, the fetched page text fingerprint matched the previous successful check. This is not a guarantee that every related regulation, product release, linked PDF, or subpage is unchanged.
