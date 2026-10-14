@@ -24,8 +24,8 @@ try {
     await page.locator('#lessonList .lesson').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
     check(await visible(page, 'h1') && (await page.locator('h1').innerText()).includes('Study Desk'), viewport.name + ': home page loads');
     check(await count(page, '#lessonList .lesson') >= 6, viewport.name + ': six lesson tiles are rendered', 'found ' + await count(page, '#lessonList .lesson'));
-    check(await count(page, 'header .brand-icons img') >= 2, viewport.name + ': approved AAROH and Study Desk icon assets are referenced');
-    const iconStatus = await page.locator('header .brand-icons img').evaluateAll(imgs => imgs.map(img => ({src:img.getAttribute('src'),loaded:img.complete && img.naturalWidth > 0})));
+    check(await count(page, '#studyTopRow .brand-icons img') >= 2, viewport.name + ': approved AAROH and Study Desk icon assets are referenced');
+    const iconStatus = await page.locator('#studyTopRow .brand-icons img').evaluateAll(imgs => imgs.map(img => ({src:img.getAttribute('src'),loaded:img.complete && img.naturalWidth > 0})));
     check(iconStatus.length >= 2 && iconStatus.every(i => i.loaded) && iconStatus.some(i => /aaroh-symbol\.jpg/.test(i.src)) && iconStatus.some(i => /study-planner-icon\.webp/.test(i.src)), viewport.name + ': approved icon images load', JSON.stringify(iconStatus));
 
     const search = page.locator('#globalSearch');
@@ -118,7 +118,7 @@ try {
 
   const monitor = await browser.newPage();
   await monitor.goto(base + '/monitoring.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
-  await monitor.waitForFunction(() => !document.querySelector('#stamp')?.textContent.includes('Loading'), { timeout: 10000 }).catch(() => {});
+  await monitor.waitForFunction(() => !document.querySelector('#summary')?.innerText.includes('First baseline'), { timeout: 10000 }).catch(() => {});
   check((await monitor.locator('#summary').innerText()).includes('First baseline'), 'monitoring: latest report loads into dashboard');
   check((await monitor.locator('#results').innerText()).length > 0, 'monitoring: source results render');
   await monitor.close();
