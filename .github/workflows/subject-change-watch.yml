@@ -31,6 +31,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Test source-diff detection
+        run: python scripts/test_monitor_sources.py
       - name: Fetch and compare source pages
         run: python scripts/monitor_sources.py
       - name: Publish dated report and update baseline

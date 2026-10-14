@@ -44,7 +44,7 @@ def change_preview(old_text, new_text, limit=10):
     if not old_text:
         return "No prior text snapshot is available for comparison."
     old_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", old_text) if s.strip()]
-    new_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\\s+", new_text) if s.strip()]
+    new_sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+", new_text) if s.strip()]
     matcher = difflib.SequenceMatcher(a=old_sentences, b=new_sentences, autojunk=True)
     changes = []
     for tag, i1, i2, j1, j2 in matcher.get_opcodes():
@@ -56,7 +56,7 @@ def change_preview(old_text, new_text, limit=10):
             changes.append("+ " + sentence[:220])
         if len(changes) >= limit:
             break
-    return "\\n".join(changes[:limit]) or "Fingerprint changed, but no sentence-level difference was isolated."
+    return "\n".join(changes[:limit]) or "Fingerprint changed, but no sentence-level difference was isolated."
 
 def main():
     with open(CATALOG, encoding="utf-8") as f: catalog=json.load(f)

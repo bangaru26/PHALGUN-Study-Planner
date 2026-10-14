@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+"""Regression tests for PHALGUN source-change previews."""
+import os
+import sys
+import unittest
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from monitor_sources import TextExtractor, change_preview
+
+
+class SourceMonitorTests(unittest.TestCase):
+    def test_changed_sentences_are_split_and_rendered_on_separate_lines(self):
+        old = "The old filing date is 1 April. This sentence stays the same."
+        new = "The new filing date is 1 July. This sentence stays the same."
+        preview = change_preview(old, new)
+        self.assertIn("- The old filing date is 1 April.", preview)
+        self.assertIn("+ The new filing date is 1 July.", preview)
+        self.assertIn("\n", preview)
+        self.assertNotIn("\\n", preview)
+
+    def test_missing_snapshot_is_explicit(self):
+        self.assertEqual(change_preview("", "A new official notice."), "No prior text snapshot is available for comparison.")
+
+    def test_html_extractor_ignores_scripts_and_styles(self):
+        parser = TextExtractor()
+        parser.feed("<html><style>hidden style</style><script>hidden script</script><p>Visible notice.</p></html>")
+        extracted = " ".join(parser.parts)
+        self.assertIn("Visible notice.", extracted)
+        self.assertNotIn("hidden style", extracted)
+        self.assertNotIn("hidden script", extracted)
+
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)
