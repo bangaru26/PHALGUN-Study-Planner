@@ -12,6 +12,9 @@ on:
       - "*.json"
       - "assets/**"
       - "data/**"
+      - "monitoring/latest-report.json"
+      - "monitoring/CHANGE-LOG.md"
+      - "monitoring/source-catalog.json"
       - "scripts/test_live_app.mjs"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
