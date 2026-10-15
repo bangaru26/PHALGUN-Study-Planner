@@ -233,6 +233,253 @@
         "CSR and corporate governance",
         "IBC awareness"
       ]
+    },
+    {
+      "id": "aicpa_cpa",
+      "topic": "US CPA exam and accounting profession",
+      "authority": "AICPA",
+      "url": "https://www.aicpa-cima.com/resources/landing/cpa-exam",
+      "cadence": "weekly",
+      "review": "Check current CPA Exam Blueprints, exam sections, policy and effective dates; licensure requirements remain jurisdiction-specific.",
+      "lesson_areas": [
+        "US CPA",
+        "FAR",
+        "AUD",
+        "REG",
+        "discipline sections",
+        "exam readiness"
+      ]
+    },
+    {
+      "id": "nasba_cpa",
+      "topic": "US CPA licensure and jurisdiction requirements",
+      "authority": "NASBA",
+      "url": "https://nasba.org/licensure/",
+      "cadence": "weekly",
+      "review": "Check official jurisdiction-specific education, experience, exam and licensing requirements.",
+      "lesson_areas": [
+        "US CPA licensure",
+        "state board requirements",
+        "continuing obligations"
+      ]
+    },
+    {
+      "id": "irs_see",
+      "topic": "Enrolled Agent and Special Enrollment Examination",
+      "authority": "Internal Revenue Service",
+      "url": "https://www.irs.gov/tax-professionals/enrolled-agents",
+      "cadence": "weekly",
+      "review": "Check current SEE content, enrollment, renewal, continuing education and representation rules.",
+      "lesson_areas": [
+        "Enrolled Agent",
+        "US individual tax",
+        "US business tax",
+        "IRS representation"
+      ]
+    },
+    {
+      "id": "fasb",
+      "topic": "US GAAP and FASB updates",
+      "authority": "Financial Accounting Standards Board",
+      "url": "https://www.fasb.org/standards",
+      "cadence": "weekly",
+      "review": "Check issued Accounting Standards Updates, effective dates, transition and authoritative Codification references.",
+      "lesson_areas": [
+        "US GAAP",
+        "ASC research",
+        "financial reporting",
+        "disclosures"
+      ]
+    },
+    {
+      "id": "acca",
+      "topic": "ACCA qualification syllabus and policy",
+      "authority": "ACCA",
+      "url": "https://www.accaglobal.com/gb/en/student.html",
+      "cadence": "weekly",
+      "review": "Check current qualification structure, syllabus, exam guidance, exemptions, ethics and practical experience requirements.",
+      "lesson_areas": [
+        "ACCA",
+        "Applied Knowledge",
+        "Applied Skills",
+        "Strategic Professional"
+      ]
+    },
+    {
+      "id": "cima",
+      "topic": "CIMA/CGMA qualification syllabus and policy",
+      "authority": "AICPA & CIMA",
+      "url": "https://www.aicpa-cima.com/resources/landing/cgma-professional-qualification",
+      "cadence": "weekly",
+      "review": "Check current qualification structure, syllabus, case-study windows and transition rules.",
+      "lesson_areas": [
+        "CIMA",
+        "CGMA",
+        "management accounting",
+        "case-study exams"
+      ]
+    },
+    {
+      "id": "atlassian_jira",
+      "topic": "Jira product documentation and release changes",
+      "authority": "Atlassian",
+      "url": "https://support.atlassian.com/jira-software-cloud/",
+      "cadence": "weekly",
+      "review": "Check Jira Cloud documentation, feature changes, workflows, permissions and edition differences.",
+      "lesson_areas": [
+        "Jira",
+        "Agile delivery",
+        "Scrum",
+        "project tracking"
+      ]
+    },
+    {
+      "id": "scrum_guide",
+      "topic": "Scrum framework",
+      "authority": "Scrum Guides",
+      "url": "https://scrumguides.org/",
+      "cadence": "monthly",
+      "review": "Check official Scrum Guide versions and changes; distinguish framework guidance from tool-specific practices.",
+      "lesson_areas": [
+        "Scrum",
+        "Agile",
+        "sprint planning",
+        "roles and events"
+      ]
+    },
+    {
+      "id": "oracle_database",
+      "topic": "Oracle Database documentation",
+      "authority": "Oracle",
+      "url": "https://docs.oracle.com/en/database/",
+      "cadence": "weekly",
+      "review": "Check release-specific database features, SQL syntax, security, support status and deprecations.",
+      "lesson_areas": [
+        "Oracle Database",
+        "SQL",
+        "data modelling",
+        "database security"
+      ]
+    },
+    {
+      "id": "blackline",
+      "topic": "BlackLine product documentation and release updates",
+      "authority": "BlackLine",
+      "url": "https://www.blackline.com/",
+      "cadence": "weekly",
+      "review": "Check official product announcements and available documentation; access to detailed training may require authorised customer credentials.",
+      "lesson_areas": [
+        "BlackLine",
+        "account reconciliation",
+        "transaction matching",
+        "financial close"
+      ]
+    },
+    {
+      "id": "uipath",
+      "topic": "RPA and UiPath documentation",
+      "authority": "UiPath",
+      "url": "https://docs.uipath.com/",
+      "cadence": "weekly",
+      "review": "Check product version, activities, licensing, security guidance and deprecations; do not assume one RPA platform represents all tools.",
+      "lesson_areas": [
+        "RPA",
+        "finance automation",
+        "workflow controls"
+      ]
+    },
+    {
+      "id": "vba_office",
+      "topic": "VBA and Office automation documentation",
+      "authority": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/office/vba/api/overview/",
+      "cadence": "weekly",
+      "review": "Check supported object models, Office version differences, security and macro behaviour.",
+      "lesson_areas": [
+        "VBA",
+        "Excel macros",
+        "Office automation"
+      ]
+    },
+    {
+      "id": "tableau_release",
+      "topic": "Tableau product documentation and release notes",
+      "authority": "Salesforce Tableau",
+      "url": "https://www.tableau.com/support/releases",
+      "cadence": "weekly",
+      "review": "Check version-specific feature changes, deprecations, licensing and publishing/security behaviour.",
+      "lesson_areas": [
+        "Tableau",
+        "visual analytics",
+        "dashboard publishing"
+      ]
+    },
+    {
+      "id": "pmi",
+      "topic": "Project management standards and resources",
+      "authority": "Project Management Institute",
+      "url": "https://www.pmi.org/standards",
+      "cadence": "monthly",
+      "review": "Check current standards, terminology and credential/exam changes; do not reproduce copyrighted standards text.",
+      "lesson_areas": [
+        "Project Management",
+        "project controls",
+        "risk",
+        "delivery"
+      ]
+    },
+    {
+      "id": "microsoft_power_automate",
+      "topic": "Microsoft Power Automate documentation",
+      "authority": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/power-automate/",
+      "cadence": "weekly",
+      "review": "Check connector, licensing, governance, security and product feature changes.",
+      "lesson_areas": [
+        "RPA",
+        "workflow automation",
+        "Microsoft automation"
+      ]
+    },
+    {
+      "id": "microsoft_copilot",
+      "topic": "Microsoft AI and Copilot product documentation",
+      "authority": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/copilot/",
+      "cadence": "weekly",
+      "review": "Check product capability, data protection, licensing and version-specific limitations; verify outputs before finance use.",
+      "lesson_areas": [
+        "AI tools for finance",
+        "AI governance",
+        "productivity tools"
+      ]
+    },
+    {
+      "id": "python_releases",
+      "topic": "Python release and security updates",
+      "authority": "Python Software Foundation",
+      "url": "https://www.python.org/downloads/",
+      "cadence": "weekly",
+      "review": "Check release status, security updates and end-of-life timelines; map relevant changes to supported versions.",
+      "lesson_areas": [
+        "Python",
+        "automation",
+        "data processing"
+      ]
+    },
+    {
+      "id": "postgresql_docs",
+      "topic": "PostgreSQL database documentation",
+      "authority": "PostgreSQL Global Development Group",
+      "url": "https://www.postgresql.org/docs/",
+      "cadence": "weekly",
+      "review": "Check version-specific SQL, database features, security and deprecations; distinguish dialect-specific behavior.",
+      "lesson_areas": [
+        "SQL",
+        "relational databases",
+        "data modelling",
+        "database security"
+      ]
     }
   ]
 }
