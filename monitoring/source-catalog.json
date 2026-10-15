@@ -480,6 +480,146 @@
         "data modelling",
         "database security"
       ]
+    },
+    {
+      "id": "dw_learn_german",
+      "topic": "German learning curriculum",
+      "authority": "Deutsche Welle",
+      "url": "https://learngerman.dw.com/",
+      "cadence": "weekly",
+      "review": "Check course availability, level structure, audio/video resources and access terms.",
+      "lesson_areas": [
+        "German",
+        "pronunciation",
+        "listening",
+        "conversation"
+      ]
+    },
+    {
+      "id": "goethe_german",
+      "topic": "German learning exercises",
+      "authority": "Goethe-Institut",
+      "url": "https://www.goethe.de/en/spr/ueb.html",
+      "cadence": "monthly",
+      "review": "Check free exercise availability and level labels.",
+      "lesson_areas": [
+        "German",
+        "grammar",
+        "vocabulary",
+        "listening"
+      ]
+    },
+    {
+      "id": "tv5monde_french",
+      "topic": "French video-based learning",
+      "authority": "TV5MONDE",
+      "url": "https://apprendre.tv5monde.com/",
+      "cadence": "weekly",
+      "review": "Check video/exercise availability, level tags and geographic access.",
+      "lesson_areas": [
+        "French",
+        "listening",
+        "vocabulary",
+        "conversation"
+      ]
+    },
+    {
+      "id": "lawless_french",
+      "topic": "French grammar and vocabulary",
+      "authority": "Lawless French",
+      "url": "https://www.lawlessfrench.com/",
+      "cadence": "monthly",
+      "review": "Check lesson accuracy, resource availability and dated explanations where grammar usage changes.",
+      "lesson_areas": [
+        "French",
+        "grammar",
+        "vocabulary"
+      ]
+    },
+    {
+      "id": "lawless_spanish",
+      "topic": "Spanish grammar and vocabulary",
+      "authority": "Lawless Spanish",
+      "url": "https://www.lawlessspanish.com/",
+      "cadence": "monthly",
+      "review": "Check lesson availability and regional-usage notes.",
+      "lesson_areas": [
+        "Spanish",
+        "grammar",
+        "vocabulary"
+      ]
+    },
+    {
+      "id": "wordreference",
+      "topic": "Bilingual dictionaries",
+      "authority": "WordReference",
+      "url": "https://www.wordreference.com/",
+      "cadence": "monthly",
+      "review": "Check dictionary language-pair availability and distinguish community discussions from dictionary entries.",
+      "lesson_areas": [
+        "German-English",
+        "Spanish-English",
+        "French-English",
+        "idioms"
+      ]
+    },
+    {
+      "id": "dictcc",
+      "topic": "German-English dictionary",
+      "authority": "dict.cc",
+      "url": "https://www.dict.cc/",
+      "cadence": "monthly",
+      "review": "Check dictionary availability and context-sensitive meanings.",
+      "lesson_areas": [
+        "German-English dictionary",
+        "vocabulary",
+        "translations"
+      ]
+    },
+    {
+      "id": "forvo",
+      "topic": "Native-speaker pronunciation reference",
+      "authority": "Forvo",
+      "url": "https://forvo.com/",
+      "cadence": "monthly",
+      "review": "Check pronunciation recordings and identify accent/region where available.",
+      "lesson_areas": [
+        "phonics",
+        "pronunciation",
+        "listening",
+        "German",
+        "Spanish",
+        "French"
+      ]
+    },
+    {
+      "id": "easy_languages",
+      "topic": "Natural conversation video lessons",
+      "authority": "Easy Languages",
+      "url": "https://www.youtube.com/@EasyLanguages",
+      "cadence": "monthly",
+      "review": "Check channel availability, subtitles, language/region and video access; link rather than rehost copyrighted videos.",
+      "lesson_areas": [
+        "German",
+        "Spanish",
+        "French",
+        "real-world conversation",
+        "listening"
+      ]
+    },
+    {
+      "id": "collins_dictionary",
+      "topic": "Bilingual dictionary and pronunciation",
+      "authority": "Collins Dictionary",
+      "url": "https://www.collinsdictionary.com/",
+      "cadence": "monthly",
+      "review": "Check supported language pairs, pronunciation entries and access terms.",
+      "lesson_areas": [
+        "German-English",
+        "Spanish-English",
+        "French-English",
+        "pronunciation"
+      ]
     }
   ]
 }
