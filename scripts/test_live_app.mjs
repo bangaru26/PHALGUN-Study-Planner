@@ -191,8 +191,8 @@ try {
   check((await monitor.locator('#results').innerText()).length > 0, 'monitoring: source results render');
   const monitoredSourceCount = await monitor.evaluate(async () => {const r=await fetch('./monitoring/source-catalog.json?test='+Date.now(),{cache:'no-store'});if(!r.ok)return 0;const d=await r.json();return Array.isArray(d.sources)?d.sources.length:0;});
   check(monitoredSourceCount >= 17, 'monitoring: at least seventeen official sources are registered', 'found ' + monitoredSourceCount);
-  await monitor.waitForFunction(() => document.querySelector('#sourceCount')?.innerText.includes('17 official sources'), { timeout: 10000 }).catch(() => {});
-  check((await monitor.locator('#sourceCount').innerText()).includes('17 official sources'), 'monitoring: dashboard displays the live source count', await monitor.locator('#sourceCount').innerText());
+  await monitor.waitForFunction(n => document.querySelector('#sourceCount')?.innerText.includes(n + ' official sources'), monitoredSourceCount, { timeout: 10000 }).catch(() => {});
+  check((await monitor.locator('#sourceCount').innerText()).includes(monitoredSourceCount + ' official sources'), 'monitoring: dashboard displays the live source count', await monitor.locator('#sourceCount').innerText());
   await monitor.close();
 } catch (error) {
   failures.push('Test runner error: ' + (error?.stack || error));
