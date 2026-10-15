@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-10-15T02:53:57+00:00 (UTC)
+Last check: 2026-10-15T03:01:05+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 0 changed; 31 unchanged; 0 baseline; 4 unavailable.
+Summary: 0 changed; 31 unchanged; 7 baseline; 7 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -49,6 +49,19 @@ Found
 | UNCHANGED | Microsoft AI and Copilot product documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/copilot/) |
 | UNCHANGED | Python release and security updates | Python Software Foundation | [Open source](https://www.python.org/downloads/) |
 | UNCHANGED | PostgreSQL database documentation | PostgreSQL Global Development Group | [Open source](https://www.postgresql.org/docs/) |
+| BASELINE | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
+| UNAVAILABLE | German learning exercises | Goethe-Institut | [Open source](https://www.goethe.de/en/spr/ueb.html) |
+  - Fetch issue: HTTPError: HTTP Error 403: Forbidden
+| BASELINE | French video-based learning | TV5MONDE | [Open source](https://apprendre.tv5monde.com/) |
+| BASELINE | French grammar and vocabulary | Lawless French | [Open source](https://www.lawlessfrench.com/) |
+| BASELINE | Spanish grammar and vocabulary | Lawless Spanish | [Open source](https://www.lawlessspanish.com/) |
+| BASELINE | Bilingual dictionaries | WordReference | [Open source](https://www.wordreference.com/) |
+| BASELINE | German-English dictionary | dict.cc | [Open source](https://www.dict.cc/) |
+| UNAVAILABLE | Native-speaker pronunciation reference | Forvo | [Open source](https://forvo.com/) |
+  - Fetch issue: HTTPError: HTTP Error 403: Forbidden
+| BASELINE | Natural conversation video lessons | Easy Languages | [Open source](https://www.youtube.com/@EasyLanguages) |
+| UNAVAILABLE | Bilingual dictionary and pronunciation | Collins Dictionary | [Open source](https://www.collinsdictionary.com/) |
+  - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 
 ## What remains unchanged?
 For each source marked **UNCHANGED**, the fetched page text fingerprint matched the previous successful check. This is not a guarantee that every related regulation, product release, linked PDF, or subpage is unchanged.
