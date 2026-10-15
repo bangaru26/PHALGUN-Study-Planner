@@ -164,6 +164,11 @@ try {
   const curriculum = await browser.newPage({ viewport: { width: 1365, height: 900 } });
   await curriculum.goto(base + '/phalgun-curriculum.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
   check(await count(curriculum, '#catalog .card') >= 18, 'PHALGUN curriculum: learning catalogue renders', 'found ' + await count(curriculum, '#catalog .card'));
+  check(await count(curriculum, '#real-world-case-method') === 1, 'PHALGUN curriculum: six-business-context teaching framework is present');
+  check(await count(curriculum, '#languages-communication') === 1, 'PHALGUN curriculum: seven-language learning framework is present');
+  const curriculumText = (await curriculum.locator('body').innerText()).toLowerCase();
+  check(curriculumText.includes('internal audit') && curriculumText.includes('risk-based'), 'PHALGUN curriculum: Internal Audit and risk-based learning coverage is present');
+  check(curriculumText.includes('german') && curriculumText.includes('spanish') && curriculumText.includes('french') && curriculumText.includes('telugu') && curriculumText.includes('punjabi'), 'PHALGUN curriculum: requested language pathways are represented');
   await curriculum.locator('#q').fill('CMA USA'); await wait(300);
   check((await curriculum.locator('#catalog').innerText()).toLowerCase().includes('cma'), 'PHALGUN curriculum: subject search filters catalogue');
   await curriculum.close();
