@@ -82,6 +82,8 @@ jobs:
           set -euo pipefail
           BASE_URL="${PAGE_URL%/}/"
           curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}index.html?verify=${GITHUB_SHA}" -o /tmp/index.html
+          curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}gfpa.html?verify=${GITHUB_SHA}" -o /tmp/gfpa.html
+          grep -q "GFPA — Global Finance &amp; Professional Academy" /tmp/gfpa.html
           curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}manifest.webmanifest?verify=${GITHUB_SHA}" -o /tmp/manifest.json
           curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}sw.js?verify=${GITHUB_SHA}" -o /tmp/sw.js
           curl --fail --silent --show-error --location --retry 8 --retry-delay 5 "${BASE_URL}monitoring.html?verify=${GITHUB_SHA}" -o /tmp/monitoring.html

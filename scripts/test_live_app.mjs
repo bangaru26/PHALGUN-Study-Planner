@@ -181,6 +181,23 @@ try {
 
   await curriculum.close();
 
+  const gfpa = await browser.newPage({ viewport: { width: 1365, height: 900 } });
+  const gfpaErrors = [];
+  gfpa.on('pageerror', e => gfpaErrors.push(e.message));
+  await gfpa.goto(base + '/gfpa.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  check((await gfpa.locator('h1').innerText()).includes('GFPA'), 'GFPA academy: standalone page loads');
+  check(await count(gfpa, '#catalog .card') >= 35, 'GFPA academy: broad module catalogue renders', 'found ' + await count(gfpa, '#catalog .card'));
+  for (const term of ['Treasury','Excel','SAP','Tableau','Power BI','CIA','IRM']) {
+    await gfpa.locator('#q').fill(term); await wait(120);
+    check((await gfpa.locator('#catalog').innerText()).toLowerCase().includes(term.toLowerCase()), 'GFPA academy: searchable module ' + term);
+  }
+  await gfpa.locator('#q').fill('');
+  await gfpa.locator('#treasuryAnswer').selectOption('610000');
+  await gfpa.locator('#checkTreasury').click();
+  check((await gfpa.locator('#treasuryFeedback').innerText()).includes('Correct'), 'GFPA academy: treasury starter lesson checks answer');
+  check(gfpaErrors.length === 0, 'GFPA academy: no uncaught browser errors', gfpaErrors.join(' | '));
+  await gfpa.close();
+
   const capstone = await browser.newPage();
   await capstone.goto(base + '/gfpa-capstone-lab.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
   check((await capstone.locator('h1').innerText()).includes('Finance Operations Capstone'), 'capstone lab: page loads with correct heading');
