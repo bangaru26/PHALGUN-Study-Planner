@@ -620,6 +620,63 @@
         "French-English",
         "pronunciation"
       ]
+    },
+    {
+      "id": "irm_qualifications",
+      "topic": "Institute of Risk Management qualifications and syllabi",
+      "authority": "Institute of Risk Management (IRM)",
+      "url": "https://www.theirm.org/qualifications/",
+      "cadence": "weekly",
+      "review": "Check current qualification structure, syllabus versions, exam/assessment formats, eligibility, fees and effective dates; a page fingerprint change requires human review.",
+      "lesson_areas": [
+        "IRM all qualification stages",
+        "enterprise risk management",
+        "risk governance",
+        "risk assurance"
+      ]
+    },
+    {
+      "id": "iia_cia",
+      "topic": "Certified Internal Auditor (CIA) certification and exam syllabus",
+      "authority": "The Institute of Internal Auditors (The IIA)",
+      "url": "https://www.theiia.org/en/certifications/cia/",
+      "cadence": "weekly",
+      "review": "Check official CIA exam structure, syllabus, candidate requirements, experience rules, transition dates and standards alignment before revising learning content.",
+      "lesson_areas": [
+        "CIA Part 1",
+        "CIA Part 2",
+        "CIA Part 3",
+        "internal audit standards",
+        "exam readiness"
+      ]
+    },
+    {
+      "id": "iia_crma",
+      "topic": "Certification in Risk Management Assurance (CRMA)",
+      "authority": "The Institute of Internal Auditors (The IIA)",
+      "url": "https://www.theiia.org/en/certifications/crma/",
+      "cadence": "weekly",
+      "review": "Check official CRMA eligibility, syllabus/preparation resources, examination policies and transition guidance; verify actual content before updating lessons.",
+      "lesson_areas": [
+        "CRMA",
+        "risk management assurance",
+        "governance",
+        "risk-based assurance"
+      ]
+    },
+    {
+      "id": "isaca_cism_outline",
+      "topic": "Certified Information Security Manager (CISM) exam content outline",
+      "authority": "ISACA",
+      "url": "https://www.isaca.org/credentialing/cism/cism-exam-content-outline",
+      "cadence": "weekly",
+      "review": "Check current CISM domain outline, exam effective dates, candidate policies and transition notices. A page change is only a review signal, not proof of a syllabus change.",
+      "lesson_areas": [
+        "CISM governance",
+        "information security risk management",
+        "security programme",
+        "incident management"
+      ]
     }
   ]
 }
