@@ -171,6 +171,14 @@ try {
   check(curriculumText.includes('german') && curriculumText.includes('spanish') && curriculumText.includes('french') && curriculumText.includes('telugu') && curriculumText.includes('punjabi'), 'PHALGUN curriculum: requested language pathways are represented');
   await curriculum.locator('#q').fill('CMA USA'); await wait(300);
   check((await curriculum.locator('#catalog').innerText()).toLowerCase().includes('cma'), 'PHALGUN curriculum: subject search filters catalogue');
+  for (const term of ['IRM','CIA','CRMA','CISM']) {
+    await curriculum.locator('#q').fill(term); await wait(150);
+    const resultText = (await curriculum.locator('#catalog').innerText()).toLowerCase();
+    check(resultText.includes(term.toLowerCase()), 'GFPA certification pathway is searchable: ' + term);
+  }
+  await curriculum.locator('#q').fill('Internal Audit'); await wait(150);
+  check((await curriculum.locator('#catalog').innerText()).toLowerCase().includes('risk-based'), 'GFPA certification catalogue exposes risk-based Internal Audit learning');
+
   await curriculum.close();
 
   const capstone = await browser.newPage();
