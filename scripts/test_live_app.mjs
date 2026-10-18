@@ -194,6 +194,16 @@ try {
   await gfpa.locator('#q').fill('');
   await gfpa.locator('#treasuryAnswer').selectOption('610000');
   await gfpa.locator('#checkTreasury').click();
+  check(await gfpa.locator('#global-accounting-compare').count() === 1, 'GFPA global accounting: US UK India comparison module renders');
+  await gfpa.locator('#q').fill('US vs UK vs Indian Accounting');
+  check((await gfpa.locator('#catalog').innerText()).includes('US vs UK vs Indian Accounting'), 'GFPA global accounting: comparison module is searchable');
+  await gfpa.locator('#q').fill('');
+  await gfpa.locator('#globalFrameworkAnswer').selectOption('basis'); await gfpa.locator('#checkGlobalFramework').click();
+  check((await gfpa.locator('#globalFrameworkFeedback').innerText()).includes('Correct'), 'GFPA global accounting: framework selection answer is checked');
+  await gfpa.locator('#globalInventoryAnswer').selectOption('difference'); await gfpa.locator('#checkGlobalInventory').click();
+  check((await gfpa.locator('#globalInventoryFeedback').innerText()).includes('Correct'), 'GFPA global accounting: LIFO comparison answer is checked');
+  await gfpa.locator('#globalTaxAnswer').selectOption('no'); await gfpa.locator('#checkGlobalTax').click();
+  check((await gfpa.locator('#globalTaxFeedback').innerText()).includes('Correct'), 'GFPA global accounting: book-tax distinction answer is checked');
   check(await gfpa.locator('#month-end-close-lab').count() === 1, 'GFPA month-end close: reconciliation and accrual lesson renders');
   await gfpa.locator('#closeBankAnswer').selectOption('investigate'); await gfpa.locator('#checkCloseBank').click();
   check((await gfpa.locator('#closeBankFeedback').innerText()).includes('Correct'), 'GFPA month-end close: unexplained reconciliation difference blocks sign-off');
