@@ -11,6 +11,45 @@
 <section class="section"><h2>Try a starter lesson: Treasury & cash visibility</h2><p>A short sample demonstrates the teaching style. Later lessons should add richer datasets, downloadable workpapers, answer rationales and mastery tracking.</p>
 <div class="lesson"><h3>Worked example — cash position versus profit</h3><p>A company begins the day with ₹8,00,000 in bank. Expected customer receipts are ₹2,40,000; approved supplier payments are ₹3,10,000; payroll of ₹1,20,000 is due today. Assume all listed cash flows settle today and there are no other movements.</p><p><strong>Formula:</strong> Closing cash = opening available cash + receipts − payments.</p><p><strong>Calculation:</strong> ₹8,00,000 + ₹2,40,000 − ₹3,10,000 − ₹1,20,000 = ₹6,10,000.</p><label for="treasuryAnswer">What is the projected closing cash?</label><select id="treasuryAnswer"><option value="">Choose an answer</option><option value="510000">₹5,10,000</option><option value="610000">₹6,10,000</option><option value="970000">₹9,70,000</option></select><button id="checkTreasury">Check answer</button><p id="treasuryFeedback" class="feedback" aria-live="polite"></p><p class="muted">Control thought: distinguish book balance from available funds; verify value dates, uncleared items, restricted cash, facility availability and payment cut-offs before using a forecast operationally.</p></div>
 </section>
+<section class="section" id="accounting-foundations-lab">
+<h2>Accounting Foundations Lab — transactions to statements</h2>
+<p>Authored practical lesson · beginner level · fictional trading business. Work through the transaction logic, then check your answers. This is a learning example, not a substitute for the applicable accounting framework or tax advice.</p>
+<div class="lesson">
+<h3>1 · The scenario</h3>
+<p>On 1 April, Nova Supplies starts business. During the month it records these transactions:</p>
+<ul>
+<li>Owner contributes ₹5,00,000 cash as capital.</li>
+<li>Business buys office equipment for ₹60,000 cash.</li>
+<li>Business buys inventory costing ₹90,000 on supplier credit.</li>
+<li>It sells goods for ₹1,20,000 cash; the goods sold cost ₹70,000.</li>
+<li>It pays monthly rent of ₹15,000 cash.</li>
+</ul>
+<h3>2 · The accounting logic</h3>
+<p><strong>Accounting equation:</strong> Assets = Liabilities + Equity. Each transaction must preserve the equation. Under a perpetual-inventory illustration, the sale has two effects: record revenue/cash and separately recognise cost of goods sold while reducing inventory.</p>
+<p><strong>Journal entry summary:</strong></p>
+<ul>
+<li>Dr Cash ₹5,00,000 / Cr Owner's Capital ₹5,00,000.</li>
+<li>Dr Equipment ₹60,000 / Cr Cash ₹60,000.</li>
+<li>Dr Inventory ₹90,000 / Cr Accounts Payable ₹90,000.</li>
+<li>Dr Cash ₹1,20,000 / Cr Sales Revenue ₹1,20,000.</li>
+<li>Dr Cost of Goods Sold ₹70,000 / Cr Inventory ₹70,000.</li>
+<li>Dr Rent Expense ₹15,000 / Cr Cash ₹15,000.</li>
+</ul>
+<p><strong>Control:</strong> Retain invoices, payment proof and authorisation. Confirm the accounting policy, inventory method, cut-off and applicable reporting rules before using a real ledger.</p>
+<h3>3 · Work the numbers</h3>
+<p>Closing cash = ₹5,00,000 − ₹60,000 + ₹1,20,000 − ₹15,000 = <strong>₹5,45,000</strong>.</p>
+<p>Closing inventory = ₹90,000 − ₹70,000 = <strong>₹20,000</strong>. Equipment = ₹60,000. Total assets = ₹5,45,000 + ₹20,000 + ₹60,000 = <strong>₹6,25,000</strong>.</p>
+<p>Accounts payable = ₹90,000. Profit for this simplified example = ₹1,20,000 sales − ₹70,000 cost of goods sold − ₹15,000 rent = <strong>₹35,000</strong>. Equity = ₹5,00,000 capital + ₹35,000 profit = ₹5,35,000. Liabilities + equity = ₹90,000 + ₹5,35,000 = <strong>₹6,25,000</strong>.</p>
+<h3>4 · Check your understanding</h3>
+<label for="accountingEquationAnswer">Question A: Which statement is the core accounting equation?</label>
+<select id="accountingEquationAnswer"><option value="">Choose an answer</option><option value="a">Assets = Liabilities + Equity</option><option value="b">Revenue = Assets + Expenses</option><option value="c">Cash = Profit in every period</option></select>
+<label for="accountingCashAnswer">Question B: What is closing cash in Nova Supplies?</label>
+<select id="accountingCashAnswer"><option value="">Choose an answer</option><option value="530000">₹5,30,000</option><option value="545000">₹5,45,000</option><option value="625000">₹6,25,000</option></select>
+<button id="checkAccountingFoundations">Check both answers</button>
+<p id="accountingFoundationsFeedback" class="feedback" aria-live="polite"></p>
+<p class="muted"><strong>Workpaper output:</strong> Prepare a journal register with date, account, debit, credit, source document, preparer, reviewer and posting reference. Then build a trial balance and reconcile it to supporting schedules. A balanced trial balance alone does not prove that every transaction is correct or complete.</p>
+</div>
+</section>
 <section class="section" id="applied-case-lab">
 <h2>Applied Finance Case Lab — release 1</h2>
 <p>Practice realistic finance-operations decisions. Each case includes the facts, the calculation/control principle, a knowledge check and feedback. The figures and entities are fictional. These are learning exercises, not real transaction instructions.</p>
@@ -161,5 +200,6 @@ $('checkArCase').addEventListener('click',()=>{const v=$('arCaseAnswer').value;$
 $('checkBankCase').addEventListener('click',()=>{const v=$('bankCaseAnswer').value;$('bankCaseFeedback').textContent=!v?'Choose an amount first.':v==='189400'?'Correct. ₹1,89,900 − ₹500 bank fee = ₹1,89,400 adjusted book balance. The ₹12,000 deposit in transit adjusts the bank side, not the book side.':'Not quite. Record the ₹500 fee against the book balance: ₹1,89,900 − ₹500 = ₹1,89,400. The deposit in transit adjusts the bank side.'});
 $('checkVarianceCase').addEventListener('click',()=>{const v=$('varianceCaseAnswer').value;$('varianceCaseFeedback').textContent=!v?'Choose an answer first.':v==='unfavourable'?'Correct. ₹2,30,000 − ₹2,00,000 = ₹30,000 over budget, normally unfavourable for an expense. Investigate the drivers before recommending action.':'Not quite. Actual expense exceeds budget by ₹30,000, so the expense variance is normally unfavourable.'});
 
+$('checkAccountingFoundations').addEventListener('click',()=>{const a=$('accountingEquationAnswer').value,b=$('accountingCashAnswer').value;const f=$('accountingFoundationsFeedback');if(!a||!b){f.textContent='Answer both questions first.';return;}f.textContent=(a==='a'&&b==='545000')?'Correct on both. The equation balances: assets ₹6,25,000 = liabilities ₹90,000 + equity ₹5,35,000.':'Review the equation and cash movements. Assets equal liabilities plus equity; closing cash is ₹5,00,000 − ₹60,000 + ₹1,20,000 − ₹15,000 = ₹5,45,000.';});
 $('checkTreasury').addEventListener('click',()=>{const v=$('treasuryAnswer').value;$('treasuryFeedback').textContent=!v?'Choose an answer first.':v==='610000'?'Correct — projected closing cash is ₹6,10,000. Cash forecasting tracks cash movements, not accounting profit.':'Not quite. Add ₹8,00,000 + ₹2,40,000, then subtract ₹3,10,000 and ₹1,20,000. Try again.'});
 </script></body></html>
