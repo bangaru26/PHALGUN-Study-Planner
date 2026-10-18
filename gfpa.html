@@ -11,6 +11,37 @@
 <section class="section"><h2>Try a starter lesson: Treasury & cash visibility</h2><p>A short sample demonstrates the teaching style. Later lessons should add richer datasets, downloadable workpapers, answer rationales and mastery tracking.</p>
 <div class="lesson"><h3>Worked example — cash position versus profit</h3><p>A company begins the day with ₹8,00,000 in bank. Expected customer receipts are ₹2,40,000; approved supplier payments are ₹3,10,000; payroll of ₹1,20,000 is due today. Assume all listed cash flows settle today and there are no other movements.</p><p><strong>Formula:</strong> Closing cash = opening available cash + receipts − payments.</p><p><strong>Calculation:</strong> ₹8,00,000 + ₹2,40,000 − ₹3,10,000 − ₹1,20,000 = ₹6,10,000.</p><label for="treasuryAnswer">What is the projected closing cash?</label><select id="treasuryAnswer"><option value="">Choose an answer</option><option value="510000">₹5,10,000</option><option value="610000">₹6,10,000</option><option value="970000">₹9,70,000</option></select><button id="checkTreasury">Check answer</button><p id="treasuryFeedback" class="feedback" aria-live="polite"></p><p class="muted">Control thought: distinguish book balance from available funds; verify value dates, uncleared items, restricted cash, facility availability and payment cut-offs before using a forecast operationally.</p></div>
 </section>
+<section class="section" id="internal-audit-lab">
+<h2>Internal Audit Lab — risk, control design and evidence</h2>
+<p>Authored practical lesson · intermediate level · fictional procurement process. Learn to move from a business objective to a risk statement, a control, a test procedure and a defensible conclusion. This is educational practice; adapt audit work to the approved charter, methodology, applicable standards and local requirements.</p>
+<div class="lesson">
+<h3>1 · Define the risk precisely</h3>
+<p><strong>Objective:</strong> supplier invoices are valid, accurately recorded and paid only once with appropriate approval.</p>
+<p><strong>Risk statement:</strong> duplicate or unauthorised supplier invoices may be paid because invoice matching, approval and duplicate detection controls are incomplete or bypassed, causing financial loss and misstated liabilities.</p>
+<h3>2 · Evaluate the control</h3>
+<p>Control described by process owner: the ERP blocks exact duplicate invoice numbers for the same supplier; AP reviews duplicate warnings; invoices above the approval threshold require an authorised approver; exceptions are logged and resolved before payment.</p>
+<p>A control description alone is not evidence that the control operated. The auditor should establish design, implementation and operating effectiveness, using reliable evidence and a documented, risk-based approach.</p>
+<label for="auditControlAnswer">Which test most directly evaluates operating effectiveness?</label>
+<select id="auditControlAnswer"><option value="">Choose a test</option><option value="interview">Ask the process owner whether the control usually works</option><option value="sample">Select a risk-based sample of transactions and inspect system logs, approval evidence, exception resolution and payment records</option><option value="policy">Read the policy and conclude the control operated throughout the period</option></select>
+<button id="checkAuditControl">Check answer</button>
+<p id="auditControlFeedback" class="feedback" aria-live="polite"></p>
+<h3>3 · Record an evidence-led finding</h3>
+<p>Illustrative test result: in a sample of 40 payments, two duplicate-warning exceptions lacked documented resolution before payment release. Do not extrapolate this sample result automatically to the entire population. Validate the facts, understand the cause and exposure, assess compensating controls, and discuss the evidence with the owner.</p>
+<label for="auditFindingAnswer">What is the strongest next step?</label>
+<select id="auditFindingAnswer"><option value="">Choose a next step</option><option value="accuse">Immediately label the entire AP team negligent</option><option value="validate">Validate the two cases and financial exposure, preserve evidence, identify root cause and control implications, then agree accountable corrective action and follow-up</option><option value="ignore">Ignore the exceptions because 38 sampled items had no issue</option></select>
+<button id="checkAuditFinding">Check decision</button>
+<p id="auditFindingFeedback" class="feedback" aria-live="polite"></p>
+<h3>4 · Risk and reporting workpaper</h3>
+<ul>
+<li><strong>Condition:</strong> two sampled exceptions lacked documented resolution before payment release.</li>
+<li><strong>Criteria:</strong> approved AP procedure and control design, confirmed against the applicable policy.</li>
+<li><strong>Cause:</strong> to be established through evidence, not assumed.</li>
+<li><strong>Effect/exposure:</strong> validate whether duplicate or unauthorised payments occurred and quantify any loss or liability impact.</li>
+<li><strong>Action:</strong> assign an owner and due date for exception workflow remediation; independently retest closure.</li>
+</ul>
+<p class="muted"><strong>Professional judgement:</strong> use sufficient, relevant and reliable evidence; document scope, sampling rationale, limitations and review; protect confidential data; escalate suspected fraud through authorised channels. An audit finding should be fair, traceable and proportionate to verified facts.</p>
+</div>
+</section>
 <section class="section" id="working-capital-lab">
 <h2>Working Capital Lab — cash conversion cycle</h2>
 <p>Authored practical lesson · intermediate level · fictional distributor. Use operating data to connect receivables, inventory and supplier terms to cash pressure. A shorter cycle can release cash, but changes must not damage service, supply continuity or supplier relationships.</p>
