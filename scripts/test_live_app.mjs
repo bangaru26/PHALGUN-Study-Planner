@@ -195,6 +195,15 @@ try {
   await gfpa.locator('#treasuryAnswer').selectOption('610000');
   await gfpa.locator('#checkTreasury').click();
   check((await gfpa.locator('#treasuryFeedback').innerText()).includes('Correct'), 'GFPA academy: treasury starter lesson checks answer');
+  check(await count(gfpa, '#resourceCatalog .card') >= 20, 'GFPA free resources: curated library renders', 'found ' + await count(gfpa, '#resourceCatalog .card'));
+  check((await gfpa.locator('#resourceCount').innerText()).includes('curated resources'), 'GFPA free resources: resource count is shown');
+  await gfpa.locator('#resourceQ').fill('SQL');
+  check((await gfpa.locator('#resourceCatalog').innerText()).toLowerCase().includes('sql'), 'GFPA free resources: search filters resource results');
+  await gfpa.locator('#resourceQ').fill('');
+  await gfpa.locator('#resourceType').selectOption('Open textbook / ebook');
+  check(await count(gfpa, '#resourceCatalog .card') >= 2, 'GFPA free resources: type filter works');
+  await gfpa.locator('#resourceType').selectOption('');
+  check(await count(gfpa, '#resourceCatalog .card') >= 20, 'GFPA free resources: clearing filters restores resources');
   check(gfpaErrors.length === 0, 'GFPA academy: no uncaught browser errors', gfpaErrors.join(' | '));
   await gfpa.close();
 
