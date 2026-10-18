@@ -194,6 +194,11 @@ try {
   await gfpa.locator('#q').fill('');
   await gfpa.locator('#treasuryAnswer').selectOption('610000');
   await gfpa.locator('#checkTreasury').click();
+  check(await gfpa.locator('#internal-audit-lab').count() === 1, 'GFPA internal audit: risk and control lesson renders');
+  await gfpa.locator('#auditControlAnswer').selectOption('sample'); await gfpa.locator('#checkAuditControl').click();
+  check((await gfpa.locator('#auditControlFeedback').innerText()).includes('Correct'), 'GFPA internal audit: operating-effectiveness test answer is checked');
+  await gfpa.locator('#auditFindingAnswer').selectOption('validate'); await gfpa.locator('#checkAuditFinding').click();
+  check((await gfpa.locator('#auditFindingFeedback').innerText()).includes('Correct'), 'GFPA internal audit: evidence-led finding response is checked');
   check(await gfpa.locator('#working-capital-lab').count() === 1, 'GFPA working capital: cash conversion cycle lesson renders');
   await gfpa.locator('#cccAnswer').selectOption('62'); await gfpa.locator('#checkCcc').click();
   check((await gfpa.locator('#cccFeedback').innerText()).includes('Correct'), 'GFPA working capital: current CCC calculation is checked');
