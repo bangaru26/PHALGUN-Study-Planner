@@ -194,6 +194,14 @@ try {
   await gfpa.locator('#q').fill('');
   await gfpa.locator('#treasuryAnswer').selectOption('610000');
   await gfpa.locator('#checkTreasury').click();
+  check(await gfpa.locator('#working-capital-lab').count() === 1, 'GFPA working capital: cash conversion cycle lesson renders');
+  await gfpa.locator('#cccAnswer').selectOption('62'); await gfpa.locator('#checkCcc').click();
+  check((await gfpa.locator('#cccFeedback').innerText()).includes('Correct'), 'GFPA working capital: current CCC calculation is checked');
+  await gfpa.locator('#cccImprovedAnswer').selectOption('49'); await gfpa.locator('#checkCccImproved').click();
+  check((await gfpa.locator('#cccImprovedFeedback').innerText()).includes('Correct'), 'GFPA working capital: improvement scenario calculation is checked');
+  await gfpa.locator('#cccActionAnswer').selectOption('segment'); await gfpa.locator('#checkCccAction').click();
+  check((await gfpa.locator('#cccActionFeedback').innerText()).includes('Correct'), 'GFPA working capital: evidence-led AR action is checked');
+
   check((await gfpa.locator('#treasuryFeedback').innerText()).includes('Correct'), 'GFPA academy: treasury starter lesson checks answer');
   check(await gfpa.locator('#accounting-foundations-lab').count() === 1, 'GFPA accounting foundations: full worked lesson renders');
   await gfpa.locator('#accountingEquationAnswer').selectOption('a');
