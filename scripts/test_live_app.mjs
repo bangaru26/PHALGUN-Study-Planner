@@ -195,6 +195,11 @@ try {
   await gfpa.locator('#treasuryAnswer').selectOption('610000');
   await gfpa.locator('#checkTreasury').click();
   check((await gfpa.locator('#treasuryFeedback').innerText()).includes('Correct'), 'GFPA academy: treasury starter lesson checks answer');
+  check(await gfpa.locator('#accounting-foundations-lab').count() === 1, 'GFPA accounting foundations: full worked lesson renders');
+  await gfpa.locator('#accountingEquationAnswer').selectOption('a');
+  await gfpa.locator('#accountingCashAnswer').selectOption('545000');
+  await gfpa.locator('#checkAccountingFoundations').click();
+  check((await gfpa.locator('#accountingFoundationsFeedback').innerText()).includes('Correct on both'), 'GFPA accounting foundations: equation and closing-cash answers are checked');
   check(await count(gfpa, '#applied-case-lab .case-card') === 4, 'GFPA applied case lab: four finance scenarios render');
   await gfpa.locator('#apCaseAnswer').selectOption('hold'); await gfpa.locator('#checkApCase').click();
   check((await gfpa.locator('#apCaseFeedback').innerText()).includes('Correct'), 'GFPA AP case: duplicate invoice control answer works');
