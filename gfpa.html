@@ -11,6 +11,43 @@
 <section class="section"><h2>Try a starter lesson: Treasury & cash visibility</h2><p>A short sample demonstrates the teaching style. Later lessons should add richer datasets, downloadable workpapers, answer rationales and mastery tracking.</p>
 <div class="lesson"><h3>Worked example — cash position versus profit</h3><p>A company begins the day with ₹8,00,000 in bank. Expected customer receipts are ₹2,40,000; approved supplier payments are ₹3,10,000; payroll of ₹1,20,000 is due today. Assume all listed cash flows settle today and there are no other movements.</p><p><strong>Formula:</strong> Closing cash = opening available cash + receipts − payments.</p><p><strong>Calculation:</strong> ₹8,00,000 + ₹2,40,000 − ₹3,10,000 − ₹1,20,000 = ₹6,10,000.</p><label for="treasuryAnswer">What is the projected closing cash?</label><select id="treasuryAnswer"><option value="">Choose an answer</option><option value="510000">₹5,10,000</option><option value="610000">₹6,10,000</option><option value="970000">₹9,70,000</option></select><button id="checkTreasury">Check answer</button><p id="treasuryFeedback" class="feedback" aria-live="polite"></p><p class="muted">Control thought: distinguish book balance from available funds; verify value dates, uncleared items, restricted cash, facility availability and payment cut-offs before using a forecast operationally.</p></div>
 </section>
+<section class="section" id="month-end-close-lab">
+<h2>Month-End Close Lab — reconciliations, accruals and review</h2>
+<p>Authored practical lesson · intermediate level · fictional company. A close is not just posting journals: it is a controlled sequence of reconciliations, estimates, review and sign-off with traceable evidence. Apply the actual accounting framework and approved close policy in a real engagement.</p>
+<div class="lesson">
+<h3>1 · Bank reconciliation exception</h3>
+<p>At month-end, the general-ledger cash balance is ₹4,82,500. The bank statement shows ₹4,96,000. A ₹1,500 bank fee appears on the statement but is missing from the books. A valid ₹15,000 deposit in transit is recorded in the books but has not yet reached the statement. Assume no other reconciling items.</p>
+<p><strong>Book side:</strong> ₹4,82,500 − ₹1,500 bank fee = ₹4,81,000 adjusted book balance.</p>
+<p><strong>Bank side:</strong> ₹4,96,000 + ₹15,000 deposit in transit = ₹5,11,000 adjusted bank balance.</p>
+<p>These balances do not agree. That is an unresolved exception, not permission to force a plug journal. Recheck the stated facts, cut-off, omitted transactions, signs, and any missing reconciling items before sign-off.</p>
+<label for="closeBankAnswer">What should the close reviewer conclude from these figures?</label>
+<select id="closeBankAnswer"><option value="">Choose a conclusion</option><option value="plug">Post a suspense plug for ₹30,000 and sign off</option><option value="investigate">Do not sign off; investigate why adjusted balances differ by ₹30,000 and obtain evidence for any correction</option><option value="ignore">Ignore the difference because the bank fee is small</option></select>
+<button id="checkCloseBank">Check conclusion</button>
+<p id="closeBankFeedback" class="feedback" aria-live="polite"></p>
+<h3>2 · Accrual journal</h3>
+<p>A service worth ₹24,000 was received before month-end. The supplier invoice has not arrived, and the cost is reliably measurable. Assume the applicable policy requires accrual accounting and no other adjustment is needed.</p>
+<label for="closeAccrualAnswer">Which period-end entry best records the incurred expense?</label>
+<select id="closeAccrualAnswer"><option value="">Choose an entry</option><option value="debit-expense">Debit expense ₹24,000; credit accrued liabilities ₹24,000</option><option value="cash">Debit expense ₹24,000; credit cash ₹24,000</option><option value="wait">Make no entry until the invoice is paid</option></select>
+<button id="checkCloseAccrual">Check journal</button>
+<p id="closeAccrualFeedback" class="feedback" aria-live="polite"></p>
+<h3>3 · Close control checklist</h3>
+<ul>
+<li>Reconcile material balance-sheet accounts to independent evidence and investigate aged reconciling items.</li>
+<li>Review cut-off, accruals, prepayments, estimates, depreciation and inventory adjustments using approved policy.</li>
+<li>Reconcile subledgers to the general ledger; explain material movements and unexpected balances.</li>
+<li>Document preparer, reviewer, evidence link, date, exceptions, owner and resolution.</li>
+<li>Restrict journal posting and approval rights; retain an auditable trail for manual and late journals.</li>
+<li>Confirm unresolved items are escalated and sign-off criteria are met before closing the period.</li>
+</ul>
+<h3>4 · Close readiness decision</h3>
+<p>The bank reconciliation remains out of balance and the cause is not known. What is the defensible status?</p>
+<label for="closeStatusAnswer">Select the status</label>
+<select id="closeStatusAnswer"><option value="">Choose a status</option><option value="closed">Closed — the difference can be investigated next month</option><option value="blocked">Exception open / sign-off blocked for this account until investigated, corrected if required and independently reviewed</option><option value="balanced">Closed — create a manual journal equal to the difference without source support</option></select>
+<button id="checkCloseStatus">Check status</button>
+<p id="closeStatusFeedback" class="feedback" aria-live="polite"></p>
+<p class="muted"><strong>Close discipline:</strong> reconciliation is not merely arithmetic. Preserve source evidence, avoid unsupported journals, evaluate materiality under policy, and escalate exceptions. This scenario intentionally contains an unexplained difference; the correct response is investigation rather than inventing a balancing item.</p>
+</div>
+</section>
 <section class="section" id="internal-audit-lab">
 <h2>Internal Audit Lab — risk, control design and evidence</h2>
 <p>Authored practical lesson · intermediate level · fictional procurement process. Learn to move from a business objective to a risk statement, a control, a test procedure and a defensible conclusion. This is educational practice; adapt audit work to the approved charter, methodology, applicable standards and local requirements.</p>
