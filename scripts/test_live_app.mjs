@@ -195,6 +195,15 @@ try {
   await gfpa.locator('#treasuryAnswer').selectOption('610000');
   await gfpa.locator('#checkTreasury').click();
   check((await gfpa.locator('#treasuryFeedback').innerText()).includes('Correct'), 'GFPA academy: treasury starter lesson checks answer');
+  check(await count(gfpa, '#applied-case-lab .case-card') === 4, 'GFPA applied case lab: four finance scenarios render');
+  await gfpa.locator('#apCaseAnswer').selectOption('hold'); await gfpa.locator('#checkApCase').click();
+  check((await gfpa.locator('#apCaseFeedback').innerText()).includes('Correct'), 'GFPA AP case: duplicate invoice control answer works');
+  await gfpa.locator('#arCaseAnswer').selectOption('c'); await gfpa.locator('#checkArCase').click();
+  check((await gfpa.locator('#arCaseFeedback').innerText()).includes('Correct'), 'GFPA AR case: ageing-priority answer works');
+  await gfpa.locator('#bankCaseAnswer').selectOption('189400'); await gfpa.locator('#checkBankCase').click();
+  check((await gfpa.locator('#bankCaseFeedback').innerText()).includes('Correct'), 'GFPA bank reconciliation case: calculation answer works');
+  await gfpa.locator('#varianceCaseAnswer').selectOption('unfavourable'); await gfpa.locator('#checkVarianceCase').click();
+  check((await gfpa.locator('#varianceCaseFeedback').innerText()).includes('Correct'), 'GFPA FP&A case: expense variance answer works');
   check(await count(gfpa, '#resourceCatalog .card') >= 20, 'GFPA free resources: curated library renders', 'found ' + await count(gfpa, '#resourceCatalog .card'));
   check((await gfpa.locator('#resourceCount').innerText()).includes('curated resources'), 'GFPA free resources: resource count is shown');
   await gfpa.locator('#resourceQ').fill('SQL');
