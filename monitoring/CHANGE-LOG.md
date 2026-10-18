@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-10-18T02:50:45+00:00 (UTC)
+Last check: 2026-10-18T06:56:24+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 3 changed; 38 unchanged; 0 baseline; 8 unavailable.
+Summary: 2 changed; 40 unchanged; 10 baseline; 8 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -18,21 +18,7 @@ Summary: 3 changed; 38 unchanged; 0 baseline; 8 unavailable.
 | UNCHANGED | CMA USA | Institute of Management Accountants | [Open source](https://www.imanet.org/ima-certifications/cma-certification) |
 | UNCHANGED | Microsoft Excel | Microsoft Support | [Open source](https://support.microsoft.com/excel) |
 | UNCHANGED | Power BI | Microsoft Learn | [Open source](https://learn.microsoft.com/power-bi/) |
-| CHANGED — REVIEW REQUIRED | Python | Python Software Foundation | [Open source](https://docs.python.org/3/whatsnew/) |
-
-### Review required — Python
-- Previous page excerpt: What’s New in Python — Python 3.15.0 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.0 Documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
-- Mapped learning areas to review: Python, automation, data processing
-- Current page excerpt: What’s New in Python — Python 3.15.0 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.0 Documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
-- **Detected text differences (for review only):**
-```text
-- non-profit corporation. Please donate. Last updated on Oct 16, 2026 (23:27 UTC). Found a bug ? Created
-+ non-profit corporation. Please donate. Last updated on Oct 17, 2026 (23:42 UTC). Found a bug ? Created
-- Please donate. Last updated on Oct 16, 2026 (23:27 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Oct 17, 2026 (23:42 UTC). Found a bug ? Created using Sphinx
-```
-- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
-
+| UNCHANGED | Python | Python Software Foundation | [Open source](https://docs.python.org/3/whatsnew/) |
 | UNCHANGED | SQL / database practice | Microsoft Learn | [Open source](https://learn.microsoft.com/sql/) |
 | UNCHANGED | SAP S/4HANA and SAP FICO | SAP Help Portal | [Open source](https://help.sap.com/) |
 | UNCHANGED | US financial reporting and filings | US SEC | [Open source](https://www.sec.gov/edgar/search/) |
@@ -74,23 +60,22 @@ Found
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- français, du niveau débutant au niveau avancé. Recommandé Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Emblèmes Belgique Le coq hard
-+ français, du niveau débutant au niveau avancé. Recommandé TV5MONDE+ Regardez des films, des séries et des
-- N'achetez plus vos classiques, lisez-les sur tablette ! La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Emblèmes France La Marseillaise, le coq, Liberté, 
-+ N'achetez plus vos classiques, lisez-les sur tablette ! Les expressions d'Archibald Faire le cacou, motamoter ou
-- veut dire ? Archibald vous dit tout ! DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée :
-+ veut dire ? Archibald vous dit tout ! Emblèmes Belgique Le coq hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! La famille tout écran Une famille con
-- au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et libre. Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, 
-+ invite chez elle ! APPRENDRE EV@LANG Quel est votre niveau à l'écrit et à l'oral en français ? Testez gratuitement vos compétences grâce à l'application APPRENDRE EV@LANG, conçue par l’AUF et France Éducation Internation
-- questions que l'on se pose devant une peinture. APPRENDRE EV@LANG Quel est votre niveau à l'écrit et à l'oral
-+ questions que l'on se pose devant une peinture. Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité... Découvrez les emblèmes de la République française Serious game Jouez à « Datak » et devenez un pro d
+- français, du niveau débutant au niveau avancé. Recommandé TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en
++ français, du niveau débutant au niveau avancé. Recommandé DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et li
+- des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en
++ et à l'oral en français ? Testez gratuitement vos compétences grâce à l'application APPRENDRE EV@LANG, conçue par l’AUF et France Éducation International. La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, 
+- séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et disponible partout dans le monde ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les su
++ famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Les expressions d'Archibald Faire le cacou, motamoter
+- veut dire ? Archibald vous dit tout ! Emblèmes Belgique Le coq hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles
++ veut dire ? Archibald vous dit tout ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de
+- hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invit
++ séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et disponible partout dans le monde ! Emblèmes France La Marseillaise,
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
 | UNCHANGED | French grammar and vocabulary | Lawless French | [Open source](https://www.lawlessfrench.com/) |
 | UNCHANGED | Spanish grammar and vocabulary | Lawless Spanish | [Open source](https://www.lawlessspanish.com/) |
-| UNAVAILABLE | Bilingual dictionaries | WordReference | [Open source](https://www.wordreference.com/) |
-  - Fetch issue: HTTPError: HTTP Error 418: 
+| UNCHANGED | Bilingual dictionaries | WordReference | [Open source](https://www.wordreference.com/) |
 | CHANGED — REVIEW REQUIRED | German-English dictionary | dict.cc | [Open source](https://www.dict.cc/) |
 
 ### Review required — German-English dictionary
@@ -99,16 +84,16 @@ Found
 - Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.043 Übersetzungen – 2.840 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.074 Übersetzungen – 2.829 neu – 99,8% verifiziert Zeit
-- | Z Zuletzt verifizierte Übersetzungen 1.319.043 Übersetzungen – 2.840 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-+ | Z Zuletzt verifizierte Übersetzungen 1.319.074 Übersetzungen – 2.829 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 01:18 to be mired in layers of sth. in
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 00:27 to set to work sich [Akk.] daranmachen / sich dranmachen [ugs.] [an die Arbeit, die Aufgaben etc.] BHM pol 00:26 to flick / flip through sth. [text, book, newsp
-- Zeit Englisch Deutsch Geprüft von 01:18 to be mired in layers of sth. in einem Übermaß von etw. [Dat.]
-+ die Höhe klappen] BHM pol 00:12 to be just like sb. [typical of sb.] jdm. gleichsehen [fig.] [ugs.] [typisch für
-- von 01:18 to be mired in layers of sth. in einem Übermaß von etw. [Dat.] feststecken pol sch 01:07 Reopened! to be / get turned upside down by sth. [policy, plans etc.] von etw. aus den Angeln gehoben werden [Strategie, 
-+ 00:12 to be just like sb. [typical of sb.] jdm. gleichsehen [fig.] [ugs.] [typisch für jdn. sein] BHM Voice: passant
+- | Z Zuletzt verifizierte Übersetzungen 1.319.074 Übersetzungen – 2.829 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
++ | Z Zuletzt verifizierte Übersetzungen 1.319.074 Übersetzungen – 2.820 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 00:27 to set to work sich [Akk.] daranmachen / sich dranmachen [ugs.] [an die Arbeit, die
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:36 successor rulers nachfolgende Herrscher {pl} pol jpx 07:36 unceremonious {adj} [manner] barsch [Umgangston, Verhalten] pol jpx 07:35 geogr. geol. Mount Lebanon 
+- to set to work sich [Akk.] daranmachen / sich dranmachen [ugs.] [an die Arbeit, die Aufgaben etc.] BHM
++ jpx 07:35 geogr. geol. Mount Lebanon (range / region) Libanongebirge {n} [auch: Libanon-Gebirge] pol jpx 07:35 bot. blue-flowered {adj} blaublütig [seltener] [blau blühend] pol jpx 07:34 crotchet-monger [pej.] [rare] [pe
+- work sich [Akk.] daranmachen / sich dranmachen [ugs.] [an die Arbeit, die Aufgaben etc.] BHM pol 00:26 to flick / flip through sth.
++ strong or idiosyncratic opinions, etc.] Prinzipienreiter {m} [ugs.] [pej.] pol jpx Voice: passant by arcorion Neutrogenie by
+- [an die Arbeit, die Aufgaben etc.] BHM pol 00:26 to flick / flip through sth. [text, book, newspaper, etc.] etw. [Akk.] überfliegen [Text] BHM pol 00:22 Reopened! on notice of sth. informiert über etw. pol 00:14 automot.
++ idiosyncratic opinions, etc.] Prinzipienreiter {m} [ugs.] [pej.] pol jpx Voice: passant by arcorion Neutrogenie by Halmafelix 1.567.802
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -121,6 +106,18 @@ Found
 | UNCHANGED | Certified Internal Auditor (CIA) certification and exam syllabus | The Institute of Internal Auditors (The IIA) | [Open source](https://www.theiia.org/en/certifications/cia/) |
 | UNCHANGED | Certification in Risk Management Assurance (CRMA) | The Institute of Internal Auditors (The IIA) | [Open source](https://www.theiia.org/en/certifications/crma/) |
 | UNCHANGED | Certified Information Security Manager (CISM) exam content outline | ISACA | [Open source](https://www.isaca.org/credentialing/cism/cism-exam-content-outline) |
+| BASELINE | Open textbook resources for accounting | OpenStax | [Open source](https://openstax.org/subjects/business) |
+| BASELINE | Open business and accounting textbooks | LibreTexts | [Open source](https://biz.libretexts.org/) |
+| BASELINE | University open course materials | MIT OpenCourseWare | [Open source](https://ocw.mit.edu/) |
+| UNAVAILABLE | Free open university courses | The Open University OpenLearn | [Open source](https://www.open.edu/openlearn/) |
+  - Fetch issue: HTTPError: HTTP Error 403: Forbidden
+| BASELINE | Free self-paced business and technology courses | Saylor Academy | [Open source](https://learn.saylor.org/) |
+| BASELINE | Free finance and economics lessons | Khan Academy | [Open source](https://www.khanacademy.org/economics-finance-domain) |
+| BASELINE | Interactive SQL practice | SQLBolt | [Open source](https://sqlbolt.com/) |
+| BASELINE | Free hands-on data learning | Kaggle Learn | [Open source](https://www.kaggle.com/learn) |
+| BASELINE | Tableau official training resources | Tableau | [Open source](https://www.tableau.com/learn/training) |
+| BASELINE | SAP official learning journeys | SAP Learning | [Open source](https://learning.sap.com/) |
+| BASELINE | CISM certification exam content outline | ISACA | [Open source](https://www.isaca.org/credentialing/cism/cism-exam-content-outline) |
 
 ## What remains unchanged?
 For each source marked **UNCHANGED**, the fetched page text fingerprint matched the previous successful check. This is not a guarantee that every related regulation, product release, linked PDF, or subpage is unchanged.
