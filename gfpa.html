@@ -11,6 +11,48 @@
 <section class="section"><h2>Try a starter lesson: Treasury & cash visibility</h2><p>A short sample demonstrates the teaching style. Later lessons should add richer datasets, downloadable workpapers, answer rationales and mastery tracking.</p>
 <div class="lesson"><h3>Worked example — cash position versus profit</h3><p>A company begins the day with ₹8,00,000 in bank. Expected customer receipts are ₹2,40,000; approved supplier payments are ₹3,10,000; payroll of ₹1,20,000 is due today. Assume all listed cash flows settle today and there are no other movements.</p><p><strong>Formula:</strong> Closing cash = opening available cash + receipts − payments.</p><p><strong>Calculation:</strong> ₹8,00,000 + ₹2,40,000 − ₹3,10,000 − ₹1,20,000 = ₹6,10,000.</p><label for="treasuryAnswer">What is the projected closing cash?</label><select id="treasuryAnswer"><option value="">Choose an answer</option><option value="510000">₹5,10,000</option><option value="610000">₹6,10,000</option><option value="970000">₹9,70,000</option></select><button id="checkTreasury">Check answer</button><p id="treasuryFeedback" class="feedback" aria-live="polite"></p><p class="muted">Control thought: distinguish book balance from available funds; verify value dates, uncleared items, restricted cash, facility availability and payment cut-offs before using a forecast operationally.</p></div>
 </section>
+<section class="section" id="applied-case-lab">
+<h2>Applied Finance Case Lab — release 1</h2>
+<p>Practice realistic finance-operations decisions. Each case includes the facts, the calculation/control principle, a knowledge check and feedback. The figures and entities are fictional. These are learning exercises, not real transaction instructions.</p>
+<div class="grid">
+<article class="card case-card">
+<div class="meta">CASE 01 · ACCOUNTS PAYABLE</div><h3>Possible duplicate supplier invoice</h3>
+<p>Invoice INV-8041 for ₹48,600 is already posted and awaiting payment. A second invoice INV-8041 arrives from the same supplier, with the same date and amount, but a different PDF filename.</p>
+<p><strong>Control principle:</strong> a different filename is not evidence of a different liability. Compare supplier identity, invoice number, date, amount, purchase order, receipt and posting/payment status before release.</p>
+<label for="apCaseAnswer">What should the AP analyst do first?</label>
+<select id="apCaseAnswer"><option value="">Choose an action</option><option value="pay">Pay it because the filename differs</option><option value="hold">Place the second item on hold and investigate against the posted invoice and source evidence</option><option value="delete">Delete the email and take no record</option></select>
+<button id="checkApCase">Check answer</button><p id="apCaseFeedback" class="feedback" aria-live="polite"></p>
+<p class="muted">Workpaper output: duplicate-check evidence, matched fields, disposition, reviewer and release/hold decision.</p>
+</article>
+<article class="card case-card">
+<div class="meta">CASE 02 · ACCOUNTS RECEIVABLE</div><h3>Ageing and collection priority</h3>
+<p>Three undisputed invoices are overdue: A ₹25,000 for 8 days; B ₹60,000 for 42 days; C ₹35,000 for 75 days. No payment promises or credit holds are recorded. The team must choose which account to review first, using age and value as initial triage signals.</p>
+<p><strong>Control principle:</strong> ageing and value help prioritise review, but customer risk, dispute status, payment history and policy also matter.</p>
+<label for="arCaseAnswer">Which invoice is the strongest initial review priority from the facts given?</label>
+<select id="arCaseAnswer"><option value="">Choose an invoice</option><option value="a">A — ₹25,000, 8 days overdue</option><option value="b">B — ₹60,000, 42 days overdue</option><option value="c">C — ₹35,000, 75 days overdue</option></select>
+<button id="checkArCase">Check answer</button><p id="arCaseFeedback" class="feedback" aria-live="polite"></p>
+<p class="muted">Workpaper output: ageing bucket, amount, customer context, next action, owner and follow-up date.</p>
+</article>
+<article class="card case-card">
+<div class="meta">CASE 03 · BANK RECONCILIATION</div><h3>Reconcile book and bank balances</h3>
+<p>General-ledger cash balance is ₹1,89,900. A valid deposit of ₹12,000 is recorded in the books but has not yet appeared on the bank statement. The bank has charged an unrecorded fee of ₹500. No other reconciling items exist.</p>
+<p><strong>Method:</strong> adjust the book balance for the unrecorded fee; adjust the bank balance for deposits in transit. Both adjusted balances should agree when all items are correctly classified.</p>
+<label for="bankCaseAnswer">What is the adjusted book balance after recording the bank fee?</label>
+<select id="bankCaseAnswer"><option value="">Choose an amount</option><option value="189400">₹1,89,400</option><option value="201400">₹2,01,400</option><option value="189900">₹1,89,900</option></select>
+<button id="checkBankCase">Check answer</button><p id="bankCaseFeedback" class="feedback" aria-live="polite"></p>
+<p class="muted">Workpaper output: book balance, bank balance, reconciling items, evidence, adjusted balances and reviewer sign-off.</p>
+</article>
+<article class="card case-card">
+<div class="meta">CASE 04 · FP&A / VARIANCE ANALYSIS</div><h3>Explain an expense variance</h3>
+<p>Monthly travel expense budget is ₹2,00,000. Actual expense is ₹2,30,000. There are no accrual timing differences in this simplified case.</p>
+<p><strong>Formula:</strong> variance = actual − budget. For expenses, a positive variance is generally unfavourable; the business explanation still needs evidence.</p>
+<label for="varianceCaseAnswer">What is the variance?</label>
+<select id="varianceCaseAnswer"><option value="">Choose an answer</option><option value="favourable">₹30,000 favourable</option><option value="unfavourable">₹30,000 unfavourable</option><option value="zero">Nil variance</option></select>
+<button id="checkVarianceCase">Check answer</button><p id="varianceCaseFeedback" class="feedback" aria-live="polite"></p>
+<p class="muted">Workpaper output: amount, favourable/unfavourable label, driver evidence, owner, corrective action and forecast impact.</p>
+</article>
+</div>
+</section>
 <section class="section" id="free-resources">
 <h2>Free Resources Library</h2>
 <p>Legitimate learning links for ebooks, open textbooks, university materials, official documentation, videos and practice labs. “Free” means the linked provider advertises free access to the listed material; accounts, regional restrictions, paid certificates or changing terms may apply. We do not link pirated copies.</p>
@@ -113,5 +155,11 @@ const $=id=>document.getElementById(id);
 [...new Set(modules.map(m=>m.domain))].forEach(d=>{const o=document.createElement('option');o.value=d;o.textContent=d;$('domain').appendChild(o)});
 function render(){const q=$('q').value.trim().toLowerCase(),d=$('domain').value,host=$('catalog');host.innerHTML='';const filtered=modules.filter(m=>(!d||m.domain===d)&&(!q||[m.domain,m.name,m.level,m.desc,m.outcome,...m.topics].join(' ').toLowerCase().includes(q)));filtered.forEach(m=>{const card=document.createElement('article');card.className='card';const meta=document.createElement('div');meta.className='meta';meta.textContent=m.domain+' · '+m.level;const h=document.createElement('h3');h.textContent=m.name;const p=document.createElement('p');p.textContent=m.desc;const ul=document.createElement('ul');m.topics.forEach(t=>{const li=document.createElement('li');li.textContent=t;ul.appendChild(li)});const out=document.createElement('p');out.innerHTML='<strong>Practical outcome:</strong> ';out.append(document.createTextNode(m.outcome));card.append(meta,h,p,ul,out);host.appendChild(card)});$('moduleCount').textContent=filtered.length+' of '+modules.length+' modules shown across '+new Set(filtered.map(m=>m.domain)).size+' domains';if(!filtered.length)host.innerHTML='<p class="muted">No match found. Try a broader search term.</p>'}
 $('q').addEventListener('input',render);$('domain').addEventListener('change',render);render();
+
+$('checkApCase').addEventListener('click',()=>{const v=$('apCaseAnswer').value;$('apCaseFeedback').textContent=!v?'Choose an action first.':v==='hold'?'Correct. Hold the duplicate candidate, preserve the audit trail, compare source evidence and follow the approval workflow before any payment release.':'Not correct. A filename difference does not prove a separate liability; investigate and retain a traceable decision.'});
+$('checkArCase').addEventListener('click',()=>{const v=$('arCaseAnswer').value;$('arCaseFeedback').textContent=!v?'Choose an invoice first.':v==='c'?'Correct as an initial ageing-led triage: C is oldest. Review value, dispute status, credit risk and collection policy before deciding the actual next action.':'Review the ageing: C is 75 days overdue, so it is the strongest initial ageing-led review priority. Consider value and customer context too.'});
+$('checkBankCase').addEventListener('click',()=>{const v=$('bankCaseAnswer').value;$('bankCaseFeedback').textContent=!v?'Choose an amount first.':v==='189400'?'Correct. ₹1,89,900 − ₹500 bank fee = ₹1,89,400 adjusted book balance. The ₹12,000 deposit in transit adjusts the bank side, not the book side.':'Not quite. Record the ₹500 fee against the book balance: ₹1,89,900 − ₹500 = ₹1,89,400. The deposit in transit adjusts the bank side.'});
+$('checkVarianceCase').addEventListener('click',()=>{const v=$('varianceCaseAnswer').value;$('varianceCaseFeedback').textContent=!v?'Choose an answer first.':v==='unfavourable'?'Correct. ₹2,30,000 − ₹2,00,000 = ₹30,000 over budget, normally unfavourable for an expense. Investigate the drivers before recommending action.':'Not quite. Actual expense exceeds budget by ₹30,000, so the expense variance is normally unfavourable.'});
+
 $('checkTreasury').addEventListener('click',()=>{const v=$('treasuryAnswer').value;$('treasuryFeedback').textContent=!v?'Choose an answer first.':v==='610000'?'Correct — projected closing cash is ₹6,10,000. Cash forecasting tracks cash movements, not accounting profit.':'Not quite. Add ₹8,00,000 + ₹2,40,000, then subtract ₹3,10,000 and ₹1,20,000. Try again.'});
 </script></body></html>
