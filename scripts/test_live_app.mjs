@@ -194,6 +194,13 @@ try {
   await gfpa.locator('#q').fill('');
   await gfpa.locator('#treasuryAnswer').selectOption('610000');
   await gfpa.locator('#checkTreasury').click();
+  check(await gfpa.locator('#month-end-close-lab').count() === 1, 'GFPA month-end close: reconciliation and accrual lesson renders');
+  await gfpa.locator('#closeBankAnswer').selectOption('investigate'); await gfpa.locator('#checkCloseBank').click();
+  check((await gfpa.locator('#closeBankFeedback').innerText()).includes('Correct'), 'GFPA month-end close: unexplained reconciliation difference blocks sign-off');
+  await gfpa.locator('#closeAccrualAnswer').selectOption('debit-expense'); await gfpa.locator('#checkCloseAccrual').click();
+  check((await gfpa.locator('#closeAccrualFeedback').innerText()).includes('Correct'), 'GFPA month-end close: accrued expense journal is checked');
+  await gfpa.locator('#closeStatusAnswer').selectOption('blocked'); await gfpa.locator('#checkCloseStatus').click();
+  check((await gfpa.locator('#closeStatusFeedback').innerText()).includes('Correct'), 'GFPA month-end close: sign-off status decision is checked');
   check(await gfpa.locator('#internal-audit-lab').count() === 1, 'GFPA internal audit: risk and control lesson renders');
   await gfpa.locator('#auditControlAnswer').selectOption('sample'); await gfpa.locator('#checkAuditControl').click();
   check((await gfpa.locator('#auditControlFeedback').innerText()).includes('Correct'), 'GFPA internal audit: operating-effectiveness test answer is checked');
