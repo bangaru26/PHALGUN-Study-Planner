@@ -677,6 +677,150 @@
         "security programme",
         "incident management"
       ]
+    },
+    {
+      "id": "openstax_accounting",
+      "topic": "Open textbook resources for accounting",
+      "authority": "OpenStax",
+      "url": "https://openstax.org/subjects/business",
+      "cadence": "weekly",
+      "review": "Check availability, edition and licence information for open accounting/business textbooks; do not assume every title is accounting-specific.",
+      "lesson_areas": [
+        "accounting foundations",
+        "management accounting",
+        "open educational resources"
+      ]
+    },
+    {
+      "id": "libretexts_business",
+      "topic": "Open business and accounting textbooks",
+      "authority": "LibreTexts",
+      "url": "https://biz.libretexts.org/",
+      "cadence": "weekly",
+      "review": "Check page availability and page-level licence/attribution before linking or adapting content.",
+      "lesson_areas": [
+        "accounting",
+        "business",
+        "open educational resources"
+      ]
+    },
+    {
+      "id": "mit_ocw",
+      "topic": "University open course materials",
+      "authority": "MIT OpenCourseWare",
+      "url": "https://ocw.mit.edu/",
+      "cadence": "weekly",
+      "review": "Check relevant course/material availability and reuse licence; distinguish free access from credit or certification.",
+      "lesson_areas": [
+        "economics",
+        "management",
+        "analytics"
+      ]
+    },
+    {
+      "id": "openlearn",
+      "topic": "Free open university courses",
+      "authority": "The Open University OpenLearn",
+      "url": "https://www.open.edu/openlearn/",
+      "cadence": "weekly",
+      "review": "Check course availability, access terms and whether any participation statement has conditions.",
+      "lesson_areas": [
+        "business",
+        "finance",
+        "management"
+      ]
+    },
+    {
+      "id": "saylor",
+      "topic": "Free self-paced business and technology courses",
+      "authority": "Saylor Academy",
+      "url": "https://learn.saylor.org/",
+      "cadence": "weekly",
+      "review": "Check course availability and any assessment/certificate conditions; do not imply accreditation unless explicitly verified.",
+      "lesson_areas": [
+        "business foundations",
+        "economics",
+        "information systems"
+      ]
+    },
+    {
+      "id": "khan_finance",
+      "topic": "Free finance and economics lessons",
+      "authority": "Khan Academy",
+      "url": "https://www.khanacademy.org/economics-finance-domain",
+      "cadence": "weekly",
+      "review": "Check current topic coverage and lesson availability.",
+      "lesson_areas": [
+        "finance foundations",
+        "economics",
+        "banking"
+      ]
+    },
+    {
+      "id": "sqlbolt",
+      "topic": "Interactive SQL practice",
+      "authority": "SQLBolt",
+      "url": "https://sqlbolt.com/",
+      "cadence": "weekly",
+      "review": "Check lesson availability and exercise behaviour; clearly label SQL dialect limitations where relevant.",
+      "lesson_areas": [
+        "SQL",
+        "database practice",
+        "data analytics"
+      ]
+    },
+    {
+      "id": "kaggle_learn",
+      "topic": "Free hands-on data learning",
+      "authority": "Kaggle Learn",
+      "url": "https://www.kaggle.com/learn",
+      "cadence": "weekly",
+      "review": "Check course availability, account requirements and platform terms.",
+      "lesson_areas": [
+        "Python",
+        "pandas",
+        "SQL",
+        "data analytics"
+      ]
+    },
+    {
+      "id": "tableau_training",
+      "topic": "Tableau official training resources",
+      "authority": "Tableau",
+      "url": "https://www.tableau.com/learn/training",
+      "cadence": "weekly",
+      "review": "Check video/resource availability and distinguish free self-paced material from paid training or certification.",
+      "lesson_areas": [
+        "Tableau",
+        "visual analytics",
+        "dashboards"
+      ]
+    },
+    {
+      "id": "sap_learning",
+      "topic": "SAP official learning journeys",
+      "authority": "SAP Learning",
+      "url": "https://learning.sap.com/",
+      "cadence": "weekly",
+      "review": "Check course availability, free/paid status and product-release relevance.",
+      "lesson_areas": [
+        "SAP FICO",
+        "SAP S/4HANA",
+        "ERP finance"
+      ]
+    },
+    {
+      "id": "isaca_cism",
+      "topic": "CISM certification exam content outline",
+      "authority": "ISACA",
+      "url": "https://www.isaca.org/credentialing/cism/cism-exam-content-outline",
+      "cadence": "weekly",
+      "review": "Check current exam domains and revision dates; separate public outline from paid exam and training products.",
+      "lesson_areas": [
+        "CISM",
+        "cybersecurity governance",
+        "risk management"
+      ]
     }
   ]
 }
