@@ -65,6 +65,14 @@ try {
     check(await page.locator('#finishTimer').isDisabled() && (await page.locator('#timerStatus').innerText()).toLowerCase().includes('saved'), viewport.name + ': Stop & Save completes session', await page.locator('#timerStatus').innerText().catch(() => ''));
     check(await page.evaluate(() => { const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return Array.isArray(d.sessions) && d.sessions.length > 0; }), viewport.name + ': timer session persists in local storage');
 
+    await page.getByRole('tab', { name: 'Backup' }).click();
+    const beforeInvalidRestore = await page.evaluate(() => { const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return {sessions:d.sessions?.length||0,lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),results:JSON.stringify(d.results||{})}; });
+    await page.locator('#importFile').setInputFiles({name:'malformed-study-desk-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:[],results:{},plan:{}}))});
+    await page.locator('#importBackup').click();
+    check((await page.locator('#backupFeedback').innerText()).includes('valid Study Desk v2 backup'), viewport.name + ': malformed backup is rejected with a clear message');
+    const afterInvalidRestore = await page.evaluate(() => { const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return {sessions:d.sessions?.length||0,lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),results:JSON.stringify(d.results||{})}; });
+    check(JSON.stringify(afterInvalidRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': rejected backup leaves existing progress unchanged', JSON.stringify({beforeInvalidRestore,afterInvalidRestore}));
+
     await page.getByRole('tab', { name: /Study · Progress · Assess/ }).click();
     await page.locator('#assessmentSection').waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
     const questions = page.locator('#quiz .question');
