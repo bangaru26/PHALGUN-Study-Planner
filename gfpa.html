@@ -275,7 +275,14 @@
 <select id="excelIferrorAnswer"><option value="">Choose an answer</option><option value="hide">Hide every error as zero without review</option><option value="review">Show an explicit review message and investigate the cause</option><option value="delete">Delete the row automatically</option></select>
 <button id="checkExcelIferror">Check answer</button>
 <p id="excelIferrorFeedback" class="feedback" aria-live="polite"></p>
-<h3>6 · Mini practice checklist</h3>
+<h3>6 · Build an ageing-band total</h3>
+<p><strong>Scenario:</strong> Column B contains days overdue and column C contains open invoice balances. You need the total balance that is 31–60 days overdue, inclusive.</p>
+<p><strong>Formula pattern:</strong> <code>=SUMIFS(C:C,B:B,"&gt;=31",B:B,"&lt;=60")</code></p>
+<label for="excelAgingAnswer">Which formula correctly totals balances inside both ageing limits?</label>
+<select id="excelAgingAnswer"><option value="">Choose an answer</option><option value="sum">=SUM(C:C)</option><option value="sumifs">=SUMIFS(C:C,B:B,"&gt;=31",B:B,"&lt;=60")</option><option value="countif">=COUNTIF(B:B,"&gt;=31")</option></select>
+<button id="checkExcelAging">Check answer</button>
+<p id="excelAgingFeedback" class="feedback" aria-live="polite"></p>
+<h3>7 · Mini practice checklist</h3>
 <ul>
 <li>Use structured references or bounded ranges where practical; avoid unnecessarily whole-column formulas in very large workbooks.</li>
 <li>Check duplicate keys and missing lookup matches before relying on a result.</li>
@@ -403,4 +410,5 @@ $('checkExcelRecon').addEventListener('click',()=>{const v=$('excelReconAnswer')
 
 $('checkExcelCountifs').addEventListener('click',()=>{const v=$('excelCountifsAnswer').value;$('excelCountifsFeedback').textContent=!v?'Choose a function first.':v==='countif'?'Correct. COUNTIF counts cells that meet one criterion. Validate the status values and consider whether blank or inconsistent statuses need cleanup.':'COUNTIF counts cells that meet one criterion; SUMIF totals values and AVERAGE calculates a mean.'});
 $('checkExcelIferror').addEventListener('click',()=>{const v=$('excelIferrorAnswer').value;$('excelIferrorFeedback').textContent=!v?'Choose an action first.':v==='review'?'Correct. Make the exception visible and investigate missing or invalid inputs. Do not silently turn an error into a plausible financial number.':'Avoid masking errors as valid numbers. Display a review state and investigate the source inputs.'});
+$('checkExcelAging').addEventListener('click',()=>{const v=$('excelAgingAnswer').value;$('excelAgingFeedback').textContent=!v?'Choose a formula first.':v==='sumifs'?'Correct. SUMIFS applies both lower and upper bounds to the overdue-days column and totals the matching balances. Check date ageing logic and reconcile the total to the source ledger.':'Use SUMIFS with both criteria (>=31 and <=60) on the days-overdue column, summing the balance column.'});
 </script></body></html>
