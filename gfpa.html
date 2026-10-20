@@ -260,7 +260,22 @@
 <select id="excelReconAnswer"><option value="">Choose an answer</option><option value="plug">Post a plug journal to force the balances to match</option><option value="investigate">Investigate source evidence, timing and errors; document the unresolved difference</option><option value="ignore">Ignore the difference if it is inconvenient</option></select>
 <button id="checkExcelRecon">Check answer</button>
 <p id="excelReconFeedback" class="feedback" aria-live="polite"></p>
-<h3>4 · Mini practice checklist</h3>
+
+<h3>4 · Count open exceptions</h3>
+<p><strong>Scenario:</strong> Column D contains workflow status. You need to count all rows marked “Open” so the team can report its unresolved items.</p>
+<p><strong>Formula pattern:</strong> <code>=COUNTIF(D:D,"Open")</code></p>
+<label for="excelCountifsAnswer">Which function counts rows that meet one condition?</label>
+<select id="excelCountifsAnswer"><option value="">Choose an answer</option><option value="sumif">SUMIF</option><option value="countif">COUNTIF</option><option value="average">AVERAGE</option></select>
+<button id="checkExcelCountifs">Check answer</button>
+<p id="excelCountifsFeedback" class="feedback" aria-live="polite"></p>
+<h3>5 · Make errors visible</h3>
+<p><strong>Scenario:</strong> A division formula can fail when the denominator is zero or blank. The report should not quietly disguise an invalid calculation as a real zero.</p>
+<p><strong>Pattern:</strong> <code>=IFERROR(A2/B2,"Review inputs")</code></p>
+<label for="excelIferrorAnswer">What is the strongest control-minded approach?</label>
+<select id="excelIferrorAnswer"><option value="">Choose an answer</option><option value="hide">Hide every error as zero without review</option><option value="review">Show an explicit review message and investigate the cause</option><option value="delete">Delete the row automatically</option></select>
+<button id="checkExcelIferror">Check answer</button>
+<p id="excelIferrorFeedback" class="feedback" aria-live="polite"></p>
+<h3>6 · Mini practice checklist</h3>
 <ul>
 <li>Use structured references or bounded ranges where practical; avoid unnecessarily whole-column formulas in very large workbooks.</li>
 <li>Check duplicate keys and missing lookup matches before relying on a result.</li>
@@ -385,4 +400,7 @@ $('checkTreasury').addEventListener('click',()=>{const v=$('treasuryAnswer').val
 $('checkExcelSumifs').addEventListener('click',()=>{const v=$('excelSumifsAnswer').value;$('excelSumifsFeedback').textContent=!v?'Choose a function first.':v==='sumifs'?'Correct. SUMIFS totals values that meet multiple criteria. Verify the criteria columns and source data before using the result.':'Not quite. SUMIFS is designed to sum values that meet multiple criteria.'});
 $('checkExcelLookup').addEventListener('click',()=>{const v=$('excelLookupAnswer').value;$('excelLookupFeedback').textContent=!v?'Choose an action first.':v==='review'?'Correct. A clear not-found message makes the exception visible; investigate the vendor master and do not silently suppress the issue.':'Do not silently pass an unmatched record or delete source data. Make the exception visible and investigate.'});
 $('checkExcelRecon').addEventListener('click',()=>{const v=$('excelReconAnswer').value;$('excelReconFeedback').textContent=!v?'Choose an action first.':v==='investigate'?'Correct. The ₹30,000 difference remains unexplained. Gather evidence, assess cut-off and posting errors, document the outcome and keep sign-off blocked until resolved or formally escalated.':'Never plug or ignore an unexplained difference. Investigate, document and escalate under the reconciliation policy.'});
+
+$('checkExcelCountifs').addEventListener('click',()=>{const v=$('excelCountifsAnswer').value;$('excelCountifsFeedback').textContent=!v?'Choose a function first.':v==='countif'?'Correct. COUNTIF counts cells that meet one criterion. Validate the status values and consider whether blank or inconsistent statuses need cleanup.':'COUNTIF counts cells that meet one criterion; SUMIF totals values and AVERAGE calculates a mean.'});
+$('checkExcelIferror').addEventListener('click',()=>{const v=$('excelIferrorAnswer').value;$('excelIferrorFeedback').textContent=!v?'Choose an action first.':v==='review'?'Correct. Make the exception visible and investigate missing or invalid inputs. Do not silently turn an error into a plausible financial number.':'Avoid masking errors as valid numbers. Display a review state and investigate the source inputs.'});
 </script></body></html>
