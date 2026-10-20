@@ -235,6 +235,41 @@
 <section class="section"><h2>Source and syllabus governance</h2><p>For tax, accounting standards, certification syllabi and product instructions, use the relevant official publisher as source of truth. A changed webpage is a review signal, not proof that a rule or syllabus changed. Record source URL, date checked, version, affected lessons and reviewer decision.</p><div class="sources">
 <a href="https://www.icai.org/" target="_blank" rel="noopener">ICAI</a><a href="https://www.mca.gov.in/" target="_blank" rel="noopener">MCA India</a><a href="https://www.incometax.gov.in/" target="_blank" rel="noopener">Income Tax Department</a><a href="https://www.gst.gov.in/" target="_blank" rel="noopener">GST Portal</a><a href="https://www.rbi.org.in/" target="_blank" rel="noopener">RBI</a><a href="https://www.theirm.org/qualifications/" target="_blank" rel="noopener">IRM</a><a href="https://www.theiia.org/en/certifications/cia/" target="_blank" rel="noopener">IIA CIA</a><a href="https://www.theiia.org/en/certifications/crma/" target="_blank" rel="noopener">IIA CRMA</a><a href="https://www.isaca.org/credentialing/cism/cism-exam-content-outline" target="_blank" rel="noopener">ISACA CISM outline</a><a href="https://learn.microsoft.com/en-us/power-bi/" target="_blank" rel="noopener">Microsoft Power BI</a><a href="https://help.tableau.com/" target="_blank" rel="noopener">Tableau Help</a><a href="https://learning.sap.com/" target="_blank" rel="noopener">SAP Learning</a></div></section>
 <footer>GFPA is the dedicated Finance Academy within PHALGUN. This release is a usable academy catalogue and starter lesson, not a claim that every listed subject has a complete course or that any credential is granted. Legal, tax, standards, product and exam content requires dated official-source validation. All case names and numbers in sample exercises are fictional.</footer>
+
+<section class="section" id="excel-finance-practice">
+<h2>Excel Formula Practice — Finance Desk</h2>
+<p>Practice formulas used in reconciliations, ageing, exception handling and monthly reporting. These examples use ordinary Excel table/range syntax; adapt separators to your regional settings.</p>
+<div class="lesson">
+<h3>1 · Choose the right formula</h3>
+<p><strong>Scenario:</strong> In a transaction register, column B contains supplier names, column C contains amounts, and column D contains status. You need the total amount for supplier “ABC Ltd” where status is “Approved”.</p>
+<p><strong>Formula pattern:</strong> <code>=SUMIFS(C:C,B:B,"ABC Ltd",D:D,"Approved")</code></p>
+<label for="excelSumifsAnswer">Which function best handles multiple criteria for a total?</label>
+<select id="excelSumifsAnswer"><option value="">Choose an answer</option><option value="sum">SUM</option><option value="sumifs">SUMIFS</option><option value="countif">COUNTIF</option></select>
+<button id="checkExcelSumifs">Check answer</button>
+<p id="excelSumifsFeedback" class="feedback" aria-live="polite"></p>
+<h3>2 · Protect a lookup from missing records</h3>
+<p><strong>Scenario:</strong> You use XLOOKUP to find a vendor code, but some vendor names are not in the master. A controlled formula can show a review message rather than a raw error.</p>
+<p><strong>Formula pattern:</strong> <code>=XLOOKUP(A2,VendorMaster[Name],VendorMaster[Code],"Review vendor master")</code></p>
+<label for="excelLookupAnswer">What should happen when no match is found?</label>
+<select id="excelLookupAnswer"><option value="">Choose an answer</option><option value="zero">Return 0 and continue without review</option><option value="review">Return a clear review message and investigate the master data</option><option value="delete">Delete the transaction row</option></select>
+<button id="checkExcelLookup">Check answer</button>
+<p id="excelLookupFeedback" class="feedback" aria-live="polite"></p>
+<h3>3 · Reconciliation control</h3>
+<p><strong>Scenario:</strong> Your adjusted bank balance is ₹5,11,000 and adjusted book balance is ₹4,81,000. A difference remains.</p>
+<label for="excelReconAnswer">Which is the best next action?</label>
+<select id="excelReconAnswer"><option value="">Choose an answer</option><option value="plug">Post a plug journal to force the balances to match</option><option value="investigate">Investigate source evidence, timing and errors; document the unresolved difference</option><option value="ignore">Ignore the difference if it is inconvenient</option></select>
+<button id="checkExcelRecon">Check answer</button>
+<p id="excelReconFeedback" class="feedback" aria-live="polite"></p>
+<h3>4 · Mini practice checklist</h3>
+<ul>
+<li>Use structured references or bounded ranges where practical; avoid unnecessarily whole-column formulas in very large workbooks.</li>
+<li>Check duplicate keys and missing lookup matches before relying on a result.</li>
+<li>Keep raw data, transformation steps, control totals and final outputs traceable.</li>
+<li>Never let a formula replace evidence, approval or independent review.</li>
+</ul>
+<p class="muted">Practice note: XLOOKUP is available in newer Excel versions and Microsoft 365. For older versions, use an appropriate alternative such as INDEX/MATCH or VLOOKUP after checking its limitations.</p>
+</div>
+</section>
 </main>
 <script>
 
@@ -346,4 +381,8 @@ $('checkCcc').addEventListener('click',()=>{const v=$('cccAnswer').value;$('cccF
 $('checkCccImproved').addEventListener('click',()=>{const v=$('cccImprovedAnswer').value;$('cccImprovedFeedback').textContent=!v?'Choose an answer first.':v==='49'?'Correct. Target CCC = 37 + 50 − 38 = 49 days, a 13-day reduction in this illustrative scenario.':'Use the same formula: DSO 37 + DIO 50 − DPO 38.'});
 $('checkCccAction').addEventListener('click',()=>{const v=$('cccActionAnswer').value;$('cccActionFeedback').textContent=!v?'Choose an action first.':v==='segment'?'Correct. Segment ageing and disputes, validate the evidence, and assign owners and next actions; avoid indiscriminate pressure or breaching supplier terms.':'Choose an evidence-led action that addresses the dispute root cause and preserves customer and supplier controls.'});
 $('checkTreasury').addEventListener('click',()=>{const v=$('treasuryAnswer').value;$('treasuryFeedback').textContent=!v?'Choose an answer first.':v==='610000'?'Correct — projected closing cash is ₹6,10,000. Cash forecasting tracks cash movements, not accounting profit.':'Not quite. Add ₹8,00,000 + ₹2,40,000, then subtract ₹3,10,000 and ₹1,20,000. Try again.'});
+
+$('checkExcelSumifs').addEventListener('click',()=>{const v=$('excelSumifsAnswer').value;$('excelSumifsFeedback').textContent=!v?'Choose a function first.':v==='sumifs'?'Correct. SUMIFS totals values that meet multiple criteria. Verify the criteria columns and source data before using the result.':'Not quite. SUMIFS is designed to sum values that meet multiple criteria.'});
+$('checkExcelLookup').addEventListener('click',()=>{const v=$('excelLookupAnswer').value;$('excelLookupFeedback').textContent=!v?'Choose an action first.':v==='review'?'Correct. A clear not-found message makes the exception visible; investigate the vendor master and do not silently suppress the issue.':'Do not silently pass an unmatched record or delete source data. Make the exception visible and investigate.'});
+$('checkExcelRecon').addEventListener('click',()=>{const v=$('excelReconAnswer').value;$('excelReconFeedback').textContent=!v?'Choose an action first.':v==='investigate'?'Correct. The ₹30,000 difference remains unexplained. Gather evidence, assess cut-off and posting errors, document the outcome and keep sign-off blocked until resolved or formally escalated.':'Never plug or ignore an unexplained difference. Investigate, document and escalate under the reconciliation policy.'});
 </script></body></html>
