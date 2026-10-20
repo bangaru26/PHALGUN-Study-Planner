@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-10-19T07:55:31+00:00",
+  "generated_at": "2026-10-20T07:44:57+00:00",
   "scope": "Page-level fingerprint watch; not a legal or semantic determination.",
   "summary": {
-    "changed": 4,
-    "unchanged": 48,
+    "changed": 7,
+    "unchanged": 43,
     "baseline": 0,
-    "unavailable": 8
+    "unavailable": 10
   },
   "results": [
     {
@@ -27,7 +27,7 @@
       "fingerprint": "551f68bf7feb068911bcf6b0a0977ce68544ce86170373713dbb4dde88b4559c",
       "excerpt": "Goods & Services Tax (GST) | Home Skip to Main Content A + A - Goods and Services Tax Government of India, States and Union Territories Register Multi-State Registration Login Last Logged In at IST My Profile Change Password Register / Update DSC Logout Logout Toggle navigation × News and Updates View all Popular help topics How do I register with GST? How do I apply for refund? How do I file returns? How can I use Returns Offline Tool? How do I file an appeal? How do I file intimation about vol",
       "text_length": 746,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "551f68bf7feb068911bcf6b0a0977ce68544ce86170373713dbb4dde88b4559c",
       "previous_excerpt": "Goods & Services Tax (GST) | Home Skip to Main Content A + A - Goods and Services Tax Government of India, States and Union Territories Register Multi-State Registration Login Last Logged In at IST My Profile Change Password Register / Update DSC Logout Logout Toggle navigation × News and Updates View all Popular help topics How do I register with GST? How do I apply for refund? How do I file returns? How can I use Returns Offline Tool? How do I file an appeal? How do I file intimation about vol"
@@ -51,7 +51,7 @@
       "fingerprint": "d9dfb01b6397ac285d7882f8c878e510d1f7f3e8df889f846140c40a53cf92e5",
       "excerpt": "CBIC, Government of India :: Home Attention This Tab “ACES Archives” displays web content as was available in the erstwhile www.aces.gov.in and for information only. For all transactions under Central Excise and Service Tax use the Tab “ACES (CE&ST) Login” OK Attention You are being redirected to an external website. It will open in a new tab. Do you want to continue? Cancel Continue May I help you? From August 1st 2025 onwards, CBIC Mitra Helpdesk number will be 1800 425 0232 For any queries an",
       "text_length": 8209,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "d9dfb01b6397ac285d7882f8c878e510d1f7f3e8df889f846140c40a53cf92e5",
       "previous_excerpt": "CBIC, Government of India :: Home Attention This Tab “ACES Archives” displays web content as was available in the erstwhile www.aces.gov.in and for information only. For all transactions under Central Excise and Service Tax use the Tab “ACES (CE&ST) Login” OK Attention You are being redirected to an external website. It will open in a new tab. Do you want to continue? Cancel Continue May I help you? From August 1st 2025 onwards, CBIC Mitra Helpdesk number will be 1800 425 0232 For any queries an"
@@ -69,7 +69,7 @@
         "governance and CSR"
       ],
       "status": "UNAVAILABLE",
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "error": "HTTPError: HTTP Error 403: Forbidden",
       "previous_fingerprint": null,
       "previous_excerpt": ""
@@ -86,15 +86,15 @@
         "TDS/TCS",
         "tax compliance"
       ],
-      "status": "UNCHANGED",
+      "status": "CHANGED — REVIEW REQUIRED",
       "http_status": 200,
       "final_url": "https://www.incometax.gov.in/iec/foportal/",
       "title": "Home | Income Tax Department",
-      "fingerprint": "61c42f4e69a69722bf17020b831c5c4c2e2e8e39cdd6470f23e127b2390f43af",
+      "fingerprint": "d1cc1ca72aae94c819809348784a90103680af25118c92959a6fc8f03977ab7c",
       "excerpt": "Home | Income Tax Department Skip to main content Call Us e-filing and Centralized Processing Center e-Filing of Income Tax Return or Forms and other value added services & Intimation, Rectification, Refund and other Income Tax Processing Related Queries 1800 103 0025 (or) 1800 419 0025 +91-80-46122000 +91-80-61464700 08:00 hrs - 20:00 hrs (Monday to Friday) Tax Information Network - NSDL Queries related to PAN & TAN application for Issuance / Update through NSDL +91-20-27218080 07:00 hrs - 23:0",
-      "text_length": 10646,
-      "checked_at": "2026-10-19T07:55:31+00:00",
-      "change_preview": "",
+      "text_length": 10641,
+      "checked_at": "2026-10-20T07:44:57+00:00",
+      "change_preview": "- the Income-tax Act, 2025. Click here Read more 22 Sep 2026 SMS Campaign Dear AAXXXXXX1D, Tax Audit Report\n+ the Income-tax Act, 2025. Click here Read more 16 Oct 2026 SMS Campaign Dear AAXXXXXX1D, Audit Report in Form 10B/10BB for A.Y.… Read more 16 Oct 2026 SMS Campaign Dear AAXXXXXX1D, Tax Audit Report\n- Tax Audit Report in Form 3CA-3CD/3CB-… Read more 22 Sep 2026 SMS Campaign Dear ARCAXXXX12, Audit Reports in Forms 3CA-3CD/3CB-3CD/…\n+ Tax Audit Report in Form 3CA-3CD/3CB-… Read more 16 Oct 2026 E-Mail Campaign Time to File Your Tax Audit Report\n- 3CA-3CD/3CB-… Read more 22 Sep 2026 SMS Campaign Dear ARCAXXXX12, Audit Reports in Forms 3CA-3CD/3CB-3CD/… Read more 22\n+ 3CA-3CD/3CB-… Read more 16 Oct 2026 E-Mail Campaign Time to File Your Tax Audit Report | Due by 21 October 2026\n- 22 Sep 2026 SMS Campaign Dear ARCAXXXX12, Audit Reports in Forms 3CA-3CD/3CB-3CD/… Read more 22 Sep 2026 E-Mail Campaign Audit\n+ E-Mail Campaign Time to File Your Tax Audit Report | Due by 21 October 2026 Read more 16 Oct 2026 E-Mail Campaign Audit\n- ARCAXXXX12, Audit Reports in Forms 3CA-3CD/3CB-3CD/… Read more 22 Sep 2026 E-Mail Campaign Audit Report Due Soon. File\n+ | Due by 21 October 2026 Read more 16 Oct 2026 E-Mail Campaign Audit Report Due Soon. File",
       "previous_fingerprint": "61c42f4e69a69722bf17020b831c5c4c2e2e8e39cdd6470f23e127b2390f43af",
       "previous_excerpt": "Home | Income Tax Department Skip to main content Call Us e-filing and Centralized Processing Center e-Filing of Income Tax Return or Forms and other value added services & Intimation, Rectification, Refund and other Income Tax Processing Related Queries 1800 103 0025 (or) 1800 419 0025 +91-80-46122000 +91-80-61464700 08:00 hrs - 20:00 hrs (Monday to Friday) Tax Information Network - NSDL Queries related to PAN & TAN application for Issuance / Update through NSDL +91-20-27218080 07:00 hrs - 23:0"
     },
@@ -117,7 +117,7 @@
       "fingerprint": "acb4f06c3ac58e4135c3cd242dac6ae876581ca60f71801252a577fd4c6254e8",
       "excerpt": "ICAI - The Institute of Chartered Accountants of India Toggle navigation Home Overview About ICAI The Council ICAI Network Key Statistics Right to Information Act Annual Report Year Books - ICAI Committees Standing Non Standing Directorate Others Secretary to the Committee Members Council Guidelines Courses offered by ICAI Empanelment Examination Funds/ Awards Members - FAQs Placements Regulatory Students Announcements BoS Knowledge Portal Chartered Accountancy Course Examination Students - FAQs",
       "text_length": 1902,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "acb4f06c3ac58e4135c3cd242dac6ae876581ca60f71801252a577fd4c6254e8",
       "previous_excerpt": "ICAI - The Institute of Chartered Accountants of India Toggle navigation Home Overview About ICAI The Council ICAI Network Key Statistics Right to Information Act Annual Report Year Books - ICAI Committees Standing Non Standing Directorate Others Secretary to the Committee Members Council Guidelines Courses offered by ICAI Empanelment Examination Funds/ Awards Members - FAQs Placements Regulatory Students Announcements BoS Knowledge Portal Chartered Accountancy Course Examination Students - FAQs"
@@ -141,7 +141,7 @@
       "fingerprint": "ae8c5739ad70e5c885a36422be86608915b1c4eea41ffc8c7c864723410ee191",
       "excerpt": "IFRS - IFRS Accounting Standards Navigator Skip to content Sign in or register Update to our sign-in process Phrase search Word search ABOUT US The IFRS Foundation is a not-for-profit, public interest organisation established to develop high-quality, understandable, enforceable and globally accepted accounting and sustainability disclosure standards. Our Standards are developed by our two standard-setting boards, the International Accounting Standards Board (IASB) and International Sustainabilit",
       "text_length": 10326,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "ae8c5739ad70e5c885a36422be86608915b1c4eea41ffc8c7c864723410ee191",
       "previous_excerpt": "IFRS - IFRS Accounting Standards Navigator Skip to content Sign in or register Update to our sign-in process Phrase search Word search ABOUT US The IFRS Foundation is a not-for-profit, public interest organisation established to develop high-quality, understandable, enforceable and globally accepted accounting and sustainability disclosure standards. Our Standards are developed by our two standard-setting boards, the International Accounting Standards Board (IASB) and International Sustainabilit"
@@ -165,7 +165,7 @@
       "fingerprint": "697cdd0a109ea32a665e5aff12f46c74f568b79b06bce426fb283d0576c8e190",
       "excerpt": "The Institute of Management Accountants and Financial Professionals | IMA Welcome to the Institute of Management Accountants Sign In Join IMA Membership Training Career Certifications Community Publications We set the standard for accounting and finance professionals worldwide Trusted content, credentials, and community that drive better business decisions and outcomes. Join IMA Explore courses A century of leadership and professional development The Institute of Management Accountants is a glob",
       "text_length": 3501,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "697cdd0a109ea32a665e5aff12f46c74f568b79b06bce426fb283d0576c8e190",
       "previous_excerpt": "The Institute of Management Accountants and Financial Professionals | IMA Welcome to the Institute of Management Accountants Sign In Join IMA Membership Training Career Certifications Community Publications We set the standard for accounting and finance professionals worldwide Trusted content, credentials, and community that drive better business decisions and outcomes. Join IMA Explore courses A century of leadership and professional development The Institute of Management Accountants is a glob"
@@ -189,7 +189,7 @@
       "fingerprint": "0e3a8a9ecbbda106a4f19c5fe63d8132bc9cd1518019b6ca00d7906e0972c3fb",
       "excerpt": "Excel help & learning | Microsoft Support Skip to main content Microsoft Support Support Support Home Microsoft 365 Office Products Microsoft 365 Outlook Microsoft Teams OneDrive Microsoft Copilot OneNote Windows more ... Devices Surface PC Accessories Xbox PC Gaming HoloLens Surface Hub Hardware warranties Account & billing Resources Community forums Microsoft 365 Admins Developer Education Report a support scam Product safety More Buy Microsoft 365 All Microsoft Global Microsoft 365 Azure Copi",
       "text_length": 4149,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "0e3a8a9ecbbda106a4f19c5fe63d8132bc9cd1518019b6ca00d7906e0972c3fb",
       "previous_excerpt": "Excel help & learning | Microsoft Support Skip to main content Microsoft Support Support Support Home Microsoft 365 Office Products Microsoft 365 Outlook Microsoft Teams OneDrive Microsoft Copilot OneNote Windows more ... Devices Surface PC Accessories Xbox PC Gaming HoloLens Surface Hub Hardware warranties Account & billing Resources Community forums Microsoft 365 Admins Developer Education Report a support scam Product safety More Buy Microsoft 365 All Microsoft Global Microsoft 365 Azure Copi"
@@ -213,7 +213,7 @@
       "fingerprint": "80eed318b4e9b06ee9f187cc8667326db8fdd0037994b5f2dad207cf224ec135",
       "excerpt": "Power BI documentation - Power BI | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Power BI documentation Power BI documentation covers cloud capabilities in Microsoft Fabric, standalone desktop and on-premises applications, and guidance tailored to your role—whether you create reports,",
       "text_length": 3544,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "80eed318b4e9b06ee9f187cc8667326db8fdd0037994b5f2dad207cf224ec135",
       "previous_excerpt": "Power BI documentation - Power BI | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Power BI documentation Power BI documentation covers cloud capabilities in Microsoft Fabric, standalone desktop and on-premises applications, and guidance tailored to your role—whether you create reports,"
@@ -234,12 +234,12 @@
       "http_status": 200,
       "final_url": "https://docs.python.org/3/whatsnew/",
       "title": "What’s New in Python — Python 3.15.0 documentation",
-      "fingerprint": "3fff6de0546b457e81104212b158f4118714dacdb7ba9f158d100700f4c4a120",
+      "fingerprint": "54489b0ab63d81f22adb531b6d0de289c4ca844693fcbd3e45a8a3ea89c575e2",
       "excerpt": "What’s New in Python — Python 3.15.0 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.0 Documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” ",
       "text_length": 14722,
-      "checked_at": "2026-10-19T07:55:31+00:00",
-      "change_preview": "- non-profit corporation. Please donate. Last updated on Oct 17, 2026 (23:42 UTC). Found a bug ? Created\n+ non-profit corporation. Please donate. Last updated on Oct 19, 2026 (06:10 UTC). Found a bug ? Created\n- Please donate. Last updated on Oct 17, 2026 (23:42 UTC). Found a bug ? Created using Sphinx\n+ Please donate. Last updated on Oct 19, 2026 (06:10 UTC). Found a bug ? Created using Sphinx",
-      "previous_fingerprint": "7955d0696046a6fab43728712c57815963a21c424a3afd319311b0dd682e88f4",
+      "checked_at": "2026-10-20T07:44:57+00:00",
+      "change_preview": "- non-profit corporation. Please donate. Last updated on Oct 19, 2026 (06:10 UTC). Found a bug ? Created\n+ non-profit corporation. Please donate. Last updated on Oct 20, 2026 (04:53 UTC). Found a bug ? Created\n- Please donate. Last updated on Oct 19, 2026 (06:10 UTC). Found a bug ? Created using Sphinx\n+ Please donate. Last updated on Oct 20, 2026 (04:53 UTC). Found a bug ? Created using Sphinx",
+      "previous_fingerprint": "3fff6de0546b457e81104212b158f4118714dacdb7ba9f158d100700f4c4a120",
       "previous_excerpt": "What’s New in Python — Python 3.15.0 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.0 Documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” "
     },
     {
@@ -261,7 +261,7 @@
       "fingerprint": "a9cdca94de582d016c2bbdc5823ebeb7fa4db6efd348356012a060a7dcf7010c",
       "excerpt": "Microsoft SQL Documentation - SQL Server | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Microsoft SQL documentation Links and more for Microsoft SQL, the SQL Database Engine, and all Microsoft SQL platforms. Deploy Try Azure SQL Database for free Deploy Try Azure SQL Managed Instance ",
       "text_length": 2299,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "a9cdca94de582d016c2bbdc5823ebeb7fa4db6efd348356012a060a7dcf7010c",
       "previous_excerpt": "Microsoft SQL Documentation - SQL Server | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Microsoft SQL documentation Links and more for Microsoft SQL, the SQL Database Engine, and all Microsoft SQL platforms. Deploy Try Azure SQL Database for free Deploy Try Azure SQL Managed Instance "
@@ -285,7 +285,7 @@
       "fingerprint": "cb911e375e3af276a49604d07c12a625e61221358f8313096b53360674cd39f9",
       "excerpt": "SAP Help Portal | SAP Online Help",
       "text_length": 33,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "cb911e375e3af276a49604d07c12a625e61221358f8313096b53360674cd39f9",
       "previous_excerpt": "SAP Help Portal | SAP Online Help"
@@ -309,7 +309,7 @@
       "fingerprint": "99a39fa07e2225112360e285e744b5e6b087271c4f941367c036a398c50a3293",
       "excerpt": "SEC.gov | EDGAR Full Text Search SEC.gov EDGAR FAQ Other search tools The new EDGAR advanced search gives you access to the full text of electronic filings since 2001. Document word or phrase ? Company name, ticker, CIK number or individual's name + more search options Filing category Browse filing types View all Filing types Browse filing types cancel Filed date range All (since 2001) Last 10 years Last 5 years Last year Last 30 days Custom Invalid Date Filed from Filed to Principal executive o",
       "text_length": 1512,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "99a39fa07e2225112360e285e744b5e6b087271c4f941367c036a398c50a3293",
       "previous_excerpt": "SEC.gov | EDGAR Full Text Search SEC.gov EDGAR FAQ Other search tools The new EDGAR advanced search gives you access to the full text of electronic filings since 2001. Document word or phrase ? Company name, ticker, CIK number or individual's name + more search options Filing category Browse filing types View all Filing types Browse filing types cancel Filed date range All (since 2001) Last 10 years Last 5 years Last year Last 30 days Custom Invalid Date Filed from Filed to Principal executive o"
@@ -333,7 +333,7 @@
       "fingerprint": "7dfa35ea72ca41db5c72351f641fad58a1f0a522dcee591574de4501a13512b9",
       "excerpt": "Income Tax Notifications & CBDT Updates Latest Skip to Main Content Please wait... Income Tax Department Ministry of Finance, Government of India Guided Tour Skip to main content Accessibility Accessibility Options Font Size A- 80% 91% 100% 110% 125% 140% A+ Saturation Screen Reader High Contrast Theme Basic HTML View Invert Colors Language Options English English हिन्दी Help Department Officials IRS Officers Online Official Email Systems Employees Corner Take Online Oath Home About Us History o",
       "text_length": 3930,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "7dfa35ea72ca41db5c72351f641fad58a1f0a522dcee591574de4501a13512b9",
       "previous_excerpt": "Income Tax Notifications & CBDT Updates Latest Skip to Main Content Please wait... Income Tax Department Ministry of Finance, Government of India Guided Tour Skip to main content Accessibility Accessibility Options Font Size A- 80% 91% 100% 110% 125% 140% A+ Saturation Screen Reader High Contrast Theme Basic HTML View Invert Colors Language Options English English हिन्दी Help Department Officials IRS Officers Online Official Email Systems Employees Corner Take Online Oath Home About Us History o"
@@ -357,7 +357,7 @@
       "fingerprint": "eb79f1809c13685c60fed2c0c75199a5d08aee725c574372152e4eaa25ae54b4",
       "excerpt": "ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St",
       "text_length": 6531,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "eb79f1809c13685c60fed2c0c75199a5d08aee725c574372152e4eaa25ae54b4",
       "previous_excerpt": "ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St"
@@ -381,7 +381,7 @@
       "fingerprint": "5e3f97a5fa0e2156b368e60252f973809661ccda4782914944d2a6ca3661fcf6",
       "excerpt": "ICAI - The Institute of Chartered Accountants of India Toggle navigation Home Overview About ICAI The Council ICAI Network Key Statistics Right to Information Act Annual Report Year Books - ICAI Committees Standing Non Standing Directorate Others Secretary to the Committee Members Council Guidelines Courses offered by ICAI Empanelment Examination Funds/ Awards Members - FAQs Placements Regulatory Students Announcements BoS Knowledge Portal Chartered Accountancy Course Examination Students - FAQs",
       "text_length": 2764,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "5e3f97a5fa0e2156b368e60252f973809661ccda4782914944d2a6ca3661fcf6",
       "previous_excerpt": "ICAI - The Institute of Chartered Accountants of India Toggle navigation Home Overview About ICAI The Council ICAI Network Key Statistics Right to Information Act Annual Report Year Books - ICAI Committees Standing Non Standing Directorate Others Secretary to the Committee Members Council Guidelines Courses offered by ICAI Empanelment Examination Funds/ Awards Members - FAQs Placements Regulatory Students Announcements BoS Knowledge Portal Chartered Accountancy Course Examination Students - FAQs"
@@ -406,7 +406,7 @@
       "fingerprint": "80d9e55ccfe6a48a7b5f5b9ae59986dc1a3afec9b3003b0cbc8a9565804d45d1",
       "excerpt": "PIB Press Information Bureau Government of India English Releases January February March April May June July August September October November December 2026 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 2007 2006 2005 2004 2003 IICA observed 3rd IICA CSR Day on Gandhi Jayanti with a Special Address by the DG & CEO to Participants of the IICA Certified CSR Professional Programme ahead of NCCSR 2026 (05-October 2026) Insolvency and Bankruptcy Code has st",
       "text_length": 3107,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "80d9e55ccfe6a48a7b5f5b9ae59986dc1a3afec9b3003b0cbc8a9565804d45d1",
       "previous_excerpt": "PIB Press Information Bureau Government of India English Releases January February March April May June July August September October November December 2026 2025 2024 2023 2022 2021 2020 2019 2018 2017 2016 2015 2014 2013 2012 2011 2010 2009 2008 2007 2006 2005 2004 2003 IICA observed 3rd IICA CSR Day on Gandhi Jayanti with a Special Address by the DG & CEO to Participants of the IICA Certified CSR Professional Programme ahead of NCCSR 2026 (05-October 2026) Insolvency and Bankruptcy Code has st"
@@ -433,7 +433,7 @@
       "fingerprint": "dedba5a97641d5442cae585a79e8eeb1c2a9464883d8ddbb871ef557ac5762f0",
       "excerpt": "| | AICPA & CIMA Loading This site is brought to you by the Association of International Certified Professional Accountants, the global voice of the accounting and finance profession, founded by the American Institute of CPAs and The Chartered Institute of Management Accountants. About | Terms & Conditions | Accessibility | Privacy Policy | Contact | Help | Site Map CA Do Not Sell or Share My Personal Information Log in Register",
       "text_length": 432,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "dedba5a97641d5442cae585a79e8eeb1c2a9464883d8ddbb871ef557ac5762f0",
       "previous_excerpt": "| | AICPA & CIMA Loading This site is brought to you by the Association of International Certified Professional Accountants, the global voice of the accounting and finance profession, founded by the American Institute of CPAs and The Chartered Institute of Management Accountants. About | Terms & Conditions | Accessibility | Privacy Policy | Contact | Help | Site Map CA Do Not Sell or Share My Personal Information Log in Register"
@@ -457,7 +457,7 @@
       "fingerprint": "c56732a5579fe11c39adec73a5ed4036719f2338075bb17ce8549b3f8efcf9bc",
       "excerpt": "Getting a License - NASBA Contact Us About Us Careers CPA Exam Applicant Access Your CPA Portal What is a CPA? Applying for the CPA Exam Candidate Guide NASBA CPA Mobile App Exam FAQ Score Information Testing Accommodations FAQ Exam News International Qualification Examination (IQEX) International Education Evaluation (NIES) NIES Requirements NIES Services and Fees NIES FAQ NASBAstore Applicant Resources The NASBA Report on the CPA Exam Accounting Education Research Grants NASBA Center for the P",
       "text_length": 6046,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "c56732a5579fe11c39adec73a5ed4036719f2338075bb17ce8549b3f8efcf9bc",
       "previous_excerpt": "Getting a License - NASBA Contact Us About Us Careers CPA Exam Applicant Access Your CPA Portal What is a CPA? Applying for the CPA Exam Candidate Guide NASBA CPA Mobile App Exam FAQ Score Information Testing Accommodations FAQ Exam News International Qualification Examination (IQEX) International Education Evaluation (NIES) NIES Requirements NIES Services and Fees NIES FAQ NASBAstore Applicant Resources The NASBA Report on the CPA Exam Accounting Education Research Grants NASBA Center for the P"
@@ -482,7 +482,7 @@
       "fingerprint": "59b7777b61f5642f0a103b139c057a42f7403a7b02f72af080ec86a76ebcd96d",
       "excerpt": "Enrolled agents | Internal Revenue Service Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. English Español 中文 (简体) 中文 (繁體) 한국어 Русский Tiếng Việt Kreyòl ayi",
       "text_length": 6131,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "59b7777b61f5642f0a103b139c057a42f7403a7b02f72af080ec86a76ebcd96d",
       "previous_excerpt": "Enrolled agents | Internal Revenue Service Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. English Español 中文 (简体) 中文 (繁體) 한국어 Русский Tiếng Việt Kreyòl ayi"
@@ -501,7 +501,7 @@
         "disclosures"
       ],
       "status": "UNAVAILABLE",
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "error": "HTTPError: HTTP Error 403: Forbidden",
       "previous_fingerprint": null,
       "previous_excerpt": ""
@@ -520,7 +520,7 @@
         "Strategic Professional"
       ],
       "status": "UNAVAILABLE",
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "error": "HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nFound",
       "previous_fingerprint": "5b4866bf7dbedae349f7331c85b98f9c243f66e35ef64ca595fb5ead0d02e34a",
       "previous_excerpt": "ACCA Students | Accountancy Students | ACCA Global The global body for professional accountants About us Search jobs Find an accountant Technical resources Help & support Apply now MyACCA Global Americas Europe Middle East Africa Asia Americas Canada USA Bahamas Barbados Bermuda Cayman Islands Guyana Jamaica OECS Trinidad & Tobago Virgin Islands (British) Europe United Kingdom Ireland Armenia Azerbaijan Belarus Czech Republic Estonia Georgia Hungary Latvia Lithuania Poland Russia Slovakia Ukrain"
@@ -545,7 +545,7 @@
       "fingerprint": "dedba5a97641d5442cae585a79e8eeb1c2a9464883d8ddbb871ef557ac5762f0",
       "excerpt": "| | AICPA & CIMA Loading This site is brought to you by the Association of International Certified Professional Accountants, the global voice of the accounting and finance profession, founded by the American Institute of CPAs and The Chartered Institute of Management Accountants. About | Terms & Conditions | Accessibility | Privacy Policy | Contact | Help | Site Map CA Do Not Sell or Share My Personal Information Log in Register",
       "text_length": 432,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "dedba5a97641d5442cae585a79e8eeb1c2a9464883d8ddbb871ef557ac5762f0",
       "previous_excerpt": "| | AICPA & CIMA Loading This site is brought to you by the Association of International Certified Professional Accountants, the global voice of the accounting and finance profession, founded by the American Institute of CPAs and The Chartered Institute of Management Accountants. About | Terms & Conditions | Accessibility | Privacy Policy | Contact | Help | Site Map CA Do Not Sell or Share My Personal Information Log in Register"
@@ -570,7 +570,7 @@
       "fingerprint": "324573cfb296831af8f7676186a6cebda735f74c6c6a5467b64a06e7a98e2ec3",
       "excerpt": "Jira Cloud support | Jira Cloud | Atlassian Support Skip to main content Jira Cloud Support Apps Documentation Knowledge base Resources Contact us Sign in Sign in Atlassian Support Jira Software Cloud Data Center Jira Cloud support Documentation Get help using and administering apps. View documentation Knowledge Base Find troubleshooting articles. View knowledge base Community Find answers, support, and inspiration from other Atlassian users. Visit Atlassian Community System Status Check the hea",
       "text_length": 1044,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "324573cfb296831af8f7676186a6cebda735f74c6c6a5467b64a06e7a98e2ec3",
       "previous_excerpt": "Jira Cloud support | Jira Cloud | Atlassian Support Skip to main content Jira Cloud Support Apps Documentation Knowledge base Resources Contact us Sign in Sign in Atlassian Support Jira Software Cloud Data Center Jira Cloud support Documentation Get help using and administering apps. View documentation Knowledge Base Find troubleshooting articles. View knowledge base Community Find answers, support, and inspiration from other Atlassian users. Visit Atlassian Community System Status Check the hea"
@@ -595,7 +595,7 @@
       "fingerprint": "8c00376186b404d0beb346e08584b72b32f2bdb5ea321acddeaa8f198643f900",
       "excerpt": "Home | Scrum Guides Navigate to Home Page Dropdown Menu Web Version PDF Versions History Dropdown menu Scrum Guide Revision History Jeff Sutherland Bio Ken Schwaber Bio FAQ Read the official Scrum Guide online Read Online Download the official Scrum Guide PDF in English Download (English) Download the official Scrum Guide in over 30 different languages Select language & Download What is Scrum? Scrum is a framework for developing and sustaining complex products. This Guide contains the definition",
       "text_length": 1325,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "8c00376186b404d0beb346e08584b72b32f2bdb5ea321acddeaa8f198643f900",
       "previous_excerpt": "Home | Scrum Guides Navigate to Home Page Dropdown Menu Web Version PDF Versions History Dropdown menu Scrum Guide Revision History Jeff Sutherland Bio Ken Schwaber Bio FAQ Read the official Scrum Guide online Read Online Download the official Scrum Guide PDF in English Download (English) Download the official Scrum Guide in over 30 different languages Select language & Download What is Scrum? Scrum is a framework for developing and sustaining complex products. This Guide contains the definition"
@@ -620,7 +620,7 @@
       "fingerprint": "51b67096bd7cdef3455a5063245158312e3e2055069ecd034d0dddef0f7fec4e",
       "excerpt": "Database Documentation - Database Documentation Go to main content Toggle navigation Sign Out Sign In Search Oracle AI Database Oracle Autonomous AI Database Oracle Multicloud Related Products Data Integration Oracle GoldenGate Oracle Stream Analytics Oracle Data Integrator Oracle Enterprise Data Quality Other Databases Blockchain Platform Enterprise Edition NoSQL MySQL TimesTen In-Memory Database Database Mobile Server Berkeley DB Java DB Rdb Essbase Big Data Enterprise Manager Search Help Cent",
       "text_length": 2659,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "51b67096bd7cdef3455a5063245158312e3e2055069ecd034d0dddef0f7fec4e",
       "previous_excerpt": "Database Documentation - Database Documentation Go to main content Toggle navigation Sign Out Sign In Search Oracle AI Database Oracle Autonomous AI Database Oracle Multicloud Related Products Data Integration Oracle GoldenGate Oracle Stream Analytics Oracle Data Integrator Oracle Enterprise Data Quality Other Databases Blockchain Platform Enterprise Edition NoSQL MySQL TimesTen In-Memory Database Database Mobile Server Berkeley DB Java DB Rdb Essbase Big Data Enterprise Manager Search Help Cent"
@@ -645,7 +645,7 @@
       "fingerprint": "1ea52cdf068bb78dd3f7148c646b96fc1d8b0587b1fd7cc87fc0ff403aeffe1c",
       "excerpt": "BlackLine: The Agentic Financial Operations Platform™ Platform Industries Customers Why BlackLine Resources Schedule a demo Support login Platform Industries Customers Why BlackLine Resources Schedule a demo Support login The BlackLine Agentic Financial Operations Platform™ ERPs record your past. Our Agentic AI powers you today. Put AI agents to work across Record-to-Report and Invoice-to-Cash, governed at every step, so you get speed, accuracy and control. Schedule a demo See how it works Part ",
       "text_length": 5197,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "1ea52cdf068bb78dd3f7148c646b96fc1d8b0587b1fd7cc87fc0ff403aeffe1c",
       "previous_excerpt": "BlackLine: The Agentic Financial Operations Platform™ Platform Industries Customers Why BlackLine Resources Schedule a demo Support login Platform Industries Customers Why BlackLine Resources Schedule a demo Support login The BlackLine Agentic Financial Operations Platform™ ERPs record your past. Our Agentic AI powers you today. Put AI agents to work across Record-to-Report and Invoice-to-Cash, governed at every step, so you get speed, accuracy and control. Schedule a demo See how it works Part "
@@ -669,7 +669,7 @@
       "fingerprint": "a82d961c066674bb256bf7c72177dd30e3dfbd8d2e90f586b98611d3619fe98a",
       "excerpt": "UiPath Documentation search Search ​ Language translate English expand_more ​ Sign in Learn about agentic automation and orchestration with UiPath Maestro Orchestrate and model agents, robots and people Agents Plan, build and deploy agents IXP Multi-modal data classification and extraction at scale Test Cloud Agentic testing for the enterprise Maestro Orchestrate AI agents, automations, and people across end-to-end processes, to deliver measurable outcomes Learn about Maestro Get started with Ui",
       "text_length": 2751,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "a82d961c066674bb256bf7c72177dd30e3dfbd8d2e90f586b98611d3619fe98a",
       "previous_excerpt": "UiPath Documentation search Search ​ Language translate English expand_more ​ Sign in Learn about agentic automation and orchestration with UiPath Maestro Orchestrate and model agents, robots and people Agents Plan, build and deploy agents IXP Multi-modal data classification and extraction at scale Test Cloud Agentic testing for the enterprise Maestro Orchestrate AI agents, automations, and people across end-to-end processes, to deliver measurable outcomes Learn about Maestro Get started with Ui"
@@ -693,7 +693,7 @@
       "fingerprint": "105a05870e7d18c67e2d0d98f7a655f83b08dea4ea76d4043f675fb26b088d7c",
       "excerpt": "Office Visual Basic for Applications (VBA) reference | Microsoft Learn Skip to main content Skip to Ask Learn chat experience This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Table of contents Exit editor mode Ask Learn Ask Learn Reading mode Table of contents Read in English Add Add to Plans Edit Copy Markdown Print Note Ac",
       "text_length": 2849,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "105a05870e7d18c67e2d0d98f7a655f83b08dea4ea76d4043f675fb26b088d7c",
       "previous_excerpt": "Office Visual Basic for Applications (VBA) reference | Microsoft Learn Skip to main content Skip to Ask Learn chat experience This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Table of contents Exit editor mode Ask Learn Ask Learn Reading mode Table of contents Read in English Add Add to Plans Edit Copy Markdown Print Note Ac"
@@ -717,7 +717,7 @@
       "fingerprint": "99fd166bc7e2efeb3e7239c2b8f3e23fe90958e1faa63c7621d23bf6ffec6eaf",
       "excerpt": "Tableau Desktop Skip to main content Menu Products Toggle sub-navigation for Products Overview Tableau Next Toggle sub-navigation for Tableau Next Tableau Semantics Tableau Cloud Tableau Server Tableau Knowledge Tableau Desktop Latest Release Customers Toggle sub-navigation for Customers Customer Stories Community Stories Solutions Toggle sub-navigation for Solutions By Industry Toggle sub-navigation for By Industry Financial Services Healthcare and Life Sciences Public Sector Retail and Consume",
       "text_length": 5937,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "99fd166bc7e2efeb3e7239c2b8f3e23fe90958e1faa63c7621d23bf6ffec6eaf",
       "previous_excerpt": "Tableau Desktop Skip to main content Menu Products Toggle sub-navigation for Products Overview Tableau Next Toggle sub-navigation for Tableau Next Tableau Semantics Tableau Cloud Tableau Server Tableau Knowledge Tableau Desktop Latest Release Customers Toggle sub-navigation for Customers Customer Stories Community Stories Solutions Toggle sub-navigation for Solutions By Industry Toggle sub-navigation for By Industry Financial Services Healthcare and Life Sciences Public Sector Retail and Consume"
@@ -736,7 +736,7 @@
         "delivery"
       ],
       "status": "UNAVAILABLE",
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "error": "HTTPError: HTTP Error 403: Forbidden",
       "previous_fingerprint": null,
       "previous_excerpt": ""
@@ -760,7 +760,7 @@
       "fingerprint": "0a140ced5a9764e5c9300d1b01e15a8f01f16ab273beee57550b531b27a376e9",
       "excerpt": "Official Microsoft Power Automate documentation - Power Automate | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Microsoft Power Automate documentation Discover how to make the most of Power Automate with online training courses, docs, and videos covering product capabilities and how-t",
       "text_length": 3592,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "0a140ced5a9764e5c9300d1b01e15a8f01f16ab273beee57550b531b27a376e9",
       "previous_excerpt": "Official Microsoft Power Automate documentation - Power Automate | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Microsoft Power Automate documentation Discover how to make the most of Power Automate with online training courses, docs, and videos covering product capabilities and how-t"
@@ -784,7 +784,7 @@
       "fingerprint": "328e1e38d313f4ccbb9e82b556c3d482a238369beeed4e3c46aa576cb794d1d5",
       "excerpt": "Learn how to use Microsoft Copilot | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Microsoft Copilot learning hub for IT Pros and Developers Explore our learning hub designed for IT professionals and developers. Our hub provides in-depth Microsoft Copilot information, helping you under",
       "text_length": 4198,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "328e1e38d313f4ccbb9e82b556c3d482a238369beeed4e3c46aa576cb794d1d5",
       "previous_excerpt": "Learn how to use Microsoft Copilot | Microsoft Learn Skip to main content This browser is no longer supported. Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support. Download Microsoft Edge More info about Internet Explorer and Microsoft Edge Microsoft Copilot learning hub for IT Pros and Developers Explore our learning hub designed for IT professionals and developers. Our hub provides in-depth Microsoft Copilot information, helping you under"
@@ -801,15 +801,15 @@
         "automation",
         "data processing"
       ],
-      "status": "UNCHANGED",
+      "status": "CHANGED — REVIEW REQUIRED",
       "http_status": 200,
       "final_url": "https://www.python.org/downloads/",
       "title": "",
-      "fingerprint": "38b2d31e3e282beb2db83a4a210255c7824e7fdaa188854f3af14b6682c0779a",
-      "excerpt": "�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�}��F��E� 0T�ǎm�\u0003��[=�%K����q�vl�F8@\u0000$!�\u0000 ��j�{#�5���I�d\u0015>�@� ��`\u0003=�Ψ ����SY�'3 ���}+��8�2Z�.���?��2��y���\u000faK[���y��Z��\u0006�[�(h] < ���i_ < �� �?�\u0015��H���\u0013�+����ѩ 3\u0003=�n���V��q���]�f�\u0007�0�\u001b׎��m�ڵ04�p���\u001b��J\u000f-s� < ﵻ{�����Kge�\u000e\\ǳW��#�\u0007[g�/�~�6#�v\"Ǣ\u0019\u0010~\u00119+g\u0003�8�=?�w�`��\u000e�ֵ\b(+w\u0016v־�\u0004��W��\u0004\u0017 �E[\u0006� < �!\u0013Q�t�\bP���#k6�\u001bӱmO�m+�� ���VvcK�U�\u00159��\u000e�a�خ \u0014�V��f�y ��ܮ �N ��� ���U\u0000 ��I𛍁t\u0007\u0014�������&p�ۍ\u000fᷴ���\u0014jo0����r���m|�����[ܷ� Z�h�ߧ�ձ�il�9Rv��(Oӎ4��('�;{��D�� ͼ\u000e�-�=��7�/A�%� �P�s�ēϻz�\u000f]�n�n�h���ί�\u001b�n3/�� \b� < ",
-      "text_length": 13975,
-      "checked_at": "2026-10-19T07:55:31+00:00",
-      "change_preview": "",
+      "fingerprint": "baee428ebfbf1273a6165ba5262a694d2be1cb983b47ed672eb72eebad65762a",
+      "excerpt": "�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�}��F��E� 0T�ǎ��\u0007�-�z�%[����q��؍�p�\u0000HB\"\u0001\u001a\u0000�վ�F�k�����*|T�\u0004\u001bl��\u0006z�Q\u0013\u0004QUY��2Of\u0016��f�Vt�q�e�^] < 9�4ke����� �2����4� ��VQкx�; Ӿx��?��C+p7�f;s'`W���ݕ�S\u001bx��O��Z��������-� < �\u0010���:t鿟�6��l�qq\u0016�O���nZ��l32u�_�������������|S\u0018X�[�(ڄ�: �3W��k����·����f���\u001bo�v������z��r��a\u001b�8�o�\u0007�G�v\"S��f\u0010:���6��\u0013� �\u0004��3���٬\\ˌ\\���JK�|/r < ��]�y���� }�Ϩw7�Lǃ�ȍV��\u0004�ܘ3�\u0019�\u000eF���;͇�\u0019mC}f\u0006z\u0018�JO��L���_����\u000f\"a�7� -��εkah��Ls=7r͕ Z��y�kw���\u0007ӳ���~\u0015��g�n�G�\u000f�Ξ_��`mF��D�E3 �\"rV�\u0006�q�{~��\u0018� = \u001a�k\u0011PV�,�}� < �� \u0007 .:\u0002�� �y�C&�p�",
+      "text_length": 16056,
+      "checked_at": "2026-10-20T07:44:57+00:00",
+      "change_preview": "- �\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�}��F��E� 0T�ǎm�\u0003��[=�%K����q�vl�F8@\u0000$!�\u0000 ��j�{#�5���I�d\u0015>�@� ��`\u0003=�Ψ ����SY�'3 ���}+��8�2Z�.���?��2��y���\u000faK[���y��Z��\u0006�[�(h] < ���i_ < �� �?�\u0015��H���\u0013�+����ѩ 3\u0003=�n���V��q���]�f�\u0007�0�\u001b׎��m�ڵ04�p���\u001b��J\u000f-s� < ﵻ{\n+ �\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�}��F��E� 0T�ǎ��\u0007�-�z�%[����q��؍�p�\u0000HB\"\u0001\u001a\u0000�վ�F�k�����*|T�\u0004\u001bl��\u0006z�Q\u0013\u0004QUY��2Of\u0016��f�Vt�q�e�^] < 9�4ke����� �2����4� ��VQкx�; Ӿx��?��C+p7�f;s'`W���ݕ�S\u001bx��O��Z��������-� < �\u0010���:t鿟�6��l�qq\u0016�O���nZ��l32u�_�������\n- �E[\u0006� < �!\u0013Q�t�\bP���#k6�\u001bӱmO�m+�� ���VvcK�U�\u00159��\u000e�a�خ \u0014�V��f�y ��ܮ �N ��� ���U\u0000 ��I𛍁t\u0007\u0014�������&p�ۍ\u000fᷴ���\u0014jo0����r���m|�����[ܷ� Z�h�ߧ�ձ�il�9Rv��(Oӎ4��('�;{��D�� ͼ\u000e�-�=��7�/A�%� �P�s�ēϻz�\u000f]�n�n�h���ί�\u001b�n3/�� \b� < ��}s�푞ǷVm�\n+ ��hu����$�4�j�\u000fi\u0017�) ?�\u001bƾ�x���\u0001�&'��b�\u0006*�܌����z�Wx\u0018�/�~��p�1w ��aq�M\u0006Ck\u0005�L�`�='�a�1\u0015��\u000f'�f��o4\u0003�ԗ�m;�����\u0010GȄ\u0014nLO۽;�\u0002�#�A��0> �9���˧�Ѩ� �L�����gi6Y\u0013$��� ��))��| ��'.\"���S�~\u0004�./]��d� ��� \u0014�g-�\u0010\u001a܂\u0011,L�y2��t��N�͈�&y�\u0010��\u000f�?N'�\n- L՜$p���i}�\u0012 �?\u000e�I�w\u0018��s\u0004x�I�\u0007 O�{�\u0000I�\blO���-���h��&�[\u0000\u0002P�uw�\"�i}\u000f\u0013 �?6�I�v\u0010��T�\u0013$�O �\u0002�: ۷���6Z�^�\u000f\u0016��Y9f�t�m�y\u0011蚥ब: [Y@�Wm^��!�&p\u0017� G G�.�=�x��\u001ad`ME < �y���k\u0018��՜��\u0004\u0001\u0012���Cs�\u0004%'\u0005p&��$ouh�q@����fYl����#\u0001N�\u0005 < ��\u0000�m�#� ��\u0018�V\n+ \u001b�T;\b@E�� �ݧ\u000f�H�g���[a{s\u001b-}��\u0007�N� 3t:�6ɼ\bt�RpRV ��,�Ы6�}��O\u0013� k�#� �9\u0000XS\u0011O8E ��!�#p\u0017� G Q\\A�);�0>��2�VcV�0K���[��U\u00009����V`�*�o�ֶ�\u0019d�#Sr��q\u0015\u0004/+��dHe��mA���+^\u001b�0LXv�N�I}�\u0014�HjY�ER/RtMr\u001b&r�¤�u |(5E��S��/ < \u0004�T�\u0016NQ��GRW�=�:�\n- ��B\b*\"\bĴq�2�ն*Z\\�ߨ�T���*y�0Oڭ��jZ��{���m��Dq\u0005Ŧ�������t[�Y��,��oyvW\u0001�X�\u0007\u000f[�����yZ��f�m�L���U\u0010��ȏ�!�!��\u0005��\u0003�xm��0a���;�'��S�#�e\u0001\u0016I�H�5�m��u �\u001a�)��\u0014m��Na\"��\u0010hS\u0011[8E�\u0002 I]����\u0014&r�\u0002`�\"�p�:\u0005>�\u0007�����$�Ǳ�J\u0011\u0006 [E��\u0004� ��\u0016'�� \u0007Ԥ�\u0002��\"\n+ 7�F�sc�.���!\u0000\u0015�� �~�@ꊺ���fR%c�8+�N\u0005?w�\u0014`>��®0\u0007����(:(;\u0015 �)�* ?�l���K$�Ƕ�J4 \u0004���;Ab𸾉�$�ǆ;���\u0000T�u\\�U{�Ҹ�)�$��\u0006;���\u0000T�\u001b�\u0014)����dNRl��(;\b@\u0005g�s�=\u0000x\\�3�I� vR��XM�0U��o��*�?�m�0d�� '� ��� ������Ƶ�\u0015�� \u0019�\\᱒\\���4��Ӎk�,�/N\u0011΢�c}��]�\n- < �A���V��U)�5��/�kx\u0017�\u0002�\u0016�G�%��@j��f�� x\u0001H��Z_b�p��\u0002�qk�g�W���8 0�\u0016n���ږ����gǊ����Y�ߦ3\u0005ߺ������W���D����j|��J�׌T\u0013uYa�G��&1j}%�\u001ac9*�Y�\b5\u0011g��Z�p&�i�� �LV�̏���y�0 ���i\"� ߥ�(�ITZ_ ��� ^JU\u0019�jƤ�8+|yB�p&�h}%4��&pWڈ �P\u0019�jƣ�@+|]B�\n+ �~�Y1Ⱦ���Ċ���b���/E� a��� ��\"L���J8��w�\u0018c��� ��bL���J81~�>O�L�՛\u0013��\u00073�?�\u0007�cOf�a0�Lz��̘\u001b\u0006^��@�e��f�А�5C��F�@��V�A6�Z�\u0003\u0010}C\u0011&\u0019k�:c���xq�l�1��'ځ�phX+3 ��\u0002g嘡������M\u001b�1�e�̟�:ɵ�\u0013��ٰ�Euè��\u0006�7\u0014b��f(�������a���\u001a��P�I֚��Z�ep �U�O�3",
       "previous_fingerprint": "38b2d31e3e282beb2db83a4a210255c7824e7fdaa188854f3af14b6682c0779a",
       "previous_excerpt": "�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�}��F��E� 0T�ǎm�\u0003��[=�%K����q�vl�F8@\u0000$!�\u0000 ��j�{#�5���I�d\u0015>�@� ��`\u0003=�Ψ ����SY�'3 ���}+��8�2Z�.���?��2��y���\u000faK[���y��Z��\u0006�[�(h] < ���i_ < �� �?�\u0015��H���\u0013�+����ѩ 3\u0003=�n���V��q���]�f�\u0007�0�\u001b׎��m�ڵ04�p���\u001b��J\u000f-s� < ﵻ{�����Kge�\u000e\\ǳW��#�\u0007[g�/�~�6#�v\"Ǣ\u0019\u0010~\u00119+g\u0003�8�=?�w�`��\u000e�ֵ\b(+w\u0016v־�\u0004��W��\u0004\u0017 �E[\u0006� < �!\u0013Q�t�\bP���#k6�\u001bӱmO�m+�� ���VvcK�U�\u00159��\u000e�a�خ \u0014�V��f�y ��ܮ �N ��� ���U\u0000 ��I𛍁t\u0007\u0014�������&p�ۍ\u000fᷴ���\u0014jo0����r���m|�����[ܷ� Z�h�ߧ�ձ�il�9Rv��(Oӎ4��('�;{��D�� ͼ\u000e�-�=��7�/A�%� �P�s�ēϻz�\u000f]�n�n�h���ί�\u001b�n3/�� \b� < "
     },
@@ -833,7 +833,7 @@
       "fingerprint": "b55ef3435f59e0c8802fded3b9f5282776a5657838f1a991ba4b0630626f83aa",
       "excerpt": "PostgreSQL: Documentation Home About Download Documentation Community Developers Support Donate Your account October 15, 2026: PostgreSQL 19 RC 1 Released! Quick Links Documentation Manuals Archive Release Notes Books Tutorials & Other Resources FAQ Wiki Documentation View the manual Manuals You can view the manual for an older version or download a PDF of a manual from the below table. Online Version PDF Version 19 rc A4 PDF (15.3 MB) • US PDF (15.3 MB) 18 / Current A4 PDF (15.1 MB) • US PDF (1",
       "text_length": 977,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "b55ef3435f59e0c8802fded3b9f5282776a5657838f1a991ba4b0630626f83aa",
       "previous_excerpt": "PostgreSQL: Documentation Home About Download Documentation Community Developers Support Donate Your account October 15, 2026: PostgreSQL 19 RC 1 Released! Quick Links Documentation Manuals Archive Release Notes Books Tutorials & Other Resources FAQ Wiki Documentation View the manual Manuals You can view the manual for an older version or download a PDF of a manual from the below table. Online Version PDF Version 19 rc A4 PDF (15.3 MB) • US PDF (15.3 MB) 18 / Current A4 PDF (15.1 MB) • US PDF (1"
@@ -851,15 +851,15 @@
         "listening",
         "conversation"
       ],
-      "status": "UNCHANGED",
+      "status": "CHANGED — REVIEW REQUIRED",
       "http_status": 200,
       "final_url": "https://learngerman.dw.com/en/learn-german/s-9528",
       "title": "LEARN GERMAN",
-      "fingerprint": "6548aa050d24494176bd7b208616c4db19502bd00050efec30ed3a86281f105d",
-      "excerpt": "LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teachers there are te",
-      "text_length": 3011,
-      "checked_at": "2026-10-19T07:55:31+00:00",
-      "change_preview": "",
+      "fingerprint": "e04799eef3f39c729a121ae3846831ff4d27281b293a3deb7b415dd53a51fff6",
+      "excerpt": "LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache",
+      "text_length": 3026,
+      "checked_at": "2026-10-20T07:44:57+00:00",
+      "change_preview": "- Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language\n+ Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language",
       "previous_fingerprint": "6548aa050d24494176bd7b208616c4db19502bd00050efec30ed3a86281f105d",
       "previous_excerpt": "LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teachers there are te"
     },
@@ -877,7 +877,7 @@
         "listening"
       ],
       "status": "UNAVAILABLE",
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "error": "HTTPError: HTTP Error 403: Forbidden",
       "previous_fingerprint": null,
       "previous_excerpt": ""
@@ -899,12 +899,12 @@
       "http_status": 200,
       "final_url": "https://apprendre.tv5monde.com/fr",
       "title": "Apprendre le français FLE gratuitement, cours de français avec TV5MONDE",
-      "fingerprint": "9e1caac889c0dcd3c7f5574c8f77e1818fae5fb98aaf2cb6f92a053434332b7d",
+      "fingerprint": "f8cd8a4602b491fcff8b8496a465557417b15894fd05c9d1134ddfdb52e4551b",
       "excerpt": "Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i",
       "text_length": 6709,
-      "checked_at": "2026-10-19T07:55:31+00:00",
-      "change_preview": "- français, du niveau débutant au niveau avancé. Recommandé DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et li\n+ français, du niveau débutant au niveau avancé. Recommandé Les expressions d'Archibald Faire le cacou, motamoter ou\n- veut dire ? Archibald vous dit tout ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur\n+ veut dire ? Archibald vous dit tout ! Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Emblèmes Belgique Le coq hardi, le chant des Wall\n- N'achetez plus vos classiques, lisez-les sur tablette ! TV5MONDE+ Regardez des films, des séries et des\n+ N'achetez plus vos classiques, lisez-les sur tablette ! La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! APPRENDRE EV@LANG Quel est votre niveau à l'écrit \n- langues et disponible partout dans le monde ! Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité... Découvrez les emblèmes de la République française Serious game Jouez à « Datak » et\n+ langues et disponible partout dans le monde ! Serious game Jouez à « Datak » et\n- et devenez un pro du big data ! Partenaires Apprenez le français plus facilement avec l’application\n+ et devenez un pro du big data ! Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. DDF, le Dictionnaire des francophones Participez au Dictionnai",
-      "previous_fingerprint": "799d8afa29f7f4f1352c29c223e5716ae9b19c3fe53174f552f0ac7193f55d7f",
+      "checked_at": "2026-10-20T07:44:57+00:00",
+      "change_preview": "- français, du niveau débutant au niveau avancé. Recommandé Les expressions d'Archibald Faire le cacou, motamoter ou\n+ français, du niveau débutant au niveau avancé. Recommandé Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. La famille tout écran Une famille co\n- veut dire ? Archibald vous dit tout ! Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Emblèmes Belgique Le coq hardi, le chant des\n+ veut dire ? Archibald vous dit tout ! Emblèmes Belgique Le coq hardi, le chant des\n- gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! La famille tout écran Une famille connectée et un peu dépassée dans la g\n+ gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Quèsaco Sur un ton\n- votre niveau à l'écrit et à l'oral en français ? Testez gratuitement vos compétences grâce à l'application APPRENDRE EV@LANG, conçue par l’AUF et France Éducation International. Emblèmes France La Marseillaise, le coq, L\n+ font du français une langue vivante et en constante évolution. Quèsaco Sur un ton décalé, drôle et moderne,\n- questions que l'on se pose devant une peinture. Partenaires Apprenez le français plus facilement avec l’application\n+ questions que l'on se pose devant une peinture. Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité... Découvrez les emblème",
+      "previous_fingerprint": "9e1caac889c0dcd3c7f5574c8f77e1818fae5fb98aaf2cb6f92a053434332b7d",
       "previous_excerpt": "Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i"
     },
     {
@@ -926,7 +926,7 @@
       "fingerprint": "1f304e541531a76690b2e3cbd9c800800ef2c903049851514d470f1888a2426c",
       "excerpt": "Bonjour ! - Lawless French - Online French Learning French lessons and language tools from Laura K Lawless Chatbot Cool Tools Pronommeur Subjunctivisor Verb Deconjugator Verb Tables Daily Practice FAQ French 101 P w LF Search Welcome! About LKL Beyond Lawless French French Essentials French for Beginners Frequently Asked Questions Independent Study Lessons by Level Log in Online Learning Tips Relearning French Sitemap Subscribe to Lawless French Support LF Teachers’ Tips and Tools The Fine Print",
       "text_length": 4500,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "1f304e541531a76690b2e3cbd9c800800ef2c903049851514d470f1888a2426c",
       "previous_excerpt": "Bonjour ! - Lawless French - Online French Learning French lessons and language tools from Laura K Lawless Chatbot Cool Tools Pronommeur Subjunctivisor Verb Deconjugator Verb Tables Daily Practice FAQ French 101 P w LF Search Welcome! About LKL Beyond Lawless French French Essentials French for Beginners Frequently Asked Questions Independent Study Lessons by Level Log in Online Learning Tips Relearning French Sitemap Subscribe to Lawless French Support LF Teachers’ Tips and Tools The Fine Print"
@@ -950,7 +950,7 @@
       "fingerprint": "6da7d2971b5dc60cf38b2b997db23c49850dbdc53d0fc79b37e8ba79cdc65fc1",
       "excerpt": "¡Hola! - Lawless Spanish - Online Spanish Learning Spanish lessons and language tools from Laura K Lawless Chatbot Cool Tools Subjunctivisor Verb Deconjugator Verb Tables Daily Practice FAQ P w LS Search Spanish 101 Subscribe Welcome! About Laura K Lawless Log in to PwLS Privacy Policy Q+A Forum Relearning Spanish Sitemap Spanish Essentials Spanish for Beginners Spanish for Travelers Spanish-Speaking Countries Teachers’ Tips and Tools What’s New ¡Hola! y bienvenidos a Lawless Spanish , a free re",
       "text_length": 3549,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "6da7d2971b5dc60cf38b2b997db23c49850dbdc53d0fc79b37e8ba79cdc65fc1",
       "previous_excerpt": "¡Hola! - Lawless Spanish - Online Spanish Learning Spanish lessons and language tools from Laura K Lawless Chatbot Cool Tools Subjunctivisor Verb Deconjugator Verb Tables Daily Practice FAQ P w LS Search Spanish 101 Subscribe Welcome! About Laura K Lawless Log in to PwLS Privacy Policy Q+A Forum Relearning Spanish Sitemap Spanish Essentials Spanish for Beginners Spanish for Travelers Spanish-Speaking Countries Teachers’ Tips and Tools What’s New ¡Hola! y bienvenidos a Lawless Spanish , a free re"
@@ -968,15 +968,9 @@
         "French-English",
         "idioms"
       ],
-      "status": "UNCHANGED",
-      "http_status": 200,
-      "final_url": "https://www.wordreference.com/",
-      "title": "English to French, Italian, German & Spanish Dictionary - WordReference.com",
-      "fingerprint": "5cd2847c8f80240b1fce2e6ae9814ff66cfe307cb02820d85dd8e864433f5594",
-      "excerpt": "English to French, Italian, German & Spanish Dictionary - WordReference.com Language Forums Direct Links to English Dictionaries Spanish-English dictionary French: Dictionnaire anglais-français Italian: Dizionario inglese-italiano Portuguese: Dicionário inglês-português German: Wörterbuch Englisch-Deutsch Dutch: Engels-Nederlands Woordenboek Swedish: Engelsk-Svenska Ordbok Icelandic: Ensk-íslensk orðabók Russian: Англо-русский словарь Polish: Słownik angielsko-polski Romanian: Dicţionar englez-r",
-      "text_length": 3905,
-      "checked_at": "2026-10-19T07:55:31+00:00",
-      "change_preview": "",
+      "status": "UNAVAILABLE",
+      "checked_at": "2026-10-20T07:44:57+00:00",
+      "error": "HTTPError: HTTP Error 418: ",
       "previous_fingerprint": "5cd2847c8f80240b1fce2e6ae9814ff66cfe307cb02820d85dd8e864433f5594",
       "previous_excerpt": "English to French, Italian, German & Spanish Dictionary - WordReference.com Language Forums Direct Links to English Dictionaries Spanish-English dictionary French: Dictionnaire anglais-français Italian: Dizionario inglese-italiano Portuguese: Dicionário inglês-português German: Wörterbuch Englisch-Deutsch Dutch: Engels-Nederlands Woordenboek Swedish: Engelsk-Svenska Ordbok Icelandic: Ensk-íslensk orðabók Russian: Англо-русский словарь Polish: Słownik angielsko-polski Romanian: Dicţionar englez-r"
     },
@@ -996,12 +990,12 @@
       "http_status": 200,
       "final_url": "https://www.dict.cc/",
       "title": "dict.cc | Wörterbuch Englisch-Deutsch",
-      "fingerprint": "938e60a075d38e9bae377a72023e09a34d77283f57dd91a2fbf22535a12400f0",
+      "fingerprint": "ba82642ab66318f1ddd3474f6cab0bc246223ed3f5c0af0ad0e2c7efd450a7c2",
       "excerpt": "dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL",
-      "text_length": 7237,
-      "checked_at": "2026-10-19T07:55:31+00:00",
-      "change_preview": "- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.074 Übersetzungen – 2.820 neu – 99,8% verifiziert Zeit\n+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.111 Übersetzungen – 2.826 neu – 99,8% verifiziert Zeit\n- | Z Zuletzt verifizierte Übersetzungen 1.319.074 Übersetzungen – 2.820 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft\n+ | Z Zuletzt verifizierte Übersetzungen 1.319.111 Übersetzungen – 2.826 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft\n- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:36 successor rulers nachfolgende Herrscher {pl} pol jpx\n+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:37 to get sth. out of sth. etw. aus etw. [Dat.] hervorlangen [ugs.] [herausnehmen] pol Nem 07:36 to make an exemption from sth. eine\n- 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:36 successor rulers nachfolgende Herrscher {pl} pol jpx 07:36 unceremonious {adj} [manner] barsch [Umgangston,\n+ etw. [Dat.] hervorlangen [ugs.] [herausnehmen] pol Nem 07:36 to make an exemption from sth. eine Ausnahme von etw. [Dat.] machen [Regelung, Bestimmung, Beschränkung] pol Nem 07:36 drugs med. sb. odeed on\n- von 07:36 successor rulers nachfolgende Herrscher {pl} pol jpx 07:36 unceremonious {adj} [manner] barsch [Umgangston, Verhalten] pol\n+ von etw. [Dat.] machen [Regelung, Bestimmung, Beschränkung] pol Nem 07:36 drugs med. sb. odeed on sth. [coll.]",
-      "previous_fingerprint": "da6a55da44d90a2af401cbb4519f8c9f787ebd19d3447c99c62dbc787260b8d4",
+      "text_length": 7183,
+      "checked_at": "2026-10-20T07:44:57+00:00",
+      "change_preview": "- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.111 Übersetzungen – 2.826 neu – 99,8% verifiziert Zeit\n+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.132 Übersetzungen – 2.812 neu – 99,8% verifiziert Zeit\n- | Z Zuletzt verifizierte Übersetzungen 1.319.111 Übersetzungen – 2.826 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft\n+ | Z Zuletzt verifizierte Übersetzungen 1.319.132 Übersetzungen – 2.812 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft\n- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:37 to get sth. out of sth. etw. aus\n+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:01 journ. publ. syndication Syndikation {f} [Veröffentlichung in mehreren Zeitungen zugleich] eve 07:51 biol. voice characteristics Stimmeigenschaften {pl} pol jpx\n- verifiziert Zeit Englisch Deutsch Geprüft von 07:37 to get sth. out of sth. etw. aus etw. [Dat.] hervorlangen [ugs.] [herausnehmen] pol Nem 07:36 to make an\n+ pol jpx 07:50 travelling from one place to the other Hin- und Hergereise {n} [ugs.] [leicht pej.] [zwischen zwei Orten] pol jpx\n- of sth. etw. aus etw. [Dat.] hervorlangen [ugs.] [herausnehmen] pol Nem 07:36 to make an exemption from\n+ to the other Hin- und Hergereise {n} [ugs.] [leicht pej.] [zwischen zwei Orten] pol jpx 07:50 to be indiscernible from sth.",
+      "previous_fingerprint": "938e60a075d38e9bae377a72023e09a34d77283f57dd91a2fbf22535a12400f0",
       "previous_excerpt": "dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL"
     },
     {
@@ -1020,7 +1014,7 @@
         "French"
       ],
       "status": "UNAVAILABLE",
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "error": "HTTPError: HTTP Error 403: Forbidden",
       "previous_fingerprint": null,
       "previous_excerpt": ""
@@ -1046,7 +1040,7 @@
       "fingerprint": "eb33e5e0c13eb5997d5b9cdc11ced65462855bab58545c98c1bf9481e22980d1",
       "excerpt": "YouTube Easy Languages - YouTube",
       "text_length": 32,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "eb33e5e0c13eb5997d5b9cdc11ced65462855bab58545c98c1bf9481e22980d1",
       "previous_excerpt": "YouTube Easy Languages - YouTube"
@@ -1065,7 +1059,7 @@
         "pronunciation"
       ],
       "status": "UNAVAILABLE",
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "error": "HTTPError: HTTP Error 403: Forbidden",
       "previous_fingerprint": null,
       "previous_excerpt": ""
@@ -1083,15 +1077,9 @@
         "risk governance",
         "risk assurance"
       ],
-      "status": "UNCHANGED",
-      "http_status": 200,
-      "final_url": "https://www.theirm.org/qualifications/",
-      "title": "IRM Qualifications | Risk Management Qualifications | Certificates and Diploma",
-      "fingerprint": "5f5eef1005c6cea6bb5ea15a959aaa9e5c2104ad1e0c1d57e605588febb37e46",
-      "excerpt": "IRM Qualifications | Risk Management Qualifications | Certificates and Diploma Join Our Free Mailing Lists Sign up to our free mailing lists today to get the latest risk management updates straight to your inbox. Options include: Qualifications updates Training opportunities Event announcements Membership news Subscribe Now Search IRM Login Email address / Username Password Forgotten your password? Forgotten your username? Login Username is required Password is required Not Registered? Register ",
-      "text_length": 6514,
-      "checked_at": "2026-10-19T07:55:31+00:00",
-      "change_preview": "",
+      "status": "UNAVAILABLE",
+      "checked_at": "2026-10-20T07:44:57+00:00",
+      "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>",
       "previous_fingerprint": "5f5eef1005c6cea6bb5ea15a959aaa9e5c2104ad1e0c1d57e605588febb37e46",
       "previous_excerpt": "IRM Qualifications | Risk Management Qualifications | Certificates and Diploma Join Our Free Mailing Lists Sign up to our free mailing lists today to get the latest risk management updates straight to your inbox. Options include: Qualifications updates Training opportunities Event announcements Membership news Subscribe Now Search IRM Login Email address / Username Password Forgotten your password? Forgotten your username? Login Username is required Password is required Not Registered? Register "
     },
@@ -1116,7 +1104,7 @@
       "fingerprint": "743771fa81d28abbbdcde4db2678e90c0fd2cc1df5734107f4fac983a4524fce",
       "excerpt": "Certified Internal Auditor | Global Internal Audit Certification | The IIA Skip to Content Membership Show sub pages for Membership Join Now Membership Benefits Executive Membership Student Membership & Resources Group Membership Frequently Asked Questions Renew Your Membership IPPF & Standards Show sub pages for IPPF & Standards Global Internal Audit Standards Topical Requirements Global Guidance Audit Tools Related Content Risk Management Content Ethics & Professionalism Governance & Due Proce",
       "text_length": 24328,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "743771fa81d28abbbdcde4db2678e90c0fd2cc1df5734107f4fac983a4524fce",
       "previous_excerpt": "Certified Internal Auditor | Global Internal Audit Certification | The IIA Skip to Content Membership Show sub pages for Membership Join Now Membership Benefits Executive Membership Student Membership & Resources Group Membership Frequently Asked Questions Renew Your Membership IPPF & Standards Show sub pages for IPPF & Standards Global Internal Audit Standards Topical Requirements Global Guidance Audit Tools Related Content Risk Management Content Ethics & Professionalism Governance & Due Proce"
@@ -1141,7 +1129,7 @@
       "fingerprint": "4d91368bb03d566707ca6fb9a214333d3e125299686ef83347c6562e23617e65",
       "excerpt": "Certification in Risk Management Assurance CRMA | The IIA Skip to Content Membership Show sub pages for Membership Join Now Membership Benefits Executive Membership Student Membership & Resources Group Membership Frequently Asked Questions Renew Your Membership IPPF & Standards Show sub pages for IPPF & Standards Global Internal Audit Standards Topical Requirements Global Guidance Audit Tools Related Content Risk Management Content Ethics & Professionalism Governance & Due Process Frequently Ask",
       "text_length": 13345,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "4d91368bb03d566707ca6fb9a214333d3e125299686ef83347c6562e23617e65",
       "previous_excerpt": "Certification in Risk Management Assurance CRMA | The IIA Skip to Content Membership Show sub pages for Membership Join Now Membership Benefits Executive Membership Student Membership & Resources Group Membership Frequently Asked Questions Renew Your Membership IPPF & Standards Show sub pages for IPPF & Standards Global Internal Audit Standards Topical Requirements Global Guidance Audit Tools Related Content Risk Management Content Ethics & Professionalism Governance & Due Process Frequently Ask"
@@ -1166,7 +1154,7 @@
       "fingerprint": "2a35889dba90584e1f07b49419954fca1a693f9f54f6d13de09501500de0b1eb",
       "excerpt": "CISM® Exam Content Outline Your voice, Your ISACA: Cast your vote related to ISACA's governance and bylaws update now. Back Shop Cart () Get support Sign In Credentialing Membership Enterprise Partnerships Training and Events Resources Need help? Get support © 2026 ISACA Certifications CISA – Certified Information Systems Auditor AAIA – Advanced in AI Audit CISM – Certified Information Security Manager AAISM – Advanced in AI Security Management CRISC – Certified in Risk and Information Systems C",
       "text_length": 14230,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "2a35889dba90584e1f07b49419954fca1a693f9f54f6d13de09501500de0b1eb",
       "previous_excerpt": "CISM® Exam Content Outline Your voice, Your ISACA: Cast your vote related to ISACA's governance and bylaws update now. Back Shop Cart () Get support Sign In Credentialing Membership Enterprise Partnerships Training and Events Resources Need help? Get support © 2026 ISACA Certifications CISA – Certified Information Systems Auditor AAIA – Advanced in AI Audit CISM – Certified Information Security Manager AAISM – Advanced in AI Security Management CRISC – Certified in Risk and Information Systems C"
@@ -1190,7 +1178,7 @@
       "fingerprint": "3d792bda4c097bbc2ebc7e7d3af8ad6f994a1afdeb5925e40a80afb3363c766d",
       "excerpt": "OpenStax",
       "text_length": 8,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "3d792bda4c097bbc2ebc7e7d3af8ad6f994a1afdeb5925e40a80afb3363c766d",
       "previous_excerpt": "OpenStax"
@@ -1214,7 +1202,7 @@
       "fingerprint": "5af7a0aca43f40bfe04df79663ad64f361778578304c7f662e27d4e643f5c493",
       "excerpt": "Home - Business LibreTexts Skip to main content Table of Contents menu search Search build_circle Toolbar fact_check Homework cancel Exit Reader Mode school Campus Bookshelves menu_book Bookshelves perm_media Learning Objects login Login how_to_reg Request Instructor Account hub Instructor Commons Search Search this book Submit Search x Text Color Reset Bright Blues Gray Inverted Text Size Reset + - Margin Size Reset + - Font Type Enable Dyslexic Font Downloads expand_more Download Page (PDF) Do",
       "text_length": 7807,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "5af7a0aca43f40bfe04df79663ad64f361778578304c7f662e27d4e643f5c493",
       "previous_excerpt": "Home - Business LibreTexts Skip to main content Table of Contents menu search Search build_circle Toolbar fact_check Homework cancel Exit Reader Mode school Campus Bookshelves menu_book Bookshelves perm_media Learning Objects login Login how_to_reg Request Instructor Account hub Instructor Commons Search Search this book Submit Search x Text Color Reset Bright Blues Gray Inverted Text Size Reset + - Margin Size Reset + - Font Type Enable Dyslexic Font Downloads expand_more Download Page (PDF) Do"
@@ -1238,7 +1226,7 @@
       "fingerprint": "8477de4ef4954e27499c40108f79832e3af264fc17d12d3af1af9b5480e19ee0",
       "excerpt": "MIT OpenCourseWare | Free Online Course Materials menu Give Now About OCW Help & Faqs Contact Us GIVE NOW about ocw help & faqs contact us Discover courses, materials, & teaching resources Search Search Explore OR Explore Are you new to OCW? Get Started Looking for teaching materials? Educators Start Here Unlocking knowledge, Empowering Minds. Free lecture notes, exams, and videos from MIT. No registration required. Learn More about the OCW mission keyboard_arrow_left Previous MIT Learn: \"a whol",
       "text_length": 449768,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "Fingerprint changed, but no word-level difference was isolated.",
       "previous_fingerprint": "369eb62782034e8f712b4444dab35ee2c49c0e438e0e4ffac856c60430e8c090",
       "previous_excerpt": "MIT OpenCourseWare | Free Online Course Materials menu Give Now About OCW Help & Faqs Contact Us GIVE NOW about ocw help & faqs contact us Discover courses, materials, & teaching resources Search Search Explore OR Explore Are you new to OCW? Get Started Looking for teaching materials? Educators Start Here Unlocking knowledge, Empowering Minds. Free lecture notes, exams, and videos from MIT. No registration required. Learn More about the OCW mission keyboard_arrow_left Previous MIT Learn: \"a whol"
@@ -1256,7 +1244,7 @@
         "management"
       ],
       "status": "UNAVAILABLE",
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "error": "HTTPError: HTTP Error 403: Forbidden",
       "previous_fingerprint": null,
       "previous_excerpt": ""
@@ -1280,7 +1268,7 @@
       "fingerprint": "5707ac619ee850c6a31959ac5474d99b0a8fa62fed699dee9c53017fc154fa48",
       "excerpt": "Home | Saylor University Skip to main content Side panel Home Main Site Courses & Programs All Categories Arts and Humanities Business Administration Computer Science English as a Second Language Professional Development Science and Mathematics Social Sciences Specialization Programs Degree Programs Help Help Center & FAQ 文A Translate Verify Certificate More Log in Saylor University Drag your blocks to here. Blocks Your Pace. Your Path. Your University. 100% Online · Self-Paced · Tuition Free · ",
       "text_length": 2428,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "5707ac619ee850c6a31959ac5474d99b0a8fa62fed699dee9c53017fc154fa48",
       "previous_excerpt": "Home | Saylor University Skip to main content Side panel Home Main Site Courses & Programs All Categories Arts and Humanities Business Administration Computer Science English as a Second Language Professional Development Science and Mathematics Social Sciences Specialization Programs Degree Programs Help Help Center & FAQ 文A Translate Verify Certificate More Log in Saylor University Drag your blocks to here. Blocks Your Pace. Your Path. Your University. 100% Online · Self-Paced · Tuition Free · "
@@ -1304,7 +1292,7 @@
       "fingerprint": "8ec7caf9e2bde63e06c15dd7587a189c00b45158d7899e4260fc5653ad931da5",
       "excerpt": "Client Challenge A required part of this site couldn’t load. This may be due to a browser extension, network issues, or browser settings. Please check your connection, disable any ad blockers, or try using a different browser.",
       "text_length": 226,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "8ec7caf9e2bde63e06c15dd7587a189c00b45158d7899e4260fc5653ad931da5",
       "previous_excerpt": "Client Challenge A required part of this site couldn’t load. This may be due to a browser extension, network issues, or browser settings. Please check your connection, disable any ad blockers, or try using a different browser."
@@ -1328,7 +1316,7 @@
       "fingerprint": "c6efe4e5b59616ec384aa4a77183d179870d0457a94cbb20cc9342e2b67dfec7",
       "excerpt": "SQLBolt - Learn SQL - Introduction to SQL SQL Bolt Learn SQL with simple, interactive exercises. Interactive Tutorial More Topics All Lessons Introduction to SQL SQL Lesson 1: SELECT queries 101 SQL Lesson 2: Queries with constraints (Pt. 1) SQL Lesson 3: Queries with constraints (Pt. 2) SQL Lesson 4: Filtering and sorting Query results SQL Review: Simple SELECT Queries SQL Lesson 6: Multi-table queries with JOINs SQL Lesson 7: OUTER JOINs SQL Lesson 8: A short note on NULLs SQL Lesson 9: Querie",
       "text_length": 3960,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "c6efe4e5b59616ec384aa4a77183d179870d0457a94cbb20cc9342e2b67dfec7",
       "previous_excerpt": "SQLBolt - Learn SQL - Introduction to SQL SQL Bolt Learn SQL with simple, interactive exercises. Interactive Tutorial More Topics All Lessons Introduction to SQL SQL Lesson 1: SELECT queries 101 SQL Lesson 2: Queries with constraints (Pt. 1) SQL Lesson 3: Queries with constraints (Pt. 2) SQL Lesson 4: Filtering and sorting Query results SQL Review: Simple SELECT Queries SQL Lesson 6: Multi-table queries with JOINs SQL Lesson 7: OUTER JOINs SQL Lesson 8: A short note on NULLs SQL Lesson 9: Querie"
@@ -1353,7 +1341,7 @@
       "fingerprint": "40def2c5b9fa8754b8cf4d0f041cfcb9cd9bbdcad0ae8a33306597854e1278f6",
       "excerpt": "Learn Python, Data Viz, Pandas & More | Tutorials | Kaggle",
       "text_length": 58,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "40def2c5b9fa8754b8cf4d0f041cfcb9cd9bbdcad0ae8a33306597854e1278f6",
       "previous_excerpt": "Learn Python, Data Viz, Pandas & More | Tutorials | Kaggle"
@@ -1377,7 +1365,7 @@
       "fingerprint": "52072752456130901d81245db236a3817e73fd13a2dd98ce0f501ecdef72defc",
       "excerpt": "Free Training Videos - Skip to main content Menu Products Toggle sub-navigation for Products Overview Tableau Next Toggle sub-navigation for Tableau Next Tableau Semantics Tableau Cloud Tableau Server Tableau Knowledge Tableau Desktop Latest Release Customers Toggle sub-navigation for Customers Customer Stories Community Stories Solutions Toggle sub-navigation for Solutions By Industry Toggle sub-navigation for By Industry Financial Services Healthcare and Life Sciences Public Sector Retail and ",
       "text_length": 5563,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "52072752456130901d81245db236a3817e73fd13a2dd98ce0f501ecdef72defc",
       "previous_excerpt": "Free Training Videos - Skip to main content Menu Products Toggle sub-navigation for Products Overview Tableau Next Toggle sub-navigation for Tableau Next Tableau Semantics Tableau Cloud Tableau Server Tableau Knowledge Tableau Desktop Latest Release Customers Toggle sub-navigation for Customers Customer Stories Community Stories Solutions Toggle sub-navigation for Solutions By Industry Toggle sub-navigation for By Industry Financial Services Healthcare and Life Sciences Public Sector Retail and "
@@ -1401,7 +1389,7 @@
       "fingerprint": "2fe2e06208a1f1cef341549a773b2440d02783abf5a034b913aa55bac5ec072e",
       "excerpt": "Learn SAP skills | SAP Learning What would you like to learn today? SAP AI Adoption Learning Week - Recordings now available Missed SAP AI Adoption and Learning Week? Watch all session recordings on demand and learn AI with SAP Experts View recordings Curated content to match your learning journey Partners Access learning resources tailored exclusively for our partner ecosystem Students Career‑boosting skills for IT, tech, and business students. Learning managers Enable effective SAP skills deve",
       "text_length": 614,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "2fe2e06208a1f1cef341549a773b2440d02783abf5a034b913aa55bac5ec072e",
       "previous_excerpt": "Learn SAP skills | SAP Learning What would you like to learn today? SAP AI Adoption Learning Week - Recordings now available Missed SAP AI Adoption and Learning Week? Watch all session recordings on demand and learn AI with SAP Experts View recordings Curated content to match your learning journey Partners Access learning resources tailored exclusively for our partner ecosystem Students Career‑boosting skills for IT, tech, and business students. Learning managers Enable effective SAP skills deve"
@@ -1425,7 +1413,7 @@
       "fingerprint": "2a35889dba90584e1f07b49419954fca1a693f9f54f6d13de09501500de0b1eb",
       "excerpt": "CISM® Exam Content Outline Your voice, Your ISACA: Cast your vote related to ISACA's governance and bylaws update now. Back Shop Cart () Get support Sign In Credentialing Membership Enterprise Partnerships Training and Events Resources Need help? Get support © 2026 ISACA Certifications CISA – Certified Information Systems Auditor AAIA – Advanced in AI Audit CISM – Certified Information Security Manager AAISM – Advanced in AI Security Management CRISC – Certified in Risk and Information Systems C",
       "text_length": 14230,
-      "checked_at": "2026-10-19T07:55:31+00:00",
+      "checked_at": "2026-10-20T07:44:57+00:00",
       "change_preview": "",
       "previous_fingerprint": "2a35889dba90584e1f07b49419954fca1a693f9f54f6d13de09501500de0b1eb",
       "previous_excerpt": "CISM® Exam Content Outline Your voice, Your ISACA: Cast your vote related to ISACA's governance and bylaws update now. Back Shop Cart () Get support Sign In Credentialing Membership Enterprise Partnerships Training and Events Resources Need help? Get support © 2026 ISACA Certifications CISA – Certified Information Systems Auditor AAIA – Advanced in AI Audit CISM – Certified Information Security Manager AAISM – Advanced in AI Security Management CRISC – Certified in Risk and Information Systems C"
