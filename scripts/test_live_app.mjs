@@ -110,6 +110,33 @@ try {
       check(!overlap, viewport.name + ': global search does not overlap the stopwatch', JSON.stringify({searchBox,timerBox}));
     } else check(false, viewport.name + ': search and stopwatch have measurable layout boxes');
 
+    // Verify the app shell can reopen when the browser is offline after a successful visit.
+    const workerReady = await page.evaluate(async () => {
+      if (!('serviceWorker' in navigator)) return false;
+      try {
+        const registration = await navigator.serviceWorker.ready;
+        return !!registration.active;
+      } catch { return false; }
+    }).catch(() => false);
+    check(workerReady, viewport.name + ': service worker becomes active');
+    if (workerReady) {
+      await page.reload({ waitUntil: 'networkidle', timeout: 60000 }).catch(() => {});
+      const controlled = await page.evaluate(() => !!navigator.serviceWorker?.controller).catch(() => false);
+      check(controlled, viewport.name + ': page is controlled by the service worker');
+      const shellCached = await page.evaluate(async () => !!(await caches.match('./index.html'))).catch(() => false);
+      check(shellCached, viewport.name + ': offline app shell is cached');
+      if (controlled && shellCached) {
+        await context.setOffline(true);
+        let offlineLoaded = false;
+        try {
+          await page.goto(base + '/index.html?offline-e2e=' + Date.now(), { waitUntil: 'domcontentloaded', timeout: 15000 });
+          offlineLoaded = await visible(page, 'h1') && (await page.locator('h1').innerText()).includes('Study Desk');
+        } catch {}
+        check(offlineLoaded, viewport.name + ': Study Desk opens from cache while offline');
+        await context.setOffline(false);
+      }
+    }
+
     check(pageErrors.length === 0, viewport.name + ': no uncaught browser/console errors', pageErrors.join(' | '));
     await context.close();
   }
