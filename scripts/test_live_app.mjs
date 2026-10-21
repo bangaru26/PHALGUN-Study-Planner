@@ -137,7 +137,7 @@ try {
         await context.setOffline(false);
         // Cache a second navigation target, then prove offline routing returns that page,
         // not the Study Desk index shell accidentally stored under every navigation.
-        const dictionaryUrl = base + '/dictionary.html?offline-cache-e2e=' + Date.now();
+        const dictionaryUrl = base + '/dictionary.html';
         await page.goto(dictionaryUrl, { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
         await page.locator('h1').waitFor({ state: 'visible', timeout: 10000 }).catch(() => {});
         const dictionaryHeading = await page.locator('h1').innerText().catch(() => '');
@@ -152,7 +152,8 @@ try {
             await page.locator('h1').waitFor({ state: 'visible', timeout: 5000 });
             dictionaryOffline = (await page.locator('h1').innerText()).includes('Subject Dictionary');
           } catch {}
-          check(dictionaryOffline, viewport.name + ': offline navigation returns cached dictionary page');
+          check(dictionaryOffline, viewport.name + ': offline navigation returns cached dictionary page',
+            JSON.stringify({ url: page.url(), heading: await page.locator('h1').innerText().catch(() => ''), body: (await page.locator('body').innerText().catch(() => '')).slice(0, 180) }));
           await context.setOffline(false);
         }
       }
