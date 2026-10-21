@@ -135,6 +135,21 @@ try {
         } catch {}
         check(offlineLoaded, viewport.name + ': Study Desk opens from cache while offline');
         await context.setOffline(false);
+        // Cache a second navigation target, then prove offline routing returns that page,
+        // not the Study Desk index shell accidentally stored under every navigation.
+        await page.goto(base + '/dictionary.html', { waitUntil: 'networkidle', timeout: 60000 }).catch(() => {});
+        const dictionaryOnline = await visible(page, 'h1') && (await page.locator('h1').innerText()).includes('Subject Dictionary');
+        check(dictionaryOnline, viewport.name + ': dictionary page loads online before offline test');
+        if (dictionaryOnline) {
+          await context.setOffline(true);
+          let dictionaryOffline = false;
+          try {
+            await page.goto(base + '/dictionary.html', { waitUntil: 'domcontentloaded', timeout: 15000 });
+            dictionaryOffline = await visible(page, 'h1') && (await page.locator('h1').innerText()).includes('Subject Dictionary');
+          } catch {}
+          check(dictionaryOffline, viewport.name + ': offline navigation returns cached dictionary page');
+          await context.setOffline(false);
+        }
       }
     }
 
