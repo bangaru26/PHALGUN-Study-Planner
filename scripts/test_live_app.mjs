@@ -137,15 +137,20 @@ try {
         await context.setOffline(false);
         // Cache a second navigation target, then prove offline routing returns that page,
         // not the Study Desk index shell accidentally stored under every navigation.
-        await page.goto(base + '/dictionary.html', { waitUntil: 'networkidle', timeout: 60000 }).catch(() => {});
-        const dictionaryOnline = await visible(page, 'h1') && (await page.locator('h1').innerText()).includes('Subject Dictionary');
-        check(dictionaryOnline, viewport.name + ': dictionary page loads online before offline test');
+        const dictionaryUrl = base + '/dictionary.html?offline-cache-e2e=' + Date.now();
+        await page.goto(dictionaryUrl, { waitUntil: 'domcontentloaded', timeout: 60000 }).catch(() => {});
+        await page.locator('h1').waitFor({ state: 'visible', timeout: 10000 }).catch(() => {});
+        const dictionaryHeading = await page.locator('h1').innerText().catch(() => '');
+        const dictionaryOnline = dictionaryHeading.includes('Subject Dictionary');
+        check(dictionaryOnline, viewport.name + ': dictionary page loads online before offline test',
+          JSON.stringify({ url: page.url(), heading: dictionaryHeading, body: (await page.locator('body').innerText().catch(() => '')).slice(0, 180) }));
         if (dictionaryOnline) {
           await context.setOffline(true);
           let dictionaryOffline = false;
           try {
-            await page.goto(base + '/dictionary.html', { waitUntil: 'domcontentloaded', timeout: 15000 });
-            dictionaryOffline = await visible(page, 'h1') && (await page.locator('h1').innerText()).includes('Subject Dictionary');
+            await page.goto(dictionaryUrl, { waitUntil: 'domcontentloaded', timeout: 15000 });
+            await page.locator('h1').waitFor({ state: 'visible', timeout: 5000 });
+            dictionaryOffline = (await page.locator('h1').innerText()).includes('Subject Dictionary');
           } catch {}
           check(dictionaryOffline, viewport.name + ': offline navigation returns cached dictionary page');
           await context.setOffline(false);
