@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-10-20T07:44:57+00:00 (UTC)
+Last check: 2026-10-21T07:49:01+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 7 changed; 43 unchanged; 0 baseline; 10 unavailable.
+Summary: 8 changed; 43 unchanged; 0 baseline; 9 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -12,27 +12,7 @@ Summary: 7 changed; 43 unchanged; 0 baseline; 10 unavailable.
 | UNCHANGED | GST law and notifications | CBIC | [Open source](https://cbic-gst.gov.in/) |
 | UNAVAILABLE | Indian company law and filings | Ministry of Corporate Affairs | [Open source](https://www.mca.gov.in/content/mca/global/en/home.html) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
-| CHANGED — REVIEW REQUIRED | Indian income tax | Income Tax Department | [Open source](https://www.incometax.gov.in/iec/foportal/) |
-
-### Review required — Indian income tax
-- Previous page excerpt: Home | Income Tax Department Skip to main content Call Us e-filing and Centralized Processing Center e-Filing of Income Tax Return or Forms and other value added services & Intimation, Rectification, Refund and other Income Tax Processing Related Queries 1800 103 0025 (or) 1800 419 0025 +91-80-46122000 +91-80-61464700 08:00 hrs - 20:00 hrs (Monday to Friday) Tax Information Network - NSDL Queries related to PAN & TAN application for Issuance / Update through NSDL +91-20-27218080 07:00 hrs - 23:0
-- Mapped learning areas to review: income tax, TDS/TCS, tax compliance
-- Current page excerpt: Home | Income Tax Department Skip to main content Call Us e-filing and Centralized Processing Center e-Filing of Income Tax Return or Forms and other value added services & Intimation, Rectification, Refund and other Income Tax Processing Related Queries 1800 103 0025 (or) 1800 419 0025 +91-80-46122000 +91-80-61464700 08:00 hrs - 20:00 hrs (Monday to Friday) Tax Information Network - NSDL Queries related to PAN & TAN application for Issuance / Update through NSDL +91-20-27218080 07:00 hrs - 23:0
-- **Detected text differences (for review only):**
-```text
-- the Income-tax Act, 2025. Click here Read more 22 Sep 2026 SMS Campaign Dear AAXXXXXX1D, Tax Audit Report
-+ the Income-tax Act, 2025. Click here Read more 16 Oct 2026 SMS Campaign Dear AAXXXXXX1D, Audit Report in Form 10B/10BB for A.Y.… Read more 16 Oct 2026 SMS Campaign Dear AAXXXXXX1D, Tax Audit Report
-- Tax Audit Report in Form 3CA-3CD/3CB-… Read more 22 Sep 2026 SMS Campaign Dear ARCAXXXX12, Audit Reports in Forms 3CA-3CD/3CB-3CD/…
-+ Tax Audit Report in Form 3CA-3CD/3CB-… Read more 16 Oct 2026 E-Mail Campaign Time to File Your Tax Audit Report
-- 3CA-3CD/3CB-… Read more 22 Sep 2026 SMS Campaign Dear ARCAXXXX12, Audit Reports in Forms 3CA-3CD/3CB-3CD/… Read more 22
-+ 3CA-3CD/3CB-… Read more 16 Oct 2026 E-Mail Campaign Time to File Your Tax Audit Report | Due by 21 October 2026
-- 22 Sep 2026 SMS Campaign Dear ARCAXXXX12, Audit Reports in Forms 3CA-3CD/3CB-3CD/… Read more 22 Sep 2026 E-Mail Campaign Audit
-+ E-Mail Campaign Time to File Your Tax Audit Report | Due by 21 October 2026 Read more 16 Oct 2026 E-Mail Campaign Audit
-- ARCAXXXX12, Audit Reports in Forms 3CA-3CD/3CB-3CD/… Read more 22 Sep 2026 E-Mail Campaign Audit Report Due Soon. File
-+ | Due by 21 October 2026 Read more 16 Oct 2026 E-Mail Campaign Audit Report Due Soon. File
-```
-- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
-
+| UNCHANGED | Indian income tax | Income Tax Department | [Open source](https://www.incometax.gov.in/iec/foportal/) |
 | UNCHANGED | Accounting, audit and Indian professional guidance | ICAI | [Open source](https://www.icai.org/) |
 | UNCHANGED | IFRS accounting standards | IFRS Foundation | [Open source](https://www.ifrs.org/issued-standards/list-of-standards/) |
 | UNCHANGED | CMA USA | Institute of Management Accountants | [Open source](https://www.imanet.org/ima-certifications/cma-certification) |
@@ -46,10 +26,10 @@ Summary: 7 changed; 43 unchanged; 0 baseline; 10 unavailable.
 - Current page excerpt: What’s New in Python — Python 3.15.0 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.0 Documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - **Detected text differences (for review only):**
 ```text
-- non-profit corporation. Please donate. Last updated on Oct 19, 2026 (06:10 UTC). Found a bug ? Created
-+ non-profit corporation. Please donate. Last updated on Oct 20, 2026 (04:53 UTC). Found a bug ? Created
-- Please donate. Last updated on Oct 19, 2026 (06:10 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Oct 20, 2026 (04:53 UTC). Found a bug ? Created using Sphinx
+- non-profit corporation. Please donate. Last updated on Oct 20, 2026 (04:53 UTC). Found a bug ? Created
++ non-profit corporation. Please donate. Last updated on Oct 21, 2026 (06:42 UTC). Found a bug ? Created
+- Please donate. Last updated on Oct 20, 2026 (04:53 UTC). Found a bug ? Created using Sphinx
++ Please donate. Last updated on Oct 21, 2026 (06:42 UTC). Found a bug ? Created using Sphinx
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -76,7 +56,21 @@ Found
 | UNCHANGED | BlackLine product documentation and release updates | BlackLine | [Open source](https://www.blackline.com/) |
 | UNCHANGED | RPA and UiPath documentation | UiPath | [Open source](https://docs.uipath.com/) |
 | UNCHANGED | VBA and Office automation documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/office/vba/api/overview/) |
-| UNCHANGED | Tableau product documentation and release notes | Salesforce Tableau | [Open source](https://www.tableau.com/support/releases) |
+| CHANGED — REVIEW REQUIRED | Tableau product documentation and release notes | Salesforce Tableau | [Open source](https://www.tableau.com/support/releases) |
+
+### Review required — Tableau product documentation and release notes
+- Previous page excerpt: Tableau Desktop Skip to main content Menu Products Toggle sub-navigation for Products Overview Tableau Next Toggle sub-navigation for Tableau Next Tableau Semantics Tableau Cloud Tableau Server Tableau Knowledge Tableau Desktop Latest Release Customers Toggle sub-navigation for Customers Customer Stories Community Stories Solutions Toggle sub-navigation for Solutions By Industry Toggle sub-navigation for By Industry Financial Services Healthcare and Life Sciences Public Sector Retail and Consume
+- Mapped learning areas to review: Tableau, visual analytics, dashboard publishing
+- Current page excerpt: Tableau Desktop Skip to main content Menu Products Toggle sub-navigation for Products Overview Tableau Next Toggle sub-navigation for Tableau Next Tableau Semantics Tableau Cloud Tableau Server Tableau Knowledge Tableau Desktop Latest Release Customers Toggle sub-navigation for Customers Customer Stories Community Stories Solutions Toggle sub-navigation for Solutions By Industry Toggle sub-navigation for By Industry Financial Services Healthcare and Life Sciences Public Sector Retail and Consume
+- **Detected text differences (for review only):**
+```text
+- Product downloads Tableau Desktop View the current version 2026.2.3 Starting in September, 2023, fixed defects can be
++ Product downloads Tableau Desktop View the current version 2026.3 Starting in September, 2023, fixed defects can be
+- Bridge Advanced Management Mobile Blackberry Intune Workspace ONE 2026.2 Downloads 2026.2.3 Released Sep 22, 2026 2026.2.2
++ Bridge Advanced Management Mobile Blackberry Intune Workspace ONE 2026.3 Downloads 2026.3 Released Oct 20, 2026 2026.2 Downloads 2026.2.3 Released Sep 22, 2026 2026.2.2
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNAVAILABLE | Project management standards and resources | Project Management Institute | [Open source](https://www.pmi.org/standards) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 | UNCHANGED | Microsoft Power Automate documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/power-automate/) |
@@ -84,21 +78,21 @@ Found
 | CHANGED — REVIEW REQUIRED | Python release and security updates | Python Software Foundation | [Open source](https://www.python.org/downloads/) |
 
 ### Review required — Python release and security updates
-- Previous page excerpt: �      �}��F��E� 0T�ǎm���[=�%K����q�vl�F8@ $!�  ��j�{#�5���I�d>�@� ��`=�Ψ ����SY�'3 ���}+��8�2Z�.���?��2��y���aK[���y��Z���[�(h] < ���i_ < �� �?���H����+����ѩ 3=�n���V��q���]�f��0�׎��m�ڵ04�p�����J-s� < ﵻ{�����Kge�\ǳW��#�[g�/�~�6#�v"Ǣ~9+g�8�=?�w�`���ֵ(+wv־���W�� �E[� < �!Q�t�P���#k6�ӱmO�m+�� ���VvcK�U�9���a�خ �V��f�y ��ܮ �N ��� ���U  ��I𛍁t�������&p�ۍᷴ���jo0����r���m|�����[ܷ� Z�h�ߧ�ձ�il�9Rv��(Oӎ4��('�;{��D�� ͼ�-�=��7�/A�%� �P�s�ēϻz�]�n�n�h���ί��n3/�� � < 
+- Previous page excerpt: �      �}��F��E� 0T�ǎ���-�z�%[����q��؍�p� HB" �վ�F�k�����*|T�l��z�QQUY��2Of��f�Vt�q�e�^] < 9�4ke����� �2����4� ��VQкx�; Ӿx��?��C+p7�f;s'`W���ݕ�Sx��O��Z��������-� < ����:t鿟�6��l�qq�O���nZ��l32u�_�������������|SX�[�(ڄ�: �3W��k����·����f���o�v������z��r��a�8�o��G�v"S��f:���6��� ���3���٬\ˌ\���JK�|/r < ��]�y���� }�Ϩw7�Lǃ�ȍV���ܘ3��F���;͇�mC}fz�JO��L���_����"a�7� -��εkah��Ls=7r͕ Z��y�kw���ӳ���~��g�n�G��Ξ_��`mF��D�E3 �"rV��q�{~��� = �kPV�,�}� < ��  .:�� �y�C&�p�
 - Mapped learning areas to review: Python, automation, data processing
-- Current page excerpt: �      �}��F��E� 0T�ǎ���-�z�%[����q��؍�p� HB" �վ�F�k�����*|T�l��z�QQUY��2Of��f�Vt�q�e�^] < 9�4ke����� �2����4� ��VQкx�; Ӿx��?��C+p7�f;s'`W���ݕ�Sx��O��Z��������-� < ����:t鿟�6��l�qq�O���nZ��l32u�_�������������|SX�[�(ڄ�: �3W��k����·����f���o�v������z��r��a�8�o��G�v"S��f:���6��� ���3���٬\ˌ\���JK�|/r < ��]�y���� }�Ϩw7�Lǃ�ȍV���ܘ3��F���;͇�mC}fz�JO��L���_����"a�7� -��εkah��Ls=7r͕ Z��y�kw���ӳ���~��g�n�G��Ξ_��`mF��D�E3 �"rV��q�{~��� = �kPV�,�}� < ��  .:�� �y�C&�p�
+- Current page excerpt: �      �}��F��E� 0T�ǎm����{V�-[^Kָ�qlčp� HB" ���݈}��z�I��*|T�l��zvm7AU�u*+�df��o�oE�G[F���s��f��0�hy��!li+�[\� ���np�ZEA�� �tL������V�n"�v�N��$���+G�6��ٟƙ�\���ř��9[�y�!���u��?��6��l�qq�O���nZ��l32u�_��w���FK�k��B�) ���2�6�N����m�Za;���!����Y�l��[�� ��m4󷞭�\�c���/��[���Ѯ��Ԭ��Nt��Fs}BRa�`�y�ڹh���ʵ���=���4��"��o�e��O�������zw��t �����l� �}�����v�] C�g�빑k���2W�E���ӧ L�^:+�U�:��� �>�:{~1����9̀���Y9`ǹ����1�z:4Z�"���Y�Y��x�A\tm8��LD��q"@��n���tnLǶ=鶭++pV��ƖF��9���a�خ �V
 - **Detected text differences (for review only):**
 ```text
-- �      �}��F��E� 0T�ǎm���[=�%K����q�vl�F8@ $!�  ��j�{#�5���I�d>�@� ��`=�Ψ ����SY�'3 ���}+��8�2Z�.���?��2��y���aK[���y��Z���[�(h] < ���i_ < �� �?���H����+����ѩ 3=�n���V��q���]�f��0�׎��m�ڵ04�p�����J-s� < ﵻ{
-+ �      �}��F��E� 0T�ǎ���-�z�%[����q��؍�p� HB" �վ�F�k�����*|T�l��z�QQUY��2Of��f�Vt�q�e�^] < 9�4ke����� �2����4� ��VQкx�; Ӿx��?��C+p7�f;s'`W���ݕ�Sx��O��Z��������-� < ����:t鿟�6��l�qq�O���nZ��l32u�_�������
-- �E[� < �!Q�t�P���#k6�ӱmO�m+�� ���VvcK�U�9���a�خ �V��f�y ��ܮ �N ��� ���U  ��I𛍁t�������&p�ۍᷴ���jo0����r���m|�����[ܷ� Z�h�ߧ�ձ�il�9Rv��(Oӎ4��('�;{��D�� ͼ�-�=��7�/A�%� �P�s�ēϻz�]�n�n�h���ί��n3/�� � < ��}s�푞ǷVm�
-+ ��hu����$�4�j�i�) ?�ƾ�x����&'��b�*�܌����z�Wx�/�~��p�1w ��aq�MCk�L�`�='�a�1��'�f��o4�ԗ�m;�����GȄnLO۽;��#�A��0> �9���˧�Ѩ� �L�����gi6Y$��� ��))��| ��'."���S�~�./]��d� ��� �g-�܂,L�y2��t��N�͈�&y����?N'�
-- L՜$p���i}� �?�I�w��sx�I� O�{� I�lO���-���h��&�[ P�uw�"�i} �?6�I�v��T�$�O ��: ۷���6Z�^���Y9f�t�m�y蚥ब: [Y@�Wm^��!�&p� G G�.�=�x��d`ME < �y���k��՜�����Cs�%'p&��$ouh�q@����fYl����#N� < �� �m�#� ���V
-+ �T;@E�� �ݧ�H�g���[a{s-}���N� 3t:�6ɼt�RpRV ��,�Ы6�}��O� k�#� �9 XSO8E ��!�#p� G Q\A�);�0>��2�VcV�0K���[��U 9����V`�*�o�ֶ�d�#Sr��q/+��dHe��mA���+^�0LXv�N�I}��HjY�ER/RtMr&r�¤�u |(5E��S��/ < �T�NQ��GRW�=�:�
-- ��B*"Ĵq�2�ն*Z\�ߨ�T���*y�0Oڭ��jZ��{���m��DqŦ�������t[�Y��,��oyvW�X�[�����yZ��f�m�L���U��ȏ�!�!�����xm��0a���;�'��S�#�eI�H�5�m��u ��)��m��Na"��hS[8E� I]����&r�`�"�p�:>������$�Ǳ�J [E��� ��'�� Ԥ���"
-+ 7�F�sc�.���! �� �~�@ꊺ���fR%c�8+�N?w�`>��®0����(:(; �)�* ?�l���K$�Ƕ�J4 ���;Ab𸾉�$�ǆ;��� T�u\�U{�Ҹ�)�$��;��� T��)����dNRl��(;@g�s�= x\�3�I� vR��XM�0U��o��*�?�m�0d�� '� ��� ������Ƶ��� �\᱒\���4��Ӎk�,�/N΢�c}��]�
-- < �A���V��U)�5��/�kx���G�%��@j��f�� xH��Z_b�p���qk�g�W���8 0�n���ږ����gǊ����Y�ߦ3ߺ������W���D����j|��J�׌TuYa�G��&1j}%�c9*�Y�5g��Z�p&�i�� �LV�̏���y�0 ���i"� ߥ�(�ITZ_ ��� ^JU�jƤ�8+|yB�p&�h}%4��&pWڈ �P�jƣ�@+|]B�
-+ �~�Y1Ⱦ���Ċ���b���/E� a��� ��"L���J8��w�c��� ��bL���J81~�>O�L�՛��3�?��cOf�a0�Lz��̘^��@�e��f�А�5C��F�@��V�A6�Z�}C&k�:c���xq�l�1��'ځ�phX+3 ��g嘡������M�1�e�̟�:ɵ���ٰ�Euè���7b��f(�������a�����P�I֚��Z�ep �U�O�3
+- �      �}��F��E� 0T�ǎ���-�z�%[����q��؍�p� HB" �վ�F�k�����*|T�l��z�QQUY��2Of��f�Vt�q�e�^] < 9�4ke����� �2����4� ��VQкx�; Ӿx��?��C+p7�f;s'`W���ݕ�Sx��O��Z��������-� < ����:t鿟�6��l�qq�O���nZ��l32u�_�������
++ �      �}��F��E� 0T�ǎm����{V�-[^Kָ�qlčp� HB" ���݈}��z�I��*|T�l��zvm7AU�u*+�df��o�oE�G[F���s��f��0�hy��!li+�[\� ���np�ZEA�� �tL������V�n"�v�N��$���+G�6��ٟƙ�\���ř��9[�y�!���u��?��6��l�qq�O���nZ��l32u�_��w���F
+- ��kҏ\b�0 �{ǃ�G����= r~�� E����rHC�Y $�#�G�������R��H� �QpbL;�J�)��ĸ �1�u N-�>r�%��\ ��Z"�ŇlK�{`���=��d�6Q�A�!�6�2�*�.�WǷ|Ps�p���h��W�;L  Ư ��A�ť ��(��[d��@i�W��\���&í�&�m��c6��33U�"���� ��� �� ?��O�&�
++ ��kҏ\b�0 �{ǃ�G����= r~�� E����rHC�Y $�#�G�������R��H� �QpbL;�J�)��ĸ �1�u N-�>r�%��\ tR�W��߯)q�A�����n�o���P�D�}#� ׏��!���wV���}���{�C+A|���D^�ٖ���\�W�7z���$m���jC�m�e�U�=g_ ��A�E�W���_]�0% �~|�U�r\
+- �QpbL;�J�)��ĸ �1�u N-�>r�%��\ ��Z"�ŇlK�{`���=��d�6Q�A�!�6�2�*�.�WǷ|Ps�p���h��W�;L  Ư ��A�ť ��(��[d��@i�W��\���&í�&�m��c6��33U�"���� ��� �� ?��O�&����AH6=ۆHԢB�ly��� ݅��,삃�Ϭj��%����M�� ǡ{���;rp7.�����.
++ (, HȪ��H�J�YmO��O]V�Y[Ҹ0H!���� ������Y*N���9lQ�� 8m����J�y& �Ee�P���7Bꥌ�I��l�l�o����-s� �� 7��H��@ˍ�Ŏ�᯾Ŏ�Ro`��&�/ �P�����Wߊ�n���t�a�����Ĵtu�o�c�T�cW 4������H ��� �od�TdWodTd� CE6�����u�[�l�R^
+- 0�#��4�lEmmz��M�a(JCPk�)�Yl`�@�/Q ˓t������Q�C� T��M��c� �"I��O���#� ��Y�a�I�����;x���Sbm0��6hO>K� kW�`�w�EJ=��?��sh�k��WS�Ś�r�hkÊ�F�+�Ək���U�P����gw`��-2�zU+������F!��6F_ `�!1��7�m�X�h��X>�1�F��]s�
++ ��[�g��� W���Iq�BC��\�AE��A��Kf*�\m+&���a��8� 8T��ھ6prୁ�trQA�Vm�նv�ENC������N�UE4=VݛVTE��Q#����^�|�\-��pOQbe��a�f�3%���� ��d�qm�}�@j�߲�I腛k#��1K�M��� v�y�| uE]a�o3��1K�Q���;E 0 I]aW��T�I �� ��G�� r6�
+-  (Ѐx\5Ր��VCB����XH>��^�р\�U��:B��A��/#�� N0�_���U�o��2GR/R�M�ޘ�� ŰUx�'x� H]��(����G�5�� ��@ꊵ�f�5ɋ�Td���Fh�H�+� ��f�MJ�ؔy�վ�`Z�H��`��S [�w*�Tu����� �� ���jN8I]д�G �� ڤ�; [�9 < ������=G��^�������_4
++ -6�=o�7co1P�[ps�ώL�c��- ��bL�-Jx V�C������-j���򣾒���l ��)!�f*��D���Pc�h�J�}6��#���X_b��J�1��EU�>F��P^�/�b}%�KI��dUvF��TKL���Jh11�T�y�ڳb�}C 1��+a���_�Z�jωA� E�ĉ��pb1�Z1�jωA� Řĉ��pb��}��S��7'6�ff�,Ǟ�
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -106,13 +100,15 @@ Found
 | CHANGED — REVIEW REQUIRED | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
 
 ### Review required — German learning curriculum
-- Previous page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teachers there are te
+- Previous page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
 - Mapped learning areas to review: German, pronunciation, listening, conversation
 - Current page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
 - **Detected text differences (for review only):**
 ```text
-- Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language
-+ Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language
+- For teachers New every day: our latest content Schülerinnen gegen Sexualisierung der Schuluniform Eine Petition von
++ For teachers New every day: our latest content Fast-Tech und das Problem mit dem Müll Sie kosten wenig, gehen schnell kaputt und landen dann im Müll: Fast-Tech-Geräte. B1 | 20.10.2026 Volkskrankheiten Allergien Ob Pollen
+- über jemanden aussagen: die Handschrift. C1 | 13.10.2026 Mehr Rechenzentren für Europa In Europa sollen neue Rechenzentren gebaut werden. Doch gegen die geplanten Projekte gibt es immer öfter Proteste. B1 | 09.10.2026 Wi
++ über jemanden aussagen: die Handschrift. C1 | 13.10.2026 Nicos Weg now available in Kiswahili! The new
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -126,16 +122,16 @@ Found
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- français, du niveau débutant au niveau avancé. Recommandé Les expressions d'Archibald Faire le cacou, motamoter ou
-+ français, du niveau débutant au niveau avancé. Recommandé Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. La famille tout écran Une famille co
-- veut dire ? Archibald vous dit tout ! Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Emblèmes Belgique Le coq hardi, le chant des
-+ veut dire ? Archibald vous dit tout ! Emblèmes Belgique Le coq hardi, le chant des
-- gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! La famille tout écran Une famille connectée et un peu dépassée dans la g
-+ gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Quèsaco Sur un ton
-- votre niveau à l'écrit et à l'oral en français ? Testez gratuitement vos compétences grâce à l'application APPRENDRE EV@LANG, conçue par l’AUF et France Éducation International. Emblèmes France La Marseillaise, le coq, L
-+ font du français une langue vivante et en constante évolution. Quèsaco Sur un ton décalé, drôle et moderne,
-- questions que l'on se pose devant une peinture. Partenaires Apprenez le français plus facilement avec l’application
-+ questions que l'on se pose devant une peinture. Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité... Découvrez les emblème
+- français, du niveau débutant au niveau avancé. Recommandé Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. La famille tout écran Une famille co
++ français, du niveau débutant au niveau avancé. Recommandé Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! La dictée d'Archibald (Mots d'ailleurs) Archi simple et
+- du Sénégal, du Mali et du Cameroun. La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! DDF, le Dictionnaire des francophones Participez au Dictionnaire des f
++ plus vos classiques, lisez-les sur tablette ! La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! Les expressions d'Archibald Faire le cacou, motamoter
+- gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante
++ gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du
+- semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Quèsaco Sur
++ venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. Serious game Jouez à « Datak » et devenez un pro du big data ! Emblèmes France La Marseillaise, le coq, Liberté, égalité fr
+- et ceux qui font du français une langue vivante et en constante évolution. Quèsaco Sur un
++ ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et libre. Quèsaco Sur un ton décalé,
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -148,19 +144,19 @@ Found
 ### Review required — German-English dictionary
 - Previous page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - Mapped learning areas to review: German-English dictionary, vocabulary, translations
-- Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
+- Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK LA ES PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.111 Übersetzungen – 2.826 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.132 Übersetzungen – 2.812 neu – 99,8% verifiziert Zeit
-- | Z Zuletzt verifizierte Übersetzungen 1.319.111 Übersetzungen – 2.826 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-+ | Z Zuletzt verifizierte Übersetzungen 1.319.132 Übersetzungen – 2.812 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:37 to get sth. out of sth. etw. aus
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:01 journ. publ. syndication Syndikation {f} [Veröffentlichung in mehreren Zeitungen zugleich] eve 07:51 biol. voice characteristics Stimmeigenschaften {pl} pol jpx
-- verifiziert Zeit Englisch Deutsch Geprüft von 07:37 to get sth. out of sth. etw. aus etw. [Dat.] hervorlangen [ugs.] [herausnehmen] pol Nem 07:36 to make an
-+ pol jpx 07:50 travelling from one place to the other Hin- und Hergereise {n} [ugs.] [leicht pej.] [zwischen zwei Orten] pol jpx
-- of sth. etw. aus etw. [Dat.] hervorlangen [ugs.] [herausnehmen] pol Nem 07:36 to make an exemption from
-+ to the other Hin- und Hergereise {n} [ugs.] [leicht pej.] [zwischen zwei Orten] pol jpx 07:50 to be indiscernible from sth.
+- IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR
++ IS RU RO FR SK IT NL UK LA ES PT FI HU NO BG HR CS
+- RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA
++ RO FR SK IT NL UK LA ES PT FI HU NO BG HR CS DA
+- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.132 Übersetzungen – 2.812 neu – 99,8% verifiziert Zeit
++ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.150 Übersetzungen – 2.813 neu – 99,8% verifiziert Zeit
+- | Z Zuletzt verifizierte Übersetzungen 1.319.132 Übersetzungen – 2.812 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
++ | Z Zuletzt verifizierte Übersetzungen 1.319.150 Übersetzungen – 2.813 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:01 journ. publ. syndication Syndikation {f} [Veröffentlichung in mehreren Zeitungen zugleich] eve 07:51 biol. voice characteristics Stimmeigenschaften {pl} pol
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:00 art material poster board [cardboard material] Plakatkarton {m} eve Dra 07:52 ethn. hist. Bruttii Bruttii {pl}
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -169,9 +165,20 @@ Found
 | UNCHANGED | Natural conversation video lessons | Easy Languages | [Open source](https://www.youtube.com/@EasyLanguages) |
 | UNAVAILABLE | Bilingual dictionary and pronunciation | Collins Dictionary | [Open source](https://www.collinsdictionary.com/) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
-| UNAVAILABLE | Institute of Risk Management qualifications and syllabi | Institute of Risk Management (IRM) | [Open source](https://www.theirm.org/qualifications/) |
-  - Fetch issue: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>
-| UNCHANGED | Certified Internal Auditor (CIA) certification and exam syllabus | The Institute of Internal Auditors (The IIA) | [Open source](https://www.theiia.org/en/certifications/cia/) |
+| UNCHANGED | Institute of Risk Management qualifications and syllabi | Institute of Risk Management (IRM) | [Open source](https://www.theirm.org/qualifications/) |
+| CHANGED — REVIEW REQUIRED | Certified Internal Auditor (CIA) certification and exam syllabus | The Institute of Internal Auditors (The IIA) | [Open source](https://www.theiia.org/en/certifications/cia/) |
+
+### Review required — Certified Internal Auditor (CIA) certification and exam syllabus
+- Previous page excerpt: Certified Internal Auditor | Global Internal Audit Certification | The IIA Skip to Content Membership Show sub pages for Membership Join Now Membership Benefits Executive Membership Student Membership & Resources Group Membership Frequently Asked Questions Renew Your Membership IPPF & Standards Show sub pages for IPPF & Standards Global Internal Audit Standards Topical Requirements Global Guidance Audit Tools Related Content Risk Management Content Ethics & Professionalism Governance & Due Proce
+- Mapped learning areas to review: CIA Part 1, CIA Part 2, CIA Part 3, internal audit standards, exam readiness
+- Current page excerpt: Certified Internal Auditor | Global Internal Audit Certification | The IIA Skip to Content Membership Show sub pages for Membership Join Now Membership Benefits Executive Membership Student Membership & Resources Group Membership Frequently Asked Questions Renew Your Membership IPPF & Standards Show sub pages for IPPF & Standards Global Internal Audit Standards Topical Requirements Global Guidance Audit Tools Related Content Risk Management Content Ethics & Professionalism Governance & Due Proce
+- **Detected text differences (for review only):**
+```text
+- Asked Questions Get Help Jobs at The IIA Language en fr-ca Internal Audit Foundation Chapters & Institutes Internal Auditor
++ Asked Questions Get Help Jobs at The IIA Internal Audit Foundation Chapters & Institutes Internal Auditor
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNCHANGED | Certification in Risk Management Assurance (CRMA) | The Institute of Internal Auditors (The IIA) | [Open source](https://www.theiia.org/en/certifications/crma/) |
 | UNCHANGED | Certified Information Security Manager (CISM) exam content outline | ISACA | [Open source](https://www.isaca.org/credentialing/cism/cism-exam-content-outline) |
 | UNCHANGED | Open textbook resources for accounting | OpenStax | [Open source](https://openstax.org/subjects/business) |
@@ -184,7 +191,16 @@ Found
 - Current page excerpt: MIT OpenCourseWare | Free Online Course Materials menu Give Now About OCW Help & Faqs Contact Us GIVE NOW about ocw help & faqs contact us Discover courses, materials, & teaching resources Search Search Explore OR Explore Are you new to OCW? Get Started Looking for teaching materials? Educators Start Here Unlocking knowledge, Empowering Minds. Free lecture notes, exams, and videos from MIT. No registration required. Learn More about the OCW mission keyboard_arrow_left Previous MIT Learn: "a whol
 - **Detected text differences (for review only):**
 ```text
-Fingerprint changed, but no word-level difference was isolated.
+- Scholar Transportation New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 14.05 | Undergraduate Intermediate Macroeconomics Instructor: Christian Wolf
++ Scholar Transportation New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 15.879 | Graduate Building Serious System Dynamics Models from Scratch Instructor: Prof. Hazhir Rahmandad Topics: Business , Manag
+- Topics: Social Science , Economics , Financial Economics RES.9-010 | Non-Credit Brain and Cognitive Sciences Computational Tutorial: Optimizing the Full Stack for Generative Image and Video Models Topics: Engineering , C
++ Topics: Social Science , Economics , Financial Economics New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 15.879 |
+- Artificial Intelligence New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 14.05 | Undergraduate Intermediate Macroeconomics Instructor: Christian Wolf
++ Financial Economics New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 15.879 | Graduate Building Serious System Dynamics Models from Scratch Instructor: Prof. Hazhir Rahmandad Topics: Business , Manageme
+- Topics: Social Science , Economics , Financial Economics RES.9-010 | Non-Credit Brain and Cognitive Sciences Computational Tutorial: Optimizing the Full Stack for Generative Image and Video Models Topics: Engineering , C
++ Topics: Social Science , Economics , Financial Economics New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 15.879 |
+- Artificial Intelligence New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 14.05 | Undergraduate Intermediate Macroeconomics Instructor: Christian Wolf
++ Financial Economics New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 15.879 | Graduate Building Serious System Dynamics Models from Scratch Instructor: Prof. Hazhir Rahmandad Topics: Business , Manageme
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
