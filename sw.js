@@ -12,17 +12,15 @@ self.addEventListener('fetch', event => {
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
   if (request.mode === 'navigate') {
     event.respondWith(fetch(request).then(response => {
+      if (!response || !response.ok) return response;
       const copy = response.clone();
-      caches.open(CACHE).then(cache => cache.put('./index.html', copy));
-      return response;
+      return caches.open(CACHE).then(cache => cache.put('./index.html', copy)).then(() => response);
     }).catch(() => caches.match('./index.html').then(cached => cached || caches.match('./'))));
     return;
   }
   event.respondWith(fetch(request).then(response => {
-    if (response && response.ok) {
-      const copy = response.clone();
-      event.waitUntil(caches.open(CACHE).then(cache => cache.put(request, copy)));
-    }
-    return response;
+    if (!response || !response.ok) return response;
+    const copy = response.clone();
+    return caches.open(CACHE).then(cache => cache.put(request, copy)).then(() => response);
   }).catch(() => caches.match(request)));
 });
