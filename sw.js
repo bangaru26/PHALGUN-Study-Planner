@@ -14,13 +14,13 @@ self.addEventListener('fetch', event => {
     event.respondWith(fetch(request).then(response => {
       if (!response || !response.ok) return response;
       const copy = response.clone();
-      return caches.open(CACHE).then(cache => cache.put('./index.html', copy)).then(() => response);
+      return caches.open(CACHE).then(cache => cache.put('./index.html', copy)).catch(() => undefined).then(() => response);
     }).catch(() => caches.match('./index.html').then(cached => cached || caches.match('./'))));
     return;
   }
   event.respondWith(fetch(request).then(response => {
     if (!response || !response.ok) return response;
     const copy = response.clone();
-    return caches.open(CACHE).then(cache => cache.put(request, copy)).then(() => response);
+    return caches.open(CACHE).then(cache => cache.put(request, copy)).catch(() => undefined).then(() => response);
   }).catch(() => caches.match(request)));
 });
