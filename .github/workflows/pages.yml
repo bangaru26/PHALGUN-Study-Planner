@@ -16,6 +16,7 @@ on:
       - "monitoring/CHANGE-LOG.md"
       - "monitoring/source-catalog.json"
       - "scripts/test_live_app.mjs"
+      - "sw.js"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
