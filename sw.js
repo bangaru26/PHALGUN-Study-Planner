@@ -18,11 +18,11 @@ self.addEventListener('fetch', event => {
     }).catch(() => caches.match('./index.html').then(cached => cached || caches.match('./'))));
     return;
   }
-  event.respondWith(caches.match(request).then(cached => {
-    const network = fetch(request).then(response => {
-      if (response && response.ok) caches.open(CACHE).then(cache => cache.put(request, response.clone()));
-      return response;
-    });
-    return cached || network;
-  }));
+  event.respondWith(fetch(request).then(response => {
+    if (response && response.ok) {
+      const copy = response.clone();
+      event.waitUntil(caches.open(CACHE).then(cache => cache.put(request, copy)));
+    }
+    return response;
+  }).catch(() => caches.match(request)));
 });
