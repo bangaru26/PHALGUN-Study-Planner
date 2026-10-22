@@ -1,5 +1,5 @@
 'use strict';
-const CACHE = 'study-desk-v12';
+const CACHE = 'study-desk-v13';
 const CORE = ['./', './index.html', './dictionary.html', './excel-practice.html', './manifest.webmanifest', './icon.svg', './study-planner-icon.webp', './aaroh-symbol.jpg', './study-desk-icon.svg'];
 const scopedUrl = path => new URL(path, self.registration.scope).toString();
 self.addEventListener('install', event => {
@@ -20,14 +20,19 @@ self.addEventListener('fetch', event => {
       const scopePath = new URL(self.registration.scope).pathname;
       const relativePath = url.pathname.startsWith(scopePath) ? url.pathname.slice(scopePath.length) : url.pathname.replace(/^\//, '');
       const canonical = scopedUrl(relativePath || './');
+      const cache = await caches.open(CACHE);
+      // Navigation is cache-first for deterministic offline behavior. The install
+      // step pre-caches every core page; a versioned worker refreshes these assets
+      // on deployment, so an offline navigation never waits on an unreachable host.
+      const cachedPage = await cache.match(canonical, {ignoreSearch: true});
+      if (cachedPage) return cachedPage;
       try {
-        // Bound network-first navigation so an offline fetch cannot hang forever.
+        // For non-core routes, try the network but bound the wait before fallback.
         const response = await Promise.race([
           fetch(request),
           new Promise((_, reject) => setTimeout(() => reject(new Error('navigation network timeout')), 4000))
         ]);
         if (!response || !response.ok) return response;
-        const cache = await caches.open(CACHE);
         // Store stable URL keys without query strings; ignoreSearch also supports
         // navigations whose test/session URL includes a cache-busting query.
         await cache.put(canonical, response.clone());
