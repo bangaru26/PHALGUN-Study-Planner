@@ -144,6 +144,17 @@ try {
         await page.locator('h1').waitFor({ state: 'visible', timeout: 10000 }).catch(() => {});
         const dictionaryHeading = await page.locator('h1').innerText().catch(() => '');
         const dictionaryOnline = dictionaryHeading.includes('Subject Dictionary');
+        const dictionaryCacheDiagnostics = await page.evaluate(async () => {
+          const registration = await navigator.serviceWorker.ready;
+          const cacheNames = await caches.keys();
+          const cache = await caches.open('study-desk-v13');
+          const keys = (await cache.keys()).map(request => new URL(request.url).pathname);
+          const scope = registration.scope;
+          const expected = new URL('dictionary.html', scope).href;
+          const match = await cache.match(expected, {ignoreSearch:true});
+          return {controller: navigator.serviceWorker.controller?.scriptURL || null, scope, cacheNames, dictionaryCached: !!match, dictionaryStatus: match?.status || null, relevantKeys: keys.filter(path => /dictionary|index\.html$/.test(path))};
+        }).catch(error => ({error:String(error)}));
+        console.log('DICTIONARY_CACHE_DIAGNOSTICS ' + viewport.name + ': ' + JSON.stringify(dictionaryCacheDiagnostics));
         check(dictionaryOnline, viewport.name + ': dictionary page loads online before offline test',
           JSON.stringify({ url: page.url(), heading: dictionaryHeading, body: (await page.locator('body').innerText().catch(() => '')).slice(0, 180) }));
         if (dictionaryOnline) {
