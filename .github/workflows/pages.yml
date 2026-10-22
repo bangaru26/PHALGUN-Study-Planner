@@ -71,6 +71,8 @@ jobs:
         uses: browser-actions/setup-chrome@v1
 
       - name: Install browser test runner
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
         run: npm install --no-save playwright
 
       - name: Exercise deployed app in a real browser
