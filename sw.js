@@ -1,6 +1,6 @@
 'use strict';
 const CACHE = 'study-desk-v13';
-const CORE = ['./', './index.html', './dictionary.html', './excel-practice.html', './manifest.webmanifest', './icon.svg', './study-planner-icon.webp', './aaroh-symbol.jpg', './study-desk-icon.svg'];
+const CORE = ['./', './index.html', './dictionary.html', './excel-practice.html', './gfpa.html', './manifest.webmanifest', './icon.svg', './study-planner-icon.webp', './aaroh-symbol.jpg', './study-desk-icon.svg'];
 const scopedUrl = path => new URL(path, self.registration.scope).toString();
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting()));
