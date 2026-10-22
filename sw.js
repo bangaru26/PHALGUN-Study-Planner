@@ -18,7 +18,7 @@ self.addEventListener('fetch', event => {
       const url = new URL(request.url);
       // Build keys relative to the GitHub Pages app scope, not the origin root.
       const scopePath = new URL(self.registration.scope).pathname;
-      const relativePath = url.pathname.startsWith(scopePath) ? url.pathname.slice(scopePath.length) : url.pathname.replace(/^\\//, '');
+      const relativePath = url.pathname.startsWith(scopePath) ? url.pathname.slice(scopePath.length) : url.pathname.replace(/^\//, '');
       const canonical = scopedUrl(relativePath || './');
       try {
         const response = await fetch(request);
