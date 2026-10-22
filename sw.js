@@ -1,5 +1,5 @@
 'use strict';
-const CACHE = 'study-desk-v11';
+const CACHE = 'study-desk-v12';
 const CORE = ['./', './index.html', './dictionary.html', './excel-practice.html', './manifest.webmanifest', './icon.svg', './study-planner-icon.webp', './aaroh-symbol.jpg', './study-desk-icon.svg'];
 const scopedUrl = path => new URL(path, self.registration.scope).toString();
 self.addEventListener('install', event => {
@@ -21,7 +21,11 @@ self.addEventListener('fetch', event => {
       const relativePath = url.pathname.startsWith(scopePath) ? url.pathname.slice(scopePath.length) : url.pathname.replace(/^\//, '');
       const canonical = scopedUrl(relativePath || './');
       try {
-        const response = await fetch(request);
+        // Bound network-first navigation so an offline fetch cannot hang forever.
+        const response = await Promise.race([
+          fetch(request),
+          new Promise((_, reject) => setTimeout(() => reject(new Error('navigation network timeout')), 4000))
+        ]);
         if (!response || !response.ok) return response;
         const cache = await caches.open(CACHE);
         // Store stable URL keys without query strings; ignoreSearch also supports
