@@ -151,7 +151,7 @@ try {
           let dictionaryOffline = false;
           try {
             // Use a fresh query string so Chromium performs a real navigation rather than reusing the already-open document.
-            await page.goto(dictionaryUrl + '?offline-e2e=' + Date.now(), { waitUntil: 'domcontentloaded', timeout: 15000 });
+            await page.goto(dictionaryUrl + '?offline-e2e=' + Date.now(), { waitUntil: 'commit', timeout: 15000 });
             await page.locator('h1').waitFor({ state: 'visible', timeout: 5000 });
             dictionaryOffline = (await page.locator('h1').innerText()).includes('Subject Dictionary');
           } catch {}
