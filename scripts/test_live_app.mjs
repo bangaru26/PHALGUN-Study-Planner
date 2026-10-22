@@ -31,9 +31,10 @@ try {
     const context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height } });
     const page = await context.newPage();
     const pageErrors = [];
-    page.on('pageerror', error => pageErrors.push(error.message));
+    page.on('pageerror', error => pageErrors.push('pageerror: ' + error.message));
+    page.on('requestfailed', request => pageErrors.push('request failed: ' + request.url() + ' — ' + (request.failure()?.errorText || 'unknown')));
     page.on('response', response => { if (response.status() >= 400) pageErrors.push('HTTP ' + response.status() + ': ' + response.url()); });
-    page.on('console', msg => { if (msg.type() === 'error' && !/favicon|ERR_BLOCKED_BY_CLIENT/i.test(msg.text())) pageErrors.push('console: ' + msg.text()); });
+    page.on('console', msg => { if (msg.type() === 'error' && !/favicon|ERR_BLOCKED_BY_CLIENT/i.test(msg.text())) pageErrors.push('console: ' + msg.text() + (msg.location()?.url ? ' @ ' + msg.location().url : '')); });
 
     await page.goto(base + '/index.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
     await page.locator('#lessonList .lesson').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
