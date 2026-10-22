@@ -25,7 +25,7 @@ const timerLayout = async (page, containerSelector, viewportWidth) => page.locat
       layout.cols===(viewportWidth<=650?2:4)&&layout.rows===(viewportWidth<=650?2:1)&&layout.widthSpread<=2
 })).catch(error=>({ok:false,error:String(error)}));
 
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({ headless: true, ...(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {}) });
 try {
   for (const viewport of [{name:'desktop',width:1365,height:900},{name:'mobile',width:390,height:844}]) {
     const context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height } });
