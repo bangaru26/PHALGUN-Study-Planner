@@ -67,6 +67,10 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Install browser test runner
+        env:
+          # Use the documented Azure Edge mirror when the primary CDN's TLS
+          # certificate is misrouted by a runner/network proxy. Keep TLS checks on.
+          PLAYWRIGHT_DOWNLOAD_HOST: https://playwright.azureedge.net
         run: |
           npm install --no-save playwright
           npx playwright install --with-deps chromium
