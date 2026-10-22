@@ -1,6 +1,7 @@
 'use strict';
-const CACHE = 'study-desk-v10';
+const CACHE = 'study-desk-v11';
 const CORE = ['./', './index.html', './dictionary.html', './excel-practice.html', './manifest.webmanifest', './icon.svg', './study-planner-icon.webp', './aaroh-symbol.jpg', './study-desk-icon.svg'];
+const scopedUrl = path => new URL(path, self.registration.scope).toString();
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting()));
 });
@@ -13,35 +14,45 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
   if (request.mode === 'navigate') {
-    event.respondWith(fetch(request).then(async response => {
-      if (!response || !response.ok) return response;
+    event.respondWith((async () => {
       const url = new URL(request.url);
-      const canonical = new URL(url.pathname, self.registration.scope).toString();
+      // Build keys relative to the GitHub Pages app scope, not the origin root.
+      const scopePath = new URL(self.registration.scope).pathname;
+      const relativePath = url.pathname.startsWith(scopePath) ? url.pathname.slice(scopePath.length) : url.pathname.replace(/^\\//, '');
+      const canonical = scopedUrl(relativePath || './');
       try {
+        const response = await fetch(request);
+        if (!response || !response.ok) return response;
         const cache = await caches.open(CACHE);
-        // Cache canonical path only; navigation Request objects can have mode/cache
-        // attributes that make them poor persistent cache keys across browser runs.
+        // Store stable URL keys without query strings; ignoreSearch also supports
+        // navigations whose test/session URL includes a cache-busting query.
         await cache.put(canonical, response.clone());
-        if (url.pathname.endsWith('/') || url.pathname.endsWith('/index.html')) {
-          await cache.put(new URL('./index.html', self.registration.scope).toString(), response.clone());
-          await cache.put(new URL('./', self.registration.scope).toString(), response.clone());
+        if (!relativePath || relativePath === 'index.html') {
+          await cache.put(scopedUrl('./index.html'), response.clone());
+          await cache.put(scopedUrl('./'), response.clone());
         }
-      } catch {}
-      return response;
-    }).catch(async () => {
-      const url = new URL(request.url);
-      const canonical = new URL(url.pathname, self.registration.scope).toString();
-      const cache = await caches.open(CACHE);
-      return (await cache.match(canonical)) ||
-        (await cache.match(request)) ||
-        (await cache.match(new URL('./index.html', self.registration.scope).toString())) ||
-        (await cache.match(new URL('./', self.registration.scope).toString()));
-    }));
+        return response;
+      } catch {
+        const cache = await caches.open(CACHE);
+        const hit = await cache.match(canonical, {ignoreSearch: true}) ||
+          await cache.match(request, {ignoreSearch: true});
+        if (hit) return hit;
+        // Only the home route may fall back to the app shell. Never show the
+        // Study Desk home page as a misleading substitute for another module.
+        if (!relativePath || relativePath === 'index.html') {
+          return await cache.match(scopedUrl('./index.html')) ||
+            await cache.match(scopedUrl('./'));
+        }
+        return new Response('This PHALGUN page is not available offline yet. Open it once while online, then retry.', {
+          status: 503, headers: {'Content-Type': 'text/plain; charset=utf-8'}
+        });
+      }
+    })());
     return;
   }
   event.respondWith(fetch(request).then(async response => {
     if (!response || !response.ok) return response;
     try { await (await caches.open(CACHE)).put(request, response.clone()); } catch {}
     return response;
-  }).catch(() => caches.match(request)));
+  }).catch(() => caches.match(request, {ignoreSearch: true})));
 });
