@@ -66,18 +66,17 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+      - name: Install Chrome
+        id: chrome
+        uses: browser-actions/setup-chrome@v1
+
       - name: Install browser test runner
-        env:
-          # Use the documented Azure Edge mirror when the primary CDN's TLS
-          # certificate is misrouted by a runner/network proxy. Keep TLS checks on.
-          PLAYWRIGHT_DOWNLOAD_HOST: https://playwright.azureedge.net
-        run: |
-          npm install --no-save playwright
-          npx playwright install --with-deps chromium
+        run: npm install --no-save playwright
 
       - name: Exercise deployed app in a real browser
         env:
           PHALGUN_BASE_URL: ${{ steps.deployment.outputs.page_url }}
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
         run: node scripts/test_live_app.mjs
 
       - name: Verify live app
