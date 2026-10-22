@@ -32,6 +32,7 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -79,7 +80,8 @@ jobs:
         env:
           PHALGUN_BASE_URL: ${{ steps.deployment.outputs.page_url }}
           CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
-        run: node scripts/test_live_app.mjs
+        timeout-minutes: 15
+        run: timeout --signal=TERM --kill-after=30s 14m node scripts/test_live_app.mjs
 
       - name: Verify live app
         env:
