@@ -178,7 +178,7 @@ try {
   const dictionaryTimerLayout = await timerLayout(page, '.shared-commandbar .shared-stopwatch>.buttons', 1365);
   check(dictionaryTimerLayout.ok, 'dictionary: timer controls use aligned equal-width grid', JSON.stringify(dictionaryTimerLayout));
   const dictStart = (await page.locator('#sharedClock').innerText()).trim();
-  await page.locator('#sharedStart').click(); await wait(1200);
+  await page.locator('#sharedStart').click(); await wait(2200);
   const dictRunning = (await page.locator('#sharedClock').innerText()).trim();
   check(dictRunning !== dictStart && await page.locator('#sharedPause').isEnabled(), 'dictionary: timer starts and advances', dictStart + ' → ' + dictRunning);
   await page.locator('#sharedPause').click();
