@@ -152,7 +152,10 @@ try {
           const scope = registration.scope;
           const expected = new URL('dictionary.html', scope).href;
           const match = await cache.match(expected, {ignoreSearch:true});
-          return {controller: navigator.serviceWorker.controller?.scriptURL || null, scope, cacheNames, dictionaryCached: !!match, dictionaryStatus: match?.status || null, relevantKeys: keys.filter(path => /dictionary|index\.html$/.test(path))};
+          const cachedText = match ? await match.clone().text() : '';
+          const cachedTitle = cachedText.match(/<title[^>]*>([\\s\\S]*?)<\\/title>/i)?.[1]?.replace(/\\s+/g, ' ').trim() || null;
+          const cachedH1 = cachedText.match(/<h1[^>]*>([\\s\\S]*?)<\\/h1>/i)?.[1]?.replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim() || null;
+          return {controller: navigator.serviceWorker.controller?.scriptURL || null, scope, cacheNames, dictionaryCached: !!match, dictionaryStatus: match?.status || null, cachedTitle, cachedH1, relevantKeys: keys.filter(path => /dictionary|index\\.html$/.test(path))};
         }).catch(error => ({error:String(error)}));
         console.log('DICTIONARY_CACHE_DIAGNOSTICS ' + viewport.name + ': ' + JSON.stringify(dictionaryCacheDiagnostics));
         check(dictionaryOnline, viewport.name + ': dictionary page loads online before offline test',
