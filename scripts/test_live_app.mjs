@@ -32,6 +32,7 @@ try {
     const page = await context.newPage();
     const pageErrors = [];
     page.on('pageerror', error => pageErrors.push(error.message));
+    page.on('response', response => { if (response.status() >= 400) pageErrors.push('HTTP ' + response.status() + ': ' + response.url()); });
     page.on('console', msg => { if (msg.type() === 'error' && !/favicon|ERR_BLOCKED_BY_CLIENT/i.test(msg.text())) pageErrors.push('console: ' + msg.text()); });
 
     await page.goto(base + '/index.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
