@@ -136,8 +136,8 @@ try {
         status: 'Practised', notes: 'Regression fixture' }],
       notes: { 'acct-equation': 'Restored lesson note ' + viewport.name },
       myNotes: [{ id: 'backup-note', title: 'Restored test note', text: restoredNoteText, updated: 'Test fixture' }],
-      results: {},
-      plan: { dailyTarget: 300, weeklyTarget: 15, planStart: '', planEnd: '', schedule: '' }
+      results: { 'acct-equation': { score: 4, total: 4, passed: true, date: '23/10/2026', attempts: 2 } },
+      plan: { dailyTarget: 330, weeklyTarget: 16, planStart: '2026-10-23', planEnd: '2026-11-30', schedule: 'Weekdays 6:00–7:00 AM' }
     };
     await page.getByRole('tab', { name: 'Backup' }).click();
     page.once('dialog', dialog => dialog.accept());
@@ -182,6 +182,13 @@ try {
       viewport.name + ': exported backup includes lesson and personal notes');
     check(exportedBackup?.sessions?.some(s => s.topic === restoredSessionTopic && s.minutes === 7),
       viewport.name + ': exported backup includes restored study-session history');
+    check(exportedBackup?.results?.['acct-equation']?.score === 4 &&
+      exportedBackup?.results?.['acct-equation']?.passed === true,
+      viewport.name + ': exported backup preserves quiz score and pass status');
+    check(exportedBackup?.plan?.dailyTarget === 330 && exportedBackup?.plan?.weeklyTarget === 16 &&
+      exportedBackup?.plan?.planStart === '2026-10-23' && exportedBackup?.plan?.planEnd === '2026-11-30' &&
+      exportedBackup?.plan?.schedule === 'Weekdays 6:00–7:00 AM',
+      viewport.name + ': exported backup preserves study targets, dates, and timetable');
 
     const searchBox = await page.locator('#globalSearch').boundingBox();
     const timerBox = await page.locator('.stopwatch-card').boundingBox();
