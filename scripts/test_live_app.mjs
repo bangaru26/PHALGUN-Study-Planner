@@ -165,6 +165,7 @@ try {
           let dictionaryOffline = false;
           let offlineDictionaryEvidence = {};
           try {
+            // The service worker must ignore cache-busting query strings for pre-cached pages.
             // A new query string forces a fresh navigation. The shared shell can contain
             // its own H1, so validate the document title and actual dictionary terms,
             // not the first H1 (which may belong to the shared Study Desk header).
