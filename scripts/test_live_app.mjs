@@ -152,6 +152,15 @@ try {
       } catch { return false; }
     }, persistenceNote), viewport.name + ': note text is saved to local storage');
     await page.reload({ waitUntil: 'networkidle', timeout: 60000 });
+    const quizResultSurvivedReload = await page.evaluate(() => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        const result = d.results?.['acct-equation'];
+        return !!result && Number.isFinite(result.score) && result.total >= 4 &&
+          Number.isFinite(result.attempts) && result.attempts >= 1;
+      } catch { return false; }
+    });
+    check(quizResultSurvivedReload, viewport.name + ': quiz score and attempt count survive page reload');
     await page.getByRole('tab', { name: 'My Notes' }).click();
     check(await page.locator('#notesList .my-note-text').first().inputValue().catch(() => '') === persistenceNote,
       viewport.name + ': note text survives page reload');
