@@ -124,6 +124,44 @@ try {
     check(await page.locator('#notesList .my-note-text').first().inputValue().catch(() => '') === persistenceNote,
       viewport.name + ': note text survives page reload');
 
+    // Restore a valid, isolated fixture and verify the important progress records survive import.
+    const restoredNoteText = 'Restored backup note ' + viewport.name;
+    const restoredSessionTopic = 'Backup restore probe ' + viewport.name;
+    const validBackup = {
+      version: 2,
+      currentLesson: 'acct-equation',
+      sessions: [{ id: 'backup-session', date: '2026-10-23', topic: restoredSessionTopic,
+        lessonId: 'acct-equation', start: '09:00', end: '09:07', minutes: 7,
+        status: 'Practised', notes: 'Regression fixture' }],
+      notes: { 'acct-equation': 'Restored lesson note ' + viewport.name },
+      myNotes: [{ id: 'backup-note', title: 'Restored test note', text: restoredNoteText, updated: 'Test fixture' }],
+      results: {},
+      plan: { dailyTarget: 300, weeklyTarget: 15, planStart: '', planEnd: '', schedule: '' }
+    };
+    await page.getByRole('tab', { name: 'Backup' }).click();
+    page.once('dialog', dialog => dialog.accept());
+    await page.locator('#importFile').setInputFiles({
+      name: 'valid-study-desk-backup.json',
+      mimeType: 'application/json',
+      buffer: Buffer.from(JSON.stringify(validBackup))
+    });
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('Backup restored successfully'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('Backup restored successfully'),
+      viewport.name + ': valid backup restores successfully');
+    const restoredState = await page.evaluate(() => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        return { notes: d.notes || {}, myNotes: d.myNotes || [], sessions: d.sessions || [] };
+      } catch { return {}; }
+    });
+    check(restoredState.notes?.['acct-equation'] === validBackup.notes['acct-equation'],
+      viewport.name + ': backup restores lesson notes');
+    check(restoredState.myNotes?.some(n => n.text === restoredNoteText),
+      viewport.name + ': backup restores personal notes');
+    check(restoredState.sessions?.some(s => s.topic === restoredSessionTopic && s.minutes === 7),
+      viewport.name + ': backup restores study session history');
+
     const searchBox = await page.locator('#globalSearch').boundingBox();
     const timerBox = await page.locator('.stopwatch-card').boundingBox();
     if (searchBox && timerBox) {
