@@ -225,6 +225,18 @@ try {
       restoredState.plan?.schedule === 'Weekdays 6:00–7:00 AM',
       viewport.name + ': backup restores study targets, dates, and timetable');
 
+    const restoredPlanBeforeReload = JSON.stringify(restoredState.plan);
+    await page.reload({ waitUntil: 'networkidle', timeout: 60000 });
+    const restoredPlanAfterReload = await page.evaluate(() => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        return JSON.stringify(d.plan || {});
+      } catch { return 'invalid'; }
+    });
+    check(restoredPlanAfterReload !== 'invalid' && restoredPlanAfterReload === restoredPlanBeforeReload,
+      viewport.name + ': study-plan targets, dates, and timetable survive page reload');
+
+
     // Export the restored state and verify the downloaded file is a portable, readable backup.
     await page.getByRole('tab', { name: /Study.*Progress.*Assess/ }).click();
     const [backupDownload] = await Promise.all([
