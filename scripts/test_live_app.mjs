@@ -173,6 +173,7 @@ try {
             await page.waitForFunction(() =>
               document.title.includes('Subject Dictionary') &&
               document.querySelectorAll('.term').length > 0,
+              null,
               { timeout: 5000 }
             );
             offlineDictionaryEvidence = await page.evaluate(() => ({
