@@ -1,4 +1,5 @@
 import { chromium } from 'playwright';
+import { readFile } from 'node:fs/promises';
 
 const base = (process.env.PHALGUN_BASE_URL || 'https://bangaru26.github.io/PHALGUN-Study-Planner').replace(/\/$/, '');
 const failures = [];
@@ -161,6 +162,26 @@ try {
       viewport.name + ': backup restores personal notes');
     check(restoredState.sessions?.some(s => s.topic === restoredSessionTopic && s.minutes === 7),
       viewport.name + ': backup restores study session history');
+
+    // Export the restored state and verify the downloaded file is a portable, readable backup.
+    await page.getByRole('tab', { name: /Study.*Progress.*Assess/ }).click();
+    const [backupDownload] = await Promise.all([
+      page.waitForEvent('download', { timeout: 10000 }),
+      page.locator('#exportJson').click()
+    ]);
+    check(backupDownload.suggestedFilename() === 'aaroh-study-desk-backup.json',
+      viewport.name + ': full progress backup downloads with expected filename', backupDownload.suggestedFilename());
+    let exportedBackup = null;
+    try {
+      const exportedPath = await backupDownload.path();
+      if (exportedPath) exportedBackup = JSON.parse(await readFile(exportedPath, 'utf8'));
+    } catch {}
+    check(exportedBackup?.version === 2, viewport.name + ': exported backup is valid JSON with v2 schema');
+    check(exportedBackup?.notes?.['acct-equation'] === validBackup.notes['acct-equation'] &&
+      exportedBackup?.myNotes?.some(n => n.text === restoredNoteText),
+      viewport.name + ': exported backup includes lesson and personal notes');
+    check(exportedBackup?.sessions?.some(s => s.topic === restoredSessionTopic && s.minutes === 7),
+      viewport.name + ': exported backup includes restored study-session history');
 
     const searchBox = await page.locator('#globalSearch').boundingBox();
     const timerBox = await page.locator('.stopwatch-card').boundingBox();
