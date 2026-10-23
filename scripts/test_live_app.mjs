@@ -266,6 +266,38 @@ try {
     check(fullBackupBeforeReload !== 'invalid' && fullBackupAfterReload === fullBackupBeforeReload,
       viewport.name + ': complete learning progress snapshot survives page reload');
 
+    const backupStateBeforeTabNavigation = await page.evaluate(() => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        return JSON.stringify({
+          sessions: d.sessions || [],
+          notes: d.notes || {},
+          myNotes: d.myNotes || [],
+          results: d.results || {},
+          plan: d.plan || {},
+          currentLesson: d.currentLesson
+        });
+      } catch { return 'invalid'; }
+    });
+    await page.getByRole('tab', { name: 'Learn & Practice' }).click();
+    await page.getByRole('tab', { name: 'Backup' }).click();
+    const backupStateAfterTabNavigation = await page.evaluate(() => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        return JSON.stringify({
+          sessions: d.sessions || [],
+          notes: d.notes || {},
+          myNotes: d.myNotes || [],
+          results: d.results || {},
+          plan: d.plan || {},
+          currentLesson: d.currentLesson
+        });
+      } catch { return 'invalid'; }
+    });
+    check(backupStateBeforeTabNavigation !== 'invalid' &&
+      backupStateAfterTabNavigation === backupStateBeforeTabNavigation,
+      viewport.name + ': switching tabs preserves complete learning progress');
+
 
     // Export the restored state and verify the downloaded file is a portable, readable backup.
     await page.getByRole('tab', { name: /Study.*Progress.*Assess/ }).click();
