@@ -69,12 +69,32 @@ try {
     check(await page.evaluate(() => { const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return Array.isArray(d.sessions) && d.sessions.length > 0; }), viewport.name + ': timer session persists in local storage');
 
     await page.getByRole('tab', { name: 'Backup' }).click();
-    const beforeInvalidRestore = await page.evaluate(() => { const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return {sessions:d.sessions?.length||0,lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),results:JSON.stringify(d.results||{})}; });
+    const beforeInvalidRestore = await page.evaluate(() => {
+      const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+      return {
+        sessions: JSON.stringify(d.sessions || []),
+        lesson: d.currentLesson,
+        notes: JSON.stringify(d.notes || {}),
+        myNotes: JSON.stringify(d.myNotes || []),
+        results: JSON.stringify(d.results || {}),
+        plan: JSON.stringify(d.plan || {})
+      };
+    });
     await page.locator('#importFile').setInputFiles({name:'malformed-study-desk-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:[],results:{},plan:{}}))});
     await page.locator('#importBackup').click();
     await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('Could not restore backup:'), { timeout: 5000 }).catch(() => {});
     check((await page.locator('#backupFeedback').innerText()).includes('valid Study Desk v2 backup'), viewport.name + ': malformed backup is rejected with a clear message');
-    const afterInvalidRestore = await page.evaluate(() => { const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return {sessions:d.sessions?.length||0,lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),results:JSON.stringify(d.results||{})}; });
+    const afterInvalidRestore = await page.evaluate(() => {
+      const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+      return {
+        sessions: JSON.stringify(d.sessions || []),
+        lesson: d.currentLesson,
+        notes: JSON.stringify(d.notes || {}),
+        myNotes: JSON.stringify(d.myNotes || []),
+        results: JSON.stringify(d.results || {}),
+        plan: JSON.stringify(d.plan || {})
+      };
+    });
     check(JSON.stringify(afterInvalidRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': rejected backup leaves existing progress unchanged', JSON.stringify({beforeInvalidRestore,afterInvalidRestore}));
 
     await page.getByRole('tab', { name: /Study · Progress · Assess/ }).click();
