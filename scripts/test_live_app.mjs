@@ -116,10 +116,21 @@ try {
     await wait(60);
     check(await questions.first().isVisible().catch(() => false), viewport.name + ': assessment questions are visible');
     if (await questions.count() >= 4) {
-      const firstRadio = questions.first().locator('input[type=radio]').first();
-      await firstRadio.check({ force: true }).catch(() => {});
+      for (let questionIndex = 0; questionIndex < await questions.count(); questionIndex++) {
+        const firstRadio = questions.nth(questionIndex).locator('input[type=radio]').first();
+        await firstRadio.check({ force: true }).catch(() => {});
+      }
       await page.locator('#submitQuiz').click();
       check(await page.locator('#quizFeedback').isVisible().catch(() => false), viewport.name + ': assessment submits and displays feedback');
+      const quizResultSaved = await page.evaluate(() => {
+        try {
+          const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+          const result = d.results?.['acct-equation'];
+          return !!result && Number.isFinite(result.score) && result.total >= 4 &&
+            Number.isFinite(result.attempts) && result.attempts >= 1;
+        } catch { return false; }
+      });
+      check(quizResultSaved, viewport.name + ': submitted quiz score and attempt count save locally');
     }
 
     await page.getByRole('tab', { name: 'My Notes' }).click();
