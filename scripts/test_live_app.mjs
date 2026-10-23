@@ -153,7 +153,8 @@ try {
     const restoredState = await page.evaluate(() => {
       try {
         const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
-        return { notes: d.notes || {}, myNotes: d.myNotes || [], sessions: d.sessions || [] };
+        return { notes: d.notes || {}, myNotes: d.myNotes || [], sessions: d.sessions || [],
+          results: d.results || {}, plan: d.plan || {} };
       } catch { return {}; }
     });
     check(restoredState.notes?.['acct-equation'] === validBackup.notes['acct-equation'],
@@ -162,6 +163,13 @@ try {
       viewport.name + ': backup restores personal notes');
     check(restoredState.sessions?.some(s => s.topic === restoredSessionTopic && s.minutes === 7),
       viewport.name + ': backup restores study session history');
+    check(restoredState.results?.['acct-equation']?.score === 4 &&
+      restoredState.results?.['acct-equation']?.passed === true,
+      viewport.name + ': backup restores quiz score and pass status');
+    check(restoredState.plan?.dailyTarget === 330 && restoredState.plan?.weeklyTarget === 16 &&
+      restoredState.plan?.planStart === '2026-10-23' && restoredState.plan?.planEnd === '2026-11-30' &&
+      restoredState.plan?.schedule === 'Weekdays 6:00–7:00 AM',
+      viewport.name + ': backup restores study targets, dates, and timetable');
 
     // Export the restored state and verify the downloaded file is a portable, readable backup.
     await page.getByRole('tab', { name: /Study.*Progress.*Assess/ }).click();
