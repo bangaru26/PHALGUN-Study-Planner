@@ -105,6 +105,24 @@ try {
     await page.locator('#addNote').click();
     check(await count(page, '#notesList .my-note') >= 1, viewport.name + ': new note can be created');
     check(await visible(page, '#notesList .my-note-text'), viewport.name + ': note editor is visible');
+    const persistenceNote = 'PHALGUN persistence check ' + viewport.name + ' ' + Date.now();
+    await page.locator('#notesList .my-note-text').first().fill(persistenceNote);
+    await page.waitForFunction(expected => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        return Array.isArray(d.myNotes) && d.myNotes.some(n => n.text === expected);
+      } catch { return false; }
+    }, persistenceNote, { timeout: 5000 }).catch(() => {});
+    check(await page.evaluate(expected => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        return Array.isArray(d.myNotes) && d.myNotes.some(n => n.text === expected);
+      } catch { return false; }
+    }, persistenceNote), viewport.name + ': note text is saved to local storage');
+    await page.reload({ waitUntil: 'networkidle', timeout: 60000 });
+    await page.getByRole('tab', { name: 'My Notes' }).click();
+    check(await page.locator('#notesList .my-note-text').first().inputValue().catch(() => '') === persistenceNote,
+      viewport.name + ': note text survives page reload');
 
     const searchBox = await page.locator('#globalSearch').boundingBox();
     const timerBox = await page.locator('.stopwatch-card').boundingBox();
