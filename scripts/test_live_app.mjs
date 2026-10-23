@@ -151,7 +151,21 @@ try {
         return Array.isArray(d.myNotes) && d.myNotes.some(n => n.text === expected);
       } catch { return false; }
     }, persistenceNote), viewport.name + ': note text is saved to local storage');
+    const sessionHistoryBeforeReload = await page.evaluate(() => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        return JSON.stringify(Array.isArray(d.sessions) ? d.sessions : []);
+      } catch { return 'invalid'; }
+    });
     await page.reload({ waitUntil: 'networkidle', timeout: 60000 });
+    const sessionHistoryAfterReload = await page.evaluate(() => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        return JSON.stringify(Array.isArray(d.sessions) ? d.sessions : []);
+      } catch { return 'invalid'; }
+    });
+    check(sessionHistoryBeforeReload !== 'invalid' && sessionHistoryAfterReload === sessionHistoryBeforeReload,
+      viewport.name + ': study-session history survives page reload');
     const quizResultSurvivedReload = await page.evaluate(() => {
       try {
         const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
