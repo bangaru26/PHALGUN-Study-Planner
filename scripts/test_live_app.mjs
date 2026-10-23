@@ -279,7 +279,7 @@ try {
         });
       } catch { return 'invalid'; }
     });
-    await page.getByRole('tab', { name: 'Learn & Practice' }).click();
+    await page.getByRole('tab', { name: 'Learn & Practise' }).click();
     await page.getByRole('tab', { name: 'Backup' }).click();
     const backupStateAfterTabNavigation = await page.evaluate(() => {
       try {
