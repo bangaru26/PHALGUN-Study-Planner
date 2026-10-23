@@ -236,6 +236,36 @@ try {
     check(restoredPlanAfterReload !== 'invalid' && restoredPlanAfterReload === restoredPlanBeforeReload,
       viewport.name + ': study-plan targets, dates, and timetable survive page reload');
 
+    const fullBackupBeforeReload = await page.evaluate(() => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        return JSON.stringify({
+          sessions: d.sessions || [],
+          notes: d.notes || {},
+          myNotes: d.myNotes || [],
+          results: d.results || {},
+          plan: d.plan || {},
+          currentLesson: d.currentLesson
+        });
+      } catch { return 'invalid'; }
+    });
+    await page.reload({ waitUntil: 'networkidle', timeout: 60000 });
+    const fullBackupAfterReload = await page.evaluate(() => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        return JSON.stringify({
+          sessions: d.sessions || [],
+          notes: d.notes || {},
+          myNotes: d.myNotes || [],
+          results: d.results || {},
+          plan: d.plan || {},
+          currentLesson: d.currentLesson
+        });
+      } catch { return 'invalid'; }
+    });
+    check(fullBackupBeforeReload !== 'invalid' && fullBackupAfterReload === fullBackupBeforeReload,
+      viewport.name + ': complete learning progress snapshot survives page reload');
+
 
     // Export the restored state and verify the downloaded file is a portable, readable backup.
     await page.getByRole('tab', { name: /Study.*Progress.*Assess/ }).click();
