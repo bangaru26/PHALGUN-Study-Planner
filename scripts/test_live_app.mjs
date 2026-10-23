@@ -163,14 +163,35 @@ try {
         if (dictionaryOnline) {
           await context.setOffline(true);
           let dictionaryOffline = false;
+          let offlineDictionaryEvidence = {};
           try {
-            // Use a fresh query string so Chromium performs a real navigation rather than reusing the already-open document.
-            await page.goto(dictionaryUrl + '?offline-e2e=' + Date.now(), { waitUntil: 'commit', timeout: 15000 });
-            await page.locator('h1').waitFor({ state: 'visible', timeout: 5000 });
-            dictionaryOffline = (await page.locator('h1').innerText()).includes('Subject Dictionary');
-          } catch {}
+            // The service worker must ignore cache-busting query strings for pre-cached pages.
+            // A new query string forces a fresh navigation. The shared shell can contain
+            // its own H1, so validate the document title and actual dictionary terms,
+            // not the first H1 (which may belong to the shared Study Desk header).
+            const offlineUrl = dictionaryUrl + '?offline-e2e=' + Date.now();
+            await page.goto(offlineUrl, { waitUntil: 'domcontentloaded', timeout: 15000 });
+            await page.waitForFunction(() =>
+              document.title.includes('Subject Dictionary') &&
+              document.querySelectorAll('.term').length > 0,
+              null,
+              { timeout: 5000 }
+            );
+            offlineDictionaryEvidence = await page.evaluate(() => ({
+              title: document.title,
+              termCount: document.querySelectorAll('.term').length,
+              path: location.pathname,
+              query: location.search
+            }));
+            dictionaryOffline = new URL(page.url()).pathname.endsWith('/dictionary.html') &&
+              new URL(page.url()).searchParams.has('offline-e2e') &&
+              offlineDictionaryEvidence.title.includes('Subject Dictionary') &&
+              offlineDictionaryEvidence.termCount > 0;
+          } catch (error) {
+            offlineDictionaryEvidence.error = String(error);
+          }
           check(dictionaryOffline, viewport.name + ': offline navigation returns cached dictionary page',
-            JSON.stringify({ url: page.url(), heading: await page.locator('h1').innerText().catch(() => ''), body: (await page.locator('body').innerText().catch(() => '')).slice(0, 180) }));
+            JSON.stringify({ url: page.url(), ...offlineDictionaryEvidence }));
           await context.setOffline(false);
         }
       }
