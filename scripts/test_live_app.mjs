@@ -110,6 +110,13 @@ try {
     check((await page.locator('#backupFeedback').innerText()).includes('invalid lesson-result record'), viewport.name + ': quiz scores above total are rejected');
     const afterInconsistentScoreRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
     check(JSON.stringify(afterInconsistentScoreRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': inconsistent score backup preserves existing progress');
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for fractional score validation'; });
+    await page.locator('#importFile').setInputFiles({name:'fractional-score-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{'acct-equation':{score:2.5,total:4,passed:false}},plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid lesson-result record'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid lesson-result record'), viewport.name + ': fractional quiz scores are rejected');
+    const afterFractionalScoreRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterFractionalScoreRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': fractional score backup preserves existing progress');
 
     await page.getByRole('tab', { name: /Study · Progress · Assess/ }).click();
     await page.locator('#assessmentSection').waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
