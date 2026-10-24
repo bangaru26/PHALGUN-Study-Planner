@@ -80,10 +80,10 @@ try {
         plan: JSON.stringify(d.plan || {})
       };
     });
-    await page.locator('#importFile').setInputFiles({name:'malformed-study-desk-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:[],results:{},plan:{}}))});
+    await page.locator('#importFile').setInputFiles({name:'malformed-study-desk-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[{topic:'Corrupt session',minutes:'seven'}],notes:{},results:{},plan:{}}))});
     await page.locator('#importBackup').click();
     await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('Could not restore backup:'), { timeout: 5000 }).catch(() => {});
-    check((await page.locator('#backupFeedback').innerText()).includes('valid Study Desk v2 backup'), viewport.name + ': malformed backup is rejected with a clear message');
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid study-session record'), viewport.name + ': malformed nested session fields are rejected');
     const afterInvalidRestore = await page.evaluate(() => {
       const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
       return {
@@ -96,6 +96,12 @@ try {
       };
     });
     check(JSON.stringify(afterInvalidRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': rejected backup leaves existing progress unchanged', JSON.stringify({beforeInvalidRestore,afterInvalidRestore}));
+    await page.locator('#importFile').setInputFiles({name:'invalid-results-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{'acct-equation':{score:'four',passed:true}},plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('Could not restore backup:'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid lesson-result record'), viewport.name + ': malformed quiz-result fields are rejected');
+    const afterInvalidResultRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterInvalidResultRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': rejected quiz-result backup also preserves existing progress');
 
     await page.getByRole('tab', { name: /Study · Progress · Assess/ }).click();
     await page.locator('#assessmentSection').waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
