@@ -41,9 +41,20 @@ jobs:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
         run: npm install --no-save playwright
 
-      - name: Exercise current live Study Desk with proposed browser checks
+      - name: Serve proposed Study Desk branch locally
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/phalgun-http.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --silent --fail http://127.0.0.1:4173/index.html >/dev/null; then
+              break
+            fi
+            sleep 1
+          done
+          curl --silent --fail http://127.0.0.1:4173/index.html >/dev/null
+
+      - name: Exercise proposed Study Desk branch with browser checks
         env:
-          PHALGUN_BASE_URL: https://bangaru26.github.io/PHALGUN-Study-Planner
+          PHALGUN_BASE_URL: http://127.0.0.1:4173
           CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
         timeout-minutes: 15
         run: timeout --signal=TERM --kill-after=30s 14m node scripts/test_live_app.mjs
