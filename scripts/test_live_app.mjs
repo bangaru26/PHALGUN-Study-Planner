@@ -494,6 +494,28 @@ try {
   await page.locator('#sharedPause').click();
   await page.locator('#sharedStop').click();
   check(await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return Array.isArray(d.sessions)&&d.sessions.some(s=>s.topic==='Excel Formula Practice');}), 'Excel practice: Stop & Save records a session');
+
+  // Pause/resume and reload should preserve the elapsed time of the current shared session.
+  await page.locator('#sharedStart').click(); await wait(1200);
+  await page.locator('#sharedPause').click();
+  const pausedClock = (await page.locator('#sharedClock').innerText()).trim();
+  check(await page.locator('#sharedStart').isEnabled() && await page.locator('#sharedPause').isDisabled(),
+    'Excel practice: pause switches timer controls to paused state');
+  await wait(1200);
+  const stillPausedClock = (await page.locator('#sharedClock').innerText()).trim();
+  check(stillPausedClock === pausedClock,
+    'Excel practice: paused timer does not accrue elapsed time', pausedClock + ' → ' + stillPausedClock);
+  await page.reload({ waitUntil: 'networkidle' });
+  const pausedClockAfterReload = (await page.locator('#sharedClock').innerText()).trim();
+  check(pausedClockAfterReload === pausedClock && await page.locator('#sharedStart').isEnabled(),
+    'Excel practice: paused timer state survives reload', pausedClock + ' → ' + pausedClockAfterReload);
+  await page.locator('#sharedStart').click(); await wait(1200);
+  const resumedClock = (await page.locator('#sharedClock').innerText()).trim();
+  check(resumedClock !== pausedClockAfterReload && await page.locator('#sharedPause').isEnabled(),
+    'Excel practice: paused timer resumes and advances', pausedClockAfterReload + ' → ' + resumedClock);
+  await page.locator('#sharedStop').click();
+  check(await page.locator('#sharedStop').isDisabled(), 'Excel practice: resumed session can be stopped and saved');
+
   await page.locator('#checkAnswers').click();
   check((await page.locator('#practiceFeedback').innerText().catch(() => '')).trim().length > 0, 'Excel practice: answer checking produces feedback');
   await page.setViewportSize({width:390,height:844});
