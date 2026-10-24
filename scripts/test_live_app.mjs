@@ -103,6 +103,13 @@ try {
     check((await page.locator('#backupFeedback').innerText()).includes('invalid lesson-result record'), viewport.name + ': malformed quiz-result fields are rejected');
     const afterInvalidResultRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
     check(JSON.stringify(afterInvalidResultRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': rejected quiz-result backup also preserves existing progress');
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for inconsistent score validation'; });
+    await page.locator('#importFile').setInputFiles({name:'inconsistent-score-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{'acct-equation':{score:5,total:4,passed:true}},plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid lesson-result record'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid lesson-result record'), viewport.name + ': quiz scores above total are rejected');
+    const afterInconsistentScoreRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterInconsistentScoreRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': inconsistent score backup preserves existing progress');
 
     await page.getByRole('tab', { name: /Study · Progress · Assess/ }).click();
     await page.locator('#assessmentSection').waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
