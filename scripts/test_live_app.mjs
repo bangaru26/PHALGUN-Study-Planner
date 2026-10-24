@@ -446,7 +446,21 @@ try {
   check(dictionaryMobileLayout.ok, 'dictionary: mobile timer controls remain aligned', JSON.stringify(dictionaryMobileLayout));
 
   await page.setViewportSize({width:1365,height:900});
+  // Cross-page continuity: an active timer must survive navigation from the dictionary to formula practice.
+  await page.locator('#sharedStart').click(); await wait(1200);
+  const dictionaryClockBeforeNavigation = (await page.locator('#sharedClock').innerText()).trim();
   await page.goto(base + '/excel-practice.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  const excelClockAfterNavigation = (await page.locator('#sharedClock').innerText()).trim();
+  check(excelClockAfterNavigation !== '00:00:00' && await page.locator('#sharedPause').isEnabled(),
+    'Excel practice: active shared timer survives navigation from dictionary',
+    dictionaryClockBeforeNavigation + ' → ' + excelClockAfterNavigation);
+  await wait(1200);
+  const excelClockContinued = (await page.locator('#sharedClock').innerText()).trim();
+  check(excelClockContinued !== excelClockAfterNavigation,
+    'Excel practice: shared timer continues advancing after cross-page navigation',
+    excelClockAfterNavigation + ' → ' + excelClockContinued);
+  await page.locator('#sharedPause').click();
+  await page.locator('#sharedStop').click();
   check(await visible(page, '#sharedClock') && await visible(page, '#sharedStart'), 'Excel practice: shared timer and controls are visible');
   check(await visible(page, '#globalSearch'), 'Excel practice: global search is visible');
   check(await visible(page, '#formulaTitle') && (await page.locator('#formulaTitle').innerText()).trim().length > 0, 'Excel practice: formula lesson is loaded');
