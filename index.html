@@ -1282,12 +1282,17 @@ $('exportJson').onclick=exportJSON;
 $('historySearch')?.addEventListener('input',renderHistory);
 $('exportCsv').onclick=()=>{let rows=[['Date','Weekday','Topic','Start time','End time','Duration (minutes)','Status','Notes'],...data.sessions.map(s=>{const d=parseDate(s.date);return [s.date,d?d.toLocaleDateString('en-IN',{weekday:'long'}):'',s.topic,s.start,s.end,s.minutes,s.status,s.notes]})];let csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');download('phalgun-study-sessions.csv',new Blob([csv],{type:'text/csv;charset=utf-8'}))};
 function isBackupRecord(value){return value!==null&&typeof value==='object'&&!Array.isArray(value)}
+function isOptionalString(record,key){return record[key]===undefined||typeof record[key]==='string'}
+function isOptionalNumber(record,key){return record[key]===undefined||(typeof record[key]==='number'&&Number.isFinite(record[key])&&record[key]>=0)}
 function validateStudyDeskBackup(value){
  if(!isBackupRecord(value)||value.version!==2||!Array.isArray(value.sessions)||!isBackupRecord(value.notes)||!isBackupRecord(value.results)||!isBackupRecord(value.plan||{}))throw Error('This does not look like a valid Study Desk v2 backup.');
- if(value.sessions.some(s=>!isBackupRecord(s)||typeof s.topic!=='string'))throw Error('The backup contains an invalid study-session record.');
+ if(value.sessions.some(s=>!isBackupRecord(s)||typeof s.topic!=='string'||!s.topic.trim()||!isOptionalString(s,'date')||!isOptionalString(s,'start')||!isOptionalString(s,'end')||!isOptionalString(s,'status')||!isOptionalString(s,'notes')||!isOptionalNumber(s,'seconds')||!isOptionalNumber(s,'minutes')))throw Error('The backup contains an invalid study-session record.');
  if(Object.values(value.notes).some(note=>typeof note!=='string'))throw Error('The backup contains an invalid lesson note.');
- if(Object.values(value.results).some(result=>!isBackupRecord(result)))throw Error('The backup contains an invalid lesson-result record.');
- if(value.myNotes!==undefined&&(!Array.isArray(value.myNotes)||value.myNotes.some(note=>!isBackupRecord(note))))throw Error('The backup contains an invalid note list.');
+ if(Object.values(value.results).some(result=>!isBackupRecord(result)||!isOptionalNumber(result,'score')||!isOptionalNumber(result,'total')||!isOptionalNumber(result,'attempts')||(result.passed!==undefined&&typeof result.passed!=='boolean')||(result.reviewed!==undefined&&typeof result.reviewed!=='boolean')||!isOptionalString(result,'date')))throw Error('The backup contains an invalid lesson-result record.');
+ if(value.myNotes!==undefined&&(!Array.isArray(value.myNotes)||value.myNotes.some(note=>!isBackupRecord(note)||!isOptionalString(note,'id')||!isOptionalString(note,'title')||!isOptionalString(note,'text')||!isOptionalString(note,'updated'))))throw Error('The backup contains an invalid note list.');
+ if(!isOptionalString(value,'currentLesson'))throw Error('The backup contains an invalid current lesson.');
+ const p=value.plan||{};
+ if(!isOptionalNumber(p,'dailyTarget')||!isOptionalNumber(p,'weeklyTarget')||!isOptionalString(p,'planStart')||!isOptionalString(p,'planEnd')||!isOptionalString(p,'schedule'))throw Error('The backup contains invalid study-plan settings.');
  return value;
 }
 $('importBackup').onclick=()=>{let f=$('importFile').files[0];if(!f){$('backupFeedback').textContent='Choose a saved Study Desk progress backup first.';return}let reader=new FileReader();reader.onload=()=>{try{let v=validateStudyDeskBackup(JSON.parse(reader.result));if(!confirm('Replace current local progress with this backup? Export current data first if needed.'))return;data={...fresh(),...v,notes:v.notes,myNotes:Array.isArray(v.myNotes)?v.myNotes:[],results:v.results,sessions:v.sessions,plan:{...fresh().plan,...(v.plan||{})}};currentId=lessons.some(l=>l.id===data.currentLesson)?data.currentLesson:lessons[0].id;save();renderAll();renderLesson();$('backupFeedback').textContent='Backup restored successfully in this browser.'}catch(e){$('backupFeedback').textContent='Could not restore backup: '+e.message}};reader.readAsText(f)};
