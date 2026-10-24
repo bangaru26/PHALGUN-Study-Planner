@@ -118,6 +118,22 @@ try {
     const afterFractionalScoreRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
     check(JSON.stringify(afterFractionalScoreRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': fractional score backup preserves existing progress');
 
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for lesson-note validation'; });
+    await page.locator('#importFile').setInputFiles({name:'invalid-lesson-notes-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{'acct-equation':{unexpected:'object'}},results:{},plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid lesson note'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid lesson note'), viewport.name + ': non-string lesson notes are rejected');
+    const afterInvalidLessonNotesRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterInvalidLessonNotesRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': invalid lesson-note backup preserves existing progress');
+
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for study-plan validation'; });
+    await page.locator('#importFile').setInputFiles({name:'invalid-study-plan-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{},plan:{dailyTarget:'sixty'}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid study-plan settings'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid study-plan settings'), viewport.name + ': invalid study-plan settings are rejected');
+    const afterInvalidPlanRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterInvalidPlanRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': invalid study-plan backup preserves existing progress');
+
     await page.getByRole('tab', { name: /Study · Progress · Assess/ }).click();
     await page.locator('#assessmentSection').waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
     const questions = page.locator('#quiz .question');
