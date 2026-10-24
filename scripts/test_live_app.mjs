@@ -134,6 +134,22 @@ try {
     const afterInvalidPlanRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
     check(JSON.stringify(afterInvalidPlanRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': invalid study-plan backup preserves existing progress');
 
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for session-duration validation'; });
+    await page.locator('#importFile').setInputFiles({name:'negative-session-duration-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[{topic:'Negative duration',seconds:-1}],notes:{},results:{},plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid study-session record'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid study-session record'), viewport.name + ': negative session duration is rejected');
+    const afterNegativeSessionRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterNegativeSessionRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': negative-duration backup preserves existing progress');
+
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for personal-note validation'; });
+    await page.locator('#importFile').setInputFiles({name:'invalid-personal-notes-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{},myNotes:[{id:'bad-note',text:7}],plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid note list'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid note list'), viewport.name + ': malformed personal-note entries are rejected');
+    const afterInvalidPersonalNotesRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterInvalidPersonalNotesRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': invalid personal-note backup preserves existing progress');
+
     await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for zero-total validation'; });
     await page.locator('#importFile').setInputFiles({name:'zero-total-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{'acct-equation':{score:0,total:0}},plan:{}}))});
     await page.locator('#importBackup').click();
