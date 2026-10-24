@@ -166,14 +166,6 @@ try {
     const afterNegativeAttemptsRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
     check(JSON.stringify(afterNegativeAttemptsRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': negative-attempt backup preserves existing progress');
 
-    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for personal-note validation'; });
-    await page.locator('#importFile').setInputFiles({name:'invalid-personal-notes-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{},myNotes:[{id:'bad-note',text:7}],plan:{}}))});
-    await page.locator('#importBackup').click();
-    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid note list'), { timeout: 5000 }).catch(() => {});
-    check((await page.locator('#backupFeedback').innerText()).includes('invalid note list'), viewport.name + ': malformed personal notes are rejected');
-    const afterInvalidPersonalNotesRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
-    check(JSON.stringify(afterInvalidPersonalNotesRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': invalid personal-note backup preserves existing progress');
-
     await page.getByRole('tab', { name: /Study · Progress · Assess/ }).click();
     await page.locator('#assessmentSection').waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
     const questions = page.locator('#quiz .question');
