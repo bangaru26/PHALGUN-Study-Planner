@@ -440,6 +440,8 @@ try {
   await page.locator('#sharedStop').click();
   check(await page.locator('#sharedStop').isDisabled(), 'dictionary: Stop & Save resets controls');
   check(await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return Array.isArray(d.sessions)&&d.sessions.some(s=>s.topic==='Subject Dictionary');}), 'dictionary: Stop & Save records a session');
+  check(await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');const s=[...(d.sessions||[])].reverse().find(x=>x.topic==='Subject Dictionary');return !!s&&Number.isFinite(s.seconds)&&s.seconds>=1&&s.minutes===Math.floor(s.seconds/60);}), 'dictionary: saved session retains exact seconds and whole-minute floor');
+  check(await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'),ss=d.sessions||[],total=ss.reduce((n,s)=>n+(Number.isFinite(Number(s.seconds))?Number(s.seconds):Number(s.minutes||0)*60),0);return document.querySelector('#sharedSessions')?.textContent===String(ss.length)&&document.querySelector('#sharedMinutes')?.textContent===String(Math.floor(total/60));}), 'dictionary: session and study-minute metrics refresh immediately after save');
   await page.setViewportSize({width:390,height:844});
   await page.reload({waitUntil:'networkidle'});
   const dictionaryMobileLayout = await timerLayout(page, '.shared-commandbar .shared-stopwatch>.buttons', 390);
