@@ -459,8 +459,21 @@ try {
   check(excelClockContinued !== excelClockAfterNavigation,
     'Excel practice: shared timer continues advancing after cross-page navigation',
     excelClockAfterNavigation + ' → ' + excelClockContinued);
+
+  // Reverse navigation must preserve the same active session too.
+  await page.goto(base + '/dictionary.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  const dictionaryClockAfterReturn = (await page.locator('#sharedClock').innerText()).trim();
+  check(dictionaryClockAfterReturn !== '00:00:00' && await page.locator('#sharedPause').isEnabled(),
+    'Dictionary: active shared timer survives return from Excel practice',
+    excelClockContinued + ' → ' + dictionaryClockAfterReturn);
+  await wait(1200);
+  const dictionaryClockContinued = (await page.locator('#sharedClock').innerText()).trim();
+  check(dictionaryClockContinued !== dictionaryClockAfterReturn,
+    'Dictionary: shared timer continues advancing after return navigation',
+    dictionaryClockAfterReturn + ' → ' + dictionaryClockContinued);
   await page.locator('#sharedPause').click();
   await page.locator('#sharedStop').click();
+  await page.goto(base + '/excel-practice.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
   check(await visible(page, '#sharedClock') && await visible(page, '#sharedStart'), 'Excel practice: shared timer and controls are visible');
   check(await visible(page, '#globalSearch'), 'Excel practice: global search is visible');
   check(await visible(page, '#formulaTitle') && (await page.locator('#formulaTitle').innerText()).trim().length > 0, 'Excel practice: formula lesson is loaded');
