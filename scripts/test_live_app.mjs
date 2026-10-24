@@ -80,10 +80,10 @@ try {
         plan: JSON.stringify(d.plan || {})
       };
     });
-    await page.locator('#importFile').setInputFiles({name:'malformed-study-desk-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:[],results:{},plan:{}}))});
+    await page.locator('#importFile').setInputFiles({name:'malformed-study-desk-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[{topic:'Corrupt session',minutes:'seven'}],notes:{},results:{},plan:{}}))});
     await page.locator('#importBackup').click();
     await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('Could not restore backup:'), { timeout: 5000 }).catch(() => {});
-    check((await page.locator('#backupFeedback').innerText()).includes('valid Study Desk v2 backup'), viewport.name + ': malformed backup is rejected with a clear message');
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid study-session record'), viewport.name + ': malformed nested session fields are rejected');
     const afterInvalidRestore = await page.evaluate(() => {
       const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
       return {
@@ -96,6 +96,75 @@ try {
       };
     });
     check(JSON.stringify(afterInvalidRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': rejected backup leaves existing progress unchanged', JSON.stringify({beforeInvalidRestore,afterInvalidRestore}));
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for quiz-result validation'; });
+    await page.locator('#importFile').setInputFiles({name:'invalid-results-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{'acct-equation':{score:'four',passed:true}},plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid lesson-result record'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid lesson-result record'), viewport.name + ': malformed quiz-result fields are rejected');
+    const afterInvalidResultRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterInvalidResultRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': rejected quiz-result backup also preserves existing progress');
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for inconsistent score validation'; });
+    await page.locator('#importFile').setInputFiles({name:'inconsistent-score-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{'acct-equation':{score:5,total:4,passed:true}},plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid lesson-result record'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid lesson-result record'), viewport.name + ': quiz scores above total are rejected');
+    const afterInconsistentScoreRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterInconsistentScoreRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': inconsistent score backup preserves existing progress');
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for fractional score validation'; });
+    await page.locator('#importFile').setInputFiles({name:'fractional-score-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{'acct-equation':{score:2.5,total:4,passed:false}},plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid lesson-result record'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid lesson-result record'), viewport.name + ': fractional quiz scores are rejected');
+    const afterFractionalScoreRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterFractionalScoreRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': fractional score backup preserves existing progress');
+
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for lesson-note validation'; });
+    await page.locator('#importFile').setInputFiles({name:'invalid-lesson-notes-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{'acct-equation':{unexpected:'object'}},results:{},plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid lesson note'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid lesson note'), viewport.name + ': non-string lesson notes are rejected');
+    const afterInvalidLessonNotesRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterInvalidLessonNotesRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': invalid lesson-note backup preserves existing progress');
+
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for study-plan validation'; });
+    await page.locator('#importFile').setInputFiles({name:'invalid-study-plan-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{},plan:{dailyTarget:'sixty'}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid study-plan settings'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid study-plan settings'), viewport.name + ': invalid study-plan settings are rejected');
+    const afterInvalidPlanRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterInvalidPlanRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': invalid study-plan backup preserves existing progress');
+
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for session-duration validation'; });
+    await page.locator('#importFile').setInputFiles({name:'negative-session-duration-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[{topic:'Negative duration',seconds:-1}],notes:{},results:{},plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid study-session record'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid study-session record'), viewport.name + ': negative session duration is rejected');
+    const afterNegativeSessionRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterNegativeSessionRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': negative-duration backup preserves existing progress');
+
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for personal-note validation'; });
+    await page.locator('#importFile').setInputFiles({name:'invalid-personal-notes-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{},myNotes:[{id:'bad-note',text:7}],plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid note list'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid note list'), viewport.name + ': malformed personal-note entries are rejected');
+    const afterInvalidPersonalNotesRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterInvalidPersonalNotesRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': invalid personal-note backup preserves existing progress');
+
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for zero-total validation'; });
+    await page.locator('#importFile').setInputFiles({name:'zero-total-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{'acct-equation':{score:0,total:0}},plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid lesson-result record'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid lesson-result record'), viewport.name + ': zero quiz totals are rejected');
+    const afterZeroTotalRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterZeroTotalRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': zero-total backup preserves existing progress');
+
+    await page.locator('#backupFeedback').evaluate(el => { el.textContent = 'Waiting for negative-attempt validation'; });
+    await page.locator('#importFile').setInputFiles({name:'negative-attempts-backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:2,sessions:[],notes:{},results:{'acct-equation':{score:1,total:4,attempts:-1}},plan:{}}))});
+    await page.locator('#importBackup').click();
+    await page.waitForFunction(() => (document.querySelector('#backupFeedback')?.innerText || '').includes('invalid lesson-result record'), { timeout: 5000 }).catch(() => {});
+    check((await page.locator('#backupFeedback').innerText()).includes('invalid lesson-result record'), viewport.name + ': negative quiz attempt counts are rejected');
+    const afterNegativeAttemptsRestore = await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');return {sessions:JSON.stringify(d.sessions||[]),lesson:d.currentLesson,notes:JSON.stringify(d.notes||{}),myNotes:JSON.stringify(d.myNotes||[]),results:JSON.stringify(d.results||{}),plan:JSON.stringify(d.plan||{})};});
+    check(JSON.stringify(afterNegativeAttemptsRestore)===JSON.stringify(beforeInvalidRestore), viewport.name + ': negative-attempt backup preserves existing progress');
 
     await page.getByRole('tab', { name: /Study · Progress · Assess/ }).click();
     await page.locator('#assessmentSection').waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
@@ -266,6 +335,38 @@ try {
     check(fullBackupBeforeReload !== 'invalid' && fullBackupAfterReload === fullBackupBeforeReload,
       viewport.name + ': complete learning progress snapshot survives page reload');
 
+    const backupStateBeforeTabNavigation = await page.evaluate(() => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        return JSON.stringify({
+          sessions: d.sessions || [],
+          notes: d.notes || {},
+          myNotes: d.myNotes || [],
+          results: d.results || {},
+          plan: d.plan || {},
+          currentLesson: d.currentLesson
+        });
+      } catch { return 'invalid'; }
+    });
+    await page.getByRole('tab', { name: 'Learn & Practise' }).click();
+    await page.getByRole('tab', { name: 'Backup' }).click();
+    const backupStateAfterTabNavigation = await page.evaluate(() => {
+      try {
+        const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+        return JSON.stringify({
+          sessions: d.sessions || [],
+          notes: d.notes || {},
+          myNotes: d.myNotes || [],
+          results: d.results || {},
+          plan: d.plan || {},
+          currentLesson: d.currentLesson
+        });
+      } catch { return 'invalid'; }
+    });
+    check(backupStateBeforeTabNavigation !== 'invalid' &&
+      backupStateAfterTabNavigation === backupStateBeforeTabNavigation,
+      viewport.name + ': switching tabs preserves complete learning progress');
+
 
     // Export the restored state and verify the downloaded file is a portable, readable backup.
     await page.getByRole('tab', { name: /Study.*Progress.*Assess/ }).click();
@@ -408,12 +509,41 @@ try {
   await page.locator('#sharedStop').click();
   check(await page.locator('#sharedStop').isDisabled(), 'dictionary: Stop & Save resets controls');
   check(await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return Array.isArray(d.sessions)&&d.sessions.some(s=>s.topic==='Subject Dictionary');}), 'dictionary: Stop & Save records a session');
+  check(await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');const s=[...(d.sessions||[])].reverse().find(x=>x.topic==='Subject Dictionary');return !!s&&Number.isFinite(s.seconds)&&s.seconds>=1&&s.minutes===Math.floor(s.seconds/60);}), 'dictionary: saved session retains exact seconds and whole-minute floor');
+  check(await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'),ss=d.sessions||[],total=ss.reduce((n,s)=>n+(Number.isFinite(Number(s.seconds))?Number(s.seconds):Number(s.minutes||0)*60),0);return document.querySelector('#sharedSessions')?.textContent===String(ss.length)&&document.querySelector('#sharedMinutes')?.textContent===String(Math.floor(total/60));}), 'dictionary: session and study-minute metrics refresh immediately after save');
   await page.setViewportSize({width:390,height:844});
   await page.reload({waitUntil:'networkidle'});
   const dictionaryMobileLayout = await timerLayout(page, '.shared-commandbar .shared-stopwatch>.buttons', 390);
   check(dictionaryMobileLayout.ok, 'dictionary: mobile timer controls remain aligned', JSON.stringify(dictionaryMobileLayout));
 
   await page.setViewportSize({width:1365,height:900});
+  // Cross-page continuity: an active timer must survive navigation from the dictionary to formula practice.
+  await page.locator('#sharedStart').click(); await wait(1200);
+  const dictionaryClockBeforeNavigation = (await page.locator('#sharedClock').innerText()).trim();
+  await page.goto(base + '/excel-practice.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  const excelClockAfterNavigation = (await page.locator('#sharedClock').innerText()).trim();
+  check(excelClockAfterNavigation !== '00:00:00' && await page.locator('#sharedPause').isEnabled(),
+    'Excel practice: active shared timer survives navigation from dictionary',
+    dictionaryClockBeforeNavigation + ' → ' + excelClockAfterNavigation);
+  await wait(1200);
+  const excelClockContinued = (await page.locator('#sharedClock').innerText()).trim();
+  check(excelClockContinued !== excelClockAfterNavigation,
+    'Excel practice: shared timer continues advancing after cross-page navigation',
+    excelClockAfterNavigation + ' → ' + excelClockContinued);
+
+  // Reverse navigation must preserve the same active session too.
+  await page.goto(base + '/dictionary.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  const dictionaryClockAfterReturn = (await page.locator('#sharedClock').innerText()).trim();
+  check(dictionaryClockAfterReturn !== '00:00:00' && await page.locator('#sharedPause').isEnabled(),
+    'Dictionary: active shared timer survives return from Excel practice',
+    excelClockContinued + ' → ' + dictionaryClockAfterReturn);
+  await wait(1200);
+  const dictionaryClockContinued = (await page.locator('#sharedClock').innerText()).trim();
+  check(dictionaryClockContinued !== dictionaryClockAfterReturn,
+    'Dictionary: shared timer continues advancing after return navigation',
+    dictionaryClockAfterReturn + ' → ' + dictionaryClockContinued);
+  await page.locator('#sharedPause').click();
+  await page.locator('#sharedStop').click();
   await page.goto(base + '/excel-practice.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
   check(await visible(page, '#sharedClock') && await visible(page, '#sharedStart'), 'Excel practice: shared timer and controls are visible');
   check(await visible(page, '#globalSearch'), 'Excel practice: global search is visible');
@@ -435,6 +565,28 @@ try {
   await page.locator('#sharedPause').click();
   await page.locator('#sharedStop').click();
   check(await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return Array.isArray(d.sessions)&&d.sessions.some(s=>s.topic==='Excel Formula Practice');}), 'Excel practice: Stop & Save records a session');
+
+  // Pause/resume and reload should preserve the elapsed time of the current shared session.
+  await page.locator('#sharedStart').click(); await wait(1200);
+  await page.locator('#sharedPause').click();
+  const pausedClock = (await page.locator('#sharedClock').innerText()).trim();
+  check(await page.locator('#sharedStart').isEnabled() && await page.locator('#sharedPause').isDisabled(),
+    'Excel practice: pause switches timer controls to paused state');
+  await wait(1200);
+  const stillPausedClock = (await page.locator('#sharedClock').innerText()).trim();
+  check(stillPausedClock === pausedClock,
+    'Excel practice: paused timer does not accrue elapsed time', pausedClock + ' → ' + stillPausedClock);
+  await page.reload({ waitUntil: 'networkidle' });
+  const pausedClockAfterReload = (await page.locator('#sharedClock').innerText()).trim();
+  check(pausedClockAfterReload === pausedClock && await page.locator('#sharedStart').isEnabled(),
+    'Excel practice: paused timer state survives reload', pausedClock + ' → ' + pausedClockAfterReload);
+  await page.locator('#sharedStart').click(); await wait(1200);
+  const resumedClock = (await page.locator('#sharedClock').innerText()).trim();
+  check(resumedClock !== pausedClockAfterReload && await page.locator('#sharedPause').isEnabled(),
+    'Excel practice: paused timer resumes and advances', pausedClockAfterReload + ' → ' + resumedClock);
+  await page.locator('#sharedStop').click();
+  check(await page.locator('#sharedStop').isDisabled(), 'Excel practice: resumed session can be stopped and saved');
+
   await page.locator('#checkAnswers').click();
   check((await page.locator('#practiceFeedback').innerText().catch(() => '')).trim().length > 0, 'Excel practice: answer checking produces feedback');
   await page.setViewportSize({width:390,height:844});
