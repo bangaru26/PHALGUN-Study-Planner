@@ -474,6 +474,35 @@ try {
   await page.reload({waitUntil:'networkidle'});
   const excelMobileLayout = await timerLayout(page, '.shared-commandbar .shared-stopwatch>.buttons', 390);
   check(excelMobileLayout.ok, 'Excel practice: mobile timer controls remain aligned', JSON.stringify(excelMobileLayout));
+  // Verify one running stopwatch state is carried between the home page and both shared-timer pages.
+  await page.goto(base + '/index.html?cross-page-timer=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  const homeCrossPageBefore = (await page.locator('#clock').innerText()).trim();
+  await page.locator('#startTimer').click();
+  await wait(1300);
+  const homeCrossPageRunning = (await page.locator('#clock').innerText()).trim();
+  check(homeCrossPageRunning !== homeCrossPageBefore && await page.locator('#pauseTimer').isEnabled(),
+    'shared timer: home timer starts before cross-page navigation', homeCrossPageBefore + ' → ' + homeCrossPageRunning);
+
+  await page.goto(base + '/dictionary.html?cross-page-timer=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  const dictionaryCrossPageBefore = (await page.locator('#sharedClock').innerText()).trim();
+  await wait(1300);
+  const dictionaryCrossPageAfter = (await page.locator('#sharedClock').innerText()).trim();
+  check(dictionaryCrossPageAfter !== dictionaryCrossPageBefore && await page.locator('#sharedPause').isEnabled(),
+    'shared timer: active home timer continues on Subject Dictionary', dictionaryCrossPageBefore + ' → ' + dictionaryCrossPageAfter);
+
+  await page.goto(base + '/excel-practice.html?cross-page-timer=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  const excelCrossPageBefore = (await page.locator('#sharedClock').innerText()).trim();
+  await wait(1300);
+  const excelCrossPageAfter = (await page.locator('#sharedClock').innerText()).trim();
+  check(excelCrossPageAfter !== excelCrossPageBefore && await page.locator('#sharedPause').isEnabled(),
+    'shared timer: active timer continues from Subject Dictionary into Excel Practice', excelCrossPageBefore + ' → ' + excelCrossPageAfter);
+  await page.locator('#sharedPause').click();
+  await page.locator('#sharedStop').click();
+  check(await page.evaluate(() => {
+    const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+    return Array.isArray(d.sessions) && d.sessions.some(s => s.topic === 'Excel Formula Practice');
+  }), 'shared timer: session can be saved after moving across all three pages');
+
   check(errors.length === 0, 'dictionary/Excel pages: no uncaught page errors', errors.join(' | '));
   await context.close();
 
