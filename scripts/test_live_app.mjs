@@ -397,7 +397,21 @@ try {
   await page.goto(base + '/dictionary.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
   check(await visible(page, '#sharedClock') && await visible(page, '#sharedStart'), 'dictionary: shared timer and controls are visible');
   check(await visible(page, '#globalSearch'), 'dictionary: global search is visible');
-  check(await count(page, '.term') > 0, 'dictionary: terms render', 'found ' + await count(page, '.term'));
+  const initialTermCount = await count(page, '.term');
+  check(initialTermCount > 0, 'dictionary: terms render', 'found ' + initialTermCount);
+  const firstTermTitle = (await page.locator('.term h2').first().innerText()).trim();
+  await page.locator('#globalSearch').fill(firstTermTitle);
+  await wait(250);
+  const filteredTerms = await page.locator('.term').allInnerTexts();
+  check(filteredTerms.length > 0 && filteredTerms.every(text => text.toLowerCase().includes(firstTermTitle.toLowerCase())),
+    'dictionary: global search filters terms to the matching topic', JSON.stringify({query:firstTermTitle,results:filteredTerms.slice(0,3)}));
+  await page.locator('#globalSearch').fill('zz-no-study-desk-match-zz');
+  await wait(250);
+  check(await page.locator('.term').count() === 0 && (await page.locator('body').innerText()).includes('No matching terms'),
+    'dictionary: global search gives a clear empty-results message');
+  await page.locator('#globalSearch').fill('');
+  await wait(250);
+  check(await count(page, '.term') === initialTermCount, 'dictionary: clearing global search restores all terms');
   const dictionaryTimerLayout = await timerLayout(page, '.shared-commandbar .shared-stopwatch>.buttons', 1365);
   check(dictionaryTimerLayout.ok, 'dictionary: timer controls use aligned equal-width grid', JSON.stringify(dictionaryTimerLayout));
   const dictStart = (await page.locator('#sharedClock').innerText()).trim();
@@ -414,10 +428,62 @@ try {
   check(dictionaryMobileLayout.ok, 'dictionary: mobile timer controls remain aligned', JSON.stringify(dictionaryMobileLayout));
 
   await page.setViewportSize({width:1365,height:900});
-  await page.goto(base + '/excel-practice.html?e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  await page.locator('#sharedStart').click();
+  await wait(1500);
+  await page.locator('#sharedPause').click();
+  const pausedBeforeNavigation = (await page.locator('#sharedClock').innerText()).trim();
+  await page.goto(base + '/excel-practice.html?timer-continuity-e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  const pausedAfterNavigation = (await page.locator('#sharedClock').innerText()).trim();
+  check(pausedAfterNavigation === pausedBeforeNavigation && await page.locator('#sharedStart').isEnabled(),
+    'shared timer: paused elapsed time persists from dictionary to Excel practice',
+    pausedBeforeNavigation + ' → ' + pausedAfterNavigation);
+  await page.locator('#sharedStart').click();
+  await wait(1300);
+  const resumedAcrossPages = (await page.locator('#sharedClock').innerText()).trim();
+  check(resumedAcrossPages !== pausedAfterNavigation && await page.locator('#sharedPause').isEnabled(),
+    'shared timer: resumes and advances after navigating to Excel practice',
+    pausedAfterNavigation + ' → ' + resumedAcrossPages);
+  await page.locator('#sharedPause').click();
+  await page.locator('#sharedStop').click();
+  check(await page.locator('#sharedStop').isDisabled(),
+    'shared timer: session can be stopped after cross-page resume');
+
+  await page.goto(base + '/index.html?timer-continuity-e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  await page.locator('#startTimer').click();
+  await wait(1300);
+  const homeTimerBeforeNavigation = (await page.locator('#clock').innerText()).trim();
+  await page.goto(base + '/dictionary.html?timer-continuity-e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  await wait(1300);
+  const dictionaryTimerAfterNavigation = (await page.locator('#sharedClock').innerText()).trim();
+  check(dictionaryTimerAfterNavigation !== '00:00:00' &&
+      dictionaryTimerAfterNavigation !== homeTimerBeforeNavigation &&
+      await page.locator('#sharedPause').isEnabled(),
+    'shared timer: running session from Learn & Practice continues on Subject Dictionary',
+    homeTimerBeforeNavigation + ' → ' + dictionaryTimerAfterNavigation);
+  await page.locator('#sharedPause').click();
+  await page.locator('#sharedStop').click();
+  check(await page.locator('#sharedStop').isDisabled(),
+    'shared timer: Learn & Practice session can be saved from Subject Dictionary');
+
+  // The navigation test ends on dictionary.html; return to Excel practice before its feature checks.
+  await page.goto(base + '/excel-practice.html?excel-regression-e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
   check(await visible(page, '#sharedClock') && await visible(page, '#sharedStart'), 'Excel practice: shared timer and controls are visible');
   check(await visible(page, '#globalSearch'), 'Excel practice: global search is visible');
   check(await visible(page, '#formulaTitle') && (await page.locator('#formulaTitle').innerText()).trim().length > 0, 'Excel practice: formula lesson is loaded');
+  const searchFormula = await page.evaluate(() => {
+    const all = window.formulas || [];
+    const index = all.findIndex(f => (f.title + ' ' + f.task + ' ' + f.formula + ' ' + (f.explain || '')).toLowerCase().includes('sum'));
+    return index >= 0 ? {index, title:all[index].title} : null;
+  });
+  if (searchFormula) {
+    await page.locator('#globalSearch').fill('SUM');
+    await page.locator('#sharedSearchForm button[type="submit"]').click();
+    await wait(250);
+    check((await page.locator('#formulaTitle').innerText()).trim() === searchFormula.title,
+      'Excel practice: global search opens the matching formula module', JSON.stringify(searchFormula));
+  } else {
+    check(false, 'Excel practice: global search opens the matching formula module', 'No SUM-related formula found in catalogue');
+  }
   check(await count(page, '.exercise') > 0, 'Excel practice: exercises render', 'found ' + await count(page, '.exercise'));
   const formulaCount = await page.evaluate(() => Array.isArray(window.formulas) ? window.formulas.length : 0);
   check(formulaCount >= 14, 'Excel practice: at least fourteen guided formula modules are available', 'found ' + formulaCount);
