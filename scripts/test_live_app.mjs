@@ -106,7 +106,12 @@ try {
     for (let lessonIndex=0; lessonIndex<await lessonTiles.count(); lessonIndex++) {
       await lessonTiles.nth(lessonIndex).click();
       await wait(60);
-      if (await page.locator('#quiz .question').count() < 4) allLessonsHaveQuizzes = false;
+      const currentQuestions = page.locator('#quiz .question');
+      if (await currentQuestions.count() !== 4) allLessonsHaveQuizzes = false;
+      if ((await page.locator('#quizProgress').innerText().catch(() => '')).trim() !== 'Answered 0 of 4 questions') allLessonsHaveQuizzes = false;
+      for (let questionIndex = 0; questionIndex < await currentQuestions.count(); questionIndex++) {
+        if (await currentQuestions.nth(questionIndex).locator('input[type=radio]').count() !== 4) allLessonsHaveQuizzes = false;
+      }
     }
     check(allLessonsHaveQuizzes, viewport.name + ': every finance lesson has at least four assessment questions');
     await lessonTiles.last().click();
@@ -120,6 +125,7 @@ try {
         const firstRadio = questions.nth(questionIndex).locator('input[type=radio]').first();
         await firstRadio.check({ force: true }).catch(() => {});
       }
+      check((await page.locator('#quizProgress').innerText()).trim() === 'Answered 4 of 4 questions', viewport.name + ': quiz progress updates as answers are selected');
       await page.locator('#submitQuiz').click();
       check(await page.locator('#quizFeedback').isVisible().catch(() => false), viewport.name + ': assessment submits and displays feedback');
       const quizResultSaved = await page.evaluate(() => {
