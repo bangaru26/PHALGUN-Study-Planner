@@ -434,6 +434,23 @@ try {
   check(await page.locator('#sharedStop').isDisabled(),
     'shared timer: session can be stopped after cross-page resume');
 
+  await page.goto(base + '/index.html?timer-continuity-e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  await page.locator('#startTimer').click();
+  await wait(1300);
+  const homeTimerBeforeNavigation = (await page.locator('#clock').innerText()).trim();
+  await page.goto(base + '/dictionary.html?timer-continuity-e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  await wait(1300);
+  const dictionaryTimerAfterNavigation = (await page.locator('#sharedClock').innerText()).trim();
+  check(dictionaryTimerAfterNavigation !== '00:00:00' &&
+      dictionaryTimerAfterNavigation !== homeTimerBeforeNavigation &&
+      await page.locator('#sharedPause').isEnabled(),
+    'shared timer: running session from Learn & Practice continues on Subject Dictionary',
+    homeTimerBeforeNavigation + ' → ' + dictionaryTimerAfterNavigation);
+  await page.locator('#sharedPause').click();
+  await page.locator('#sharedStop').click();
+  check(await page.locator('#sharedStop').isDisabled(),
+    'shared timer: Learn & Practice session can be saved from Subject Dictionary');
+
   check(await visible(page, '#sharedClock') && await visible(page, '#sharedStart'), 'Excel practice: shared timer and controls are visible');
   check(await visible(page, '#globalSearch'), 'Excel practice: global search is visible');
   check(await visible(page, '#formulaTitle') && (await page.locator('#formulaTitle').innerText()).trim().length > 0, 'Excel practice: formula lesson is loaded');
