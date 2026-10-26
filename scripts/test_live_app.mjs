@@ -451,6 +451,8 @@ try {
   check(await page.locator('#sharedStop').isDisabled(),
     'shared timer: Learn & Practice session can be saved from Subject Dictionary');
 
+  // The navigation test ends on dictionary.html; return to Excel practice before its feature checks.
+  await page.goto(base + '/excel-practice.html?excel-regression-e2e=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
   check(await visible(page, '#sharedClock') && await visible(page, '#sharedStart'), 'Excel practice: shared timer and controls are visible');
   check(await visible(page, '#globalSearch'), 'Excel practice: global search is visible');
   check(await visible(page, '#formulaTitle') && (await page.locator('#formulaTitle').innerText()).trim().length > 0, 'Excel practice: formula lesson is loaded');
