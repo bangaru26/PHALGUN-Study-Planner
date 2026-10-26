@@ -68,6 +68,27 @@ try {
     check(await page.locator('#finishTimer').isDisabled() && (await page.locator('#timerStatus').innerText()).toLowerCase().includes('saved'), viewport.name + ': Stop & Save completes session', await page.locator('#timerStatus').innerText().catch(() => ''));
     check(await page.evaluate(() => { const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return Array.isArray(d.sessions) && d.sessions.length > 0; }), viewport.name + ': timer session persists in local storage');
 
+    // Regression: a running session must survive a page reload without resetting or freezing.
+    await page.locator('#startTimer').click();
+    await wait(1100);
+    const runningBeforeReload = (await timer.innerText()).trim();
+    await page.reload({ waitUntil: 'networkidle', timeout: 60000 });
+    const timerAfterReload = page.locator('#clock');
+    await wait(1200);
+    const runningAfterReload = (await timerAfterReload.innerText()).trim();
+    check(runningAfterReload !== runningBeforeReload &&
+      await page.locator('#pauseTimer').isEnabled(),
+      viewport.name + ': active timer continues advancing after reload',
+      runningBeforeReload + ' → ' + runningAfterReload);
+    await page.locator('#pauseTimer').click();
+    await page.locator('#finishTimer').click();
+    check(await page.evaluate(() => {
+      const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');
+      return Array.isArray(d.sessions) && d.sessions.length >= 2 &&
+        d.sessions.some(s => Number(s.seconds) >= 1);
+    }), viewport.name + ': reloaded timer session can be saved to study history');
+
+
     await page.getByRole('tab', { name: 'Backup' }).click();
     const beforeInvalidRestore = await page.evaluate(() => {
       const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
@@ -404,6 +425,12 @@ try {
   await page.locator('#sharedStart').click(); await wait(2200);
   const dictRunning = (await page.locator('#sharedClock').innerText()).trim();
   check(dictRunning !== dictStart && await page.locator('#sharedPause').isEnabled(), 'dictionary: timer starts and advances', dictStart + ' → ' + dictRunning);
+  const dictBeforeReload = dictRunning;
+  await page.reload({waitUntil:'networkidle'});
+  await wait(1300);
+  const dictAfterReload = (await page.locator('#sharedClock').innerText()).trim();
+  check(dictAfterReload !== dictBeforeReload && await page.locator('#sharedPause').isEnabled(),
+    'dictionary: active timer continues advancing after reload', dictBeforeReload + ' → ' + dictAfterReload);
   await page.locator('#sharedPause').click();
   await page.locator('#sharedStop').click();
   check(await page.locator('#sharedStop').isDisabled(), 'dictionary: Stop & Save resets controls');
@@ -431,7 +458,13 @@ try {
   const excelTimerLayout = await timerLayout(page, '.shared-commandbar .shared-stopwatch>.buttons', 1365);
   check(excelTimerLayout.ok, 'Excel practice: timer controls use aligned equal-width grid', JSON.stringify(excelTimerLayout));
   await page.locator('#sharedStart').click(); await wait(1200);
-  check((await page.locator('#sharedClock').innerText()).trim() !== '00:00:00', 'Excel practice: timer advances');
+  const excelBeforeReload = (await page.locator('#sharedClock').innerText()).trim();
+  check(excelBeforeReload !== '00:00:00', 'Excel practice: timer advances');
+  await page.reload({waitUntil:'networkidle'});
+  await wait(1300);
+  const excelAfterReload = (await page.locator('#sharedClock').innerText()).trim();
+  check(excelAfterReload !== excelBeforeReload && await page.locator('#sharedPause').isEnabled(),
+    'Excel practice: active timer continues advancing after reload', excelBeforeReload + ' → ' + excelAfterReload);
   await page.locator('#sharedPause').click();
   await page.locator('#sharedStop').click();
   check(await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return Array.isArray(d.sessions)&&d.sessions.some(s=>s.topic==='Excel Formula Practice');}), 'Excel practice: Stop & Save records a session');
@@ -441,6 +474,35 @@ try {
   await page.reload({waitUntil:'networkidle'});
   const excelMobileLayout = await timerLayout(page, '.shared-commandbar .shared-stopwatch>.buttons', 390);
   check(excelMobileLayout.ok, 'Excel practice: mobile timer controls remain aligned', JSON.stringify(excelMobileLayout));
+  // Verify one running stopwatch state is carried between the home page and both shared-timer pages.
+  await page.goto(base + '/index.html?cross-page-timer=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  const homeCrossPageBefore = (await page.locator('#clock').innerText()).trim();
+  await page.locator('#startTimer').click();
+  await wait(1300);
+  const homeCrossPageRunning = (await page.locator('#clock').innerText()).trim();
+  check(homeCrossPageRunning !== homeCrossPageBefore && await page.locator('#pauseTimer').isEnabled(),
+    'shared timer: home timer starts before cross-page navigation', homeCrossPageBefore + ' → ' + homeCrossPageRunning);
+
+  await page.goto(base + '/dictionary.html?cross-page-timer=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  const dictionaryCrossPageBefore = (await page.locator('#sharedClock').innerText()).trim();
+  await wait(1300);
+  const dictionaryCrossPageAfter = (await page.locator('#sharedClock').innerText()).trim();
+  check(dictionaryCrossPageAfter !== dictionaryCrossPageBefore && await page.locator('#sharedPause').isEnabled(),
+    'shared timer: active home timer continues on Subject Dictionary', dictionaryCrossPageBefore + ' → ' + dictionaryCrossPageAfter);
+
+  await page.goto(base + '/excel-practice.html?cross-page-timer=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 });
+  const excelCrossPageBefore = (await page.locator('#sharedClock').innerText()).trim();
+  await wait(1300);
+  const excelCrossPageAfter = (await page.locator('#sharedClock').innerText()).trim();
+  check(excelCrossPageAfter !== excelCrossPageBefore && await page.locator('#sharedPause').isEnabled(),
+    'shared timer: active timer continues from Subject Dictionary into Excel Practice', excelCrossPageBefore + ' → ' + excelCrossPageAfter);
+  await page.locator('#sharedPause').click();
+  await page.locator('#sharedStop').click();
+  check(await page.evaluate(() => {
+    const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
+    return Array.isArray(d.sessions) && d.sessions.some(s => s.topic === 'Excel Formula Practice');
+  }), 'shared timer: session can be saved after moving across all three pages');
+
   check(errors.length === 0, 'dictionary/Excel pages: no uncaught page errors', errors.join(' | '));
   await context.close();
 
