@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-10-25T07:40:37+00:00 (UTC)
+Last check: 2026-10-26T07:55:36+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 5 changed; 47 unchanged; 0 baseline; 8 unavailable.
+Summary: 8 changed; 44 unchanged; 0 baseline; 8 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -23,22 +23,38 @@ Summary: 5 changed; 47 unchanged; 0 baseline; 8 unavailable.
 ### Review required — Python
 - Previous page excerpt: What’s New in Python — Python 3.15.1 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.1 Documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - Mapped learning areas to review: Python, automation, data processing
-- Current page excerpt: What’s New in Python — Python 3.15.1 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.1 Documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
+- Current page excerpt: What’s New in Python — Python 3.15.2 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.2 Documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - **Detected text differences (for review only):**
 ```text
-- API changes Build changes Porting to Python 3.15 What’s new in Python 3.14 Summary – Release
-+ API changes Build changes Porting to Python 3.15 Notable changes in 3.15.2 What’s new in Python 3.14 Summary – Release
-- non-profit corporation. Please donate. Last updated on Oct 24, 2026 (03:37 UTC). Found a bug ? Created
-+ non-profit corporation. Please donate. Last updated on Oct 25, 2026 (06:57 UTC). Found a bug ? Created
-- Please donate. Last updated on Oct 24, 2026 (03:37 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Oct 25, 2026 (06:57 UTC). Found a bug ? Created using Sphinx
+- What’s New in Python — Python 3.15.1 documentation Theme Auto Light Dark Previous topic Python
++ What’s New in Python — Python 3.15.2 documentation Theme Auto Light Dark Previous topic Python
+- modules | next | previous | Python » 3.15.1 Documentation » What’s New in Python | Theme
++ modules | next | previous | Python » 3.15.2 Documentation » What’s New in Python | Theme
+- for the current version. Changelog Python next Python 3.15.1 final Python 3.15.0 final Python 3.15.0 release
++ for the current version. Changelog Python next Python 3.15.2 final Python 3.15.1 final Python 3.15.0 final Python 3.15.0 release
+- modules | next | previous | Python » 3.15.1 Documentation » What’s New in Python | Theme
++ modules | next | previous | Python » 3.15.2 Documentation » What’s New in Python | Theme
+- non-profit corporation. Please donate. Last updated on Oct 25, 2026 (06:57 UTC). Found a bug ? Created
++ non-profit corporation. Please donate. Last updated on Oct 26, 2026 (04:57 UTC). Found a bug ? Created
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
 | UNCHANGED | SQL / database practice | Microsoft Learn | [Open source](https://learn.microsoft.com/sql/) |
 | UNCHANGED | SAP S/4HANA and SAP FICO | SAP Help Portal | [Open source](https://help.sap.com/) |
 | UNCHANGED | US financial reporting and filings | US SEC | [Open source](https://www.sec.gov/edgar/search/) |
-| UNCHANGED | Income-tax Act, Rules and CBDT notifications | Income Tax Department / CBDT | [Open source](https://www.incometaxindia.gov.in/notifications) |
+| CHANGED — REVIEW REQUIRED | Income-tax Act, Rules and CBDT notifications | Income Tax Department / CBDT | [Open source](https://www.incometaxindia.gov.in/notifications) |
+
+### Review required — Income-tax Act, Rules and CBDT notifications
+- Previous page excerpt: Income Tax Notifications & CBDT Updates Latest Skip to Main Content Please wait... Income Tax Department Ministry of Finance, Government of India Guided Tour Skip to main content Accessibility Accessibility Options Font Size A- 80% 91% 100% 110% 125% 140% A+ Saturation Screen Reader High Contrast Theme Basic HTML View Invert Colors Language Options English English हिन्दी Help Department Officials IRS Officers Online Official Email Systems Employees Corner Take Online Oath Home About Us History o
+- Mapped learning areas to review: Income-tax Act and Rules, TDS/TCS, tax compliance calendar
+- Current page excerpt: Income Tax Notifications & CBDT Updates Latest Skip to Main Content Please wait... Income Tax Department Ministry of Finance, Government of India Guided Tour Skip to main content Accessibility Accessibility Options Font Size A- 80% 91% 100% 110% 125% 140% A+ Saturation Screen Reader High Contrast Theme Basic HTML View Invert Colors Language Options English English हिन्दी Help Department Officials IRS Officers Online Official Email Systems Employees Corner Take Online Oath Home About Us History o
+- **Detected text differences (for review only):**
+```text
+- Booklets Brochures/ Pamphlets Infographical Video Live Video Streaming Department Officials IRS Officers Online Official Email Systems Employees Corner
++ Booklets Brochures/ Pamphlets Infographical Video Live Video Streaming etds-department-officials IRS Officers Online Official Email Systems Employees Corner
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNCHANGED | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
 | UNCHANGED | Indian Accounting Standards (Ind AS) compendium | ICAI | [Open source](https://www.icai.org/post/compendium-of-indian-accounting-standards) |
 | UNCHANGED | Ministry of Corporate Affairs public announcements | Press Information Bureau, Government of India | [Open source](https://www.pib.gov.in/newsite/pmreleases.aspx?lang=2&mincode=66&reg=48) |
@@ -66,8 +82,8 @@ Found
 - Current page excerpt: Tableau Desktop Skip to main content Menu Products Toggle sub-navigation for Products Overview Tableau Next Toggle sub-navigation for Tableau Next Tableau Semantics Tableau Cloud Tableau Server Tableau Knowledge Tableau Desktop Latest Release Customers Toggle sub-navigation for Customers Customer Stories Community Stories Solutions Toggle sub-navigation for Solutions By Industry Toggle sub-navigation for By Industry Financial Services Healthcare and Life Sciences Public Sector Retail and Consume
 - **Detected text differences (for review only):**
 ```text
-- Mar 5, 2025 2023.3.14 Released Jan 23, 2025 2023.3.13 Released Jan 7, 2025 2023.3.12 Released Nov 21, 2024 2023.3.11 Released Oct 24, 2024 2023.3.10 Released Sep 24, 2024 2023.3.9 Released Aug 20, 2024 2023.3.8 Released 
-+ Mar 5, 2025 2023.3.14 Released Jan 23, 2025 Connect with your customers and boost your bottom
+- Aug 20, 2024 2024.2.1 Released Jul 24, 2024 2023.3 Downloads Limited support as of October 24, 2025 2023.3.23 Released Oct 22, 2025 2023.3.22 Released Sep 25, 2025 2023.3.21 Released Aug 28, 2025 2023.3.20 Released Jul 2
++ Aug 20, 2024 2024.2.1 Released Jul 24, 2024 Connect with your customers and boost your bottom
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -75,7 +91,27 @@ Found
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 | UNCHANGED | Microsoft Power Automate documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/power-automate/) |
 | UNCHANGED | Microsoft AI and Copilot product documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/copilot/) |
-| UNCHANGED | Python release and security updates | Python Software Foundation | [Open source](https://www.python.org/downloads/) |
+| CHANGED — REVIEW REQUIRED | Python release and security updates | Python Software Foundation | [Open source](https://www.python.org/downloads/) |
+
+### Review required — Python release and security updates
+- Previous page excerpt: �      �}��F��E� 0T\� ���-u��$[����q��؈� ��D4 v����5���'�'��Ql�U�ٵ�ATU֩�̓���پ�n m�W�O��?��2���������Loq�r��f��Ek��'��1��'���u Z���4ۙ;���o� ���#gg�r}f�g�'�l��ه���֡K�|:������Y�o>�y���iI����mm��Eks-}�� ��0�.Z�(ڄ�: �3W��k����·����f���o�v������z��r��a� < �o��G�v"S��f:�Ek�� I�I�}�k�en6+�2#��t���,ߋ �y�u�?9�;G_�3�ݍ3�� =r���=�27�Lzƭ����N�adF�P��� F��Sf+���o�׮s��H��kG� ۹v- �>�i��F���C�\9�vwO��7={��ׁ�x��Vx��`������f��N�X4�/"g�l� ����~�f���h]���rgag��N�9Hp�X�e�̳ 2�K
+- Mapped learning areas to review: Python, automation, data processing
+- Current page excerpt: �      �}��ƒ�E� p[��vL� ���w$ٲ�l]�| ;� IH$@`��3�����O�'��Ql�U����ATU֩�̓����پݭ m��WO.�?��4������ᙶ4����i�\�-���� �tL�ꉆ��]�V�#�vfN��$���KG�6���ƹ�X�۫����9��y�!���U��?�����|�q~ �O���Ϥ��fd궿2]��l}-|��s��0�.�Q���ۦg.�"� [���a����zg����7���o����l}�z ��u���v�D�f-� t�˳M4��$& ��g���3s�^�����ӕ3�����wY����s��?���:S �#7Z~�,smN�g�9��no5 Ff� ���at'=e�4�����:�k?��qߺv��������ù�zn�K=�̥s�muv��{ӳ��~ ��g/�G�6Ύ_��`eF��D�E3 �"r���q.=?�w�`��6�ֵ(Kw�W����g�� �E[�,�!Q�p�P��[Ck:
+- **Detected text differences (for review only):**
+```text
+- �      �}��F��E� 0T\� ���-u��$[����q��؈� ��D4 v����5���'�'��Ql�U�ٵ�ATU֩�̓���پ�n m�W�O��?��2���������Loq�r��f��Ek��'��1��'���u Z���4ۙ;���o� ���#gg�r}f�g�'�l��ه���֡K�|:������Y�o>�y���iI����mm��Eks-
++ �      �}��ƒ�E� p[��vL� ���w$ٲ�l]�| ;� IH$@`��3�����O�'��Ql�U����ATU֩�̓����پݭ m��WO.�?��4������ᙶ4����i�\�-���� �tL�ꉆ��]�V�#�vfN��$���KG�6���ƹ�X�۫����9��y�!���U��?�����|�q~ �O���Ϥ��fd궿2]��l}-|��s��0�.
+- ���'��N{6�Zchٳq���a� �Hq���c��*��T |0?���X9�� ۖ�Ƨ�� ['�ݺ�^�g�{�h� L������a�ߡo]��x� (`ͻX��l�ks�t>��� ���U  �%���@����ZK�c}8��Ƈ�[Z��I �7|�?� �v~�'>����m��V{%Z��)jul|w�����-�Ӵ#Ma&�I��^�>�ajG3�CqKy��� �KPm���.�
++ ���['�WNk:�X}c`��Qﰎa� �Hq���c��*��T |0?��?_:�� [��j��Ƨ�� '�۸�n�k���h� L������a�ߡo\��x� (`ͻX��l�+s�?��� ���U  �%���@����X �c} 8��ڇ�ϴ���j�����r���m|����ڛ?��.Z�h�ߧ�Ց�id�;Rv��(OӖ4��('�{{��D��-ͼ �-�=��7�/A�%� �P�s�ēϻz�7
+- &�ㅎ�l�����O�HA���;歬~�ف�7N�^���3�Nĝי��vi4����������a�����O��^� 2%,�"� nnnD�0��iR �M�w�n��W���Y �B����� v ��l�hL�I-�Nj�;��3u��۵���S���U�|b+E�C� ���:3R�u���4= ;�iXWع�U(���ּq6���>��{6�{t����!c�֎ �� ��O�H
++ ,w3�fo��e �zÉ����������� �xҵ�L0s��lyc� < �RW3�`.�� =�ndZw��L�I�f_� ~���p#�k;� �� < �:�ig���p혁���I�� �� ��y��~��� ���?�j_� F0������b��z� {`���qli����q�������|j> mN' < ����]B@�VE2��V��͵�(�m cB���ƶ����gr��
+- X.�}��u�-e�kjR��>�eH�.�?�c����3��-k�j���|"��a$P��N��M�d,Б%������*w�{v��� �I1�n��^l �H�s��8�Er�D��ˎ < �ݟ2��&GY T$��W8�����+�\L���M�w��`��o�}�$~���.�$�C%���ǒr� )�/d �j �*^V�(NKYђ�E��ޛ�"uB�1L���> ���K���
++ �eH�.�?�C����3��-k�j���|"��a$P��N��M�d,Б%������*w�va�i� �I1�n��^l �H�s�اEr�D��˖ < ܟ2��6GY T$��W8�����k�\L���M�w��`��o�}�$~���.�$�C%���ǒr� )�/d �j �*^V�(NKYq&e��Ž3QEꄘc�D�}�qY��'��I��@ ����~��!H�u��;
+- N����T��� �(�h�,��m1 ƫT��ꛦ���n� < 9M����ƫp:y�}�U��Q�4=��ː�� uy��W�4=�����N��) < �� �ԓ�#���Q < ^/w�'���;I� KmW��5 p2}����N���c9յ\!��0�ɬ  ���;EV^��Y�$�� U ��v�f1w�ܑ��� ��Yy|(�Uwe�;��Y9ɽ\N2ূ�;IV Km�W�
++ 뀷0��I��Y� ��څc�$�k[�0..^h�)'�1���10���G�T�"2�md^����r��~>H���ʐV���U/�s1!� 6�;�g1+�2�ն~a\\����4jPi`���� W�J��U2�s5��W�����5��I�� _� �O�ڔ�m� 2|����e�c��� �C �� �.+��N*��a���Ì|\�Q>k��AE���(����V����Xk�K 
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNCHANGED | PostgreSQL database documentation | PostgreSQL Global Development Group | [Open source](https://www.postgresql.org/docs/) |
 | UNCHANGED | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
 | UNAVAILABLE | German learning exercises | Goethe-Institut | [Open source](https://www.goethe.de/en/spr/ueb.html) |
@@ -88,20 +124,40 @@ Found
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- français, du niveau débutant au niveau avancé. Recommandé TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en
-+ français, du niveau débutant au niveau avancé. Recommandé Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Emblèmes Belgique Le coq hard
-- séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et disponible partout dans le monde ! Contes africains Cinq contes venus de Côte d'Ivoire, de République
-+ hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Les expressions
-- coq, Liberté, égalité fraternité... Découvrez les emblèmes de la République française Les expressions d'Archibald Faire le cacou, motamoter ou
-+ bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Les expressions d'Archibald Faire le cacou, motamoter ou
-- veut dire ? Archibald vous dit tout ! APPRENDRE EV@LANG Quel est votre niveau à l'écrit
-+ veut dire ? Archibald vous dit tout ! Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité... Découvrez les emblèmes de la République française Quèsaco Sur un ton décalé, drôle et moderne, « Quèsaco » rép
-- EV@LANG, conçue par l’AUF et France Éducation International. Emblèmes Belgique Le coq hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Bibliothèque n
-+ EV@LANG, conçue par l’AUF et France Éducation International. Partenaires Apprenez le français plus facilement avec l’application
+- français, du niveau débutant au niveau avancé. Recommandé Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Emblèmes Belgique Le coq hard
++ français, du niveau débutant au niveau avancé. Recommandé Emblèmes France La Marseillaise, le coq, Liberté, égalité
+- une langue vivante et en constante évolution. Emblèmes Belgique Le coq hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Les expressions
++ du niveau débutant au niveau avancé. Recommandé Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité... Découvrez les emblèmes de la République française Les
+- bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Les expressions d'Archibald Faire le cacou, motamoter ou
++ coq, Liberté, égalité fraternité... Découvrez les emblèmes de la République française Les expressions d'Archibald Faire le cacou, motamoter ou
+- veut dire ? Archibald vous dit tout ! Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité... Découvrez les emblèmes de la République française Quèsaco Sur un ton décalé, drôle et moderne,
++ veut dire ? Archibald vous dit tout ! Quèsaco Sur un ton décalé, drôle et moderne,
+- questions que l'on se pose devant une peinture. Serious game Jouez à « Datak » et devenez un pro du big data ! TV5MONDE+ Regardez
++ questions que l'on se pose devant une peinture. La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
-| UNCHANGED | French grammar and vocabulary | Lawless French | [Open source](https://www.lawlessfrench.com/) |
+| CHANGED — REVIEW REQUIRED | French grammar and vocabulary | Lawless French | [Open source](https://www.lawlessfrench.com/) |
+
+### Review required — French grammar and vocabulary
+- Previous page excerpt: Bonjour ! - Lawless French - Online French Learning French lessons and language tools from Laura K Lawless Chatbot Cool Tools Pronommeur Subjunctivisor Verb Deconjugator Verb Tables Daily Practice FAQ French 101 P w LF Search Welcome! About LKL Beyond Lawless French French Essentials French for Beginners Frequently Asked Questions Independent Study Lessons by Level Log in Online Learning Tips Relearning French Sitemap Subscribe to Lawless French Support LF Teachers’ Tips and Tools The Fine Print
+- Mapped learning areas to review: French, grammar, vocabulary
+- Current page excerpt: Bonjour ! - Lawless French - Online French Learning French lessons and language tools from Laura K Lawless Chatbot Cool Tools Pronommeur Subjunctivisor Verb Deconjugator Verb Tables Daily Practice FAQ French 101 P w LF Search Welcome! About LKL Beyond Lawless French French Essentials French for Beginners Frequently Asked Questions Independent Study Lessons by Level Log in Online Learning Tips Relearning French Sitemap Subscribe to Lawless French Support LF Teachers’ Tips and Tools The Fine Print
+- **Detected text differences (for review only):**
+```text
+- monthly donation . What’s New at Lawless French? Faire le point Assess your understanding of the French expression faire le
++ monthly donation . What’s New at Lawless French? Dents du bonheur - Dents de la chance If you have a gap between your front teeth, you’re in luck! Read about
+- at Lawless French? Faire le point Assess your understanding of the French expression faire le point by reviewing this lesson. Comparatives Quiz - Lecture ou Télé ? Test yourself
++ chance If you have a gap between your front teeth, you’re in luck! Read about the idiomatic French expressions dents du bonheur and dents de la chance . Discussion - Object Pronouns Quiz Test yourself on direct object pr
+- le point by reviewing this lesson. Comparatives Quiz - Lecture ou Télé ? Test yourself on comparatives with this fill-in-the-blanks test:
++ la chance . Discussion - Object Pronouns Quiz Test yourself on direct object pronouns and indirect
+- - Lecture ou Télé ? Test yourself on comparatives with this fill-in-the-blanks test: Lecture ou Télé ?
++ Discussion - Object Pronouns Quiz Test yourself on direct object pronouns and indirect object pronouns with this fill-in-the-blanks exercise: La discussion Note: You
+- ? Test yourself on comparatives with this fill-in-the-blanks test: Lecture ou Télé ? Note: You must be logged into your Progress
++ pronouns and indirect object pronouns with this fill-in-the-blanks exercise: La discussion Note: You must be logged into your Progress
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNCHANGED | Spanish grammar and vocabulary | Lawless Spanish | [Open source](https://www.lawlessspanish.com/) |
 | UNCHANGED | Bilingual dictionaries | WordReference | [Open source](https://www.wordreference.com/) |
 | CHANGED — REVIEW REQUIRED | German-English dictionary | dict.cc | [Open source](https://www.dict.cc/) |
@@ -109,19 +165,19 @@ Found
 ### Review required — German-English dictionary
 - Previous page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK LA ES PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - Mapped learning areas to review: German-English dictionary, vocabulary, translations
-- Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK LA ES PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
+- Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.220 Übersetzungen – 2.821 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.254 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit
-- | Z Zuletzt verifizierte Übersetzungen 1.319.220 Übersetzungen – 2.821 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-+ | Z Zuletzt verifizierte Übersetzungen 1.319.254 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:54 twatwaffle [Br.] [pej.] [sl.] Vollpfosten {m} [ugs.] [pej.] sun
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 08:20 comm. law The goods shall be presented to customs. Die Waren sind den Zollbehörden zu gestellen. [fachsprachlich] Ger Hal 07:29 entom. T bishop's mitre shield b
-- Zeit Englisch Deutsch Geprüft von 07:54 twatwaffle [Br.] [pej.] [sl.] Vollpfosten {m} [ugs.] [pej.] sun jpx 07:53 to be idled on a side
-+ 07:29 entom. T bishop's mitre shield bug [Br.] [Aelia acuminata] Getreidewanze {f} git jpx 07:28 entom. T bishop's mitre [Br.] [Aelia
-- [pej.] [sl.] Vollpfosten {m} [ugs.] [pej.] sun jpx 07:53 to be idled on a side track [fig.]
-+ bug [Br.] [Aelia acuminata] Getreidewanze {f} git jpx 07:28 entom. T bishop's mitre [Br.] [Aelia acuminata] Getreidewanze {f} git jpx 07:21 provincial police Provinzpolizei {f} BHM jpx 07:20 to rehire sb. jdn. wiedereins
+- IS RU RO FR SK IT NL UK LA ES PT FI HU NO BG HR
++ IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS
+- RU RO FR SK IT NL UK LA ES PT FI HU NO BG HR CS DA
++ RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA
+- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.254 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit
++ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.279 Übersetzungen – 2.846 neu – 99,8% verifiziert Zeit
+- | Z Zuletzt verifizierte Übersetzungen 1.319.254 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
++ | Z Zuletzt verifizierte Übersetzungen 1.319.279 Übersetzungen – 2.846 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 08:20 comm. law The goods shall be presented to customs. Die Waren sind den Zollbehörden zu
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:29 lit. F A Voyage Round the World (in His Britannic Majesty's Sloop, Resolution, Commanded by Capt. James Cook, During the Years 1772, 3, 4, and 5) [Georg Forster
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
