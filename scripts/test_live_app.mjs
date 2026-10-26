@@ -68,6 +68,27 @@ try {
     check(await page.locator('#finishTimer').isDisabled() && (await page.locator('#timerStatus').innerText()).toLowerCase().includes('saved'), viewport.name + ': Stop & Save completes session', await page.locator('#timerStatus').innerText().catch(() => ''));
     check(await page.evaluate(() => { const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return Array.isArray(d.sessions) && d.sessions.length > 0; }), viewport.name + ': timer session persists in local storage');
 
+    // Regression: a running session must survive a page reload without resetting or freezing.
+    await page.locator('#startTimer').click();
+    await wait(1100);
+    const runningBeforeReload = (await timer.innerText()).trim();
+    await page.reload({ waitUntil: 'networkidle', timeout: 60000 });
+    const timerAfterReload = page.locator('#clock');
+    await wait(1200);
+    const runningAfterReload = (await timerAfterReload.innerText()).trim();
+    check(runningAfterReload !== runningBeforeReload &&
+      await page.locator('#pauseTimer').isEnabled(),
+      viewport.name + ': active timer continues advancing after reload',
+      runningBeforeReload + ' → ' + runningAfterReload);
+    await page.locator('#pauseTimer').click();
+    await page.locator('#finishTimer').click();
+    check(await page.evaluate(() => {
+      const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}');
+      return Array.isArray(d.sessions) && d.sessions.length >= 2 &&
+        d.sessions.some(s => Number(s.seconds) >= 1);
+    }), viewport.name + ': reloaded timer session can be saved to study history');
+
+
     await page.getByRole('tab', { name: 'Backup' }).click();
     const beforeInvalidRestore = await page.evaluate(() => {
       const d = JSON.parse(localStorage.getItem('aaroh-study-desk-v2') || '{}');
