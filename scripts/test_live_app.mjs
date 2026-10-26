@@ -425,6 +425,12 @@ try {
   await page.locator('#sharedStart').click(); await wait(2200);
   const dictRunning = (await page.locator('#sharedClock').innerText()).trim();
   check(dictRunning !== dictStart && await page.locator('#sharedPause').isEnabled(), 'dictionary: timer starts and advances', dictStart + ' → ' + dictRunning);
+  const dictBeforeReload = dictRunning;
+  await page.reload({waitUntil:'networkidle'});
+  await wait(1300);
+  const dictAfterReload = (await page.locator('#sharedClock').innerText()).trim();
+  check(dictAfterReload !== dictBeforeReload && await page.locator('#sharedPause').isEnabled(),
+    'dictionary: active timer continues advancing after reload', dictBeforeReload + ' → ' + dictAfterReload);
   await page.locator('#sharedPause').click();
   await page.locator('#sharedStop').click();
   check(await page.locator('#sharedStop').isDisabled(), 'dictionary: Stop & Save resets controls');
@@ -452,7 +458,13 @@ try {
   const excelTimerLayout = await timerLayout(page, '.shared-commandbar .shared-stopwatch>.buttons', 1365);
   check(excelTimerLayout.ok, 'Excel practice: timer controls use aligned equal-width grid', JSON.stringify(excelTimerLayout));
   await page.locator('#sharedStart').click(); await wait(1200);
-  check((await page.locator('#sharedClock').innerText()).trim() !== '00:00:00', 'Excel practice: timer advances');
+  const excelBeforeReload = (await page.locator('#sharedClock').innerText()).trim();
+  check(excelBeforeReload !== '00:00:00', 'Excel practice: timer advances');
+  await page.reload({waitUntil:'networkidle'});
+  await wait(1300);
+  const excelAfterReload = (await page.locator('#sharedClock').innerText()).trim();
+  check(excelAfterReload !== excelBeforeReload && await page.locator('#sharedPause').isEnabled(),
+    'Excel practice: active timer continues advancing after reload', excelBeforeReload + ' → ' + excelAfterReload);
   await page.locator('#sharedPause').click();
   await page.locator('#sharedStop').click();
   check(await page.evaluate(() => {const d=JSON.parse(localStorage.getItem('aaroh-study-desk-v2')||'{}'); return Array.isArray(d.sessions)&&d.sessions.some(s=>s.topic==='Excel Formula Practice');}), 'Excel practice: Stop & Save records a session');
