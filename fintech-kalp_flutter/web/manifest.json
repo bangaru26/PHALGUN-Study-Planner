@@ -1,0 +1,9 @@
+{
+  "name": "Fintech Kalp",
+  "short_name": "Fintech Kalp",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F4F7FB",
+  "theme_color": "#10233F",
+  "description": "Finance and related technology learning pathway within GFPA and PHALGUN."
+}
