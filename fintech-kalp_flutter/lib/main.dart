@@ -25,6 +25,7 @@ class LearningHome extends StatefulWidget {
 
 class _LearningHomeState extends State<LearningHome> {
   int section = 0, selectedPath = 0, selectedChapter = 0;
+  bool lessonOpened = false;
   final Set<int> completed = {};
   final Map<int, int> answers = {};
   bool submitted = false;
@@ -107,6 +108,7 @@ class _LearningHomeState extends State<LearningHome> {
   ]);
 
   Widget curriculum() {
+    if (lessonOpened) return lessonDetail();
     final path = paths[selectedPath];
     return ListView(padding: const EdgeInsets.all(22), children: [
       const SectionHeading('Curriculum explorer', 'Choose a learning path, then select a chapter when you are ready.'),
@@ -125,7 +127,7 @@ class _LearningHomeState extends State<LearningHome> {
         leading: CircleAvatar(backgroundColor: completed.contains(e.key + selectedPath * 10) ? const Color(0xFFD9F5EB) : const Color(0xFFE8EEF7), child: Icon(completed.contains(e.key + selectedPath * 10) ? Icons.check : Icons.menu_book, color: ink)),
         title: Text(e.value, style: const TextStyle(fontWeight: FontWeight.w700)),
         subtitle: Text('FK-${path.code}-C${(e.key + 1).toString().padLeft(2, '0')} · Lesson → example → practice → assignment'),
-        trailing: const Icon(Icons.chevron_right), onTap: () => setState(() => selectedChapter = e.key),
+        trailing: const Icon(Icons.chevron_right), onTap: () => setState(() { selectedChapter = e.key; lessonOpened = true; }),
       ))),
       const SizedBox(height: 12),
       Card(child: Padding(padding: const EdgeInsets.all(18), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -137,11 +139,118 @@ class _LearningHomeState extends State<LearningHome> {
         const LessonStep('05', 'Mini-capstone, revision gist and free resources'),
         const LessonStep('06', 'Results and explanations only after submission'),
         const SizedBox(height: 12),
-        FilledButton.icon(onPressed: () => setState(() { completed.add(selectedChapter + selectedPath * 10); section = 2; submitted = false; answers.clear(); }), icon: const Icon(Icons.play_arrow), label: const Text('Select lesson & open practice')),
+        FilledButton.icon(onPressed: () => setState(() { selectedChapter = 0; lessonOpened = true; }), icon: const Icon(Icons.menu_book), label: const Text('Open first lesson')),
         const SizedBox(height: 6), const Text('This first release is a working navigation and learning-flow prototype. Full authored chapter lessons and synced progress are not yet connected.', style: TextStyle(color: Colors.black54, fontSize: 12, height: 1.45)),
       ]))),
     ]);
   }
+
+  Widget lessonDetail() {
+    final path = paths[selectedPath];
+    final title = path.chapters[selectedChapter];
+    final id = 'FK-${path.code}-C${(selectedChapter + 1).toString().padLeft(2, '0')}';
+    final lessons = <String, Map<String, String>>{
+      'CORE': {
+        'concept': 'Financial information turns business activity into decisions. The three core statements answer different questions: the income statement reports performance over a period; the balance sheet shows assets, liabilities and equity at a point in time; the cash-flow statement explains cash movement across operating, investing and financing activities.',
+        'example': 'A distributor reports a profit of ₹12 lakh but has only ₹1 lakh in its bank account. Profit is not cash: customers may still owe money, inventory may have increased, or suppliers may have been paid. Reconcile profit to operating cash before concluding that the business is financially healthy.',
+        'steps': '1. Confirm the reporting period and source systems.\n2. Reconcile subledgers to the general ledger.\n3. Separate timing differences from genuine errors.\n4. Explain movements using volume, price, mix and timing.\n5. Record evidence, owner and resolution date for each exception.',
+        'cross': 'AP explains unpaid supplier liabilities; AR explains collection delays; Treasury analyses available cash; FP&A explains budget variances; GL/R2R confirms account integrity; Risk/Audit checks evidence and approvals.',
+        'assignment': 'Using a fictional month-end, explain why a profitable business can have a cash shortage. List five data points you would request and three controls you would test.',
+        'capstone': 'Create a one-page finance health note covering profit, cash, working capital, reconciliation exceptions, risks and actions.',
+        'formula': 'Working capital = Current assets − Current liabilities. Current ratio = Current assets ÷ Current liabilities. These ratios need context; a high ratio does not automatically mean cash is available.'
+      },
+      'OPS': {
+        'concept': 'Procure-to-Pay (P2P) begins with a business need and ends with a correctly recorded supplier payment. Typical stages are requisition, purchase order, receipt confirmation, invoice capture, validation/matching, approval, payment proposal, payment release and ledger reconciliation. Exceptions should be routed to an accountable owner rather than hidden in email.',
+        'example': 'A supplier invoice for ₹2,40,000 arrives, but the purchase order is ₹2,20,000 and the receipt confirms only 90 units. Do not force the invoice through. Compare quantities, price, tax and contract terms, then route the mismatch to Procurement or Receiving with evidence.',
+        'steps': '1. Validate supplier identity and invoice fields.\n2. Check duplicate risk using supplier, invoice number, date and amount.\n3. Match invoice to purchase order and goods/service receipt where applicable.\n4. Apply approval limits and segregation of duties.\n5. Track blocked invoices, ageing, root cause and resolution.\n6. Reconcile AP subledger, payments and bank/GL records.',
+        'cross': 'Procurement owns PO and commercial terms; Receiving confirms delivery; AP validates invoices; Treasury manages liquidity and payment timing; GL/R2R reconciles liabilities and GR/IR; IT supports interfaces; Audit tests approvals and segregation of duties.',
+        'assignment': 'Design an exception log with columns for supplier, invoice, amount, PO, receipt status, exception reason, owner, age, next action and target resolution date.',
+        'capstone': 'Propose a 30-day improvement to reduce overdue invoices without bypassing controls. Define baseline, target, owner, risk and weekly review cadence.',
+        'formula': 'Overdue rate = Overdue unpaid invoices ÷ Total unpaid invoices × 100%. First-time match rate = Invoices matched without manual correction ÷ Invoices processed × 100%. Define the denominator consistently.'
+      },
+      'DATA': {
+        'concept': 'Reliable analytics starts with a clear question, defined metrics and trustworthy data. Excel is useful for inspection and ad-hoc analysis; Power Query automates repeatable cleaning and combining; Power BI models relationships and communicates trends; SQL retrieves structured records. Validate source completeness before interpreting charts.',
+        'example': 'Three monthly AP files use different supplier-name spellings and date formats. Standardise column names and types, trim whitespace, map supplier IDs, remove only verified duplicates, document exceptions and reconcile row counts and totals to the source.',
+        'steps': '1. State the business question and grain of the dataset.\n2. Profile blanks, duplicates, types, ranges and totals.\n3. Clean with repeatable transformations.\n4. Preserve source fields and transformation notes.\n5. Reconcile counts and monetary totals.\n6. Build a metric definition and communicate the action it supports.',
+        'cross': 'AP validates invoice statuses; Procurement validates supplier and PO master data; Treasury uses due dates for cash forecasts; FP&A compares trends to budget; IT/Data owns pipelines and access; Audit needs traceability from dashboard to source.',
+        'assignment': 'Create a data-quality checklist for an AP ageing report. Include at least six checks and explain what action follows if each check fails.',
+        'capstone': 'Design a dashboard specification with overdue value, ageing bands, blocked-invoice reasons, top suppliers, trend and owner-level actions.',
+        'formula': 'Ageing days = Report date − Due date for overdue items (or use the agreed ageing convention). Overdue value = Sum of outstanding amounts where due date is before the report date and status is unpaid.'
+      },
+      'AI': {
+        'concept': 'Automation should start with a stable, rules-understood process. RPA is suited to repeatable user-interface tasks; workflow tools route work and approvals; OCR/IDP extracts fields from documents; AI can classify or flag unusual cases. Automation does not remove accountability, access controls, audit trails or exception handling.',
+        'example': 'An invoice-reading model extracts supplier, invoice number and amount. A validation layer checks mandatory fields, duplicate risk and PO match. Low-confidence extraction or a policy breach goes to a trained reviewer; approved data is then passed to the ERP with an audit record.',
+        'steps': '1. Map the current process and baseline time/error rates.\n2. Separate stable rules from judgement-heavy exceptions.\n3. Assess data access, privacy, failure modes and fallback.\n4. Pilot with human review and logging.\n5. Monitor accuracy, override rates, exceptions and benefits.\n6. Keep a manual recovery route and named process owner.',
+        'cross': 'AP defines acceptable invoice outcomes; IT secures integrations; Risk/Audit validates controls; Procurement resolves supplier data; Treasury protects payment release; process owners approve changes and monitor benefits.',
+        'assignment': 'Select one repetitive finance task. Document inputs, decision rules, exceptions, control risks, human approval points and a measurable success metric.',
+        'capstone': 'Prepare a responsible automation proposal including process map, ROI assumptions, access controls, test plan, fallback and post-launch monitoring.',
+        'formula': 'Net annual benefit = Annual measurable savings − Annual run/support cost. Payback period (months) = Initial investment ÷ Monthly net benefit. State assumptions and do not count theoretical time savings as cash savings unless capacity is actually redeployed.'
+      },
+      'TECH': {
+        'concept': 'Fintech connects financial services with software, data and regulated operations. A payment journey can include initiation, authentication, authorisation, clearing, settlement, reconciliation, dispute handling and reporting. An API is a defined interface for systems to exchange requests and responses; an API call is not itself proof that money settled.',
+        'example': 'A payment dashboard shows “accepted” but the bank statement has no debit. Treat accepted, authorised, processed and settled as distinct states. Use transaction IDs, timestamps, bank/processor reports and reconciliation rules to identify whether the item is pending, rejected, duplicated or settled.',
+        'steps': '1. Identify parties, systems and transaction identifiers.\n2. Distinguish authorisation, processing and settlement states.\n3. Protect credentials and sensitive data.\n4. Apply idempotency and duplicate-handling rules.\n5. Reconcile platform records to bank/ledger records.\n6. Escalate fraud signals and unresolved breaks through controlled procedures.',
+        'cross': 'Product defines the customer journey; Engineering maintains APIs and reliability; Finance reconciles fees and settlement; Treasury monitors liquidity; Compliance interprets applicable rules; Security manages access and incident response.',
+        'assignment': 'Draw a payment lifecycle and list the evidence needed to investigate a transaction marked successful in one system but missing in another.',
+        'capstone': 'Specify a safe payment-reconciliation service with transaction IDs, exception states, access controls, audit logging, alerts and operational ownership.',
+        'formula': 'Reconciliation break = Internal recorded amount − External confirmed amount. A non-zero break is an investigation signal, not permission to post a plug journal.'
+      },
+      'CHANGE': {
+        'concept': 'Process transformation improves an outcome by addressing root causes rather than automating waste. Agile delivery breaks work into small, testable increments. A useful user story describes a user need and business value; acceptance criteria define observable conditions for completion.',
+        'example': 'Instead of a vague request to “automate AP”, write: “As an AP analyst, I want blocked invoices grouped by reason and owner so that I can prioritise resolution and reduce overdue value.” Acceptance criteria define valid reasons, owner mapping, refresh timing, totals reconciliation and exception visibility.',
+        'steps': '1. Define the customer/business problem and baseline.\n2. Map the as-is process and quantify waste or rework.\n3. Validate root causes with process data and staff.\n4. Prioritise a small change with clear acceptance criteria.\n5. Pilot, test controls and gather feedback.\n6. Measure results and decide whether to scale.',
+        'cross': 'Finance owns business outcomes; Operations validates usability; Product prioritises value; Engineering estimates and builds; Data validates measurement; Risk/Audit checks control impacts; leaders remove blockers and fund scale-up.',
+        'assignment': 'Write one user story and at least five testable acceptance criteria for reducing blocked invoices. Include a control requirement and a measurable business outcome.',
+        'capstone': 'Create a 30/60/90-day transformation plan with work items, owners, dependencies, risks, adoption actions and outcome measures.',
+        'formula': 'Improvement % = (Baseline − New result) ÷ Baseline × 100% for metrics where lower is better. For higher-is-better metrics, reverse the numerator and clearly state the direction.'
+      }
+    };
+    final d = lessons[path.code]!;
+    final resources = <String, String>{
+      'CORE': 'https://www.ifrs.org/issued-standards/list-of-standards/ | https://www.accountingcoach.com/',
+      'OPS': 'https://www.accountingcoach.com/ | https://learn.microsoft.com/training/',
+      'DATA': 'https://support.microsoft.com/excel | https://learn.microsoft.com/training/powerplatform/power-bi/ | https://sqlbolt.com/',
+      'AI': 'https://learn.microsoft.com/training/ | https://www.nist.gov/itl/ai-risk-management-framework',
+      'TECH': 'https://www.rbi.org.in/ | https://www.bis.org/cpmi/',
+      'CHANGE': 'https://scrumguides.org/scrum-guide.html | https://www.atlassian.com/agile',
+    };
+    return ListView(padding: const EdgeInsets.all(22), children: [
+      Row(children: [IconButton(onPressed: () => setState(() => lessonOpened = false), icon: const Icon(Icons.arrow_back)), const SizedBox(width: 4), Expanded(child: Text('$id · LESSON', style: const TextStyle(color: teal, fontWeight: FontWeight.w900, letterSpacing: 1.1)))]),
+      Text(title, style: const TextStyle(fontSize: 27, fontWeight: FontWeight.w900, color: ink)),
+      const SizedBox(height: 6), Text('Path: ${path.title} · Learn at your pace; complete the practice before viewing feedback.', style: const TextStyle(color: Colors.black54, height: 1.4)),
+      const SizedBox(height: 16),
+      lessonCard('01 · Learning objectives', 'By the end of this lesson, you should be able to explain the core process, apply it to a realistic finance scenario, identify cross-functional responsibilities, and propose evidence-based controls or improvements.'),
+      lessonCard('02 · Core lesson', d['concept']!),
+      lessonCard('03 · Real-world worked example', d['example']!),
+      lessonCard('04 · Practical method', d['steps']!),
+      lessonCard('05 · Cross-department perspective', d['cross']!),
+      lessonCard('06 · Important formula / concept', d['formula']!),
+      lessonCard('07 · Assignment (attempt first)', d['assignment']!),
+      lessonCard('08 · Mini-capstone', d['capstone']!),
+      lessonCard('09 · Revision gist', 'Recall the process flow, the evidence needed, the responsible owner, the key control, and the metric that proves improvement. Connect this lesson to earlier topics rather than memorising definitions in isolation.'),
+      lessonCard('10 · Books, free learning and references', 'Explore these starting points (availability and access terms may vary):\n${resources[path.code]}\n\nUse official documentation first. Record the page or module used, the date accessed and one practical takeaway.'),
+      Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        const Text('Knowledge check · answers hidden until submission', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: ink)),
+        const SizedBox(height: 8), const Text('1. Which is the strongest approach?'), const Text('A. Skip reconciliation to meet a deadline\nB. Follow evidence, controls and an accountable exception owner\nC. Hide exceptions from reporting', style: TextStyle(height: 1.6)),
+        const SizedBox(height: 8), const Text('2. What should a useful KPI do?'), const Text('A. Have a defined numerator, denominator and owner\nB. Change definition every month\nC. Report a number without context', style: TextStyle(height: 1.6)),
+        const SizedBox(height: 12),
+        if (!submitted) FilledButton(onPressed: () => setState(() { submitted = true; answers[100] = 1; answers[101] = 0; }), child: const Text('Submit practice attempt'))
+        else ...[
+          const Text('Feedback: 1 — B. Evidence, controls and clear ownership make the process traceable and safe.\n2 — A. Defined measures, ownership and context make KPIs actionable.', style: TextStyle(height: 1.5)),
+          OutlinedButton(onPressed: () => setState(() { submitted = false; answers.remove(100); answers.remove(101); }), child: const Text('Reset attempt')),
+        ],
+        const SizedBox(height: 8), FilledButton.icon(onPressed: () => setState(() { completed.add(selectedChapter + selectedPath * 10); lessonOpened = false; }), icon: const Icon(Icons.check_circle_outline), label: const Text('Mark lesson reviewed')),
+      ]))),
+      const SizedBox(height: 12),
+      OutlinedButton.icon(onPressed: () => setState(() { selectedChapter = (selectedChapter + 1) % path.chapters.length; submitted = false; answers.clear(); }), icon: const Icon(Icons.skip_next), label: const Text('Open next chapter')),
+      const SizedBox(height: 8), const Text('Prototype limitation: lesson review state is currently held in the open app session; account-based cloud progress is not connected yet.', style: TextStyle(color: Colors.black54, fontSize: 12, height: 1.4)),
+    ]);
+  }
+
+  Widget lessonCard(String title, String body) => Card(margin: const EdgeInsets.only(bottom: 10), child: Padding(padding: const EdgeInsets.all(17), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    Text(title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w900, color: ink)),
+    const SizedBox(height: 8), SelectableText(body, style: const TextStyle(fontSize: 14, height: 1.6)),
+  ])));
 
   Widget practice() => ListView(padding: const EdgeInsets.all(22), children: [
     const SectionHeading('Knowledge check', 'Choose your answers and submit. Explanations stay hidden until you attempt the quiz.'),
