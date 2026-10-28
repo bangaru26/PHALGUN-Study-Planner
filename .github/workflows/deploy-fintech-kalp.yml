@@ -1,0 +1,58 @@
+name: Build and publish Fintech Kalp Flutter web app
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'fintech-kalp_flutter/**'
+      - '.github/workflows/deploy-fintech-kalp.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fintech-kalp-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out PHALGUN Study Planner
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Flutter stable
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Resolve packages
+        working-directory: fintech-kalp_flutter
+        run: flutter pub get
+
+      - name: Build release web app
+        working-directory: fintech-kalp_flutter
+        run: flutter build web --release --base-href /PHALGUN-Study-Planner/fintech-kalp/
+
+      - name: Publish compiled app under the existing Pages site
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf fintech-kalp
+          mkdir -p fintech-kalp
+          cp -R fintech-kalp_flutter/build/web/. fintech-kalp/
+          find fintech-kalp -type f -name '*.map' -delete
+          touch fintech-kalp/.nojekyll
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fintech-kalp
+          if git diff --cached --quiet; then
+            echo "No generated app changes to publish."
+            exit 0
+          fi
+          git commit -m "Publish Fintech Kalp Flutter web app"
+          git push origin HEAD:main
