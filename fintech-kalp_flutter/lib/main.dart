@@ -259,7 +259,41 @@ class _LearningHomeState extends State<LearningHome> {
         'formula': 'Improvement % = (Baseline − New result) ÷ Baseline × 100% for metrics where lower is better. For higher-is-better metrics, reverse the numerator and clearly state the direction.'
       }
     };
-    final d = lessons[path.code]!;
+    final d = Map<String, String>.from(lessons[path.code]!);
+    final chapterFocus = <String, List<String>>{
+      'CORE': [
+        'The income statement measures performance over a period; the balance sheet shows assets, liabilities and equity at a date; the cash-flow statement explains operating, investing and financing cash movements. Accrual profit is not the same as cash. Tie statements to the trial balance, subledgers, bank evidence and close schedules. Worked case: ₹12 lakh profit with only ₹1 lakh bank cash requires a profit-to-cash bridge covering receivables, inventory, supplier payments, capital expenditure and debt movements.',
+        'Working capital = current assets − current liabilities. The cash conversion cycle is DIO + DSO − DPO. If DIO=42 days, DSO=38 and DPO=30, CCC=50 days. Use consistent periods and definitions. Improving collections can release cash, but do not optimise DPO by violating supplier terms or damaging supply continuity.',
+        'Preventive controls stop errors, detective controls identify them and corrective controls resolve them. Reconciliation compares independent records, explains differences and assigns owners. If AP subledger is ₹9.8 crore and GL is ₹10 crore, do not post a plug: investigate timing, interface failures, journals, cut-off and mapping. Segregation of duties prevents one person completing incompatible steps unchecked.'
+      ],
+      'OPS': [
+        'P2P flow: requisition → PO → receipt → invoice capture → matching → approval → payment → bank/GL reconciliation. Two-way match compares invoice to PO; three-way match also checks receipt. An invoice above PO/receipt tolerance remains blocked until Procurement/Receiving evidence resolves it. Never split or force it through to meet a KPI.',
+        'O2C covers order, credit check, fulfilment, billing, AR, collections, cash application and dispute resolution. Overdue balances may be caused by billing errors, delivery disputes, credit risk or unapplied cash. Match receipts only with bank/remittance evidence. Segment collection work by value, age, reason, risk and owner.',
+        'Month-end close sequences cut-off, subledger completion, accruals/prepayments, reconciliations, review and reporting. An accrual recognises an expense incurred but not yet invoiced; a prepayment allocates a payment to future periods. A suspense balance is temporary and must have an owner, evidence, target date and escalation—not become a permanent parking place.'
+      ],
+      'DATA': [
+        'Define the data grain and report date before using Excel. Validate dates, blanks, duplicate keys, statuses and totals. SUMIFS adds values meeting multiple criteria; COUNTIFS counts matching records; IF/AND can flag an invoice overdue only when it is unpaid and due before the report date. Reconcile calculated value to source before publishing.',
+        'Power Query records repeatable import and cleaning steps. Append stacks compatible tables; merge joins tables by keys. Standardise headers/types, trim text and map supplier IDs. Do not remove repeated supplier names blindly because a supplier can legitimately have many invoices. Keep unmapped rows in an exception query and reconcile counts and amounts after refresh.',
+        'A dashboard should support a decision. Define KPI numerator, denominator, period, filters, source, owner and refresh cadence. In a star schema, a fact table stores events/measures at a defined grain and dimension tables describe date, supplier, entity or reason. DAX measures respond to filter context. Validate relationships and totals against source records.'
+      ],
+      'AI': [
+        'Map and measure a process before automating it. RPA suits stable UI tasks; workflow routes approvals; APIs connect systems; OCR/IDP extracts fields; AI may classify or flag anomalies. Redesign unstable processes and poor master data first. Include build, support, monitoring and exception costs. Net annual benefit = measurable benefit − annual run/support cost.',
+        'OCR turns image text into machine-readable text; IDP adds document classification and field extraction. Extraction is not validation: check supplier, invoice ID, date, currency, arithmetic, duplicate risk, PO/receipt and approval. Low-confidence or conflicting fields go to a reviewer with source image and audit trail. Track false accepts separately from false rejects.',
+        'Human-in-the-loop AI requires an authorised reviewer with context, training and power to override. An anomaly flag is not proof of fraud. Define risk tiers, thresholds, permitted use, prohibited decisions, privacy, logs, escalation and monitoring. Never place confidential finance or personal data in an unapproved public tool.'
+      ],
+      'TECH': [
+        'Payment journey can include initiation, authentication, authorisation, processing, clearing, settlement, posting and reconciliation. “Accepted” is not proof of settlement. Trace transaction IDs, timestamps and independent processor/bank records. Handle pending, rejected, returned and reversed states separately; blind retries can create duplicate payments.',
+        'An API defines system requests and responses. A timeout does not prove the operation failed. Idempotency keys help repeated requests avoid duplicate effects. Validate inputs, authenticate callers, use least privilege, bounded retries and correlation IDs; then reconcile sent, accepted, rejected and settled transactions.',
+        'Fintech threats include phishing, credential theft, account takeover, payment redirection, API abuse and insider misuse. Use least privilege, MFA, independent bank-detail verification, maker-checker approvals, logs and timely access removal. Verify sensitive changes through a previously trusted channel, not the contact details in the change request.'
+      ],
+      'CHANGE': [
+        'Start with a defined problem and baseline. Map steps, queues, handoffs, rework and controls; distinguish symptoms from root causes and validate causes with samples/data. Example: if 45% of overdue invoice blocks are missing receipts, work with Receiving before proposing generic reminders or automation.',
+        'A user story states user, capability and value. Acceptance criteria are observable pass/fail conditions covering business rules, edge cases, data quality, access, reconciliation and error handling. Example: every in-scope invoice appears once, totals reconcile to source, unmapped reasons remain visible and access is role-based. Agile does not mean no documentation or no controls.',
+        'A deployed dashboard is an output; reduced overdue value without increased control failures is an outcome. A benefit needs a baseline, target, calculation, source, owner and assumptions. Released capacity is not automatically cash savings. Plan milestones, dependencies, risks, training, feedback and post-launch benefit reviews.'
+      ]
+    };
+    final focus = chapterFocus[path.code]![selectedChapter];
+
     final check1 = <String, Map<String, Object>>{
       'CORE': {'q': 'A profitable company has very little cash. What should you investigate first?', 'o': ['Assume the profit is wrong', 'Review receivables, inventory, payables and cash-flow movements', 'Ignore working capital'], 'a': 1, 'e': 'Profit and cash differ because of working-capital movements, non-cash items and timing. Reconcile the movement using evidence.'},
       'OPS': {'q': 'An invoice exceeds its purchase order and receipt quantity. What is the safest action?', 'o': ['Force it through payment', 'Split the invoice to bypass the tolerance', 'Hold and route the mismatch to an accountable owner'], 'a': 2, 'e': 'A mismatch is an exception. Investigate quantity, price, tax and receipt evidence; do not bypass approval controls.'},
@@ -290,7 +324,7 @@ class _LearningHomeState extends State<LearningHome> {
       const SizedBox(height: 6), Text('Path: ${path.title} · Learn at your pace; complete the practice before viewing feedback.', style: const TextStyle(color: Colors.black54, height: 1.4)),
       const SizedBox(height: 16),
       lessonCard('01 · Learning objectives', 'By the end of this lesson, you should be able to explain the core process, apply it to a realistic finance scenario, identify cross-functional responsibilities, and propose evidence-based controls or improvements.'),
-      lessonCard('02 · Core lesson', d['concept']!),
+      lessonCard('02 · Chapter-specific teaching notes', focus),\n      lessonCard('02 · Core lesson', d['concept']!),
       lessonCard('03 · Real-world worked example', d['example']!),
       lessonCard('04 · Practical method', d['steps']!),
       lessonCard('05 · Cross-department perspective', d['cross']!),
