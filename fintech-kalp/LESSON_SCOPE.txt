@@ -1,5 +1,0 @@
-Fintech Kalp lesson release scope
-
-This folder contains the compiled Flutter web application. The current release adds structured lesson pages for finance foundations, finance operations, finance data analytics, automation and AI, fintech systems, and Agile/transformation. Each learning path currently has sample chapters, with a structured lesson template covering objectives, core concept, worked example, practical method, cross-department perspective, formula/concept, assignment, mini-capstone, revision gist, resources, and a practice check.
-
-This is an incremental prototype release, not the complete GFPA curriculum. The wider GFPA remains the source of truth; Fintech Kalp is only the finance and finance-related technology pathway. Cloud-synced progress and the full chapter catalogue remain future implementation work.
