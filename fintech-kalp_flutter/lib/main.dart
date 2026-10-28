@@ -207,6 +207,22 @@ class _LearningHomeState extends State<LearningHome> {
       }
     };
     final d = lessons[path.code]!;
+    final check1 = <String, Map<String, Object>>{
+      'CORE': {'q': 'A profitable company has very little cash. What should you investigate first?', 'o': ['Assume the profit is wrong', 'Review receivables, inventory, payables and cash-flow movements', 'Ignore working capital'], 'a': 1, 'e': 'Profit and cash differ because of working-capital movements, non-cash items and timing. Reconcile the movement using evidence.'},
+      'OPS': {'q': 'An invoice exceeds its purchase order and receipt quantity. What is the safest action?', 'o': ['Force it through payment', 'Split the invoice to bypass the tolerance', 'Hold and route the mismatch to an accountable owner'], 'a': 2, 'e': 'A mismatch is an exception. Investigate quantity, price, tax and receipt evidence; do not bypass approval controls.'},
+      'DATA': {'q': 'Before publishing an AP ageing dashboard, what should you do?', 'o': ['Reconcile row counts and monetary totals to source data', 'Hide missing dates', 'Remove every repeated supplier name'], 'a': 0, 'e': 'Data-quality checks and source reconciliation help establish completeness and accuracy before interpreting the dashboard.'},
+      'AI': {'q': 'An invoice-reading model has low confidence on the amount. What should happen?', 'o': ['Automatically approve payment', 'Route the item to an authorised human reviewer', 'Delete the audit trail'], 'a': 1, 'e': 'Low-confidence or high-risk cases need human review, logged decisions and controlled exception handling.'},
+      'TECH': {'q': 'A payment API says accepted, but no bank settlement is visible. What is the next step?', 'o': ['Assume settlement is complete', 'Post a balancing journal without evidence', 'Trace transaction IDs and reconcile processor and bank records'], 'a': 2, 'e': 'Accepted, processed and settled are different states. Use identifiers, timestamps and independent records to investigate.'},
+      'CHANGE': {'q': 'What makes an Agile user story ready to test?', 'o': ['Clear acceptance criteria and an observable outcome', 'A vague request to automate everything', 'A deadline with no definition of done'], 'a': 0, 'e': 'Acceptance criteria define observable behaviour and help the team test value, controls and completion.'},
+    }[path.code]!;
+    final check2 = <String, Map<String, Object>>{
+      'CORE': {'q': 'Which statement shows assets, liabilities and equity at a point in time?', 'o': ['Income statement', 'Balance sheet', 'Cash-flow statement'], 'a': 1, 'e': 'The balance sheet presents the entity’s financial position at a reporting date.'},
+      'OPS': {'q': 'Which KPI best measures invoices paid late?', 'o': ['Overdue unpaid invoices divided by total unpaid invoices, using a consistent definition', 'Total number of suppliers in the master file', 'Number of emails sent'], 'a': 0, 'e': 'A useful KPI has a defined numerator, denominator, reporting date and owner.'},
+      'DATA': {'q': 'What is Power Query primarily useful for?', 'o': ['Approving payments', 'Repeatable data cleaning and transformation', 'Replacing source-system controls'], 'a': 1, 'e': 'Power Query lets analysts record repeatable transformation steps for refreshable data preparation.'},
+      'AI': {'q': 'What should be monitored after finance automation launches?', 'o': ['Only the number of bots', 'Accuracy, exceptions, overrides, controls and realised benefits', 'Nothing once it works once'], 'a': 1, 'e': 'Production monitoring detects drift and failures and tests whether expected business value is being realised.'},
+      'TECH': {'q': 'What is a reconciliation break?', 'o': ['A difference between independent records that needs investigation', 'Proof of fraud by itself', 'Permission to post an unsupported journal'], 'a': 0, 'e': 'A break is an investigation signal; resolve it with evidence and the approved accounting process.'},
+      'CHANGE': {'q': 'Why measure a baseline before changing a process?', 'o': ['To avoid defining a target', 'To make the project longer', 'To compare outcomes and test whether the change helped'], 'a': 2, 'e': 'A credible baseline supports measurable outcomes and helps distinguish real improvement from assumption.'},
+    }[path.code]!;
     final resources = <String, String>{
       'CORE': 'https://www.ifrs.org/issued-standards/list-of-standards/ | https://www.accountingcoach.com/',
       'OPS': 'https://www.accountingcoach.com/ | https://learn.microsoft.com/training/',
@@ -232,18 +248,18 @@ class _LearningHomeState extends State<LearningHome> {
       lessonCard('10 · Books, free learning and references', 'Explore these starting points (availability and access terms may vary):\n${resources[path.code]}\n\nUse official documentation first. Record the page or module used, the date accessed and one practical takeaway.'),
       Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const Text('Knowledge check · answers hidden until submission', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: ink)),
-        const SizedBox(height: 8), const Text('1. Which is the strongest approach?'),
-        ...['Skip reconciliation to meet a deadline','Follow evidence, controls and an accountable exception owner','Hide exceptions from reporting'].asMap().entries.map((e) => RadioListTile<int>(dense: true, contentPadding: EdgeInsets.zero, value: e.key, groupValue: lessonAnswer1, title: Text(e.value), onChanged: submitted ? null : (v) => setState(() => lessonAnswer1 = v))),
-        const SizedBox(height: 8), const Text('2. What should a useful KPI do?'),
-        ...['Have a defined numerator, denominator and owner','Change definition every month','Report a number without context'].asMap().entries.map((e) => RadioListTile<int>(dense: true, contentPadding: EdgeInsets.zero, value: e.key, groupValue: lessonAnswer2, title: Text(e.value), onChanged: submitted ? null : (v) => setState(() => lessonAnswer2 = v))),
+        const SizedBox(height: 8), Text('1. ${check1['q']}', style: const TextStyle(fontWeight: FontWeight.w700)),
+        ...(check1['o'] as List<String>).asMap().entries.map((e) => RadioListTile<int>(dense: true, contentPadding: EdgeInsets.zero, value: e.key, groupValue: lessonAnswer1, title: Text(e.value), onChanged: submitted ? null : (v) => setState(() => lessonAnswer1 = v))),
+        const SizedBox(height: 8), Text('2. ${check2['q']}', style: const TextStyle(fontWeight: FontWeight.w700)),
+        ...(check2['o'] as List<String>).asMap().entries.map((e) => RadioListTile<int>(dense: true, contentPadding: EdgeInsets.zero, value: e.key, groupValue: lessonAnswer2, title: Text(e.value), onChanged: submitted ? null : (v) => setState(() => lessonAnswer2 = v))),
         const SizedBox(height: 12),
         if (!submitted) FilledButton(onPressed: lessonAnswer1 == null || lessonAnswer2 == null ? null : () => setState(() { submitted = true; }), child: const Text('Submit answers and reveal feedback'))
         else ...[
-          Text('Score: ${(lessonAnswer1 == 1 ? 1 : 0) + (lessonAnswer2 == 0 ? 1 : 0)} / 2', style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: ink)),
+          Text('Score: ${(lessonAnswer1 == check1['a'] ? 1 : 0) + (lessonAnswer2 == check2['a'] ? 1 : 0)} / 2', style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: ink)),
           const SizedBox(height: 6),
-          Text('1. ${lessonAnswer1 == 1 ? 'Correct' : 'Not quite'} — B. Evidence, controls and clear ownership make the process traceable and safe.', style: const TextStyle(height: 1.5)),
+          Text('1. ${lessonAnswer1 == check1['a'] ? 'Correct' : 'Not quite'} — ${check1['e']}', style: const TextStyle(height: 1.5)),
           const SizedBox(height: 6),
-          Text('2. ${lessonAnswer2 == 0 ? 'Correct' : 'Not quite'} — A. Defined measures, ownership and context make KPIs actionable.', style: const TextStyle(height: 1.5)),
+          Text('2. ${lessonAnswer2 == check2['a'] ? 'Correct' : 'Not quite'} — ${check2['e']}', style: const TextStyle(height: 1.5)),
           OutlinedButton(onPressed: () => setState(() { submitted = false; lessonAnswer1 = null; lessonAnswer2 = null; }), child: const Text('Reset attempt')),
         ],
         const SizedBox(height: 8), FilledButton.icon(onPressed: () => setState(() { completed.add(selectedChapter + selectedPath * 10); lessonOpened = false; }), icon: const Icon(Icons.check_circle_outline), label: const Text('Mark lesson reviewed')),
