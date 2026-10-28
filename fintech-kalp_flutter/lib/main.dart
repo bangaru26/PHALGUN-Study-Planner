@@ -337,7 +337,7 @@ class _LearningHomeState extends State<LearningHome> {
         Text('QUESTION ${i + 1} OF ${quiz.length}', style: const TextStyle(color: teal, fontWeight: FontWeight.w800, fontSize: 11, letterSpacing: 1.2)),
         const SizedBox(height: 8), Text(q.question, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: ink)),
         const SizedBox(height: 8),
-        ...q.options.asMap().entries.map((option) => RadioListTile<int>(contentPadding: EdgeInsets.zero, dense: true, value: option.key, groupValue: answers[i], onChanged: submitted ? null : (v) => setState(() => answers[i] = v!; _saveState();), title: Text(option.value))),
+        ...q.options.asMap().entries.map((option) => RadioListTile<int>(contentPadding: EdgeInsets.zero, dense: true, value: option.key, groupValue: answers[i], onChanged: submitted ? null : (v) { setState(() => answers[i] = v!); _saveState(); }, title: Text(option.value))),
         if (submitted) Container(width: double.infinity, padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: answers[i] == q.correct ? const Color(0xFFE2F7ED) : const Color(0xFFFFF0E8), borderRadius: BorderRadius.circular(12)),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(answers[i] == q.correct ? 'Correct' : 'Review this answer', style: TextStyle(fontWeight: FontWeight.w800, color: answers[i] == q.correct ? const Color(0xFF146C43) : const Color(0xFF9B4518))),
@@ -349,7 +349,7 @@ class _LearningHomeState extends State<LearningHome> {
     if (!submitted) FilledButton.icon(onPressed: answers.length == quiz.length ? () { setState(() => submitted = true); _saveState(); } : null, icon: const Icon(Icons.task_alt), label: const Text('Submit answers and reveal feedback'))
     else Card(child: Padding(padding: const EdgeInsets.all(18), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text('Score: ${quiz.asMap().entries.where((e) => answers[e.key] == e.value.correct).length} / ${quiz.length}', style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 24, color: ink)),
-      const SizedBox(height: 8), const Text('Review the explanations above. In this prototype, quiz answers are held only in this open browser session.'),
+      const SizedBox(height: 8), const Text('Review the explanations above. Your quiz attempt is saved locally in this browser on this device.'),
       const SizedBox(height: 12), OutlinedButton.icon(onPressed: () { setState(() { answers.clear(); submitted = false; }); _saveState(); }, icon: const Icon(Icons.refresh), label: const Text('Try again')),
     ]))),
   ]);
