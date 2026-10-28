@@ -29,6 +29,7 @@ class _LearningHomeState extends State<LearningHome> {
   final Set<int> completed = {};
   final Map<int, int> answers = {};
   bool submitted = false;
+  int? lessonAnswer1, lessonAnswer2;
   final TextEditingController assignment = TextEditingController();
 
   final paths = const [
@@ -231,18 +232,24 @@ class _LearningHomeState extends State<LearningHome> {
       lessonCard('10 · Books, free learning and references', 'Explore these starting points (availability and access terms may vary):\n${resources[path.code]}\n\nUse official documentation first. Record the page or module used, the date accessed and one practical takeaway.'),
       Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const Text('Knowledge check · answers hidden until submission', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: ink)),
-        const SizedBox(height: 8), const Text('1. Which is the strongest approach?'), const Text('A. Skip reconciliation to meet a deadline\nB. Follow evidence, controls and an accountable exception owner\nC. Hide exceptions from reporting', style: TextStyle(height: 1.6)),
-        const SizedBox(height: 8), const Text('2. What should a useful KPI do?'), const Text('A. Have a defined numerator, denominator and owner\nB. Change definition every month\nC. Report a number without context', style: TextStyle(height: 1.6)),
+        const SizedBox(height: 8), const Text('1. Which is the strongest approach?'),
+        ...['Skip reconciliation to meet a deadline','Follow evidence, controls and an accountable exception owner','Hide exceptions from reporting'].asMap().entries.map((e) => RadioListTile<int>(dense: true, contentPadding: EdgeInsets.zero, value: e.key, groupValue: lessonAnswer1, title: Text(e.value), onChanged: submitted ? null : (v) => setState(() => lessonAnswer1 = v))),
+        const SizedBox(height: 8), const Text('2. What should a useful KPI do?'),
+        ...['Have a defined numerator, denominator and owner','Change definition every month','Report a number without context'].asMap().entries.map((e) => RadioListTile<int>(dense: true, contentPadding: EdgeInsets.zero, value: e.key, groupValue: lessonAnswer2, title: Text(e.value), onChanged: submitted ? null : (v) => setState(() => lessonAnswer2 = v))),
         const SizedBox(height: 12),
-        if (!submitted) FilledButton(onPressed: () => setState(() { submitted = true; answers[100] = 1; answers[101] = 0; }), child: const Text('Submit practice attempt'))
+        if (!submitted) FilledButton(onPressed: lessonAnswer1 == null || lessonAnswer2 == null ? null : () => setState(() { submitted = true; }), child: const Text('Submit answers and reveal feedback'))
         else ...[
-          const Text('Feedback: 1 — B. Evidence, controls and clear ownership make the process traceable and safe.\n2 — A. Defined measures, ownership and context make KPIs actionable.', style: TextStyle(height: 1.5)),
-          OutlinedButton(onPressed: () => setState(() { submitted = false; answers.remove(100); answers.remove(101); }), child: const Text('Reset attempt')),
+          Text('Score: ${(lessonAnswer1 == 1 ? 1 : 0) + (lessonAnswer2 == 0 ? 1 : 0)} / 2', style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: ink)),
+          const SizedBox(height: 6),
+          Text('1. ${lessonAnswer1 == 1 ? 'Correct' : 'Not quite'} — B. Evidence, controls and clear ownership make the process traceable and safe.', style: const TextStyle(height: 1.5)),
+          const SizedBox(height: 6),
+          Text('2. ${lessonAnswer2 == 0 ? 'Correct' : 'Not quite'} — A. Defined measures, ownership and context make KPIs actionable.', style: const TextStyle(height: 1.5)),
+          OutlinedButton(onPressed: () => setState(() { submitted = false; lessonAnswer1 = null; lessonAnswer2 = null; }), child: const Text('Reset attempt')),
         ],
         const SizedBox(height: 8), FilledButton.icon(onPressed: () => setState(() { completed.add(selectedChapter + selectedPath * 10); lessonOpened = false; }), icon: const Icon(Icons.check_circle_outline), label: const Text('Mark lesson reviewed')),
       ]))),
       const SizedBox(height: 12),
-      OutlinedButton.icon(onPressed: () => setState(() { selectedChapter = (selectedChapter + 1) % path.chapters.length; submitted = false; answers.clear(); }), icon: const Icon(Icons.skip_next), label: const Text('Open next chapter')),
+      OutlinedButton.icon(onPressed: () => setState(() { selectedChapter = (selectedChapter + 1) % path.chapters.length; submitted = false; lessonAnswer1 = null; lessonAnswer2 = null; answers.clear(); }), icon: const Icon(Icons.skip_next), label: const Text('Open next chapter')),
       const SizedBox(height: 8), const Text('Prototype limitation: lesson review state is currently held in the open app session; account-based cloud progress is not connected yet.', style: TextStyle(color: Colors.black54, fontSize: 12, height: 1.4)),
     ]);
   }
