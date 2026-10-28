@@ -11,6 +11,7 @@ on:
       - "*.webmanifest"
       - "*.json"
       - "assets/**"
+      - "fintech-kalp/**"
       - "data/**"
       - "monitoring/latest-report.json"
       - "monitoring/CHANGE-LOG.md"
