@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(const FintechKalpApp());
 
@@ -31,6 +33,57 @@ class _LearningHomeState extends State<LearningHome> {
   bool submitted = false;
   int? lessonAnswer1, lessonAnswer2;
   final TextEditingController assignment = TextEditingController();
+  bool stateLoaded = false;
+  static const _storageKey = 'fintech_kalp_local_v1';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadSavedState();
+  }
+
+  Future<void> _loadSavedState() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final raw = prefs.getString(_storageKey);
+      if (raw != null) {
+        final saved = jsonDecode(raw) as Map<String, dynamic>;
+        completed.addAll((saved['completed'] as List? ?? []).whereType<num>().map((n) => n.toInt()));
+        assignment.text = (saved['capstoneDraft'] as String?) ?? '';
+        final savedAnswers = saved['quizAnswers'];
+        if (savedAnswers is Map) {
+          for (final entry in savedAnswers.entries) {
+            final key = int.tryParse(entry.key.toString());
+            final value = entry.value;
+            if (key != null && value is num) answers[key] = value.toInt();
+          }
+        }
+        submitted = saved['quizSubmitted'] == true;
+      }
+    } catch (_) {
+      // Keep the learning app usable if local browser storage is unavailable.
+    }
+    if (mounted) setState(() => stateLoaded = true);
+  }
+
+  Future<void> _saveState() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString(_storageKey, jsonEncode({
+        'completed': completed.toList(),
+        'capstoneDraft': assignment.text,
+        'quizAnswers': answers.map((key, value) => MapEntry(key.toString(), value)),
+        'quizSubmitted': submitted,
+        'updatedAt': DateTime.now().toIso8601String(),
+      }));
+    } catch (_) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Could not save locally in this browser. Check browser storage settings.')),
+        );
+      }
+    }
+  }
 
   final paths = const [
     LearningPath('Finance foundations', 'Accounting, statements, working capital and controls', Icons.account_balance, 'CORE', ['Financial statements in practice', 'Working capital and cash conversion', 'Internal controls and reconciliations']),
@@ -262,11 +315,11 @@ class _LearningHomeState extends State<LearningHome> {
           Text('2. ${lessonAnswer2 == check2['a'] ? 'Correct' : 'Not quite'} — ${check2['e']}', style: const TextStyle(height: 1.5)),
           OutlinedButton(onPressed: () => setState(() { submitted = false; lessonAnswer1 = null; lessonAnswer2 = null; }), child: const Text('Reset attempt')),
         ],
-        const SizedBox(height: 8), FilledButton.icon(onPressed: () => setState(() { completed.add(selectedChapter + selectedPath * 10); lessonOpened = false; }), icon: const Icon(Icons.check_circle_outline), label: const Text('Mark lesson reviewed')),
+        const SizedBox(height: 8), FilledButton.icon(onPressed: () => setState(() { completed.add(selectedChapter + selectedPath * 10); lessonOpened = false; _saveState(); }), icon: const Icon(Icons.check_circle_outline), label: const Text('Mark lesson reviewed')),
       ]))),
       const SizedBox(height: 12),
       OutlinedButton.icon(onPressed: () => setState(() { selectedChapter = (selectedChapter + 1) % path.chapters.length; submitted = false; lessonAnswer1 = null; lessonAnswer2 = null; answers.clear(); }), icon: const Icon(Icons.skip_next), label: const Text('Open next chapter')),
-      const SizedBox(height: 8), const Text('Prototype limitation: lesson review state is currently held in the open app session; account-based cloud progress is not connected yet.', style: TextStyle(color: Colors.black54, fontSize: 12, height: 1.4)),
+      const SizedBox(height: 8), const Text('Progress is saved locally in this browser on this device. It is not synced across devices or accounts.', style: TextStyle(color: Colors.black54, fontSize: 12, height: 1.4)),
     ]);
   }
 
@@ -284,7 +337,7 @@ class _LearningHomeState extends State<LearningHome> {
         Text('QUESTION ${i + 1} OF ${quiz.length}', style: const TextStyle(color: teal, fontWeight: FontWeight.w800, fontSize: 11, letterSpacing: 1.2)),
         const SizedBox(height: 8), Text(q.question, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: ink)),
         const SizedBox(height: 8),
-        ...q.options.asMap().entries.map((option) => RadioListTile<int>(contentPadding: EdgeInsets.zero, dense: true, value: option.key, groupValue: answers[i], onChanged: submitted ? null : (v) => setState(() => answers[i] = v!), title: Text(option.value))),
+        ...q.options.asMap().entries.map((option) => RadioListTile<int>(contentPadding: EdgeInsets.zero, dense: true, value: option.key, groupValue: answers[i], onChanged: submitted ? null : (v) => setState(() => answers[i] = v!; _saveState();), title: Text(option.value))),
         if (submitted) Container(width: double.infinity, padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: answers[i] == q.correct ? const Color(0xFFE2F7ED) : const Color(0xFFFFF0E8), borderRadius: BorderRadius.circular(12)),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(answers[i] == q.correct ? 'Correct' : 'Review this answer', style: TextStyle(fontWeight: FontWeight.w800, color: answers[i] == q.correct ? const Color(0xFF146C43) : const Color(0xFF9B4518))),
@@ -293,11 +346,11 @@ class _LearningHomeState extends State<LearningHome> {
       ])));
     }),
     const SizedBox(height: 8),
-    if (!submitted) FilledButton.icon(onPressed: answers.length == quiz.length ? () => setState(() => submitted = true) : null, icon: const Icon(Icons.task_alt), label: const Text('Submit answers and reveal feedback'))
+    if (!submitted) FilledButton.icon(onPressed: answers.length == quiz.length ? () { setState(() => submitted = true); _saveState(); } : null, icon: const Icon(Icons.task_alt), label: const Text('Submit answers and reveal feedback'))
     else Card(child: Padding(padding: const EdgeInsets.all(18), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text('Score: ${quiz.asMap().entries.where((e) => answers[e.key] == e.value.correct).length} / ${quiz.length}', style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 24, color: ink)),
       const SizedBox(height: 8), const Text('Review the explanations above. In this prototype, quiz answers are held only in this open browser session.'),
-      const SizedBox(height: 12), OutlinedButton.icon(onPressed: () => setState(() { answers.clear(); submitted = false; }), icon: const Icon(Icons.refresh), label: const Text('Try again')),
+      const SizedBox(height: 12), OutlinedButton.icon(onPressed: () { setState(() { answers.clear(); submitted = false; }); _saveState(); }, icon: const Icon(Icons.refresh), label: const Text('Try again')),
     ]))),
   ]);
 
@@ -314,8 +367,8 @@ class _LearningHomeState extends State<LearningHome> {
       const LessonStep('4', 'Recommend controls, workflow or automation with human review for exceptions.'),
       const LessonStep('5', 'Define baseline, target KPIs, owner, risk and a 30/60/90-day rollout.'),
       const SizedBox(height: 16), const Text('Your draft', style: TextStyle(fontWeight: FontWeight.w800)), const SizedBox(height: 8),
-      TextField(controller: assignment, maxLines: 7, decoration: const InputDecoration(hintText: 'Write your diagnosis, root causes, controls, proposed solution and KPIs…', border: OutlineInputBorder(), alignLabelWithHint: true)),
-      const SizedBox(height: 10), FilledButton.icon(onPressed: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Draft is in this browser session only. Cloud saving is not configured yet.'))), icon: const Icon(Icons.save_outlined), label: const Text('Check draft status')),
+      TextField(controller: assignment, maxLines: 7, onChanged: (_) => _saveState(), decoration: const InputDecoration(hintText: 'Write your diagnosis, root causes, controls, proposed solution and KPIs…', border: OutlineInputBorder(), alignLabelWithHint: true)),
+      const SizedBox(height: 10), FilledButton.icon(onPressed: () async { await _saveState(); if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Capstone draft and learning progress saved in this browser on this device.'))); }, icon: const Icon(Icons.save_outlined), label: const Text('Save capstone draft')),
     ]))),
   ]);
 
@@ -328,7 +381,7 @@ class _LearningHomeState extends State<LearningHome> {
     const ResourceCard('Microsoft Support: Excel', 'Start with official Excel help and learning resources.', 'https://support.microsoft.com/excel', Icons.table_chart),
     const ResourceCard('The Scrum Guide', 'Official Scrum framework guide.', 'https://scrumguides.org/scrum-guide.html', Icons.groups),
     const ResourceCard('World Bank: Financial Inclusion', 'Explore digital finance and financial inclusion resources.', 'https://www.worldbank.org/en/topic/financialinclusion', Icons.payments),
-    const SizedBox(height: 10), const Text('Progress and drafts in this first release are session-local. No sign-in, cloud synchronisation, official certification or financial transaction functionality is enabled.', style: TextStyle(color: Colors.black54, height: 1.5)),
+    const SizedBox(height: 10), const Text('Learning progress, quiz attempts and capstone drafts are saved locally in this browser on this device. There is no account/cloud sync, official certification or financial transaction functionality.', style: TextStyle(color: Colors.black54, height: 1.5)),
   ]);
 }
 
