@@ -1,0 +1,11 @@
+{
+  "name": "DayNest Personal Organizer",
+  "short_name": "DayNest",
+  "description": "Private tasks, voice reminders, milestones and study timer.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f5ef",
+  "theme_color": "#14251f",
+  "icons": []
+}
