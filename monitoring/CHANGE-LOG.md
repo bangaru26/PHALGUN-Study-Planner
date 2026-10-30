@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-10-29T08:40:11+00:00 (UTC)
+Last check: 2026-10-30T08:45:49+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 6 changed; 45 unchanged; 0 baseline; 9 unavailable.
+Summary: 7 changed; 44 unchanged; 0 baseline; 9 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -26,8 +26,10 @@ Summary: 6 changed; 45 unchanged; 0 baseline; 9 unavailable.
 - Current page excerpt: What’s New in Python — Python 3.15.2 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.2 documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - **Detected text differences (for review only):**
 ```text
-- Please donate. Last updated on Oct 28, 2026 (07:43 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Oct 28, 2026 (17:23 UTC). Found a bug ? Created using Sphinx
+- non-profit corporation. Please donate. Last updated on Oct 28, 2026 (17:23 UTC). Found a bug ? Created
++ non-profit corporation. Please donate. Last updated on Oct 30, 2026 (07:42 UTC). Found a bug ? Created
+- Please donate. Last updated on Oct 28, 2026 (17:23 UTC). Found a bug ? Created using Sphinx
++ Please donate. Last updated on Oct 30, 2026 (07:42 UTC). Found a bug ? Created using Sphinx
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -35,7 +37,19 @@ Summary: 6 changed; 45 unchanged; 0 baseline; 9 unavailable.
 | UNCHANGED | SAP S/4HANA and SAP FICO | SAP Help Portal | [Open source](https://help.sap.com/) |
 | UNCHANGED | US financial reporting and filings | US SEC | [Open source](https://www.sec.gov/edgar/search/) |
 | UNCHANGED | Income-tax Act, Rules and CBDT notifications | Income Tax Department / CBDT | [Open source](https://www.incometaxindia.gov.in/notifications) |
-| UNCHANGED | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
+| CHANGED — REVIEW REQUIRED | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
+
+### Review required — Indian accounting standards and implementation guidance
+- Previous page excerpt: ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St
+- Mapped learning areas to review: Indian Accounting Standards, IFRS/Ind AS, financial reporting and audit
+- Current page excerpt: ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St
+- **Detected text differences (for review only):**
+```text
+- Participate in the Online Weekly Accounting Quiz (October 23, 2026, to October 29, 2026) launched by the Accounting Standards Board. Exposure
++ Participate in the Online Weekly Accounting Quiz (October 30, 2026 to November 5, 2026) launched by the Accounting Standards Board. Exposure
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNCHANGED | Indian Accounting Standards (Ind AS) compendium | ICAI | [Open source](https://www.icai.org/post/compendium-of-indian-accounting-standards) |
 | UNCHANGED | Ministry of Corporate Affairs public announcements | Press Information Bureau, Government of India | [Open source](https://www.pib.gov.in/newsite/pmreleases.aspx?lang=2&mincode=66&reg=48) |
 | UNCHANGED | US CPA exam and accounting profession | AICPA | [Open source](https://www.aicpa-cima.com/resources/landing/cpa-exam) |
@@ -51,31 +65,46 @@ Found
 | UNCHANGED | Jira product documentation and release changes | Atlassian | [Open source](https://support.atlassian.com/jira-software-cloud/) |
 | UNCHANGED | Scrum framework | Scrum Guides | [Open source](https://scrumguides.org/) |
 | UNCHANGED | Oracle Database documentation | Oracle | [Open source](https://docs.oracle.com/en/database/) |
-| UNCHANGED | BlackLine product documentation and release updates | BlackLine | [Open source](https://www.blackline.com/) |
-| UNCHANGED | RPA and UiPath documentation | UiPath | [Open source](https://docs.uipath.com/) |
+| CHANGED — REVIEW REQUIRED | BlackLine product documentation and release updates | BlackLine | [Open source](https://www.blackline.com/) |
+
+### Review required — BlackLine product documentation and release updates
+- Previous page excerpt: BlackLine: The Agentic Financial Operations Platform™ Platform Industries Customers Why BlackLine Resources Schedule a demo Support login Platform Industries Customers Why BlackLine Resources Schedule a demo Support login The BlackLine Agentic Financial Operations Platform™ ERPs record your past. Our Agentic AI powers you today. Put AI agents to work across Record-to-Report and Invoice-to-Cash, governed at every step, so you get speed, accuracy and control. Schedule a demo See how it works Part 
+- Mapped learning areas to review: BlackLine, account reconciliation, transaction matching, financial close
+- Current page excerpt: BlackLine: The Agentic Financial Operations Platform™ Platform Industries Customers Why BlackLine Resources Schedule a demo Support login Platform Industries Customers Why BlackLine Resources Schedule a demo Support login The BlackLine Agentic Financial Operations Platform™ ERPs record your past. Our Agentic AI powers you today. Put AI agents to work across Record-to-Report and Invoice-to-Cash, governed at every step, so you get speed, accuracy and control. Schedule a demo See how it works Part 
+- **Detected text differences (for review only):**
+```text
+- your next role with us. See open roles Now Finance Drives™ System Status Corporate Responsibility Privacy Policy Cookie Settings
++ your next role with us. See open roles System Status Corporate Responsibility Privacy Policy Cookie Settings
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
+| UNAVAILABLE | RPA and UiPath documentation | UiPath | [Open source](https://docs.uipath.com/) |
+  - Fetch issue: TimeoutError: The read operation timed out
 | UNCHANGED | VBA and Office automation documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/office/vba/api/overview/) |
 | UNCHANGED | Tableau product documentation and release notes | Salesforce Tableau | [Open source](https://www.tableau.com/support/releases) |
 | UNAVAILABLE | Project management standards and resources | Project Management Institute | [Open source](https://www.pmi.org/standards) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 | UNCHANGED | Microsoft Power Automate documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/power-automate/) |
 | UNCHANGED | Microsoft AI and Copilot product documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/copilot/) |
-| UNCHANGED | Python release and security updates | Python Software Foundation | [Open source](https://www.python.org/downloads/) |
-| UNCHANGED | PostgreSQL database documentation | PostgreSQL Global Development Group | [Open source](https://www.postgresql.org/docs/) |
-| CHANGED — REVIEW REQUIRED | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
+| CHANGED — REVIEW REQUIRED | Python release and security updates | Python Software Foundation | [Open source](https://www.python.org/downloads/) |
 
-### Review required — German learning curriculum
-- Previous page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
-- Mapped learning areas to review: German, pronunciation, listening, conversation
-- Current page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
+### Review required — Python release and security updates
+- Previous page excerpt: �      �}��ƒ�E� p[� ;���[��;�l��Z��[�c#6� �h �V{f"�5���I�d>�@� ��`�3�� ���:��y2�p�۷����-������G��f^�y��! < Ӗ�7� 9���?��w� ]����ڞ��?��#|�������0یL��W��]����`.����"���v����]�Za+���!l���X�l��[�� ��M4�7��/]�c����.�[���Ѯ��Ԭ��Nty��f����$���̕syf��K�2#��t�r�Y�9 ~�.� < r�w���Ի[g��Az�F��{�e�ͩ�;#������Ȍ6�>5=�L���q��o\�v��0�[׎��s�Z}8�\ύ\s����t.��Ύ>}oz��Yگ����������� ��H��ȱh�_D��Y;Υ�����ӦѺe�N��ʷ��s� r��#�h���e?d" �j�wkhM'3c2��q�e�XY��� < �n < �h�\�EΧ��nX9�kE�%��ٿ < ��27K� 
+- Mapped learning areas to review: Python, automation, data processing
+- Current page excerpt: Download Python | Python.org Notice: This page displays a fallback because interactive scripts did not run. Possible causes include disabled JavaScript or failure to load scripts or stylesheets. Skip to content ▼ Close Python PSF Docs PyPI Jobs Community ▲ The Python Network Donate ≡ Menu Search This Site GO A A Smaller Larger Reset Socialize LinkedIn Mastodon Chat on IRC Twitter About Applications Quotes Getting Started Help Downloads All releases Source code Windows macOS Android iOS Other Pla
 - **Detected text differences (for review only):**
 ```text
-- For teachers New every day: our latest content Proteinprodukte: ein gefährlicher Trend? Immer mehr Jugendliche greifen
-+ For teachers New every day: our latest content Alkoholfreier Wein – eine Erfolgsgeschichte Alkoholfreier Wein wird immer beliebter. Wir besuchen eine Winzerfamilie in Österreich und einen Händler in Paris. B2 | 28.10.202
-- landen dann im Müll: Fast-Tech-Geräte. B1 | 20.10.2026 Volkskrankheiten Allergien Ob Pollen oder Hausstaub – viele Menschen reagieren auf bestimmte Stoffe allergisch. Ein Allheilmittel gibt es nicht. C1 | 20.10.2026 Nico
-+ landen dann im Müll: Fast-Tech-Geräte. B1 | 20.10.2026 Nicos Weg now available in Kiswahili! The new
+- �      �}��ƒ�E� p[� ;���[��;�l��Z��[�c#6� �h �V{f"�5���I�d>�@� ��`�3�� ���:��y2�p�۷����-������G��f^�y��! < Ӗ�7� 9���?��w� ]����ڞ��?��#|�������0یL��W��]����`.����"���v����]�Za+���!l���X�l��[�� ��M4�7��/]�c�
++ Download Python | Python.org Notice: This page displays a fallback because interactive scripts did not run. Possible causes include disabled JavaScript or failure to load scripts or stylesheets. Skip to content ▼ Close P
+- |�x�yW/����� -\���u}{�n敿������g�=���֪M��2��̛�&� i���fJ��x{�����W���m~���k;\�˚������̵��h h!|Ұ̓g� �y`�V�7�~��!�n �sw�6ttnC��� @�=@� �i>�]�ck�ҵT�� O �M`a:�Ytk����BG�m�Y��~�'n����j� �NV?��@�k'��.���3�Nĝי��vi4��
++ subject is CN = Python Software Foundation, O = Python Software Foundation, L = Beaverton, S = Oregon, C = US and as of 14th October 2024 the certificate authority is Microsoft Identity Verification Root Certificate Auth
+- b �C�+�DH�F�@�W�NP�W,��9�L��/�{i,�Q���_qՒ�����5d�W�`��%���4-����� )�u�ߎ~���> �}�.u�w���j��'9e=9��4]�^r�Zօ;X^I'�߿^3� ܓ}�.�I�b-�[ ����[$��r7�C�|*�qL�Y�8;���Ta*0;��rI�웸WgW�R���&� �]�d�"�3:D��G : < �/߲V ��
++ formats. See the main Documentation page. Tip : even if you download a ready-made binary for your platform, it makes sense to also download the source . This lets you browse the standard library (the subdirectory Lib ) a
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
+| UNCHANGED | PostgreSQL database documentation | PostgreSQL Global Development Group | [Open source](https://www.postgresql.org/docs/) |
+| UNCHANGED | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
 | UNAVAILABLE | German learning exercises | Goethe-Institut | [Open source](https://www.goethe.de/en/spr/ueb.html) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 | CHANGED — REVIEW REQUIRED | French video-based learning | TV5MONDE | [Open source](https://apprendre.tv5monde.com/) |
@@ -86,43 +115,22 @@ Found
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- français, du niveau débutant au niveau avancé. Recommandé Emblèmes Belgique Le coq hardi, le chant des
-+ français, du niveau débutant au niveau avancé. Recommandé La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Serious game Jouez à « Datak » et devenez un pro
-- gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Quèsaco Sur un ton décalé, drôle et moderne, « Quèsaco » répond aux questions que l'on se pose devant une peinture. Les expressions d'Archibald Faire l
-+ gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! TV5MONDE+ Regardez des films, des séries et des reportages gratuitement s
-- aux questions que l'on se pose devant une peinture. Les expressions d'Archibald Faire le cacou, motamoter ou
-+ celles et ceux qui font du français une langue vivante et en constante évolution. Les expressions d'Archibald Faire le cacou, motamoter ou
-- veut dire ? Archibald vous dit tout ! Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. DDF, le Dictionnaire des francophones Participez au Dict
-+ veut dire ? Archibald vous dit tout ! Emblèmes France La Marseillaise, le coq, Liberté, égalité
-- fraternité... Découvrez les emblèmes de la République française APPRENDRE EV@LANG Quel est votre niveau à l'écrit
-+ fraternité... Découvrez les emblèmes de la République française Quèsaco Sur un ton décalé, drôle et moderne, « Quèsaco » répond aux questions que l'on se pose devant une peinture. APPRENDRE EV@LANG Quel est votre niveau 
+- français, du niveau débutant au niveau avancé. Recommandé La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Serious game Jouez à « Datak » et devenez un pro
++ français, du niveau débutant au niveau avancé. Recommandé DDF, le Dictionnaire des francophones Participez au Dictionnaire
+- d’une langue mondialement partagée : vivante et libre. Emblèmes Belgique Le coq hardi, le chant des
++ d’une langue mondialement partagée : vivante et libre. Quèsaco Sur un ton décalé, drôle et moderne, « Quèsaco » répond aux questions que l'on se pose devant une peinture. Destination francophonie Chaque semaine, découvr
+- gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! TV5MONDE+ Regardez des films, des séries et des reportages gratuitement s
++ gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Serious game Jouez à « Datak » et devenez un pro du big data ! Les expressions d'Archibald Faire
+- venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! Destination francophonie Chaque semaine, déc
++ « Datak » et devenez un pro du big data ! Les expressions d'Archibald Faire le cacou, motamoter ou
+- veut dire ? Archibald vous dit tout ! Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité... Découvrez
++ veut dire ? Archibald vous dit tout ! La dictée d'Archibald (Mots d'ailleurs) Archi simple et
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
 | UNCHANGED | French grammar and vocabulary | Lawless French | [Open source](https://www.lawlessfrench.com/) |
-| CHANGED — REVIEW REQUIRED | Spanish grammar and vocabulary | Lawless Spanish | [Open source](https://www.lawlessspanish.com/) |
-
-### Review required — Spanish grammar and vocabulary
-- Previous page excerpt: ¡Hola! - Lawless Spanish - Online Spanish Learning Spanish lessons and language tools from Laura K Lawless Chatbot Cool Tools Subjunctivisor Verb Deconjugator Verb Tables Daily Practice FAQ P w LS Search Spanish 101 Subscribe Welcome! About Laura K Lawless Log in to PwLS Privacy Policy Q+A Forum Relearning Spanish Sitemap Spanish Essentials Spanish for Beginners Spanish for Travelers Spanish-Speaking Countries Teachers’ Tips and Tools What’s New ¡Hola! y bienvenidos a Lawless Spanish , a free re
-- Mapped learning areas to review: Spanish, grammar, vocabulary
-- Current page excerpt: ¡Hola! - Lawless Spanish - Online Spanish Learning Spanish lessons and language tools from Laura K Lawless Chatbot Cool Tools Subjunctivisor Verb Deconjugator Verb Tables Daily Practice FAQ P w LS Search Spanish 101 Subscribe Welcome! About Laura K Lawless Log in to PwLS Privacy Policy Q+A Forum Relearning Spanish Sitemap Spanish Essentials Spanish for Beginners Spanish for Travelers Spanish-Speaking Countries Teachers’ Tips and Tools What’s New ¡Hola! y bienvenidos a Lawless Spanish , a free re
-- **Detected text differences (for review only):**
-```text
-- love it, please What’s New at Lawless Spanish? Lo - Neuter Article Spanish’s neuter article, lo ,
-+ love it, please What’s New at Lawless Spanish? Professions Put your Spanish to work by learning the Spanish names for people performing various crafts and trades. Mus (Card Game) - Writing Challenge Practice your Spanish
-- please What’s New at Lawless Spanish? Lo - Neuter Article Spanish’s neuter article, lo , is invariable and can be used in front
-+ various crafts and trades. Mus (Card Game) - Writing Challenge Practice your Spanish listening comprehension with this lower-intermediate writing challenge: El juego del mus Note: You must be logged into your Progress wi
-- Neuter Article Spanish’s neuter article, lo , is invariable and can be used in front of just about any adjective
-+ – it’s free! Conditional Mood The conditional is a verb mood used for actions that are not guaranteed to
-- lo , is invariable and can be used in front of just about any adjective in
-+ Mood The conditional is a verb mood used for actions that are not guaranteed to occur, often because they are dependent on certain conditions. It’s equivalent to "would" in English. Infinitive vs Gerund Quiz Test yoursel
-- , is invariable and can be used in front of just about any adjective in order to express something abstract or a quality. Dictados Practice Spanish listening comprehension, writing, and spelling at the same time with dic
-+ on certain conditions. It’s equivalent to "would" in English. Infinitive vs Gerund Quiz Test yourself on the Spanish
-```
-- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
-
-| UNAVAILABLE | Bilingual dictionaries | WordReference | [Open source](https://www.wordreference.com/) |
-  - Fetch issue: HTTPError: HTTP Error 418: 
+| UNCHANGED | Spanish grammar and vocabulary | Lawless Spanish | [Open source](https://www.lawlessspanish.com/) |
+| UNCHANGED | Bilingual dictionaries | WordReference | [Open source](https://www.wordreference.com/) |
 | CHANGED — REVIEW REQUIRED | German-English dictionary | dict.cc | [Open source](https://www.dict.cc/) |
 
 ### Review required — German-English dictionary
@@ -131,16 +139,16 @@ Found
 - Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.340 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.379 Übersetzungen – 2.846 neu – 99,8% verifiziert Zeit
-- | Z Zuletzt verifizierte Übersetzungen 1.319.340 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-+ | Z Zuletzt verifizierte Übersetzungen 1.319.379 Übersetzungen – 2.846 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:12 geogr. Tristan da Cunha Tristan da Cunha {n}
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:09 dad [coll.] Pa {m} [ugs.] [Kurzform für Papa] Mar jpx 07:09 hist. pol. Shah of Iran [usually: the Shah of Iran] Schah {m} von Persien [meist: der Schah von Pers
-- verifiziert Zeit Englisch Deutsch Geprüft von 09:12 geogr. Tristan da Cunha Tristan da Cunha {n} Rip jpx cap 08:05 entom. T Elasmucha
-+ [rare] [bridesmaid] Brautführerin {f} Mar jpx 07:07 geogr. Nusantara [Nusantara Capital City] Nusantara {n} eve jpx Voice: tempting by Nachteule bis
-- geogr. Tristan da Cunha Tristan da Cunha {n} Rip jpx cap 08:05 entom. T Elasmucha fieberi [a
-+ 07:07 geogr. Nusantara [Nusantara Capital City] Nusantara {n} eve jpx Voice: tempting by Nachteule bis in die
+- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.379 Übersetzungen – 2.846 neu – 99,8% verifiziert Zeit
++ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.398 Übersetzungen – 2.856 neu – 99,8% verifiziert Zeit
+- | Z Zuletzt verifizierte Übersetzungen 1.319.379 Übersetzungen – 2.846 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
++ | Z Zuletzt verifizierte Übersetzungen 1.319.398 Übersetzungen – 2.856 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:09 dad [coll.] Pa {m} [ugs.] [Kurzform für Papa] Mar
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 08:36 to pay through the nose [coll.] [idiom] Wucherpreise bezahlen Hal sun 08:32 Reopened!
+- Zeit Englisch Deutsch Geprüft von 07:09 dad [coll.] Pa {m} [ugs.] [Kurzform für Papa] Mar jpx 07:09 hist.
++ von 08:36 to pay through the nose [coll.] [idiom] Wucherpreise bezahlen Hal sun 08:32 Reopened! to pay through the nose for sth. für etw. einen / ein Arschvoll Geld bezahlen [ugs.] [salopp] Hal 07:33 aviat. critical alti
+- Geprüft von 07:09 dad [coll.] Pa {m} [ugs.] [Kurzform für Papa] Mar jpx 07:09 hist. pol. Shah of Iran [usually:
++ etw. einen / ein Arschvoll Geld bezahlen [ugs.] [salopp] Hal 07:33 aviat. critical altitude Volldruckhöhe {f} dep jpx 07:31 material hot brittleness Warmsprödigkeit {f} Dra
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
