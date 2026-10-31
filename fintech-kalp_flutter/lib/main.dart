@@ -593,7 +593,7 @@ class _LearningHomeState extends State<LearningHome> {
         'example': 'For an unpaid invoice, overdue days may be MAX(0, report date − due date). If due date is blank or the invoice is paid, the output should not falsely show overdue days. Make the rule explicit and test all branches.',
         'steps': '1. Write the business rule in plain language.\n2. Identify required fields and valid values.\n3. Choose the simplest formula that expresses the rule.\n4. Use named assumptions or absolute references for fixed cells.\n5. Test normal, blank, invalid, duplicate and boundary cases.\n6. Compare summary totals to an independent control total.\n7. Document formula meaning and known limitations.',
         'cross': 'Finance defines the rule; AP validates payment status; Treasury confirms report-date needs; Data/IT supports field types; a reviewer tests exceptions.',
-        'formula': 'Example: =IF(AND([@Status]="Unpaid",ISNUMBER([@[Due Date]])),MAX(0,$B$2-[@[Due Date]]),""). Adapt the column names and business rules to the actual table.',
+        'formula': 'Example: =IF(AND([@Status]="Unpaid",ISNUMBER([@[Due Date]])),MAX(0,\$B\$2-[@[Due Date]]),""). Adapt the column names and business rules to the actual table.',
         'assignment': 'Write formulas for overdue days, overdue flag, duplicate invoice identifier and amount variance. Add a test matrix for paid, unpaid, blank due date, future due date and invalid date.',
         'capstone': 'Deliver a formula library with plain-language rule, formula, sample input/output and exception handling for at least eight finance checks.',
         'gist': 'Make the rule explicit, test edge cases and never hide data problems just to make a formula return a clean-looking result.'
