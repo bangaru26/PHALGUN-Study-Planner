@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -34,6 +35,10 @@ class _LearningHomeState extends State<LearningHome> {
   int? lessonAnswer1, lessonAnswer2;
   final TextEditingController assignment = TextEditingController();
   bool stateLoaded = false;
+  Timer? lessonTicker;
+  DateTime? lessonTimerStartedAt;
+  Duration lessonElapsed = Duration.zero;
+  bool lessonTimerStarted = false;
   static const _storageKey = 'fintech_kalp_local_v1';
 
   @override
@@ -99,8 +104,34 @@ class _LearningHomeState extends State<LearningHome> {
     QuizQuestion('For an AI system that flags suspicious invoices, what is a sound control?', ['Let AI approve every payment', 'Hide the model output', 'Route uncertain or high-risk cases to an authorised human reviewer', 'Disable audit logs'], 2, 'Human review, clear approval authority, audit evidence and monitored exceptions reduce the risk of blindly accepting AI outputs.'),
   ];
 
+  void _startLessonTimer() {
+    if (lessonTimerStarted) return;
+    setState(() {
+      lessonTimerStarted = true;
+      lessonTimerStartedAt = DateTime.now();
+    });
+    lessonTicker?.cancel();
+    lessonTicker = Timer.periodic(const Duration(seconds: 1), (_) {
+      final started = lessonTimerStartedAt;
+      if (started != null && mounted) {
+        setState(() => lessonElapsed = DateTime.now().difference(started));
+      }
+    });
+  }
+
+  void _resetLessonSession() {
+    lessonTicker?.cancel();
+    lessonTicker = null;
+    lessonTimerStartedAt = null;
+    lessonElapsed = Duration.zero;
+    lessonTimerStarted = false;
+    submitted = false;
+    lessonAnswer1 = null;
+    lessonAnswer2 = null;
+  }
+
   @override
-  void dispose() { assignment.dispose(); super.dispose(); }
+  void dispose() { lessonTicker?.cancel(); assignment.dispose(); super.dispose(); }
 
   @override
   Widget build(BuildContext context) {
@@ -181,7 +212,7 @@ class _LearningHomeState extends State<LearningHome> {
         leading: CircleAvatar(backgroundColor: completed.contains(e.key + selectedPath * 10) ? const Color(0xFFD9F5EB) : const Color(0xFFE8EEF7), child: Icon(completed.contains(e.key + selectedPath * 10) ? Icons.check : Icons.menu_book, color: ink)),
         title: Text(e.value, style: const TextStyle(fontWeight: FontWeight.w700)),
         subtitle: Text('FK-${path.code}-C${(e.key + 1).toString().padLeft(2, '0')} · Lesson → example → practice → assignment'),
-        trailing: const Icon(Icons.chevron_right), onTap: () => setState(() { selectedChapter = e.key; lessonOpened = true; }),
+        trailing: const Icon(Icons.chevron_right), onTap: () => setState(() { selectedChapter = e.key; _resetLessonSession(); lessonOpened = true; }),
       ))),
       const SizedBox(height: 12),
       Card(child: Padding(padding: const EdgeInsets.all(18), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -305,7 +336,7 @@ class _LearningHomeState extends State<LearningHome> {
         {'formula':'Close completion = tasks completed and approved ÷ tasks due × 100%. Pair speed with post-close adjustments and aged-reconciliation metrics.','assignment':'Draft a five-day close calendar with task, owner, dependency, evidence, reviewer and escalation.','capstone':'Design a close dashboard tracking completion, late journals, aged reconciling items, unsupported balances and post-close corrections.','gist':'A green close status is not proof of accuracy; use cut-off, supported entries, reconciliations and review.'}
       ],
       'DATA': [
-        {'formula':'Example: =IF(AND([@Status]="Unpaid",[@DueDate]<$B$1),"Overdue","Not overdue"). Use SUMIFS for owner-level overdue value.','assignment':'Define a report date, overdue rule, ageing bands and duplicate key. List three tests to validate the output.','capstone':'Specify an AP ageing report with formulas, KPI definitions, quality checks, owner breakdown and action list.','gist':'Define the grain and rule, clean inputs, calculate transparently, reconcile outputs and explain the action.'},
+        {'formula':'Example: =IF(AND([@Status]="Unpaid",[@DueDate]<\$B\$1),"Overdue","Not overdue"). Use SUMIFS for owner-level overdue value.','assignment':'Define a report date, overdue rule, ageing bands and duplicate key. List three tests to validate the output.','capstone':'Specify an AP ageing report with formulas, KPI definitions, quality checks, owner breakdown and action list.','gist':'Define the grain and rule, clean inputs, calculate transparently, reconcile outputs and explain the action.'},
         {'formula':'Extract → Transform → Validate → Load. Eligible source rows should equal loaded rows plus explicitly rejected/held rows after documented filters.','assignment':'Document schema, type fixes, ID mapping, duplicate rules, exception handling and reconciliation checks for two monthly files.','capstone':'Design a refreshable AP pipeline with source convention, mapping owner, error query, reconciliation and failure notification.','gist':'Repeatability matters only when transformations are explainable and every refresh reconciles to source.'},
         {'formula':'Overdue rate = overdue unpaid invoice count ÷ total unpaid invoice count × 100%. Keep count-based and value-based rates distinct.','assignment':'Create a KPI dictionary for overdue value, first-time match rate, blocked count and average resolution age.','capstone':'Wireframe an AP dashboard with trend, breakdown, drill-through, source reconciliation and refresh/error indicators.','gist':'Reliable BI requires clear KPI definitions, correct model grain, tested measures and governed refresh.'}
       ],
@@ -358,7 +389,8 @@ class _LearningHomeState extends State<LearningHome> {
       const SizedBox(height: 6), Text('Path: ${path.title} · Learn at your pace; complete the practice before viewing feedback.', style: const TextStyle(color: Colors.black54, height: 1.4)),
       const SizedBox(height: 16),
       lessonCard('01 · Learning objectives', 'By the end of this lesson, you should be able to explain the core process, apply it to a realistic finance scenario, identify cross-functional responsibilities, and propose evidence-based controls or improvements.'),
-      lessonCard('02 · Chapter-specific teaching notes', focus),\n      lessonCard('02 · Core lesson', d['concept']!),
+      lessonCard('02 · Chapter-specific teaching notes', focus),
+      lessonCard('02 · Core lesson', d['concept']!),
       lessonCard('04 · Real-world worked example', d['example']!),
       lessonCard('05 · Practical method', d['steps']!),
       lessonCard('06 · Cross-department perspective', d['cross']!),
@@ -367,6 +399,16 @@ class _LearningHomeState extends State<LearningHome> {
       lessonCard('09 · Mini-capstone', d['capstone']!),
       lessonCard('09 · Revision gist', d['gist'] ?? 'Recall the process flow, evidence, responsible owner, key control and metric that proves improvement. Connect this lesson to earlier topics.'),
       lessonCard('10 · Books, free learning and references', 'Explore these starting points (availability and access terms may vary):\n${resources[path.code]}\n\nUse official documentation first. Record the page or module used, the date accessed and one practical takeaway.'),
+      Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        const Text('Study timer', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: ink)),
+        const SizedBox(height: 6),
+        Text('Elapsed: ${lessonElapsed.inMinutes.toString().padLeft(2, '0')}:${(lessonElapsed.inSeconds % 60).toString().padLeft(2, '0')}', style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800)),
+        const SizedBox(height: 8),
+        if (!lessonTimerStarted)
+          FilledButton.icon(onPressed: _startLessonTimer, icon: const Icon(Icons.timer), label: const Text('Start lesson timer'))
+        else
+          const Text('Timer started for this lesson. Keep studying, then complete the assessment.', style: TextStyle(color: Colors.black54)),
+      ]))),
       Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const Text('Knowledge check · answers hidden until submission', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: ink)),
         const SizedBox(height: 8), Text('1. ${check1['q']}', style: const TextStyle(fontWeight: FontWeight.w700)),
@@ -383,10 +425,37 @@ class _LearningHomeState extends State<LearningHome> {
           Text('2. ${lessonAnswer2 == check2['a'] ? 'Correct' : 'Not quite'} — ${check2['e']}', style: const TextStyle(height: 1.5)),
           OutlinedButton(onPressed: () => setState(() { submitted = false; lessonAnswer1 = null; lessonAnswer2 = null; }), child: const Text('Reset attempt')),
         ],
-        const SizedBox(height: 8), FilledButton.icon(onPressed: () => setState(() { completed.add(selectedChapter + selectedPath * 10); lessonOpened = false; _saveState(); }), icon: const Icon(Icons.check_circle_outline), label: const Text('Mark lesson reviewed')),
+        const SizedBox(height: 8),
+        Builder(builder: (context) {
+          final perfectScore = submitted && lessonAnswer1 == check1['a'] && lessonAnswer2 == check2['a'];
+          final canComplete = lessonTimerStarted && perfectScore;
+          return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            if (!lessonTimerStarted)
+              const Text('Start the lesson timer before a lesson can be completed.', style: TextStyle(color: Colors.deepOrange, height: 1.4))
+            else if (!submitted)
+              const Text('Submit the lesson assessment. You must score 2/2 (100%) to complete this lesson.', style: TextStyle(color: Colors.deepOrange, height: 1.4))
+            else if (!perfectScore)
+              const Text('Not completed: score 2/2 (100%) and try again. Your lesson remains incomplete.', style: TextStyle(color: Colors.deepOrange, height: 1.4))
+            else
+              const Text('Requirements met: timer started and assessment score 100%.', style: TextStyle(color: Colors.green, height: 1.4)),
+            const SizedBox(height: 8),
+            FilledButton.icon(
+              onPressed: canComplete ? () {
+                setState(() {
+                  completed.add(selectedChapter + selectedPath * 10);
+                  lessonOpened = false;
+                  _resetLessonSession();
+                });
+                _saveState();
+              } : null,
+              icon: const Icon(Icons.check_circle_outline),
+              label: const Text('Complete lesson (100% required)'),
+            ),
+          ]);
+        }),
       ]))),
       const SizedBox(height: 12),
-      OutlinedButton.icon(onPressed: () => setState(() { selectedChapter = (selectedChapter + 1) % path.chapters.length; submitted = false; lessonAnswer1 = null; lessonAnswer2 = null; answers.clear(); }), icon: const Icon(Icons.skip_next), label: const Text('Open next chapter')),
+      OutlinedButton.icon(onPressed: () => setState(() { selectedChapter = (selectedChapter + 1) % path.chapters.length; _resetLessonSession(); answers.clear(); }), icon: const Icon(Icons.skip_next), label: const Text('Open next chapter')),
       const SizedBox(height: 8), const Text('Progress is saved locally in this browser on this device. It is not synced across devices or accounts.', style: TextStyle(color: Colors.black54, fontSize: 12, height: 1.4)),
     ]);
   }
