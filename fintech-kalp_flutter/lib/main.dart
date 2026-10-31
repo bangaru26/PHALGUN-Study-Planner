@@ -92,12 +92,12 @@ class _LearningHomeState extends State<LearningHome> {
   }
 
   final paths = const [
-    LearningPath('Finance foundations', 'Accounting, statements, working capital and controls', Icons.account_balance, 'CORE', ['Financial statements in practice', 'Working capital and cash conversion', 'Internal controls and reconciliations']),
-    LearningPath('Finance operations', 'AP/P2P, AR/O2C, GL/R2R and shared services', Icons.sync_alt, 'OPS', ['Invoice-to-pay lifecycle', 'Order-to-cash and collections', 'Month-end close and reconciliations']),
-    LearningPath('Data for finance', 'Excel, Power Query, BI, SQL and data quality', Icons.query_stats, 'DATA', ['Excel analysis for AP ageing', 'Power Query: clean and combine files', 'Build a finance KPI dashboard']),
-    LearningPath('Automation & AI', 'RPA, document intelligence and human oversight', Icons.auto_awesome, 'AI', ['Identify automation candidates', 'OCR and invoice exception handling', 'Human-in-the-loop AI controls']),
-    LearningPath('Fintech systems', 'Payments, digital banking, APIs, cybersecurity and regulation', Icons.account_tree, 'TECH', ['Digital payments and settlement', 'APIs, ledgers and system integration', 'Fraud, privacy and security basics']),
-    LearningPath('Agile & transformation', 'Process improvement, delivery and measurable business value', Icons.rocket_launch, 'CHANGE', ['Map a process and find root causes', 'Write a user story and acceptance criteria', 'Measure benefits and manage change']),
+    LearningPath('Finance foundations', 'Accounting, statements, working capital and controls', Icons.account_balance, 'CORE', ['Financial statements in practice', 'Working capital and cash conversion', 'Internal controls and reconciliations', 'Applied financial statement analysis case lab', 'Working capital improvement workshop']),
+    LearningPath('Finance operations', 'AP/P2P, AR/O2C, GL/R2R and shared services', Icons.sync_alt, 'OPS', ['Invoice-to-pay lifecycle', 'Order-to-cash and collections', 'Month-end close and reconciliations', 'AP exception investigation case lab', 'O2C collections and cash-application workshop']),
+    LearningPath('Data for finance', 'Excel, Power Query, BI, SQL and data quality', Icons.query_stats, 'DATA', ['Excel analysis for AP ageing', 'Power Query: clean and combine files', 'Build a finance KPI dashboard', 'Excel formulas and ageing analysis practice lab', 'Power Query refresh and reconciliation workshop']),
+    LearningPath('Automation & AI', 'RPA, document intelligence and human oversight', Icons.auto_awesome, 'AI', ['Identify automation candidates', 'OCR and invoice exception handling', 'Human-in-the-loop AI controls', 'Finance automation business-case lab', 'Invoice document validation case workshop']),
+    LearningPath('Fintech systems', 'Payments, digital banking, APIs, cybersecurity and regulation', Icons.account_tree, 'TECH', ['Digital payments and settlement', 'APIs, ledgers and system integration', 'Fraud, privacy and security basics', 'Payment settlement investigation lab', 'API timeout, retry and reconciliation workshop']),
+    LearningPath('Agile & transformation', 'Process improvement, delivery and measurable business value', Icons.rocket_launch, 'CHANGE', ['Map a process and find root causes', 'Write a user story and acceptance criteria', 'Measure benefits and manage change', 'Root-cause analysis and process mapping case lab', 'Acceptance criteria and benefits tracking workshop']),
   ];
   final quiz = const [
     QuizQuestion('A team wants to reduce duplicate supplier payments. What is the best first control?', ['Pay every invoice immediately', 'Match invoice identifiers and check duplicates before payment', 'Remove approval steps', 'Keep a manual list with no owner'], 1, 'A duplicate check using invoice identifiers, supplier and amount is a preventive/detective control. It should work alongside approvals and exception handling.'),
@@ -184,7 +184,7 @@ class _LearningHomeState extends State<LearningHome> {
         StatCard('Learning paths', '${paths.length}', Icons.route, teal),
         StatCard('Chapters completed', '${completed.length}', Icons.check_circle_outline, const Color(0xFF4C6FFF)),
         StatCard('Quiz status', submitted ? 'Attempted' : 'Not started', Icons.fact_check_outlined, const Color(0xFFB76E00)),
-        StatCard('Progress', '${(completed.length / 18 * 100).round().clamp(0, 100)}%', Icons.trending_up, const Color(0xFF7655C5)),
+        StatCard('Progress', '${(completed.length / paths.fold<int>(0, (sum, path) => sum + path.chapters.length) * 100).round().clamp(0, 100)}%', Icons.trending_up, const Color(0xFF7655C5)),
       ];
       return GridView.count(shrinkWrap: true, physics: const NeverScrollableScrollPhysics(), crossAxisCount: count, mainAxisSpacing: 10, crossAxisSpacing: 10, childAspectRatio: 1.8, children: items);
     }),
@@ -324,7 +324,7 @@ class _LearningHomeState extends State<LearningHome> {
         'A deployed dashboard is an output; reduced overdue value without increased control failures is an outcome. A benefit needs a baseline, target, calculation, source, owner and assumptions. Released capacity is not automatically cash savings. Plan milestones, dependencies, risks, training, feedback and post-launch benefit reviews.'
       ]
     };
-    final focus = chapterFocus[path.code]![selectedChapter];
+    final focus = chapterFocus[path.code]![selectedChapter % chapterFocus[path.code]!.length];
     final localizedNotes = <String, List<Map<String, String>>>{
       'CORE': [
         {'English': "Financial statements tell different stories: profit, financial position and cash movement. Compare all three and reconcile differences before making a decision.", 'Telugu': "ఆర్థిక నివేదికలు వేర్వేరు విషయాలు చెబుతాయి: లాభం, ఆర్థిక స్థితి, నగదు ప్రవాహం. నిర్ణయం తీసుకునే ముందు మూడింటినీ పోల్చి తేడాలను సరిచూడండి.", 'Hindi': "वित्तीय विवरण अलग-अलग बातें बताते हैं: लाभ, वित्तीय स्थिति और नकदी प्रवाह। निर्णय लेने से पहले तीनों की तुलना करें और अंतर का मिलान करें।"},
@@ -357,7 +357,7 @@ class _LearningHomeState extends State<LearningHome> {
         {'English': "A launch is an output; sustained business improvement is an outcome. Track a baseline, target, owner, evidence, assumptions and post-launch benefits.", 'Telugu': "లాంచ్ ఒక అవుట్‌పుట్ మాత్రమే; నిరంతర వ్యాపార మెరుగుదల ఫలితం. బేస్‌లైన్, లక్ష్యం, బాధ్యతగల వ్యక్తి, ఆధారాలు, ఊహాగానాలు, లాంచ్ తర్వాతి ప్రయోజనాలను ట్రాక్ చేయండి.", 'Hindi': "लॉन्च एक आउटपुट है; लगातार व्यावसायिक सुधार वास्तविक परिणाम है। आधाररेखा, लक्ष्य, जिम्मेदार व्यक्ति, प्रमाण, मान्यताएँ और लॉन्च के बाद के लाभ ट्रैक करें।"},
       ],
     };
-    final localizedNote = localizedNotes[path.code]![selectedChapter];
+    final localizedNote = localizedNotes[path.code]![selectedChapter % localizedNotes[path.code]!.length];
     const chapterExtras = <String, List<Map<String, String>>>{
       'CORE': [
         {'formula':'Assets = Liabilities + Equity. Profit = Revenue − Expenses. Cash differs from profit because of timing, working capital and non-cash items.','assignment':'Explain one fictional month-end variance in each statement. For each, identify the source record, reconciliation and control you would test.','capstone':'Prepare a one-page month-end health note with profit, financial position, cash movements, reconciliations, risks and action owners.','gist':'Performance over a period, financial position at a date and cash movement answer different questions. Tie each to evidence.'},
@@ -390,7 +390,7 @@ class _LearningHomeState extends State<LearningHome> {
         {'formula':'Benefit realisation % = validated benefit achieved ÷ approved target benefit × 100%, using comparable measures.','assignment':'Create a 30/60/90-day plan with milestone, owner, dependency, risk, training action, KPI and evidence; separate outputs from outcomes.','capstone':'Prepare an executive recommendation with baseline, root causes, phased roadmap, cost/benefit assumptions, controls, adoption and benefit reviews.','gist':'Delivery is not benefit realisation. Track outcomes, adoption and control guardrails after launch.'}
       ]
     };
-    d.addAll(chapterExtras[path.code]![selectedChapter]);
+    d.addAll(chapterExtras[path.code]![selectedChapter % chapterExtras[path.code]!.length]);
 
 
     final check1 = <String, Map<String, Object>>{
