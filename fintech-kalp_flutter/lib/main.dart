@@ -35,6 +35,7 @@ class _LearningHomeState extends State<LearningHome> {
   int? lessonAnswer1, lessonAnswer2;
   final TextEditingController assignment = TextEditingController();
   bool stateLoaded = false;
+  String notesLanguage = 'English';
   Timer? lessonTicker;
   DateTime? lessonTimerStartedAt;
   Duration lessonElapsed = Duration.zero;
@@ -324,6 +325,39 @@ class _LearningHomeState extends State<LearningHome> {
       ]
     };
     final focus = chapterFocus[path.code]![selectedChapter];
+    final localizedNotes = <String, List<Map<String, String>>>{
+      'CORE': [
+        {'English': "Financial statements tell different stories: profit, financial position and cash movement. Compare all three and reconcile differences before making a decision.", 'Telugu': "ఆర్థిక నివేదికలు వేర్వేరు విషయాలు చెబుతాయి: లాభం, ఆర్థిక స్థితి, నగదు ప్రవాహం. నిర్ణయం తీసుకునే ముందు మూడింటినీ పోల్చి తేడాలను సరిచూడండి.", 'Hindi': "वित्तीय विवरण अलग-अलग बातें बताते हैं: लाभ, वित्तीय स्थिति और नकदी प्रवाह। निर्णय लेने से पहले तीनों की तुलना करें और अंतर का मिलान करें।"},
+        {'English': "Working capital and cash conversion depend on how quickly receivables and inventory turn, and when suppliers are paid. Use consistent day-count definitions.", 'Telugu': "వర్కింగ్ క్యాపిటల్, నగదు మార్పిడి చక్రం వసూళ్లు, నిల్వల వేగం మరియు సరఫరాదారులకు చెల్లించే సమయంపై ఆధారపడతాయి. రోజుల లెక్కకు ఒకే నిర్వచనం వాడండి.", 'Hindi': "कार्यशील पूँजी और नकदी चक्र वसूली, स्टॉक के घूमने और आपूर्तिकर्ताओं को भुगतान के समय पर निर्भर करते हैं। दिनों की गणना के लिए एकसमान परिभाषा अपनाएँ।"},
+        {'English': "Controls prevent, detect or correct errors. A reconciliation needs evidence, an accountable owner, a due date and a documented resolution.", 'Telugu': "నియంత్రణలు తప్పులను నివారిస్తాయి, గుర్తిస్తాయి లేదా సరిచేస్తాయి. రీకన్సిలియేషన్‌కు ఆధారాలు, బాధ్యతగల వ్యక్తి, గడువు, నమోదు చేసిన పరిష్కారం అవసరం.", 'Hindi': "नियंत्रण गलतियों को रोकते, पहचानते या सुधारते हैं। मिलान के लिए प्रमाण, जिम्मेदार व्यक्ति, समय-सीमा और दर्ज किया गया समाधान आवश्यक है."},
+      ],
+      'OPS': [
+        {'English': "P2P moves from requisition and purchase order to receipt, invoice validation, approval, payment and reconciliation. Never bypass a mismatch control.", 'Telugu': "P2P ప్రక్రియ అభ్యర్థన, కొనుగోలు ఆర్డర్ నుంచి సరుకు స్వీకరణ, ఇన్వాయిస్ ధృవీకరణ, ఆమోదం, చెల్లింపు, రీకన్సిలియేషన్ వరకు సాగుతుంది. తేడా నియంత్రణను దాటవేయకండి.", 'Hindi': "P2P प्रक्रिया माँग और खरीद आदेश से माल प्राप्ति, बिल जाँच, अनुमोदन, भुगतान और मिलान तक जाती है। किसी अंतर-जाँच को दरकिनार न करें।"},
+        {'English': "O2C covers order, fulfilment, billing, receivables, collection and cash application. Investigate disputes and unapplied cash before escalating collections.", 'Telugu': "O2Cలో ఆర్డర్, సరఫరా, బిల్లింగ్, బకాయిలు, వసూళ్లు, నగదు కేటాయింపు ఉంటాయి. వసూళ్లను పెంచే ముందు వివాదాలు, కేటాయించని నగదును పరిశీలించండి.", 'Hindi': "O2C में ऑर्डर, आपूर्ति, बिलिंग, प्राप्य राशि, वसूली और नकदी समायोजन शामिल हैं। वसूली बढ़ाने से पहले विवाद और बिना समायोजित नकदी की जाँच करें।"},
+        {'English': "Month-end close requires cut-off, complete subledgers, accruals, prepayments, reconciliations and review. Suspense items need an owner and target date.", 'Telugu': "నెలాఖరు ముగింపులో కట్-ఆఫ్, పూర్తి సబ్‌లెడ్జర్లు, అక్రూవల్స్, ప్రీపేమెంట్స్, రీకన్సిలియేషన్లు, సమీక్ష అవసరం. సస్పెన్స్ అంశాలకు బాధ్యతగల వ్యక్తి, గడువు ఉండాలి.", 'Hindi': "महीने के अंत में कट-ऑफ, पूर्ण सबलेजर, उपार्जन, पूर्वभुगतान, मिलान और समीक्षा आवश्यक हैं। सस्पेंस मदों के लिए जिम्मेदार व्यक्ति और समय-सीमा होनी चाहिए।"},
+      ],
+      'DATA': [
+        {'English': "Define the data question and report date. Use SUMIFS and COUNTIFS carefully, validate blanks and duplicates, then reconcile row counts and monetary totals.", 'Telugu': "డేటా ప్రశ్న, రిపోర్ట్ తేదీని నిర్ణయించండి. SUMIFS, COUNTIFS జాగ్రత్తగా వాడి, ఖాళీలు, డూప్లికేట్లు తనిఖీ చేసి, వరుసల సంఖ్య, మొత్తాలను సరిచూడండి.", 'Hindi': "डेटा का प्रश्न और रिपोर्ट की तारीख तय करें। SUMIFS और COUNTIFS सावधानी से उपयोग करें, खाली मान और डुप्लिकेट जाँचें, फिर पंक्तियों और रकम का मिलान करें।"},
+        {'English': "Power Query automates repeatable cleaning. Append stacks tables; merge joins by keys. Keep unmapped records visible and reconcile totals after refresh.", 'Telugu': "Power Query మళ్లీ మళ్లీ చేసే డేటా శుభ్రపరిచే పనిని ఆటోమేట్ చేస్తుంది. Append పట్టికలను కలుపుతుంది; Merge కీల ఆధారంగా జతచేస్తుంది. మ్యాప్ కాని రికార్డులను చూపిస్తూ రిఫ్రెష్ తర్వాత మొత్తాలు సరిచూడండి.", 'Hindi': "Power Query बार-बार होने वाली सफाई को स्वचालित करता है। Append तालिकाएँ जोड़ता है; Merge कुंजियों से जोड़ता है। जिन रिकॉर्ड का मिलान नहीं हुआ उन्हें दिखाएँ और रीफ्रेश के बाद कुल रकम जाँचें।"},
+        {'English': "A useful dashboard defines every KPI, source, period and owner. Validate relationships and totals against source records before sharing decisions.", 'Telugu': "ఉపయోగకరమైన డాష్‌బోర్డ్ ప్రతి KPI, మూలం, కాలవ్యవధి, బాధ్యతగల వ్యక్తిని నిర్వచిస్తుంది. నిర్ణయాల కోసం పంచే ముందు మూల రికార్డులతో సంబంధాలు, మొత్తాలు సరిచూడండి.", 'Hindi': "उपयोगी डैशबोर्ड हर KPI, स्रोत, अवधि और जिम्मेदार व्यक्ति को परिभाषित करता है। निर्णय साझा करने से पहले स्रोत रिकॉर्ड से संबंध और कुल रकम जाँचें।"},
+      ],
+      'AI': [
+        {'English': "Measure a stable process before automating it. Compare RPA, workflows, APIs and AI, and include exception handling and ongoing support costs.", 'Telugu': "ఆటోమేషన్‌కు ముందు స్థిరమైన ప్రక్రియను కొలవండి. RPA, వర్క్‌ఫ్లోలు, APIs, AIలను పోల్చి, మినహాయింపు నిర్వహణ మరియు నిరంతర సహాయక ఖర్చులను చేర్చండి.", 'Hindi': "स्वचालन से पहले स्थिर प्रक्रिया को मापें। RPA, वर्कफ़्लो, API और AI की तुलना करें तथा अपवाद प्रबंधन और निरंतर सहायता लागत शामिल करें।"},
+        {'English': "OCR extracts text; intelligent document processing also classifies and extracts fields. Extraction must be validated against source documents and business rules.", 'Telugu': "OCR పాఠ్యాన్ని తీస్తుంది; ఇంటెలిజెంట్ డాక్యుమెంట్ ప్రాసెసింగ్ పత్రాలను వర్గీకరించి ఫీల్డులను కూడా తీస్తుంది. తీసిన వివరాలను మూల పత్రాలు, వ్యాపార నియమాలతో ధృవీకరించాలి.", 'Hindi': "OCR पाठ निकालता है; इंटेलिजेंट डॉक्यूमेंट प्रोसेसिंग दस्तावेज़ों का वर्गीकरण और फ़ील्ड निष्कर्षण भी करती है। निकाले गए विवरणों को मूल दस्तावेज़ और व्यावसायिक नियमों से जाँचना चाहिए।"},
+        {'English': "An AI flag is not proof of fraud. Use authorised human review, privacy safeguards, audit logs, clear escalation and monitoring of false positives and misses.", 'Telugu': "AI హెచ్చరిక మోసానికి రుజువు కాదు. అధీకృత మానవ సమీక్ష, గోప్యతా రక్షణలు, ఆడిట్ లాగులు, స్పష్టమైన ఎస్కలేషన్, తప్పు హెచ్చరికల పర్యవేక్షణ అవసరం.", 'Hindi': "AI का संकेत धोखाधड़ी का प्रमाण नहीं है। अधिकृत मानवीय समीक्षा, गोपनीयता सुरक्षा, ऑडिट लॉग, स्पष्ट एस्केलेशन और गलत संकेतों की निगरानी आवश्यक है।"},
+      ],
+      'TECH': [
+        {'English': "A payment being accepted or authorised does not prove settlement. Trace transaction IDs and timestamps, then reconcile platform, processor and bank records.", 'Telugu': "చెల్లింపు అంగీకరించబడటం లేదా ఆథరైజ్ కావడం సెటిల్‌మెంట్‌కు రుజువు కాదు. ట్రాన్సాక్షన్ IDలు, సమయాలను అనుసరించి ప్లాట్‌ఫారమ్, ప్రాసెసర్, బ్యాంక్ రికార్డులను సరిచూడండి.", 'Hindi': "भुगतान स्वीकार या अधिकृत होना सेटलमेंट का प्रमाण नहीं है। लेन-देन ID और समय देखें, फिर प्लेटफ़ॉर्म, प्रोसेसर और बैंक रिकॉर्ड का मिलान करें।"},
+        {'English': "APIs exchange structured requests and responses. Use authentication, least privilege, idempotency and controlled retries; reconcile final transaction states.", 'Telugu': "APIs संरचित అభ్యర్థనలు, ప్రతిస్పందనలను మార్పిడి చేస్తాయి. ధృవీకరణ, కనీస అనుమతులు, idempotency, నియంత్రిత retries వాడి తుది లావాదేవీ స్థితులను సరిచూడండి.", 'Hindi': "API संरचित अनुरोध और उत्तर साझा करते हैं। प्रमाणीकरण, न्यूनतम अनुमति, idempotency और नियंत्रित retry अपनाएँ; अंतिम लेन-देन स्थिति का मिलान करें।"},
+        {'English': "Protect financial systems with MFA, least privilege, independent bank-detail verification, maker-checker approvals and timely access removal.", 'Telugu': "ఆర్థిక వ్యవస్థలను MFA, కనీస అనుమతులు, బ్యాంక్ వివరాల స్వతంత్ర ధృవీకరణ, maker-checker ఆమోదాలు, సమయానుకూల యాక్సెస్ తొలగింపుతో రక్షించండి.", 'Hindi': "वित्तीय प्रणालियों को MFA, न्यूनतम अनुमति, बैंक विवरण की स्वतंत्र पुष्टि, maker-checker अनुमोदन और समय पर पहुँच हटाने से सुरक्षित रखें।"},
+      ],
+      'CHANGE': [
+        {'English': "Start transformation with a measurable problem and baseline. Map handoffs, queues and rework; validate root causes before choosing a solution.", 'Telugu': "మార్పును కొలవగల సమస్య, ప్రాథమిక స్థితితో ప్రారంభించండి. హ్యాండాఫ్‌లు, క్యూలు, మళ్లీ చేసే పనిని మ్యాప్ చేసి, పరిష్కారం ఎంచుకునే ముందు మూలకారణాలను నిర్ధారించండి.", 'Hindi': "परिवर्तन की शुरुआत मापने योग्य समस्या और आधाररेखा से करें। हस्तांतरण, कतार और दोबारा होने वाले काम को मैप करें; समाधान चुनने से पहले मूल कारण की पुष्टि करें।"},
+        {'English': "A user story explains who needs what and why. Acceptance criteria are observable pass/fail conditions, including data quality and control requirements.", 'Telugu': "యూజర్ స్టోరీలో ఎవరికీ ఏమి, ఎందుకు కావాలో ఉంటుంది. Acceptance criteria అనేవి డేటా నాణ్యత, నియంత్రణ అవసరాలతో సహా గమనించగల pass/fail ప్రమాణాలు.", 'Hindi': "यूज़र स्टोरी बताती है कि किसे क्या और क्यों चाहिए। स्वीकृति मानदंड डेटा गुणवत्ता और नियंत्रण सहित स्पष्ट pass/fail शर्तें हैं।"},
+        {'English': "A launch is an output; sustained business improvement is an outcome. Track a baseline, target, owner, evidence, assumptions and post-launch benefits.", 'Telugu': "లాంచ్ ఒక అవుట్‌పుట్ మాత్రమే; నిరంతర వ్యాపార మెరుగుదల ఫలితం. బేస్‌లైన్, లక్ష్యం, బాధ్యతగల వ్యక్తి, ఆధారాలు, ఊహాగానాలు, లాంచ్ తర్వాతి ప్రయోజనాలను ట్రాక్ చేయండి.", 'Hindi': "लॉन्च एक आउटपुट है; लगातार व्यावसायिक सुधार वास्तविक परिणाम है। आधाररेखा, लक्ष्य, जिम्मेदार व्यक्ति, प्रमाण, मान्यताएँ और लॉन्च के बाद के लाभ ट्रैक करें।"},
+      ],
+    };
+    final localizedNote = localizedNotes[path.code]![selectedChapter];
     const chapterExtras = <String, List<Map<String, String>>>{
       'CORE': [
         {'formula':'Assets = Liabilities + Equity. Profit = Revenue − Expenses. Cash differs from profit because of timing, working capital and non-cash items.','assignment':'Explain one fictional month-end variance in each statement. For each, identify the source record, reconciliation and control you would test.','capstone':'Prepare a one-page month-end health note with profit, financial position, cash movements, reconciliations, risks and action owners.','gist':'Performance over a period, financial position at a date and cash movement answer different questions. Tie each to evidence.'},
@@ -388,6 +422,24 @@ class _LearningHomeState extends State<LearningHome> {
       Text(title, style: const TextStyle(fontSize: 27, fontWeight: FontWeight.w900, color: ink)),
       const SizedBox(height: 6), Text('Path: ${path.title} · Learn at your pace; complete the practice before viewing feedback.', style: const TextStyle(color: Colors.black54, height: 1.4)),
       const SizedBox(height: 16),
+      Card(margin: const EdgeInsets.only(bottom: 10), child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        const Text('Lesson notes language', style: TextStyle(fontWeight: FontWeight.w800, color: ink)),
+        const SizedBox(height: 8),
+        DropdownButtonFormField<String>(
+          value: notesLanguage,
+          decoration: const InputDecoration(border: OutlineInputBorder(), isDense: true),
+          items: const [
+            DropdownMenuItem(value: 'English', child: Text('English')),
+            DropdownMenuItem(value: 'Telugu', child: Text('తెలుగు · Telugu')),
+            DropdownMenuItem(value: 'Hindi', child: Text('हिन्दी · Hindi')),
+          ],
+          onChanged: (value) => setState(() => notesLanguage = value ?? 'English'),
+        ),
+        const SizedBox(height: 10),
+        Text('${notesLanguage} study note', style: const TextStyle(fontWeight: FontWeight.w800, color: ink)),
+        const SizedBox(height: 5),
+        Text(localizedNote[notesLanguage]!, style: const TextStyle(height: 1.6)),
+      ]))),
       lessonCard('01 · Learning objectives', 'By the end of this lesson, you should be able to explain the core process, apply it to a realistic finance scenario, identify cross-functional responsibilities, and propose evidence-based controls or improvements.'),
       lessonCard('02 · Chapter-specific teaching notes', focus),
       lessonCard('02 · Core lesson', d['concept']!),
