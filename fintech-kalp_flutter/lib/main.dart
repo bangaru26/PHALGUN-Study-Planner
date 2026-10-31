@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -34,6 +35,10 @@ class _LearningHomeState extends State<LearningHome> {
   int? lessonAnswer1, lessonAnswer2;
   final TextEditingController assignment = TextEditingController();
   bool stateLoaded = false;
+  Timer? lessonTicker;
+  DateTime? lessonTimerStartedAt;
+  Duration lessonElapsed = Duration.zero;
+  bool lessonTimerStarted = false;
   static const _storageKey = 'fintech_kalp_local_v1';
 
   @override
@@ -99,8 +104,34 @@ class _LearningHomeState extends State<LearningHome> {
     QuizQuestion('For an AI system that flags suspicious invoices, what is a sound control?', ['Let AI approve every payment', 'Hide the model output', 'Route uncertain or high-risk cases to an authorised human reviewer', 'Disable audit logs'], 2, 'Human review, clear approval authority, audit evidence and monitored exceptions reduce the risk of blindly accepting AI outputs.'),
   ];
 
+  void _startLessonTimer() {
+    if (lessonTimerStarted) return;
+    setState(() {
+      lessonTimerStarted = true;
+      lessonTimerStartedAt = DateTime.now();
+    });
+    lessonTicker?.cancel();
+    lessonTicker = Timer.periodic(const Duration(seconds: 1), (_) {
+      final started = lessonTimerStartedAt;
+      if (started != null && mounted) {
+        setState(() => lessonElapsed = DateTime.now().difference(started));
+      }
+    });
+  }
+
+  void _resetLessonSession() {
+    lessonTicker?.cancel();
+    lessonTicker = null;
+    lessonTimerStartedAt = null;
+    lessonElapsed = Duration.zero;
+    lessonTimerStarted = false;
+    submitted = false;
+    lessonAnswer1 = null;
+    lessonAnswer2 = null;
+  }
+
   @override
-  void dispose() { assignment.dispose(); super.dispose(); }
+  void dispose() { lessonTicker?.cancel(); assignment.dispose(); super.dispose(); }
 
   @override
   Widget build(BuildContext context) {
@@ -181,7 +212,7 @@ class _LearningHomeState extends State<LearningHome> {
         leading: CircleAvatar(backgroundColor: completed.contains(e.key + selectedPath * 10) ? const Color(0xFFD9F5EB) : const Color(0xFFE8EEF7), child: Icon(completed.contains(e.key + selectedPath * 10) ? Icons.check : Icons.menu_book, color: ink)),
         title: Text(e.value, style: const TextStyle(fontWeight: FontWeight.w700)),
         subtitle: Text('FK-${path.code}-C${(e.key + 1).toString().padLeft(2, '0')} · Lesson → example → practice → assignment'),
-        trailing: const Icon(Icons.chevron_right), onTap: () => setState(() { selectedChapter = e.key; lessonOpened = true; }),
+        trailing: const Icon(Icons.chevron_right), onTap: () => setState(() { selectedChapter = e.key; _resetLessonSession(); lessonOpened = true; }),
       ))),
       const SizedBox(height: 12),
       Card(child: Padding(padding: const EdgeInsets.all(18), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -368,6 +399,16 @@ class _LearningHomeState extends State<LearningHome> {
       lessonCard('09 · Revision gist', d['gist'] ?? 'Recall the process flow, evidence, responsible owner, key control and metric that proves improvement. Connect this lesson to earlier topics.'),
       lessonCard('10 · Books, free learning and references', 'Explore these starting points (availability and access terms may vary):\n${resources[path.code]}\n\nUse official documentation first. Record the page or module used, the date accessed and one practical takeaway.'),
       Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        const Text('Study timer', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: ink)),
+        const SizedBox(height: 6),
+        Text('Elapsed: ${lessonElapsed.inMinutes.toString().padLeft(2, '0')}:${(lessonElapsed.inSeconds % 60).toString().padLeft(2, '0')}', style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800)),
+        const SizedBox(height: 8),
+        if (!lessonTimerStarted)
+          FilledButton.icon(onPressed: _startLessonTimer, icon: const Icon(Icons.timer), label: const Text('Start lesson timer'))
+        else
+          const Text('Timer started for this lesson. Keep studying, then complete the assessment.', style: TextStyle(color: Colors.black54)),
+      ]))),
+      Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const Text('Knowledge check · answers hidden until submission', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: ink)),
         const SizedBox(height: 8), Text('1. ${check1['q']}', style: const TextStyle(fontWeight: FontWeight.w700)),
         ...(check1['o'] as List<String>).asMap().entries.map((e) => RadioListTile<int>(dense: true, contentPadding: EdgeInsets.zero, value: e.key, groupValue: lessonAnswer1, title: Text(e.value), onChanged: submitted ? null : (v) => setState(() => lessonAnswer1 = v))),
@@ -383,10 +424,37 @@ class _LearningHomeState extends State<LearningHome> {
           Text('2. ${lessonAnswer2 == check2['a'] ? 'Correct' : 'Not quite'} — ${check2['e']}', style: const TextStyle(height: 1.5)),
           OutlinedButton(onPressed: () => setState(() { submitted = false; lessonAnswer1 = null; lessonAnswer2 = null; }), child: const Text('Reset attempt')),
         ],
-        const SizedBox(height: 8), FilledButton.icon(onPressed: () => setState(() { completed.add(selectedChapter + selectedPath * 10); lessonOpened = false; _saveState(); }), icon: const Icon(Icons.check_circle_outline), label: const Text('Mark lesson reviewed')),
+        const SizedBox(height: 8),
+        Builder(builder: (context) {
+          final perfectScore = submitted && lessonAnswer1 == check1['a'] && lessonAnswer2 == check2['a'];
+          final canComplete = lessonTimerStarted && perfectScore;
+          return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            if (!lessonTimerStarted)
+              const Text('Start the lesson timer before a lesson can be completed.', style: TextStyle(color: Colors.deepOrange, height: 1.4))
+            else if (!submitted)
+              const Text('Submit the lesson assessment. You must score 2/2 (100%) to complete this lesson.', style: TextStyle(color: Colors.deepOrange, height: 1.4))
+            else if (!perfectScore)
+              const Text('Not completed: score 2/2 (100%) and try again. Your lesson remains incomplete.', style: TextStyle(color: Colors.deepOrange, height: 1.4))
+            else
+              const Text('Requirements met: timer started and assessment score 100%.', style: TextStyle(color: Colors.green, height: 1.4)),
+            const SizedBox(height: 8),
+            FilledButton.icon(
+              onPressed: canComplete ? () {
+                setState(() {
+                  completed.add(selectedChapter + selectedPath * 10);
+                  lessonOpened = false;
+                  _resetLessonSession();
+                });
+                _saveState();
+              } : null,
+              icon: const Icon(Icons.check_circle_outline),
+              label: const Text('Complete lesson (100% required)'),
+            ),
+          ]);
+        }),
       ]))),
       const SizedBox(height: 12),
-      OutlinedButton.icon(onPressed: () => setState(() { selectedChapter = (selectedChapter + 1) % path.chapters.length; submitted = false; lessonAnswer1 = null; lessonAnswer2 = null; answers.clear(); }), icon: const Icon(Icons.skip_next), label: const Text('Open next chapter')),
+      OutlinedButton.icon(onPressed: () => setState(() { selectedChapter = (selectedChapter + 1) % path.chapters.length; _resetLessonSession(); answers.clear(); }), icon: const Icon(Icons.skip_next), label: const Text('Open next chapter')),
       const SizedBox(height: 8), const Text('Progress is saved locally in this browser on this device. It is not synced across devices or accounts.', style: TextStyle(color: Colors.black54, fontSize: 12, height: 1.4)),
     ]);
   }
