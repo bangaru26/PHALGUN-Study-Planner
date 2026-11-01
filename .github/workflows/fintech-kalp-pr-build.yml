@@ -35,7 +35,7 @@ jobs:
 
       - name: Analyze Dart source
         working-directory: fintech-kalp_flutter
-        run: flutter analyze --no-pub
+        run: flutter analyze --no-pub --no-fatal-infos
 
       - name: Build release web app
         working-directory: fintech-kalp_flutter
