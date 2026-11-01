@@ -290,7 +290,7 @@ class _LearningHomeState extends State<LearningHome> {
         'assignment': 'Write one user story and at least five testable acceptance criteria for reducing blocked invoices. Include a control requirement and a measurable business outcome.',
         'capstone': 'Create a 30/60/90-day transformation plan with work items, owners, dependencies, risks, adoption actions and outcome measures.',
         'formula': 'Improvement % = (Baseline − New result) ÷ Baseline × 100% for metrics where lower is better. For higher-is-better metrics, reverse the numerator and clearly state the direction.'
-      }
+      },
       'EXCEL': {
         'concept': 'A finance workbook is a controlled data product, not just a grid. Separate raw inputs, transformations, calculations and outputs; use Excel Tables, clear field names, consistent date/currency conventions and documented assumptions. Avoid hard-coded totals inside formulas.',
         'example': 'A monthly AP file contains invoice ID, supplier, invoice date, due date, amount, currency and payment status. Convert it to a Table, validate identifiers and dates, calculate overdue days from a fixed report date, and reconcile total open amount to the source control total before producing an ageing summary.',
@@ -332,7 +332,7 @@ class _LearningHomeState extends State<LearningHome> {
         'Start with a defined problem and baseline. Map steps, queues, handoffs, rework and controls; distinguish symptoms from root causes and validate causes with samples/data. Example: if 45% of overdue invoice blocks are missing receipts, work with Receiving before proposing generic reminders or automation.',
         'A user story states user, capability and value. Acceptance criteria are observable pass/fail conditions covering business rules, edge cases, data quality, access, reconciliation and error handling. Example: every in-scope invoice appears once, totals reconcile to source, unmapped reasons remain visible and access is role-based. Agile does not mean no documentation or no controls.',
         'A deployed dashboard is an output; reduced overdue value without increased control failures is an outcome. A benefit needs a baseline, target, calculation, source, owner and assumptions. Released capacity is not automatically cash savings. Plan milestones, dependencies, risks, training, feedback and post-launch benefit reviews.'
-      ]
+      ],
       'EXCEL': [
         'Workbook architecture: separate raw data, transformation, calculation, checks and presentation. Use Excel Tables, explicit report dates, consistent types and controlled inputs. Build a source-to-report reconciliation before interpreting results.',
         'Formula foundations: relative, absolute and mixed references; IF, AND, OR, IFERROR, SUMIFS, COUNTIFS, date functions and structured references. Test blanks, invalid dates, negative amounts and boundary conditions instead of hiding errors indiscriminately.',
@@ -441,7 +441,7 @@ class _LearningHomeState extends State<LearningHome> {
         {'formula':'Improvement % = (baseline − new result) ÷ baseline × 100% for lower-is-better measures, where baseline is non-zero.','assignment':'Map a blocked-invoice process, identify five handoffs and three possible root causes, and specify evidence needed to validate them.','capstone':'Create a problem statement, current-state map, root-cause summary and prioritised improvement backlog.','gist':'Measure first, map real work and validate root causes before selecting a solution.'},
         {'formula':'Story format: As a [role], I want [capability], so that [business value]. Criteria must be specific, observable and testable.','assignment':'Write a user story and five pass/fail criteria for reducing blocked invoices, including reconciliation, exception visibility and access control.','capstone':'Prepare a backlog item with problem, story, criteria, dependencies, risks, tests and Definition of Done.','gist':'A story explains who needs what and why; acceptance criteria prove the outcome; Definition of Done protects quality.'},
         {'formula':'Benefit realisation % = validated benefit achieved ÷ approved target benefit × 100%, using comparable measures.','assignment':'Create a 30/60/90-day plan with milestone, owner, dependency, risk, training action, KPI and evidence; separate outputs from outcomes.','capstone':'Prepare an executive recommendation with baseline, root causes, phased roadmap, cost/benefit assumptions, controls, adoption and benefit reviews.','gist':'Delivery is not benefit realisation. Track outcomes, adoption and control guardrails after launch.'}
-      ]
+      ],
       'EXCEL': [
         {'formula':'Use Excel Tables and structured references. SUMIFS sums by multiple criteria; COUNTIFS counts matches; IF/AND can flag overdue unpaid invoices. Fix a report date for repeatable results.','assignment':'Build an invoice ageing table with validated dates, payment status, duplicate checks and four ageing buckets.','capstone':'Create a reconciled AP ageing pack with an exceptions log, KPI definitions, refresh instructions and reviewer checks.','gist':'A formula is only trustworthy when inputs, definitions, edge cases and source totals are controlled.'},
         {'formula':'IF(condition, result_if_true, result_if_false); IFERROR should handle expected cases deliberately, not hide every data-quality problem. Use absolute references for fixed assumptions.','assignment':'Write and test formulas for overdue status, missing due date, duplicate invoice ID, and amount variance. Include tests for blank and invalid values.','capstone':'Create a formula test sheet showing expected outputs for normal, boundary, missing and invalid data.','gist':'Choose formulas for explicit business rules and test both normal and exception cases.'},
@@ -586,7 +586,7 @@ class _LearningHomeState extends State<LearningHome> {
         'assignment': 'Write one user story and at least seven pass/fail criteria for an AP exception dashboard. Include source reconciliation, missing data, access, refresh failure, exception visibility and a benefit guardrail.',
         'capstone': 'Prepare a delivery-ready backlog item with story, acceptance tests, Definition of Done, owner/dependencies, rollout plan, baseline/target, benefit evidence and a 30/60/90-day review schedule.',
         'gist': 'Acceptance criteria prove the feature works; baseline and post-launch evidence prove whether it created business value.'
-      }
+      },
       'EXCEL_0': {
         'focus': 'Workbook design and source-data discipline for finance: build a clean structure before adding formulas.',
         'concept': 'A maintainable workbook separates five layers: raw input, cleaned data, calculations, validation checks and presentation. Keep the original source unchanged; use Excel Tables so formulas and references expand as rows are added. Use one row per transaction, one field per column, unique headers, consistent data types and explicit definitions for status, currency and reporting date. Avoid merged cells in source data and avoid embedding assumptions inside long formulas.',
