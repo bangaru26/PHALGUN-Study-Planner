@@ -705,8 +705,26 @@ class _LearningHomeState extends State<LearningHome> {
         'q1': {'q': 'Which acceptance criterion is strongest?', 'o': ['Make the process better', 'For a defined test case, the report reconciles to source within an agreed tolerance', 'Finish quickly'], 'a': 1, 'e': 'Observable, testable criteria make completion and control expectations unambiguous.'},
         'q2': {'q': 'What should a benefits tracker include?', 'o': ['Baseline, target, owner, evidence source and review date', 'Only the launch date', 'Only a projected saving with no assumptions'], 'a': 0, 'e': 'Benefits need a baseline and a repeatable measurement method to distinguish realised value from estimates.'},
       },
-      'EXCEL': {'q': 'What should be done before building a finance dashboard from a monthly extract?', 'o': ['Reconcile source totals and validate data quality', 'Hide missing rows', 'Add charts first and inspect later'], 'a': 0, 'e': 'A dashboard should be built on validated, reconciled data.'},
-      'EXCEL': {'q': 'What is the safest way to handle a lookup key that appears twice in the supplier master?', 'o': ['Accept the first returned value without review', 'Flag the duplicate key and resolve the master-data issue', 'Delete the invoice'], 'a': 1, 'e': 'Duplicate keys can make lookup results ambiguous and must be investigated.'},
+      'EXCEL_0': {
+        'q1': {'q': 'A monthly source extract does not agree to the workbook total. What should happen before analysis?', 'o': ['Publish the dashboard and explain later', 'Investigate row counts, filters, duplicates, data types and source control totals', 'Overwrite the source total'], 'a': 1, 'e': 'Source completeness and control totals must be resolved before the workbook is used for decisions.'},
+        'q2': {'q': 'Which workbook structure best supports control and maintenance?', 'o': ['Mix raw data, formulas and charts in one unlabelled sheet', 'Separate raw input, calculations, checks and outputs with documented ownership', 'Hide all assumptions inside formulas'], 'a': 1, 'e': 'Separating workbook layers makes lineage, review and maintenance easier.'},
+      },
+      'EXCEL_1': {
+        'q1': {'q': 'An unpaid invoice has a blank due date. What should an ageing formula return?', 'o': ['A fabricated overdue-day value', 'A visible missing-date exception', 'Zero and no exception'], 'a': 1, 'e': 'A missing due date is a data-quality exception; silently treating it as current or overdue can mislead users.'},
+        'q2': {'q': 'When should IFERROR be used?', 'o': ['To hide every formula problem', 'To handle a known expected error path while preserving checks for unexpected data issues', 'To replace validation'], 'a': 1, 'e': 'IFERROR should not conceal broken keys, invalid inputs or unexpected calculation failures.'},
+      },
+      'EXCEL_2': {
+        'q1': {'q': 'A supplier lookup key appears twice in the master. What is the safest action?', 'o': ['Accept the first returned value without review', 'Flag the duplicate key and resolve the master-data issue', 'Delete the invoice'], 'a': 1, 'e': 'Duplicate keys make lookup results ambiguous and must be investigated before using the returned value.'},
+        'q2': {'q': 'What should happen when an exact-match lookup finds no supplier ID?', 'o': ['Return a guessed supplier', 'Keep a visible unmatched exception for review', 'Use an approximate match automatically'], 'a': 1, 'e': 'Unmatched keys should remain visible and be resolved through an authorised mapping process.'},
+      },
+      'EXCEL_3': {
+        'q1': {'q': 'What is the difference between Append and Merge in Power Query?', 'o': ['Append stacks compatible rows; Merge joins tables using keys', 'Both always remove duplicates', 'Merge only changes cell colours'], 'a': 0, 'e': 'Append combines row sets, while Merge joins records using selected key columns and a join type.'},
+        'q2': {'q': 'A Power Query refresh completes successfully. What validation is still required?', 'o': ['No checks are needed', 'Reconcile row counts, distinct keys, unmatched records and monetary totals', 'Delete the source files'], 'a': 1, 'e': 'A technically successful refresh does not prove business completeness or correctness.'},
+      },
+      'EXCEL_4': {
+        'q1': {'q': 'What should a finance dashboard KPI definition include?', 'o': ['Only a chart title', 'Numerator, denominator, period, source, filters and accountable owner', 'A colour preference'], 'a': 1, 'e': 'A KPI must be reproducible and interpretable; its definition and source must be explicit.'},
+        'q2': {'q': 'Ageing bucket totals do not equal the reconciled open balance. What should the analyst do?', 'o': ['Adjust a bucket to force agreement', 'Investigate inclusion rules, missing dates, credits and duplicates before release', 'Hide the difference'], 'a': 1, 'e': 'A mismatch is an exception to explain, not a number to conceal or plug.'},
+      },
     };
     final chapterAssessment = chapterAssessments['${path.code}_${selectedChapter}'];
     if (chapterAssessment != null) {
