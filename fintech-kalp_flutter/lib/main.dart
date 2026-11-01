@@ -657,6 +657,78 @@ class _LearningHomeState extends State<LearningHome> {
       'CHANGE': {'q': 'Why measure a baseline before changing a process?', 'o': ['To avoid defining a target', 'To make the project longer', 'To compare outcomes and test whether the change helped'], 'a': 2, 'e': 'A credible baseline supports measurable outcomes and helps distinguish real improvement from assumption.'},
     }[path.code]!;
     final chapterAssessments = <String, Map<String, Map<String, Object>>>{
+      'CORE_0': {
+        'q1': {'q': 'Which statement reports assets, liabilities and equity at a specific date?', 'o': ['Income statement', 'Balance sheet', 'Cash-flow statement'], 'a': 1, 'e': 'The balance sheet presents the entity’s financial position at the reporting date.'},
+        'q2': {'q': 'A company records revenue before collecting cash. Under accrual accounting, what is normally recognised?', 'o': ['Revenue and a receivable, subject to the applicable recognition criteria', 'Cash received', 'A supplier liability'], 'a': 0, 'e': 'Accrual accounting recognises qualifying revenue when earned, not simply when cash is collected.'},
+      },
+      'CORE_1': {
+        'q1': {'q': 'A business has DIO of 42 days, DSO of 38 days and DPO of 30 days. What is its cash conversion cycle?', 'o': ['50 days', '110 days', '26 days'], 'a': 0, 'e': 'CCC = DIO + DSO − DPO = 42 + 38 − 30 = 50 days.'},
+        'q2': {'q': 'Which is a sustainable way to improve working capital?', 'o': ['Delay all suppliers beyond agreed terms', 'Resolve billing disputes and improve collection and inventory planning', 'Stop recording slow-moving inventory'], 'a': 1, 'e': 'Sustainable improvement addresses operational causes while protecting supplier terms, service and reporting integrity.'},
+      },
+      'CORE_2': {
+        'q1': {'q': 'What makes a reconciliation control effective?', 'o': ['A difference is posted to suspense without review', 'Independent sources, an owner, evidence, reviewer and timely resolution', 'Only a monthly tick mark'], 'a': 1, 'e': 'A reconciliation needs traceable evidence, accountable preparation and review, and resolution of differences.'},
+        'q2': {'q': 'Why is segregation of duties important in supplier payments?', 'o': ['It lets one person create suppliers and release payments unchecked', 'It separates incompatible activities and reduces unauthorised or undetected errors', 'It removes the need for approvals'], 'a': 1, 'e': 'Separating supplier setup, invoice approval and payment release reduces opportunities for error or fraud.'},
+      },
+      'OPS_0': {
+        'q1': {'q': 'In a three-way match, which records are compared?', 'o': ['Invoice, purchase order and goods/service receipt', 'Bank statement, payroll and budget', 'Sales order, customer receipt and tax return'], 'a': 0, 'e': 'Three-way matching checks invoice details against the PO and evidence that goods or services were received.'},
+        'q2': {'q': 'An invoice quantity exceeds the recorded receipt. What should AP do?', 'o': ['Release payment to meet the SLA', 'Hold the exception and obtain authorised receipt or invoice correction evidence', 'Change the receipt quantity without evidence'], 'a': 1, 'e': 'Quantity differences require evidence and resolution by the accountable receiving or procurement owner.'},
+      },
+      'OPS_1': {
+        'q1': {'q': 'A customer payment appears on the bank statement but is not allocated to an invoice. What is this commonly called?', 'o': ['Unapplied cash', 'A supplier prepayment', 'A fixed asset'], 'a': 0, 'e': 'Cash received but not matched to the correct customer or invoice remains unapplied until supported allocation.'},
+        'q2': {'q': 'Which collection action is most appropriate for a genuinely disputed invoice?', 'o': ['Send identical reminders without reviewing the dispute', 'Route the documented dispute to its resolver while tracking the balance and next action', 'Write off the balance immediately'], 'a': 1, 'e': 'Disputes need evidence-based resolution; standard collection activity alone will not fix billing or delivery issues.'},
+      },
+      'OPS_2': {
+        'q1': {'q': 'What is the purpose of an accrual at period end?', 'o': ['Recognise an expense incurred in the period but not yet invoiced, when criteria are met', 'Delay all expenses until payment', 'Create cash in the bank'], 'a': 0, 'e': 'Accruals support period cut-off by recognising obligations and expenses in the appropriate reporting period.'},
+        'q2': {'q': 'How should an aged reconciliation item be managed?', 'o': ['Leave it indefinitely in suspense', 'Assign an owner, evidence, target resolution date and escalation', 'Delete it from the reconciliation'], 'a': 1, 'e': 'Unresolved items need ownership, investigation and escalation; suspense is not a permanent parking place.'},
+      },
+      'DATA_0': {
+        'q1': {'q': 'Before calculating AP ageing, what must be defined?', 'o': ['A report date, data grain, open-item rule and ageing bucket boundaries', 'Only the chart colours', 'A random date in each formula'], 'a': 0, 'e': 'Explicit definitions make the report repeatable and prevent inconsistent classification.'},
+        'q2': {'q': 'Which formula is suited to summing invoice amounts for a specified supplier and status?', 'o': ['SUMIFS', 'CONCAT', 'LEFT'], 'a': 0, 'e': 'SUMIFS adds values that meet multiple criteria, such as supplier and open status.'},
+      },
+      'DATA_1': {
+        'q1': {'q': 'In Power Query, what does Append do?', 'o': ['Stacks compatible tables vertically', 'Joins tables using a key', 'Creates a chart'], 'a': 0, 'e': 'Append combines rows from compatible tables; Merge joins tables based on selected columns.'},
+        'q2': {'q': 'Why retain an unmatched supplier mapping query?', 'o': ['To hide data-quality issues', 'To make unmapped records visible for investigation and ownership', 'To automatically invent supplier IDs'], 'a': 1, 'e': 'Visible unmatched records prevent silent data loss and support controlled master-data correction.'},
+      },
+      'DATA_2': {
+        'q1': {'q': 'What does a fact table normally contain in a star schema?', 'o': ['Events or transactions at a defined grain with measures and keys', 'Only report titles', 'Unrelated narrative notes'], 'a': 0, 'e': 'Fact tables hold measurable events at a declared grain and link to descriptive dimensions.'},
+        'q2': {'q': 'A KPI has no defined denominator. What is the main risk?', 'o': ['The KPI is fully reproducible', 'Users may calculate and interpret the rate inconsistently', 'The dashboard refreshes faster'], 'a': 1, 'e': 'A KPI needs a defined numerator, denominator, period and inclusion rules to be comparable.'},
+      },
+      'AI_0': {
+        'q1': {'q': 'What should happen before selecting an automation tool?', 'o': ['Map and measure the current process, including exceptions', 'Automate every step immediately', 'Remove all approval controls'], 'a': 0, 'e': 'Process understanding and baseline measures reveal whether work is stable and suitable for automation.'},
+        'q2': {'q': 'Which task is generally a better RPA candidate?', 'o': ['A stable, repetitive task with clear rules and predictable inputs', 'A high-judgement decision with changing rules', 'An undefined process with frequent exceptions'], 'a': 0, 'e': 'RPA is most suitable for stable, repeatable tasks; judgement-heavy work needs appropriate human oversight.'},
+      },
+      'AI_1': {
+        'q1': {'q': 'What does OCR do in invoice processing?', 'o': ['Converts image text into machine-readable text', 'Approves supplier payments', 'Reconciles the bank automatically'], 'a': 0, 'e': 'OCR extracts text; separate validation is needed to confirm fields and transaction legitimacy.'},
+        'q2': {'q': 'An extracted invoice amount has low confidence. What is the correct control?', 'o': ['Auto-approve it', 'Route it with source evidence to an authorised reviewer', 'Replace it with the average invoice amount'], 'a': 1, 'e': 'Low-confidence fields require controlled human review and a traceable decision.'},
+      },
+      'AI_2': {
+        'q1': {'q': 'An AI model flags an invoice as suspicious. What does the flag mean?', 'o': ['Fraud is proven', 'It is a signal requiring evidence-based review', 'Payment must be released'], 'a': 1, 'e': 'An anomaly score is not proof. Investigators must examine evidence and follow approved procedures.'},
+        'q2': {'q': 'Which practice is appropriate when using AI with finance data?', 'o': ['Paste confidential records into any public tool', 'Use approved systems, least-privilege access and documented human oversight', 'Disable logs to protect privacy'], 'a': 1, 'e': 'Finance data requires approved handling, access controls, transparency and accountable review.'},
+      },
+      'TECH_0': {
+        'q1': {'q': 'Which event provides the strongest evidence that a payment settled?', 'o': ['A front-end message saying accepted', 'Independent processor/settlement and bank evidence matched to transaction IDs', 'A user screenshot'], 'a': 1, 'e': 'Acceptance and settlement are different states; independent records establish the final outcome.'},
+        'q2': {'q': 'Why should payment reconciliation compare transaction IDs as well as totals?', 'o': ['Equal totals can conceal missing and duplicate transactions', 'IDs are never useful', 'Totals are always sufficient'], 'a': 0, 'e': 'A total can balance despite offsetting omissions and duplicates; item-level matching is essential.'},
+      },
+      'TECH_1': {
+        'q1': {'q': 'What is the main purpose of an API contract?', 'o': ['Define request/response structure and expected behaviour between systems', 'Store employee passwords in code', 'Replace all accounting controls'], 'a': 0, 'e': 'A contract documents the interface, fields, errors and expected behaviour for reliable integration.'},
+        'q2': {'q': 'What does an idempotency key help prevent?', 'o': ['Duplicate financial effects from safe retries of the same operation', 'Unauthorised access by itself', 'The need for reconciliation'], 'a': 0, 'e': 'A supported idempotency key lets a provider recognise retries as the same intended operation.'},
+      },
+      'TECH_2': {
+        'q1': {'q': 'A supplier emails a new bank account. What is the safest verification approach?', 'o': ['Use the phone number in the email to confirm', 'Verify through a previously trusted independent channel and maker-checker controls', 'Update immediately to avoid delay'], 'a': 1, 'e': 'Independent verification reduces payment-redirection risk; the change should be authorised and evidenced.'},
+        'q2': {'q': 'Which access principle should apply to payment systems?', 'o': ['Give every user administrator rights', 'Least privilege with timely access review and removal', 'Share one team login'], 'a': 1, 'e': 'Least privilege limits the impact of compromised or inappropriate access.'},
+      },
+      'CHANGE_0': {
+        'q1': {'q': 'What is the purpose of a current-state process map?', 'o': ['Show actual steps, handoffs, queues, decisions and controls', 'Describe only the ideal future state', 'Replace evidence with assumptions'], 'a': 0, 'e': 'A current-state map helps teams understand how work actually flows and where delays or risks arise.'},
+        'q2': {'q': 'A team suspects AP staff cause most delays. What should it do first?', 'o': ['Assign blame', 'Sample cases and analyse timestamps and exception reasons', 'Automate without investigation'], 'a': 1, 'e': 'Evidence-based root-cause analysis tests assumptions and may reveal upstream blockers.'},
+      },
+      'CHANGE_1': {
+        'q1': {'q': 'Which is the strongest user story?', 'o': ['Automate AP', 'As an AP lead, I want blocked invoices grouped by cause so I can assign resolution actions', 'Make the dashboard attractive'], 'a': 1, 'e': 'A useful story identifies the user, capability and business value.'},
+        'q2': {'q': 'Which acceptance criterion is testable?', 'o': ['The report should be better', 'Every in-scope invoice appears once and the total reconciles to the source', 'Users should like it'], 'a': 1, 'e': 'Observable pass/fail conditions make the expected behaviour independently verifiable.'},
+      },
+      'CHANGE_2': {
+        'q1': {'q': 'Which is an outcome rather than a delivery output?', 'o': ['A dashboard was released', 'Median exception resolution time fell against a validated baseline', 'A training meeting was held'], 'a': 1, 'e': 'An outcome measures the effect of the change, not merely the activity or artefact delivered.'},
+        'q2': {'q': 'What should a benefits tracker record?', 'o': ['Baseline, target, metric definition, owner, source and review date', 'Only an estimated saving', 'Only the project launch date'], 'a': 0, 'e': 'Benefits require transparent definitions and evidence to distinguish realised value from projections.'},
+      },
       'CORE_3': {
         'q1': {'q': 'Revenue rises 20%, but operating margin falls. What is the best conclusion?', 'o': ['The business is definitely healthier', 'Investigate cost, mix, pricing and cash movements before concluding', 'Ignore the margin change'], 'a': 1, 'e': 'Growth with a falling margin is a signal to investigate drivers; it does not identify the cause by itself.'},
         'q2': {'q': 'Which is a useful first step in ratio analysis?', 'o': ['Compare inconsistent periods', 'Check period, scope, mapping and denominator consistency', 'Assume every industry has the same healthy ratio'], 'a': 1, 'e': 'Comparable inputs and clear definitions are necessary before ratios can be interpreted.'},
