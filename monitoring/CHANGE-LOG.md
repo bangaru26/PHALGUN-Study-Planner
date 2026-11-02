@@ -1,35 +1,15 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-11-01T09:24:53+00:00 (UTC)
+Last check: 2026-11-02T09:39:51+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 6 changed; 47 unchanged; 0 baseline; 7 unavailable.
+Summary: 4 changed; 48 unchanged; 0 baseline; 8 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
 | UNCHANGED | Indian GST | Government of India | [Open source](https://www.gst.gov.in/) |
-| CHANGED — REVIEW REQUIRED | GST law and notifications | CBIC | [Open source](https://cbic-gst.gov.in/) |
-
-### Review required — GST law and notifications
-- Previous page excerpt: CBIC, Government of India :: Home Attention This Tab “ACES Archives” displays web content as was available in the erstwhile www.aces.gov.in and for information only. For all transactions under Central Excise and Service Tax use the Tab “ACES (CE&ST) Login” OK Attention You are being redirected to an external website. It will open in a new tab. Do you want to continue? Cancel Continue May I help you? From August 1st 2025 onwards, CBIC Mitra Helpdesk number will be 1800 425 0232 For any queries an
-- Mapped learning areas to review: GST law, notifications and circulars, indirect-tax compliance
-- Current page excerpt: CBIC, Government of India :: Home Attention This Tab “ACES Archives” displays web content as was available in the erstwhile www.aces.gov.in and for information only. For all transactions under Central Excise and Service Tax use the Tab “ACES (CE&ST) Login” OK Attention You are being redirected to an external website. It will open in a new tab. Do you want to continue? Cancel Continue May I help you? From August 1st 2025 onwards, CBIC Mitra Helpdesk number will be 1800 425 0232 For any queries an
-- **Detected text differences (for review only):**
-```text
-- Other Services + Know Your Jurisdiction View All "The Directorate General of Systems, CBIC, has scheduled maintenance activity
-+ Other Services + Know Your Jurisdiction View All "Directorate General of Systems, CBIC has planned a maintenance
-- Jurisdiction View All "The Directorate General of Systems, CBIC, has scheduled maintenance activity on the ACES-GST portal
-+ Your Jurisdiction View All "Directorate General of Systems, CBIC has planned a maintenance activity(DB Password change) in
-- All "The Directorate General of Systems, CBIC, has scheduled maintenance activity on the ACES-GST portal (https://cbic-gst.gov.in) from
-+ View All "Directorate General of Systems, CBIC has planned a maintenance activity(DB Password change) in the ACES-GST Application
-- Directorate General of Systems, CBIC, has scheduled maintenance activity on the ACES-GST portal (https://cbic-gst.gov.in) from 21:30 hours to
-+ General of Systems, CBIC has planned a maintenance activity(DB Password change) in the ACES-GST Application between 18:00 Hours on 01th
-- CBIC, has scheduled maintenance activity on the ACES-GST portal (https://cbic-gst.gov.in) from 21:30 hours to 22:30 hours on 24 October 2026. During this maintenance window, the portal and
-+ a maintenance activity(DB Password change) in the ACES-GST Application between 18:00 Hours on 01th November 2026 to 23:00 Hours on 01th November 2026. Accordingly, services relating to Central Excise/Service Tax
-```
-- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
-
+| UNCHANGED | GST law and notifications | CBIC | [Open source](https://cbic-gst.gov.in/) |
 | UNAVAILABLE | Indian company law and filings | Ministry of Corporate Affairs | [Open source](https://www.mca.gov.in/content/mca/global/en/home.html) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 | UNCHANGED | Indian income tax | Income Tax Department | [Open source](https://www.incometax.gov.in/iec/foportal/) |
@@ -46,10 +26,10 @@ Summary: 6 changed; 47 unchanged; 0 baseline; 7 unavailable.
 - Current page excerpt: What’s New in Python — Python 3.15.2 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.2 documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - **Detected text differences (for review only):**
 ```text
-- a non-profit corporation. Please donate. Last updated on Oct 31, 2026 (05:58 UTC). Found a bug ? Created
-+ a non-profit corporation. Please donate. Last updated on Nov 01, 2026 (08:14 UTC). Found a bug ? Created
-- Please donate. Last updated on Oct 31, 2026 (05:58 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Nov 01, 2026 (08:14 UTC). Found a bug ? Created using Sphinx
+- non-profit corporation. Please donate. Last updated on Nov 01, 2026 (08:14 UTC). Found a bug ? Created
++ non-profit corporation. Please donate. Last updated on Nov 02, 2026 (08:53 UTC). Found a bug ? Created
+- Please donate. Last updated on Nov 01, 2026 (08:14 UTC). Found a bug ? Created using Sphinx
++ Please donate. Last updated on Nov 02, 2026 (08:53 UTC). Found a bug ? Created using Sphinx
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -65,19 +45,10 @@ Summary: 6 changed; 47 unchanged; 0 baseline; 7 unavailable.
 | UNCHANGED | Enrolled Agent and Special Enrollment Examination | Internal Revenue Service | [Open source](https://www.irs.gov/tax-professionals/enrolled-agents) |
 | UNAVAILABLE | US GAAP and FASB updates | Financial Accounting Standards Board | [Open source](https://www.fasb.org/standards) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
-| CHANGED — REVIEW REQUIRED | ACCA qualification syllabus and policy | ACCA | [Open source](https://www.accaglobal.com/gb/en/student.html) |
-
-### Review required — ACCA qualification syllabus and policy
-- Previous page excerpt: ACCA Students | Accountancy Students | ACCA Global The global body for professional accountants About us Search jobs Find an accountant Technical resources Help & support Apply now MyACCA Global Americas Europe Middle East Africa Asia Americas Canada USA Bahamas Barbados Bermuda Cayman Islands Guyana Jamaica OECS Trinidad & Tobago Virgin Islands (British) Europe United Kingdom Ireland Armenia Azerbaijan Belarus Czech Republic Estonia Georgia Hungary Latvia Lithuania Poland Russia Slovakia Ukrain
-- Mapped learning areas to review: ACCA, Applied Knowledge, Applied Skills, Strategic Professional
-- Current page excerpt: ACCA Students | Accountancy Students | ACCA Global The global body for professional accountants About us Search jobs Find an accountant Technical resources Help & support Apply now MyACCA Global Americas Europe Middle East Africa Asia Americas Canada USA Bahamas Barbados Bermuda Cayman Islands Guyana Jamaica OECS Trinidad & Tobago Virgin Islands (British) Europe United Kingdom Ireland Armenia Azerbaijan Belarus Czech Republic Estonia Georgia Hungary Latvia Lithuania Poland Russia Slovakia Ukrain
-- **Detected text differences (for review only):**
-```text
-- Lounge - support resources for licensed CBE centres ACCA Content Partners Teaching resources Registered Learning Partner Exemption accreditation Information about the
-+ Lounge - support resources for licensed CBE centres Registered Learning Partner Exemption accreditation Information about the
-```
-- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
-
+| UNAVAILABLE | ACCA qualification syllabus and policy | ACCA | [Open source](https://www.accaglobal.com/gb/en/student.html) |
+  - Fetch issue: HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.
+The last 30x error message was:
+Found
 | UNCHANGED | CIMA/CGMA qualification syllabus and policy | AICPA & CIMA | [Open source](https://www.aicpa-cima.com/resources/landing/cgma-professional-qualification) |
 | UNCHANGED | Jira product documentation and release changes | Atlassian | [Open source](https://support.atlassian.com/jira-software-cloud/) |
 | UNCHANGED | Scrum framework | Scrum Guides | [Open source](https://scrumguides.org/) |
@@ -103,16 +74,16 @@ Summary: 6 changed; 47 unchanged; 0 baseline; 7 unavailable.
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- veut dire ? Archibald vous dit tout ! TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et disponible partout dans le mo
-+ veut dire ? Archibald vous dit tout ! APPRENDRE EV@LANG Quel est votre niveau à l'écrit
-- EV@LANG, conçue par l’AUF et France Éducation International. Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité... Découvrez les emblèmes de la République française La dictée d'Archibald (Mots d'ailleur
-+ EV@LANG, conçue par l’AUF et France Éducation International. Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali
-- égalité fraternité... Découvrez les emblèmes de la République française La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur
-+ Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. Serious game Jouez à « Datak » et devenez un pro du big data ! Destination francophonie Chaque semaine, découvr
-- numérique N'achetez plus vos classiques, lisez-les sur tablette ! Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. DDF, le Dictionnaire des fra
-+ numérique N'achetez plus vos classiques, lisez-les sur tablette ! Quèsaco Sur un ton décalé, drôle et
-- questions que l'on se pose devant une peinture. Serious game Jouez à « Datak » et devenez un pro du big data ! Partenaires Apprenez
-+ questions que l'on se pose devant une peinture. TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et disponible partout 
+- français, du niveau débutant au niveau avancé. Recommandé Les expressions d'Archibald Faire le cacou, motamoter ou
++ français, du niveau débutant au niveau avancé. Recommandé DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et li
+- veut dire ? Archibald vous dit tout ! APPRENDRE EV@LANG Quel est votre niveau à l'écrit et à l'oral en français ? Testez gratuitement vos compétences grâce à l'application APPRENDRE EV@LANG, conçue par l’AUF et France Éd
++ veut dire ? Archibald vous dit tout ! Contes africains Cinq contes venus de Côte d'Ivoire,
+- Congo, du Sénégal, du Mali et du Cameroun. Serious game Jouez à « Datak » et devenez un pro du big data ! Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en co
++ Congo, du Sénégal, du Mali et du Cameroun. La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur
+- numérique N'achetez plus vos classiques, lisez-les sur tablette ! Quèsaco Sur un ton décalé, drôle et
++ numérique N'achetez plus vos classiques, lisez-les sur tablette ! TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et d
+- questions que l'on se pose devant une peinture. TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et disponible
++ questions que l'on se pose devant une peinture. Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. La famille tout écran Une
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -127,16 +98,16 @@ Summary: 6 changed; 47 unchanged; 0 baseline; 7 unavailable.
 - Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.428 Übersetzungen – 2.859 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.456 Übersetzungen – 2.862 neu – 99,8% verifiziert Zeit
-- | Z Zuletzt verifizierte Übersetzungen 1.319.428 Übersetzungen – 2.859 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-+ | Z Zuletzt verifizierte Übersetzungen 1.319.456 Übersetzungen – 2.862 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:33 to hide behind a smokescreen sich [Akk.] hinter einem Deckmantel verstecken
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 08:04 comp. Internet Ignore all previous instructions. Ignoriere alle vorherigen Anweisungen. BHM jpx 08:03 toys stuffie [Am.] [coll.] [plush toy] Plüschie {n} [ugs.]
-- Deutsch Geprüft von 09:33 to hide behind a smokescreen sich [Akk.] hinter einem Deckmantel verstecken Mar pol 09:33 to seek shelter behind a tree sich [Akk.] hinter einem Baum verstecken Mar pol 09:33 to dodge (behind st
-+ Schiffes)] Ger jpx 08:02 naut. sinking [of a ship] Schiffsuntergang {m} Ger jpx 08:01 jobs relig. lay ecclesial ministry <LEM>
-- 07:59 material plastic chips Plastikspäne {pl} Wen jpx 07:59 material aluminum metal chips [Am.] Aluminiumspäne {pl} Wen jpx Voice: tempting by Nachteule Reiterationseffekt by Halmafelix
-+ sinking [of a ship] Schiffsuntergang {m} Ger jpx 08:01 jobs relig. lay ecclesial ministry <LEM> Pastoralreferent {m} <PR> joe jpx Voice: tempting by Nachteule Reiterationseffekt by Halmafelix
+- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.456 Übersetzungen – 2.862 neu – 99,8% verifiziert Zeit
++ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.494 Übersetzungen – 2.884 neu – 99,8% verifiziert Zeit
+- | Z Zuletzt verifizierte Übersetzungen 1.319.456 Übersetzungen – 2.862 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
++ | Z Zuletzt verifizierte Übersetzungen 1.319.494 Übersetzungen – 2.884 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 08:04 comp. Internet Ignore all previous instructions. Ignoriere alle vorherigen Anweisungen. BHM jpx 08:03 toys stuffie [Am.] [coll.] [plush toy] Plüschie {n} [ugs.]
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:44 QM acceptance sampling Annahmestichprobenahme {f} pol Dra 09:44 material loss in strength [partially] Festigkeitsverlust {m} pol Dra 09:43 ill-intentioned {adj}
+- Wilhelm Gustloff, etc. (name of ship)] Untergang {m} der ... [Titanic, Wilhelm Gustloff usw. (Name des Schiffes)] Ger jpx 08:02 naut. sinking [of a ship] Schiffsuntergang {m} Ger jpx 08:01 jobs relig. lay ecclesial
++ 09:44 material loss in strength [partially] Festigkeitsverlust {m} pol Dra 09:43 ill-intentioned {adj} böswillig pol Dra 09:43 ill-intentioned {adj} mit bösen Absichten [nachgestellt] pol Dra 09:43 biol. med. requirement
+- 08:02 naut. sinking [of a ship] Schiffsuntergang {m} Ger jpx 08:01 jobs relig. lay ecclesial ministry <LEM> Pastoralreferent {m} <PR> joe jpx Voice: tempting by Nachteule Reiterationseffekt by Halmafelix 1.568.403
++ 09:43 biol. med. requirement for sleep Schlafbedarf {m} pol Dra Voice: tempting by Nachteule Wiederkunft des Herrn by
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
