@@ -2,10 +2,16 @@
 
 A free, mobile-friendly study desk for GFPA / PHALGUN learning.
 
+## Fintech Kalp — learner coursebook
+**Start the job-ready learning course:** [Fintech Kalp Learner Coursebook](./FINTECH_KALP_LEARNER_COURSEBOOK.md). It includes teachable foundations and practical labs across accounting, P2P/O2C/R2R, Excel formula dictionary and VBA, Power Query, FP&A, SQL, Power BI/DAX, Python, ERP/SAP FICO, IFRS awareness, treasury, controls, AI safety, capstone and job readiness. Save your work in a portfolio and verify current standards/rules against authoritative sources.
+
 ## PHALGUN lifelong-learning master catalogue
 Open the [PHALGUN Lifelong Learning Library](./phalgun-curriculum.html). It consolidates the agreed curriculum into searchable domains and course pathways, with GFPA retained as the dedicated Finance Academy. It includes finance and career relaunch; CMA USA; IFRS; Advanced Excel; Data Analytics; Power BI; SQL; Python; SAP FICO; ERP; RPA; AI for Finance; placement and job readiness; mathematics, abacus and Vedic mathematics; science; languages and Teeline; computing and AI literacy; creativity; practical life skills; personal finance; Indic scriptures and cultural literacy; nature; research; critical thinking; and teaching/mentoring.
 
-## GFPA professional risk, assurance and information-security pathways\nSee [IRM progressive risk-management learning, CIA, CRMA and CISM knowledge pathways](./gfpa-risk-assurance-cyber-certifications.md). These are curriculum specifications, not official certification courses; syllabus versions and eligibility must be checked against the awarding bodies.\n\n## Open the app
+## GFPA professional risk, assurance and information-security pathways
+See [IRM progressive risk-management learning, CIA, CRMA and CISM knowledge pathways](./gfpa-risk-assurance-cyber-certifications.md). These are curriculum specifications, not official certification courses; syllabus versions and eligibility must be checked against the awarding bodies.
+
+## Open the app
 After GitHub Pages deployment, the app is intended to be available at:
 https://bangaru26.github.io/PHALGUN-Study-Planner/
 
