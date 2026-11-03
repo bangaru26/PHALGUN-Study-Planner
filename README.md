@@ -14,6 +14,9 @@ See [IRM progressive risk-management learning, CIA, CRMA and CISM knowledge path
 ## Fintech Kalp software readiness
 See the [Software & System Requirements tab specification](./FINTECH_KALP_SOFTWARE_SYSTEM_REQUIREMENTS.md) for hardware/software readiness, vendor-source verification, tool coverage, compatibility, licensing, data-handling and release acceptance criteria.
 
+### Software & System Requirements
+Open the [interactive learner readiness guide](./software-system-requirements.html) for hardware recommendations, official software prerequisites, Android/Windows/PWA compatibility, installation references, privacy and license cautions, and a locally saved readiness checklist. This is currently a companion page; it is not yet integrated as a native Flutter navigation tab.
+
 ## Open the app
 After GitHub Pages deployment, the app is intended to be available at:
 https://bangaru26.github.io/PHALGUN-Study-Planner/
