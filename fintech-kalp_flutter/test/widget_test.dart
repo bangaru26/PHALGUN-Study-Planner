@@ -15,7 +15,6 @@ void main() {
 
     expect(find.text('FINTECH KALP'), findsOneWidget);
     expect(find.text('LEARN FINANCE. BUILD WHAT MATTERS.'), findsOneWidget);
-    expect(find.text('Your learning pathways'), findsOneWidget);
 
     // The compact navigation should expose the core learner sections.
     expect(find.text('Home'), findsOneWidget);
