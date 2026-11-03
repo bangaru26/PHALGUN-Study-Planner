@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-11-02T09:39:51+00:00 (UTC)
+Last check: 2026-11-03T09:42:57+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 4 changed; 48 unchanged; 0 baseline; 8 unavailable.
+Summary: 7 changed; 45 unchanged; 0 baseline; 8 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -26,10 +26,12 @@ Summary: 4 changed; 48 unchanged; 0 baseline; 8 unavailable.
 - Current page excerpt: What’s New in Python — Python 3.15.2 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.2 documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - **Detected text differences (for review only):**
 ```text
-- non-profit corporation. Please donate. Last updated on Nov 01, 2026 (08:14 UTC). Found a bug ? Created
-+ non-profit corporation. Please donate. Last updated on Nov 02, 2026 (08:53 UTC). Found a bug ? Created
-- Please donate. Last updated on Nov 01, 2026 (08:14 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Nov 02, 2026 (08:53 UTC). Found a bug ? Created using Sphinx
+- non-profit corporation. Please donate. Last updated on Nov 02, 2026 (08:53 UTC). Found a bug ? Created
++ non-profit corporation. Please donate. Last updated on Nov 03, 2026 (09:03 UTC). Found a bug ? Created
+- Please donate. Last updated on Nov 02, 2026 (08:53 UTC). Found a bug ? Created using Sphinx
++ Please donate. Last updated on Nov 03, 2026 (09:03 UTC). Found a bug ? Created using Sphinx
+- UTC). Found a bug ? Created using Sphinx 8.2.3.
++ UTC). Found a bug ? Created using Sphinx 9.1.1.
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -37,7 +39,19 @@ Summary: 4 changed; 48 unchanged; 0 baseline; 8 unavailable.
 | UNCHANGED | SAP S/4HANA and SAP FICO | SAP Help Portal | [Open source](https://help.sap.com/) |
 | UNCHANGED | US financial reporting and filings | US SEC | [Open source](https://www.sec.gov/edgar/search/) |
 | UNCHANGED | Income-tax Act, Rules and CBDT notifications | Income Tax Department / CBDT | [Open source](https://www.incometaxindia.gov.in/notifications) |
-| UNCHANGED | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
+| CHANGED — REVIEW REQUIRED | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
+
+### Review required — Indian accounting standards and implementation guidance
+- Previous page excerpt: ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St
+- Mapped learning areas to review: Indian Accounting Standards, IFRS/Ind AS, financial reporting and audit
+- Current page excerpt: ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St
+- **Detected text differences (for review only):**
+```text
+- Vishal Doshi Vice-Chairman, Accounting Standards Board Forthcoming Events Webinar on "Consequential Amendments, Transition and Implementation Roadmap" scheduled on 02.11.26 from 3:00 PM - 5:00 PM. Launch of 'Certificate 
++ Vishal Doshi Vice-Chairman, Accounting Standards Board Forthcoming Events Launch of 'Certificate Course on Indian Accounting Standards
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNCHANGED | Indian Accounting Standards (Ind AS) compendium | ICAI | [Open source](https://www.icai.org/post/compendium-of-indian-accounting-standards) |
 | UNCHANGED | Ministry of Corporate Affairs public announcements | Press Information Bureau, Government of India | [Open source](https://www.pib.gov.in/newsite/pmreleases.aspx?lang=2&mincode=66&reg=48) |
 | UNCHANGED | US CPA exam and accounting profession | AICPA | [Open source](https://www.aicpa-cima.com/resources/landing/cpa-exam) |
@@ -54,7 +68,27 @@ Found
 | UNCHANGED | Scrum framework | Scrum Guides | [Open source](https://scrumguides.org/) |
 | UNCHANGED | Oracle Database documentation | Oracle | [Open source](https://docs.oracle.com/en/database/) |
 | UNCHANGED | BlackLine product documentation and release updates | BlackLine | [Open source](https://www.blackline.com/) |
-| UNCHANGED | RPA and UiPath documentation | UiPath | [Open source](https://docs.uipath.com/) |
+| CHANGED — REVIEW REQUIRED | RPA and UiPath documentation | UiPath | [Open source](https://docs.uipath.com/) |
+
+### Review required — RPA and UiPath documentation
+- Previous page excerpt: UiPath Documentation search Search ​ Language translate English expand_more ​ Sign in Learn about agentic automation and orchestration with UiPath Maestro Orchestrate and model agents, robots and people Agents Plan, build and deploy agents IXP Multi-modal data classification and extraction at scale Test Cloud Agentic testing for the enterprise Maestro Orchestrate AI agents, automations, and people across end-to-end processes, to deliver measurable outcomes Learn about Maestro Get started with Ui
+- Mapped learning areas to review: RPA, finance automation, workflow controls
+- Current page excerpt: UiPath Documentation search Search ​ Language translate English expand_more ​ Sign in Learn about agentic automation and orchestration with UiPath Maestro Orchestrate and model agents, robots and people Agents Plan, build and deploy agents IXP Multi-modal data classification and extraction at scale Test Cloud Agentic testing for the enterprise Maestro Orchestrate AI agents, automations, and people across end-to-end processes, to deliver measurable outcomes Learn about Maestro Get started with Ui
+- **Detected text differences (for review only):**
+```text
+- Solutions Insights Integration Service IXP M Maestro Orchestrate Marketplace MCP Servers O Orchestrator P Process Mining
++ Solutions Insights Integration Service IXP M Maestro Orchestrate Maestro Automate Marketplace MCP Servers O Orchestrator P Process Mining
+- MCP Servers O Orchestrator P Process Mining R Robot S SAP Foundation Add-on ScreenPlay SDK Solutions
++ MCP Servers O Orchestrator P Process Mining R Resolve Robot S SAP Foundation Add-on ScreenPlay SDK Solutions
+- UiPath for Coding Agents Connect Need help? Support Want to learn? UiPath Academy Have questions? UiPath
++ UiPath for Coding Agents Connect Need help? Support (opens in new window) Want to learn? UiPath Academy (opens in new
+- Need help? Support Want to learn? UiPath Academy Have questions? UiPath Forum Stay updated
++ in new window) Want to learn? UiPath Academy (opens in new window) Have questions? UiPath Forum (opens in new window)
+- to learn? UiPath Academy Have questions? UiPath Forum Stay updated
++ (opens in new window) Have questions? UiPath Forum (opens in new window) Stay updated
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNCHANGED | VBA and Office automation documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/office/vba/api/overview/) |
 | UNCHANGED | Tableau product documentation and release notes | Salesforce Tableau | [Open source](https://www.tableau.com/support/releases) |
 | UNAVAILABLE | Project management standards and resources | Project Management Institute | [Open source](https://www.pmi.org/standards) |
@@ -63,7 +97,23 @@ Found
 | UNCHANGED | Microsoft AI and Copilot product documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/copilot/) |
 | UNCHANGED | Python release and security updates | Python Software Foundation | [Open source](https://www.python.org/downloads/) |
 | UNCHANGED | PostgreSQL database documentation | PostgreSQL Global Development Group | [Open source](https://www.postgresql.org/docs/) |
-| UNCHANGED | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
+| CHANGED — REVIEW REQUIRED | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
+
+### Review required — German learning curriculum
+- Previous page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
+- Mapped learning areas to review: German, pronunciation, listening, conversation
+- Current page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
+- **Detected text differences (for review only):**
+```text
+- materials and the latest on German language teaching. We want to hear from you! DW would like to further develop its German-learning resources. We’d like to know: How do you learn German, and what do you think of this ne
++ materials and the latest on German language teaching. Find the right course for you A1, A2
+- For teachers New every day: our latest content Deutschland und seine Kolonialverbrechen Bis heute hat Deutschland
++ For teachers New every day: our latest content „Stolpersteine“ als Orte der Erinnerung Sie sollen Menschen zum Nachdenken bewegen: kleine Steine vor Gebäuden, aus denen vor allem Juden verschleppt wurden. C1 | 03.11.2026
+- wenn KI-Würmer das System angreifen? B1 | 23.10.2026 Warum manche Menschen ihren Sarg selbst bauen Viele Menschen denken nicht gern an den Tod. Doch die Arbeit am eigenen Sarg kann helfen, Berührungsängste abzubauen. B2 
++ wenn KI-Würmer das System angreifen? B1 | 23.10.2026 Nicos Weg now available in Kiswahili! The new
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNAVAILABLE | German learning exercises | Goethe-Institut | [Open source](https://www.goethe.de/en/spr/ueb.html) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 | CHANGED — REVIEW REQUIRED | French video-based learning | TV5MONDE | [Open source](https://apprendre.tv5monde.com/) |
@@ -74,16 +124,16 @@ Found
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- français, du niveau débutant au niveau avancé. Recommandé Les expressions d'Archibald Faire le cacou, motamoter ou
-+ français, du niveau débutant au niveau avancé. Recommandé DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et li
-- veut dire ? Archibald vous dit tout ! APPRENDRE EV@LANG Quel est votre niveau à l'écrit et à l'oral en français ? Testez gratuitement vos compétences grâce à l'application APPRENDRE EV@LANG, conçue par l’AUF et France Éd
-+ veut dire ? Archibald vous dit tout ! Contes africains Cinq contes venus de Côte d'Ivoire,
-- Congo, du Sénégal, du Mali et du Cameroun. Serious game Jouez à « Datak » et devenez un pro du big data ! Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en co
-+ Congo, du Sénégal, du Mali et du Cameroun. La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur
-- numérique N'achetez plus vos classiques, lisez-les sur tablette ! Quèsaco Sur un ton décalé, drôle et
-+ numérique N'achetez plus vos classiques, lisez-les sur tablette ! TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et d
-- questions que l'on se pose devant une peinture. TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et disponible
-+ questions que l'on se pose devant une peinture. Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. La famille tout écran Une
+- français, du niveau débutant au niveau avancé. Recommandé DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et li
++ français, du niveau débutant au niveau avancé. Recommandé La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle
+- hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! APPRENDRE EV@LANG Quel est votre niveau à l'écrit et à l'oral en français ? Testez gratuitement vos 
++ famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! Emblèmes France
+- à l'oral en français ? Testez gratuitement vos compétences grâce à l'application APPRENDRE EV@LANG, conçue par l’AUF et France Éducation International. Serious game Jouez à « Datak » et devenez un pro du big data ! Emblè
++ chez elle ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! Emblèmes France La Marseillaise, le coq, Liberté,
+- Congo, du Sénégal, du Mali et du Cameroun. La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! TV5MONDE+ Regardez d
++ Congo, du Sénégal, du Mali et du Cameroun. DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et libre. Quèsaco Su
+- une langue vivante et en constante évolution. La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans
++ une langue vivante et en constante évolution. La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! Emblèmes Belgique Le coq hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne..
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -95,19 +145,19 @@ Found
 ### Review required — German-English dictionary
 - Previous page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - Mapped learning areas to review: German-English dictionary, vocabulary, translations
-- Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
+- Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU UK NO FI SQ DA CS PT HR BG LA EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.456 Übersetzungen – 2.862 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.494 Übersetzungen – 2.884 neu – 99,8% verifiziert Zeit
-- | Z Zuletzt verifizierte Übersetzungen 1.319.456 Übersetzungen – 2.862 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-+ | Z Zuletzt verifizierte Übersetzungen 1.319.494 Übersetzungen – 2.884 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 08:04 comp. Internet Ignore all previous instructions. Ignoriere alle vorherigen Anweisungen. BHM jpx 08:03 toys stuffie [Am.] [coll.] [plush toy] Plüschie {n} [ugs.]
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:44 QM acceptance sampling Annahmestichprobenahme {f} pol Dra 09:44 material loss in strength [partially] Festigkeitsverlust {m} pol Dra 09:43 ill-intentioned {adj}
-- Wilhelm Gustloff, etc. (name of ship)] Untergang {m} der ... [Titanic, Wilhelm Gustloff usw. (Name des Schiffes)] Ger jpx 08:02 naut. sinking [of a ship] Schiffsuntergang {m} Ger jpx 08:01 jobs relig. lay ecclesial
-+ 09:44 material loss in strength [partially] Festigkeitsverlust {m} pol Dra 09:43 ill-intentioned {adj} böswillig pol Dra 09:43 ill-intentioned {adj} mit bösen Absichten [nachgestellt] pol Dra 09:43 biol. med. requirement
-- 08:02 naut. sinking [of a ship] Schiffsuntergang {m} Ger jpx 08:01 jobs relig. lay ecclesial ministry <LEM> Pastoralreferent {m} <PR> joe jpx Voice: tempting by Nachteule Reiterationseffekt by Halmafelix 1.568.403
-+ 09:43 biol. med. requirement for sleep Schlafbedarf {m} pol Dra Voice: tempting by Nachteule Wiederkunft des Herrn by
+- ES IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR
++ ES IS NL RO HU PL SV RU UK NO FI SQ DA CS PT HR BG
+- IS NL RO HU PL SV RU NO UK FI SQ DA CS PT HR BG LA
++ NL RO HU PL SV RU UK NO FI SQ DA CS PT HR BG LA
+- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.494 Übersetzungen – 2.884 neu – 99,8% verifiziert Zeit
++ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.512 Übersetzungen – 2.893 neu – 99,8% verifiziert Zeit
+- | Z Zuletzt verifizierte Übersetzungen 1.319.494 Übersetzungen – 2.884 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
++ | Z Zuletzt verifizierte Übersetzungen 1.319.512 Übersetzungen – 2.893 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:44 QM acceptance sampling Annahmestichprobenahme {f} pol Dra 09:44 material loss in strength [partially]
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:35 vibe shift [coll.] [a major change in the current zeitgeist] Vibe-Shift {m} [ugs.] pol jpx 07:34 lit. F Snow even down
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
