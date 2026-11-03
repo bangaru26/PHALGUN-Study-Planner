@@ -11,6 +11,9 @@ Open the [PHALGUN Lifelong Learning Library](./phalgun-curriculum.html). It cons
 ## GFPA professional risk, assurance and information-security pathways
 See [IRM progressive risk-management learning, CIA, CRMA and CISM knowledge pathways](./gfpa-risk-assurance-cyber-certifications.md). These are curriculum specifications, not official certification courses; syllabus versions and eligibility must be checked against the awarding bodies.
 
+## Fintech Kalp software readiness
+See the [Software & System Requirements tab specification](./FINTECH_KALP_SOFTWARE_SYSTEM_REQUIREMENTS.md) for hardware/software readiness, vendor-source verification, tool coverage, compatibility, licensing, data-handling and release acceptance criteria.
+
 ## Open the app
 After GitHub Pages deployment, the app is intended to be available at:
 https://bangaru26.github.io/PHALGUN-Study-Planner/
