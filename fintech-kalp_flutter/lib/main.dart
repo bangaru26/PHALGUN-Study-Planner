@@ -138,7 +138,7 @@ class _LearningHomeState extends State<LearningHome> {
   @override
   Widget build(BuildContext context) {
     final wide = MediaQuery.sizeOf(context).width >= 900;
-    final pages = [dashboard(), curriculum(), practice(), capstone(), resources()];
+    final pages = [dashboard(), curriculum(), practice(), capstone(), const SoftwareRequirementsPage(), resources()];
     return Scaffold(
       appBar: AppBar(title: const Row(children: [
         CircleAvatar(backgroundColor: ink, child: Icon(Icons.account_balance, color: Colors.white, size: 19)),
@@ -153,6 +153,7 @@ class _LearningHomeState extends State<LearningHome> {
           NavigationRailDestination(icon: Icon(Icons.menu_book_outlined), selectedIcon: Icon(Icons.menu_book), label: Text('Curriculum')),
           NavigationRailDestination(icon: Icon(Icons.fact_check_outlined), selectedIcon: Icon(Icons.fact_check), label: Text('Practice')),
           NavigationRailDestination(icon: Icon(Icons.rocket_launch_outlined), selectedIcon: Icon(Icons.rocket_launch), label: Text('Capstone')),
+          NavigationRailDestination(icon: Icon(Icons.computer_outlined), selectedIcon: Icon(Icons.computer), label: Text('Requirements')),
           NavigationRailDestination(icon: Icon(Icons.library_books_outlined), selectedIcon: Icon(Icons.library_books), label: Text('Resources')),
         ]),
         Expanded(child: IndexedStack(index: section, children: pages)),
@@ -162,6 +163,7 @@ class _LearningHomeState extends State<LearningHome> {
         NavigationDestination(icon: Icon(Icons.menu_book_outlined), label: 'Learn'),
         NavigationDestination(icon: Icon(Icons.fact_check_outlined), label: 'Practice'),
         NavigationDestination(icon: Icon(Icons.rocket_launch_outlined), label: 'Capstone'),
+        NavigationDestination(icon: Icon(Icons.computer_outlined), label: 'Requirements'),
         NavigationDestination(icon: Icon(Icons.library_books_outlined), label: 'Resources'),
       ]),
     );
@@ -1003,6 +1005,101 @@ class _LearningHomeState extends State<LearningHome> {
     const ResourceCard('The Scrum Guide', 'Official Scrum framework guide.', 'https://scrumguides.org/scrum-guide.html', Icons.groups),
     const ResourceCard('World Bank: Financial Inclusion', 'Explore digital finance and financial inclusion resources.', 'https://www.worldbank.org/en/topic/financialinclusion', Icons.payments),
     const SizedBox(height: 10), const Text('Learning progress, quiz attempts and capstone drafts are saved locally in this browser on this device. There is no account/cloud sync, official certification or financial transaction functionality.', style: TextStyle(color: Colors.black54, height: 1.5)),
+  ]);
+}
+
+  Widget softwareRequirements() => const SoftwareRequirementsPage();
+}
+
+class SoftwareRequirementsPage extends StatefulWidget {
+  const SoftwareRequirementsPage({super.key});
+  @override
+  State<SoftwareRequirementsPage> createState() => _SoftwareRequirementsPageState();
+}
+
+class _SoftwareRequirementsPageState extends State<SoftwareRequirementsPage> {
+  static const _key = 'fintech_kalp_system_readiness_v1';
+  final List<String> _items = const [
+    'Check OS and browser version',
+    'Confirm RAM and available storage',
+    'Confirm stable internet for downloads and cloud labs',
+    'Know how to export or back up Study Desk progress',
+    'Check vendor requirements before installing desktop software',
+    'Identify Windows-only labs and mobile alternatives',
+    'Check account, license, free-tier and quota requirements',
+    'Use synthetic datasets for finance exercises',
+    'Do not upload confidential or personal finance data to unapproved AI tools',
+    'Bookmark official documentation and support pages',
+  ];
+  final Set<int> _checked = {};
+  bool _loaded = false;
+
+  @override
+  void initState() { super.initState(); _load(); }
+
+  Future<void> _load() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      _checked.addAll((prefs.getStringList(_key) ?? []).map(int.parse));
+    } catch (_) {}
+    if (mounted) setState(() => _loaded = true);
+  }
+
+  Future<void> _save() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setStringList(_key, _checked.map((i) => i.toString()).toList());
+    } catch (_) {}
+  }
+
+  @override
+  Widget build(BuildContext context) => ListView(padding: const EdgeInsets.all(20), children: [
+    const SectionHeading('Software & System Requirements', 'Hardware compatibility · Software prerequisites · Installation readiness'),
+    const SizedBox(height: 16),
+    Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      const Text('Hardware readiness', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: ink)),
+      const SizedBox(height: 8),
+      const Text('Practical learner guidance (not vendor-certified minimums): a supported 64-bit OS, modern multi-core CPU, 8 GB RAM workable for basics, 16 GB recommended for analytics multitasking, SSD with planning space for tools and datasets, and stable internet. Verify each product/version with its vendor before installing.'),
+      const SizedBox(height: 12),
+      const Text('Desktop tools such as Power BI Desktop, advanced Excel/VBA and some SAP/database clients may not run natively on Android. Use a Windows PC or the lesson’s mobile/browser alternative.', style: TextStyle(color: Colors.black54)),
+    ]))),
+    const SizedBox(height: 12),
+    const Text('Official software references', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: ink)),
+    const SizedBox(height: 8),
+    const ResourceCard('Excel support', 'Official Microsoft Excel help and learning', 'https://support.microsoft.com/excel', Icons.table_chart),
+    const ResourceCard('Power Query documentation', 'Import, transform and refresh data', 'https://learn.microsoft.com/power-query/', Icons.transform),
+    const ResourceCard('Power BI Desktop', 'Desktop setup and getting started', 'https://learn.microsoft.com/power-bi/fundamentals/desktop-getting-started', Icons.bar_chart),
+    const ResourceCard('Python downloads', 'Install Python from the official publisher', 'https://www.python.org/downloads/', Icons.code),
+    const ResourceCard('pandas documentation', 'Python data analysis library setup', 'https://pandas.pydata.org/docs/getting_started/', Icons.dataset),
+    const ResourceCard('PostgreSQL documentation', 'Database engine documentation', 'https://www.postgresql.org/docs/', Icons.storage),
+    const ResourceCard('SQLBolt', 'Browser-based introductory SQL practice', 'https://sqlbolt.com/', Icons.school),
+    const ResourceCard('SAP Learning', 'Authorized ERP and SAP learning resources', 'https://learning.sap.com/', Icons.account_tree),
+    const ResourceCard('Tableau Help', 'Product and compatibility documentation', 'https://www.tableau.com/support/help', Icons.insights),
+    const ResourceCard('Jira and Scrum', 'Jira product information and official Scrum Guide', 'https://www.atlassian.com/software/jira', Icons.groups),
+    const ResourceCard('ChatGPT Help', 'AI tool help, account and feature information', 'https://help.openai.com/', Icons.auto_awesome),
+    const ResourceCard('Claude Support', 'AI tool help and account information', 'https://support.anthropic.com/', Icons.auto_awesome),
+    const ResourceCard('Gemini Help', 'Google Gemini product support', 'https://support.google.com/gemini/', Icons.auto_awesome),
+    const ResourceCard('Perplexity Help', 'Product help and account support', 'https://www.perplexity.ai/help-center', Icons.search),
+    const ResourceCard('NotebookLM Help', 'Google NotebookLM support', 'https://support.google.com/notebooklm/', Icons.menu_book),
+    const SizedBox(height: 12),
+    Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      const Text('Learner readiness checklist', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: ink)),
+      const SizedBox(height: 6),
+      Text(_loaded ? '${_checked.length} of ${_items.length} complete' : 'Loading saved checklist…', style: const TextStyle(color: Colors.black54)),
+      const SizedBox(height: 8),
+      LinearProgressIndicator(value: _loaded ? _checked.length / _items.length : null, color: teal),
+      const SizedBox(height: 8),
+      ..._items.asMap().entries.map((entry) => CheckboxListTile(
+        contentPadding: EdgeInsets.zero, dense: true, controlAffinity: ListTileControlAffinity.leading,
+        title: Text(entry.value), value: _checked.contains(entry.key), onChanged: !_loaded ? null : (value) {
+          setState(() { if (value == true) { _checked.add(entry.key); } else { _checked.remove(entry.key); } });
+          _save();
+        })),
+      TextButton.icon(onPressed: !_loaded || _checked.isEmpty ? null : () { setState(_checked.clear); _save(); },
+        icon: const Icon(Icons.restart_alt), label: const Text('Reset checklist')),
+    ]))),
+    const SizedBox(height: 12),
+    const Card(child: Padding(padding: EdgeInsets.all(16), child: Text('Safety and licensing: product features, free tiers, account eligibility and system requirements can change. Check vendor sources. Use fictional finance datasets; do not upload employer/client data to unapproved AI services. AI-generated formulas, code and accounting conclusions require verification.'))),
   ]);
 }
 
