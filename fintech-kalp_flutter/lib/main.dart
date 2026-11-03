@@ -138,7 +138,7 @@ class _LearningHomeState extends State<LearningHome> {
   @override
   Widget build(BuildContext context) {
     final wide = MediaQuery.sizeOf(context).width >= 900;
-    final pages = [dashboard(), curriculum(), practice(), capstone(), const SoftwareRequirementsPage(), resources()];
+    final pages = [dashboard(), curriculum(), practice(), capstone(), const SoftwareRequirementsPage(), resources(), dictionary()];
     return Scaffold(
       appBar: AppBar(title: const Row(children: [
         CircleAvatar(backgroundColor: ink, child: Icon(Icons.account_balance, color: Colors.white, size: 19)),
@@ -155,6 +155,7 @@ class _LearningHomeState extends State<LearningHome> {
           NavigationRailDestination(icon: Icon(Icons.rocket_launch_outlined), selectedIcon: Icon(Icons.rocket_launch), label: Text('Capstone')),
           NavigationRailDestination(icon: Icon(Icons.computer_outlined), selectedIcon: Icon(Icons.computer), label: Text('Requirements')),
           NavigationRailDestination(icon: Icon(Icons.library_books_outlined), selectedIcon: Icon(Icons.library_books), label: Text('Resources')),
+          NavigationRailDestination(icon: Icon(Icons.functions_outlined), selectedIcon: Icon(Icons.functions), label: Text('Dictionary')),
         ]),
         Expanded(child: IndexedStack(index: section, children: pages)),
       ]),
@@ -165,6 +166,7 @@ class _LearningHomeState extends State<LearningHome> {
         NavigationDestination(icon: Icon(Icons.rocket_launch_outlined), label: 'Capstone'),
         NavigationDestination(icon: Icon(Icons.computer_outlined), label: 'Requirements'),
         NavigationDestination(icon: Icon(Icons.library_books_outlined), label: 'Resources'),
+        NavigationDestination(icon: Icon(Icons.functions_outlined), label: 'Dictionary'),
       ]),
     );
   }
@@ -994,6 +996,50 @@ class _LearningHomeState extends State<LearningHome> {
       const SizedBox(height: 10), FilledButton.icon(onPressed: () async { await _saveState(); if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Capstone draft and learning progress saved in this browser on this device.'))); }, icon: const Icon(Icons.save_outlined), label: const Text('Save capstone draft')),
     ]))),
   ]);
+
+  String dictionarySearch = '';\n\n  Widget dictionary() {
+    const entries = <Map<String, String>>[
+      {'name':'SUMIFS','syntax':'=SUMIFS(sum_range, criteria_range1, criteria1, ...)','use':'Sum amounts matching multiple filters, e.g. open invoices for one supplier.','example':'=SUMIFS(C:C,A:A,"Supplier A",D:D,"Open")','category':'Excel'},
+      {'name':'COUNTIFS','syntax':'=COUNTIFS(criteria_range1, criteria1, ...)','use':'Count records satisfying several conditions, such as overdue invoices by entity.','example':'=COUNTIFS(A:A,"IN01",D:D,"Overdue")','category':'Excel'},
+      {'name':'XLOOKUP','syntax':'=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found])','use':'Find a supplier master value or payment terms by stable key.','example':'=XLOOKUP(A2,Master!A:A,Master!B:B,"Not found")','category':'Excel'},
+      {'name':'INDEX + MATCH','syntax':'=INDEX(return_range,MATCH(lookup_value,lookup_range,0))','use':'Flexible exact match for older Excel versions.','example':'=INDEX(B:B,MATCH(A2,A:A,0))','category':'Excel'},
+      {'name':'IFERROR','syntax':'=IFERROR(value, value_if_error)','use':'Handle a formula failure, while avoiding hiding meaningful exceptions as zero.','example':'=IFERROR(Actual/Budget, "Check budget")','category':'Excel'},
+      {'name':'EOMONTH','syntax':'=EOMONTH(start_date, months)','use':'Calculate period end dates for monthly close and ageing.','example':'=EOMONTH(A2,0)','category':'Excel'},
+      {'name':'NETWORKDAYS','syntax':'=NETWORKDAYS(start_date,end_date,[holidays])','use':'Calculate business days between invoice receipt and payment.','example':'=NETWORKDAYS(A2,B2,Holidays!A:A)','category':'Excel'},
+      {'name':'FILTER','syntax':'=FILTER(array,include,[if_empty])','use':'Extract overdue or blocked transactions into a dynamic list.','example':'=FILTER(A2:D100,D2:D100="Overdue","No items")','category':'Excel'},
+      {'name':'UNIQUE','syntax':'=UNIQUE(array)','use':'Create distinct supplier/entity lists for review.','example':'=UNIQUE(A2:A100)','category':'Excel'},
+      {'name':'LET','syntax':'=LET(name,value,calculation)','use':'Name intermediate expressions to make complex calculations easier to audit.','example':'=LET(var,B2-C2,var)','category':'Excel'},
+      {'name':'Variance %','syntax':'=(Actual-Budget)/Budget','use':'Measure actual-versus-budget variance percentage.','example':'=IFERROR((B2-C2)/C2,0)','category':'Finance'},
+      {'name':'Current ratio','syntax':'Current assets / Current liabilities','use':'Short-term liquidity indicator; interpret with cash, composition and sector context.','example':'=B2/C2','category':'Finance'},
+      {'name':'DSO','syntax':'Average accounts receivable / net credit sales × days','use':'Approximate collection cycle; align period and credit-sales definitions.','example':'=AverageAR/NetCreditSales*DaysInPeriod','category':'Finance'},
+      {'name':'DPO','syntax':'Average accounts payable / eligible purchases × days','use':'Approximate supplier payment cycle; align denominator and period.','example':'=AverageAP/EligiblePurchases*DaysInPeriod','category':'Finance'},
+      {'name':'Duplicate candidate','syntax':'Supplier + invoice number + amount match','use':'Flag possible duplicate invoices for investigation, not automatic rejection.','example':'=COUNTIFS(A:A,A2,B:B,B2,C:C,C2)>1','category':'Controls'},
+      {'name':'VBA RefreshAll','syntax':'ThisWorkbook.RefreshAll','use':'Request refresh of workbook connections and queries; validate results before release.','example':'Sub RefreshAllQueries()\n  ThisWorkbook.RefreshAll\n  MsgBox "Refresh requested; reconcile before publishing."\nEnd Sub','category':'VBA'},
+      {'name':'VBA safety','syntax':'Reviewed code · no embedded secrets · log · owner','use':'Use a copy, review macro source, preserve audit evidence, reconcile output and follow company policy.','example':'Do not enable unknown macros or store passwords in VBA.','category':'VBA'},
+      {'name':'Power Query','syntax':'Get Data → Transform → Refresh','use':'Repeatable import, clean, combine and reconcile steps for periodic files.','example':'Profile rows, data types, nulls, duplicates and control totals after refresh.','category':'Data'},
+      {'name':'SQL GROUP BY','syntax':'SELECT supplier_id, SUM(amount) FROM invoices GROUP BY supplier_id;','use':'Aggregate transaction facts by supplier for analytics.','example':'Add WHERE status = \'Open\' and reconcile grouped totals to source.','category':'SQL'},
+      {'name':'SQL duplicate scan','syntax':'GROUP BY supplier_id, invoice_no, amount HAVING COUNT(*) > 1','use':'Find possible duplicate combinations for a review queue.','example':'Check normalized invoice IDs, credit notes and legitimate repeats before conclusion.','category':'SQL'},
+    ];
+    final query = dictionarySearch.trim().toLowerCase();
+    final filtered = entries.where((e) => query.isEmpty || e.values.any((v) => v.toLowerCase().contains(query))).toList();
+    return ListView(padding: const EdgeInsets.all(22), children: [
+      const SectionHeading('Finance & Excel Dictionary', 'Curated, commonly used reference entries. Search formulas, finance metrics, SQL and controlled VBA examples.'),
+      const SizedBox(height: 14),
+      TextField(onChanged: (value) => setState(() => dictionarySearch = value), decoration: const InputDecoration(prefixIcon: Icon(Icons.search), hintText: 'Search formula, syntax, example or topic', border: OutlineInputBorder())),
+      const SizedBox(height: 10),
+      Text('${filtered.length} entries · curated quick reference', style: const TextStyle(color: Colors.black54)),
+      const SizedBox(height: 8),
+      ...filtered.map((entry) => Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Row(children: [Expanded(child: Text(entry['name']!, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w900, color: ink))), Chip(label: Text(entry['category']!))]),
+        const SizedBox(height: 6), SelectableText(entry['syntax']!, style: const TextStyle(fontWeight: FontWeight.w700, height: 1.4)),
+        const SizedBox(height: 8), Text(entry['use']!, style: const TextStyle(height: 1.5)),
+        const SizedBox(height: 8), Container(width: double.infinity, padding: const EdgeInsets.all(10), decoration: BoxDecoration(color: const Color(0xFFF1F5F9), borderRadius: BorderRadius.circular(10)), child: SelectableText(entry['example']!, style: const TextStyle(fontFamily: 'monospace', height: 1.45))),
+      ])))),
+      if (filtered.isEmpty) const Padding(padding: EdgeInsets.all(24), child: Text('No matching dictionary entry. Try a broader search.')),
+      const SizedBox(height: 10),
+      const Text('Formula separator and feature availability vary by Excel version and locale. Metrics require approved definitions and reconciled source data. AI- or macro-generated outputs must be reviewed by a responsible person.', style: TextStyle(color: Colors.black54, height: 1.5)),
+    ]);
+  }
 
   Widget resources() => ListView(padding: const EdgeInsets.all(22), children: [
     const SectionHeading('Learning resources', 'Official documentation and free learning starting points. Verify course availability before enrolling.'),
