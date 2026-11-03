@@ -1,0 +1,49 @@
+name: Fintech Kalp Flutter build and verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "fintech-kalp_flutter/**"
+      - ".github/workflows/fintech-kalp-flutter.yml"
+  pull_request:
+    paths:
+      - "fintech-kalp_flutter/**"
+      - ".github/workflows/fintech-kalp-flutter.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: fintech-kalp_flutter
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Show toolchain
+        run: flutter --version
+      - name: Resolve dependencies
+        run: flutter pub get
+      - name: Analyze Dart code
+        run: flutter analyze --no-pub
+      - name: Run Flutter tests
+        run: flutter test --no-pub
+      - name: Build Android APK
+        run: flutter build apk --release --no-pub
+      - name: Upload release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: fintech-kalp-android-apk
+          path: fintech-kalp_flutter/build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error
+          retention-days: 30
