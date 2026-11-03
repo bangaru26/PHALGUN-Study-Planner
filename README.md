@@ -17,6 +17,10 @@ See the [Software & System Requirements tab specification](./FINTECH_KALP_SOFTWA
 ### Software & System Requirements
 Open the [interactive learner readiness guide](./software-system-requirements.html) for hardware recommendations, official software prerequisites, Android/Windows/PWA compatibility, installation references, privacy and license cautions, and a locally saved readiness checklist. The Flutter Fintech Kalp app now includes a native Requirements navigation screen with a locally saved readiness checklist.
 
+## Flutter build and handover
+
+See the [Flutter build and handover notes](./FINTECH_KALP_FLUTTER_HANDOVER.md) for the CI build workflow, APK artifact retrieval, local build commands and explicit verification gates. The Android release APK must only be distributed after the GitHub Actions analyze, test and build steps pass.
+
 ## Fintech Kalp practical lab pack 01 — AP exception analytics
 
 Practice an end-to-end finance analytics workflow with fictional INR invoice records. The [practical lab pack](./FINTECH_KALP_PRACTICAL_LAB_PACK_01.md) covers Excel ageing and checks, exception-log controls, SQL analysis, a Power BI dashboard specification, and Python validation. The [synthetic AP CSV dataset](./fintech-kalp_flutter/assets/fintech_kalp_ap_lab.csv) is supplied for hands-on practice. All records are fictional; report date is 3 November 2026. The dataset is a downloadable exercise file and is not yet bundled into the Flutter app UI.
