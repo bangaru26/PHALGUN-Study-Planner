@@ -997,7 +997,9 @@ class _LearningHomeState extends State<LearningHome> {
     ]))),
   ]);
 
-  String dictionarySearch = '';\n\n  Widget dictionary() {
+  String dictionarySearch = '';
+
+  Widget dictionary() {
     const entries = <Map<String, String>>[
       {'name':'SUMIFS','syntax':'=SUMIFS(sum_range, criteria_range1, criteria1, ...)','use':'Sum amounts matching multiple filters, e.g. open invoices for one supplier.','example':'=SUMIFS(C:C,A:A,"Supplier A",D:D,"Open")','category':'Excel'},
       {'name':'COUNTIFS','syntax':'=COUNTIFS(criteria_range1, criteria1, ...)','use':'Count records satisfying several conditions, such as overdue invoices by entity.','example':'=COUNTIFS(A:A,"IN01",D:D,"Overdue")','category':'Excel'},
