@@ -1008,9 +1008,6 @@ class _LearningHomeState extends State<LearningHome> {
   ]);
 }
 
-  Widget softwareRequirements() => const SoftwareRequirementsPage();
-}
-
 class SoftwareRequirementsPage extends StatefulWidget {
   const SoftwareRequirementsPage({super.key});
   @override
@@ -1095,7 +1092,7 @@ class _SoftwareRequirementsPageState extends State<SoftwareRequirementsPage> {
           setState(() { if (value == true) { _checked.add(entry.key); } else { _checked.remove(entry.key); } });
           _save();
         })),
-      TextButton.icon(onPressed: !_loaded || _checked.isEmpty ? null : () { setState(_checked.clear); _save(); },
+      TextButton.icon(onPressed: !_loaded || _checked.isEmpty ? null : () { setState(() => _checked.clear()); _save(); },
         icon: const Icon(Icons.restart_alt), label: const Text('Reset checklist')),
     ]))),
     const SizedBox(height: 12),
