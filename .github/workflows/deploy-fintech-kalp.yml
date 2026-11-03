@@ -55,4 +55,6 @@ jobs:
             exit 0
           fi
           git commit -m "Publish Fintech Kalp Flutter web app"
+          # Keep generated Pages publication resilient to concurrent commits on main.
+          git pull --rebase origin main
           git push origin HEAD:main
