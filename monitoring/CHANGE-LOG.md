@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-11-08T09:12:05+00:00 (UTC)
+Last check: 2026-11-09T09:56:51+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 4 changed; 48 unchanged; 0 baseline; 8 unavailable.
+Summary: 4 changed; 49 unchanged; 0 baseline; 7 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -26,10 +26,10 @@ Summary: 4 changed; 48 unchanged; 0 baseline; 8 unavailable.
 - Current page excerpt: What’s New in Python — Python 3.15.2 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.2 documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - **Detected text differences (for review only):**
 ```text
-- non-profit corporation. Please donate. Last updated on Nov 07, 2026 (08:10 UTC). Found a bug ? Created
-+ non-profit corporation. Please donate. Last updated on Nov 08, 2026 (07:53 UTC). Found a bug ? Created
-- Please donate. Last updated on Nov 07, 2026 (08:10 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Nov 08, 2026 (07:53 UTC). Found a bug ? Created using Sphinx
+- non-profit corporation. Please donate. Last updated on Nov 08, 2026 (07:53 UTC). Found a bug ? Created
++ non-profit corporation. Please donate. Last updated on Nov 09, 2026 (08:08 UTC). Found a bug ? Created
+- Please donate. Last updated on Nov 08, 2026 (07:53 UTC). Found a bug ? Created using Sphinx
++ Please donate. Last updated on Nov 09, 2026 (08:08 UTC). Found a bug ? Created using Sphinx
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -45,10 +45,7 @@ Summary: 4 changed; 48 unchanged; 0 baseline; 8 unavailable.
 | UNCHANGED | Enrolled Agent and Special Enrollment Examination | Internal Revenue Service | [Open source](https://www.irs.gov/tax-professionals/enrolled-agents) |
 | UNAVAILABLE | US GAAP and FASB updates | Financial Accounting Standards Board | [Open source](https://www.fasb.org/standards) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
-| UNAVAILABLE | ACCA qualification syllabus and policy | ACCA | [Open source](https://www.accaglobal.com/gb/en/student.html) |
-  - Fetch issue: HTTPError: HTTP Error 302: The HTTP server returned a redirect error that would lead to an infinite loop.
-The last 30x error message was:
-Found
+| UNCHANGED | ACCA qualification syllabus and policy | ACCA | [Open source](https://www.accaglobal.com/gb/en/student.html) |
 | UNCHANGED | CIMA/CGMA qualification syllabus and policy | AICPA & CIMA | [Open source](https://www.aicpa-cima.com/resources/landing/cgma-professional-qualification) |
 | UNCHANGED | Jira product documentation and release changes | Atlassian | [Open source](https://support.atlassian.com/jira-software-cloud/) |
 | UNCHANGED | Scrum framework | Scrum Guides | [Open source](https://scrumguides.org/) |
@@ -74,14 +71,14 @@ Found
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- questions que l'on se pose devant une peinture. DDF, le Dictionnaire des francophones Participez au Dictionnaire
-+ questions que l'on se pose devant une peinture. Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! Serious game Jouez à « Datak » et devenez un pro du big data ! Destination francophonie Chaqu
-- langue mondialement partagée : vivante et libre. Emblèmes Belgique Le coq hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Emblèmes France La Marsei
-+ langue mondialement partagée : vivante et libre. Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité...
-- fraternité... Découvrez les emblèmes de la République française Serious game Jouez à « Datak » et devenez un pro du big data ! La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! Les expressions
-+ fraternité... Découvrez les emblèmes de la République française Les expressions d'Archibald Faire le cacou, motamoter ou
-- ça veut dire ? Archibald vous dit tout ! La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les s
-+ ça veut dire ? Archibald vous dit tout ! Partenaires Apprenez le français plus facilement avec
+- français, du niveau débutant au niveau avancé. Recommandé Quèsaco Sur un ton décalé, drôle et moderne,
++ français, du niveau débutant au niveau avancé. Recommandé Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! Conte
+- questions que l'on se pose devant une peinture. Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! Serious game Jouez à « Datak » et devenez un pro du big data ! Destination francophonie Chaqu
++ questions que l'on se pose devant une peinture. Destination francophonie Chaque semaine, découvrez celles et ceux
+- français une langue vivante et en constante évolution. TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et disponible p
++ français une langue vivante et en constante évolution. Les expressions d'Archibald Faire le cacou, motamoter ou
+- ça veut dire ? Archibald vous dit tout ! Partenaires Apprenez le français plus facilement avec
++ ça veut dire ? Archibald vous dit tout ! Emblèmes Belgique Le coq hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! TV5MONDE+ Regardez des films, des 
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -93,19 +90,19 @@ Found
 ### Review required — German-English dictionary
 - Previous page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU UK NO FI SQ DA CS PT HR LA BG EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - Mapped learning areas to review: German-English dictionary, vocabulary, translations
-- Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU UK NO FI SQ DA CS PT HR LA BG EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
+- Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU UK NO FI SQ DA CS PT HR LA BG EO TR SR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.606 Übersetzungen – 2.907 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.652 Übersetzungen – 2.913 neu – 99,8% verifiziert Zeit
-- | Z Zuletzt verifizierte Übersetzungen 1.319.606 Übersetzungen – 2.907 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-+ | Z Zuletzt verifizierte Übersetzungen 1.319.652 Übersetzungen – 2.913 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:44 geogr. Port Moresby Port Moresby {n} Pra jpx BHM 07:51 engin. material surface asperity Oberflächenrauigkeit {f} Wen jpx 07:50 mus. melody coupler Melodiekoppel
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:28 med. soft tissue infiltration Weichteilinfiltration {f} Wen git 09:28 med. hip joint stability
-- 07:51 engin. material surface asperity Oberflächenrauigkeit {f} Wen jpx 07:50 mus. melody coupler Melodiekoppel {f} Wen jpx 07:49 psych. display rules {pl}
-+ 09:28 med. soft tissue infiltration Weichteilinfiltration {f} Wen git 09:28 med. hip joint stability Hüftgelenksstabilität {f} Wen git 09:26 print to space sth.
-- jpx 07:50 mus. melody coupler Melodiekoppel {f} Wen jpx 07:49 psych. display rules {pl} Vorzeigeregeln {pl}
-+ 09:28 med. hip joint stability Hüftgelenksstabilität {f} Wen git 09:26 print to space sth. out etw. [Akk.] gesperrt setzen nit joe Hal 09:18 microwave radiometer <MWR> Mikrowellenradiometer {n} <MWR> Wou jpx Wen 09:18 co
+- SQ DA CS PT HR LA BG EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch:
++ SQ DA CS PT HR LA BG EO TR SR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff
+- DA CS PT HR LA BG EO SR TR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier
++ CS PT HR LA BG EO TR SR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier
+- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.652 Übersetzungen – 2.913 neu – 99,8% verifiziert Zeit
++ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.693 Übersetzungen – 2.896 neu – 99,8% verifiziert Zeit
+- | Z Zuletzt verifizierte Übersetzungen 1.319.652 Übersetzungen – 2.913 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
++ | Z Zuletzt verifizierte Übersetzungen 1.319.693 Übersetzungen – 2.896 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:28 med. soft tissue infiltration Weichteilinfiltration {f} Wen git 09:28 med. hip joint stability Hüftgelenksstabilität
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:57 mil. Chief Warrant Officer <CWO> [höherer Unteroffiziers- oder niedriger Offiziersrang bei den Land- und Seestreitkräften verschiedener anglophoner Länder wie U
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
