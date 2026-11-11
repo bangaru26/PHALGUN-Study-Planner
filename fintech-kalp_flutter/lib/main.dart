@@ -244,7 +244,7 @@ class _LearningHomeState extends State<LearningHome> {
 
   Widget accountingLessonDetail() {
     final chapter = accountingFoundations[selectedChapter];
-    final id = 'FK-ACCT-C\${(selectedChapter + 1).toString().padLeft(2, '0')}';
+    final id = 'FK-ACCT-C${(selectedChapter + 1).toString().padLeft(2, '0')}';
     final score = chapter.questions.asMap().entries.where((e) => accountingAnswers[e.key] == e.value.correct).length;
     final allAnswered = accountingAnswers.length == chapter.questions.length;
     final perfect = accountingSubmitted && score == chapter.questions.length;
@@ -295,7 +295,7 @@ class _LearningHomeState extends State<LearningHome> {
       Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const Text('Study timer', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: ink)),
         const SizedBox(height: 6),
-        Text('Elapsed: \${lessonElapsed.inMinutes.toString().padLeft(2, '0')}:\${(lessonElapsed.inSeconds % 60).toString().padLeft(2, '0')}', style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800)),
+        Text('Elapsed: ${lessonElapsed.inMinutes.toString().padLeft(2, '0')}:${(lessonElapsed.inSeconds % 60).toString().padLeft(2, '0')}', style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800)),
         const SizedBox(height: 8),
         if (!lessonTimerStarted)
           FilledButton.icon(onPressed: _startLessonTimer, icon: const Icon(Icons.timer), label: const Text('Start lesson timer'))
@@ -306,7 +306,7 @@ class _LearningHomeState extends State<LearningHome> {
         const Text('Chapter assessment · 100% required', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: ink)),
         const SizedBox(height: 8),
         ...chapter.questions.asMap().entries.map((entry) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('\${entry.key + 1}. \${entry.value.question}', style: const TextStyle(fontWeight: FontWeight.w700)),
+          Text('${entry.key + 1}. ${entry.value.question}', style: const TextStyle(fontWeight: FontWeight.w700)),
           ...entry.value.options.asMap().entries.map((option) => RadioListTile<int>(
             dense: true, contentPadding: EdgeInsets.zero,
             value: option.key, groupValue: accountingAnswers[entry.key],
@@ -315,7 +315,7 @@ class _LearningHomeState extends State<LearningHome> {
           )),
           if (accountingSubmitted)
             Padding(padding: const EdgeInsets.only(bottom: 10), child: Text(
-              '\${accountingAnswers[entry.key] == entry.value.correct ? 'Correct' : 'Incorrect'} — \${entry.value.explanation}',
+              '${accountingAnswers[entry.key] == entry.value.correct ? 'Correct' : 'Incorrect'} — ${entry.value.explanation}',
               style: TextStyle(height: 1.45, color: accountingAnswers[entry.key] == entry.value.correct ? Colors.green.shade800 : Colors.red.shade800),
             )),
           const Divider(),
@@ -323,7 +323,7 @@ class _LearningHomeState extends State<LearningHome> {
         if (!accountingSubmitted)
           FilledButton(onPressed: allAnswered ? () => setState(() => accountingSubmitted = true) : null, child: const Text('Submit assessment and reveal explanations'))
         else ...[
-          Text('Score: $score / \${chapter.questions.length} · \${(score * 100 / chapter.questions.length).round()}%', style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 19, color: ink)),
+          Text('Score: $score / ${chapter.questions.length} · ${(score * 100 / chapter.questions.length).round()}%', style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 19, color: ink)),
           OutlinedButton(onPressed: () => setState(() { accountingSubmitted = false; accountingAnswers.clear(); }), child: const Text('Retake assessment')),
         ],
         const SizedBox(height: 8),
