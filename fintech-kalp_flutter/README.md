@@ -37,3 +37,10 @@ https://bangaru26.github.io/PHALGUN-Study-Planner/fintech-kalp/
 - Progress, quiz state and the capstone draft are session-local; no cloud sync, user account, shared progress backend or offline caching is connected yet.
 - No financial transactions, bank connections, credential storage or production fintech operations are implemented.
 - Public availability depends on the GitHub Actions build succeeding and GitHub Pages serving the existing main-branch root site. Verify the workflow before announcing a successful deployment.
+
+
+## Accounting Foundations and Finance Ontology
+
+Fintech Kalp now includes two dedicated in-app pathways: Accounting Foundations and Finance Ontology. Each pathway has five authored chapters with English, Telugu and Hindi notes, teaching content, worked examples, practical methods, cross-functional applications, flashcards, assignments, mini-capstones and five-question assessments. Completion requires starting the lesson timer and scoring 100% in the assessment.
+
+Automated curriculum integrity checks are in `test/accounting_curriculum_test.dart` and `test/ontology_curriculum_test.dart`.
