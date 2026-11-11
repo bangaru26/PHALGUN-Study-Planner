@@ -249,7 +249,8 @@ class _LearningHomeState extends State<LearningHome> {
     final chapters = isOntology ? ontologyCurriculum : accountingFoundations;
     final chapter = chapters[selectedChapter];
     final pathwayLabel = isOntology ? 'FINANCE ONTOLOGY' : 'ACCOUNTING FOUNDATIONS';
-    final id = 'FK-${isOntology ? 'ONTO' : 'ACCT'}-C${(selectedChapter + 1).toString().padLeft(2, '0')}';
+    final pathwayCode = isOntology ? 'ONTO' : 'ACCT';
+    final id = 'FK-$pathwayCode-C${(selectedChapter + 1).toString().padLeft(2, '0')}';
     final score = chapter.questions.asMap().entries.where((e) => accountingAnswers[e.key] == e.value.correct).length;
     final allAnswered = accountingAnswers.length == chapter.questions.length;
     final perfect = accountingSubmitted && score == chapter.questions.length;
