@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'accounting_curriculum.dart';
 
 void main() => runApp(const FintechKalpApp());
 
@@ -32,6 +33,8 @@ class _LearningHomeState extends State<LearningHome> {
   final Set<int> completed = {};
   final Map<int, int> answers = {};
   bool submitted = false;
+  final Map<int, int> accountingAnswers = {};
+  bool accountingSubmitted = false;
   int? lessonAnswer1, lessonAnswer2;
   final TextEditingController assignment = TextEditingController();
   bool stateLoaded = false;
@@ -99,6 +102,7 @@ class _LearningHomeState extends State<LearningHome> {
     LearningPath('Fintech systems', 'Payments, digital banking, APIs, cybersecurity and regulation', Icons.account_tree, 'TECH', ['Digital payments and settlement', 'APIs, ledgers and system integration', 'Fraud, privacy and security basics', 'Payment settlement investigation lab', 'API timeout, retry and reconciliation workshop']),
     LearningPath('Agile & transformation', 'Process improvement, delivery and measurable business value', Icons.rocket_launch, 'CHANGE', ['Map a process and find root causes', 'Write a user story and acceptance criteria', 'Measure benefits and manage change', 'Root-cause analysis and process mapping case lab', 'Acceptance criteria and benefits tracking workshop']),
     LearningPath('Advanced Excel for Finance', 'Formula design, lookup logic, dynamic arrays, Power Query and controlled finance reporting', Icons.table_chart, 'EXCEL', ['Build reliable finance workbooks', 'Core formulas and error-proof logic', 'Lookups and dynamic array analysis', 'Power Query automation and reconciliation', 'Finance reporting capstone and controls']),
+    LearningPath('Accounting foundations', 'A structured accounting course from the accounting equation through financial statements and month-end close', Icons.menu_book, 'ACCT', ['Accounting equation and double-entry bookkeeping', 'Accounting concepts, assumptions and standards', 'Journal entries, subsidiary books and ledger posting', 'Trial balance, adjustments and error correction', 'Financial statements and the month-end close']),
   ];
   final quiz = const [
     QuizQuestion('A team wants to reduce duplicate supplier payments. What is the best first control?', ['Pay every invoice immediately', 'Match invoice identifiers and check duplicates before payment', 'Remove approval steps', 'Keep a manual list with no owner'], 1, 'A duplicate check using invoice identifiers, supplier and amount is a preventive/detective control. It should work alongside approvals and exception handling.'),
@@ -130,6 +134,8 @@ class _LearningHomeState extends State<LearningHome> {
     submitted = false;
     lessonAnswer1 = null;
     lessonAnswer2 = null;
+    accountingAnswers.clear();
+    accountingSubmitted = false;
   }
 
   @override
@@ -236,7 +242,128 @@ class _LearningHomeState extends State<LearningHome> {
     ]);
   }
 
+  Widget accountingLessonDetail() {
+    final chapter = accountingFoundations[selectedChapter];
+    final id = 'FK-ACCT-C\${(selectedChapter + 1).toString().padLeft(2, '0')}';
+    final score = chapter.questions.asMap().entries.where((e) => accountingAnswers[e.key] == e.value.correct).length;
+    final allAnswered = accountingAnswers.length == chapter.questions.length;
+    final perfect = accountingSubmitted && score == chapter.questions.length;
+    final canComplete = lessonTimerStarted && perfect;
+    return ListView(padding: const EdgeInsets.all(22), children: [
+      Row(children: [
+        IconButton(onPressed: () => setState(() => lessonOpened = false), icon: const Icon(Icons.arrow_back)),
+        const SizedBox(width: 4),
+        Expanded(child: Text('$id · ACCOUNTING FOUNDATIONS', style: const TextStyle(color: teal, fontWeight: FontWeight.w900, letterSpacing: 1.0))),
+      ]),
+      Text(chapter.title, style: const TextStyle(fontSize: 27, fontWeight: FontWeight.w900, color: ink)),
+      const SizedBox(height: 6),
+      const Text('Full lesson content · notes, worked example, practical method, flashcards and assessment.', style: TextStyle(color: Colors.black54, height: 1.4)),
+      const SizedBox(height: 14),
+      Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        const Text('Lesson notes language', style: TextStyle(fontWeight: FontWeight.w800, color: ink)),
+        const SizedBox(height: 8),
+        DropdownButtonFormField<String>(
+          value: notesLanguage,
+          decoration: const InputDecoration(border: OutlineInputBorder(), isDense: true),
+          items: const [
+            DropdownMenuItem(value: 'English', child: Text('English')),
+            DropdownMenuItem(value: 'Telugu', child: Text('తెలుగు · Telugu')),
+            DropdownMenuItem(value: 'Hindi', child: Text('हिन्दी · Hindi')),
+          ],
+          onChanged: (value) => setState(() => notesLanguage = value ?? 'English'),
+        ),
+        const SizedBox(height: 8),
+        Text(chapter.notes[notesLanguage] ?? chapter.notes['English']!, style: const TextStyle(height: 1.65)),
+      ]))),
+      lessonCard('01 · Learning objectives', chapter.objectives),
+      lessonCard('02 · Detailed teaching notes', chapter.concept),
+      lessonCard('03 · Worked business example', chapter.example),
+      lessonCard('04 · Step-by-step method', chapter.method),
+      lessonCard('05 · Cross-functional application', chapter.crossFunctional),
+      lessonCard('06 · Formula and calculations', chapter.formula),
+      lessonCard('07 · Practical assignment', chapter.assignment),
+      lessonCard('08 · Mini-capstone', chapter.capstone),
+      Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        const Text('Chapter flashcards', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: ink)),
+        const SizedBox(height: 8),
+        ...chapter.flashcards.map((card) => ExpansionTile(
+          tilePadding: EdgeInsets.zero,
+          title: Text(card['q']!, style: const TextStyle(fontWeight: FontWeight.w700)),
+          children: [Padding(padding: const EdgeInsets.fromLTRB(12, 0, 12, 14), child: Align(alignment: Alignment.centerLeft, child: Text(card['a']!, style: const TextStyle(height: 1.5))))],
+        )),
+      ]))),
+      Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        const Text('Study timer', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: ink)),
+        const SizedBox(height: 6),
+        Text('Elapsed: \${lessonElapsed.inMinutes.toString().padLeft(2, '0')}:\${(lessonElapsed.inSeconds % 60).toString().padLeft(2, '0')}', style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800)),
+        const SizedBox(height: 8),
+        if (!lessonTimerStarted)
+          FilledButton.icon(onPressed: _startLessonTimer, icon: const Icon(Icons.timer), label: const Text('Start lesson timer'))
+        else
+          const Text('Timer started. Complete the full assessment to qualify for lesson completion.', style: TextStyle(color: Colors.black54)),
+      ]))),
+      Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        const Text('Chapter assessment · 100% required', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: ink)),
+        const SizedBox(height: 8),
+        ...chapter.questions.asMap().entries.map((entry) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text('\${entry.key + 1}. \${entry.value.question}', style: const TextStyle(fontWeight: FontWeight.w700)),
+          ...entry.value.options.asMap().entries.map((option) => RadioListTile<int>(
+            dense: true, contentPadding: EdgeInsets.zero,
+            value: option.key, groupValue: accountingAnswers[entry.key],
+            title: Text(option.value),
+            onChanged: accountingSubmitted ? null : (value) => setState(() => accountingAnswers[entry.key] = value!),
+          )),
+          if (accountingSubmitted)
+            Padding(padding: const EdgeInsets.only(bottom: 10), child: Text(
+              '\${accountingAnswers[entry.key] == entry.value.correct ? 'Correct' : 'Incorrect'} — \${entry.value.explanation}',
+              style: TextStyle(height: 1.45, color: accountingAnswers[entry.key] == entry.value.correct ? Colors.green.shade800 : Colors.red.shade800),
+            )),
+          const Divider(),
+        ])),
+        if (!accountingSubmitted)
+          FilledButton(onPressed: allAnswered ? () => setState(() => accountingSubmitted = true) : null, child: const Text('Submit assessment and reveal explanations'))
+        else ...[
+          Text('Score: $score / \${chapter.questions.length} · \${(score * 100 / chapter.questions.length).round()}%', style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 19, color: ink)),
+          OutlinedButton(onPressed: () => setState(() { accountingSubmitted = false; accountingAnswers.clear(); }), child: const Text('Retake assessment')),
+        ],
+        const SizedBox(height: 8),
+        if (!lessonTimerStarted)
+          const Text('Start the lesson timer before completion can be recorded.', style: TextStyle(color: Colors.deepOrange))
+        else if (!accountingSubmitted)
+          const Text('Answer every question. You must score 5/5 (100%).', style: TextStyle(color: Colors.deepOrange))
+        else if (!perfect)
+          const Text('Not completed. Revise the explanations and retake the assessment for 100%.', style: TextStyle(color: Colors.deepOrange))
+        else
+          const Text('Requirements met: timer started and assessment score is 100%.', style: TextStyle(color: Colors.green)),
+        const SizedBox(height: 8),
+        FilledButton.icon(
+          onPressed: canComplete ? () {
+            setState(() {
+              completed.add(selectedChapter + selectedPath * 10);
+              lessonOpened = false;
+              _resetLessonSession();
+            });
+            _saveState();
+          } : null,
+          icon: const Icon(Icons.check_circle_outline),
+          label: const Text('Complete lesson (100% required)'),
+        ),
+      ]))),
+      const SizedBox(height: 12),
+      OutlinedButton.icon(
+        onPressed: selectedChapter + 1 < accountingFoundations.length
+          ? () => setState(() { selectedChapter++; _resetLessonSession(); })
+          : null,
+        icon: const Icon(Icons.skip_next),
+        label: const Text('Open next accounting chapter'),
+      ),
+      const SizedBox(height: 8),
+      const Text('Completion is recorded only after the timer has started and all five assessment questions are answered correctly. Progress is saved using the app’s existing local storage.', style: TextStyle(color: Colors.black54, fontSize: 12, height: 1.4)),
+    ]);
+  }
+
   Widget lessonDetail() {
+    if (paths[selectedPath].code == 'ACCT') return accountingLessonDetail();
     final path = paths[selectedPath];
     final title = path.chapters[selectedChapter];
     final id = 'FK-${path.code}-C${(selectedChapter + 1).toString().padLeft(2, '0')}';
