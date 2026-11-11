@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'accounting_curriculum.dart';
+import 'ontology_curriculum.dart';
 
 void main() => runApp(const FintechKalpApp());
 
@@ -103,6 +104,7 @@ class _LearningHomeState extends State<LearningHome> {
     LearningPath('Agile & transformation', 'Process improvement, delivery and measurable business value', Icons.rocket_launch, 'CHANGE', ['Map a process and find root causes', 'Write a user story and acceptance criteria', 'Measure benefits and manage change', 'Root-cause analysis and process mapping case lab', 'Acceptance criteria and benefits tracking workshop']),
     LearningPath('Advanced Excel for Finance', 'Formula design, lookup logic, dynamic arrays, Power Query and controlled finance reporting', Icons.table_chart, 'EXCEL', ['Build reliable finance workbooks', 'Core formulas and error-proof logic', 'Lookups and dynamic array analysis', 'Power Query automation and reconciliation', 'Finance reporting capstone and controls']),
     LearningPath('Accounting foundations', 'A structured accounting course from the accounting equation through financial statements and month-end close', Icons.menu_book, 'ACCT', ['Accounting equation and double-entry bookkeeping', 'Accounting concepts, assumptions and standards', 'Journal entries, subsidiary books and ledger posting', 'Trial balance, adjustments and error correction', 'Financial statements and the month-end close']),
+    LearningPath('Finance ontology', 'Build the shared language and connected data model behind modern finance operations, systems and controls', Icons.hub_outlined, 'ONTO', ['Ontology foundations: concepts, entities and meaning', 'Finance domain model: entities, attributes and relationships', 'Process ontology: events, states and controls', 'Semantic interoperability: mapping systems and data', 'Governance, quality, lineage and ontology operations']),
   ];
   final quiz = const [
     QuizQuestion('A team wants to reduce duplicate supplier payments. What is the best first control?', ['Pay every invoice immediately', 'Match invoice identifiers and check duplicates before payment', 'Remove approval steps', 'Keep a manual list with no owner'], 1, 'A duplicate check using invoice identifiers, supplier and amount is a preventive/detective control. It should work alongside approvals and exception handling.'),
@@ -243,8 +245,11 @@ class _LearningHomeState extends State<LearningHome> {
   }
 
   Widget accountingLessonDetail() {
-    final chapter = accountingFoundations[selectedChapter];
-    final id = 'FK-ACCT-C${(selectedChapter + 1).toString().padLeft(2, '0')}';
+    final isOntology = paths[selectedPath].code == 'ONTO';
+    final chapters = isOntology ? ontologyCurriculum : accountingFoundations;
+    final chapter = chapters[selectedChapter];
+    final pathwayLabel = isOntology ? 'FINANCE ONTOLOGY' : 'ACCOUNTING FOUNDATIONS';
+    final id = 'FK-${isOntology ? 'ONTO' : 'ACCT'}-C${(selectedChapter + 1).toString().padLeft(2, '0')}';
     final score = chapter.questions.asMap().entries.where((e) => accountingAnswers[e.key] == e.value.correct).length;
     final allAnswered = accountingAnswers.length == chapter.questions.length;
     final perfect = accountingSubmitted && score == chapter.questions.length;
@@ -253,7 +258,7 @@ class _LearningHomeState extends State<LearningHome> {
       Row(children: [
         IconButton(onPressed: () => setState(() => lessonOpened = false), icon: const Icon(Icons.arrow_back)),
         const SizedBox(width: 4),
-        Expanded(child: Text('$id · ACCOUNTING FOUNDATIONS', style: const TextStyle(color: teal, fontWeight: FontWeight.w900, letterSpacing: 1.0))),
+        Expanded(child: Text('$id · $pathwayLabel', style: const TextStyle(color: teal, fontWeight: FontWeight.w900, letterSpacing: 1.0))),
       ]),
       Text(chapter.title, style: const TextStyle(fontSize: 27, fontWeight: FontWeight.w900, color: ink)),
       const SizedBox(height: 6),
@@ -351,11 +356,11 @@ class _LearningHomeState extends State<LearningHome> {
       ]))),
       const SizedBox(height: 12),
       OutlinedButton.icon(
-        onPressed: selectedChapter + 1 < accountingFoundations.length
+        onPressed: selectedChapter + 1 < chapters.length
           ? () => setState(() { selectedChapter++; _resetLessonSession(); })
           : null,
         icon: const Icon(Icons.skip_next),
-        label: const Text('Open next accounting chapter'),
+        label: Text(isOntology ? 'Open next ontology chapter' : 'Open next accounting chapter'),
       ),
       const SizedBox(height: 8),
       const Text('Completion is recorded only after the timer has started and all five assessment questions are answered correctly. Progress is saved using the app’s existing local storage.', style: TextStyle(color: Colors.black54, fontSize: 12, height: 1.4)),
@@ -363,7 +368,7 @@ class _LearningHomeState extends State<LearningHome> {
   }
 
   Widget lessonDetail() {
-    if (paths[selectedPath].code == 'ACCT') return accountingLessonDetail();
+    if (paths[selectedPath].code == 'ACCT' || paths[selectedPath].code == 'ONTO') return accountingLessonDetail();
     final path = paths[selectedPath];
     final title = path.chapters[selectedChapter];
     final id = 'FK-${path.code}-C${(selectedChapter + 1).toString().padLeft(2, '0')}';
