@@ -212,7 +212,7 @@ class _LearningHomeState extends State<LearningHome> {
     return ListView(padding: const EdgeInsets.all(22), children: [
       const SectionHeading('Curriculum explorer', 'Choose a learning path, then select a chapter when you are ready.'),
       const SizedBox(height: 14),
-      DropdownButtonFormField<int>(value: selectedPath, decoration: const InputDecoration(labelText: 'Learning path', border: OutlineInputBorder()),
+      DropdownButtonFormField<int>(initialValue: selectedPath, decoration: const InputDecoration(labelText: 'Learning path', border: OutlineInputBorder()),
         items: paths.asMap().entries.map((e) => DropdownMenuItem(value: e.key, child: Text(e.value.title))).toList(),
         onChanged: (v) => setState(() { selectedPath = v ?? 0; selectedChapter = 0; })),
       const SizedBox(height: 16),
@@ -269,7 +269,7 @@ class _LearningHomeState extends State<LearningHome> {
         const Text('Lesson notes language', style: TextStyle(fontWeight: FontWeight.w800, color: ink)),
         const SizedBox(height: 8),
         DropdownButtonFormField<String>(
-          value: notesLanguage,
+          initialValue: notesLanguage,
           decoration: const InputDecoration(border: OutlineInputBorder(), isDense: true),
           items: const [
             DropdownMenuItem(value: 'English', child: Text('English')),
@@ -313,12 +313,17 @@ class _LearningHomeState extends State<LearningHome> {
         const SizedBox(height: 8),
         ...chapter.questions.asMap().entries.map((entry) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text('${entry.key + 1}. ${entry.value.question}', style: const TextStyle(fontWeight: FontWeight.w700)),
-          ...entry.value.options.asMap().entries.map((option) => RadioListTile<int>(
-            dense: true, contentPadding: EdgeInsets.zero,
-            value: option.key, groupValue: accountingAnswers[entry.key],
-            title: Text(option.value),
-            onChanged: accountingSubmitted ? null : (value) => setState(() => accountingAnswers[entry.key] = value!),
-          )),
+          RadioGroup<int>(
+            groupValue: accountingAnswers[entry.key],
+            onChanged: accountingSubmitted ? null : (value) {
+              if (value != null) setState(() => accountingAnswers[entry.key] = value);
+            },
+            child: Column(mainAxisSize: MainAxisSize.min, children: entry.value.options.asMap().entries.map((option) => RadioListTile<int>(
+              dense: true, contentPadding: EdgeInsets.zero,
+              value: option.key,
+              title: Text(option.value),
+            )).toList()),
+          ),
           if (accountingSubmitted)
             Padding(padding: const EdgeInsets.only(bottom: 10), child: Text(
               '${accountingAnswers[entry.key] == entry.value.correct ? 'Correct' : 'Incorrect'} — ${entry.value.explanation}',
@@ -1033,9 +1038,9 @@ class _LearningHomeState extends State<LearningHome> {
       Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const Text('Knowledge check · answers hidden until submission', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: ink)),
         const SizedBox(height: 8), Text('1. ${check1['q']}', style: const TextStyle(fontWeight: FontWeight.w700)),
-        ...(check1['o'] as List<String>).asMap().entries.map((e) => RadioListTile<int>(dense: true, contentPadding: EdgeInsets.zero, value: e.key, groupValue: lessonAnswer1, title: Text(e.value), onChanged: submitted ? null : (v) => setState(() => lessonAnswer1 = v))),
+        RadioGroup<int>(groupValue: lessonAnswer1, onChanged: submitted ? null : (v) => setState(() => lessonAnswer1 = v), child: Column(mainAxisSize: MainAxisSize.min, children: (check1['o'] as List<String>).asMap().entries.map((e) => RadioListTile<int>(dense: true, contentPadding: EdgeInsets.zero, value: e.key, title: Text(e.value))).toList())),
         const SizedBox(height: 8), Text('2. ${check2['q']}', style: const TextStyle(fontWeight: FontWeight.w700)),
-        ...(check2['o'] as List<String>).asMap().entries.map((e) => RadioListTile<int>(dense: true, contentPadding: EdgeInsets.zero, value: e.key, groupValue: lessonAnswer2, title: Text(e.value), onChanged: submitted ? null : (v) => setState(() => lessonAnswer2 = v))),
+        RadioGroup<int>(groupValue: lessonAnswer2, onChanged: submitted ? null : (v) => setState(() => lessonAnswer2 = v), child: Column(mainAxisSize: MainAxisSize.min, children: (check2['o'] as List<String>).asMap().entries.map((e) => RadioListTile<int>(dense: true, contentPadding: EdgeInsets.zero, value: e.key, title: Text(e.value))).toList())),
         const SizedBox(height: 12),
         if (!submitted) FilledButton(onPressed: lessonAnswer1 == null || lessonAnswer2 == null ? null : () => setState(() { submitted = true; }), child: const Text('Submit answers and reveal feedback'))
         else ...[
@@ -1095,7 +1100,7 @@ class _LearningHomeState extends State<LearningHome> {
         Text('QUESTION ${i + 1} OF ${quiz.length}', style: const TextStyle(color: teal, fontWeight: FontWeight.w800, fontSize: 11, letterSpacing: 1.2)),
         const SizedBox(height: 8), Text(q.question, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: ink)),
         const SizedBox(height: 8),
-        ...q.options.asMap().entries.map((option) => RadioListTile<int>(contentPadding: EdgeInsets.zero, dense: true, value: option.key, groupValue: answers[i], onChanged: submitted ? null : (v) { setState(() => answers[i] = v!); _saveState(); }, title: Text(option.value))),
+        RadioGroup<int>(groupValue: answers[i], onChanged: submitted ? null : (v) { if (v != null) { setState(() => answers[i] = v); _saveState(); } }, child: Column(mainAxisSize: MainAxisSize.min, children: q.options.asMap().entries.map((option) => RadioListTile<int>(contentPadding: EdgeInsets.zero, dense: true, value: option.key, title: Text(option.value))).toList())),
         if (submitted) Container(width: double.infinity, padding: const EdgeInsets.all(12), decoration: BoxDecoration(color: answers[i] == q.correct ? const Color(0xFFE2F7ED) : const Color(0xFFFFF0E8), borderRadius: BorderRadius.circular(12)),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(answers[i] == q.correct ? 'Correct' : 'Review this answer', style: TextStyle(fontWeight: FontWeight.w800, color: answers[i] == q.correct ? const Color(0xFF146C43) : const Color(0xFF9B4518))),
