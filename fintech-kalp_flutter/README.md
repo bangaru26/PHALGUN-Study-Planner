@@ -43,3 +43,8 @@ Automated checks in `test/accounting_curriculum_test.dart` validate chapter coun
 - Progress, quiz state and the capstone draft are session-local; no cloud sync, user account, shared progress backend or offline caching is connected yet.
 - No financial transactions, bank connections, credential storage or production fintech operations are implemented.
 - Public availability depends on the GitHub Actions build succeeding and GitHub Pages serving the existing main-branch root site. Verify the workflow before announcing a successful deployment.
+
+
+## Finance Ontology pathway
+
+The in-app Finance Ontology pathway contains five applied chapters covering ontology foundations, finance domain entities and relationships, process events and controls, semantic interoperability, and governance/quality/lineage. Each chapter includes English, Telugu and Hindi notes, practical examples, step-by-step methods, cross-functional applications, flashcards, assignments, mini-capstones and a five-question assessment. Lesson completion continues to require a started timer and a 100% assessment score. Automated integrity checks are in `test/ontology_curriculum_test.dart`.
