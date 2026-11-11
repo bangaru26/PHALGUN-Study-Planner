@@ -26,6 +26,8 @@ https://bangaru26.github.io/PHALGUN-Study-Planner/fintech-kalp/
 
 The in-app curriculum includes five authored chapters covering double-entry bookkeeping, accounting concepts and standards, journals and ledgers, trial balance and adjustments, and financial statements/month-end close. Each chapter includes English/Telugu/Hindi notes, worked examples, step-by-step methods, cross-functional applications, formulas, assignments, mini-capstones, flashcards and a five-question assessment. Completion requires starting the lesson timer and scoring 100%.
 
+Automated checks in `test/accounting_curriculum_test.dart` validate chapter count, English/Telugu/Hindi note coverage, assessment question structure and answer-key bounds.
+
 ## Current release scope
 
 - Responsive Flutter learning dashboard for mobile and desktop browsers.
