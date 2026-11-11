@@ -1,0 +1,40 @@
+name: Fintech Kalp Flutter pull-request checks
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'fintech-kalp_flutter/**'
+      - '.github/workflows/fintech-kalp-pr-check.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Flutter stable
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Resolve packages
+        working-directory: fintech-kalp_flutter
+        run: flutter pub get
+
+      - name: Analyze Dart code
+        working-directory: fintech-kalp_flutter
+        run: flutter analyze --no-pub
+
+      - name: Run Flutter tests
+        working-directory: fintech-kalp_flutter
+        run: flutter test --no-pub
+
+      - name: Build production web bundle
+        working-directory: fintech-kalp_flutter
+        run: flutter build web --release --base-href /PHALGUN-Study-Planner/fintech-kalp/
