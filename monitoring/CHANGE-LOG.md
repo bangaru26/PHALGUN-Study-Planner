@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-11-11T09:36:21+00:00 (UTC)
+Last check: 2026-11-12T09:57:26+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 6 changed; 45 unchanged; 0 baseline; 9 unavailable.
+Summary: 6 changed; 46 unchanged; 0 baseline; 8 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -12,19 +12,7 @@ Summary: 6 changed; 45 unchanged; 0 baseline; 9 unavailable.
 | UNCHANGED | GST law and notifications | CBIC | [Open source](https://cbic-gst.gov.in/) |
 | UNAVAILABLE | Indian company law and filings | Ministry of Corporate Affairs | [Open source](https://www.mca.gov.in/content/mca/global/en/home.html) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
-| CHANGED — REVIEW REQUIRED | Indian income tax | Income Tax Department | [Open source](https://www.incometax.gov.in/iec/foportal/) |
-
-### Review required — Indian income tax
-- Previous page excerpt: Home | Income Tax Department Skip to main content Call Us e-filing and Centralized Processing Center e-Filing of Income Tax Return or Forms and other value added services & Intimation, Rectification, Refund and other Income Tax Processing Related Queries 1800 103 0025 (or) 1800 419 0025 +91-80-46122000 +91-80-61464700 08:00 hrs - 20:00 hrs (Monday to Friday) Tax Information Network - NSDL Queries related to PAN & TAN application for Issuance / Update through NSDL +91-20-27218080 07:00 hrs - 23:0
-- Mapped learning areas to review: income tax, TDS/TCS, tax compliance
-- Current page excerpt: Home | Income Tax Department Skip to main content Call Us e-filing and Centralized Processing Center e-Filing of Income Tax Return or Forms and other value added services & Intimation, Rectification, Refund and other Income Tax Processing Related Queries 1800 103 0025 (or) 1800 419 0025 +91-80-46122000 +91-80-61464700 08:00 hrs - 20:00 hrs (Monday to Friday) Tax Information Network - NSDL Queries related to PAN & TAN application for Issuance / Update through NSDL +91-20-27218080 07:00 hrs - 23:0
-- **Detected text differences (for review only):**
-```text
-- Friday) View All Select your language English हिंदी Login Register ‌ Home Individual/HUF Salaried Employees Guidance
-+ Friday) View All Select your language English हिंदी తెలుగు ಕನ್ನಡ தமிழ் മലയാളം ગુજરાતી বাংলা ਪੰਜਾਬੀ मराठी ଓଡ଼ିଆ অসমীয়া اردو Login Register ‌ Home Individual/HUF Salaried Employees Guidance
-```
-- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
-
+| UNCHANGED | Indian income tax | Income Tax Department | [Open source](https://www.incometax.gov.in/iec/foportal/) |
 | UNCHANGED | Accounting, audit and Indian professional guidance | ICAI | [Open source](https://www.icai.org/) |
 | UNCHANGED | IFRS accounting standards | IFRS Foundation | [Open source](https://www.ifrs.org/issued-standards/list-of-standards/) |
 | UNCHANGED | CMA USA | Institute of Management Accountants | [Open source](https://www.imanet.org/ima-certifications/cma-certification) |
@@ -38,17 +26,29 @@ Summary: 6 changed; 45 unchanged; 0 baseline; 9 unavailable.
 - Current page excerpt: What’s New in Python — Python 3.15.2 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.2 documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - **Detected text differences (for review only):**
 ```text
-- non-profit corporation. Please donate. Last updated on Nov 10, 2026 (08:56 UTC). Found a bug ? Created
-+ non-profit corporation. Please donate. Last updated on Nov 11, 2026 (07:14 UTC). Found a bug ? Created
-- Please donate. Last updated on Nov 10, 2026 (08:56 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Nov 11, 2026 (07:14 UTC). Found a bug ? Created using Sphinx
+- non-profit corporation. Please donate. Last updated on Nov 11, 2026 (07:14 UTC). Found a bug ? Created
++ non-profit corporation. Please donate. Last updated on Nov 12, 2026 (08:53 UTC). Found a bug ? Created
+- Please donate. Last updated on Nov 11, 2026 (07:14 UTC). Found a bug ? Created using Sphinx
++ Please donate. Last updated on Nov 12, 2026 (08:53 UTC). Found a bug ? Created using Sphinx
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
 | UNCHANGED | SQL / database practice | Microsoft Learn | [Open source](https://learn.microsoft.com/sql/) |
 | UNCHANGED | SAP S/4HANA and SAP FICO | SAP Help Portal | [Open source](https://help.sap.com/) |
 | UNCHANGED | US financial reporting and filings | US SEC | [Open source](https://www.sec.gov/edgar/search/) |
-| UNCHANGED | Income-tax Act, Rules and CBDT notifications | Income Tax Department / CBDT | [Open source](https://www.incometaxindia.gov.in/notifications) |
+| CHANGED — REVIEW REQUIRED | Income-tax Act, Rules and CBDT notifications | Income Tax Department / CBDT | [Open source](https://www.incometaxindia.gov.in/notifications) |
+
+### Review required — Income-tax Act, Rules and CBDT notifications
+- Previous page excerpt: Income Tax Notifications & CBDT Updates Latest Skip to Main Content Please wait... Income Tax Department Ministry of Finance, Government of India Guided Tour Skip to main content Accessibility Accessibility Options Font Size A- 80% 91% 100% 110% 125% 140% A+ Saturation Screen Reader High Contrast Theme Basic HTML View Invert Colors Language Options English English हिन्दी Help Department Officials IRS Officers Online Official Email Systems Employees Corner Take Online Oath Home About Us History o
+- Mapped learning areas to review: Income-tax Act and Rules, TDS/TCS, tax compliance calendar
+- Current page excerpt: Income Tax Notifications & CBDT Updates Latest Skip to Main Content Please wait... Income Tax Department Ministry of Finance, Government of India Guided Tour Skip to main content Accessibility Accessibility Options Font Size A- 80% 91% 100% 110% 125% 140% A+ Saturation Screen Reader High Contrast Theme Basic HTML View Invert Colors Language Options English English हिन्दी Help Department Officials IRS Officers Online Official Email Systems Employees Corner Take Online Oath Home About Us History o
+- **Detected text differences (for review only):**
+```text
+- Public Awareness NUDGE Report Phishing RTI Children's Corner Quick Links Feedback Sitemap Contact Us Grievance &
++ Public Awareness NUDGE Report Phishing RTI Children's Corner Tax Gyaan Quiz Quick Links Feedback Sitemap Contact Us Grievance &
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNCHANGED | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
 | UNCHANGED | Indian Accounting Standards (Ind AS) compendium | ICAI | [Open source](https://www.icai.org/post/compendium-of-indian-accounting-standards) |
 | UNCHANGED | Ministry of Corporate Affairs public announcements | Press Information Bureau, Government of India | [Open source](https://www.pib.gov.in/newsite/pmreleases.aspx?lang=2&mincode=66&reg=48) |
@@ -83,10 +83,10 @@ Found
 - Current page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
 - **Detected text differences (for review only):**
 ```text
-- For teachers New every day: our latest content Sankt Martin hoch zu Ross Im November feiert
-+ For teachers New every day: our latest content Erinnern an den Holocaust Immer weniger Zeitzeugen können vom Holocaust berichten. Wie kann die Erinnerung erhalten bleiben? B1 | 10.11.2026 Sankt Martin hoch zu Ross Im Nov
-- vor allem Juden verschleppt wurden. C1 | 03.11.2026 Deutschland und seine Kolonialverbrechen Bis heute hat Deutschland den Völkermord in Namibia nicht offiziell anerkannt. Nachfahren verlangen eine Entschuldigung. B1 | 3
-+ vor allem Juden verschleppt wurden. C1 | 03.11.2026 Nicos Weg now available in Kiswahili! The new
+- For teachers New every day: our latest content Erinnern an den Holocaust Immer weniger Zeitzeugen können
++ For teachers New every day: our latest content Tafelspitz – ein Klassiker der Wiener Küche Zur traditionellen Wiener Küche gehört nicht nur das Schnitzel, sondern auch der Tafelspitz. Wie wird er zubereitet? B2 | 11.11.2
+- zu Hause massiv Stellen abbauen. B1 | 03.11.2026 „Stolpersteine“ als Orte der Erinnerung Sie sollen Menschen zum Nachdenken bewegen: kleine Steine vor Gebäuden, aus denen vor allem Juden verschleppt wurden. C1 | 03.11.20
++ zu Hause massiv Stellen abbauen. B1 | 03.11.2026 Nicos Weg now available in Kiswahili! The new
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -100,23 +100,22 @@ Found
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- français, du niveau débutant au niveau avancé. Recommandé Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! TV5MONDE+ Regardez des films, des séries et
-+ français, du niveau débutant au niveau avancé. Recommandé Serious game Jouez à « Datak » et devenez un pro du big data ! TV5MONDE+ Regardez des films, des séries et
-- 5 langues et disponible partout dans le monde ! Serious game Jouez à « Datak » et devenez un pro du big data ! Contes africains Cinq contes venus de Côte
-+ 5 langues et disponible partout dans le monde ! Contes africains Cinq contes venus de Côte
-- gestion des écrans vous invite chez elle ! APPRENDRE EV@LANG Quel est votre niveau à l'écrit et à l'oral
-+ gestion des écrans vous invite chez elle ! Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité... Découvrez les emblèmes de la République française DDF, le Dictionnaire des francophones Participez au Dic
-- invite chez elle ! APPRENDRE EV@LANG Quel est votre niveau à l'écrit et à l'oral en français ? Testez gratuitement vos compétences grâce
-+ au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et libre. Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue viva
-- votre niveau à l'écrit et à l'oral en français ? Testez gratuitement vos compétences grâce à l'application APPRENDRE EV@LANG, conçue par l’AUF et France Éducation International. Les expressions d'Archibald Faire le cacou
-+ font du français une langue vivante et en constante évolution. Les expressions d'Archibald Faire le cacou, motamoter ou
+- français, du niveau débutant au niveau avancé. Recommandé Serious game Jouez à « Datak » et devenez un pro du big data ! TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateform
++ français, du niveau débutant au niveau avancé. Recommandé Emblèmes France La Marseillaise, le coq, Liberté, égalité
+- d’une langue mondialement partagée : vivante et libre. Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante
++ d’une langue mondialement partagée : vivante et libre. Emblèmes Belgique Le coq hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Serious game Jouez 
+- semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Les expressions d'Archibald Faire le
++ « Datak » et devenez un pro du big data ! APPRENDRE EV@LANG Quel est votre niveau à l'écrit et à l'oral en français ? Testez gratuitement vos compétences grâce
+- font du français une langue vivante et en constante évolution. Les expressions d'Archibald Faire le cacou, motamoter ou
++ votre niveau à l'écrit et à l'oral en français ? Testez gratuitement vos compétences grâce à l'application APPRENDRE EV@LANG, conçue par l’AUF et France Éducation International. Les expressions d'Archibald Faire le cacou
+- veut dire ? Archibald vous dit tout ! Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! Emblèmes Belgique Le coq hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Décou
++ veut dire ? Archibald vous dit tout ! Quèsaco Sur un ton décalé, drôle et moderne,
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
 | UNCHANGED | French grammar and vocabulary | Lawless French | [Open source](https://www.lawlessfrench.com/) |
 | UNCHANGED | Spanish grammar and vocabulary | Lawless Spanish | [Open source](https://www.lawlessspanish.com/) |
-| UNAVAILABLE | Bilingual dictionaries | WordReference | [Open source](https://www.wordreference.com/) |
-  - Fetch issue: HTTPError: HTTP Error 418: 
+| UNCHANGED | Bilingual dictionaries | WordReference | [Open source](https://www.wordreference.com/) |
 | CHANGED — REVIEW REQUIRED | German-English dictionary | dict.cc | [Open source](https://www.dict.cc/) |
 
 ### Review required — German-English dictionary
@@ -125,16 +124,16 @@ Found
 - Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU UK NO FI SQ DA CS PT HR LA BG EO TR SR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.720 Übersetzungen – 2.869 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.759 Übersetzungen – 2.878 neu – 99,8% verifiziert Zeit
-- | Z Zuletzt verifizierte Übersetzungen 1.319.720 Übersetzungen – 2.869 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-+ | Z Zuletzt verifizierte Übersetzungen 1.319.759 Übersetzungen – 2.878 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:13 cloth. work clothing Arbeitskluft {f} [ugs.] sun Dra 10:08 mining exploratory tunnel
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:07 (nice) little housewife [pej.] Heimchen {n} [pej.] [veraltend] sun joe 09:37 jobs to apply for leave Urlaub einreichen Dra git 07:29 to lead to sth. zu etw. [Da
-- Geprüft von 10:13 cloth. work clothing Arbeitskluft {f} [ugs.] sun Dra 10:08 mining exploratory tunnel Erkundungsstollen {m} Dra sun 10:06 along those lines {adv} in jene Richtung pol Dra 10:01 mining side tunnel Seitens
-+ jpx 07:27 archi. urban villa colony Villenkolonie {f} BHM jpx Voice: to burn by Sasha LE-Zelltest by Halmafelix
-- in English Top Contributors Weekly All-Time Lang. 1 6294 Halmafelix 2 2630 polarjud GreatFallsStatistics... 3 2405 gitterkugel
-+ in English Top Contributors Weekly All-Time Lang. 1 5187 Halmafelix 2 3160 polarjud GreatFallsStatistics... 3 2260 nitram
+- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.759 Übersetzungen – 2.878 neu – 99,8% verifiziert Zeit
++ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.796 Übersetzungen – 2.888 neu – 99,8% verifiziert Zeit
+- | Z Zuletzt verifizierte Übersetzungen 1.319.759 Übersetzungen – 2.878 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
++ | Z Zuletzt verifizierte Übersetzungen 1.319.796 Übersetzungen – 2.888 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:07 (nice) little housewife [pej.] Heimchen {n} [pej.] [veraltend] sun joe 09:37 jobs to apply for leave Urlaub
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:37 to protect sth. [from view etc.] etw. [Akk.] decken [schützen] BHM joe 09:37 to retire early sich [Akk.] jung
+- [pej.] Heimchen {n} [pej.] [veraltend] sun joe 09:37 jobs to apply for leave Urlaub einreichen Dra git
++ etc.] etw. [Akk.] decken [schützen] BHM joe 09:37 to retire early sich [Akk.] jung zur Ruhe
+- {n} [pej.] [veraltend] sun joe 09:37 jobs to apply for leave Urlaub einreichen Dra git 07:29 to lead to sth. zu etw. [Dat.] gereichen [geh.] Dra jpx 07:28 to feel like the center of attention sich [Akk.] im Mittelpunkt f
++ etw. [Akk.] decken [schützen] BHM joe 09:37 to retire early sich [Akk.] jung zur Ruhe setzen nit joe
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
