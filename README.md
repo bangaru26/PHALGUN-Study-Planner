@@ -2,6 +2,10 @@
 
 A free, mobile-friendly study desk for GFPA / PHALGUN learning.
 
+## Fintech Kalp — chapter-by-chapter study packs
+
+The first complete chapter pack is now available: [Chapter 1 — Accounting Foundations](./FINTECH_KALP_CHAPTER_01_ACCOUNTING_FOUNDATIONS.md). It includes plain-language notes, worked examples, a practical assignment with model answers, 15 MCQs with explanations, 20 flashcards and interview prompts. Further chapter packs should follow the same learning standard.
+
 ## Fintech Kalp — learner coursebook
 **Start the job-ready learning course:** [Fintech Kalp Learner Coursebook](./FINTECH_KALP_LEARNER_COURSEBOOK.md). It includes teachable foundations and practical labs across accounting, P2P/O2C/R2R, Excel formula dictionary and VBA, Power Query, FP&A, SQL, Power BI/DAX, Python, ERP/SAP FICO, IFRS awareness, treasury, controls, AI safety, capstone and job readiness. Save your work in a portfolio and verify current standards/rules against authoritative sources.
 
