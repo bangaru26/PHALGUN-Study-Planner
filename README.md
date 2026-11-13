@@ -6,6 +6,10 @@ A free, mobile-friendly study desk for GFPA / PHALGUN learning.
 
 Fintech Kalp and PAL are being developed under a strict ₹0 spending limit. See the [AAROH Zero-Budget Delivery Plan](./AAROH_ZERO_BUDGET_IMPLEMENTATION_PLAN.md) for the no-paid-services rule, delivery order, security requirements and honest release-reporting standard. No paid fallback may be activated without explicit Founder approval.
 
+## PAL — AAROH family scheduler prototype
+
+Open the [PAL local-first scheduler](./pal/). This zero-cost starter includes reminder creation/editing, family room labels, member labels, five-minute snooze, completion, browser notifications while the app is open, voice-entry support where the browser provides it, JSON backup/restore, calendar-file export and an offline app shell. Data is stored only in the current browser/device. It does not yet provide secure family accounts, cross-device sync, reliable closed-app alarms, WhatsApp/Telegram messaging, SMS or smartwatch integration.
+
 ## Fintech Kalp — chapter-by-chapter study packs
 
 The Flutter learning app now includes an additional **Accounting Foundations** lesson with a worked business scenario, a chapter assessment and 20 interactive flashcards. The feature is committed in the app source; its automated build and widget test still need to pass before it is called verified or live.
