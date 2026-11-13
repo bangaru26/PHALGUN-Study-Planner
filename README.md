@@ -8,6 +8,8 @@ Fintech Kalp and PAL are being developed under a strict ₹0 spending limit. See
 
 ## Fintech Kalp — chapter-by-chapter study packs
 
+The Flutter learning app now includes an additional **Accounting Foundations** lesson with a worked business scenario, a chapter assessment and 20 interactive flashcards. The feature is committed in the app source; its automated build and widget test still need to pass before it is called verified or live.
+
 The first complete chapter pack is now available: [Chapter 1 — Accounting Foundations](./FINTECH_KALP_CHAPTER_01_ACCOUNTING_FOUNDATIONS.md). It includes plain-language notes, worked examples, a practical assignment with model answers, 15 MCQs with explanations, 20 flashcards and interview prompts. Further chapter packs should follow the same learning standard.
 
 ## Fintech Kalp — learner coursebook
