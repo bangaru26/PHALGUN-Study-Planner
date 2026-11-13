@@ -40,6 +40,8 @@ class _LearningHomeState extends State<LearningHome> {
   DateTime? lessonTimerStartedAt;
   Duration lessonElapsed = Duration.zero;
   bool lessonTimerStarted = false;
+  int flashcardIndex = 0;
+  bool flashcardRevealed = false;
   static const _storageKey = 'fintech_kalp_local_v1';
 
   @override
@@ -92,7 +94,7 @@ class _LearningHomeState extends State<LearningHome> {
   }
 
   final paths = const [
-    LearningPath('Finance foundations', 'Accounting, statements, working capital and controls', Icons.account_balance, 'CORE', ['Financial statements in practice', 'Working capital and cash conversion', 'Internal controls and reconciliations', 'Applied financial statement analysis case lab', 'Working capital improvement workshop']),
+    LearningPath('Finance foundations', 'Accounting, statements, working capital and controls', Icons.account_balance, 'CORE', ['Financial statements in practice', 'Working capital and cash conversion', 'Internal controls and reconciliations', 'Applied financial statement analysis case lab', 'Working capital improvement workshop', 'Accounting foundations: double entry, accruals and month-end close']),
     LearningPath('Finance operations', 'AP/P2P, AR/O2C, GL/R2R and shared services', Icons.sync_alt, 'OPS', ['Invoice-to-pay lifecycle', 'Order-to-cash and collections', 'Month-end close and reconciliations', 'AP exception investigation case lab', 'O2C collections and cash-application workshop']),
     LearningPath('Data for finance', 'Excel, Power Query, BI, SQL and data quality', Icons.query_stats, 'DATA', ['Excel analysis for AP ageing', 'Power Query: clean and combine files', 'Build a finance KPI dashboard', 'Excel formulas and ageing analysis practice lab', 'Power Query refresh and reconciliation workshop']),
     LearningPath('Automation & AI', 'RPA, document intelligence and human oversight', Icons.auto_awesome, 'AI', ['Identify automation candidates', 'OCR and invoice exception handling', 'Human-in-the-loop AI controls', 'Finance automation business-case lab', 'Invoice document validation case workshop']),
@@ -506,6 +508,17 @@ class _LearningHomeState extends State<LearningHome> {
         'capstone': 'Design a 60-day working-capital improvement plan with a reconciled baseline, quantified opportunity, initiatives, owners, dependencies, risks and weekly measures. Include at least one guardrail for customers and suppliers.',
         'gist': 'Improve the cause of cash delay, not just the KPI. Validate cash release and protect service, controls and commercial relationships.'
       },
+      'CORE_5': {
+        'focus': 'Accounting foundations: classify assets, liabilities, equity, income and expenses; apply the accounting equation; record balanced double entries; distinguish cash from accrual accounting; account for accruals, prepayments and depreciation; and complete a controlled month-end close.',
+        'concept': 'The accounting equation is Assets = Liabilities + Equity. Every transaction is recorded using at least two entries, with total debits equal to total credits. Assets and expenses normally increase with debits; liabilities, equity and income normally increase with credits. Under accrual accounting, qualifying income is recognised when earned and expenses when incurred, rather than simply when cash moves. A trial balance checks debit-credit equality but cannot detect every error.',
+        'example': 'A services business receives ₹300,000 owner capital, buys a laptop for ₹60,000 cash, purchases stationery on credit for ₹4,000, provides services worth ₹45,000 on credit, collects ₹20,000 from the customer, pays the stationery supplier ₹2,500, accrues ₹3,000 electricity and records ₹1,500 depreciation. Closing receivables are ₹25,000; stationery payable is ₹1,500; revenue is ₹45,000; expenses are ₹8,500. The customer receipt reduces receivables; it is not new revenue.',
+        'steps': '1. Identify the transaction and supporting document.\n2. Classify each account as asset, liability, equity, income or expense.\n3. Apply debit and credit rules and confirm equal totals.\n4. Post to the ledger and retain a traceable reference.\n5. Reconcile bank, receivables, payables and fixed assets.\n6. Record supported accruals, prepayments and depreciation.\n7. Review the trial balance, investigate differences and obtain approval before closing the period.',
+        'cross': 'Sales and service teams provide evidence that revenue was earned; AP validates supplier invoices; AR tracks customer balances and receipts; Treasury reconciles bank movements; Fixed Assets maintains cost and depreciation records; GL/R2R owns journals and close; Audit/Risk tests evidence, approvals and segregation of duties.',
+        'formula': 'Assets = Liabilities + Equity. Debits must equal credits for every journal. Straight-line depreciation per period = (cost − residual value) ÷ useful life. Closing receivable = invoices/credit sales − supported receipts and credits.',
+        'assignment': 'Prepare journal entries for the eight transactions in the worked example. Show the account group and debit/credit amount for every line. Calculate closing receivables, supplier payable, revenue and expenses. Explain why the customer receipt is not revenue and why the electricity accrual is recognised before the invoice arrives.',
+        'capstone': 'Create a month-end close file for a fictional small business: journal register, trial balance, bank reconciliation, receivables/payables schedules, fixed-asset depreciation, accrual support, review checklist and a one-page close summary. Identify at least three risks and the evidence needed to resolve them.',
+        'gist': 'Classify first, journal second, reconcile third and close only after evidence and review. Equal debits and credits are necessary, but they do not prove every transaction is correct.'
+      },
       'OPS_3': {
         'focus': 'AP exception investigation: classify blocked invoices by reason, quantify value and age, trace evidence across PO, receipt and invoice records, and route each case to an accountable resolver. A queue is useful only when the next action is clear.',
         'concept': 'An AP exception process should distinguish price variance, quantity variance, missing receipt, duplicate risk, tax or master-data mismatch, missing approval and interface failure. Use a unique invoice key and preserve the source document. Ageing alone is not root cause. Prioritisation should consider value, due date, supplier criticality, risk and time waiting for another team. A blocked item must not be forced through or split to bypass controls.',
@@ -709,6 +722,10 @@ class _LearningHomeState extends State<LearningHome> {
         'q1': {'q': 'What makes a reconciliation control effective?', 'o': ['A difference is posted to suspense without review', 'Independent sources, an owner, evidence, reviewer and timely resolution', 'Only a monthly tick mark'], 'a': 1, 'e': 'A reconciliation needs traceable evidence, accountable preparation and review, and resolution of differences.'},
         'q2': {'q': 'Why is segregation of duties important in supplier payments?', 'o': ['It lets one person create suppliers and release payments unchecked', 'It separates incompatible activities and reduces unauthorised or undetected errors', 'It removes the need for approvals'], 'a': 1, 'e': 'Separating supplier setup, invoice approval and payment release reduces opportunities for error or fraud.'},
       },
+      'CORE_5': {
+        'q1': {'q': 'A business receives ₹20,000 from a customer against an invoice already recorded. What is the correct entry?', 'o': ['Dr Bank; Cr Trade Receivables', 'Dr Bank; Cr Revenue again', 'Dr Trade Payables; Cr Bank'], 'a': 0, 'e': 'The service revenue was recognised when earned. The later receipt increases bank and reduces the receivable; it does not recognise revenue twice.'},
+        'q2': {'q': 'Electricity was consumed in March, but the supplier invoice arrives in April. What is normally required at March close?', 'o': ['Ignore it until cash is paid', 'Recognise the March expense and an accrued liability, using a supportable estimate', 'Record it as equipment'], 'a': 1, 'e': 'Accrual accounting recognises expenses in the period in which they are incurred, subject to the applicable recognition requirements.'},
+      },
       'OPS_0': {
         'q1': {'q': 'In a three-way match, which records are compared?', 'o': ['Invoice, purchase order and goods/service receipt', 'Bank statement, payroll and budget', 'Sales order, customer receipt and tax return'], 'a': 0, 'e': 'Three-way matching checks invoice details against the PO and evidence that goods or services were received.'},
         'q2': {'q': 'An invoice quantity exceeds the recorded receipt. What should AP do?', 'o': ['Release payment to meet the SLA', 'Hold the exception and obtain authorised receipt or invoice correction evidence', 'Change the receipt quantity without evidence'], 'a': 1, 'e': 'Quantity differences require evidence and resolution by the accountable receiving or procurement owner.'},
@@ -852,6 +869,30 @@ class _LearningHomeState extends State<LearningHome> {
       'CHANGE': 'https://scrumguides.org/scrum-guide.html | https://www.atlassian.com/agile',
       'EXCEL': 'https://support.microsoft.com/excel | https://learn.microsoft.com/training/ | https://support.microsoft.com/office/power-query-for-excel-help-2b433a85-ddfb-420b-9cda-fe0e60b82a94',
     };
+    final chapterFlashcards = path.code == 'CORE' && selectedChapter == 5
+        ? <Map<String, String>>[
+            {'front': 'What is the accounting equation?', 'back': 'Assets = Liabilities + Equity. It must remain balanced after every correctly recorded transaction.'},
+            {'front': 'What are the five main account groups?', 'back': 'Assets, liabilities, equity, income and expenses.'},
+            {'front': 'What does a debit mean?', 'back': 'A debit is an entry on the left side of an account. It does not always mean an increase.'},
+            {'front': 'Which accounts normally increase with a debit?', 'back': 'Assets and expenses normally increase with debits.'},
+            {'front': 'Which accounts normally increase with a credit?', 'back': 'Liabilities, equity and income normally increase with credits.'},
+            {'front': 'What is double-entry bookkeeping?', 'back': 'Each transaction affects at least two accounts and total debits must equal total credits.'},
+            {'front': 'How is a credit sale initially recorded?', 'back': 'Dr Trade Receivables; Cr Revenue, when the revenue recognition criteria are met.'},
+            {'front': 'How is a customer receipt against an existing invoice recorded?', 'back': 'Dr Bank; Cr Trade Receivables. Do not recognise the revenue a second time.'},
+            {'front': 'What is accrual accounting?', 'back': 'Recognise qualifying income when earned and expenses when incurred, rather than only when cash is received or paid.'},
+            {'front': 'What is an accrued expense?', 'back': 'An expense already incurred but not yet invoiced or paid; normally Dr Expense and Cr Accrued Liability.'},
+            {'front': 'What is a prepayment?', 'back': 'Cash paid before the related service is consumed. It is initially an asset and is expensed as the benefit is used.'},
+            {'front': 'What is unearned or deferred income?', 'back': 'Cash received before the related goods or services have been provided; it is generally a liability until the obligation is satisfied.'},
+            {'front': 'What is depreciation?', 'back': 'The systematic allocation of a depreciable asset amount over its useful life; it is not a measure of current market value.'},
+            {'front': 'What is the straight-line depreciation formula?', 'back': '(Cost − residual value) ÷ useful life, using consistent time units.'},
+            {'front': 'What does a trial balance test?', 'back': 'Whether total debit balances equal total credit balances. It does not prove that all transactions are complete or correctly classified.'},
+            {'front': 'Name one error a balanced trial balance may not reveal.', 'back': 'An omitted transaction, a wrong account with equal debits and credits, a duplicated entry on both sides, or compensating errors.'},
+            {'front': 'What is a bank reconciliation?', 'back': 'A comparison of the bank statement and cash ledger that explains timing items and errors with evidence.'},
+            {'front': 'Why should you never post a plug to force a reconciliation to balance?', 'back': 'A plug hides the cause and weakens reporting integrity. Investigate, document, approve and resolve the actual difference.'},
+            {'front': 'What is segregation of duties?', 'back': 'Separating incompatible tasks—such as supplier setup, invoice approval and payment release—so one person cannot complete the whole process unchecked.'},
+            {'front': 'What are the essential close controls?', 'back': 'Clear cut-off, complete subledgers, reconciliations, supported journals, independent review, documented sign-off and controlled period locking.'},
+          ]
+        : <Map<String, String>>[];
     return ListView(padding: const EdgeInsets.all(22), children: [
       Row(children: [IconButton(onPressed: () => setState(() => lessonOpened = false), icon: const Icon(Icons.arrow_back)), const SizedBox(width: 4), Expanded(child: Text('$id · LESSON', style: const TextStyle(color: teal, fontWeight: FontWeight.w900, letterSpacing: 1.1)))]),
       Text(title, style: const TextStyle(fontSize: 27, fontWeight: FontWeight.w900, color: ink)),
@@ -886,6 +927,27 @@ class _LearningHomeState extends State<LearningHome> {
       lessonCard('08 · Assignment (attempt first)', d['assignment']!),
       lessonCard('09 · Mini-capstone', d['capstone']!),
       lessonCard('09 · Revision gist', d['gist'] ?? 'Recall the process flow, evidence, responsible owner, key control and metric that proves improvement. Connect this lesson to earlier topics.'),
+      if (chapterFlashcards.isNotEmpty)
+        Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const Text('11 · Flashcards · Accounting foundations', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: ink)),
+          const SizedBox(height: 6),
+          Text('Card ${flashcardIndex + 1} of ${chapterFlashcards.length}', style: const TextStyle(color: Colors.black54)),
+          const SizedBox(height: 12),
+          Container(width: double.infinity, padding: const EdgeInsets.all(16), decoration: BoxDecoration(color: const Color(0xFFF1F6FA), borderRadius: BorderRadius.circular(14)), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(chapterFlashcards[flashcardIndex]['front']!, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: ink)),
+            if (flashcardRevealed) ...[
+              const SizedBox(height: 12),
+              const Divider(),
+              Text(chapterFlashcards[flashcardIndex]['back']!, style: const TextStyle(height: 1.55)),
+            ],
+          ])),
+          const SizedBox(height: 12),
+          Wrap(spacing: 8, runSpacing: 8, children: [
+            OutlinedButton.icon(onPressed: () => setState(() => flashcardRevealed = !flashcardRevealed), icon: Icon(flashcardRevealed ? Icons.visibility_off : Icons.visibility), label: Text(flashcardRevealed ? 'Hide answer' : 'Reveal answer')),
+            OutlinedButton(onPressed: flashcardIndex == 0 ? null : () => setState(() { flashcardIndex--; flashcardRevealed = false; }), child: const Text('Previous')),
+            FilledButton(onPressed: () => setState(() { flashcardIndex = (flashcardIndex + 1) % chapterFlashcards.length; flashcardRevealed = false; }), child: const Text('Next card')),
+          ]),
+        ]))),
       lessonCard('10 · Books, free learning and references', 'Explore these starting points (availability and access terms may vary):\n${resources[path.code]}\n\nUse official documentation first. Record the page or module used, the date accessed and one practical takeaway.'),
       Card(child: Padding(padding: const EdgeInsets.all(16), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const Text('Study timer', style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: ink)),
