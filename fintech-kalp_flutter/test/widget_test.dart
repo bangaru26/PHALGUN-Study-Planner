@@ -33,4 +33,27 @@ void main() {
     expect(find.text('Curriculum explorer'), findsOneWidget);
     expect(find.text('Learning path'), findsOneWidget);
   });
+  testWidgets('Accounting foundations lesson exposes its flashcards', (tester) async {
+    await tester.view.setPhysicalSize(const Size(1200, 1800));
+    await tester.view.devicePixelRatio = 1;
+    await tester.pumpWidget(const FintechKalpApp());
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Learn'));
+    await tester.pumpAndSettle();
+
+    final chapter = find.text('Accounting foundations: double entry, accruals and month-end close');
+    await tester.ensureVisible(chapter);
+    await tester.tap(chapter);
+    await tester.pumpAndSettle();
+
+    final firstCard = find.text('What is the accounting equation?');
+    await tester.ensureVisible(firstCard);
+    expect(firstCard, findsOneWidget);
+    expect(find.text('Card 1 of 20'), findsOneWidget);
+
+    await tester.tap(find.text('Reveal answer'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('Assets = Liabilities + Equity'), findsOneWidget);
+  });
 }
