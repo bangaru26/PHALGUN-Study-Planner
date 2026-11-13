@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10233f">
+  <meta name="description" content="PAL — a free, local-first family scheduler prototype within AAROH.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>PAL — Family Scheduler</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#17253b;background:#f3f6fa;font-synthesis:none}
+    *{box-sizing:border-box}body{margin:0}header{background:#10233f;color:#fff;padding:22px max(18px,calc((100% - 1080px)/2));}
+    header h1{margin:0;font-size:25px;letter-spacing:.08em}header p{margin:6px 0 0;color:#c8d7e8;font-size:13px}
+    main{max-width:1080px;margin:20px auto;padding:0 16px 36px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:16px}
+    section,.panel{background:#fff;border:1px solid #e1e8f0;border-radius:18px;padding:18px;box-shadow:0 4px 18px #10233f0a}
+    h2{font-size:17px;margin:0 0 14px;color:#10233f}label{display:block;font-size:12px;font-weight:700;color:#526174;margin:10px 0 5px}
+    input,select,textarea,button{font:inherit}input,select,textarea{width:100%;border:1px solid #cbd5e1;border-radius:10px;padding:11px;background:#fff;color:#17253b}
+    textarea{min-height:68px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+    button{border:0;border-radius:10px;padding:10px 14px;background:#087e8b;color:white;font-weight:700;cursor:pointer}
+    button.secondary{background:#e8eef5;color:#24364d}button.danger{background:#fff0ee;color:#a43c2c}button:disabled{opacity:.45;cursor:not-allowed}
+    .muted{color:#66758a;font-size:12px;line-height:1.5}.status{padding:10px 12px;border-radius:10px;background:#edf5f7;color:#28535c;font-size:12px;margin:12px 0}
+    .task{border:1px solid #e4eaf1;border-radius:13px;padding:13px;margin:10px 0}.task h3{margin:0 0 5px;font-size:15px}.task p{margin:5px 0;color:#526174;font-size:12px;line-height:1.45}
+    .task.done{opacity:.58}.task.done h3{text-decoration:line-through}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.chip{font-size:11px;background:#edf2f7;border-radius:20px;padding:4px 8px;color:#41536a}
+    .task-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.task-actions button{font-size:12px;padding:7px 10px}
+    .empty{padding:28px 12px;text-align:center;color:#758397;font-size:13px}.hidden{display:none!important}
+    dialog{border:0;border-radius:16px;max-width:480px;width:calc(100% - 24px);box-shadow:0 20px 80px #10233f44}dialog::backdrop{background:#10233f88}
+    footer{max-width:1080px;margin:0 auto;padding:0 16px 24px}
+    @media(max-width:760px){main{grid-template-columns:1fr;margin-top:12px}.row{grid-template-columns:1fr}header{padding:18px}}
+  </style>
+</head>
+<body>
+<header><h1>PAL</h1><p>Family scheduler · AAROH · Free, local-first starter</p></header>
+<main>
+  <section>
+    <h2>Add a family reminder</h2>
+    <form id="taskForm">
+      <label for="taskTitle">What needs to be done?</label>
+      <input id="taskTitle" required maxlength="120" placeholder="e.g. Pay electricity bill">
+      <div class="row">
+        <div><label for="taskDate">Date</label><input id="taskDate" type="date" required></div>
+        <div><label for="taskTime">Time</label><input id="taskTime" type="time" required></div>
+      </div>
+      <div class="row">
+        <div><label for="taskRoom">Family room</label><select id="taskRoom"><option>Family</option><option>Personal</option><option>Child</option><option>Home</option><option>Work</option></select></div>
+        <div><label for="taskAssignee">Assigned to</label><input id="taskAssignee" maxlength="60" placeholder="Family member"></div>
+      </div>
+      <label for="taskNotes">Notes (optional)</label><textarea id="taskNotes" maxlength="500" placeholder="Details, checklist or location"></textarea>
+      <div class="actions"><button type="submit">Save reminder</button><button class="secondary" type="button" id="voiceButton">Add by voice</button></div>
+      <p class="muted" id="voiceStatus">Voice entry depends on browser support and permission. You can always type instead.</p>
+    </form>
+    <div class="status" id="notice">Your reminders stay on this device. No account or cloud sync is connected.</div>
+    <h2 style="margin-top:22px">Your reminders</h2>
+    <div class="row">
+      <div><label for="filterRoom">Show room</label><select id="filterRoom"><option value="All">All rooms</option><option>Family</option><option>Personal</option><option>Child</option><option>Home</option><option>Work</option></select></div>
+      <div><label for="filterStatus">Show status</label><select id="filterStatus"><option value="Open">Upcoming / open</option><option value="All">All reminders</option><option value="Done">Completed</option></select></div>
+    </div>
+    <div id="taskList" aria-live="polite"></div>
+  </section>
+  <aside>
+    <section>
+      <h2>Family members & rooms</h2>
+      <p class="muted">These labels are stored on this device only. They are not separate secure accounts yet.</p>
+      <label for="memberName">Add a family member</label>
+      <div class="row"><input id="memberName" maxlength="60" placeholder="Name"><button id="addMember" type="button">Add member</button></div>
+      <div id="members" class="chips"></div>
+      <label for="roomName">Add a room</label>
+      <div class="row"><input id="roomName" maxlength="40" placeholder="Room name"><button id="addRoom" type="button">Add room</button></div>
+      <div id="rooms" class="chips"></div>
+    </section>
+    <section style="margin-top:16px">
+      <h2>Backup & calendar</h2>
+      <p class="muted">Export a backup before clearing browser data or changing devices. Calendar export creates an .ics file that can be imported into a calendar app.</p>
+      <div class="actions"><button class="secondary" id="exportBackup" type="button">Export backup</button><button class="secondary" id="importButton" type="button">Restore backup</button><input class="hidden" id="importFile" type="file" accept="application/json"></div>
+      <p class="muted" id="backupStatus"></p>
+    </section>
+    <section style="margin-top:16px">
+      <h2>Reminder permissions</h2>
+      <p class="muted">Notifications work only when this page or installed app is open and the browser permits them. Reliable alerts while the app is fully closed need additional platform support, which is not included in this first version.</p>
+      <button class="secondary" id="enableNotifications" type="button">Enable notifications</button>
+      <p class="muted" id="notificationStatus"></p>
+    </section>
+  </aside>
+</main>
+<footer><p class="muted">PAL prototype 0.1 · Offline-capable web app · No paid services · No sign-in, cross-device sync, WhatsApp, Telegram or smartwatch connection in this prototype.</p></footer>
+<dialog id="editDialog">
+  <form method="dialog" id="editForm">
+    <h2>Edit reminder</h2>
+    <input type="hidden" id="editId">
+    <label for="editTitle">Task</label><input id="editTitle" required maxlength="120">
+    <div class="row"><div><label for="editDate">Date</label><input id="editDate" type="date" required></div><div><label for="editTime">Time</label><input id="editTime" type="time" required></div></div>
+    <div class="row"><div><label for="editRoom">Room</label><select id="editRoom"></select></div><div><label for="editAssignee">Assigned to</label><input id="editAssignee" maxlength="60"></div></div>
+    <label for="editNotes">Notes</label><textarea id="editNotes" maxlength="500"></textarea>
+    <div class="actions"><button value="cancel" class="secondary">Cancel</button><button id="saveEdit" value="save">Save changes</button></div>
+  </form>
+</dialog>
+<script>
+(() => {
+  'use strict';
+  const KEY='aaroh_pal_local_v1';
+  const $=id=>document.getElementById(id);
+  const defaults={tasks:[],members:[],rooms:['Family','Personal','Child','Home','Work']};
+  let data=load();
+  let reminderTimer=null;
+  function load(){try{return {...defaults,...JSON.parse(localStorage.getItem(KEY)||'{}')};}catch{return structuredClone(defaults);}}
+  function save(){localStorage.setItem(KEY,JSON.stringify(data));render();}
+  function id(){return (crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random());}
+  function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function dateTime(t){return new Date(t.date+'T'+t.time+':00');}
+  function render(){
+    $('taskList').innerHTML='';
+    const room=$('filterRoom').value,status=$('filterStatus').value;
+    const tasks=[...data.tasks].sort((a,b)=>dateTime(a)-dateTime(b)).filter(t=>(room==='All'||t.room===room)&&(status==='All'||(status==='Done'?t.done:!t.done)));
+    if(!tasks.length){$('taskList').innerHTML='<div class="empty">No reminders in this view. Add one above.</div>';}
+    tasks.forEach(t=>{
+      const el=document.createElement('article');el.className='task'+(t.done?' done':'');
+      const when=dateTime(t).toLocaleString();
+      el.innerHTML='<h3>'+safe(t.title)+'</h3><p>'+safe(when)+'</p><p>'+safe(t.notes||'No additional notes')+'</p><div class="chips"><span class="chip">'+safe(t.room)+'</span><span class="chip">'+safe(t.assignee||'Unassigned')+'</span><span class="chip">'+(t.done?'Completed':'Open')+'</span></div><div class="task-actions"><button data-action="done" data-id="'+safe(t.id)+'" class="secondary">'+(t.done?'Reopen':'Complete')+'</button><button data-action="edit" data-id="'+safe(t.id)+'" class="secondary">Edit</button><button data-action="snooze" data-id="'+safe(t.id)+'" class="secondary">Snooze 5 min</button><button data-action="calendar" data-id="'+safe(t.id)+'" class="secondary">Calendar file</button><button data-action="delete" data-id="'+safe(t.id)+'" class="danger">Delete</button></div>';
+      $('taskList').appendChild(el);
+    });
+    $('members').innerHTML=data.members.map(n=>'<span class="chip">'+safe(n)+'</span>').join('')||'<span class="muted">No members added</span>';
+    $('rooms').innerHTML=data.rooms.map(n=>'<span class="chip">'+safe(n)+'</span>').join('');
+    $('taskRoom').innerHTML=data.rooms.map(n=>'<option>'+safe(n)+'</option>').join('');
+    $('filterRoom').innerHTML='<option value="All">All rooms</option>'+data.rooms.map(n=>'<option>'+safe(n)+'</option>').join('');
+    const editRoom=$('editRoom');if(editRoom)editRoom.innerHTML=data.rooms.map(n=>'<option>'+safe(n)+'</option>').join('');
+  }
+  function taskFromForm(prefix='task'){
+    return {title:$(prefix+'Title').value.trim(),date:$(prefix+'Date').value,time:$(prefix+'Time').value,room:$(prefix+'Room').value,assignee:$(prefix+'Assignee').value.trim(),notes:$(prefix+'Notes').value.trim()};
+  }
+  $('taskForm').addEventListener('submit',e=>{e.preventDefault();const t=taskFromForm();if(!t.title||!t.date||!t.time)return;data.tasks.push({id:id(),...t,done:false,notified:false});save();$('taskForm').reset();$('taskDate').value=new Date().toISOString().slice(0,10);$('notice').textContent='Reminder saved on this device.';});
+  $('taskList').addEventListener('click',e=>{
+    const b=e.target.closest('button[data-action]');if(!b)return;
+    const t=data.tasks.find(x=>x.id===b.dataset.id);if(!t)return;
+    if(b.dataset.action==='done'){t.done=!t.done;}
+    if(b.dataset.action==='delete'){if(!confirm('Delete this reminder?'))return;data.tasks=data.tasks.filter(x=>x.id!==t.id);}
+    if(b.dataset.action==='snooze'){const d=new Date(Date.now()+5*60000);t.date=d.toISOString().slice(0,10);t.time=d.toTimeString().slice(0,5);t.done=false;t.notified=false;}
+    if(b.dataset.action==='calendar'){downloadICS(t);}
+    if(b.dataset.action==='edit'){
+      $('editId').value=t.id;$('editTitle').value=t.title;$('editDate').value=t.date;$('editTime').value=t.time;$('editRoom').value=t.room;$('editAssignee').value=t.assignee;$('editNotes').value=t.notes;$('editDialog').showModal();return;
+    }
+    save();
+  });
+  $('editForm').addEventListener('submit',e=>{if(e.submitter?.id!=='saveEdit')return;const t=data.tasks.find(x=>x.id===$('editId').value);if(!t)return;Object.assign(t,{title:$('editTitle').value.trim(),date:$('editDate').value,time:$('editTime').value,room:$('editRoom').value,assignee:$('editAssignee').value.trim(),notes:$('editNotes').value.trim(),notified:false});save();});
+  $('addMember').onclick=()=>{const n=$('memberName').value.trim();if(n&&!data.members.includes(n)){data.members.push(n);$('memberName').value='';save();}};
+  $('addRoom').onclick=()=>{const n=$('roomName').value.trim();if(n&&!data.rooms.includes(n)){data.rooms.push(n);$('roomName').value='';save();}};
+  $('filterRoom').onchange=render;$('filterStatus').onchange=render;
+  $('exportBackup').onclick=()=>download('pal-backup.json',JSON.stringify({version:1,exportedAt:new Date().toISOString(),...data},null,2),'application/json');
+  $('importButton').onclick=()=>$('importFile').click();
+  $('importFile').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!Array.isArray(obj.tasks)||!Array.isArray(obj.rooms)||!Array.isArray(obj.members))throw Error('Invalid PAL backup');if(!confirm('Replace current PAL data with this backup?'))return;data={tasks:obj.tasks,members:obj.members,rooms:obj.rooms};save();$('backupStatus').textContent='Backup restored on this device.';}catch(err){$('backupStatus').textContent='Could not restore: '+err.message;}e.target.value='';};
+  function download(name,content,type){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([content],{type}));a.href=url;a.download=name;a.click();URL.revokeObjectURL(url);}
+  function downloadICS(t){const start=new Date(t.date+'T'+t.time+':00');const end=new Date(start.getTime()+30*60000);const stamp=d=>d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');const esc=s=>String(s||'').replace(/\\/g,'\\\\').replace(/,/g,'\\,').replace(/;/g,'\\;').replace(/\n/g,'\\n');const ics='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//AAROH//PAL//EN\r\nBEGIN:VEVENT\r\nUID:'+safe(t.id)+'@aaroh-pal\r\nDTSTAMP:'+stamp(new Date())+'\r\nDTSTART:'+stamp(start)+'\r\nDTEND:'+stamp(end)+'\r\nSUMMARY:'+esc(t.title)+'\r\nDESCRIPTION:'+esc(t.notes)+'\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n';download('pal-reminder.ics',ics,'text/calendar');}
+  $('enableNotifications').onclick=async()=>{if(!('Notification'in window)){$('notificationStatus').textContent='Notifications are not supported in this browser.';return;}const p=await Notification.requestPermission();$('notificationStatus').textContent='Notification permission: '+p;};
+  function checkReminders(){if(!('Notification'in window)||Notification.permission!=='granted')return;const now=Date.now();data.tasks.forEach(t=>{if(t.done||t.notified)return;const due=dateTime(t).getTime();if(due<=now&&due>now-60000){new Notification('PAL reminder',{body:t.title+' · '+t.room});t.notified=true;localStorage.setItem(KEY,JSON.stringify(data));}});}
+  reminderTimer=setInterval(checkReminders,15000);
+  $('voiceButton').onclick=()=>{
+    const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(!SR){$('voiceStatus').textContent='Voice input is not supported here. Please type your reminder.';return;}
+    const rec=new SR();rec.lang='en-IN';rec.interimResults=false;rec.onresult=e=>{$('taskTitle').value=e.results[0][0].transcript;$('voiceStatus').textContent='Voice captured. Add date and time, then save.';};rec.onerror=()=>{$('voiceStatus').textContent='Voice capture was unavailable. Please type instead.';};rec.start();
+  };
+  $('taskDate').value=new Date().toISOString().slice(0,10);
+  render();
+  if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+})();
+</script>
+</body>
+</html>
