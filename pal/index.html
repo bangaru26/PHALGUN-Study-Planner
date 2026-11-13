@@ -101,11 +101,14 @@
   const defaults={tasks:[],members:[],rooms:['Family','Personal','Child','Home','Work']};
   let data=load();
   let reminderTimer=null;
-  function load(){try{return {...defaults,...JSON.parse(localStorage.getItem(KEY)||'{}')};}catch{return structuredClone(defaults);}}
-  function save(){localStorage.setItem(KEY,JSON.stringify(data));render();}
+  function freshDefaults(){return {tasks:[],members:[],rooms:['Family','Personal','Child','Home','Work']};}
+  function load(){try{return {...freshDefaults(),...JSON.parse(localStorage.getItem(KEY)||'{}')};}catch{return freshDefaults();}}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(data));render();}catch{$('notice').textContent='Could not save. Browser storage may be disabled or full; export a backup if possible.';}}
   function id(){return (crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random());}
   function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
   function dateTime(t){return new Date(t.date+'T'+t.time+':00');}
+  function localDate(d){return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');}
+  function localTime(d){return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');}
   function render(){
     $('taskList').innerHTML='';
     const room=$('filterRoom').value,status=$('filterStatus').value;
@@ -120,7 +123,9 @@
     $('members').innerHTML=data.members.map(n=>'<span class="chip">'+safe(n)+'</span>').join('')||'<span class="muted">No members added</span>';
     $('rooms').innerHTML=data.rooms.map(n=>'<span class="chip">'+safe(n)+'</span>').join('');
     $('taskRoom').innerHTML=data.rooms.map(n=>'<option>'+safe(n)+'</option>').join('');
+    const selectedRoom=$('filterRoom').value;
     $('filterRoom').innerHTML='<option value="All">All rooms</option>'+data.rooms.map(n=>'<option>'+safe(n)+'</option>').join('');
+    $('filterRoom').value=data.rooms.includes(selectedRoom)?selectedRoom:'All';
     const editRoom=$('editRoom');if(editRoom)editRoom.innerHTML=data.rooms.map(n=>'<option>'+safe(n)+'</option>').join('');
   }
   function taskFromForm(prefix='task'){
@@ -132,7 +137,7 @@
     const t=data.tasks.find(x=>x.id===b.dataset.id);if(!t)return;
     if(b.dataset.action==='done'){t.done=!t.done;}
     if(b.dataset.action==='delete'){if(!confirm('Delete this reminder?'))return;data.tasks=data.tasks.filter(x=>x.id!==t.id);}
-    if(b.dataset.action==='snooze'){const d=new Date(Date.now()+5*60000);t.date=d.toISOString().slice(0,10);t.time=d.toTimeString().slice(0,5);t.done=false;t.notified=false;}
+    if(b.dataset.action==='snooze'){const d=new Date(Date.now()+5*60000);t.date=localDate(d);t.time=localTime(d);t.done=false;t.notified=false;}
     if(b.dataset.action==='calendar'){downloadICS(t);}
     if(b.dataset.action==='edit'){
       $('editId').value=t.id;$('editTitle').value=t.title;$('editDate').value=t.date;$('editTime').value=t.time;$('editRoom').value=t.room;$('editAssignee').value=t.assignee;$('editNotes').value=t.notes;$('editDialog').showModal();return;
@@ -156,7 +161,7 @@
     if(!SR){$('voiceStatus').textContent='Voice input is not supported here. Please type your reminder.';return;}
     const rec=new SR();rec.lang='en-IN';rec.interimResults=false;rec.onresult=e=>{$('taskTitle').value=e.results[0][0].transcript;$('voiceStatus').textContent='Voice captured. Add date and time, then save.';};rec.onerror=()=>{$('voiceStatus').textContent='Voice capture was unavailable. Please type instead.';};rec.start();
   };
-  $('taskDate').value=new Date().toISOString().slice(0,10);
+  $('taskDate').value=localDate(new Date());
   render();
   if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 })();
