@@ -1,0 +1,12 @@
+{
+  "id": "./",
+  "name": "PAL — AAROH Family Scheduler",
+  "short_name": "PAL",
+  "description": "Free, local-first family scheduler prototype",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f6fa",
+  "theme_color": "#10233f",
+  "orientation": "portrait-primary"
+}
