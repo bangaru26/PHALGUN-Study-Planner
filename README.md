@@ -2,6 +2,10 @@
 
 A free, mobile-friendly study desk for GFPA / PHALGUN learning.
 
+## AAROH zero-budget commitment
+
+Fintech Kalp and PAL are being developed under a strict ₹0 spending limit. See the [AAROH Zero-Budget Delivery Plan](./AAROH_ZERO_BUDGET_IMPLEMENTATION_PLAN.md) for the no-paid-services rule, delivery order, security requirements and honest release-reporting standard. No paid fallback may be activated without explicit Founder approval.
+
 ## Fintech Kalp — chapter-by-chapter study packs
 
 The first complete chapter pack is now available: [Chapter 1 — Accounting Foundations](./FINTECH_KALP_CHAPTER_01_ACCOUNTING_FOUNDATIONS.md). It includes plain-language notes, worked examples, a practical assignment with model answers, 15 MCQs with explanations, 20 flashcards and interview prompts. Further chapter packs should follow the same learning standard.
