@@ -516,6 +516,8 @@ class _LearningHomeState extends State<LearningHome> {
         'cross': 'Sales and service teams provide evidence that revenue was earned; AP validates supplier invoices; AR tracks customer balances and receipts; Treasury reconciles bank movements; Fixed Assets maintains cost and depreciation records; GL/R2R owns journals and close; Audit/Risk tests evidence, approvals and segregation of duties.',
         'formula': 'Assets = Liabilities + Equity. Debits must equal credits for every journal. Straight-line depreciation per period = (cost − residual value) ÷ useful life. Closing receivable = invoices/credit sales − supported receipts and credits.',
         'assignment': 'Prepare journal entries for the eight transactions in the worked example. Show the account group and debit/credit amount for every line. Calculate closing receivables, supplier payable, revenue and expenses. Explain why the customer receipt is not revenue and why the electricity accrual is recognised before the invoice arrives.',
+        'modelAnswer': '1. Dr Bank ₹300,000; Cr Owner Capital ₹300,000. 2. Dr Computer Equipment ₹60,000; Cr Bank ₹60,000. 3. Dr Stationery Expense ₹4,000; Cr Trade Payables ₹4,000. 4. Dr Trade Receivables ₹45,000; Cr Service Revenue ₹45,000. 5. Dr Bank ₹20,000; Cr Trade Receivables ₹20,000. 6. Dr Trade Payables ₹2,500; Cr Bank ₹2,500. 7. Dr Electricity Expense ₹3,000; Cr Accrued Expenses ₹3,000. 8. Dr Depreciation Expense ₹1,500; Cr Accumulated Depreciation ₹1,500. Closing receivable ₹25,000; stationery payable ₹1,500; revenue ₹45,000; expenses ₹8,500. The customer receipt settles an existing receivable, so it is not new revenue. Electricity was consumed in March, so the expense and liability belong in March even if the invoice arrives in April. Retain the customer invoice/service evidence, bank statement, supplier invoice/payment proof, electricity estimate and later invoice, laptop invoice/fixed-asset record, and approved journal support.',
+
         'capstone': 'Create a month-end close file for a fictional small business: journal register, trial balance, bank reconciliation, receivables/payables schedules, fixed-asset depreciation, accrual support, review checklist and a one-page close summary. Identify at least three risks and the evidence needed to resolve them.',
         'gist': 'Classify first, journal second, reconcile third and close only after evidence and review. Equal debits and credits are necessary, but they do not prove every transaction is correct.'
       },
@@ -925,6 +927,7 @@ class _LearningHomeState extends State<LearningHome> {
       lessonCard('06 · Cross-department perspective', d['cross']!),
       lessonCard('07 · Important formula / concept', d['formula']!),
       lessonCard('08 · Assignment (attempt first)', d['assignment']!),
+      if (d['modelAnswer'] != null) lessonCard('08A · Assignment model answer and evidence', d['modelAnswer']!),
       lessonCard('09 · Mini-capstone', d['capstone']!),
       lessonCard('09 · Revision gist', d['gist'] ?? 'Recall the process flow, evidence, responsible owner, key control and metric that proves improvement. Connect this lesson to earlier topics.'),
       if (chapterFlashcards.isNotEmpty)
