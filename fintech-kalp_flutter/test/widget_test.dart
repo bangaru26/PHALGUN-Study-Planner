@@ -34,8 +34,8 @@ void main() {
     expect(find.text('Learning path'), findsOneWidget);
   });
   testWidgets('Accounting foundations lesson exposes its flashcards', (tester) async {
-    await tester.view.setPhysicalSize(const Size(1200, 1800));
-    await tester.view.devicePixelRatio = 1;
+    tester.view.physicalSize = const Size(1200, 1800);
+    tester.view.devicePixelRatio = 1;
     await tester.pumpWidget(const FintechKalpApp());
     await tester.pumpAndSettle();
 
