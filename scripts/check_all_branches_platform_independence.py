@@ -8,7 +8,7 @@ import sys
 
 HOST = "hatchable"
 HOST_PATTERNS = [
-    HOST + r"\.(site|com|io)",
+    HOST + r"\.[A-Za-z0-9.-]+",
     "hatch" + r"\.dev",
     "@" + HOST + r"/",
     HOST + r"-(sdk|client)",
