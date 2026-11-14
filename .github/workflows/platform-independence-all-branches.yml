@@ -1,0 +1,25 @@
+name: PHALGUN All-Branch Platform Independence Audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "43 18 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  audit-all-branches:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out complete repository history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fetch every remote branch
+        run: git fetch origin '+refs/heads/*:refs/remotes/origin/*' --prune
+      - name: Scan every branch for retired hosting dependencies
+        run: python scripts/check_all_branches_platform_independence.py
