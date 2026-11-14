@@ -1,6 +1,6 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-11-13T09:44:23+00:00 (UTC)
+Last check: 2026-11-14T09:06:32+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
@@ -26,10 +26,10 @@ Summary: 6 changed; 46 unchanged; 0 baseline; 8 unavailable.
 - Current page excerpt: What’s New in Python — Python 3.15.2 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.2 documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - **Detected text differences (for review only):**
 ```text
-- non-profit corporation. Please donate. Last updated on Nov 12, 2026 (08:53 UTC). Found a bug ? Created
-+ non-profit corporation. Please donate. Last updated on Nov 13, 2026 (07:43 UTC). Found a bug ? Created
-- Please donate. Last updated on Nov 12, 2026 (08:53 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Nov 13, 2026 (07:43 UTC). Found a bug ? Created using Sphinx
+- non-profit corporation. Please donate. Last updated on Nov 13, 2026 (07:43 UTC). Found a bug ? Created
++ non-profit corporation. Please donate. Last updated on Nov 14, 2026 (05:58 UTC). Found a bug ? Created
+- Please donate. Last updated on Nov 13, 2026 (07:43 UTC). Found a bug ? Created using Sphinx
++ Please donate. Last updated on Nov 14, 2026 (05:58 UTC). Found a bug ? Created using Sphinx
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -44,8 +44,8 @@ Summary: 6 changed; 46 unchanged; 0 baseline; 8 unavailable.
 - Current page excerpt: Income Tax Notifications & CBDT Updates Latest Skip to Main Content Please wait... Income Tax Department Ministry of Finance, Government of India Guided Tour Skip to main content Accessibility Accessibility Options Font Size A- 80% 91% 100% 110% 125% 140% A+ Saturation Screen Reader High Contrast Theme Basic HTML View Invert Colors Language Options English English हिन्दी Help Department Officials IRS Officers Online Official Email Systems Employees Corner Take Online Oath Home About Us History o
 - **Detected text differences (for review only):**
 ```text
-- Booklets Brochures/ Pamphlets Infographical Video Live Video Streaming Department Officials IRS Officers Online Official Email Systems Employees Corner
-+ Booklets Brochures/ Pamphlets Infographical Video Live Video Streaming etds-department-officials IRS Officers Online Official Email Systems Employees Corner
+- Booklets Brochures/ Pamphlets Infographical Video Live Video Streaming etds-department-officials IRS Officers Online Official Email Systems Employees Corner
++ Booklets Brochures/ Pamphlets Infographical Video Live Video Streaming Department Officials IRS Officers Online Official Email Systems Employees Corner
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -74,28 +74,22 @@ Found
 | UNCHANGED | Microsoft Power Automate documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/power-automate/) |
 | UNCHANGED | Microsoft AI and Copilot product documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/copilot/) |
 | UNCHANGED | Python release and security updates | Python Software Foundation | [Open source](https://www.python.org/downloads/) |
-| CHANGED — REVIEW REQUIRED | PostgreSQL database documentation | PostgreSQL Global Development Group | [Open source](https://www.postgresql.org/docs/) |
+| UNCHANGED | PostgreSQL database documentation | PostgreSQL Global Development Group | [Open source](https://www.postgresql.org/docs/) |
+| CHANGED — REVIEW REQUIRED | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
 
-### Review required — PostgreSQL database documentation
-- Previous page excerpt: PostgreSQL: Documentation Home About Download Documentation Community Developers Support Donate Your account October 15, 2026: PostgreSQL 19 RC 1 Released! Quick Links Documentation Manuals Archive Release Notes Books Tutorials & Other Resources FAQ Wiki Documentation View the manual Manuals You can view the manual for an older version or download a PDF of a manual from the below table. Online Version PDF Version 19 rc A4 PDF (15.3 MB) • US PDF (15.3 MB) 18 / Current A4 PDF (15.1 MB) • US PDF (1
-- Mapped learning areas to review: SQL, relational databases, data modelling, database security
-- Current page excerpt: PostgreSQL: Documentation Home About Download Documentation Community Developers Support Donate Your account November 12, 2026: PostgreSQL 18.7, 17.12, 16.16, 15.20, 14.25, and 19 RC 2 Released! Quick Links Documentation Manuals Archive Release Notes Books Tutorials & Other Resources FAQ Wiki Documentation View the manual Manuals You can view the manual for an older version or download a PDF of a manual from the below table. Online Version PDF Version 19 rc A4 PDF (15.4 MB) • US PDF (15.3 MB) 18
+### Review required — German learning curriculum
+- Previous page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
+- Mapped learning areas to review: German, pronunciation, listening, conversation
+- Current page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
 - **Detected text differences (for review only):**
 ```text
-- Download Documentation Community Developers Support Donate Your account October 15, 2026: PostgreSQL 19 RC 1 Released! Quick Links
-+ Download Documentation Community Developers Support Donate Your account November 12, 2026: PostgreSQL 18.7, 17.12, 16.16, 15.20, 14.25, and
-- Support Donate Your account October 15, 2026: PostgreSQL 19 RC 1 Released! Quick Links Documentation Manuals
-+ Support Donate Your account November 12, 2026: PostgreSQL 18.7, 17.12, 16.16, 15.20, 14.25, and 19 RC 2 Released! Quick Links Documentation Manuals
-- Your account October 15, 2026: PostgreSQL 19 RC 1 Released! Quick Links Documentation Manuals Archive Release Notes
-+ 18.7, 17.12, 16.16, 15.20, 14.25, and 19 RC 2 Released! Quick Links Documentation Manuals Archive Release Notes
-- Online Version PDF Version 19 rc A4 PDF (15.3 MB) • US PDF (15.3 MB) 18 /
-+ Online Version PDF Version 19 rc A4 PDF (15.4 MB) • US PDF (15.3 MB) 18 /
-- PDF (15.3 MB) 18 / Current A4 PDF (15.1 MB) • US PDF (15.0 MB) 17 A4
-+ PDF (15.3 MB) 18 / Current A4 PDF (15.2 MB) • US PDF (15.1 MB) 17 A4
+- For teachers New every day: our latest content Tafelspitz – ein Klassiker der Wiener Küche Zur
++ For teachers New every day: our latest content Die schwierige Suche nach einem Endlager Deutschland sucht noch immer nach einem Atommüllendlager – eine schwierige Aufgabe, die auch noch viel Geld kostet. B1 | 13.11.2026 
+- Menschen mit und ohne Behinderung. B2 | 04.11.2026 Warum Audi jetzt in die USA geht Der deutsche Autohersteller Audi will ein Werk in den USA eröffnen – und gleichzeitig zu Hause massiv Stellen abbauen. B1 | 03.11.2026 N
++ Menschen mit und ohne Behinderung. B2 | 04.11.2026 Nicos Weg now available in Kiswahili! The new
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
-| UNCHANGED | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
 | UNAVAILABLE | German learning exercises | Goethe-Institut | [Open source](https://www.goethe.de/en/spr/ueb.html) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 | CHANGED — REVIEW REQUIRED | French video-based learning | TV5MONDE | [Open source](https://apprendre.tv5monde.com/) |
@@ -106,16 +100,16 @@ Found
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- français, du niveau débutant au niveau avancé. Recommandé Emblèmes France La Marseillaise, le coq, Liberté, égalité
-+ français, du niveau débutant au niveau avancé. Recommandé Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. Destination francophonie Chaque sema
-- fraternité... Découvrez les emblèmes de la République française DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante
-+ fraternité... Découvrez les emblèmes de la République française TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en
-- hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Serious game Jouez à « Datak » et devenez un pro du big data ! APPRENDRE EV@LANG Quel est votre nive
-+ séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et disponible partout dans le monde ! APPRENDRE EV@LANG Quel est votre niveau à
-- EV@LANG, conçue par l’AUF et France Éducation International. Les expressions d'Archibald Faire le cacou, motamoter ou
-+ EV@LANG, conçue par l’AUF et France Éducation International. Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! Serious game Jouez à « Datak » et devenez un pro du big data ! Quèsaco Sur un to
-- veut dire ? Archibald vous dit tout ! Quèsaco Sur un ton décalé, drôle et moderne, « Quèsaco » répond aux questions que l'on se pose devant une peinture. Bibliothèque numérique N'achetez plus vos classiques, lisez-les su
-+ veut dire ? Archibald vous dit tout ! DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et libre. La dictée d'Arc
+- français, du niveau débutant au niveau avancé. Recommandé Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. Destination francophonie Chaque sema
++ français, du niveau débutant au niveau avancé. Recommandé Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur
+- N'achetez plus vos classiques, lisez-les sur tablette ! Serious game Jouez à « Datak » et devenez un pro du big data ! Quèsaco Sur
++ N'achetez plus vos classiques, lisez-les sur tablette ! DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et libr
+- Jouez à « Datak » et devenez un pro du big data ! Quèsaco Sur un ton décalé, drôle et
++ famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Quèsaco Sur un ton décalé, drôle et
+- questions que l'on se pose devant une peinture. Emblèmes Belgique Le coq hardi, le chant des
++ questions que l'on se pose devant une peinture. Serious game Jouez à « Datak » et devenez un pro du big data ! Emblèmes France La Marseillaise, le coq, Liberté, égalité
+- que l'on se pose devant une peinture. Emblèmes Belgique Le coq hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Les expressions
++ devenez un pro du big data ! Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité... Découvrez les emblèmes de la République française TV5MONDE+
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -130,16 +124,16 @@ Found
 - Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU UK NO FI SQ DA CS PT HR LA BG EO TR SR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.796 Übersetzungen – 2.888 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.824 Übersetzungen – 2.874 neu – 99,8% verifiziert Zeit
-- | Z Zuletzt verifizierte Übersetzungen 1.319.796 Übersetzungen – 2.888 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-+ | Z Zuletzt verifizierte Übersetzungen 1.319.824 Übersetzungen – 2.874 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 09:37 to protect sth. [from view etc.] etw. [Akk.]
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:10 to go downhill [fig.] [deteriorate, worsen] bachab gehen
-- verifiziert Zeit Englisch Deutsch Geprüft von 09:37 to protect sth. [from view etc.] etw. [Akk.] decken [schützen] BHM joe 09:37 to retire early sich [Akk.] jung zur Ruhe setzen nit joe 09:25 ling. prepositional compleme
-+ verifiziert Zeit Englisch Deutsch Geprüft von 10:10 to go downhill [fig.] [deteriorate, worsen] bachab gehen [fig.] [ein schlimmes Ende nehmen] [bes. schweiz.] Dra sun 10:09 entom. gallery [termites] Fraßgang {m} eve 10:
-- nit joe 09:25 ling. prepositional complement Präpositionalergänzung {f} cap ely 07:27 insur. errors and omissions insurance Vermögensschadenhaftpflicht {f} dep jpx 07:26 to burn sth. up
-+ jpx eve 07:44 econ. market. marketableness Vermarktbarkeit {f} pol Ois jpx 07:44 acad. auxiliary science [e.g. numismatics] Auxiliarwissenschaft {f} pol jpx Voice: to burn by Sasha
+- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.824 Übersetzungen – 2.874 neu – 99,8% verifiziert Zeit
++ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.833 Übersetzungen – 2.861 neu – 99,8% verifiziert Zeit
+- | Z Zuletzt verifizierte Übersetzungen 1.319.824 Übersetzungen – 2.874 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
++ | Z Zuletzt verifizierte Übersetzungen 1.319.833 Übersetzungen – 2.861 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:10 to go downhill [fig.] [deteriorate, worsen] bachab gehen [fig.] [ein schlimmes Ende nehmen] [bes. schweiz.] Dra sun 10:09 entom. gallery [termites] Fraßgang {m}
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:43 [man urinating in standing position] Stehpinkler {m} [ugs.] pol jpx 07:43 sports PE refusenik [coll.] [hum.] Turnbeutelvergesser {m} [ugs.] pol jpx 07:41 stragg
+- [fig.] [ein schlimmes Ende nehmen] [bes. schweiz.] Dra sun 10:09 entom. gallery [termites] Fraßgang {m} eve 10:01 psych. overchoice Auswahlparadox {n} jpx eve 07:44 econ. market. marketableness Vermarktbarkeit
++ {adj} [animal coat, beard] flusig [Tierfell, Kinnbart] Dra jpx 07:39 narrow way of thinking enges Denken {n} ely jpx 07:39 Internet short video [esp.
+- Fraßgang {m} eve 10:01 psych. overchoice Auswahlparadox {n} jpx eve 07:44 econ. market. marketableness Vermarktbarkeit {f}
++ 07:39 narrow way of thinking enges Denken {n} ely jpx 07:39 Internet short video [esp. on Instagram]
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -162,16 +156,16 @@ Found
 - Current page excerpt: MIT OpenCourseWare | Free Online Course Materials menu Give Now About OCW Help & Faqs Contact Us GIVE NOW about ocw help & faqs contact us Discover courses, materials, & teaching resources Search Search Explore OR Explore Are you new to OCW? Get Started Looking for teaching materials? Educators Start Here Unlocking knowledge, Empowering Minds. Free lecture notes, exams, and videos from MIT. No registration required. Learn More about the OCW mission keyboard_arrow_left Previous MIT Learn: "a whol
 - **Detected text differences (for review only):**
 ```text
-- Feminism, and Democracy Instructors: Prof. Catherine D'Ignazio , Dr. Alessandra Jungs de Almeida , Dr. Erik
-+ Feminism, and Democracy Instructors: Prof. Catherine D'Ignazio , Prof. Becca Lewis , Dr. Alessandra Jungs de Almeida Topics: Social Science
-- Catherine D'Ignazio , Dr. Alessandra Jungs de Almeida , Dr. Erik Sandelin Topics: Social Science , Political Science 15.879 |
-+ Becca Lewis , Dr. Alessandra Jungs de Almeida Topics: Social Science , Political Science 15.879 |
-- Feminism, and Democracy Instructors: Prof. Catherine D'Ignazio , Dr. Alessandra Jungs de Almeida , Dr. Erik
-+ Feminism, and Democracy Instructors: Prof. Catherine D'Ignazio , Prof. Becca Lewis , Dr. Alessandra Jungs de Almeida Topics: Social Science
-- Catherine D'Ignazio , Dr. Alessandra Jungs de Almeida , Dr. Erik Sandelin Topics: Social Science , Political Science 15.879 |
-+ Becca Lewis , Dr. Alessandra Jungs de Almeida Topics: Social Science , Political Science 15.879 |
-- Feminism, and Democracy Instructors: Prof. Catherine D'Ignazio , Dr. Alessandra Jungs de Almeida , Dr. Erik
-+ Feminism, and Democracy Instructors: Prof. Catherine D'Ignazio , Prof. Becca Lewis , Dr. Alessandra Jungs de Almeida Topics: Social Science
+- Scholar Transportation New Courses keyboard_arrow_left Previous Next keyboard_arrow_right RES.16-9960 The Engineering Student’s Guide to Effective Technical
++ Scholar Transportation New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 3.071 | Undergraduate Amorphous Materials Instructor: Prof. Juejun Hu Topics: Engineering , Materials Science and Engineering RES.
+- , Computer Science , Algorithms and Data Structures RES.15-009 | Non-Credit Lead User Innovation Handbook Instructor: Erdin Beshimov Topics: Business , Entrepreneurship New Courses keyboard_arrow_left Previous Next keybo
++ , Computer Science , Algorithms and Data Structures New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 3.071 |
+- , Entrepreneurship New Courses keyboard_arrow_left Previous Next keyboard_arrow_right RES.16-9960 The Engineering Student’s Guide to Effective Technical
++ Data Structures New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 3.071 | Undergraduate Amorphous Materials Instructor: Prof. Juejun Hu Topics: Engineering , Materials Science and Engineering RES.16-9960
+- , Computer Science , Algorithms and Data Structures RES.15-009 | Non-Credit Lead User Innovation Handbook Instructor: Erdin Beshimov Topics: Business , Entrepreneurship New Courses keyboard_arrow_left Previous Next keybo
++ , Computer Science , Algorithms and Data Structures New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 3.071 |
+- , Entrepreneurship New Courses keyboard_arrow_left Previous Next keyboard_arrow_right RES.16-9960 The Engineering Student’s Guide to Effective Technical
++ Data Structures New Courses keyboard_arrow_left Previous Next keyboard_arrow_right 3.071 | Undergraduate Amorphous Materials Instructor: Prof. Juejun Hu Topics: Engineering , Materials Science and Engineering RES.16-9960
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
