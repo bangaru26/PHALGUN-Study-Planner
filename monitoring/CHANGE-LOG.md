@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-11-15T09:36:59+00:00 (UTC)
+Last check: 2026-11-16T09:55:13+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 4 changed; 47 unchanged; 0 baseline; 9 unavailable.
+Summary: 6 changed; 46 unchanged; 0 baseline; 8 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -14,8 +14,7 @@ Summary: 4 changed; 47 unchanged; 0 baseline; 9 unavailable.
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 | UNCHANGED | Indian income tax | Income Tax Department | [Open source](https://www.incometax.gov.in/iec/foportal/) |
 | UNCHANGED | Accounting, audit and Indian professional guidance | ICAI | [Open source](https://www.icai.org/) |
-| UNAVAILABLE | IFRS accounting standards | IFRS Foundation | [Open source](https://www.ifrs.org/issued-standards/list-of-standards/) |
-  - Fetch issue: URLError: <urlopen error [SSL: TLSV1_UNRECOGNIZED_NAME] tlsv1 unrecognized name (_ssl.c:1011)>
+| UNCHANGED | IFRS accounting standards | IFRS Foundation | [Open source](https://www.ifrs.org/issued-standards/list-of-standards/) |
 | UNCHANGED | CMA USA | Institute of Management Accountants | [Open source](https://www.imanet.org/ima-certifications/cma-certification) |
 | UNCHANGED | Microsoft Excel | Microsoft Support | [Open source](https://support.microsoft.com/excel) |
 | UNCHANGED | Power BI | Microsoft Learn | [Open source](https://learn.microsoft.com/power-bi/) |
@@ -27,10 +26,10 @@ Summary: 4 changed; 47 unchanged; 0 baseline; 9 unavailable.
 - Current page excerpt: What’s New in Python — Python 3.15.2 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.2 documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - **Detected text differences (for review only):**
 ```text
-- non-profit corporation. Please donate. Last updated on Nov 14, 2026 (05:58 UTC). Found a bug ? Created
-+ non-profit corporation. Please donate. Last updated on Nov 15, 2026 (08:27 UTC). Found a bug ? Created
-- Please donate. Last updated on Nov 14, 2026 (05:58 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Nov 15, 2026 (08:27 UTC). Found a bug ? Created using Sphinx
+- non-profit corporation. Please donate. Last updated on Nov 15, 2026 (08:27 UTC). Found a bug ? Created
++ non-profit corporation. Please donate. Last updated on Nov 16, 2026 (07:43 UTC). Found a bug ? Created
+- Please donate. Last updated on Nov 15, 2026 (08:27 UTC). Found a bug ? Created using Sphinx
++ Please donate. Last updated on Nov 16, 2026 (07:43 UTC). Found a bug ? Created using Sphinx
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -38,7 +37,25 @@ Summary: 4 changed; 47 unchanged; 0 baseline; 9 unavailable.
 | UNCHANGED | SAP S/4HANA and SAP FICO | SAP Help Portal | [Open source](https://help.sap.com/) |
 | UNCHANGED | US financial reporting and filings | US SEC | [Open source](https://www.sec.gov/edgar/search/) |
 | UNCHANGED | Income-tax Act, Rules and CBDT notifications | Income Tax Department / CBDT | [Open source](https://www.incometaxindia.gov.in/notifications) |
-| UNCHANGED | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
+| CHANGED — REVIEW REQUIRED | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
+
+### Review required — Indian accounting standards and implementation guidance
+- Previous page excerpt: ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St
+- Mapped learning areas to review: Indian Accounting Standards, IFRS/Ind AS, financial reporting and audit
+- Current page excerpt: ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St
+- **Detected text differences (for review only):**
+```text
+- Vishal Doshi Vice-Chairman, Accounting Standards Board Forthcoming Events Launch of 'Certificate Course on Indian Accounting Standards
++ Vishal Doshi Vice-Chairman, Accounting Standards Board Forthcoming Events Webinar on "Decoding Accounting Standards for Non-Corporate Entities: Classification, Exemptions and Disclosures" scheduled on 16.11.26 from 3.00 
+- Participate in the Online Weekly Accounting Quiz (November 6, 2026 to November 12, 2026) launched by the Accounting
++ Participate in the Online Weekly Accounting Quiz (November 13, 2026, to November 19, 2026) launched by the Accounting
+- Weekly Accounting Quiz (November 6, 2026 to November 12, 2026) launched by the Accounting Standards Board Exposure
++ Weekly Accounting Quiz (November 13, 2026, to November 19, 2026) launched by the Accounting Standards Board. Exposure
+- November 12, 2026) launched by the Accounting Standards Board Exposure Draft of Amendments to Ind AS 28
++ November 19, 2026) launched by the Accounting Standards Board. Exposure Draft of Amendments to Ind AS 28
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNCHANGED | Indian Accounting Standards (Ind AS) compendium | ICAI | [Open source](https://www.icai.org/post/compendium-of-indian-accounting-standards) |
 | UNCHANGED | Ministry of Corporate Affairs public announcements | Press Information Bureau, Government of India | [Open source](https://www.pib.gov.in/newsite/pmreleases.aspx?lang=2&mincode=66&reg=48) |
 | UNCHANGED | US CPA exam and accounting profession | AICPA | [Open source](https://www.aicpa-cima.com/resources/landing/cpa-exam) |
@@ -75,16 +92,16 @@ Found
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- français, du niveau débutant au niveau avancé. Recommandé Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur
-+ français, du niveau débutant au niveau avancé. Recommandé Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. La famille tout écran Une famille co
-- N'achetez plus vos classiques, lisez-les sur tablette ! DDF, le Dictionnaire des francophones Participez au Dictionnaire
-+ N'achetez plus vos classiques, lisez-les sur tablette ! Serious game Jouez à « Datak » et devenez un pro du big data ! DDF, le Dictionnaire des francophones Participez au Dictionnaire
-- d’une langue mondialement partagée : vivante et libre. La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez
-+ d’une langue mondialement partagée : vivante et libre. TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et disponible 
-- Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Quèsaco Sur un ton décalé, drôle et
-+ sous-titrées en 5 langues et disponible partout dans le monde ! Quèsaco Sur un ton décalé, drôle et
-- questions que l'on se pose devant une peinture. Serious game Jouez à « Datak » et devenez un pro du big data ! Emblèmes France La Marseillaise, le coq, Liberté, égalité
-+ questions que l'on se pose devant une peinture. Emblèmes France La Marseillaise, le coq, Liberté, égalité
+- français, du niveau débutant au niveau avancé. Recommandé Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. La famille tout écran Une famille co
++ français, du niveau débutant au niveau avancé. Recommandé Quèsaco Sur un ton décalé, drôle et moderne,
+- questions que l'on se pose devant une peinture. Emblèmes France La Marseillaise, le coq, Liberté, égalité
++ questions que l'on se pose devant une peinture. Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. DDF, le Dictionnaire des francophones P
+- fraternité... Découvrez les emblèmes de la République française Emblèmes Belgique Le coq hardi, le chant des
++ fraternité... Découvrez les emblèmes de la République française TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et dis
+- wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! Les expressions d'Archibald Faire le cacou, motamoter
++ wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Contes africains Cinq contes venus de Côte d'Iv
+- veut dire ? Archibald vous dit tout ! Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Partenaires Apprenez le français plus facilement 
++ veut dire ? Archibald vous dit tout ! Partenaires Apprenez le français plus facilement avec l’application
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -99,16 +116,16 @@ Found
 - Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU UK NO FI SQ DA CS PT HR LA BG EO TR SR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.833 Übersetzungen – 2.861 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.854 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit
-- | Z Zuletzt verifizierte Übersetzungen 1.319.833 Übersetzungen – 2.861 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-+ | Z Zuletzt verifizierte Übersetzungen 1.319.854 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:43 [man urinating in standing position] Stehpinkler {m} [ugs.] pol jpx 07:43 sports PE refusenik [coll.] [hum.]
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:11 zool. T Aesculapian snake [Zamenis longissimus, syn.: Coluber aesculapii, Elaphe longissima, Natrix longissimal] Äskulapnatter {f} Wen joe 10:11 zool. T Aescula
-- urinating in standing position] Stehpinkler {m} [ugs.] pol jpx 07:43 sports PE refusenik [coll.] [hum.] Turnbeutelvergesser {m} [ugs.] pol jpx 07:41 straggly {adj} [animal coat, beard]
-+ sth. [documents] etw. [Akk.] übergeben [Dokumente, Unterlagen] pol joe 10:09 to take sth. off sb. [rob, loot] jdm. etw. [Akk.] abnehmen [rauben, im Spiel abnehmen] pol joe 08:37 admin. pol. Home Office [Br.]
-- PE refusenik [coll.] [hum.] Turnbeutelvergesser {m} [ugs.] pol jpx 07:41 straggly {adj} [animal coat, beard] flusig [Tierfell, Kinnbart] Dra jpx 07:39 narrow way of thinking enges Denken {n} ely jpx 07:39 Internet short 
-+ etw. [Akk.] abnehmen [rauben, im Spiel abnehmen] pol joe 08:37 admin. pol. Home Office [Br.] Innenministerium {n} Can Voice: to burn by Sasha Ich
+- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.854 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit
++ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.890 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:11 zool. T Aesculapian snake [Zamenis longissimus, syn.: Coluber aesculapii, Elaphe longissima, Natrix longissimal] Äskulapnatter {f} Wen joe 10:11 zool. T Aescula
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:46 material tech. airflow resistance [of (thin) materials] [EN ISO 9053-1:2018] Strömungswiderstand {m} [von (dünnen) Materialien] [ISO 9053-1:2018] Ois joe jpx 07
+- Coluber aesculapii, Elaphe longissima, Natrix longissimal] Äskulapnatter {f} Wen joe 10:11 zool. T Aesculapean snake [rare] [spv.] [Zamenis longissimus, syn.: Coluber aesculapii, Elaphe longissima, Natrix longissimal] Äs
++ Unrepresented Nations and Peoples Organization <UNPO> Organisation {f} der nicht repräsentierten Nationen und Völker ely jpx 07:45 vital {adj} entscheidend wichtig pol jpx 07:44 agr. arable area kultivierbare Fläche {f} 
+- Coluber aesculapii, Elaphe longissima, Natrix longissimal] Äskulapnatter {f} Wen joe 10:10 law to render sth. [documents] etw. [Akk.] übergeben [Dokumente, Unterlagen] pol joe 10:09 to take sth. off sb.
++ jpx 07:44 agr. arable area kultivierbare Fläche {f} pol jpx 07:43 uncharted land [also fig.] unerforschtes
+- sth. [documents] etw. [Akk.] übergeben [Dokumente, Unterlagen] pol joe 10:09 to take sth. off sb. [rob, loot] jdm. etw. [Akk.] abnehmen [rauben, im Spiel abnehmen] pol joe 08:37 admin. pol. Home Office [Br.]
++ 07:44 agr. arable area kultivierbare Fläche {f} pol jpx 07:43 uncharted land [also fig.] unerforschtes Gebiet {n} [auch fig.] pol jpx Voice: to burn by Sasha Notration
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -118,7 +135,21 @@ Found
 | UNAVAILABLE | Bilingual dictionary and pronunciation | Collins Dictionary | [Open source](https://www.collinsdictionary.com/) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 | UNCHANGED | Institute of Risk Management qualifications and syllabi | Institute of Risk Management (IRM) | [Open source](https://www.theirm.org/qualifications/) |
-| UNCHANGED | Certified Internal Auditor (CIA) certification and exam syllabus | The Institute of Internal Auditors (The IIA) | [Open source](https://www.theiia.org/en/certifications/cia/) |
+| CHANGED — REVIEW REQUIRED | Certified Internal Auditor (CIA) certification and exam syllabus | The Institute of Internal Auditors (The IIA) | [Open source](https://www.theiia.org/en/certifications/cia/) |
+
+### Review required — Certified Internal Auditor (CIA) certification and exam syllabus
+- Previous page excerpt: Certified Internal Auditor | Global Internal Audit Certification | The IIA Skip to Content Membership Show sub pages for Membership Join Now Membership Benefits Executive Membership Student Membership & Resources Group Membership Frequently Asked Questions Renew Your Membership IPPF & Standards Show sub pages for IPPF & Standards Global Internal Audit Standards Topical Requirements Global Guidance Audit Tools Related Content Risk Management Content Ethics & Professionalism Governance & Due Proce
+- Mapped learning areas to review: CIA Part 1, CIA Part 2, CIA Part 3, internal audit standards, exam readiness
+- Current page excerpt: Certified Internal Auditor | Global Internal Audit Certification | The IIA Skip to Content Membership Show sub pages for Membership Join Now Membership Benefits Executive Membership Student Membership & Resources Group Membership Frequently Asked Questions Renew Your Membership IPPF & Standards Show sub pages for IPPF & Standards Global Internal Audit Standards Topical Requirements Global Guidance Audit Tools Related Content Risk Management Content Ethics & Professionalism Governance & Due Proce
+- **Detected text differences (for review only):**
+```text
+- How much does the CIA cost? Important Pricing will change starting on 4 January 2027. Review the updated pricing and act before the change if you’d
++ How much does the CIA cost? Important Pricing in your country may differ. Your IP address indicates that you may be affiliated with an IIA Institute with different pricing. If you reside in one of the following countries
+- on 4 January 2027. Review the updated pricing and act before the change if you’d like to lock in today’s rates. To receive your member discount, log in and verify your IIA membership is active before completing a purchas
++ visit your National Institute’s website for the pricing that applies to you. Find your local institute China, UK, Ireland, Russia, India, Kazakhstan, Azerbaijan, or Ukraine. CIA application $120 USD (Member) $240 USD (No
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNCHANGED | Certification in Risk Management Assurance (CRMA) | The Institute of Internal Auditors (The IIA) | [Open source](https://www.theiia.org/en/certifications/crma/) |
 | UNCHANGED | Certified Information Security Manager (CISM) exam content outline | ISACA | [Open source](https://www.isaca.org/credentialing/cism/cism-exam-content-outline) |
 | UNCHANGED | Open textbook resources for accounting | OpenStax | [Open source](https://openstax.org/subjects/business) |
