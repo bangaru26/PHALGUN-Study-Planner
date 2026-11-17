@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-11-16T09:55:13+00:00 (UTC)
+Last check: 2026-11-17T10:51:46+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 6 changed; 46 unchanged; 0 baseline; 8 unavailable.
+Summary: 9 changed; 43 unchanged; 0 baseline; 8 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -26,10 +26,10 @@ Summary: 6 changed; 46 unchanged; 0 baseline; 8 unavailable.
 - Current page excerpt: What’s New in Python — Python 3.15.2 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.2 documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - **Detected text differences (for review only):**
 ```text
-- non-profit corporation. Please donate. Last updated on Nov 15, 2026 (08:27 UTC). Found a bug ? Created
-+ non-profit corporation. Please donate. Last updated on Nov 16, 2026 (07:43 UTC). Found a bug ? Created
-- Please donate. Last updated on Nov 15, 2026 (08:27 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Nov 16, 2026 (07:43 UTC). Found a bug ? Created using Sphinx
+- non-profit corporation. Please donate. Last updated on Nov 16, 2026 (07:43 UTC). Found a bug ? Created
++ non-profit corporation. Please donate. Last updated on Nov 17, 2026 (07:36 UTC). Found a bug ? Created
+- Please donate. Last updated on Nov 16, 2026 (07:43 UTC). Found a bug ? Created using Sphinx
++ Please donate. Last updated on Nov 17, 2026 (07:36 UTC). Found a bug ? Created using Sphinx
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -45,14 +45,8 @@ Summary: 6 changed; 46 unchanged; 0 baseline; 8 unavailable.
 - Current page excerpt: ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St
 - **Detected text differences (for review only):**
 ```text
-- Vishal Doshi Vice-Chairman, Accounting Standards Board Forthcoming Events Launch of 'Certificate Course on Indian Accounting Standards
-+ Vishal Doshi Vice-Chairman, Accounting Standards Board Forthcoming Events Webinar on "Decoding Accounting Standards for Non-Corporate Entities: Classification, Exemptions and Disclosures" scheduled on 16.11.26 from 3.00 
-- Participate in the Online Weekly Accounting Quiz (November 6, 2026 to November 12, 2026) launched by the Accounting
-+ Participate in the Online Weekly Accounting Quiz (November 13, 2026, to November 19, 2026) launched by the Accounting
-- Weekly Accounting Quiz (November 6, 2026 to November 12, 2026) launched by the Accounting Standards Board Exposure
-+ Weekly Accounting Quiz (November 13, 2026, to November 19, 2026) launched by the Accounting Standards Board. Exposure
-- November 12, 2026) launched by the Accounting Standards Board Exposure Draft of Amendments to Ind AS 28
-+ November 19, 2026) launched by the Accounting Standards Board. Exposure Draft of Amendments to Ind AS 28
+- Vishal Doshi Vice-Chairman, Accounting Standards Board Forthcoming Events Webinar on "Decoding Accounting Standards for Non-Corporate Entities: Classification, Exemptions and Disclosures" scheduled on 16.11.26 from 3.00 
++ Vishal Doshi Vice-Chairman, Accounting Standards Board Forthcoming Events Launch of 'Certificate Course on Indian Accounting Standards
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -81,7 +75,21 @@ Found
 | UNCHANGED | Microsoft AI and Copilot product documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/copilot/) |
 | UNCHANGED | Python release and security updates | Python Software Foundation | [Open source](https://www.python.org/downloads/) |
 | UNCHANGED | PostgreSQL database documentation | PostgreSQL Global Development Group | [Open source](https://www.postgresql.org/docs/) |
-| UNCHANGED | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
+| CHANGED — REVIEW REQUIRED | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
+
+### Review required — German learning curriculum
+- Previous page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
+- Mapped learning areas to review: German, pronunciation, listening, conversation
+- Current page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
+- **Detected text differences (for review only):**
+```text
+- For teachers New every day: our latest content Die schwierige Suche nach einem Endlager Deutschland sucht
++ For teachers New every day: our latest content Unterwegs als Katastrophenhelfer Sie lassen alles stehen und liegen, um anderen Menschen zu helfen. Katastrophenhelfer sind mit vollem Einsatz dabei. C1 | 17.11.2026 Die sch
+- der Verwendung von KI aufgeht. B1 | 06.11.2026 Marie: Das inklusive Bistro im Bundestag Direkt am Bundestag in Berlin liegt das Bistro Marie. Hier arbeiten Menschen mit und ohne Behinderung. B2 | 04.11.2026 Nicos Weg now
++ der Verwendung von KI aufgeht. B1 | 06.11.2026 Nicos Weg now available in Kiswahili! The new
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNAVAILABLE | German learning exercises | Goethe-Institut | [Open source](https://www.goethe.de/en/spr/ueb.html) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 | CHANGED — REVIEW REQUIRED | French video-based learning | TV5MONDE | [Open source](https://apprendre.tv5monde.com/) |
@@ -92,16 +100,16 @@ Found
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- français, du niveau débutant au niveau avancé. Recommandé Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. La famille tout écran Une famille co
-+ français, du niveau débutant au niveau avancé. Recommandé Quèsaco Sur un ton décalé, drôle et moderne,
-- questions que l'on se pose devant une peinture. Emblèmes France La Marseillaise, le coq, Liberté, égalité
-+ questions que l'on se pose devant une peinture. Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. DDF, le Dictionnaire des francophones P
-- fraternité... Découvrez les emblèmes de la République française Emblèmes Belgique Le coq hardi, le chant des
-+ fraternité... Découvrez les emblèmes de la République française TV5MONDE+ Regardez des films, des séries et des reportages gratuitement sur TV5MONDE+, la plateforme de vidéos en français, sous-titrées en 5 langues et dis
-- wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! Les expressions d'Archibald Faire le cacou, motamoter
-+ wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Contes africains Cinq contes venus de Côte d'Iv
-- veut dire ? Archibald vous dit tout ! Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Partenaires Apprenez le français plus facilement 
-+ veut dire ? Archibald vous dit tout ! Partenaires Apprenez le français plus facilement avec l’application
+- français, du niveau débutant au niveau avancé. Recommandé Quèsaco Sur un ton décalé, drôle et moderne,
++ français, du niveau débutant au niveau avancé. Recommandé Serious game Jouez à « Datak » et devenez un pro du big data ! DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est
+- questions que l'on se pose devant une peinture. Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. DDF, le Dictionnaire des francophones P
++ questions que l'on se pose devant une peinture. TV5MONDE+ Regardez des films, des séries et des
+- langues et disponible partout dans le monde ! Serious game Jouez à « Datak » et devenez un pro du big data ! APPRENDRE EV@LANG
++ langues et disponible partout dans le monde ! La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans
+- Jouez à « Datak » et devenez un pro du big data ! APPRENDRE EV@LANG Quel est votre niveau à
++ famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Emblèmes Belgique Le coq hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez l
+- EV@LANG, conçue par l’AUF et France Éducation International. Emblèmes Belgique Le coq hardi, le chant des Wallons, l'iris bruxellois, la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! La famille tou
++ EV@LANG, conçue par l’AUF et France Éducation International. Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. La dictée d'Archibald (Mot
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -116,16 +124,16 @@ Found
 - Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU UK NO FI SQ DA CS PT HR LA BG EO TR SR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.854 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.890 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:11 zool. T Aesculapian snake [Zamenis longissimus, syn.: Coluber aesculapii, Elaphe longissima, Natrix longissimal] Äskulapnatter {f} Wen joe 10:11 zool. T Aescula
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:46 material tech. airflow resistance [of (thin) materials] [EN ISO 9053-1:2018] Strömungswiderstand {m} [von (dünnen) Materialien] [ISO 9053-1:2018] Ois joe jpx 07
-- Coluber aesculapii, Elaphe longissima, Natrix longissimal] Äskulapnatter {f} Wen joe 10:11 zool. T Aesculapean snake [rare] [spv.] [Zamenis longissimus, syn.: Coluber aesculapii, Elaphe longissima, Natrix longissimal] Äs
-+ Unrepresented Nations and Peoples Organization <UNPO> Organisation {f} der nicht repräsentierten Nationen und Völker ely jpx 07:45 vital {adj} entscheidend wichtig pol jpx 07:44 agr. arable area kultivierbare Fläche {f} 
-- Coluber aesculapii, Elaphe longissima, Natrix longissimal] Äskulapnatter {f} Wen joe 10:10 law to render sth. [documents] etw. [Akk.] übergeben [Dokumente, Unterlagen] pol joe 10:09 to take sth. off sb.
-+ jpx 07:44 agr. arable area kultivierbare Fläche {f} pol jpx 07:43 uncharted land [also fig.] unerforschtes
-- sth. [documents] etw. [Akk.] übergeben [Dokumente, Unterlagen] pol joe 10:09 to take sth. off sb. [rob, loot] jdm. etw. [Akk.] abnehmen [rauben, im Spiel abnehmen] pol joe 08:37 admin. pol. Home Office [Br.]
-+ 07:44 agr. arable area kultivierbare Fläche {f} pol jpx 07:43 uncharted land [also fig.] unerforschtes Gebiet {n} [auch fig.] pol jpx Voice: to burn by Sasha Notration
+- X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.890 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit
++ X | Y | Z Zuletzt verifizierte Übersetzungen 1.319.948 Übersetzungen – 2.860 neu – 99,8% verifiziert Zeit
+- | Z Zuletzt verifizierte Übersetzungen 1.319.890 Übersetzungen – 2.843 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
++ | Z Zuletzt verifizierte Übersetzungen 1.319.948 Übersetzungen – 2.860 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 07:46 material tech. airflow resistance [of (thin) materials] [EN ISO 9053-1:2018] Strömungswiderstand {m} [von (dünnen) Materialien] [ISO 9053-1:2018] Ois joe jpx 07
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:20 electr. computer charger Computer-Ladegerät {n} BHM Wen 10:18 zool. hippopotamus enclosure Nilpferdgehege {n} BHM Wen 10:16 to put sth. high on the priority lis
+- Materialien] [ISO 9053-1:2018] Ois joe jpx 07:45 pol. Unrepresented Nations and Peoples Organization <UNPO> Organisation {f} der nicht repräsentierten Nationen und Völker ely
++ nach oben setzen nit cap 09:46 law pol. constitutional system Verfassungsordnung {f} liu 09:46 fish T tropical carp-gudgeon [Hypseleotris
+- Unrepresented Nations and Peoples Organization <UNPO> Organisation {f} der nicht repräsentierten Nationen und Völker ely jpx 07:45 vital {adj} entscheidend wichtig pol jpx 07:44 agr. arable area kultivierbare Fläche {f} 
++ cap 09:46 law pol. constitutional system Verfassungsordnung {f} liu 09:46 fish T tropical carp-gudgeon [Hypseleotris cyprinoides] Kärpflingsschläfergrundel {f} pol Wen Voice: to burn by Sasha
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -143,15 +151,31 @@ Found
 - Current page excerpt: Certified Internal Auditor | Global Internal Audit Certification | The IIA Skip to Content Membership Show sub pages for Membership Join Now Membership Benefits Executive Membership Student Membership & Resources Group Membership Frequently Asked Questions Renew Your Membership IPPF & Standards Show sub pages for IPPF & Standards Global Internal Audit Standards Topical Requirements Global Guidance Audit Tools Related Content Risk Management Content Ethics & Professionalism Governance & Due Proce
 - **Detected text differences (for review only):**
 ```text
-- How much does the CIA cost? Important Pricing will change starting on 4 January 2027. Review the updated pricing and act before the change if you’d
-+ How much does the CIA cost? Important Pricing in your country may differ. Your IP address indicates that you may be affiliated with an IIA Institute with different pricing. If you reside in one of the following countries
-- on 4 January 2027. Review the updated pricing and act before the change if you’d like to lock in today’s rates. To receive your member discount, log in and verify your IIA membership is active before completing a purchas
-+ visit your National Institute’s website for the pricing that applies to you. Find your local institute China, UK, Ireland, Russia, India, Kazakhstan, Azerbaijan, or Ukraine. CIA application $120 USD (Member) $240 USD (No
+- How much does the CIA cost? Important Pricing in your country may differ. Your IP address
++ How much does the CIA cost? Important Pricing will change starting on 4 January 2027. Review the updated pricing and act before the change if you’d like to lock in today’s rates. To receive your member discount,
+- much does the CIA cost? Important Pricing in your country may differ. Your IP address indicates that you may be affiliated with an IIA Institute with different pricing. If you reside
++ the change if you’d like to lock in today’s rates. To receive your member discount, log in and verify your IIA membership is active before completing a purchase.
+- that you may be affiliated with an IIA Institute with different pricing. If you reside in
++ member discount, log in and verify your IIA membership is active before completing a purchase. All fees are non-refundable and non-transferable. Outside North America, contact your National Institute to obtain membership
+- you may be affiliated with an IIA Institute with different pricing. If you reside in one of the following countries, please visit your National Institute’s website for the pricing that applies to you. Find your local ins
++ non-transferable. Outside North America, contact your National Institute to obtain membership and verify pricing/applicable taxes. CIA application $120 USD (Member) $240 USD (Non-member)
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
 | UNCHANGED | Certification in Risk Management Assurance (CRMA) | The Institute of Internal Auditors (The IIA) | [Open source](https://www.theiia.org/en/certifications/crma/) |
-| UNCHANGED | Certified Information Security Manager (CISM) exam content outline | ISACA | [Open source](https://www.isaca.org/credentialing/cism/cism-exam-content-outline) |
+| CHANGED — REVIEW REQUIRED | Certified Information Security Manager (CISM) exam content outline | ISACA | [Open source](https://www.isaca.org/credentialing/cism/cism-exam-content-outline) |
+
+### Review required — Certified Information Security Manager (CISM) exam content outline
+- Previous page excerpt: CISM® Exam Content Outline Back Shop Cart () Get support Sign In Credentialing Membership Enterprise Partnerships Training and Events Resources Need help? Get support © 2026 ISACA Certifications CISA – Certified Information Systems Auditor AAIA – Advanced in AI Audit CISM – Certified Information Security Manager AAISM – Advanced in AI Security Management CRISC – Certified in Risk and Information Systems Control AAIR – Advanced in AI Risk CGEIT – Certified in the Governance of Enterprise IT AAIG 
+- Mapped learning areas to review: CISM governance, information security risk management, security programme, incident management
+- Current page excerpt: CISM® Exam Content Outline Back Shop Cart () Get support Sign In Credentialing Membership Enterprise Partnerships Training and Events Resources Need help? Get support © 2026 ISACA Certifications CISA – Certified Information Systems Auditor AAIA – Advanced in AI Audit CISM – Certified Information Security Manager AAISM – Advanced in AI Security Management CRISC – Certified in Risk and Information Systems Control AAIR – Advanced in AI Risk CGEIT – Certified in the Governance of Enterprise IT AAIG 
+- **Detected text differences (for review only):**
+```text
+- Conference Student Summit Call for Speakers Training Week AAIR Workshop Virtual Workshops Training by Type Virtual Summits Webinars
++ Conference Student Summit Call for Speakers Training Week Virtual Workshops Training by Type Virtual Summits Webinars
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNCHANGED | Open textbook resources for accounting | OpenStax | [Open source](https://openstax.org/subjects/business) |
 | UNCHANGED | Open business and accounting textbooks | LibreTexts | [Open source](https://biz.libretexts.org/) |
 | CHANGED — REVIEW REQUIRED | University open course materials | MIT OpenCourseWare | [Open source](https://ocw.mit.edu/) |
@@ -174,7 +198,19 @@ Fingerprint changed, but no word-level difference was isolated.
 | UNCHANGED | Free hands-on data learning | Kaggle Learn | [Open source](https://www.kaggle.com/learn) |
 | UNCHANGED | Tableau official training resources | Tableau | [Open source](https://www.tableau.com/learn/training) |
 | UNCHANGED | SAP official learning journeys | SAP Learning | [Open source](https://learning.sap.com/) |
-| UNCHANGED | CISM certification exam content outline | ISACA | [Open source](https://www.isaca.org/credentialing/cism/cism-exam-content-outline) |
+| CHANGED — REVIEW REQUIRED | CISM certification exam content outline | ISACA | [Open source](https://www.isaca.org/credentialing/cism/cism-exam-content-outline) |
+
+### Review required — CISM certification exam content outline
+- Previous page excerpt: CISM® Exam Content Outline Back Shop Cart () Get support Sign In Credentialing Membership Enterprise Partnerships Training and Events Resources Need help? Get support © 2026 ISACA Certifications CISA – Certified Information Systems Auditor AAIA – Advanced in AI Audit CISM – Certified Information Security Manager AAISM – Advanced in AI Security Management CRISC – Certified in Risk and Information Systems Control AAIR – Advanced in AI Risk CGEIT – Certified in the Governance of Enterprise IT AAIG 
+- Mapped learning areas to review: CISM, cybersecurity governance, risk management
+- Current page excerpt: CISM® Exam Content Outline Back Shop Cart () Get support Sign In Credentialing Membership Enterprise Partnerships Training and Events Resources Need help? Get support © 2026 ISACA Certifications CISA – Certified Information Systems Auditor AAIA – Advanced in AI Audit CISM – Certified Information Security Manager AAISM – Advanced in AI Security Management CRISC – Certified in Risk and Information Systems Control AAIR – Advanced in AI Risk CGEIT – Certified in the Governance of Enterprise IT AAIG 
+- **Detected text differences (for review only):**
+```text
+- Conference Student Summit Call for Speakers Training Week AAIR Workshop Virtual Workshops Training by Type Virtual Summits Webinars
++ Conference Student Summit Call for Speakers Training Week Virtual Workshops Training by Type Virtual Summits Webinars
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 
 ## What remains unchanged?
 For each source marked **UNCHANGED**, the fetched page text fingerprint matched the previous successful check. This is not a guarantee that every related regulation, product release, linked PDF, or subpage is unchanged.
