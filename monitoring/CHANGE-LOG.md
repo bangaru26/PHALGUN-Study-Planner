@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-11-21T09:57:47+00:00 (UTC)
+Last check: 2026-11-22T09:56:29+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 7 changed; 45 unchanged; 0 baseline; 8 unavailable.
+Summary: 4 changed; 48 unchanged; 0 baseline; 8 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -26,10 +26,10 @@ Summary: 7 changed; 45 unchanged; 0 baseline; 8 unavailable.
 - Current page excerpt: What’s New in Python — Python 3.15.2 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.2 documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - **Detected text differences (for review only):**
 ```text
-- non-profit corporation. Please donate. Last updated on Nov 20, 2026 (07:35 UTC). Found a bug ? Created
-+ non-profit corporation. Please donate. Last updated on Nov 21, 2026 (09:12 UTC). Found a bug ? Created
-- Please donate. Last updated on Nov 20, 2026 (07:35 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Nov 21, 2026 (09:12 UTC). Found a bug ? Created using Sphinx
+- non-profit corporation. Please donate. Last updated on Nov 21, 2026 (09:12 UTC). Found a bug ? Created
++ non-profit corporation. Please donate. Last updated on Nov 22, 2026 (07:06 UTC). Found a bug ? Created
+- Please donate. Last updated on Nov 21, 2026 (09:12 UTC). Found a bug ? Created using Sphinx
++ Please donate. Last updated on Nov 22, 2026 (07:06 UTC). Found a bug ? Created using Sphinx
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -37,44 +37,12 @@ Summary: 7 changed; 45 unchanged; 0 baseline; 8 unavailable.
 | UNCHANGED | SAP S/4HANA and SAP FICO | SAP Help Portal | [Open source](https://help.sap.com/) |
 | UNCHANGED | US financial reporting and filings | US SEC | [Open source](https://www.sec.gov/edgar/search/) |
 | UNCHANGED | Income-tax Act, Rules and CBDT notifications | Income Tax Department / CBDT | [Open source](https://www.incometaxindia.gov.in/notifications) |
-| CHANGED — REVIEW REQUIRED | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
-
-### Review required — Indian accounting standards and implementation guidance
-- Previous page excerpt: ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St
-- Mapped learning areas to review: Indian Accounting Standards, IFRS/Ind AS, financial reporting and audit
-- Current page excerpt: ICAI - The Institute of Chartered Accountants of India 0 Welcome to ICAI-ASB's New Website! Discover a fresh look and enhanced features ACCOUNTING STANDARDS BOARD Home About Us About ASB Functions/Objectives/Terms of Reference Board Composition Annual Reports Certificate Course About Certificate Course on Ind AS List of Qualified Members Knowledge Dissemination Activities Refresher Courses Details of Past Seminar & Events Other E-Learning Initiatives Educational Videos Publications Accounting St
-- **Detected text differences (for review only):**
-```text
-- Vishal Doshi Vice-Chairman, Accounting Standards Board Forthcoming Events Launch of 'Certificate Course on Indian Accounting Standards
-+ Vishal Doshi Vice-Chairman, Accounting Standards Board Forthcoming Events Webinar on "Identifying Customer Contracts and Performance Obligations, and Determining the Transaction Price" scheduled on 23.11.26 from 3:00 PM 
-```
-- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
-
+| UNCHANGED | Indian accounting standards and implementation guidance | ICAI Accounting Standards Board | [Open source](https://asb.icai.org/) |
 | UNCHANGED | Indian Accounting Standards (Ind AS) compendium | ICAI | [Open source](https://www.icai.org/post/compendium-of-indian-accounting-standards) |
 | UNCHANGED | Ministry of Corporate Affairs public announcements | Press Information Bureau, Government of India | [Open source](https://www.pib.gov.in/newsite/pmreleases.aspx?lang=2&mincode=66&reg=48) |
 | UNCHANGED | US CPA exam and accounting profession | AICPA | [Open source](https://www.aicpa-cima.com/resources/landing/cpa-exam) |
 | UNCHANGED | US CPA licensure and jurisdiction requirements | NASBA | [Open source](https://nasba.org/licensure/) |
-| CHANGED — REVIEW REQUIRED | Enrolled Agent and Special Enrollment Examination | Internal Revenue Service | [Open source](https://www.irs.gov/tax-professionals/enrolled-agents) |
-
-### Review required — Enrolled Agent and Special Enrollment Examination
-- Previous page excerpt: Enrolled agents | Internal Revenue Service Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. English Español 中文 (简体) 中文 (繁體) 한국어 Русский Tiếng Việt Kreyòl ayi
-- Mapped learning areas to review: Enrolled Agent, US individual tax, US business tax, IRS representation
-- Current page excerpt: Enrolled agents | Internal Revenue Service Skip to main content An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. Search IRS tasks, forms, and answers Suggestions Information Menu Sign in Individual 
-- **Detected text differences (for review only):**
-```text
-- An official website of the United States government Here's how you know Here's how you know Official websites use .gov
-+ An official website of the United States government Here's how you know Official websites use .gov
-- Share sensitive information only on official, secure websites. English Español 中文 (简体) 中文 (繁體) 한국어 Русский Tiếng Việt Kreyòl ayisyen Information Menu Help News Tax Pros Sign in
-+ Share sensitive information only on official, secure websites. Search IRS tasks, forms, and answers Suggestions Information Menu Sign in Individual Business Tax Pro
-- 한국어 Русский Tiếng Việt Kreyòl ayisyen Information Menu Help News Tax Pros Sign in Individual Business Tax Pro Access your
-+ IRS tasks, forms, and answers Suggestions Information Menu Sign in Individual Business Tax Pro Access your
-- IRS account. Refunds Payments Tax records Create account Search Help Menu Mobile Sign in Individual Business Tax Pro Access your tax information with an IRS account. Refunds Payments Tax records Create account Menu Main 
-+ IRS account. Refunds Payments Tax records Create account Main navigation File Overview INFORMATION FOR… Individuals Business
-- Tax return preparer misconduct Help for tax professionals Search Include Historical Content - Any - No Include Historical Content - Any - No Search File Overview INFORMATION FOR… Individuals Business and self-employed
-+ Tax return preparer misconduct Help for tax professionals Information Menu 2 Help News Tax Pros English Español 中文 (简体) 中文 (繁體) 한국어 Русский Tiếng Việt Kreyòl ayisyen Help Menu Mobile Sign in Individual Business Tax Pro A
-```
-- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
-
+| UNCHANGED | Enrolled Agent and Special Enrollment Examination | Internal Revenue Service | [Open source](https://www.irs.gov/tax-professionals/enrolled-agents) |
 | UNAVAILABLE | US GAAP and FASB updates | Financial Accounting Standards Board | [Open source](https://www.fasb.org/standards) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 | UNAVAILABLE | ACCA qualification syllabus and policy | ACCA | [Open source](https://www.accaglobal.com/gb/en/student.html) |
@@ -95,21 +63,7 @@ Found
 | UNCHANGED | Microsoft AI and Copilot product documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/copilot/) |
 | UNCHANGED | Python release and security updates | Python Software Foundation | [Open source](https://www.python.org/downloads/) |
 | UNCHANGED | PostgreSQL database documentation | PostgreSQL Global Development Group | [Open source](https://www.postgresql.org/docs/) |
-| CHANGED — REVIEW REQUIRED | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
-
-### Review required — German learning curriculum
-- Previous page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
-- Mapped learning areas to review: German, pronunciation, listening, conversation
-- Current page excerpt: LEARN GERMAN Learn German Toggle navigation Home Placement Test Beginners Fortgeschrittene Profis Artikeltrainer Vocabulary Overview Grammar Overview Vocabulary Trainer Help Language My Profile Login Logout Learn German free online With Deutsche Welle's mobile courses, you can learn German easily and free of charge. Whether you are a beginner or highly proficient, this is where you will find German courses. You can also learn German with the news or music - from level A1 to C1. For German teache
-- **Detected text differences (for review only):**
-```text
-- For teachers New every day: our latest content Warum die deutsche Sprache für viele hart klingt
-+ For teachers New every day: our latest content Wie Kathrin Marchand Sportgeschichte schrieb Die Ärztin Kathrin Marchand ruderte früher bei den Olympischen Spielen. Dann veränderte ein Schlaganfall ihr Leben. B1 | 20.11.2
-- Tafelspitz. Wie wird er zubereitet? B2 | 11.11.2026 Erinnern an den Holocaust Immer weniger Zeitzeugen können vom Holocaust berichten. Wie kann die Erinnerung erhalten bleiben? B1 | 10.11.2026 Nicos Weg now available in 
-+ Tafelspitz. Wie wird er zubereitet? B2 | 11.11.2026 Nicos Weg now available in Kiswahili! The new
-```
-- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
-
+| UNCHANGED | German learning curriculum | Deutsche Welle | [Open source](https://learngerman.dw.com/) |
 | UNAVAILABLE | German learning exercises | Goethe-Institut | [Open source](https://www.goethe.de/en/spr/ueb.html) |
   - Fetch issue: HTTPError: HTTP Error 403: Forbidden
 | CHANGED — REVIEW REQUIRED | French video-based learning | TV5MONDE | [Open source](https://apprendre.tv5monde.com/) |
@@ -120,16 +74,16 @@ Found
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- français, du niveau débutant au niveau avancé. Recommandé Emblèmes France La Marseillaise, le coq, Liberté, égalité fraternité... Découvrez les emblèmes de la République française Destination francophonie Chaque semaine,
-+ français, du niveau débutant au niveau avancé. Recommandé Serious game Jouez à « Datak » et devenez un pro du big data ! APPRENDRE EV@LANG Quel est
-- semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Quèsaco Sur un ton décalé, drôle et moderne, « Quèsaco » répond aux questions que l'on se pose devant une peinture. La 
-+ « Datak » et devenez un pro du big data ! APPRENDRE EV@LANG Quel est votre niveau à
-- EV@LANG, conçue par l’AUF et France Éducation International. Emblèmes Belgique Le coq hardi, le chant des
-+ EV@LANG, conçue par l’AUF et France Éducation International. DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et
-- la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Les expressions d'Archibald Faire le cacou, motamoter
-+ la gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Les expressions d'Archibald Faire 
-- veut dire ? Archibald vous dit tout ! Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cameroun. TV5MONDE+ Regardez des films, des séries et des reportag
-+ veut dire ? Archibald vous dit tout ! Quèsaco Sur un ton décalé, drôle et moderne, « Quèsaco » répond aux questions que l'on
+- français, du niveau débutant au niveau avancé. Recommandé Serious game Jouez à « Datak » et devenez un pro du big data ! APPRENDRE EV@LANG Quel est
++ français, du niveau débutant au niveau avancé. Recommandé DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et li
+- « Datak » et devenez un pro du big data ! APPRENDRE EV@LANG Quel est votre niveau à
++ semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! Contes africains Cinq contes venus de Cô
+- EV@LANG, conçue par l’AUF et France Éducation International. DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et
++ EV@LANG, conçue par l’AUF et France Éducation International. Quèsaco Sur un ton décalé, drôle et moderne, « Quèsaco » répond aux questions que l'on se pose devant une peinture. La famille tout écran Une famille connectée
+- fraternité... Découvrez les emblèmes de la République française Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante
++ fraternité... Découvrez les emblèmes de la République française Serious game Jouez à « Datak » et devenez un pro du big data ! Les expressions d'Archibald Faire
+- semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cam
++ « Datak » et devenez un pro du big data ! Les expressions d'Archibald Faire le cacou, motamoter
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -144,16 +98,16 @@ Found
 - Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU UK NO FI SQ DA CS PT HR LA BG EO TR SR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.320.117 Übersetzungen – 2.838 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.320.166 Übersetzungen – 2.853 neu – 99,8% verifiziert Zeit
-- | Z Zuletzt verifizierte Übersetzungen 1.320.117 Übersetzungen – 2.838 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-+ | Z Zuletzt verifizierte Übersetzungen 1.320.166 Übersetzungen – 2.853 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 11:11 sports ruggerite [coll.] [regional] [rugby player] Rugbyspieler {m} joe git 11:09 geogr. Port Louis Port Louis
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:48 constr. EU law Regulations on Contract Awards for Public Works Vergabe- und Vertragsordnung {f} für Bauleistungen <VOB> joe git 08:22 to add sth. [say, enter,
-- [coll.] [regional] [rugby player] Rugbyspieler {m} joe git 11:09 geogr. Port Louis Port Louis {n} eve git 10:56 archi. expressionist architecture expressionistische Architektur {f} ely dep 09:58 VetMed. mad cow disease [
-+ und Vertragsordnung {f} für Bauleistungen <VOB> joe git 08:22 to add sth. [say, enter, report in addition] etw. [Akk.] nachtragen [nachträglich eintragen, berichten] pol dep 08:22 to cushion sth. [a blow, a
-- archi. expressionist architecture expressionistische Architektur {f} ely dep 09:58 VetMed. mad cow disease [coll.] Rinderwahn {m} [ugs.] dep bom 09:58 VetMed. bovine spongiform encephalopathy <BSE>
-+ etw. [Akk.] nachtragen [nachträglich eintragen, berichten] pol dep 08:22 to cushion sth. [a blow, a shock] etw. [Akk.] abfedern pol dep 08:21 to deplore sth. [disapprove strongly] etw.
+- X | Y | Z Zuletzt verifizierte Übersetzungen 1.320.166 Übersetzungen – 2.853 neu – 99,8% verifiziert Zeit
++ X | Y | Z Zuletzt verifizierte Übersetzungen 1.320.183 Übersetzungen – 2.848 neu – 99,8% verifiziert Zeit
+- | Z Zuletzt verifizierte Übersetzungen 1.320.166 Übersetzungen – 2.853 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
++ | Z Zuletzt verifizierte Übersetzungen 1.320.183 Übersetzungen – 2.848 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:48 constr. EU law Regulations on Contract Awards for Public Works Vergabe- und Vertragsordnung {f} für Bauleistungen <VOB> joe git 08:22 to
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:13 geol. planation surface Verebnung {f} [als Ergebnis] fio est Ois git 10:09
+- Awards for Public Works Vergabe- und Vertragsordnung {f} für Bauleistungen <VOB> joe git 08:22 to add sth. [say, enter, report
++ Geprüft von 10:13 geol. planation surface Verebnung {f} [als Ergebnis] fio est Ois git 10:09 entom. T bagrada bug [Bagrada hilaris]
+- und Vertragsordnung {f} für Bauleistungen <VOB> joe git 08:22 to add sth. [say, enter, report in addition]
++ Verebnung {f} [als Ergebnis] fio est Ois git 10:09 entom. T bagrada bug [Bagrada hilaris] Bagrada hilaris {f} [eine Spezies der Baumwanzen] Wen git 09:51 Don't give them any ideas! Bring sie nicht auf dumme Gedanken! [si
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
