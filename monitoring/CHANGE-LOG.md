@@ -1,10 +1,10 @@
 # PHALGUN Source Change Log
 
-Last check: 2026-11-22T09:56:29+00:00 (UTC)
+Last check: 2026-11-23T10:55:24+00:00 (UTC)
 
 **Important:** a page fingerprint change is a review flag, not proof that a rule changed. An unchanged fingerprint means only that this fetched page looked the same as the previous successful check. Check official notices, effective dates, jurisdiction and affected lessons before changing learning content.
 
-Summary: 4 changed; 48 unchanged; 0 baseline; 8 unavailable.
+Summary: 5 changed; 47 unchanged; 0 baseline; 8 unavailable.
 
 | Status | Topic | Authority | Check |
 |---|---|---|---|
@@ -26,10 +26,10 @@ Summary: 4 changed; 48 unchanged; 0 baseline; 8 unavailable.
 - Current page excerpt: What’s New in Python — Python 3.15.2 documentation Theme Auto Light Dark Previous topic Python Documentation contents Next topic What’s new in Python 3.15 This page Report a bug Improve this page Show source Navigation index modules | next | previous | Python » 3.15.2 documentation » What’s New in Python | Theme Auto Light Dark | What’s New in Python ¶ The “What’s New in Python” series of essays takes tours through the most important changes between major Python versions. They are a “must read” 
 - **Detected text differences (for review only):**
 ```text
-- non-profit corporation. Please donate. Last updated on Nov 21, 2026 (09:12 UTC). Found a bug ? Created
-+ non-profit corporation. Please donate. Last updated on Nov 22, 2026 (07:06 UTC). Found a bug ? Created
-- Please donate. Last updated on Nov 21, 2026 (09:12 UTC). Found a bug ? Created using Sphinx
-+ Please donate. Last updated on Nov 22, 2026 (07:06 UTC). Found a bug ? Created using Sphinx
+- non-profit corporation. Please donate. Last updated on Nov 22, 2026 (07:06 UTC). Found a bug ? Created
++ non-profit corporation. Please donate. Last updated on Nov 23, 2026 (07:03 UTC). Found a bug ? Created
+- Please donate. Last updated on Nov 22, 2026 (07:06 UTC). Found a bug ? Created using Sphinx
++ Please donate. Last updated on Nov 23, 2026 (07:03 UTC). Found a bug ? Created using Sphinx
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -54,7 +54,27 @@ Found
 | UNCHANGED | Scrum framework | Scrum Guides | [Open source](https://scrumguides.org/) |
 | UNCHANGED | Oracle Database documentation | Oracle | [Open source](https://docs.oracle.com/en/database/) |
 | UNCHANGED | BlackLine product documentation and release updates | BlackLine | [Open source](https://www.blackline.com/) |
-| UNCHANGED | RPA and UiPath documentation | UiPath | [Open source](https://docs.uipath.com/) |
+| CHANGED — REVIEW REQUIRED | RPA and UiPath documentation | UiPath | [Open source](https://docs.uipath.com/) |
+
+### Review required — RPA and UiPath documentation
+- Previous page excerpt: UiPath Documentation search Search ​ Language translate English expand_more ​ Sign in Learn about agentic automation and orchestration with UiPath Maestro Orchestrate and model agents, robots and people Agents Plan, build and deploy agents IXP Multi-modal data classification and extraction at scale Test Cloud Agentic testing for the enterprise Maestro Orchestrate AI agents, automations, and people across end-to-end processes, to deliver measurable outcomes Learn about Maestro Get started with Ui
+- Mapped learning areas to review: RPA, finance automation, workflow controls
+- Current page excerpt: UiPath Documentation search Search ​ Language translate English expand_more ​ Sign in Learn to orchestrate and automate your enterprise processes with UiPath Maestro Orchestrate Orchestrate processes across people, agents, and robots Maestro Automate Build short-running workflows of AI agents and APIs RPA Automate apps without APIs: desktop, web, legacy and Citrix IXP Classify and extract data from documents and messages Test Cloud Agentic testing for the enterprise Maestro Orchestrate Run each 
+- **Detected text differences (for review only):**
+```text
+- Language translate English expand_more ​ Sign in Learn about agentic automation and orchestration with UiPath Maestro Orchestrate and model agents, robots and people Agents Plan, build and
++ Language translate English expand_more ​ Sign in Learn to orchestrate and automate your enterprise processes with UiPath Maestro Orchestrate Orchestrate processes across people, agents, and robots Maestro Automate Build 
+- orchestration with UiPath Maestro Orchestrate and model agents, robots and people Agents Plan, build and deploy
++ UiPath Maestro Orchestrate Orchestrate processes across people, agents, and robots Maestro Automate Build short-running workflows of AI
+- with UiPath Maestro Orchestrate and model agents, robots and people Agents Plan, build and deploy agents IXP Multi-modal data classification and extraction at
++ Orchestrate Orchestrate processes across people, agents, and robots Maestro Automate Build short-running workflows of AI agents and APIs RPA Automate apps without APIs:
+- and people Agents Plan, build and deploy agents IXP Multi-modal data classification and extraction at scale
++ Maestro Automate Build short-running workflows of AI agents and APIs RPA Automate apps without APIs: desktop, web, legacy and Citrix IXP Classify and extract data from documents and
+- people Agents Plan, build and deploy agents IXP Multi-modal data classification and extraction at scale Test Cloud
++ without APIs: desktop, web, legacy and Citrix IXP Classify and extract data from documents and messages Test Cloud Agentic
+```
+- **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
+
 | UNCHANGED | VBA and Office automation documentation | Microsoft Learn | [Open source](https://learn.microsoft.com/en-us/office/vba/api/overview/) |
 | UNCHANGED | Tableau product documentation and release notes | Salesforce Tableau | [Open source](https://www.tableau.com/support/releases) |
 | UNAVAILABLE | Project management standards and resources | Project Management Institute | [Open source](https://www.pmi.org/standards) |
@@ -74,16 +94,16 @@ Found
 - Current page excerpt: Apprendre le français FLE gratuitement, cours de français avec TV5MONDE Aller au contenu principal TV5MONDE+ Info EDU TV5MONDE EDU : apprendre 4,8 ★ · Gratuit · Google Play Installer × TV5Monde Edu Main navigation Voir un niveau Niveaux A1 Débutant A2 Élémentaire B1 Intermédiaire B2 Avancé Test de niveau Explorer Faire des exercices Thèmes Culture, littérature et francophonie A1 A2 B1 B2 Droits humains B1 B2 Gastronomie, mode A2 B1 B2 Information, géopolitique et histoire A1 A2 B1 B2 Sciences, i
 - **Detected text differences (for review only):**
 ```text
-- français, du niveau débutant au niveau avancé. Recommandé Serious game Jouez à « Datak » et devenez un pro du big data ! APPRENDRE EV@LANG Quel est
-+ français, du niveau débutant au niveau avancé. Recommandé DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et li
-- « Datak » et devenez un pro du big data ! APPRENDRE EV@LANG Quel est votre niveau à
-+ semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! Contes africains Cinq contes venus de Cô
-- EV@LANG, conçue par l’AUF et France Éducation International. DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et
-+ EV@LANG, conçue par l’AUF et France Éducation International. Quèsaco Sur un ton décalé, drôle et moderne, « Quèsaco » répond aux questions que l'on se pose devant une peinture. La famille tout écran Une famille connectée
-- fraternité... Découvrez les emblèmes de la République française Destination francophonie Chaque semaine, découvrez celles et ceux qui font du français une langue vivante et en constante
-+ fraternité... Découvrez les emblèmes de la République française Serious game Jouez à « Datak » et devenez un pro du big data ! Les expressions d'Archibald Faire
-- semaine, découvrez celles et ceux qui font du français une langue vivante et en constante évolution. Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Congo, du Sénégal, du Mali et du Cam
-+ « Datak » et devenez un pro du big data ! Les expressions d'Archibald Faire le cacou, motamoter
+- français, du niveau débutant au niveau avancé. Recommandé DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et li
++ français, du niveau débutant au niveau avancé. Recommandé La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! Emblèmes Belgique Le coq hardi, le chant des
+- gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! Destination francophonie Chaque semaine, découvrez celles et ceux
++ gaillarde wallonne... Découvrez les emblèmes de Wallonie-Bruxelles ! La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Emblèmes France La Marseillaise, le c
+- français une langue vivante et en constante évolution. Bibliothèque numérique N'achetez plus vos classiques, lisez-les sur tablette ! Contes africains Cinq contes venus de Côte d'Ivoire, de République Démocratique du Con
++ français une langue vivante et en constante évolution. TV5MONDE+ Regardez des films, des séries et des
+- langues et disponible partout dans le monde ! La dictée d'Archibald (Mots d'ailleurs) Archi simple et ludique, essayez-la ! APPRENDRE EV@LANG Quel est votre niveau à l'écrit et à l'oral en français ? Testez gratuitement 
++ langues et disponible partout dans le monde ! Quèsaco Sur un ton décalé, drôle et moderne,
+- questions que l'on se pose devant une peinture. La famille tout écran Une famille connectée et un peu dépassée dans la gestion des écrans vous invite chez elle ! Emblèmes France La Marseillaise, le coq, Liberté, égalité 
++ questions que l'on se pose devant une peinture. DDF, le Dictionnaire des francophones Participez au Dictionnaire des francophones ! Gratuit, il est à l’image d’une langue mondialement partagée : vivante et libre. Bibli
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
@@ -98,16 +118,16 @@ Found
 - Current page excerpt: dict.cc | Wörterbuch Englisch-Deutsch | Alle Sprachen EN SV IS RU RO FR SK IT NL UK ES LA PT FI HU NO BG HR CS DA TR PL EO SR SQ EL BS | FR SK IT ES IS NL RO HU PL SV RU UK NO FI SQ DA CS PT HR LA BG EO TR SR BS EL dict.cc Deutsch-Englisch-Wörterbuch Online-Wörterbuch Englisch-Deutsch: Begriff hier eingeben! äöüß... DE <> EN DE –> EN EN –> DE ----- DE <> EN ----- DE <> BG DE <> BS DE <> CS DE <> DA DE <> EL DE <> EO DE <> ES DE <> FI DE <> FR DE <> HR DE <> HU DE <> IS DE <> IT DE <> LA DE <> NL
 - **Detected text differences (for review only):**
 ```text
-- X | Y | Z Zuletzt verifizierte Übersetzungen 1.320.166 Übersetzungen – 2.853 neu – 99,8% verifiziert Zeit
-+ X | Y | Z Zuletzt verifizierte Übersetzungen 1.320.183 Übersetzungen – 2.848 neu – 99,8% verifiziert Zeit
-- | Z Zuletzt verifizierte Übersetzungen 1.320.166 Übersetzungen – 2.853 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-+ | Z Zuletzt verifizierte Übersetzungen 1.320.183 Übersetzungen – 2.848 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
-- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:48 constr. EU law Regulations on Contract Awards for Public Works Vergabe- und Vertragsordnung {f} für Bauleistungen <VOB> joe git 08:22 to
-+ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:13 geol. planation surface Verebnung {f} [als Ergebnis] fio est Ois git 10:09
-- Awards for Public Works Vergabe- und Vertragsordnung {f} für Bauleistungen <VOB> joe git 08:22 to add sth. [say, enter, report
-+ Geprüft von 10:13 geol. planation surface Verebnung {f} [als Ergebnis] fio est Ois git 10:09 entom. T bagrada bug [Bagrada hilaris]
-- und Vertragsordnung {f} für Bauleistungen <VOB> joe git 08:22 to add sth. [say, enter, report in addition]
-+ Verebnung {f} [als Ergebnis] fio est Ois git 10:09 entom. T bagrada bug [Bagrada hilaris] Bagrada hilaris {f} [eine Spezies der Baumwanzen] Wen git 09:51 Don't give them any ideas! Bring sie nicht auf dumme Gedanken! [si
+- X | Y | Z Zuletzt verifizierte Übersetzungen 1.320.183 Übersetzungen – 2.848 neu – 99,8% verifiziert Zeit
++ X | Y | Z Zuletzt verifizierte Übersetzungen 1.320.193 Übersetzungen – 2.836 neu – 99,8% verifiziert Zeit
+- | Z Zuletzt verifizierte Übersetzungen 1.320.183 Übersetzungen – 2.848 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
++ | Z Zuletzt verifizierte Übersetzungen 1.320.193 Übersetzungen – 2.836 neu – 99,8% verifiziert Zeit Englisch Deutsch Geprüft
+- – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 10:13 geol. planation surface Verebnung {f} [als Ergebnis] fio est Ois git 10:09 entom. T bagrada bug [Bagrada
++ – 99,8% verifiziert Zeit Englisch Deutsch Geprüft von 11:54 gastr. UrDinkel ® [ancient spelt] UrDinkel ® {m} Wen BHM 11:54 gastr. ancient spelt Urdinkel {m} Wen BHM 11:53 fish T two-banded cichlid [Telmatochromis bifrena
+- surface Verebnung {f} [als Ergebnis] fio est Ois git 10:09 entom. T bagrada bug [Bagrada hilaris] Bagrada hilaris {f} [eine Spezies der Baumwanzen] Wen git 09:51 Don't give them any ideas! Bring sie nicht auf dumme Gedan
++ (Ach, du) heiliger Strohsack! [ugs.] [Redewendung] pol Ois Dra Voice: to burn by Sasha Hochhäuser by Taixum24
+- absetzen nit Hal Voice: to burn by Sasha Geburt und zugleich ... by Halmafelix 1.569.886 more » Alle Wörterbücher |
++ pol Ois Dra Voice: to burn by Sasha Hochhäuser by Taixum24 1.570.060 more » Alle Wörterbücher |
 ```
 - **Rule/effective date/lesson impact:** Not yet determined; human or domain-specific verification required.
 
